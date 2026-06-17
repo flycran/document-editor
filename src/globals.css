@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: rgba(0, 0, 0, 0.65);
+}
+
+/** 打印区域 */
+@media print {
+  body > * {
+    display: none;
+  }
+
+  .print-area {
+    display: block !important;
+    width: 100vw;
+    top: 0;
+    left: 0;
+  }
+}
+/* 让整个 Table 组件参与 flex 伸缩 */
+.table-fill-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+
+  .ant-table-wrapper {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .ant-spin,
+  .ant-spin-nested-loading,
+  .ant-spin-container,
+  .ant-table,
+  .ant-table-container {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ant-table-body {
+    flex: 1;
+    overflow-y: auto !important;
+    max-height: unset !important;
+  }
+
+  .ant-table-pagination {
+    flex-shrink: 0;
+  }
+}

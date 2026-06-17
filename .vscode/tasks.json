@@ -1,0 +1,27 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "启动前端",
+      "type": "shell",
+      "command": "bun dev",
+      "presentation": {
+        "panel": "dedicated"
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
+    },
+    {
+      "label": "生成api",
+      "type": "shell",
+      "command": "bun run codegen:watch",
+      "presentation": {
+        "panel": "dedicated"
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
+    }
+  ]
+}
