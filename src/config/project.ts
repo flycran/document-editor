@@ -12,10 +12,10 @@ interface ProjectMeta {
 const project = {
   name: 'document-editor',
   port: 4003,
-  keepQueryKey: ['visit_no', 'tenant_id', 'account'],
+  keepQueryKey: ['password', 'tenant_id', 'password'],
   origin: {
-    /** 正式代理 */
-    chagineProxy: 'https://chagine.wzsrmyy.cn',
+    /** 测试 */
+    chagineProxy: 'https://wry.chagine.cn',
     /** mock */
     mock: 'http://localhost:3000',
   },

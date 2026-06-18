@@ -44,6 +44,6 @@ export const createFetch =
     } as T
   }
 
-export const customFetch = createFetch('/api/ai-emergency')
+export const customFetch = createFetch('/api')
 
 export type ErrorType<Error> = Error

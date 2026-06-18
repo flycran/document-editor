@@ -17,7 +17,6 @@ export default defineConfig({
       '/api': {
         target: project.origin.chagineProxy,
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '/api/proxy-new'),
       },
     },
   },

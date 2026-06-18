@@ -25,193 +25,193 @@ import type { ErrorType } from '../request'
 
 import { customFetch } from '../request'
 import type {
-  Op319GetQuestcenterTemplateGetTemplateList200,
-  Op319GetQuestcenterTemplateGetTemplateListParams,
-  Op320GetQuestcenterTemplateGetTemplateHistoryList200,
-  Op320GetQuestcenterTemplateGetTemplateHistoryListParams,
-  Op321GetQuestcenterTemplateGetTemplateDetail200,
-  Op321GetQuestcenterTemplateGetTemplateDetailParams,
-  Op322PostQuestcenterTemplateCreateTemplate200,
-  Op322PostQuestcenterTemplateCreateTemplateBody,
-  Op323PostQuestcenterTemplateUpdateTemplate200,
-  Op323PostQuestcenterTemplateUpdateTemplateBody,
-  Op324PostQuestcenterTemplateDeleteTemplate200,
-  Op324PostQuestcenterTemplateDeleteTemplateBody,
-  Op325PostQuestcenterTemplatePublishTemplate200,
-  Op325PostQuestcenterTemplatePublishTemplateBody,
-  Op326PostQuestcenterTemplateCloseTemplate200,
-  Op326PostQuestcenterTemplateCloseTemplateBody,
-  Op327GetQuestcenterTemplateGetTemplateDetailByPaperId200,
-  Op327GetQuestcenterTemplateGetTemplateDetailByPaperIdParams,
-  Op382PostQuestcenterTemplateCheckAndCreateParams200,
-  Op382PostQuestcenterTemplateCheckAndCreateParamsBody,
-  Op429PostQuestcenterMedicalTemplateCreateTemplate200,
-  Op429PostQuestcenterMedicalTemplateCreateTemplateBody,
-  Op430PostQuestcenterMedicalTemplateUpdateTemplate200,
-  Op430PostQuestcenterMedicalTemplateUpdateTemplateBody,
-  Op431PostQuestcenterMedicalTemplateDeleteTemplate200,
-  Op431PostQuestcenterMedicalTemplateDeleteTemplateBody,
-  Op432PostQuestcenterMedicalTemplateCreateTemplateParagraph200,
-  Op432PostQuestcenterMedicalTemplateCreateTemplateParagraphBody,
-  Op433PostQuestcenterMedicalTemplateUpdateTemplateParagraph200,
-  Op433PostQuestcenterMedicalTemplateUpdateTemplateParagraphBody,
-  Op434PostQuestcenterMedicalTemplateDeleteTemplateParagraph200,
-  Op434PostQuestcenterMedicalTemplateDeleteTemplateParagraphBody,
-  Op435PostQuestcenterMedicalTemplateCreateParagraphNode200,
-  Op435PostQuestcenterMedicalTemplateCreateParagraphNodeBody,
-  Op437PostQuestcenterMedicalTemplateUpdateParagraphNodeParams200,
-  Op437PostQuestcenterMedicalTemplateUpdateParagraphNodeParamsBody,
-  Op438PostQuestcenterMedicalTemplateDeleteParagraphNode200,
-  Op438PostQuestcenterMedicalTemplateDeleteParagraphNodeBody,
-  Op439GetQuestcenterMedicalTemplateGetTemplateList200,
-  Op439GetQuestcenterMedicalTemplateGetTemplateListParams,
-  Op440GetQuestcenterMedicalTemplateGetTemplateHistoryList200,
-  Op440GetQuestcenterMedicalTemplateGetTemplateHistoryListParams,
-  Op441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateId200,
-  Op441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdParams,
-  Op442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalId200,
-  Op442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdParams,
-  Op443PostQuestcenterMedicalTemplatePublishTemplate200,
-  Op443PostQuestcenterMedicalTemplatePublishTemplateBody,
-  Op444PostQuestcenterMedicalTemplateCloseTemplate200,
-  Op444PostQuestcenterMedicalTemplateCloseTemplateBody,
-  Op449PostQuestcenterMedicalTemplateCreateTemplateDefault200,
-  Op449PostQuestcenterMedicalTemplateCreateTemplateDefaultBody,
-  Op450PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecify200,
-  Op450PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyBody,
-  Op451GetQuestcenterMedicalTemplateFindParagraphCodeList200,
-  Op451GetQuestcenterMedicalTemplateFindParagraphCodeListParams,
-  Op452PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernText200,
-  Op452PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextBody,
-  Op454PostQuestcenterMedicalTemplateCreateParagraphNodeBatch200,
-  Op454PostQuestcenterMedicalTemplateCreateParagraphNodeBatchBody,
-  Op455GetQuestcenterInformedTemplateGetTemplateList200,
-  Op455GetQuestcenterInformedTemplateGetTemplateListParams,
-  Op456PostQuestcenterInformedTemplateCreateTemplate200,
-  Op456PostQuestcenterInformedTemplateCreateTemplateBody,
-  Op457PostQuestcenterInformedTemplateUpdateTemplate200,
-  Op457PostQuestcenterInformedTemplateUpdateTemplateBody,
-  Op458PostQuestcenterInformedTemplateDeleteTemplate200,
-  Op458PostQuestcenterInformedTemplateDeleteTemplateBody,
-  Op459PostQuestcenterInformedTemplatePublishTemplate200,
-  Op459PostQuestcenterInformedTemplatePublishTemplateBody,
-  Op460PostQuestcenterInformedTemplateCloseTemplate200,
-  Op460PostQuestcenterInformedTemplateCloseTemplateBody,
-  Op461GetQuestcenterInformedTemplateGetTemplateDetail200,
-  Op461GetQuestcenterInformedTemplateGetTemplateDetailParams,
-  Op462GetQuestcenterInformedTemplateGetTemplateHistoryList200,
-  Op462GetQuestcenterInformedTemplateGetTemplateHistoryListParams,
-  Op463GetQuestcenterInformedTemplateGetTemplateDetailByPaperId200,
-  Op463GetQuestcenterInformedTemplateGetTemplateDetailByPaperIdParams,
-  Op464GetQuestcenterInformedTemplateGetMedicalTemplateList200,
-  Op464GetQuestcenterInformedTemplateGetMedicalTemplateListParams,
-  Op465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalId200,
-  Op465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalIdParams,
-  Op466GetQuestcenterInformedTemplateGetNextStep200,
-  Op466GetQuestcenterInformedTemplateGetNextStepParams,
-  Op471GetQuestcenterMedicalTemplateFindParagraphCodeTree200,
-  Op471GetQuestcenterMedicalTemplateFindParagraphCodeTreeParams,
-  Op472PostQuestcenterMedicalTemplateCreateParagraphNodeTree200,
-  Op472PostQuestcenterMedicalTemplateCreateParagraphNodeTreeBody,
-  Op484GetQuestcenterMedicalTemplageDepaManageGetConfig200,
-  Op485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecords200,
-  Op486GetQuestcenterMedicalTemplageDepaManageGetDepaList200,
-  Op486GetQuestcenterMedicalTemplageDepaManageGetDepaListParams,
-  Op487PostQuestcenterMedicalTemplageDepaManageAddDept200,
-  Op487PostQuestcenterMedicalTemplageDepaManageAddDeptBody,
-  Op488PostQuestcenterMedicalTemplageDepaManageUpdateDept200,
-  Op488PostQuestcenterMedicalTemplageDepaManageUpdateDeptBody,
-  Op489PostQuestcenterMedicalTemplageDepaManageDeleteDept200,
-  Op489PostQuestcenterMedicalTemplageDepaManageDeleteDeptBody,
-  Op490GetQuestcenterMedicalTemplateGetTemplateDepaList200,
-  Op490GetQuestcenterMedicalTemplateGetTemplateDepaListParams,
-  Op491GetQuestcenterMedicalTemplateGetSearchTemplateDept200,
-  Op491GetQuestcenterMedicalTemplateGetSearchTemplateDeptParams,
-  Op492PostQuestcenterMedicalTemplateAddTemplateDepa200,
-  Op492PostQuestcenterMedicalTemplateAddTemplateDepaBody,
-  Op493PostQuestcenterMedicalTemplateDeleteTemplateDepa200,
-  Op493PostQuestcenterMedicalTemplateDeleteTemplateDepaBody,
-  Op509GetQuestcenterMedicalTextTemplateGetTemplateList200,
-  Op509GetQuestcenterMedicalTextTemplateGetTemplateListParams,
-  Op510GetQuestcenterMedicalTextTemplateGetTemplatePage200,
-  Op510GetQuestcenterMedicalTextTemplateGetTemplatePageParams,
-  Op511PostQuestcenterMedicalTextTemplateCreateTemplate200,
-  Op511PostQuestcenterMedicalTextTemplateCreateTemplateBody,
-  Op512PostQuestcenterMedicalTextTemplateUpdateTemplate200,
-  Op512PostQuestcenterMedicalTextTemplateUpdateTemplateBody,
-  Op513PostQuestcenterMedicalTextTemplateDeleteTemplate200,
-  Op513PostQuestcenterMedicalTextTemplateDeleteTemplateBody,
-  Op525PostQuestcenterMedicalTemplateUpdateTemplateModernText200,
-  Op525PostQuestcenterMedicalTemplateUpdateTemplateModernTextBody,
-  Op544GetQuestcenterBusinessModelHighRiskSettingGetRiskType200,
-  Op544GetQuestcenterBusinessModelHighRiskSettingGetRiskTypeParams,
-  Op545GetQuestcenterBusinessModelHighRiskSettingGetNodeList200,
-  Op545GetQuestcenterBusinessModelHighRiskSettingGetNodeListParams,
-  Op546GetQuestcenterBusinessModelHighRiskSettingGetRankColor200,
-  Op547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode200,
-  Op547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeParams,
-  Op548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueList200,
-  Op548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueListParams,
-  Op549GetQuestcenterBusinessModelHighRiskSettingGetFactorPage200,
-  Op549GetQuestcenterBusinessModelHighRiskSettingGetFactorPageParams,
-  Op550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetail200,
-  Op550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetailParams,
-  Op551PostQuestcenterBusinessModelHighRiskSettingUpdateFactor200,
-  Op551PostQuestcenterBusinessModelHighRiskSettingUpdateFactorBody,
-  Op552PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroup200,
-  Op552PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroupBody,
-  Op553PostQuestcenterBusinessModelHighRiskUsingCalculateHighRisk200,
-  Op553PostQuestcenterBusinessModelHighRiskUsingCalculateHighRiskBody,
-  Op554PostQuestcenterBusinessModelHighRiskSettingGetBindNode200,
-  Op554PostQuestcenterBusinessModelHighRiskSettingGetBindNodeBody,
-  Op562GetQuestcenterBusinessModelEwsModelEwsNodeList200,
-  Op562GetQuestcenterBusinessModelEwsModelEwsNodeListParams,
-  Op565PostQuestcenterBusinessModelEwsModelSave200,
-  Op565PostQuestcenterBusinessModelEwsModelSaveBody,
-  Op569GetQuestcenterBusinessModelEwsModelPreview200,
-  Op569GetQuestcenterBusinessModelEwsModelPreviewParams,
-  Op579GetQuestcenterBusinessModelEwsConfigFieldList200,
-  Op579GetQuestcenterBusinessModelEwsConfigFieldListParams,
-  Op584GetQuestcenterBusinessModelEwsModelList200,
-  Op584GetQuestcenterBusinessModelEwsModelListParams,
-  Op613GetQuestcenterBusinessModelEwsModelPage200,
-  Op613GetQuestcenterBusinessModelEwsModelPageParams,
-  Op614PostQuestcenterBusinessModelEwsModelBind200,
-  Op614PostQuestcenterBusinessModelEwsModelBindBody,
-  Op615GetQuestcenterBusinessModelEwsModelRefresh200,
-  Op615GetQuestcenterBusinessModelEwsModelRefreshParams,
-  Op616PostQuestcenterBusinessModelEwsModelState200,
-  Op616PostQuestcenterBusinessModelEwsModelStateBody,
-  Op617GetQuestcenterBusinessModelEwsConfigOperatorList200,
-  Op617GetQuestcenterBusinessModelEwsConfigOperatorListParams,
-  Op618GetQuestcenterBusinessModelEwsConfigOperatorTypeList200,
-  Op626GetQuestcenterBusinessModelEwsModelEwsNodeDetail200,
-  Op626GetQuestcenterBusinessModelEwsModelEwsNodeDetailParams,
-  Op711PostQuestcenterAppliedTemplateGetSubjectDept200,
-  Op711PostQuestcenterAppliedTemplateGetSubjectDeptBody,
-  Op711PostQuestcenterInformedTemplateGetSubjectDept200,
-  Op711PostQuestcenterInformedTemplateGetSubjectDeptBody,
-  Op711PostQuestcenterRecordTemplateGetSubjectDept200,
-  Op711PostQuestcenterRecordTemplateGetSubjectDeptBody,
-  Op846GetQuestcenterDocumentTemplateTreeGetTreeDirList200,
-  Op1025GetQuestcenterTemplateGetTreeDirList200,
-  Op1026PostQuestcenterTemplateGetSubjectDept200,
-  Op1026PostQuestcenterTemplateGetSubjectDeptBody,
+  GetQuestcenterBusinessModelEwsConfigFieldList200,
+  GetQuestcenterBusinessModelEwsConfigFieldListParams,
+  GetQuestcenterBusinessModelEwsConfigOperatorList200,
+  GetQuestcenterBusinessModelEwsConfigOperatorListParams,
+  GetQuestcenterBusinessModelEwsConfigOperatorTypeList200,
+  GetQuestcenterBusinessModelEwsModelEwsNodeDetail200,
+  GetQuestcenterBusinessModelEwsModelEwsNodeDetailParams,
+  GetQuestcenterBusinessModelEwsModelEwsNodeList200,
+  GetQuestcenterBusinessModelEwsModelEwsNodeListParams,
+  GetQuestcenterBusinessModelEwsModelList200,
+  GetQuestcenterBusinessModelEwsModelListParams,
+  GetQuestcenterBusinessModelEwsModelPage200,
+  GetQuestcenterBusinessModelEwsModelPageParams,
+  GetQuestcenterBusinessModelEwsModelPreview200,
+  GetQuestcenterBusinessModelEwsModelPreviewParams,
+  GetQuestcenterBusinessModelEwsModelRefresh200,
+  GetQuestcenterBusinessModelEwsModelRefreshParams,
+  GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode200,
+  GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeParams,
+  GetQuestcenterBusinessModelHighRiskSettingGetFactorDetail200,
+  GetQuestcenterBusinessModelHighRiskSettingGetFactorDetailParams,
+  GetQuestcenterBusinessModelHighRiskSettingGetFactorPage200,
+  GetQuestcenterBusinessModelHighRiskSettingGetFactorPageParams,
+  GetQuestcenterBusinessModelHighRiskSettingGetNodeList200,
+  GetQuestcenterBusinessModelHighRiskSettingGetNodeListParams,
+  GetQuestcenterBusinessModelHighRiskSettingGetRangeValueList200,
+  GetQuestcenterBusinessModelHighRiskSettingGetRangeValueListParams,
+  GetQuestcenterBusinessModelHighRiskSettingGetRankColor200,
+  GetQuestcenterBusinessModelHighRiskSettingGetRiskType200,
+  GetQuestcenterBusinessModelHighRiskSettingGetRiskTypeParams,
+  GetQuestcenterDocumentTemplateTreeGetTreeDirList200,
+  GetQuestcenterInformedTemplateGetMedicalTemplateList200,
+  GetQuestcenterInformedTemplateGetMedicalTemplateListParams,
+  GetQuestcenterInformedTemplateGetNextStep200,
+  GetQuestcenterInformedTemplateGetNextStepParams,
+  GetQuestcenterInformedTemplateGetTemplateDetail200,
+  GetQuestcenterInformedTemplateGetTemplateDetailByMedicalId200,
+  GetQuestcenterInformedTemplateGetTemplateDetailByMedicalIdParams,
+  GetQuestcenterInformedTemplateGetTemplateDetailByPaperId200,
+  GetQuestcenterInformedTemplateGetTemplateDetailByPaperIdParams,
+  GetQuestcenterInformedTemplateGetTemplateDetailParams,
+  GetQuestcenterInformedTemplateGetTemplateHistoryList200,
+  GetQuestcenterInformedTemplateGetTemplateHistoryListParams,
+  GetQuestcenterInformedTemplateGetTemplateList200,
+  GetQuestcenterInformedTemplateGetTemplateListParams,
+  GetQuestcenterMedicalTemplageDepaManageFlushDepaRecords200,
+  GetQuestcenterMedicalTemplageDepaManageGetConfig200,
+  GetQuestcenterMedicalTemplageDepaManageGetDepaList200,
+  GetQuestcenterMedicalTemplageDepaManageGetDepaListParams,
+  GetQuestcenterMedicalTemplateFindParagraphCodeList200,
+  GetQuestcenterMedicalTemplateFindParagraphCodeListParams,
+  GetQuestcenterMedicalTemplateFindParagraphCodeTree200,
+  GetQuestcenterMedicalTemplateFindParagraphCodeTreeParams,
+  GetQuestcenterMedicalTemplateGetSearchTemplateDept200,
+  GetQuestcenterMedicalTemplateGetSearchTemplateDeptParams,
+  GetQuestcenterMedicalTemplateGetTemplateDepaList200,
+  GetQuestcenterMedicalTemplateGetTemplateDepaListParams,
+  GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalId200,
+  GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdParams,
+  GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateId200,
+  GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdParams,
+  GetQuestcenterMedicalTemplateGetTemplateHistoryList200,
+  GetQuestcenterMedicalTemplateGetTemplateHistoryListParams,
+  GetQuestcenterMedicalTemplateGetTemplateList200,
+  GetQuestcenterMedicalTemplateGetTemplateListParams,
+  GetQuestcenterMedicalTextTemplateGetTemplateList200,
+  GetQuestcenterMedicalTextTemplateGetTemplateListParams,
+  GetQuestcenterMedicalTextTemplateGetTemplatePage200,
+  GetQuestcenterMedicalTextTemplateGetTemplatePageParams,
+  GetQuestcenterTemplateGetTemplateDetail200,
+  GetQuestcenterTemplateGetTemplateDetailByPaperId200,
+  GetQuestcenterTemplateGetTemplateDetailByPaperIdParams,
+  GetQuestcenterTemplateGetTemplateDetailParams,
+  GetQuestcenterTemplateGetTemplateHistoryList200,
+  GetQuestcenterTemplateGetTemplateHistoryListParams,
+  GetQuestcenterTemplateGetTemplateList200,
+  GetQuestcenterTemplateGetTemplateListParams,
+  GetQuestcenterTemplateGetTreeDirList200,
+  PostQuestcenterAppliedTemplateGetSubjectDept200,
+  PostQuestcenterAppliedTemplateGetSubjectDeptBody,
+  PostQuestcenterBusinessModelEwsModelBind200,
+  PostQuestcenterBusinessModelEwsModelBindBody,
+  PostQuestcenterBusinessModelEwsModelSave200,
+  PostQuestcenterBusinessModelEwsModelSaveBody,
+  PostQuestcenterBusinessModelEwsModelState200,
+  PostQuestcenterBusinessModelEwsModelStateBody,
+  PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroup200,
+  PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroupBody,
+  PostQuestcenterBusinessModelHighRiskSettingGetBindNode200,
+  PostQuestcenterBusinessModelHighRiskSettingGetBindNodeBody,
+  PostQuestcenterBusinessModelHighRiskSettingUpdateFactor200,
+  PostQuestcenterBusinessModelHighRiskSettingUpdateFactorBody,
+  PostQuestcenterBusinessModelHighRiskUsingCalculateHighRisk200,
+  PostQuestcenterBusinessModelHighRiskUsingCalculateHighRiskBody,
+  PostQuestcenterInformedTemplateCloseTemplate200,
+  PostQuestcenterInformedTemplateCloseTemplateBody,
+  PostQuestcenterInformedTemplateCreateTemplate200,
+  PostQuestcenterInformedTemplateCreateTemplateBody,
+  PostQuestcenterInformedTemplateDeleteTemplate200,
+  PostQuestcenterInformedTemplateDeleteTemplateBody,
+  PostQuestcenterInformedTemplateGetSubjectDept200,
+  PostQuestcenterInformedTemplateGetSubjectDeptBody,
+  PostQuestcenterInformedTemplatePublishTemplate200,
+  PostQuestcenterInformedTemplatePublishTemplateBody,
+  PostQuestcenterInformedTemplateUpdateTemplate200,
+  PostQuestcenterInformedTemplateUpdateTemplateBody,
+  PostQuestcenterMedicalTemplageDepaManageAddDept200,
+  PostQuestcenterMedicalTemplageDepaManageAddDeptBody,
+  PostQuestcenterMedicalTemplageDepaManageDeleteDept200,
+  PostQuestcenterMedicalTemplageDepaManageDeleteDeptBody,
+  PostQuestcenterMedicalTemplageDepaManageUpdateDept200,
+  PostQuestcenterMedicalTemplageDepaManageUpdateDeptBody,
+  PostQuestcenterMedicalTemplateAddTemplateDepa200,
+  PostQuestcenterMedicalTemplateAddTemplateDepaBody,
+  PostQuestcenterMedicalTemplateCloseTemplate200,
+  PostQuestcenterMedicalTemplateCloseTemplateBody,
+  PostQuestcenterMedicalTemplateCreateParagraphNode200,
+  PostQuestcenterMedicalTemplateCreateParagraphNodeBatch200,
+  PostQuestcenterMedicalTemplateCreateParagraphNodeBatchBody,
+  PostQuestcenterMedicalTemplateCreateParagraphNodeBody,
+  PostQuestcenterMedicalTemplateCreateParagraphNodeTree200,
+  PostQuestcenterMedicalTemplateCreateParagraphNodeTreeBody,
+  PostQuestcenterMedicalTemplateCreateTemplate200,
+  PostQuestcenterMedicalTemplateCreateTemplateBody,
+  PostQuestcenterMedicalTemplateCreateTemplateDefault200,
+  PostQuestcenterMedicalTemplateCreateTemplateDefaultBody,
+  PostQuestcenterMedicalTemplateCreateTemplateParagraph200,
+  PostQuestcenterMedicalTemplateCreateTemplateParagraphBody,
+  PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecify200,
+  PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyBody,
+  PostQuestcenterMedicalTemplateDeleteParagraphNode200,
+  PostQuestcenterMedicalTemplateDeleteParagraphNodeBody,
+  PostQuestcenterMedicalTemplateDeleteTemplate200,
+  PostQuestcenterMedicalTemplateDeleteTemplateBody,
+  PostQuestcenterMedicalTemplateDeleteTemplateDepa200,
+  PostQuestcenterMedicalTemplateDeleteTemplateDepaBody,
+  PostQuestcenterMedicalTemplateDeleteTemplateParagraph200,
+  PostQuestcenterMedicalTemplateDeleteTemplateParagraphBody,
+  PostQuestcenterMedicalTemplatePublishTemplate200,
+  PostQuestcenterMedicalTemplatePublishTemplateBody,
+  PostQuestcenterMedicalTemplateUpdateParagraphNodeParams200,
+  PostQuestcenterMedicalTemplateUpdateParagraphNodeParamsBody,
+  PostQuestcenterMedicalTemplateUpdateTemplate200,
+  PostQuestcenterMedicalTemplateUpdateTemplateBody,
+  PostQuestcenterMedicalTemplateUpdateTemplateModernText200,
+  PostQuestcenterMedicalTemplateUpdateTemplateModernTextBody,
+  PostQuestcenterMedicalTemplateUpdateTemplateParagraph200,
+  PostQuestcenterMedicalTemplateUpdateTemplateParagraphBody,
+  PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernText200,
+  PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextBody,
+  PostQuestcenterMedicalTextTemplateCreateTemplate200,
+  PostQuestcenterMedicalTextTemplateCreateTemplateBody,
+  PostQuestcenterMedicalTextTemplateDeleteTemplate200,
+  PostQuestcenterMedicalTextTemplateDeleteTemplateBody,
+  PostQuestcenterMedicalTextTemplateUpdateTemplate200,
+  PostQuestcenterMedicalTextTemplateUpdateTemplateBody,
+  PostQuestcenterRecordTemplateGetSubjectDept200,
+  PostQuestcenterRecordTemplateGetSubjectDeptBody,
+  PostQuestcenterTemplateCheckAndCreateParams200,
+  PostQuestcenterTemplateCheckAndCreateParamsBody,
+  PostQuestcenterTemplateCloseTemplate200,
+  PostQuestcenterTemplateCloseTemplateBody,
+  PostQuestcenterTemplateCreateTemplate200,
+  PostQuestcenterTemplateCreateTemplateBody,
+  PostQuestcenterTemplateDeleteTemplate200,
+  PostQuestcenterTemplateDeleteTemplateBody,
+  PostQuestcenterTemplateGetSubjectDept200,
+  PostQuestcenterTemplateGetSubjectDeptBody,
+  PostQuestcenterTemplatePublishTemplate200,
+  PostQuestcenterTemplatePublishTemplateBody,
+  PostQuestcenterTemplateUpdateTemplate200,
+  PostQuestcenterTemplateUpdateTemplateBody,
 } from './schemas'
-export type op711PostQuestcenterAppliedTemplateGetSubjectDeptResponse200 = {
-  data: Op711PostQuestcenterAppliedTemplateGetSubjectDept200
+export type postQuestcenterAppliedTemplateGetSubjectDeptResponse200 = {
+  data: PostQuestcenterAppliedTemplateGetSubjectDept200
   status: 200
 }
 
-export type op711PostQuestcenterAppliedTemplateGetSubjectDeptResponseSuccess =
-  op711PostQuestcenterAppliedTemplateGetSubjectDeptResponse200 & {
+export type postQuestcenterAppliedTemplateGetSubjectDeptResponseSuccess =
+  postQuestcenterAppliedTemplateGetSubjectDeptResponse200 & {
     headers: Headers
   }
 
-export type op711PostQuestcenterAppliedTemplateGetSubjectDeptResponse =
-  op711PostQuestcenterAppliedTemplateGetSubjectDeptResponseSuccess
+export type postQuestcenterAppliedTemplateGetSubjectDeptResponse =
+  postQuestcenterAppliedTemplateGetSubjectDeptResponseSuccess
 
-export const getOp711PostQuestcenterAppliedTemplateGetSubjectDeptUrl = () => {
+export const getPostQuestcenterAppliedTemplateGetSubjectDeptUrl = () => {
   return `/questcenter/applied_template/get_subject_dept`
 }
 
@@ -219,38 +219,38 @@ export const getOp711PostQuestcenterAppliedTemplateGetSubjectDeptUrl = () => {
  * 接口说明：专科申请单
  * @summary 获取全部学科列表(知情告知、记录单、专科申请单)
  */
-export const op711PostQuestcenterAppliedTemplateGetSubjectDept = async (
-  op711PostQuestcenterAppliedTemplateGetSubjectDeptBody?: Op711PostQuestcenterAppliedTemplateGetSubjectDeptBody,
+export const postQuestcenterAppliedTemplateGetSubjectDept = async (
+  postQuestcenterAppliedTemplateGetSubjectDeptBody?: PostQuestcenterAppliedTemplateGetSubjectDeptBody,
   options?: RequestInit
-): Promise<op711PostQuestcenterAppliedTemplateGetSubjectDeptResponse> => {
-  return customFetch<op711PostQuestcenterAppliedTemplateGetSubjectDeptResponse>(
-    getOp711PostQuestcenterAppliedTemplateGetSubjectDeptUrl(),
+): Promise<postQuestcenterAppliedTemplateGetSubjectDeptResponse> => {
+  return customFetch<postQuestcenterAppliedTemplateGetSubjectDeptResponse>(
+    getPostQuestcenterAppliedTemplateGetSubjectDeptUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op711PostQuestcenterAppliedTemplateGetSubjectDeptBody),
+      body: JSON.stringify(postQuestcenterAppliedTemplateGetSubjectDeptBody),
     }
   )
 }
 
-export const getOp711PostQuestcenterAppliedTemplateGetSubjectDeptMutationOptions = <
+export const getPostQuestcenterAppliedTemplateGetSubjectDeptMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op711PostQuestcenterAppliedTemplateGetSubjectDept>>,
+    Awaited<ReturnType<typeof postQuestcenterAppliedTemplateGetSubjectDept>>,
     TError,
-    { data?: Op711PostQuestcenterAppliedTemplateGetSubjectDeptBody },
+    { data?: PostQuestcenterAppliedTemplateGetSubjectDeptBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op711PostQuestcenterAppliedTemplateGetSubjectDept>>,
+  Awaited<ReturnType<typeof postQuestcenterAppliedTemplateGetSubjectDept>>,
   TError,
-  { data?: Op711PostQuestcenterAppliedTemplateGetSubjectDeptBody },
+  { data?: PostQuestcenterAppliedTemplateGetSubjectDeptBody },
   TContext
 > => {
-  const mutationKey = ['op711PostQuestcenterAppliedTemplateGetSubjectDept']
+  const mutationKey = ['postQuestcenterAppliedTemplateGetSubjectDept']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -258,68 +258,68 @@ export const getOp711PostQuestcenterAppliedTemplateGetSubjectDeptMutationOptions
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op711PostQuestcenterAppliedTemplateGetSubjectDept>>,
-    { data?: Op711PostQuestcenterAppliedTemplateGetSubjectDeptBody }
+    Awaited<ReturnType<typeof postQuestcenterAppliedTemplateGetSubjectDept>>,
+    { data?: PostQuestcenterAppliedTemplateGetSubjectDeptBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op711PostQuestcenterAppliedTemplateGetSubjectDept(data)
+    return postQuestcenterAppliedTemplateGetSubjectDept(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op711PostQuestcenterAppliedTemplateGetSubjectDeptMutationResult = NonNullable<
-  Awaited<ReturnType<typeof op711PostQuestcenterAppliedTemplateGetSubjectDept>>
+export type PostQuestcenterAppliedTemplateGetSubjectDeptMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterAppliedTemplateGetSubjectDept>>
 >
-export type Op711PostQuestcenterAppliedTemplateGetSubjectDeptMutationBody =
-  | Op711PostQuestcenterAppliedTemplateGetSubjectDeptBody
+export type PostQuestcenterAppliedTemplateGetSubjectDeptMutationBody =
+  | PostQuestcenterAppliedTemplateGetSubjectDeptBody
   | undefined
-export type Op711PostQuestcenterAppliedTemplateGetSubjectDeptMutationError = ErrorType<unknown>
+export type PostQuestcenterAppliedTemplateGetSubjectDeptMutationError = ErrorType<unknown>
 
 /**
  * @summary 获取全部学科列表(知情告知、记录单、专科申请单)
  */
-export const useOp711PostQuestcenterAppliedTemplateGetSubjectDept = <
+export const usePostQuestcenterAppliedTemplateGetSubjectDept = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op711PostQuestcenterAppliedTemplateGetSubjectDept>>,
+      Awaited<ReturnType<typeof postQuestcenterAppliedTemplateGetSubjectDept>>,
       TError,
-      { data?: Op711PostQuestcenterAppliedTemplateGetSubjectDeptBody },
+      { data?: PostQuestcenterAppliedTemplateGetSubjectDeptBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op711PostQuestcenterAppliedTemplateGetSubjectDept>>,
+  Awaited<ReturnType<typeof postQuestcenterAppliedTemplateGetSubjectDept>>,
   TError,
-  { data?: Op711PostQuestcenterAppliedTemplateGetSubjectDeptBody },
+  { data?: PostQuestcenterAppliedTemplateGetSubjectDeptBody },
   TContext
 > => {
   return useMutation(
-    getOp711PostQuestcenterAppliedTemplateGetSubjectDeptMutationOptions(options),
+    getPostQuestcenterAppliedTemplateGetSubjectDeptMutationOptions(options),
     queryClient
   )
 }
 
-export type op579GetQuestcenterBusinessModelEwsConfigFieldListResponse200 = {
-  data: Op579GetQuestcenterBusinessModelEwsConfigFieldList200
+export type getQuestcenterBusinessModelEwsConfigFieldListResponse200 = {
+  data: GetQuestcenterBusinessModelEwsConfigFieldList200
   status: 200
 }
 
-export type op579GetQuestcenterBusinessModelEwsConfigFieldListResponseSuccess =
-  op579GetQuestcenterBusinessModelEwsConfigFieldListResponse200 & {
+export type getQuestcenterBusinessModelEwsConfigFieldListResponseSuccess =
+  getQuestcenterBusinessModelEwsConfigFieldListResponse200 & {
     headers: Headers
   }
 
-export type op579GetQuestcenterBusinessModelEwsConfigFieldListResponse =
-  op579GetQuestcenterBusinessModelEwsConfigFieldListResponseSuccess
+export type getQuestcenterBusinessModelEwsConfigFieldListResponse =
+  getQuestcenterBusinessModelEwsConfigFieldListResponseSuccess
 
-export const getOp579GetQuestcenterBusinessModelEwsConfigFieldListUrl = (
-  params: Op579GetQuestcenterBusinessModelEwsConfigFieldListParams
+export const getGetQuestcenterBusinessModelEwsConfigFieldListUrl = (
+  params: GetQuestcenterBusinessModelEwsConfigFieldListParams
 ) => {
   const normalizedParams = new URLSearchParams()
 
@@ -340,12 +340,12 @@ export const getOp579GetQuestcenterBusinessModelEwsConfigFieldListUrl = (
  * 预警模型-查询
  * @summary 预警模型-查询
  */
-export const op579GetQuestcenterBusinessModelEwsConfigFieldList = async (
-  params: Op579GetQuestcenterBusinessModelEwsConfigFieldListParams,
+export const getQuestcenterBusinessModelEwsConfigFieldList = async (
+  params: GetQuestcenterBusinessModelEwsConfigFieldListParams,
   options?: RequestInit
-): Promise<op579GetQuestcenterBusinessModelEwsConfigFieldListResponse> => {
-  return customFetch<op579GetQuestcenterBusinessModelEwsConfigFieldListResponse>(
-    getOp579GetQuestcenterBusinessModelEwsConfigFieldListUrl(params),
+): Promise<getQuestcenterBusinessModelEwsConfigFieldListResponse> => {
+  return customFetch<getQuestcenterBusinessModelEwsConfigFieldListResponse>(
+    getGetQuestcenterBusinessModelEwsConfigFieldListUrl(params),
     {
       ...options,
       method: 'GET',
@@ -353,21 +353,21 @@ export const op579GetQuestcenterBusinessModelEwsConfigFieldList = async (
   )
 }
 
-export const getOp579GetQuestcenterBusinessModelEwsConfigFieldListQueryKey = (
-  params?: Op579GetQuestcenterBusinessModelEwsConfigFieldListParams
+export const getGetQuestcenterBusinessModelEwsConfigFieldListQueryKey = (
+  params?: GetQuestcenterBusinessModelEwsConfigFieldListParams
 ) => {
   return [`/questcenter/business_model/ews/config/field/list`, ...(params ? [params] : [])] as const
 }
 
-export const getOp579GetQuestcenterBusinessModelEwsConfigFieldListQueryOptions = <
-  TData = Awaited<ReturnType<typeof op579GetQuestcenterBusinessModelEwsConfigFieldList>>,
+export const getGetQuestcenterBusinessModelEwsConfigFieldListQueryOptions = <
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigFieldList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op579GetQuestcenterBusinessModelEwsConfigFieldListParams,
+  params: GetQuestcenterBusinessModelEwsConfigFieldListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op579GetQuestcenterBusinessModelEwsConfigFieldList>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigFieldList>>,
         TError,
         TData
       >
@@ -377,81 +377,81 @@ export const getOp579GetQuestcenterBusinessModelEwsConfigFieldListQueryOptions =
   const { query: queryOptions } = options ?? {}
 
   const queryKey =
-    queryOptions?.queryKey ?? getOp579GetQuestcenterBusinessModelEwsConfigFieldListQueryKey(params)
+    queryOptions?.queryKey ?? getGetQuestcenterBusinessModelEwsConfigFieldListQueryKey(params)
 
   const queryFn: QueryFunction<
-    Awaited<ReturnType<typeof op579GetQuestcenterBusinessModelEwsConfigFieldList>>
-  > = ({ signal }) => op579GetQuestcenterBusinessModelEwsConfigFieldList(params, { signal })
+    Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigFieldList>>
+  > = ({ signal }) => getQuestcenterBusinessModelEwsConfigFieldList(params, { signal })
 
   return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof op579GetQuestcenterBusinessModelEwsConfigFieldList>>,
+    Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigFieldList>>,
     TError,
     TData
   > & { queryKey: DataTag<QueryKey, TData, TError> }
 }
 
-export type Op579GetQuestcenterBusinessModelEwsConfigFieldListQueryResult = NonNullable<
-  Awaited<ReturnType<typeof op579GetQuestcenterBusinessModelEwsConfigFieldList>>
+export type GetQuestcenterBusinessModelEwsConfigFieldListQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigFieldList>>
 >
-export type Op579GetQuestcenterBusinessModelEwsConfigFieldListQueryError = ErrorType<unknown>
+export type GetQuestcenterBusinessModelEwsConfigFieldListQueryError = ErrorType<unknown>
 
-export function useOp579GetQuestcenterBusinessModelEwsConfigFieldList<
-  TData = Awaited<ReturnType<typeof op579GetQuestcenterBusinessModelEwsConfigFieldList>>,
+export function useGetQuestcenterBusinessModelEwsConfigFieldList<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigFieldList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op579GetQuestcenterBusinessModelEwsConfigFieldListParams,
+  params: GetQuestcenterBusinessModelEwsConfigFieldListParams,
   options: {
     query: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op579GetQuestcenterBusinessModelEwsConfigFieldList>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigFieldList>>,
         TError,
         TData
       >
     > &
       Pick<
         DefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op579GetQuestcenterBusinessModelEwsConfigFieldList>>,
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigFieldList>>,
           TError,
-          Awaited<ReturnType<typeof op579GetQuestcenterBusinessModelEwsConfigFieldList>>
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigFieldList>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp579GetQuestcenterBusinessModelEwsConfigFieldList<
-  TData = Awaited<ReturnType<typeof op579GetQuestcenterBusinessModelEwsConfigFieldList>>,
+export function useGetQuestcenterBusinessModelEwsConfigFieldList<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigFieldList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op579GetQuestcenterBusinessModelEwsConfigFieldListParams,
+  params: GetQuestcenterBusinessModelEwsConfigFieldListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op579GetQuestcenterBusinessModelEwsConfigFieldList>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigFieldList>>,
         TError,
         TData
       >
     > &
       Pick<
         UndefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op579GetQuestcenterBusinessModelEwsConfigFieldList>>,
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigFieldList>>,
           TError,
-          Awaited<ReturnType<typeof op579GetQuestcenterBusinessModelEwsConfigFieldList>>
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigFieldList>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp579GetQuestcenterBusinessModelEwsConfigFieldList<
-  TData = Awaited<ReturnType<typeof op579GetQuestcenterBusinessModelEwsConfigFieldList>>,
+export function useGetQuestcenterBusinessModelEwsConfigFieldList<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigFieldList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op579GetQuestcenterBusinessModelEwsConfigFieldListParams,
+  params: GetQuestcenterBusinessModelEwsConfigFieldListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op579GetQuestcenterBusinessModelEwsConfigFieldList>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigFieldList>>,
         TError,
         TData
       >
@@ -463,15 +463,15 @@ export function useOp579GetQuestcenterBusinessModelEwsConfigFieldList<
  * @summary 预警模型-查询
  */
 
-export function useOp579GetQuestcenterBusinessModelEwsConfigFieldList<
-  TData = Awaited<ReturnType<typeof op579GetQuestcenterBusinessModelEwsConfigFieldList>>,
+export function useGetQuestcenterBusinessModelEwsConfigFieldList<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigFieldList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op579GetQuestcenterBusinessModelEwsConfigFieldListParams,
+  params: GetQuestcenterBusinessModelEwsConfigFieldListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op579GetQuestcenterBusinessModelEwsConfigFieldList>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigFieldList>>,
         TError,
         TData
       >
@@ -479,10 +479,7 @@ export function useOp579GetQuestcenterBusinessModelEwsConfigFieldList<
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
-  const queryOptions = getOp579GetQuestcenterBusinessModelEwsConfigFieldListQueryOptions(
-    params,
-    options
-  )
+  const queryOptions = getGetQuestcenterBusinessModelEwsConfigFieldListQueryOptions(params, options)
 
   const query = useQuery(queryOptions, queryClient) as UseQueryResult<TData, TError> & {
     queryKey: DataTag<QueryKey, TData, TError>
@@ -491,21 +488,21 @@ export function useOp579GetQuestcenterBusinessModelEwsConfigFieldList<
   return { ...query, queryKey: queryOptions.queryKey }
 }
 
-export type op617GetQuestcenterBusinessModelEwsConfigOperatorListResponse200 = {
-  data: Op617GetQuestcenterBusinessModelEwsConfigOperatorList200
+export type getQuestcenterBusinessModelEwsConfigOperatorListResponse200 = {
+  data: GetQuestcenterBusinessModelEwsConfigOperatorList200
   status: 200
 }
 
-export type op617GetQuestcenterBusinessModelEwsConfigOperatorListResponseSuccess =
-  op617GetQuestcenterBusinessModelEwsConfigOperatorListResponse200 & {
+export type getQuestcenterBusinessModelEwsConfigOperatorListResponseSuccess =
+  getQuestcenterBusinessModelEwsConfigOperatorListResponse200 & {
     headers: Headers
   }
 
-export type op617GetQuestcenterBusinessModelEwsConfigOperatorListResponse =
-  op617GetQuestcenterBusinessModelEwsConfigOperatorListResponseSuccess
+export type getQuestcenterBusinessModelEwsConfigOperatorListResponse =
+  getQuestcenterBusinessModelEwsConfigOperatorListResponseSuccess
 
-export const getOp617GetQuestcenterBusinessModelEwsConfigOperatorListUrl = (
-  params?: Op617GetQuestcenterBusinessModelEwsConfigOperatorListParams
+export const getGetQuestcenterBusinessModelEwsConfigOperatorListUrl = (
+  params?: GetQuestcenterBusinessModelEwsConfigOperatorListParams
 ) => {
   const normalizedParams = new URLSearchParams()
 
@@ -526,12 +523,12 @@ export const getOp617GetQuestcenterBusinessModelEwsConfigOperatorListUrl = (
  * 运算符-列表查询
  * @summary 运算符-列表查询
  */
-export const op617GetQuestcenterBusinessModelEwsConfigOperatorList = async (
-  params?: Op617GetQuestcenterBusinessModelEwsConfigOperatorListParams,
+export const getQuestcenterBusinessModelEwsConfigOperatorList = async (
+  params?: GetQuestcenterBusinessModelEwsConfigOperatorListParams,
   options?: RequestInit
-): Promise<op617GetQuestcenterBusinessModelEwsConfigOperatorListResponse> => {
-  return customFetch<op617GetQuestcenterBusinessModelEwsConfigOperatorListResponse>(
-    getOp617GetQuestcenterBusinessModelEwsConfigOperatorListUrl(params),
+): Promise<getQuestcenterBusinessModelEwsConfigOperatorListResponse> => {
+  return customFetch<getQuestcenterBusinessModelEwsConfigOperatorListResponse>(
+    getGetQuestcenterBusinessModelEwsConfigOperatorListUrl(params),
     {
       ...options,
       method: 'GET',
@@ -539,8 +536,8 @@ export const op617GetQuestcenterBusinessModelEwsConfigOperatorList = async (
   )
 }
 
-export const getOp617GetQuestcenterBusinessModelEwsConfigOperatorListQueryKey = (
-  params?: Op617GetQuestcenterBusinessModelEwsConfigOperatorListParams
+export const getGetQuestcenterBusinessModelEwsConfigOperatorListQueryKey = (
+  params?: GetQuestcenterBusinessModelEwsConfigOperatorListParams
 ) => {
   return [
     `/questcenter/business_model/ews/config/operator/list`,
@@ -548,15 +545,15 @@ export const getOp617GetQuestcenterBusinessModelEwsConfigOperatorListQueryKey = 
   ] as const
 }
 
-export const getOp617GetQuestcenterBusinessModelEwsConfigOperatorListQueryOptions = <
-  TData = Awaited<ReturnType<typeof op617GetQuestcenterBusinessModelEwsConfigOperatorList>>,
+export const getGetQuestcenterBusinessModelEwsConfigOperatorListQueryOptions = <
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigOperatorList>>,
   TError = ErrorType<unknown>,
 >(
-  params?: Op617GetQuestcenterBusinessModelEwsConfigOperatorListParams,
+  params?: GetQuestcenterBusinessModelEwsConfigOperatorListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op617GetQuestcenterBusinessModelEwsConfigOperatorList>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigOperatorList>>,
         TError,
         TData
       >
@@ -566,82 +563,81 @@ export const getOp617GetQuestcenterBusinessModelEwsConfigOperatorListQueryOption
   const { query: queryOptions } = options ?? {}
 
   const queryKey =
-    queryOptions?.queryKey ??
-    getOp617GetQuestcenterBusinessModelEwsConfigOperatorListQueryKey(params)
+    queryOptions?.queryKey ?? getGetQuestcenterBusinessModelEwsConfigOperatorListQueryKey(params)
 
   const queryFn: QueryFunction<
-    Awaited<ReturnType<typeof op617GetQuestcenterBusinessModelEwsConfigOperatorList>>
-  > = ({ signal }) => op617GetQuestcenterBusinessModelEwsConfigOperatorList(params, { signal })
+    Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigOperatorList>>
+  > = ({ signal }) => getQuestcenterBusinessModelEwsConfigOperatorList(params, { signal })
 
   return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof op617GetQuestcenterBusinessModelEwsConfigOperatorList>>,
+    Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigOperatorList>>,
     TError,
     TData
   > & { queryKey: DataTag<QueryKey, TData, TError> }
 }
 
-export type Op617GetQuestcenterBusinessModelEwsConfigOperatorListQueryResult = NonNullable<
-  Awaited<ReturnType<typeof op617GetQuestcenterBusinessModelEwsConfigOperatorList>>
+export type GetQuestcenterBusinessModelEwsConfigOperatorListQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigOperatorList>>
 >
-export type Op617GetQuestcenterBusinessModelEwsConfigOperatorListQueryError = ErrorType<unknown>
+export type GetQuestcenterBusinessModelEwsConfigOperatorListQueryError = ErrorType<unknown>
 
-export function useOp617GetQuestcenterBusinessModelEwsConfigOperatorList<
-  TData = Awaited<ReturnType<typeof op617GetQuestcenterBusinessModelEwsConfigOperatorList>>,
+export function useGetQuestcenterBusinessModelEwsConfigOperatorList<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigOperatorList>>,
   TError = ErrorType<unknown>,
 >(
-  params: undefined | Op617GetQuestcenterBusinessModelEwsConfigOperatorListParams,
+  params: undefined | GetQuestcenterBusinessModelEwsConfigOperatorListParams,
   options: {
     query: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op617GetQuestcenterBusinessModelEwsConfigOperatorList>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigOperatorList>>,
         TError,
         TData
       >
     > &
       Pick<
         DefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op617GetQuestcenterBusinessModelEwsConfigOperatorList>>,
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigOperatorList>>,
           TError,
-          Awaited<ReturnType<typeof op617GetQuestcenterBusinessModelEwsConfigOperatorList>>
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigOperatorList>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp617GetQuestcenterBusinessModelEwsConfigOperatorList<
-  TData = Awaited<ReturnType<typeof op617GetQuestcenterBusinessModelEwsConfigOperatorList>>,
+export function useGetQuestcenterBusinessModelEwsConfigOperatorList<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigOperatorList>>,
   TError = ErrorType<unknown>,
 >(
-  params?: Op617GetQuestcenterBusinessModelEwsConfigOperatorListParams,
+  params?: GetQuestcenterBusinessModelEwsConfigOperatorListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op617GetQuestcenterBusinessModelEwsConfigOperatorList>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigOperatorList>>,
         TError,
         TData
       >
     > &
       Pick<
         UndefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op617GetQuestcenterBusinessModelEwsConfigOperatorList>>,
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigOperatorList>>,
           TError,
-          Awaited<ReturnType<typeof op617GetQuestcenterBusinessModelEwsConfigOperatorList>>
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigOperatorList>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp617GetQuestcenterBusinessModelEwsConfigOperatorList<
-  TData = Awaited<ReturnType<typeof op617GetQuestcenterBusinessModelEwsConfigOperatorList>>,
+export function useGetQuestcenterBusinessModelEwsConfigOperatorList<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigOperatorList>>,
   TError = ErrorType<unknown>,
 >(
-  params?: Op617GetQuestcenterBusinessModelEwsConfigOperatorListParams,
+  params?: GetQuestcenterBusinessModelEwsConfigOperatorListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op617GetQuestcenterBusinessModelEwsConfigOperatorList>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigOperatorList>>,
         TError,
         TData
       >
@@ -653,15 +649,15 @@ export function useOp617GetQuestcenterBusinessModelEwsConfigOperatorList<
  * @summary 运算符-列表查询
  */
 
-export function useOp617GetQuestcenterBusinessModelEwsConfigOperatorList<
-  TData = Awaited<ReturnType<typeof op617GetQuestcenterBusinessModelEwsConfigOperatorList>>,
+export function useGetQuestcenterBusinessModelEwsConfigOperatorList<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigOperatorList>>,
   TError = ErrorType<unknown>,
 >(
-  params?: Op617GetQuestcenterBusinessModelEwsConfigOperatorListParams,
+  params?: GetQuestcenterBusinessModelEwsConfigOperatorListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op617GetQuestcenterBusinessModelEwsConfigOperatorList>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigOperatorList>>,
         TError,
         TData
       >
@@ -669,7 +665,7 @@ export function useOp617GetQuestcenterBusinessModelEwsConfigOperatorList<
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
-  const queryOptions = getOp617GetQuestcenterBusinessModelEwsConfigOperatorListQueryOptions(
+  const queryOptions = getGetQuestcenterBusinessModelEwsConfigOperatorListQueryOptions(
     params,
     options
   )
@@ -681,20 +677,20 @@ export function useOp617GetQuestcenterBusinessModelEwsConfigOperatorList<
   return { ...query, queryKey: queryOptions.queryKey }
 }
 
-export type op618GetQuestcenterBusinessModelEwsConfigOperatorTypeListResponse200 = {
-  data: Op618GetQuestcenterBusinessModelEwsConfigOperatorTypeList200
+export type getQuestcenterBusinessModelEwsConfigOperatorTypeListResponse200 = {
+  data: GetQuestcenterBusinessModelEwsConfigOperatorTypeList200
   status: 200
 }
 
-export type op618GetQuestcenterBusinessModelEwsConfigOperatorTypeListResponseSuccess =
-  op618GetQuestcenterBusinessModelEwsConfigOperatorTypeListResponse200 & {
+export type getQuestcenterBusinessModelEwsConfigOperatorTypeListResponseSuccess =
+  getQuestcenterBusinessModelEwsConfigOperatorTypeListResponse200 & {
     headers: Headers
   }
 
-export type op618GetQuestcenterBusinessModelEwsConfigOperatorTypeListResponse =
-  op618GetQuestcenterBusinessModelEwsConfigOperatorTypeListResponseSuccess
+export type getQuestcenterBusinessModelEwsConfigOperatorTypeListResponse =
+  getQuestcenterBusinessModelEwsConfigOperatorTypeListResponseSuccess
 
-export const getOp618GetQuestcenterBusinessModelEwsConfigOperatorTypeListUrl = () => {
+export const getGetQuestcenterBusinessModelEwsConfigOperatorTypeListUrl = () => {
   return `/questcenter/business_model/ews/config/operator/type/list`
 }
 
@@ -702,11 +698,11 @@ export const getOp618GetQuestcenterBusinessModelEwsConfigOperatorTypeListUrl = (
  * 运算符类型-列表查询
  * @summary 运算符类型-列表查询
  */
-export const op618GetQuestcenterBusinessModelEwsConfigOperatorTypeList = async (
+export const getQuestcenterBusinessModelEwsConfigOperatorTypeList = async (
   options?: RequestInit
-): Promise<op618GetQuestcenterBusinessModelEwsConfigOperatorTypeListResponse> => {
-  return customFetch<op618GetQuestcenterBusinessModelEwsConfigOperatorTypeListResponse>(
-    getOp618GetQuestcenterBusinessModelEwsConfigOperatorTypeListUrl(),
+): Promise<getQuestcenterBusinessModelEwsConfigOperatorTypeListResponse> => {
+  return customFetch<getQuestcenterBusinessModelEwsConfigOperatorTypeListResponse>(
+    getGetQuestcenterBusinessModelEwsConfigOperatorTypeListUrl(),
     {
       ...options,
       method: 'GET',
@@ -714,17 +710,17 @@ export const op618GetQuestcenterBusinessModelEwsConfigOperatorTypeList = async (
   )
 }
 
-export const getOp618GetQuestcenterBusinessModelEwsConfigOperatorTypeListQueryKey = () => {
+export const getGetQuestcenterBusinessModelEwsConfigOperatorTypeListQueryKey = () => {
   return [`/questcenter/business_model/ews/config/operator/type/list`] as const
 }
 
-export const getOp618GetQuestcenterBusinessModelEwsConfigOperatorTypeListQueryOptions = <
-  TData = Awaited<ReturnType<typeof op618GetQuestcenterBusinessModelEwsConfigOperatorTypeList>>,
+export const getGetQuestcenterBusinessModelEwsConfigOperatorTypeListQueryOptions = <
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigOperatorTypeList>>,
   TError = ErrorType<unknown>,
 >(options?: {
   query?: Partial<
     UseQueryOptions<
-      Awaited<ReturnType<typeof op618GetQuestcenterBusinessModelEwsConfigOperatorTypeList>>,
+      Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigOperatorTypeList>>,
       TError,
       TData
     >
@@ -733,78 +729,78 @@ export const getOp618GetQuestcenterBusinessModelEwsConfigOperatorTypeListQueryOp
   const { query: queryOptions } = options ?? {}
 
   const queryKey =
-    queryOptions?.queryKey ?? getOp618GetQuestcenterBusinessModelEwsConfigOperatorTypeListQueryKey()
+    queryOptions?.queryKey ?? getGetQuestcenterBusinessModelEwsConfigOperatorTypeListQueryKey()
 
   const queryFn: QueryFunction<
-    Awaited<ReturnType<typeof op618GetQuestcenterBusinessModelEwsConfigOperatorTypeList>>
-  > = ({ signal }) => op618GetQuestcenterBusinessModelEwsConfigOperatorTypeList({ signal })
+    Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigOperatorTypeList>>
+  > = ({ signal }) => getQuestcenterBusinessModelEwsConfigOperatorTypeList({ signal })
 
   return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof op618GetQuestcenterBusinessModelEwsConfigOperatorTypeList>>,
+    Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigOperatorTypeList>>,
     TError,
     TData
   > & { queryKey: DataTag<QueryKey, TData, TError> }
 }
 
-export type Op618GetQuestcenterBusinessModelEwsConfigOperatorTypeListQueryResult = NonNullable<
-  Awaited<ReturnType<typeof op618GetQuestcenterBusinessModelEwsConfigOperatorTypeList>>
+export type GetQuestcenterBusinessModelEwsConfigOperatorTypeListQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigOperatorTypeList>>
 >
-export type Op618GetQuestcenterBusinessModelEwsConfigOperatorTypeListQueryError = ErrorType<unknown>
+export type GetQuestcenterBusinessModelEwsConfigOperatorTypeListQueryError = ErrorType<unknown>
 
-export function useOp618GetQuestcenterBusinessModelEwsConfigOperatorTypeList<
-  TData = Awaited<ReturnType<typeof op618GetQuestcenterBusinessModelEwsConfigOperatorTypeList>>,
+export function useGetQuestcenterBusinessModelEwsConfigOperatorTypeList<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigOperatorTypeList>>,
   TError = ErrorType<unknown>,
 >(
   options: {
     query: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op618GetQuestcenterBusinessModelEwsConfigOperatorTypeList>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigOperatorTypeList>>,
         TError,
         TData
       >
     > &
       Pick<
         DefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op618GetQuestcenterBusinessModelEwsConfigOperatorTypeList>>,
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigOperatorTypeList>>,
           TError,
-          Awaited<ReturnType<typeof op618GetQuestcenterBusinessModelEwsConfigOperatorTypeList>>
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigOperatorTypeList>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp618GetQuestcenterBusinessModelEwsConfigOperatorTypeList<
-  TData = Awaited<ReturnType<typeof op618GetQuestcenterBusinessModelEwsConfigOperatorTypeList>>,
+export function useGetQuestcenterBusinessModelEwsConfigOperatorTypeList<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigOperatorTypeList>>,
   TError = ErrorType<unknown>,
 >(
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op618GetQuestcenterBusinessModelEwsConfigOperatorTypeList>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigOperatorTypeList>>,
         TError,
         TData
       >
     > &
       Pick<
         UndefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op618GetQuestcenterBusinessModelEwsConfigOperatorTypeList>>,
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigOperatorTypeList>>,
           TError,
-          Awaited<ReturnType<typeof op618GetQuestcenterBusinessModelEwsConfigOperatorTypeList>>
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigOperatorTypeList>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp618GetQuestcenterBusinessModelEwsConfigOperatorTypeList<
-  TData = Awaited<ReturnType<typeof op618GetQuestcenterBusinessModelEwsConfigOperatorTypeList>>,
+export function useGetQuestcenterBusinessModelEwsConfigOperatorTypeList<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigOperatorTypeList>>,
   TError = ErrorType<unknown>,
 >(
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op618GetQuestcenterBusinessModelEwsConfigOperatorTypeList>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigOperatorTypeList>>,
         TError,
         TData
       >
@@ -816,14 +812,14 @@ export function useOp618GetQuestcenterBusinessModelEwsConfigOperatorTypeList<
  * @summary 运算符类型-列表查询
  */
 
-export function useOp618GetQuestcenterBusinessModelEwsConfigOperatorTypeList<
-  TData = Awaited<ReturnType<typeof op618GetQuestcenterBusinessModelEwsConfigOperatorTypeList>>,
+export function useGetQuestcenterBusinessModelEwsConfigOperatorTypeList<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigOperatorTypeList>>,
   TError = ErrorType<unknown>,
 >(
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op618GetQuestcenterBusinessModelEwsConfigOperatorTypeList>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsConfigOperatorTypeList>>,
         TError,
         TData
       >
@@ -831,8 +827,7 @@ export function useOp618GetQuestcenterBusinessModelEwsConfigOperatorTypeList<
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
-  const queryOptions =
-    getOp618GetQuestcenterBusinessModelEwsConfigOperatorTypeListQueryOptions(options)
+  const queryOptions = getGetQuestcenterBusinessModelEwsConfigOperatorTypeListQueryOptions(options)
 
   const query = useQuery(queryOptions, queryClient) as UseQueryResult<TData, TError> & {
     queryKey: DataTag<QueryKey, TData, TError>
@@ -841,20 +836,20 @@ export function useOp618GetQuestcenterBusinessModelEwsConfigOperatorTypeList<
   return { ...query, queryKey: queryOptions.queryKey }
 }
 
-export type op614PostQuestcenterBusinessModelEwsModelBindResponse200 = {
-  data: Op614PostQuestcenterBusinessModelEwsModelBind200
+export type postQuestcenterBusinessModelEwsModelBindResponse200 = {
+  data: PostQuestcenterBusinessModelEwsModelBind200
   status: 200
 }
 
-export type op614PostQuestcenterBusinessModelEwsModelBindResponseSuccess =
-  op614PostQuestcenterBusinessModelEwsModelBindResponse200 & {
+export type postQuestcenterBusinessModelEwsModelBindResponseSuccess =
+  postQuestcenterBusinessModelEwsModelBindResponse200 & {
     headers: Headers
   }
 
-export type op614PostQuestcenterBusinessModelEwsModelBindResponse =
-  op614PostQuestcenterBusinessModelEwsModelBindResponseSuccess
+export type postQuestcenterBusinessModelEwsModelBindResponse =
+  postQuestcenterBusinessModelEwsModelBindResponseSuccess
 
-export const getOp614PostQuestcenterBusinessModelEwsModelBindUrl = () => {
+export const getPostQuestcenterBusinessModelEwsModelBindUrl = () => {
   return `/questcenter/business_model/ews/model/bind`
 }
 
@@ -862,38 +857,38 @@ export const getOp614PostQuestcenterBusinessModelEwsModelBindUrl = () => {
  * 预警模型-绑定数据组
  * @summary 预警模型-绑定数据组
  */
-export const op614PostQuestcenterBusinessModelEwsModelBind = async (
-  op614PostQuestcenterBusinessModelEwsModelBindBody: Op614PostQuestcenterBusinessModelEwsModelBindBody,
+export const postQuestcenterBusinessModelEwsModelBind = async (
+  postQuestcenterBusinessModelEwsModelBindBody: PostQuestcenterBusinessModelEwsModelBindBody,
   options?: RequestInit
-): Promise<op614PostQuestcenterBusinessModelEwsModelBindResponse> => {
-  return customFetch<op614PostQuestcenterBusinessModelEwsModelBindResponse>(
-    getOp614PostQuestcenterBusinessModelEwsModelBindUrl(),
+): Promise<postQuestcenterBusinessModelEwsModelBindResponse> => {
+  return customFetch<postQuestcenterBusinessModelEwsModelBindResponse>(
+    getPostQuestcenterBusinessModelEwsModelBindUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op614PostQuestcenterBusinessModelEwsModelBindBody),
+      body: JSON.stringify(postQuestcenterBusinessModelEwsModelBindBody),
     }
   )
 }
 
-export const getOp614PostQuestcenterBusinessModelEwsModelBindMutationOptions = <
+export const getPostQuestcenterBusinessModelEwsModelBindMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op614PostQuestcenterBusinessModelEwsModelBind>>,
+    Awaited<ReturnType<typeof postQuestcenterBusinessModelEwsModelBind>>,
     TError,
-    { data: Op614PostQuestcenterBusinessModelEwsModelBindBody },
+    { data: PostQuestcenterBusinessModelEwsModelBindBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op614PostQuestcenterBusinessModelEwsModelBind>>,
+  Awaited<ReturnType<typeof postQuestcenterBusinessModelEwsModelBind>>,
   TError,
-  { data: Op614PostQuestcenterBusinessModelEwsModelBindBody },
+  { data: PostQuestcenterBusinessModelEwsModelBindBody },
   TContext
 > => {
-  const mutationKey = ['op614PostQuestcenterBusinessModelEwsModelBind']
+  const mutationKey = ['postQuestcenterBusinessModelEwsModelBind']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -901,67 +896,67 @@ export const getOp614PostQuestcenterBusinessModelEwsModelBindMutationOptions = <
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op614PostQuestcenterBusinessModelEwsModelBind>>,
-    { data: Op614PostQuestcenterBusinessModelEwsModelBindBody }
+    Awaited<ReturnType<typeof postQuestcenterBusinessModelEwsModelBind>>,
+    { data: PostQuestcenterBusinessModelEwsModelBindBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op614PostQuestcenterBusinessModelEwsModelBind(data)
+    return postQuestcenterBusinessModelEwsModelBind(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op614PostQuestcenterBusinessModelEwsModelBindMutationResult = NonNullable<
-  Awaited<ReturnType<typeof op614PostQuestcenterBusinessModelEwsModelBind>>
+export type PostQuestcenterBusinessModelEwsModelBindMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterBusinessModelEwsModelBind>>
 >
-export type Op614PostQuestcenterBusinessModelEwsModelBindMutationBody =
-  Op614PostQuestcenterBusinessModelEwsModelBindBody
-export type Op614PostQuestcenterBusinessModelEwsModelBindMutationError = ErrorType<unknown>
+export type PostQuestcenterBusinessModelEwsModelBindMutationBody =
+  PostQuestcenterBusinessModelEwsModelBindBody
+export type PostQuestcenterBusinessModelEwsModelBindMutationError = ErrorType<unknown>
 
 /**
  * @summary 预警模型-绑定数据组
  */
-export const useOp614PostQuestcenterBusinessModelEwsModelBind = <
+export const usePostQuestcenterBusinessModelEwsModelBind = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op614PostQuestcenterBusinessModelEwsModelBind>>,
+      Awaited<ReturnType<typeof postQuestcenterBusinessModelEwsModelBind>>,
       TError,
-      { data: Op614PostQuestcenterBusinessModelEwsModelBindBody },
+      { data: PostQuestcenterBusinessModelEwsModelBindBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op614PostQuestcenterBusinessModelEwsModelBind>>,
+  Awaited<ReturnType<typeof postQuestcenterBusinessModelEwsModelBind>>,
   TError,
-  { data: Op614PostQuestcenterBusinessModelEwsModelBindBody },
+  { data: PostQuestcenterBusinessModelEwsModelBindBody },
   TContext
 > => {
   return useMutation(
-    getOp614PostQuestcenterBusinessModelEwsModelBindMutationOptions(options),
+    getPostQuestcenterBusinessModelEwsModelBindMutationOptions(options),
     queryClient
   )
 }
 
-export type op626GetQuestcenterBusinessModelEwsModelEwsNodeDetailResponse200 = {
-  data: Op626GetQuestcenterBusinessModelEwsModelEwsNodeDetail200
+export type getQuestcenterBusinessModelEwsModelEwsNodeDetailResponse200 = {
+  data: GetQuestcenterBusinessModelEwsModelEwsNodeDetail200
   status: 200
 }
 
-export type op626GetQuestcenterBusinessModelEwsModelEwsNodeDetailResponseSuccess =
-  op626GetQuestcenterBusinessModelEwsModelEwsNodeDetailResponse200 & {
+export type getQuestcenterBusinessModelEwsModelEwsNodeDetailResponseSuccess =
+  getQuestcenterBusinessModelEwsModelEwsNodeDetailResponse200 & {
     headers: Headers
   }
 
-export type op626GetQuestcenterBusinessModelEwsModelEwsNodeDetailResponse =
-  op626GetQuestcenterBusinessModelEwsModelEwsNodeDetailResponseSuccess
+export type getQuestcenterBusinessModelEwsModelEwsNodeDetailResponse =
+  getQuestcenterBusinessModelEwsModelEwsNodeDetailResponseSuccess
 
-export const getOp626GetQuestcenterBusinessModelEwsModelEwsNodeDetailUrl = (
-  params?: Op626GetQuestcenterBusinessModelEwsModelEwsNodeDetailParams
+export const getGetQuestcenterBusinessModelEwsModelEwsNodeDetailUrl = (
+  params?: GetQuestcenterBusinessModelEwsModelEwsNodeDetailParams
 ) => {
   const normalizedParams = new URLSearchParams()
 
@@ -982,12 +977,12 @@ export const getOp626GetQuestcenterBusinessModelEwsModelEwsNodeDetailUrl = (
  * 【预警系统】数据组节点-详情
  * @summary 【预警系统】数据组节点-详情
  */
-export const op626GetQuestcenterBusinessModelEwsModelEwsNodeDetail = async (
-  params?: Op626GetQuestcenterBusinessModelEwsModelEwsNodeDetailParams,
+export const getQuestcenterBusinessModelEwsModelEwsNodeDetail = async (
+  params?: GetQuestcenterBusinessModelEwsModelEwsNodeDetailParams,
   options?: RequestInit
-): Promise<op626GetQuestcenterBusinessModelEwsModelEwsNodeDetailResponse> => {
-  return customFetch<op626GetQuestcenterBusinessModelEwsModelEwsNodeDetailResponse>(
-    getOp626GetQuestcenterBusinessModelEwsModelEwsNodeDetailUrl(params),
+): Promise<getQuestcenterBusinessModelEwsModelEwsNodeDetailResponse> => {
+  return customFetch<getQuestcenterBusinessModelEwsModelEwsNodeDetailResponse>(
+    getGetQuestcenterBusinessModelEwsModelEwsNodeDetailUrl(params),
     {
       ...options,
       method: 'GET',
@@ -995,8 +990,8 @@ export const op626GetQuestcenterBusinessModelEwsModelEwsNodeDetail = async (
   )
 }
 
-export const getOp626GetQuestcenterBusinessModelEwsModelEwsNodeDetailQueryKey = (
-  params?: Op626GetQuestcenterBusinessModelEwsModelEwsNodeDetailParams
+export const getGetQuestcenterBusinessModelEwsModelEwsNodeDetailQueryKey = (
+  params?: GetQuestcenterBusinessModelEwsModelEwsNodeDetailParams
 ) => {
   return [
     `/questcenter/business_model/ews/model/ews_node/detail`,
@@ -1004,15 +999,15 @@ export const getOp626GetQuestcenterBusinessModelEwsModelEwsNodeDetailQueryKey = 
   ] as const
 }
 
-export const getOp626GetQuestcenterBusinessModelEwsModelEwsNodeDetailQueryOptions = <
-  TData = Awaited<ReturnType<typeof op626GetQuestcenterBusinessModelEwsModelEwsNodeDetail>>,
+export const getGetQuestcenterBusinessModelEwsModelEwsNodeDetailQueryOptions = <
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelEwsNodeDetail>>,
   TError = ErrorType<unknown>,
 >(
-  params?: Op626GetQuestcenterBusinessModelEwsModelEwsNodeDetailParams,
+  params?: GetQuestcenterBusinessModelEwsModelEwsNodeDetailParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op626GetQuestcenterBusinessModelEwsModelEwsNodeDetail>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelEwsNodeDetail>>,
         TError,
         TData
       >
@@ -1022,82 +1017,81 @@ export const getOp626GetQuestcenterBusinessModelEwsModelEwsNodeDetailQueryOption
   const { query: queryOptions } = options ?? {}
 
   const queryKey =
-    queryOptions?.queryKey ??
-    getOp626GetQuestcenterBusinessModelEwsModelEwsNodeDetailQueryKey(params)
+    queryOptions?.queryKey ?? getGetQuestcenterBusinessModelEwsModelEwsNodeDetailQueryKey(params)
 
   const queryFn: QueryFunction<
-    Awaited<ReturnType<typeof op626GetQuestcenterBusinessModelEwsModelEwsNodeDetail>>
-  > = ({ signal }) => op626GetQuestcenterBusinessModelEwsModelEwsNodeDetail(params, { signal })
+    Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelEwsNodeDetail>>
+  > = ({ signal }) => getQuestcenterBusinessModelEwsModelEwsNodeDetail(params, { signal })
 
   return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof op626GetQuestcenterBusinessModelEwsModelEwsNodeDetail>>,
+    Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelEwsNodeDetail>>,
     TError,
     TData
   > & { queryKey: DataTag<QueryKey, TData, TError> }
 }
 
-export type Op626GetQuestcenterBusinessModelEwsModelEwsNodeDetailQueryResult = NonNullable<
-  Awaited<ReturnType<typeof op626GetQuestcenterBusinessModelEwsModelEwsNodeDetail>>
+export type GetQuestcenterBusinessModelEwsModelEwsNodeDetailQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelEwsNodeDetail>>
 >
-export type Op626GetQuestcenterBusinessModelEwsModelEwsNodeDetailQueryError = ErrorType<unknown>
+export type GetQuestcenterBusinessModelEwsModelEwsNodeDetailQueryError = ErrorType<unknown>
 
-export function useOp626GetQuestcenterBusinessModelEwsModelEwsNodeDetail<
-  TData = Awaited<ReturnType<typeof op626GetQuestcenterBusinessModelEwsModelEwsNodeDetail>>,
+export function useGetQuestcenterBusinessModelEwsModelEwsNodeDetail<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelEwsNodeDetail>>,
   TError = ErrorType<unknown>,
 >(
-  params: undefined | Op626GetQuestcenterBusinessModelEwsModelEwsNodeDetailParams,
+  params: undefined | GetQuestcenterBusinessModelEwsModelEwsNodeDetailParams,
   options: {
     query: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op626GetQuestcenterBusinessModelEwsModelEwsNodeDetail>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelEwsNodeDetail>>,
         TError,
         TData
       >
     > &
       Pick<
         DefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op626GetQuestcenterBusinessModelEwsModelEwsNodeDetail>>,
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelEwsNodeDetail>>,
           TError,
-          Awaited<ReturnType<typeof op626GetQuestcenterBusinessModelEwsModelEwsNodeDetail>>
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelEwsNodeDetail>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp626GetQuestcenterBusinessModelEwsModelEwsNodeDetail<
-  TData = Awaited<ReturnType<typeof op626GetQuestcenterBusinessModelEwsModelEwsNodeDetail>>,
+export function useGetQuestcenterBusinessModelEwsModelEwsNodeDetail<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelEwsNodeDetail>>,
   TError = ErrorType<unknown>,
 >(
-  params?: Op626GetQuestcenterBusinessModelEwsModelEwsNodeDetailParams,
+  params?: GetQuestcenterBusinessModelEwsModelEwsNodeDetailParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op626GetQuestcenterBusinessModelEwsModelEwsNodeDetail>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelEwsNodeDetail>>,
         TError,
         TData
       >
     > &
       Pick<
         UndefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op626GetQuestcenterBusinessModelEwsModelEwsNodeDetail>>,
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelEwsNodeDetail>>,
           TError,
-          Awaited<ReturnType<typeof op626GetQuestcenterBusinessModelEwsModelEwsNodeDetail>>
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelEwsNodeDetail>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp626GetQuestcenterBusinessModelEwsModelEwsNodeDetail<
-  TData = Awaited<ReturnType<typeof op626GetQuestcenterBusinessModelEwsModelEwsNodeDetail>>,
+export function useGetQuestcenterBusinessModelEwsModelEwsNodeDetail<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelEwsNodeDetail>>,
   TError = ErrorType<unknown>,
 >(
-  params?: Op626GetQuestcenterBusinessModelEwsModelEwsNodeDetailParams,
+  params?: GetQuestcenterBusinessModelEwsModelEwsNodeDetailParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op626GetQuestcenterBusinessModelEwsModelEwsNodeDetail>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelEwsNodeDetail>>,
         TError,
         TData
       >
@@ -1109,15 +1103,15 @@ export function useOp626GetQuestcenterBusinessModelEwsModelEwsNodeDetail<
  * @summary 【预警系统】数据组节点-详情
  */
 
-export function useOp626GetQuestcenterBusinessModelEwsModelEwsNodeDetail<
-  TData = Awaited<ReturnType<typeof op626GetQuestcenterBusinessModelEwsModelEwsNodeDetail>>,
+export function useGetQuestcenterBusinessModelEwsModelEwsNodeDetail<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelEwsNodeDetail>>,
   TError = ErrorType<unknown>,
 >(
-  params?: Op626GetQuestcenterBusinessModelEwsModelEwsNodeDetailParams,
+  params?: GetQuestcenterBusinessModelEwsModelEwsNodeDetailParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op626GetQuestcenterBusinessModelEwsModelEwsNodeDetail>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelEwsNodeDetail>>,
         TError,
         TData
       >
@@ -1125,7 +1119,7 @@ export function useOp626GetQuestcenterBusinessModelEwsModelEwsNodeDetail<
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
-  const queryOptions = getOp626GetQuestcenterBusinessModelEwsModelEwsNodeDetailQueryOptions(
+  const queryOptions = getGetQuestcenterBusinessModelEwsModelEwsNodeDetailQueryOptions(
     params,
     options
   )
@@ -1137,21 +1131,21 @@ export function useOp626GetQuestcenterBusinessModelEwsModelEwsNodeDetail<
   return { ...query, queryKey: queryOptions.queryKey }
 }
 
-export type op562GetQuestcenterBusinessModelEwsModelEwsNodeListResponse200 = {
-  data: Op562GetQuestcenterBusinessModelEwsModelEwsNodeList200
+export type getQuestcenterBusinessModelEwsModelEwsNodeListResponse200 = {
+  data: GetQuestcenterBusinessModelEwsModelEwsNodeList200
   status: 200
 }
 
-export type op562GetQuestcenterBusinessModelEwsModelEwsNodeListResponseSuccess =
-  op562GetQuestcenterBusinessModelEwsModelEwsNodeListResponse200 & {
+export type getQuestcenterBusinessModelEwsModelEwsNodeListResponseSuccess =
+  getQuestcenterBusinessModelEwsModelEwsNodeListResponse200 & {
     headers: Headers
   }
 
-export type op562GetQuestcenterBusinessModelEwsModelEwsNodeListResponse =
-  op562GetQuestcenterBusinessModelEwsModelEwsNodeListResponseSuccess
+export type getQuestcenterBusinessModelEwsModelEwsNodeListResponse =
+  getQuestcenterBusinessModelEwsModelEwsNodeListResponseSuccess
 
-export const getOp562GetQuestcenterBusinessModelEwsModelEwsNodeListUrl = (
-  params?: Op562GetQuestcenterBusinessModelEwsModelEwsNodeListParams
+export const getGetQuestcenterBusinessModelEwsModelEwsNodeListUrl = (
+  params?: GetQuestcenterBusinessModelEwsModelEwsNodeListParams
 ) => {
   const normalizedParams = new URLSearchParams()
 
@@ -1172,12 +1166,12 @@ export const getOp562GetQuestcenterBusinessModelEwsModelEwsNodeListUrl = (
  * 【预警系统】数据组节点-列表查询
  * @summary 【预警系统】数据组节点-列表查询
  */
-export const op562GetQuestcenterBusinessModelEwsModelEwsNodeList = async (
-  params?: Op562GetQuestcenterBusinessModelEwsModelEwsNodeListParams,
+export const getQuestcenterBusinessModelEwsModelEwsNodeList = async (
+  params?: GetQuestcenterBusinessModelEwsModelEwsNodeListParams,
   options?: RequestInit
-): Promise<op562GetQuestcenterBusinessModelEwsModelEwsNodeListResponse> => {
-  return customFetch<op562GetQuestcenterBusinessModelEwsModelEwsNodeListResponse>(
-    getOp562GetQuestcenterBusinessModelEwsModelEwsNodeListUrl(params),
+): Promise<getQuestcenterBusinessModelEwsModelEwsNodeListResponse> => {
+  return customFetch<getQuestcenterBusinessModelEwsModelEwsNodeListResponse>(
+    getGetQuestcenterBusinessModelEwsModelEwsNodeListUrl(params),
     {
       ...options,
       method: 'GET',
@@ -1185,8 +1179,8 @@ export const op562GetQuestcenterBusinessModelEwsModelEwsNodeList = async (
   )
 }
 
-export const getOp562GetQuestcenterBusinessModelEwsModelEwsNodeListQueryKey = (
-  params?: Op562GetQuestcenterBusinessModelEwsModelEwsNodeListParams
+export const getGetQuestcenterBusinessModelEwsModelEwsNodeListQueryKey = (
+  params?: GetQuestcenterBusinessModelEwsModelEwsNodeListParams
 ) => {
   return [
     `/questcenter/business_model/ews/model/ews_node/list`,
@@ -1194,15 +1188,15 @@ export const getOp562GetQuestcenterBusinessModelEwsModelEwsNodeListQueryKey = (
   ] as const
 }
 
-export const getOp562GetQuestcenterBusinessModelEwsModelEwsNodeListQueryOptions = <
-  TData = Awaited<ReturnType<typeof op562GetQuestcenterBusinessModelEwsModelEwsNodeList>>,
+export const getGetQuestcenterBusinessModelEwsModelEwsNodeListQueryOptions = <
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelEwsNodeList>>,
   TError = ErrorType<unknown>,
 >(
-  params?: Op562GetQuestcenterBusinessModelEwsModelEwsNodeListParams,
+  params?: GetQuestcenterBusinessModelEwsModelEwsNodeListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op562GetQuestcenterBusinessModelEwsModelEwsNodeList>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelEwsNodeList>>,
         TError,
         TData
       >
@@ -1212,81 +1206,81 @@ export const getOp562GetQuestcenterBusinessModelEwsModelEwsNodeListQueryOptions 
   const { query: queryOptions } = options ?? {}
 
   const queryKey =
-    queryOptions?.queryKey ?? getOp562GetQuestcenterBusinessModelEwsModelEwsNodeListQueryKey(params)
+    queryOptions?.queryKey ?? getGetQuestcenterBusinessModelEwsModelEwsNodeListQueryKey(params)
 
   const queryFn: QueryFunction<
-    Awaited<ReturnType<typeof op562GetQuestcenterBusinessModelEwsModelEwsNodeList>>
-  > = ({ signal }) => op562GetQuestcenterBusinessModelEwsModelEwsNodeList(params, { signal })
+    Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelEwsNodeList>>
+  > = ({ signal }) => getQuestcenterBusinessModelEwsModelEwsNodeList(params, { signal })
 
   return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof op562GetQuestcenterBusinessModelEwsModelEwsNodeList>>,
+    Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelEwsNodeList>>,
     TError,
     TData
   > & { queryKey: DataTag<QueryKey, TData, TError> }
 }
 
-export type Op562GetQuestcenterBusinessModelEwsModelEwsNodeListQueryResult = NonNullable<
-  Awaited<ReturnType<typeof op562GetQuestcenterBusinessModelEwsModelEwsNodeList>>
+export type GetQuestcenterBusinessModelEwsModelEwsNodeListQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelEwsNodeList>>
 >
-export type Op562GetQuestcenterBusinessModelEwsModelEwsNodeListQueryError = ErrorType<unknown>
+export type GetQuestcenterBusinessModelEwsModelEwsNodeListQueryError = ErrorType<unknown>
 
-export function useOp562GetQuestcenterBusinessModelEwsModelEwsNodeList<
-  TData = Awaited<ReturnType<typeof op562GetQuestcenterBusinessModelEwsModelEwsNodeList>>,
+export function useGetQuestcenterBusinessModelEwsModelEwsNodeList<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelEwsNodeList>>,
   TError = ErrorType<unknown>,
 >(
-  params: undefined | Op562GetQuestcenterBusinessModelEwsModelEwsNodeListParams,
+  params: undefined | GetQuestcenterBusinessModelEwsModelEwsNodeListParams,
   options: {
     query: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op562GetQuestcenterBusinessModelEwsModelEwsNodeList>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelEwsNodeList>>,
         TError,
         TData
       >
     > &
       Pick<
         DefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op562GetQuestcenterBusinessModelEwsModelEwsNodeList>>,
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelEwsNodeList>>,
           TError,
-          Awaited<ReturnType<typeof op562GetQuestcenterBusinessModelEwsModelEwsNodeList>>
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelEwsNodeList>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp562GetQuestcenterBusinessModelEwsModelEwsNodeList<
-  TData = Awaited<ReturnType<typeof op562GetQuestcenterBusinessModelEwsModelEwsNodeList>>,
+export function useGetQuestcenterBusinessModelEwsModelEwsNodeList<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelEwsNodeList>>,
   TError = ErrorType<unknown>,
 >(
-  params?: Op562GetQuestcenterBusinessModelEwsModelEwsNodeListParams,
+  params?: GetQuestcenterBusinessModelEwsModelEwsNodeListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op562GetQuestcenterBusinessModelEwsModelEwsNodeList>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelEwsNodeList>>,
         TError,
         TData
       >
     > &
       Pick<
         UndefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op562GetQuestcenterBusinessModelEwsModelEwsNodeList>>,
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelEwsNodeList>>,
           TError,
-          Awaited<ReturnType<typeof op562GetQuestcenterBusinessModelEwsModelEwsNodeList>>
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelEwsNodeList>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp562GetQuestcenterBusinessModelEwsModelEwsNodeList<
-  TData = Awaited<ReturnType<typeof op562GetQuestcenterBusinessModelEwsModelEwsNodeList>>,
+export function useGetQuestcenterBusinessModelEwsModelEwsNodeList<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelEwsNodeList>>,
   TError = ErrorType<unknown>,
 >(
-  params?: Op562GetQuestcenterBusinessModelEwsModelEwsNodeListParams,
+  params?: GetQuestcenterBusinessModelEwsModelEwsNodeListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op562GetQuestcenterBusinessModelEwsModelEwsNodeList>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelEwsNodeList>>,
         TError,
         TData
       >
@@ -1298,15 +1292,15 @@ export function useOp562GetQuestcenterBusinessModelEwsModelEwsNodeList<
  * @summary 【预警系统】数据组节点-列表查询
  */
 
-export function useOp562GetQuestcenterBusinessModelEwsModelEwsNodeList<
-  TData = Awaited<ReturnType<typeof op562GetQuestcenterBusinessModelEwsModelEwsNodeList>>,
+export function useGetQuestcenterBusinessModelEwsModelEwsNodeList<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelEwsNodeList>>,
   TError = ErrorType<unknown>,
 >(
-  params?: Op562GetQuestcenterBusinessModelEwsModelEwsNodeListParams,
+  params?: GetQuestcenterBusinessModelEwsModelEwsNodeListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op562GetQuestcenterBusinessModelEwsModelEwsNodeList>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelEwsNodeList>>,
         TError,
         TData
       >
@@ -1314,7 +1308,7 @@ export function useOp562GetQuestcenterBusinessModelEwsModelEwsNodeList<
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
-  const queryOptions = getOp562GetQuestcenterBusinessModelEwsModelEwsNodeListQueryOptions(
+  const queryOptions = getGetQuestcenterBusinessModelEwsModelEwsNodeListQueryOptions(
     params,
     options
   )
@@ -1326,21 +1320,21 @@ export function useOp562GetQuestcenterBusinessModelEwsModelEwsNodeList<
   return { ...query, queryKey: queryOptions.queryKey }
 }
 
-export type op584GetQuestcenterBusinessModelEwsModelListResponse200 = {
-  data: Op584GetQuestcenterBusinessModelEwsModelList200
+export type getQuestcenterBusinessModelEwsModelListResponse200 = {
+  data: GetQuestcenterBusinessModelEwsModelList200
   status: 200
 }
 
-export type op584GetQuestcenterBusinessModelEwsModelListResponseSuccess =
-  op584GetQuestcenterBusinessModelEwsModelListResponse200 & {
+export type getQuestcenterBusinessModelEwsModelListResponseSuccess =
+  getQuestcenterBusinessModelEwsModelListResponse200 & {
     headers: Headers
   }
 
-export type op584GetQuestcenterBusinessModelEwsModelListResponse =
-  op584GetQuestcenterBusinessModelEwsModelListResponseSuccess
+export type getQuestcenterBusinessModelEwsModelListResponse =
+  getQuestcenterBusinessModelEwsModelListResponseSuccess
 
-export const getOp584GetQuestcenterBusinessModelEwsModelListUrl = (
-  params: Op584GetQuestcenterBusinessModelEwsModelListParams
+export const getGetQuestcenterBusinessModelEwsModelListUrl = (
+  params: GetQuestcenterBusinessModelEwsModelListParams
 ) => {
   const normalizedParams = new URLSearchParams()
 
@@ -1361,12 +1355,12 @@ export const getOp584GetQuestcenterBusinessModelEwsModelListUrl = (
  * 预警模型-列表查询
  * @summary 预警模型-列表查询
  */
-export const op584GetQuestcenterBusinessModelEwsModelList = async (
-  params: Op584GetQuestcenterBusinessModelEwsModelListParams,
+export const getQuestcenterBusinessModelEwsModelList = async (
+  params: GetQuestcenterBusinessModelEwsModelListParams,
   options?: RequestInit
-): Promise<op584GetQuestcenterBusinessModelEwsModelListResponse> => {
-  return customFetch<op584GetQuestcenterBusinessModelEwsModelListResponse>(
-    getOp584GetQuestcenterBusinessModelEwsModelListUrl(params),
+): Promise<getQuestcenterBusinessModelEwsModelListResponse> => {
+  return customFetch<getQuestcenterBusinessModelEwsModelListResponse>(
+    getGetQuestcenterBusinessModelEwsModelListUrl(params),
     {
       ...options,
       method: 'GET',
@@ -1374,21 +1368,21 @@ export const op584GetQuestcenterBusinessModelEwsModelList = async (
   )
 }
 
-export const getOp584GetQuestcenterBusinessModelEwsModelListQueryKey = (
-  params?: Op584GetQuestcenterBusinessModelEwsModelListParams
+export const getGetQuestcenterBusinessModelEwsModelListQueryKey = (
+  params?: GetQuestcenterBusinessModelEwsModelListParams
 ) => {
   return [`/questcenter/business_model/ews/model/list`, ...(params ? [params] : [])] as const
 }
 
-export const getOp584GetQuestcenterBusinessModelEwsModelListQueryOptions = <
-  TData = Awaited<ReturnType<typeof op584GetQuestcenterBusinessModelEwsModelList>>,
+export const getGetQuestcenterBusinessModelEwsModelListQueryOptions = <
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op584GetQuestcenterBusinessModelEwsModelListParams,
+  params: GetQuestcenterBusinessModelEwsModelListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op584GetQuestcenterBusinessModelEwsModelList>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelList>>,
         TError,
         TData
       >
@@ -1398,81 +1392,81 @@ export const getOp584GetQuestcenterBusinessModelEwsModelListQueryOptions = <
   const { query: queryOptions } = options ?? {}
 
   const queryKey =
-    queryOptions?.queryKey ?? getOp584GetQuestcenterBusinessModelEwsModelListQueryKey(params)
+    queryOptions?.queryKey ?? getGetQuestcenterBusinessModelEwsModelListQueryKey(params)
 
   const queryFn: QueryFunction<
-    Awaited<ReturnType<typeof op584GetQuestcenterBusinessModelEwsModelList>>
-  > = ({ signal }) => op584GetQuestcenterBusinessModelEwsModelList(params, { signal })
+    Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelList>>
+  > = ({ signal }) => getQuestcenterBusinessModelEwsModelList(params, { signal })
 
   return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof op584GetQuestcenterBusinessModelEwsModelList>>,
+    Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelList>>,
     TError,
     TData
   > & { queryKey: DataTag<QueryKey, TData, TError> }
 }
 
-export type Op584GetQuestcenterBusinessModelEwsModelListQueryResult = NonNullable<
-  Awaited<ReturnType<typeof op584GetQuestcenterBusinessModelEwsModelList>>
+export type GetQuestcenterBusinessModelEwsModelListQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelList>>
 >
-export type Op584GetQuestcenterBusinessModelEwsModelListQueryError = ErrorType<unknown>
+export type GetQuestcenterBusinessModelEwsModelListQueryError = ErrorType<unknown>
 
-export function useOp584GetQuestcenterBusinessModelEwsModelList<
-  TData = Awaited<ReturnType<typeof op584GetQuestcenterBusinessModelEwsModelList>>,
+export function useGetQuestcenterBusinessModelEwsModelList<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op584GetQuestcenterBusinessModelEwsModelListParams,
+  params: GetQuestcenterBusinessModelEwsModelListParams,
   options: {
     query: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op584GetQuestcenterBusinessModelEwsModelList>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelList>>,
         TError,
         TData
       >
     > &
       Pick<
         DefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op584GetQuestcenterBusinessModelEwsModelList>>,
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelList>>,
           TError,
-          Awaited<ReturnType<typeof op584GetQuestcenterBusinessModelEwsModelList>>
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelList>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp584GetQuestcenterBusinessModelEwsModelList<
-  TData = Awaited<ReturnType<typeof op584GetQuestcenterBusinessModelEwsModelList>>,
+export function useGetQuestcenterBusinessModelEwsModelList<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op584GetQuestcenterBusinessModelEwsModelListParams,
+  params: GetQuestcenterBusinessModelEwsModelListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op584GetQuestcenterBusinessModelEwsModelList>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelList>>,
         TError,
         TData
       >
     > &
       Pick<
         UndefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op584GetQuestcenterBusinessModelEwsModelList>>,
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelList>>,
           TError,
-          Awaited<ReturnType<typeof op584GetQuestcenterBusinessModelEwsModelList>>
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelList>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp584GetQuestcenterBusinessModelEwsModelList<
-  TData = Awaited<ReturnType<typeof op584GetQuestcenterBusinessModelEwsModelList>>,
+export function useGetQuestcenterBusinessModelEwsModelList<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op584GetQuestcenterBusinessModelEwsModelListParams,
+  params: GetQuestcenterBusinessModelEwsModelListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op584GetQuestcenterBusinessModelEwsModelList>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelList>>,
         TError,
         TData
       >
@@ -1484,15 +1478,15 @@ export function useOp584GetQuestcenterBusinessModelEwsModelList<
  * @summary 预警模型-列表查询
  */
 
-export function useOp584GetQuestcenterBusinessModelEwsModelList<
-  TData = Awaited<ReturnType<typeof op584GetQuestcenterBusinessModelEwsModelList>>,
+export function useGetQuestcenterBusinessModelEwsModelList<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op584GetQuestcenterBusinessModelEwsModelListParams,
+  params: GetQuestcenterBusinessModelEwsModelListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op584GetQuestcenterBusinessModelEwsModelList>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelList>>,
         TError,
         TData
       >
@@ -1500,7 +1494,7 @@ export function useOp584GetQuestcenterBusinessModelEwsModelList<
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
-  const queryOptions = getOp584GetQuestcenterBusinessModelEwsModelListQueryOptions(params, options)
+  const queryOptions = getGetQuestcenterBusinessModelEwsModelListQueryOptions(params, options)
 
   const query = useQuery(queryOptions, queryClient) as UseQueryResult<TData, TError> & {
     queryKey: DataTag<QueryKey, TData, TError>
@@ -1509,21 +1503,21 @@ export function useOp584GetQuestcenterBusinessModelEwsModelList<
   return { ...query, queryKey: queryOptions.queryKey }
 }
 
-export type op613GetQuestcenterBusinessModelEwsModelPageResponse200 = {
-  data: Op613GetQuestcenterBusinessModelEwsModelPage200
+export type getQuestcenterBusinessModelEwsModelPageResponse200 = {
+  data: GetQuestcenterBusinessModelEwsModelPage200
   status: 200
 }
 
-export type op613GetQuestcenterBusinessModelEwsModelPageResponseSuccess =
-  op613GetQuestcenterBusinessModelEwsModelPageResponse200 & {
+export type getQuestcenterBusinessModelEwsModelPageResponseSuccess =
+  getQuestcenterBusinessModelEwsModelPageResponse200 & {
     headers: Headers
   }
 
-export type op613GetQuestcenterBusinessModelEwsModelPageResponse =
-  op613GetQuestcenterBusinessModelEwsModelPageResponseSuccess
+export type getQuestcenterBusinessModelEwsModelPageResponse =
+  getQuestcenterBusinessModelEwsModelPageResponseSuccess
 
-export const getOp613GetQuestcenterBusinessModelEwsModelPageUrl = (
-  params: Op613GetQuestcenterBusinessModelEwsModelPageParams
+export const getGetQuestcenterBusinessModelEwsModelPageUrl = (
+  params: GetQuestcenterBusinessModelEwsModelPageParams
 ) => {
   const normalizedParams = new URLSearchParams()
 
@@ -1544,12 +1538,12 @@ export const getOp613GetQuestcenterBusinessModelEwsModelPageUrl = (
  * 预警模型-分页查询
  * @summary 预警模型-分页查询
  */
-export const op613GetQuestcenterBusinessModelEwsModelPage = async (
-  params: Op613GetQuestcenterBusinessModelEwsModelPageParams,
+export const getQuestcenterBusinessModelEwsModelPage = async (
+  params: GetQuestcenterBusinessModelEwsModelPageParams,
   options?: RequestInit
-): Promise<op613GetQuestcenterBusinessModelEwsModelPageResponse> => {
-  return customFetch<op613GetQuestcenterBusinessModelEwsModelPageResponse>(
-    getOp613GetQuestcenterBusinessModelEwsModelPageUrl(params),
+): Promise<getQuestcenterBusinessModelEwsModelPageResponse> => {
+  return customFetch<getQuestcenterBusinessModelEwsModelPageResponse>(
+    getGetQuestcenterBusinessModelEwsModelPageUrl(params),
     {
       ...options,
       method: 'GET',
@@ -1557,21 +1551,21 @@ export const op613GetQuestcenterBusinessModelEwsModelPage = async (
   )
 }
 
-export const getOp613GetQuestcenterBusinessModelEwsModelPageQueryKey = (
-  params?: Op613GetQuestcenterBusinessModelEwsModelPageParams
+export const getGetQuestcenterBusinessModelEwsModelPageQueryKey = (
+  params?: GetQuestcenterBusinessModelEwsModelPageParams
 ) => {
   return [`/questcenter/business_model/ews/model/page`, ...(params ? [params] : [])] as const
 }
 
-export const getOp613GetQuestcenterBusinessModelEwsModelPageQueryOptions = <
-  TData = Awaited<ReturnType<typeof op613GetQuestcenterBusinessModelEwsModelPage>>,
+export const getGetQuestcenterBusinessModelEwsModelPageQueryOptions = <
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelPage>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op613GetQuestcenterBusinessModelEwsModelPageParams,
+  params: GetQuestcenterBusinessModelEwsModelPageParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op613GetQuestcenterBusinessModelEwsModelPage>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelPage>>,
         TError,
         TData
       >
@@ -1581,81 +1575,81 @@ export const getOp613GetQuestcenterBusinessModelEwsModelPageQueryOptions = <
   const { query: queryOptions } = options ?? {}
 
   const queryKey =
-    queryOptions?.queryKey ?? getOp613GetQuestcenterBusinessModelEwsModelPageQueryKey(params)
+    queryOptions?.queryKey ?? getGetQuestcenterBusinessModelEwsModelPageQueryKey(params)
 
   const queryFn: QueryFunction<
-    Awaited<ReturnType<typeof op613GetQuestcenterBusinessModelEwsModelPage>>
-  > = ({ signal }) => op613GetQuestcenterBusinessModelEwsModelPage(params, { signal })
+    Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelPage>>
+  > = ({ signal }) => getQuestcenterBusinessModelEwsModelPage(params, { signal })
 
   return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof op613GetQuestcenterBusinessModelEwsModelPage>>,
+    Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelPage>>,
     TError,
     TData
   > & { queryKey: DataTag<QueryKey, TData, TError> }
 }
 
-export type Op613GetQuestcenterBusinessModelEwsModelPageQueryResult = NonNullable<
-  Awaited<ReturnType<typeof op613GetQuestcenterBusinessModelEwsModelPage>>
+export type GetQuestcenterBusinessModelEwsModelPageQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelPage>>
 >
-export type Op613GetQuestcenterBusinessModelEwsModelPageQueryError = ErrorType<unknown>
+export type GetQuestcenterBusinessModelEwsModelPageQueryError = ErrorType<unknown>
 
-export function useOp613GetQuestcenterBusinessModelEwsModelPage<
-  TData = Awaited<ReturnType<typeof op613GetQuestcenterBusinessModelEwsModelPage>>,
+export function useGetQuestcenterBusinessModelEwsModelPage<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelPage>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op613GetQuestcenterBusinessModelEwsModelPageParams,
+  params: GetQuestcenterBusinessModelEwsModelPageParams,
   options: {
     query: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op613GetQuestcenterBusinessModelEwsModelPage>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelPage>>,
         TError,
         TData
       >
     > &
       Pick<
         DefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op613GetQuestcenterBusinessModelEwsModelPage>>,
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelPage>>,
           TError,
-          Awaited<ReturnType<typeof op613GetQuestcenterBusinessModelEwsModelPage>>
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelPage>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp613GetQuestcenterBusinessModelEwsModelPage<
-  TData = Awaited<ReturnType<typeof op613GetQuestcenterBusinessModelEwsModelPage>>,
+export function useGetQuestcenterBusinessModelEwsModelPage<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelPage>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op613GetQuestcenterBusinessModelEwsModelPageParams,
+  params: GetQuestcenterBusinessModelEwsModelPageParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op613GetQuestcenterBusinessModelEwsModelPage>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelPage>>,
         TError,
         TData
       >
     > &
       Pick<
         UndefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op613GetQuestcenterBusinessModelEwsModelPage>>,
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelPage>>,
           TError,
-          Awaited<ReturnType<typeof op613GetQuestcenterBusinessModelEwsModelPage>>
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelPage>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp613GetQuestcenterBusinessModelEwsModelPage<
-  TData = Awaited<ReturnType<typeof op613GetQuestcenterBusinessModelEwsModelPage>>,
+export function useGetQuestcenterBusinessModelEwsModelPage<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelPage>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op613GetQuestcenterBusinessModelEwsModelPageParams,
+  params: GetQuestcenterBusinessModelEwsModelPageParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op613GetQuestcenterBusinessModelEwsModelPage>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelPage>>,
         TError,
         TData
       >
@@ -1667,15 +1661,15 @@ export function useOp613GetQuestcenterBusinessModelEwsModelPage<
  * @summary 预警模型-分页查询
  */
 
-export function useOp613GetQuestcenterBusinessModelEwsModelPage<
-  TData = Awaited<ReturnType<typeof op613GetQuestcenterBusinessModelEwsModelPage>>,
+export function useGetQuestcenterBusinessModelEwsModelPage<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelPage>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op613GetQuestcenterBusinessModelEwsModelPageParams,
+  params: GetQuestcenterBusinessModelEwsModelPageParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op613GetQuestcenterBusinessModelEwsModelPage>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelPage>>,
         TError,
         TData
       >
@@ -1683,7 +1677,7 @@ export function useOp613GetQuestcenterBusinessModelEwsModelPage<
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
-  const queryOptions = getOp613GetQuestcenterBusinessModelEwsModelPageQueryOptions(params, options)
+  const queryOptions = getGetQuestcenterBusinessModelEwsModelPageQueryOptions(params, options)
 
   const query = useQuery(queryOptions, queryClient) as UseQueryResult<TData, TError> & {
     queryKey: DataTag<QueryKey, TData, TError>
@@ -1692,21 +1686,21 @@ export function useOp613GetQuestcenterBusinessModelEwsModelPage<
   return { ...query, queryKey: queryOptions.queryKey }
 }
 
-export type op569GetQuestcenterBusinessModelEwsModelPreviewResponse200 = {
-  data: Op569GetQuestcenterBusinessModelEwsModelPreview200
+export type getQuestcenterBusinessModelEwsModelPreviewResponse200 = {
+  data: GetQuestcenterBusinessModelEwsModelPreview200
   status: 200
 }
 
-export type op569GetQuestcenterBusinessModelEwsModelPreviewResponseSuccess =
-  op569GetQuestcenterBusinessModelEwsModelPreviewResponse200 & {
+export type getQuestcenterBusinessModelEwsModelPreviewResponseSuccess =
+  getQuestcenterBusinessModelEwsModelPreviewResponse200 & {
     headers: Headers
   }
 
-export type op569GetQuestcenterBusinessModelEwsModelPreviewResponse =
-  op569GetQuestcenterBusinessModelEwsModelPreviewResponseSuccess
+export type getQuestcenterBusinessModelEwsModelPreviewResponse =
+  getQuestcenterBusinessModelEwsModelPreviewResponseSuccess
 
-export const getOp569GetQuestcenterBusinessModelEwsModelPreviewUrl = (
-  params: Op569GetQuestcenterBusinessModelEwsModelPreviewParams
+export const getGetQuestcenterBusinessModelEwsModelPreviewUrl = (
+  params: GetQuestcenterBusinessModelEwsModelPreviewParams
 ) => {
   const normalizedParams = new URLSearchParams()
 
@@ -1727,12 +1721,12 @@ export const getOp569GetQuestcenterBusinessModelEwsModelPreviewUrl = (
  * 枚举值请调枚举接口
  * @summary 预警模型-查询
  */
-export const op569GetQuestcenterBusinessModelEwsModelPreview = async (
-  params: Op569GetQuestcenterBusinessModelEwsModelPreviewParams,
+export const getQuestcenterBusinessModelEwsModelPreview = async (
+  params: GetQuestcenterBusinessModelEwsModelPreviewParams,
   options?: RequestInit
-): Promise<op569GetQuestcenterBusinessModelEwsModelPreviewResponse> => {
-  return customFetch<op569GetQuestcenterBusinessModelEwsModelPreviewResponse>(
-    getOp569GetQuestcenterBusinessModelEwsModelPreviewUrl(params),
+): Promise<getQuestcenterBusinessModelEwsModelPreviewResponse> => {
+  return customFetch<getQuestcenterBusinessModelEwsModelPreviewResponse>(
+    getGetQuestcenterBusinessModelEwsModelPreviewUrl(params),
     {
       ...options,
       method: 'GET',
@@ -1740,21 +1734,21 @@ export const op569GetQuestcenterBusinessModelEwsModelPreview = async (
   )
 }
 
-export const getOp569GetQuestcenterBusinessModelEwsModelPreviewQueryKey = (
-  params?: Op569GetQuestcenterBusinessModelEwsModelPreviewParams
+export const getGetQuestcenterBusinessModelEwsModelPreviewQueryKey = (
+  params?: GetQuestcenterBusinessModelEwsModelPreviewParams
 ) => {
   return [`/questcenter/business_model/ews/model/preview`, ...(params ? [params] : [])] as const
 }
 
-export const getOp569GetQuestcenterBusinessModelEwsModelPreviewQueryOptions = <
-  TData = Awaited<ReturnType<typeof op569GetQuestcenterBusinessModelEwsModelPreview>>,
+export const getGetQuestcenterBusinessModelEwsModelPreviewQueryOptions = <
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelPreview>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op569GetQuestcenterBusinessModelEwsModelPreviewParams,
+  params: GetQuestcenterBusinessModelEwsModelPreviewParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op569GetQuestcenterBusinessModelEwsModelPreview>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelPreview>>,
         TError,
         TData
       >
@@ -1764,81 +1758,81 @@ export const getOp569GetQuestcenterBusinessModelEwsModelPreviewQueryOptions = <
   const { query: queryOptions } = options ?? {}
 
   const queryKey =
-    queryOptions?.queryKey ?? getOp569GetQuestcenterBusinessModelEwsModelPreviewQueryKey(params)
+    queryOptions?.queryKey ?? getGetQuestcenterBusinessModelEwsModelPreviewQueryKey(params)
 
   const queryFn: QueryFunction<
-    Awaited<ReturnType<typeof op569GetQuestcenterBusinessModelEwsModelPreview>>
-  > = ({ signal }) => op569GetQuestcenterBusinessModelEwsModelPreview(params, { signal })
+    Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelPreview>>
+  > = ({ signal }) => getQuestcenterBusinessModelEwsModelPreview(params, { signal })
 
   return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof op569GetQuestcenterBusinessModelEwsModelPreview>>,
+    Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelPreview>>,
     TError,
     TData
   > & { queryKey: DataTag<QueryKey, TData, TError> }
 }
 
-export type Op569GetQuestcenterBusinessModelEwsModelPreviewQueryResult = NonNullable<
-  Awaited<ReturnType<typeof op569GetQuestcenterBusinessModelEwsModelPreview>>
+export type GetQuestcenterBusinessModelEwsModelPreviewQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelPreview>>
 >
-export type Op569GetQuestcenterBusinessModelEwsModelPreviewQueryError = ErrorType<unknown>
+export type GetQuestcenterBusinessModelEwsModelPreviewQueryError = ErrorType<unknown>
 
-export function useOp569GetQuestcenterBusinessModelEwsModelPreview<
-  TData = Awaited<ReturnType<typeof op569GetQuestcenterBusinessModelEwsModelPreview>>,
+export function useGetQuestcenterBusinessModelEwsModelPreview<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelPreview>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op569GetQuestcenterBusinessModelEwsModelPreviewParams,
+  params: GetQuestcenterBusinessModelEwsModelPreviewParams,
   options: {
     query: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op569GetQuestcenterBusinessModelEwsModelPreview>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelPreview>>,
         TError,
         TData
       >
     > &
       Pick<
         DefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op569GetQuestcenterBusinessModelEwsModelPreview>>,
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelPreview>>,
           TError,
-          Awaited<ReturnType<typeof op569GetQuestcenterBusinessModelEwsModelPreview>>
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelPreview>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp569GetQuestcenterBusinessModelEwsModelPreview<
-  TData = Awaited<ReturnType<typeof op569GetQuestcenterBusinessModelEwsModelPreview>>,
+export function useGetQuestcenterBusinessModelEwsModelPreview<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelPreview>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op569GetQuestcenterBusinessModelEwsModelPreviewParams,
+  params: GetQuestcenterBusinessModelEwsModelPreviewParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op569GetQuestcenterBusinessModelEwsModelPreview>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelPreview>>,
         TError,
         TData
       >
     > &
       Pick<
         UndefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op569GetQuestcenterBusinessModelEwsModelPreview>>,
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelPreview>>,
           TError,
-          Awaited<ReturnType<typeof op569GetQuestcenterBusinessModelEwsModelPreview>>
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelPreview>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp569GetQuestcenterBusinessModelEwsModelPreview<
-  TData = Awaited<ReturnType<typeof op569GetQuestcenterBusinessModelEwsModelPreview>>,
+export function useGetQuestcenterBusinessModelEwsModelPreview<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelPreview>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op569GetQuestcenterBusinessModelEwsModelPreviewParams,
+  params: GetQuestcenterBusinessModelEwsModelPreviewParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op569GetQuestcenterBusinessModelEwsModelPreview>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelPreview>>,
         TError,
         TData
       >
@@ -1850,15 +1844,15 @@ export function useOp569GetQuestcenterBusinessModelEwsModelPreview<
  * @summary 预警模型-查询
  */
 
-export function useOp569GetQuestcenterBusinessModelEwsModelPreview<
-  TData = Awaited<ReturnType<typeof op569GetQuestcenterBusinessModelEwsModelPreview>>,
+export function useGetQuestcenterBusinessModelEwsModelPreview<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelPreview>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op569GetQuestcenterBusinessModelEwsModelPreviewParams,
+  params: GetQuestcenterBusinessModelEwsModelPreviewParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op569GetQuestcenterBusinessModelEwsModelPreview>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelPreview>>,
         TError,
         TData
       >
@@ -1866,10 +1860,7 @@ export function useOp569GetQuestcenterBusinessModelEwsModelPreview<
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
-  const queryOptions = getOp569GetQuestcenterBusinessModelEwsModelPreviewQueryOptions(
-    params,
-    options
-  )
+  const queryOptions = getGetQuestcenterBusinessModelEwsModelPreviewQueryOptions(params, options)
 
   const query = useQuery(queryOptions, queryClient) as UseQueryResult<TData, TError> & {
     queryKey: DataTag<QueryKey, TData, TError>
@@ -1878,21 +1869,21 @@ export function useOp569GetQuestcenterBusinessModelEwsModelPreview<
   return { ...query, queryKey: queryOptions.queryKey }
 }
 
-export type op615GetQuestcenterBusinessModelEwsModelRefreshResponse200 = {
-  data: Op615GetQuestcenterBusinessModelEwsModelRefresh200
+export type getQuestcenterBusinessModelEwsModelRefreshResponse200 = {
+  data: GetQuestcenterBusinessModelEwsModelRefresh200
   status: 200
 }
 
-export type op615GetQuestcenterBusinessModelEwsModelRefreshResponseSuccess =
-  op615GetQuestcenterBusinessModelEwsModelRefreshResponse200 & {
+export type getQuestcenterBusinessModelEwsModelRefreshResponseSuccess =
+  getQuestcenterBusinessModelEwsModelRefreshResponse200 & {
     headers: Headers
   }
 
-export type op615GetQuestcenterBusinessModelEwsModelRefreshResponse =
-  op615GetQuestcenterBusinessModelEwsModelRefreshResponseSuccess
+export type getQuestcenterBusinessModelEwsModelRefreshResponse =
+  getQuestcenterBusinessModelEwsModelRefreshResponseSuccess
 
-export const getOp615GetQuestcenterBusinessModelEwsModelRefreshUrl = (
-  params: Op615GetQuestcenterBusinessModelEwsModelRefreshParams
+export const getGetQuestcenterBusinessModelEwsModelRefreshUrl = (
+  params: GetQuestcenterBusinessModelEwsModelRefreshParams
 ) => {
   const normalizedParams = new URLSearchParams()
 
@@ -1913,12 +1904,12 @@ export const getOp615GetQuestcenterBusinessModelEwsModelRefreshUrl = (
  * 预警模型-配置更新
  * @summary 预警模型-配置更新
  */
-export const op615GetQuestcenterBusinessModelEwsModelRefresh = async (
-  params: Op615GetQuestcenterBusinessModelEwsModelRefreshParams,
+export const getQuestcenterBusinessModelEwsModelRefresh = async (
+  params: GetQuestcenterBusinessModelEwsModelRefreshParams,
   options?: RequestInit
-): Promise<op615GetQuestcenterBusinessModelEwsModelRefreshResponse> => {
-  return customFetch<op615GetQuestcenterBusinessModelEwsModelRefreshResponse>(
-    getOp615GetQuestcenterBusinessModelEwsModelRefreshUrl(params),
+): Promise<getQuestcenterBusinessModelEwsModelRefreshResponse> => {
+  return customFetch<getQuestcenterBusinessModelEwsModelRefreshResponse>(
+    getGetQuestcenterBusinessModelEwsModelRefreshUrl(params),
     {
       ...options,
       method: 'GET',
@@ -1926,21 +1917,21 @@ export const op615GetQuestcenterBusinessModelEwsModelRefresh = async (
   )
 }
 
-export const getOp615GetQuestcenterBusinessModelEwsModelRefreshQueryKey = (
-  params?: Op615GetQuestcenterBusinessModelEwsModelRefreshParams
+export const getGetQuestcenterBusinessModelEwsModelRefreshQueryKey = (
+  params?: GetQuestcenterBusinessModelEwsModelRefreshParams
 ) => {
   return [`/questcenter/business_model/ews/model/refresh`, ...(params ? [params] : [])] as const
 }
 
-export const getOp615GetQuestcenterBusinessModelEwsModelRefreshQueryOptions = <
-  TData = Awaited<ReturnType<typeof op615GetQuestcenterBusinessModelEwsModelRefresh>>,
+export const getGetQuestcenterBusinessModelEwsModelRefreshQueryOptions = <
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelRefresh>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op615GetQuestcenterBusinessModelEwsModelRefreshParams,
+  params: GetQuestcenterBusinessModelEwsModelRefreshParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op615GetQuestcenterBusinessModelEwsModelRefresh>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelRefresh>>,
         TError,
         TData
       >
@@ -1950,81 +1941,81 @@ export const getOp615GetQuestcenterBusinessModelEwsModelRefreshQueryOptions = <
   const { query: queryOptions } = options ?? {}
 
   const queryKey =
-    queryOptions?.queryKey ?? getOp615GetQuestcenterBusinessModelEwsModelRefreshQueryKey(params)
+    queryOptions?.queryKey ?? getGetQuestcenterBusinessModelEwsModelRefreshQueryKey(params)
 
   const queryFn: QueryFunction<
-    Awaited<ReturnType<typeof op615GetQuestcenterBusinessModelEwsModelRefresh>>
-  > = ({ signal }) => op615GetQuestcenterBusinessModelEwsModelRefresh(params, { signal })
+    Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelRefresh>>
+  > = ({ signal }) => getQuestcenterBusinessModelEwsModelRefresh(params, { signal })
 
   return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof op615GetQuestcenterBusinessModelEwsModelRefresh>>,
+    Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelRefresh>>,
     TError,
     TData
   > & { queryKey: DataTag<QueryKey, TData, TError> }
 }
 
-export type Op615GetQuestcenterBusinessModelEwsModelRefreshQueryResult = NonNullable<
-  Awaited<ReturnType<typeof op615GetQuestcenterBusinessModelEwsModelRefresh>>
+export type GetQuestcenterBusinessModelEwsModelRefreshQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelRefresh>>
 >
-export type Op615GetQuestcenterBusinessModelEwsModelRefreshQueryError = ErrorType<unknown>
+export type GetQuestcenterBusinessModelEwsModelRefreshQueryError = ErrorType<unknown>
 
-export function useOp615GetQuestcenterBusinessModelEwsModelRefresh<
-  TData = Awaited<ReturnType<typeof op615GetQuestcenterBusinessModelEwsModelRefresh>>,
+export function useGetQuestcenterBusinessModelEwsModelRefresh<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelRefresh>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op615GetQuestcenterBusinessModelEwsModelRefreshParams,
+  params: GetQuestcenterBusinessModelEwsModelRefreshParams,
   options: {
     query: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op615GetQuestcenterBusinessModelEwsModelRefresh>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelRefresh>>,
         TError,
         TData
       >
     > &
       Pick<
         DefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op615GetQuestcenterBusinessModelEwsModelRefresh>>,
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelRefresh>>,
           TError,
-          Awaited<ReturnType<typeof op615GetQuestcenterBusinessModelEwsModelRefresh>>
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelRefresh>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp615GetQuestcenterBusinessModelEwsModelRefresh<
-  TData = Awaited<ReturnType<typeof op615GetQuestcenterBusinessModelEwsModelRefresh>>,
+export function useGetQuestcenterBusinessModelEwsModelRefresh<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelRefresh>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op615GetQuestcenterBusinessModelEwsModelRefreshParams,
+  params: GetQuestcenterBusinessModelEwsModelRefreshParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op615GetQuestcenterBusinessModelEwsModelRefresh>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelRefresh>>,
         TError,
         TData
       >
     > &
       Pick<
         UndefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op615GetQuestcenterBusinessModelEwsModelRefresh>>,
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelRefresh>>,
           TError,
-          Awaited<ReturnType<typeof op615GetQuestcenterBusinessModelEwsModelRefresh>>
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelRefresh>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp615GetQuestcenterBusinessModelEwsModelRefresh<
-  TData = Awaited<ReturnType<typeof op615GetQuestcenterBusinessModelEwsModelRefresh>>,
+export function useGetQuestcenterBusinessModelEwsModelRefresh<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelRefresh>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op615GetQuestcenterBusinessModelEwsModelRefreshParams,
+  params: GetQuestcenterBusinessModelEwsModelRefreshParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op615GetQuestcenterBusinessModelEwsModelRefresh>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelRefresh>>,
         TError,
         TData
       >
@@ -2036,15 +2027,15 @@ export function useOp615GetQuestcenterBusinessModelEwsModelRefresh<
  * @summary 预警模型-配置更新
  */
 
-export function useOp615GetQuestcenterBusinessModelEwsModelRefresh<
-  TData = Awaited<ReturnType<typeof op615GetQuestcenterBusinessModelEwsModelRefresh>>,
+export function useGetQuestcenterBusinessModelEwsModelRefresh<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelRefresh>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op615GetQuestcenterBusinessModelEwsModelRefreshParams,
+  params: GetQuestcenterBusinessModelEwsModelRefreshParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op615GetQuestcenterBusinessModelEwsModelRefresh>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelEwsModelRefresh>>,
         TError,
         TData
       >
@@ -2052,10 +2043,7 @@ export function useOp615GetQuestcenterBusinessModelEwsModelRefresh<
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
-  const queryOptions = getOp615GetQuestcenterBusinessModelEwsModelRefreshQueryOptions(
-    params,
-    options
-  )
+  const queryOptions = getGetQuestcenterBusinessModelEwsModelRefreshQueryOptions(params, options)
 
   const query = useQuery(queryOptions, queryClient) as UseQueryResult<TData, TError> & {
     queryKey: DataTag<QueryKey, TData, TError>
@@ -2064,20 +2052,20 @@ export function useOp615GetQuestcenterBusinessModelEwsModelRefresh<
   return { ...query, queryKey: queryOptions.queryKey }
 }
 
-export type op565PostQuestcenterBusinessModelEwsModelSaveResponse200 = {
-  data: Op565PostQuestcenterBusinessModelEwsModelSave200
+export type postQuestcenterBusinessModelEwsModelSaveResponse200 = {
+  data: PostQuestcenterBusinessModelEwsModelSave200
   status: 200
 }
 
-export type op565PostQuestcenterBusinessModelEwsModelSaveResponseSuccess =
-  op565PostQuestcenterBusinessModelEwsModelSaveResponse200 & {
+export type postQuestcenterBusinessModelEwsModelSaveResponseSuccess =
+  postQuestcenterBusinessModelEwsModelSaveResponse200 & {
     headers: Headers
   }
 
-export type op565PostQuestcenterBusinessModelEwsModelSaveResponse =
-  op565PostQuestcenterBusinessModelEwsModelSaveResponseSuccess
+export type postQuestcenterBusinessModelEwsModelSaveResponse =
+  postQuestcenterBusinessModelEwsModelSaveResponseSuccess
 
-export const getOp565PostQuestcenterBusinessModelEwsModelSaveUrl = () => {
+export const getPostQuestcenterBusinessModelEwsModelSaveUrl = () => {
   return `/questcenter/business_model/ews/model/save`
 }
 
@@ -2085,38 +2073,38 @@ export const getOp565PostQuestcenterBusinessModelEwsModelSaveUrl = () => {
  * 枚举值请调枚举接口
  * @summary 预警模型-保存
  */
-export const op565PostQuestcenterBusinessModelEwsModelSave = async (
-  op565PostQuestcenterBusinessModelEwsModelSaveBody?: Op565PostQuestcenterBusinessModelEwsModelSaveBody,
+export const postQuestcenterBusinessModelEwsModelSave = async (
+  postQuestcenterBusinessModelEwsModelSaveBody?: PostQuestcenterBusinessModelEwsModelSaveBody,
   options?: RequestInit
-): Promise<op565PostQuestcenterBusinessModelEwsModelSaveResponse> => {
-  return customFetch<op565PostQuestcenterBusinessModelEwsModelSaveResponse>(
-    getOp565PostQuestcenterBusinessModelEwsModelSaveUrl(),
+): Promise<postQuestcenterBusinessModelEwsModelSaveResponse> => {
+  return customFetch<postQuestcenterBusinessModelEwsModelSaveResponse>(
+    getPostQuestcenterBusinessModelEwsModelSaveUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op565PostQuestcenterBusinessModelEwsModelSaveBody),
+      body: JSON.stringify(postQuestcenterBusinessModelEwsModelSaveBody),
     }
   )
 }
 
-export const getOp565PostQuestcenterBusinessModelEwsModelSaveMutationOptions = <
+export const getPostQuestcenterBusinessModelEwsModelSaveMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op565PostQuestcenterBusinessModelEwsModelSave>>,
+    Awaited<ReturnType<typeof postQuestcenterBusinessModelEwsModelSave>>,
     TError,
-    { data?: Op565PostQuestcenterBusinessModelEwsModelSaveBody },
+    { data?: PostQuestcenterBusinessModelEwsModelSaveBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op565PostQuestcenterBusinessModelEwsModelSave>>,
+  Awaited<ReturnType<typeof postQuestcenterBusinessModelEwsModelSave>>,
   TError,
-  { data?: Op565PostQuestcenterBusinessModelEwsModelSaveBody },
+  { data?: PostQuestcenterBusinessModelEwsModelSaveBody },
   TContext
 > => {
-  const mutationKey = ['op565PostQuestcenterBusinessModelEwsModelSave']
+  const mutationKey = ['postQuestcenterBusinessModelEwsModelSave']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -2124,67 +2112,67 @@ export const getOp565PostQuestcenterBusinessModelEwsModelSaveMutationOptions = <
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op565PostQuestcenterBusinessModelEwsModelSave>>,
-    { data?: Op565PostQuestcenterBusinessModelEwsModelSaveBody }
+    Awaited<ReturnType<typeof postQuestcenterBusinessModelEwsModelSave>>,
+    { data?: PostQuestcenterBusinessModelEwsModelSaveBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op565PostQuestcenterBusinessModelEwsModelSave(data)
+    return postQuestcenterBusinessModelEwsModelSave(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op565PostQuestcenterBusinessModelEwsModelSaveMutationResult = NonNullable<
-  Awaited<ReturnType<typeof op565PostQuestcenterBusinessModelEwsModelSave>>
+export type PostQuestcenterBusinessModelEwsModelSaveMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterBusinessModelEwsModelSave>>
 >
-export type Op565PostQuestcenterBusinessModelEwsModelSaveMutationBody =
-  | Op565PostQuestcenterBusinessModelEwsModelSaveBody
+export type PostQuestcenterBusinessModelEwsModelSaveMutationBody =
+  | PostQuestcenterBusinessModelEwsModelSaveBody
   | undefined
-export type Op565PostQuestcenterBusinessModelEwsModelSaveMutationError = ErrorType<unknown>
+export type PostQuestcenterBusinessModelEwsModelSaveMutationError = ErrorType<unknown>
 
 /**
  * @summary 预警模型-保存
  */
-export const useOp565PostQuestcenterBusinessModelEwsModelSave = <
+export const usePostQuestcenterBusinessModelEwsModelSave = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op565PostQuestcenterBusinessModelEwsModelSave>>,
+      Awaited<ReturnType<typeof postQuestcenterBusinessModelEwsModelSave>>,
       TError,
-      { data?: Op565PostQuestcenterBusinessModelEwsModelSaveBody },
+      { data?: PostQuestcenterBusinessModelEwsModelSaveBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op565PostQuestcenterBusinessModelEwsModelSave>>,
+  Awaited<ReturnType<typeof postQuestcenterBusinessModelEwsModelSave>>,
   TError,
-  { data?: Op565PostQuestcenterBusinessModelEwsModelSaveBody },
+  { data?: PostQuestcenterBusinessModelEwsModelSaveBody },
   TContext
 > => {
   return useMutation(
-    getOp565PostQuestcenterBusinessModelEwsModelSaveMutationOptions(options),
+    getPostQuestcenterBusinessModelEwsModelSaveMutationOptions(options),
     queryClient
   )
 }
 
-export type op616PostQuestcenterBusinessModelEwsModelStateResponse200 = {
-  data: Op616PostQuestcenterBusinessModelEwsModelState200
+export type postQuestcenterBusinessModelEwsModelStateResponse200 = {
+  data: PostQuestcenterBusinessModelEwsModelState200
   status: 200
 }
 
-export type op616PostQuestcenterBusinessModelEwsModelStateResponseSuccess =
-  op616PostQuestcenterBusinessModelEwsModelStateResponse200 & {
+export type postQuestcenterBusinessModelEwsModelStateResponseSuccess =
+  postQuestcenterBusinessModelEwsModelStateResponse200 & {
     headers: Headers
   }
 
-export type op616PostQuestcenterBusinessModelEwsModelStateResponse =
-  op616PostQuestcenterBusinessModelEwsModelStateResponseSuccess
+export type postQuestcenterBusinessModelEwsModelStateResponse =
+  postQuestcenterBusinessModelEwsModelStateResponseSuccess
 
-export const getOp616PostQuestcenterBusinessModelEwsModelStateUrl = () => {
+export const getPostQuestcenterBusinessModelEwsModelStateUrl = () => {
   return `/questcenter/business_model/ews/model/state`
 }
 
@@ -2192,38 +2180,38 @@ export const getOp616PostQuestcenterBusinessModelEwsModelStateUrl = () => {
  * 预警模型-发布状态
  * @summary 预警模型-发布状态
  */
-export const op616PostQuestcenterBusinessModelEwsModelState = async (
-  op616PostQuestcenterBusinessModelEwsModelStateBody: Op616PostQuestcenterBusinessModelEwsModelStateBody,
+export const postQuestcenterBusinessModelEwsModelState = async (
+  postQuestcenterBusinessModelEwsModelStateBody: PostQuestcenterBusinessModelEwsModelStateBody,
   options?: RequestInit
-): Promise<op616PostQuestcenterBusinessModelEwsModelStateResponse> => {
-  return customFetch<op616PostQuestcenterBusinessModelEwsModelStateResponse>(
-    getOp616PostQuestcenterBusinessModelEwsModelStateUrl(),
+): Promise<postQuestcenterBusinessModelEwsModelStateResponse> => {
+  return customFetch<postQuestcenterBusinessModelEwsModelStateResponse>(
+    getPostQuestcenterBusinessModelEwsModelStateUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op616PostQuestcenterBusinessModelEwsModelStateBody),
+      body: JSON.stringify(postQuestcenterBusinessModelEwsModelStateBody),
     }
   )
 }
 
-export const getOp616PostQuestcenterBusinessModelEwsModelStateMutationOptions = <
+export const getPostQuestcenterBusinessModelEwsModelStateMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op616PostQuestcenterBusinessModelEwsModelState>>,
+    Awaited<ReturnType<typeof postQuestcenterBusinessModelEwsModelState>>,
     TError,
-    { data: Op616PostQuestcenterBusinessModelEwsModelStateBody },
+    { data: PostQuestcenterBusinessModelEwsModelStateBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op616PostQuestcenterBusinessModelEwsModelState>>,
+  Awaited<ReturnType<typeof postQuestcenterBusinessModelEwsModelState>>,
   TError,
-  { data: Op616PostQuestcenterBusinessModelEwsModelStateBody },
+  { data: PostQuestcenterBusinessModelEwsModelStateBody },
   TContext
 > => {
-  const mutationKey = ['op616PostQuestcenterBusinessModelEwsModelState']
+  const mutationKey = ['postQuestcenterBusinessModelEwsModelState']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -2231,66 +2219,66 @@ export const getOp616PostQuestcenterBusinessModelEwsModelStateMutationOptions = 
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op616PostQuestcenterBusinessModelEwsModelState>>,
-    { data: Op616PostQuestcenterBusinessModelEwsModelStateBody }
+    Awaited<ReturnType<typeof postQuestcenterBusinessModelEwsModelState>>,
+    { data: PostQuestcenterBusinessModelEwsModelStateBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op616PostQuestcenterBusinessModelEwsModelState(data)
+    return postQuestcenterBusinessModelEwsModelState(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op616PostQuestcenterBusinessModelEwsModelStateMutationResult = NonNullable<
-  Awaited<ReturnType<typeof op616PostQuestcenterBusinessModelEwsModelState>>
+export type PostQuestcenterBusinessModelEwsModelStateMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterBusinessModelEwsModelState>>
 >
-export type Op616PostQuestcenterBusinessModelEwsModelStateMutationBody =
-  Op616PostQuestcenterBusinessModelEwsModelStateBody
-export type Op616PostQuestcenterBusinessModelEwsModelStateMutationError = ErrorType<unknown>
+export type PostQuestcenterBusinessModelEwsModelStateMutationBody =
+  PostQuestcenterBusinessModelEwsModelStateBody
+export type PostQuestcenterBusinessModelEwsModelStateMutationError = ErrorType<unknown>
 
 /**
  * @summary 预警模型-发布状态
  */
-export const useOp616PostQuestcenterBusinessModelEwsModelState = <
+export const usePostQuestcenterBusinessModelEwsModelState = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op616PostQuestcenterBusinessModelEwsModelState>>,
+      Awaited<ReturnType<typeof postQuestcenterBusinessModelEwsModelState>>,
       TError,
-      { data: Op616PostQuestcenterBusinessModelEwsModelStateBody },
+      { data: PostQuestcenterBusinessModelEwsModelStateBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op616PostQuestcenterBusinessModelEwsModelState>>,
+  Awaited<ReturnType<typeof postQuestcenterBusinessModelEwsModelState>>,
   TError,
-  { data: Op616PostQuestcenterBusinessModelEwsModelStateBody },
+  { data: PostQuestcenterBusinessModelEwsModelStateBody },
   TContext
 > => {
   return useMutation(
-    getOp616PostQuestcenterBusinessModelEwsModelStateMutationOptions(options),
+    getPostQuestcenterBusinessModelEwsModelStateMutationOptions(options),
     queryClient
   )
 }
 
-export type op552PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroupResponse200 = {
-  data: Op552PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroup200
+export type postQuestcenterBusinessModelHighRiskSettingBindNodeToGroupResponse200 = {
+  data: PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroup200
   status: 200
 }
 
-export type op552PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroupResponseSuccess =
-  op552PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroupResponse200 & {
+export type postQuestcenterBusinessModelHighRiskSettingBindNodeToGroupResponseSuccess =
+  postQuestcenterBusinessModelHighRiskSettingBindNodeToGroupResponse200 & {
     headers: Headers
   }
 
-export type op552PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroupResponse =
-  op552PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroupResponseSuccess
+export type postQuestcenterBusinessModelHighRiskSettingBindNodeToGroupResponse =
+  postQuestcenterBusinessModelHighRiskSettingBindNodeToGroupResponseSuccess
 
-export const getOp552PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroupUrl = () => {
+export const getPostQuestcenterBusinessModelHighRiskSettingBindNodeToGroupUrl = () => {
   return `/questcenter/business_model/high_risk/setting/bind_node_to_group`
 }
 
@@ -2298,38 +2286,38 @@ export const getOp552PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroupU
  * 绑定数据组到高危因素分组
  * @summary 绑定数据组到高危因素分组
  */
-export const op552PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroup = async (
-  op552PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroupBody?: Op552PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroupBody,
+export const postQuestcenterBusinessModelHighRiskSettingBindNodeToGroup = async (
+  postQuestcenterBusinessModelHighRiskSettingBindNodeToGroupBody?: PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroupBody,
   options?: RequestInit
-): Promise<op552PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroupResponse> => {
-  return customFetch<op552PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroupResponse>(
-    getOp552PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroupUrl(),
+): Promise<postQuestcenterBusinessModelHighRiskSettingBindNodeToGroupResponse> => {
+  return customFetch<postQuestcenterBusinessModelHighRiskSettingBindNodeToGroupResponse>(
+    getPostQuestcenterBusinessModelHighRiskSettingBindNodeToGroupUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op552PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroupBody),
+      body: JSON.stringify(postQuestcenterBusinessModelHighRiskSettingBindNodeToGroupBody),
     }
   )
 }
 
-export const getOp552PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroupMutationOptions = <
+export const getPostQuestcenterBusinessModelHighRiskSettingBindNodeToGroupMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op552PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroup>>,
+    Awaited<ReturnType<typeof postQuestcenterBusinessModelHighRiskSettingBindNodeToGroup>>,
     TError,
-    { data?: Op552PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroupBody },
+    { data?: PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroupBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op552PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroup>>,
+  Awaited<ReturnType<typeof postQuestcenterBusinessModelHighRiskSettingBindNodeToGroup>>,
   TError,
-  { data?: Op552PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroupBody },
+  { data?: PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroupBody },
   TContext
 > => {
-  const mutationKey = ['op552PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroup']
+  const mutationKey = ['postQuestcenterBusinessModelHighRiskSettingBindNodeToGroup']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -2337,70 +2325,69 @@ export const getOp552PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroupM
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op552PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroup>>,
-    { data?: Op552PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroupBody }
+    Awaited<ReturnType<typeof postQuestcenterBusinessModelHighRiskSettingBindNodeToGroup>>,
+    { data?: PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroupBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op552PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroup(data)
+    return postQuestcenterBusinessModelHighRiskSettingBindNodeToGroup(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op552PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroupMutationResult =
-  NonNullable<
-    Awaited<ReturnType<typeof op552PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroup>>
-  >
-export type Op552PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroupMutationBody =
-  | Op552PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroupBody
+export type PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroupMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterBusinessModelHighRiskSettingBindNodeToGroup>>
+>
+export type PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroupMutationBody =
+  | PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroupBody
   | undefined
-export type Op552PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroupMutationError =
+export type PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroupMutationError =
   ErrorType<unknown>
 
 /**
  * @summary 绑定数据组到高危因素分组
  */
-export const useOp552PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroup = <
+export const usePostQuestcenterBusinessModelHighRiskSettingBindNodeToGroup = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op552PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroup>>,
+      Awaited<ReturnType<typeof postQuestcenterBusinessModelHighRiskSettingBindNodeToGroup>>,
       TError,
-      { data?: Op552PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroupBody },
+      { data?: PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroupBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op552PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroup>>,
+  Awaited<ReturnType<typeof postQuestcenterBusinessModelHighRiskSettingBindNodeToGroup>>,
   TError,
-  { data?: Op552PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroupBody },
+  { data?: PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroupBody },
   TContext
 > => {
   return useMutation(
-    getOp552PostQuestcenterBusinessModelHighRiskSettingBindNodeToGroupMutationOptions(options),
+    getPostQuestcenterBusinessModelHighRiskSettingBindNodeToGroupMutationOptions(options),
     queryClient
   )
 }
 
-export type op547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeResponse200 = {
-  data: Op547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode200
+export type getQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeResponse200 = {
+  data: GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode200
   status: 200
 }
 
-export type op547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeResponseSuccess =
-  op547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeResponse200 & {
+export type getQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeResponseSuccess =
+  getQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeResponse200 & {
     headers: Headers
   }
 
-export type op547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeResponse =
-  op547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeResponseSuccess
+export type getQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeResponse =
+  getQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeResponseSuccess
 
-export const getOp547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeUrl = (
-  params: Op547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeParams
+export const getGetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeUrl = (
+  params: GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeParams
 ) => {
   const normalizedParams = new URLSearchParams()
 
@@ -2421,12 +2408,12 @@ export const getOp547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode
  * 搜索获取诊断编码
  * @summary 搜索获取诊断编码
  */
-export const op547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode = async (
-  params: Op547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeParams,
+export const getQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode = async (
+  params: GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeParams,
   options?: RequestInit
-): Promise<op547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeResponse> => {
-  return customFetch<op547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeResponse>(
-    getOp547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeUrl(params),
+): Promise<getQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeResponse> => {
+  return customFetch<getQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeResponse>(
+    getGetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeUrl(params),
     {
       ...options,
       method: 'GET',
@@ -2434,8 +2421,8 @@ export const op547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode = 
   )
 }
 
-export const getOp547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeQueryKey = (
-  params?: Op547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeParams
+export const getGetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeQueryKey = (
+  params?: GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeParams
 ) => {
   return [
     `/questcenter/business_model/high_risk/setting/find_diagnosis_code`,
@@ -2443,19 +2430,15 @@ export const getOp547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode
   ] as const
 }
 
-export const getOp547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeQueryOptions = <
-  TData = Awaited<
-    ReturnType<typeof op547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode>
-  >,
+export const getGetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeQueryOptions = <
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeParams,
+  params: GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<
-          ReturnType<typeof op547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode>
-        >,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode>>,
         TError,
         TData
       >
@@ -2466,104 +2449,83 @@ export const getOp547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode
 
   const queryKey =
     queryOptions?.queryKey ??
-    getOp547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeQueryKey(params)
+    getGetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeQueryKey(params)
 
   const queryFn: QueryFunction<
-    Awaited<ReturnType<typeof op547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode>>
+    Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode>>
   > = ({ signal }) =>
-    op547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode(params, { signal })
+    getQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode(params, { signal })
 
   return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof op547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode>>,
+    Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode>>,
     TError,
     TData
   > & { queryKey: DataTag<QueryKey, TData, TError> }
 }
 
-export type Op547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeQueryResult =
-  NonNullable<
-    Awaited<ReturnType<typeof op547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode>>
-  >
-export type Op547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeQueryError =
+export type GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode>>
+>
+export type GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeQueryError =
   ErrorType<unknown>
 
-export function useOp547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode<
-  TData = Awaited<
-    ReturnType<typeof op547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode>
-  >,
+export function useGetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeParams,
+  params: GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeParams,
   options: {
     query: Partial<
       UseQueryOptions<
-        Awaited<
-          ReturnType<typeof op547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode>
-        >,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode>>,
         TError,
         TData
       >
     > &
       Pick<
         DefinedInitialDataOptions<
-          Awaited<
-            ReturnType<typeof op547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode>
-          >,
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode>>,
           TError,
-          Awaited<
-            ReturnType<typeof op547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode>
-          >
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode<
-  TData = Awaited<
-    ReturnType<typeof op547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode>
-  >,
+export function useGetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeParams,
+  params: GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<
-          ReturnType<typeof op547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode>
-        >,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode>>,
         TError,
         TData
       >
     > &
       Pick<
         UndefinedInitialDataOptions<
-          Awaited<
-            ReturnType<typeof op547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode>
-          >,
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode>>,
           TError,
-          Awaited<
-            ReturnType<typeof op547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode>
-          >
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode<
-  TData = Awaited<
-    ReturnType<typeof op547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode>
-  >,
+export function useGetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeParams,
+  params: GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<
-          ReturnType<typeof op547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode>
-        >,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode>>,
         TError,
         TData
       >
@@ -2575,19 +2537,15 @@ export function useOp547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisC
  * @summary 搜索获取诊断编码
  */
 
-export function useOp547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode<
-  TData = Awaited<
-    ReturnType<typeof op547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode>
-  >,
+export function useGetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeParams,
+  params: GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<
-          ReturnType<typeof op547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode>
-        >,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode>>,
         TError,
         TData
       >
@@ -2595,8 +2553,10 @@ export function useOp547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisC
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
-  const queryOptions =
-    getOp547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeQueryOptions(params, options)
+  const queryOptions = getGetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeQueryOptions(
+    params,
+    options
+  )
 
   const query = useQuery(queryOptions, queryClient) as UseQueryResult<TData, TError> & {
     queryKey: DataTag<QueryKey, TData, TError>
@@ -2605,20 +2565,20 @@ export function useOp547GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisC
   return { ...query, queryKey: queryOptions.queryKey }
 }
 
-export type op554PostQuestcenterBusinessModelHighRiskSettingGetBindNodeResponse200 = {
-  data: Op554PostQuestcenterBusinessModelHighRiskSettingGetBindNode200
+export type postQuestcenterBusinessModelHighRiskSettingGetBindNodeResponse200 = {
+  data: PostQuestcenterBusinessModelHighRiskSettingGetBindNode200
   status: 200
 }
 
-export type op554PostQuestcenterBusinessModelHighRiskSettingGetBindNodeResponseSuccess =
-  op554PostQuestcenterBusinessModelHighRiskSettingGetBindNodeResponse200 & {
+export type postQuestcenterBusinessModelHighRiskSettingGetBindNodeResponseSuccess =
+  postQuestcenterBusinessModelHighRiskSettingGetBindNodeResponse200 & {
     headers: Headers
   }
 
-export type op554PostQuestcenterBusinessModelHighRiskSettingGetBindNodeResponse =
-  op554PostQuestcenterBusinessModelHighRiskSettingGetBindNodeResponseSuccess
+export type postQuestcenterBusinessModelHighRiskSettingGetBindNodeResponse =
+  postQuestcenterBusinessModelHighRiskSettingGetBindNodeResponseSuccess
 
-export const getOp554PostQuestcenterBusinessModelHighRiskSettingGetBindNodeUrl = () => {
+export const getPostQuestcenterBusinessModelHighRiskSettingGetBindNodeUrl = () => {
   return `/questcenter/business_model/high_risk/setting/get_bind_node`
 }
 
@@ -2626,38 +2586,38 @@ export const getOp554PostQuestcenterBusinessModelHighRiskSettingGetBindNodeUrl =
  * 获取绑定的数据组
  * @summary 获取绑定的数据组
  */
-export const op554PostQuestcenterBusinessModelHighRiskSettingGetBindNode = async (
-  op554PostQuestcenterBusinessModelHighRiskSettingGetBindNodeBody: Op554PostQuestcenterBusinessModelHighRiskSettingGetBindNodeBody,
+export const postQuestcenterBusinessModelHighRiskSettingGetBindNode = async (
+  postQuestcenterBusinessModelHighRiskSettingGetBindNodeBody: PostQuestcenterBusinessModelHighRiskSettingGetBindNodeBody,
   options?: RequestInit
-): Promise<op554PostQuestcenterBusinessModelHighRiskSettingGetBindNodeResponse> => {
-  return customFetch<op554PostQuestcenterBusinessModelHighRiskSettingGetBindNodeResponse>(
-    getOp554PostQuestcenterBusinessModelHighRiskSettingGetBindNodeUrl(),
+): Promise<postQuestcenterBusinessModelHighRiskSettingGetBindNodeResponse> => {
+  return customFetch<postQuestcenterBusinessModelHighRiskSettingGetBindNodeResponse>(
+    getPostQuestcenterBusinessModelHighRiskSettingGetBindNodeUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op554PostQuestcenterBusinessModelHighRiskSettingGetBindNodeBody),
+      body: JSON.stringify(postQuestcenterBusinessModelHighRiskSettingGetBindNodeBody),
     }
   )
 }
 
-export const getOp554PostQuestcenterBusinessModelHighRiskSettingGetBindNodeMutationOptions = <
+export const getPostQuestcenterBusinessModelHighRiskSettingGetBindNodeMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op554PostQuestcenterBusinessModelHighRiskSettingGetBindNode>>,
+    Awaited<ReturnType<typeof postQuestcenterBusinessModelHighRiskSettingGetBindNode>>,
     TError,
-    { data: Op554PostQuestcenterBusinessModelHighRiskSettingGetBindNodeBody },
+    { data: PostQuestcenterBusinessModelHighRiskSettingGetBindNodeBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op554PostQuestcenterBusinessModelHighRiskSettingGetBindNode>>,
+  Awaited<ReturnType<typeof postQuestcenterBusinessModelHighRiskSettingGetBindNode>>,
   TError,
-  { data: Op554PostQuestcenterBusinessModelHighRiskSettingGetBindNodeBody },
+  { data: PostQuestcenterBusinessModelHighRiskSettingGetBindNodeBody },
   TContext
 > => {
-  const mutationKey = ['op554PostQuestcenterBusinessModelHighRiskSettingGetBindNode']
+  const mutationKey = ['postQuestcenterBusinessModelHighRiskSettingGetBindNode']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -2665,68 +2625,67 @@ export const getOp554PostQuestcenterBusinessModelHighRiskSettingGetBindNodeMutat
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op554PostQuestcenterBusinessModelHighRiskSettingGetBindNode>>,
-    { data: Op554PostQuestcenterBusinessModelHighRiskSettingGetBindNodeBody }
+    Awaited<ReturnType<typeof postQuestcenterBusinessModelHighRiskSettingGetBindNode>>,
+    { data: PostQuestcenterBusinessModelHighRiskSettingGetBindNodeBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op554PostQuestcenterBusinessModelHighRiskSettingGetBindNode(data)
+    return postQuestcenterBusinessModelHighRiskSettingGetBindNode(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op554PostQuestcenterBusinessModelHighRiskSettingGetBindNodeMutationResult = NonNullable<
-  Awaited<ReturnType<typeof op554PostQuestcenterBusinessModelHighRiskSettingGetBindNode>>
+export type PostQuestcenterBusinessModelHighRiskSettingGetBindNodeMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterBusinessModelHighRiskSettingGetBindNode>>
 >
-export type Op554PostQuestcenterBusinessModelHighRiskSettingGetBindNodeMutationBody =
-  Op554PostQuestcenterBusinessModelHighRiskSettingGetBindNodeBody
-export type Op554PostQuestcenterBusinessModelHighRiskSettingGetBindNodeMutationError =
-  ErrorType<unknown>
+export type PostQuestcenterBusinessModelHighRiskSettingGetBindNodeMutationBody =
+  PostQuestcenterBusinessModelHighRiskSettingGetBindNodeBody
+export type PostQuestcenterBusinessModelHighRiskSettingGetBindNodeMutationError = ErrorType<unknown>
 
 /**
  * @summary 获取绑定的数据组
  */
-export const useOp554PostQuestcenterBusinessModelHighRiskSettingGetBindNode = <
+export const usePostQuestcenterBusinessModelHighRiskSettingGetBindNode = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op554PostQuestcenterBusinessModelHighRiskSettingGetBindNode>>,
+      Awaited<ReturnType<typeof postQuestcenterBusinessModelHighRiskSettingGetBindNode>>,
       TError,
-      { data: Op554PostQuestcenterBusinessModelHighRiskSettingGetBindNodeBody },
+      { data: PostQuestcenterBusinessModelHighRiskSettingGetBindNodeBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op554PostQuestcenterBusinessModelHighRiskSettingGetBindNode>>,
+  Awaited<ReturnType<typeof postQuestcenterBusinessModelHighRiskSettingGetBindNode>>,
   TError,
-  { data: Op554PostQuestcenterBusinessModelHighRiskSettingGetBindNodeBody },
+  { data: PostQuestcenterBusinessModelHighRiskSettingGetBindNodeBody },
   TContext
 > => {
   return useMutation(
-    getOp554PostQuestcenterBusinessModelHighRiskSettingGetBindNodeMutationOptions(options),
+    getPostQuestcenterBusinessModelHighRiskSettingGetBindNodeMutationOptions(options),
     queryClient
   )
 }
 
-export type op550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetailResponse200 = {
-  data: Op550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetail200
+export type getQuestcenterBusinessModelHighRiskSettingGetFactorDetailResponse200 = {
+  data: GetQuestcenterBusinessModelHighRiskSettingGetFactorDetail200
   status: 200
 }
 
-export type op550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetailResponseSuccess =
-  op550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetailResponse200 & {
+export type getQuestcenterBusinessModelHighRiskSettingGetFactorDetailResponseSuccess =
+  getQuestcenterBusinessModelHighRiskSettingGetFactorDetailResponse200 & {
     headers: Headers
   }
 
-export type op550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetailResponse =
-  op550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetailResponseSuccess
+export type getQuestcenterBusinessModelHighRiskSettingGetFactorDetailResponse =
+  getQuestcenterBusinessModelHighRiskSettingGetFactorDetailResponseSuccess
 
-export const getOp550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetailUrl = (
-  params: Op550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetailParams
+export const getGetQuestcenterBusinessModelHighRiskSettingGetFactorDetailUrl = (
+  params: GetQuestcenterBusinessModelHighRiskSettingGetFactorDetailParams
 ) => {
   const normalizedParams = new URLSearchParams()
 
@@ -2747,12 +2706,12 @@ export const getOp550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetailUr
  * 获取高危因素指标详情
  * @summary 获取高危因素指标详情
  */
-export const op550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetail = async (
-  params: Op550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetailParams,
+export const getQuestcenterBusinessModelHighRiskSettingGetFactorDetail = async (
+  params: GetQuestcenterBusinessModelHighRiskSettingGetFactorDetailParams,
   options?: RequestInit
-): Promise<op550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetailResponse> => {
-  return customFetch<op550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetailResponse>(
-    getOp550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetailUrl(params),
+): Promise<getQuestcenterBusinessModelHighRiskSettingGetFactorDetailResponse> => {
+  return customFetch<getQuestcenterBusinessModelHighRiskSettingGetFactorDetailResponse>(
+    getGetQuestcenterBusinessModelHighRiskSettingGetFactorDetailUrl(params),
     {
       ...options,
       method: 'GET',
@@ -2760,8 +2719,8 @@ export const op550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetail = as
   )
 }
 
-export const getOp550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetailQueryKey = (
-  params?: Op550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetailParams
+export const getGetQuestcenterBusinessModelHighRiskSettingGetFactorDetailQueryKey = (
+  params?: GetQuestcenterBusinessModelHighRiskSettingGetFactorDetailParams
 ) => {
   return [
     `/questcenter/business_model/high_risk/setting/get_factor_detail`,
@@ -2769,17 +2728,15 @@ export const getOp550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetailQu
   ] as const
 }
 
-export const getOp550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetailQueryOptions = <
-  TData = Awaited<
-    ReturnType<typeof op550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetail>
-  >,
+export const getGetQuestcenterBusinessModelHighRiskSettingGetFactorDetailQueryOptions = <
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetFactorDetail>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetailParams,
+  params: GetQuestcenterBusinessModelHighRiskSettingGetFactorDetailParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetail>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetFactorDetail>>,
         TError,
         TData
       >
@@ -2790,93 +2747,81 @@ export const getOp550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetailQu
 
   const queryKey =
     queryOptions?.queryKey ??
-    getOp550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetailQueryKey(params)
+    getGetQuestcenterBusinessModelHighRiskSettingGetFactorDetailQueryKey(params)
 
   const queryFn: QueryFunction<
-    Awaited<ReturnType<typeof op550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetail>>
-  > = ({ signal }) =>
-    op550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetail(params, { signal })
+    Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetFactorDetail>>
+  > = ({ signal }) => getQuestcenterBusinessModelHighRiskSettingGetFactorDetail(params, { signal })
 
   return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof op550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetail>>,
+    Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetFactorDetail>>,
     TError,
     TData
   > & { queryKey: DataTag<QueryKey, TData, TError> }
 }
 
-export type Op550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetailQueryResult = NonNullable<
-  Awaited<ReturnType<typeof op550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetail>>
+export type GetQuestcenterBusinessModelHighRiskSettingGetFactorDetailQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetFactorDetail>>
 >
-export type Op550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetailQueryError =
-  ErrorType<unknown>
+export type GetQuestcenterBusinessModelHighRiskSettingGetFactorDetailQueryError = ErrorType<unknown>
 
-export function useOp550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetail<
-  TData = Awaited<
-    ReturnType<typeof op550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetail>
-  >,
+export function useGetQuestcenterBusinessModelHighRiskSettingGetFactorDetail<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetFactorDetail>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetailParams,
+  params: GetQuestcenterBusinessModelHighRiskSettingGetFactorDetailParams,
   options: {
     query: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetail>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetFactorDetail>>,
         TError,
         TData
       >
     > &
       Pick<
         DefinedInitialDataOptions<
-          Awaited<
-            ReturnType<typeof op550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetail>
-          >,
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetFactorDetail>>,
           TError,
-          Awaited<ReturnType<typeof op550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetail>>
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetFactorDetail>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetail<
-  TData = Awaited<
-    ReturnType<typeof op550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetail>
-  >,
+export function useGetQuestcenterBusinessModelHighRiskSettingGetFactorDetail<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetFactorDetail>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetailParams,
+  params: GetQuestcenterBusinessModelHighRiskSettingGetFactorDetailParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetail>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetFactorDetail>>,
         TError,
         TData
       >
     > &
       Pick<
         UndefinedInitialDataOptions<
-          Awaited<
-            ReturnType<typeof op550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetail>
-          >,
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetFactorDetail>>,
           TError,
-          Awaited<ReturnType<typeof op550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetail>>
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetFactorDetail>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetail<
-  TData = Awaited<
-    ReturnType<typeof op550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetail>
-  >,
+export function useGetQuestcenterBusinessModelHighRiskSettingGetFactorDetail<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetFactorDetail>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetailParams,
+  params: GetQuestcenterBusinessModelHighRiskSettingGetFactorDetailParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetail>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetFactorDetail>>,
         TError,
         TData
       >
@@ -2888,17 +2833,15 @@ export function useOp550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetai
  * @summary 获取高危因素指标详情
  */
 
-export function useOp550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetail<
-  TData = Awaited<
-    ReturnType<typeof op550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetail>
-  >,
+export function useGetQuestcenterBusinessModelHighRiskSettingGetFactorDetail<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetFactorDetail>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetailParams,
+  params: GetQuestcenterBusinessModelHighRiskSettingGetFactorDetailParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetail>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetFactorDetail>>,
         TError,
         TData
       >
@@ -2906,8 +2849,10 @@ export function useOp550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetai
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
-  const queryOptions =
-    getOp550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetailQueryOptions(params, options)
+  const queryOptions = getGetQuestcenterBusinessModelHighRiskSettingGetFactorDetailQueryOptions(
+    params,
+    options
+  )
 
   const query = useQuery(queryOptions, queryClient) as UseQueryResult<TData, TError> & {
     queryKey: DataTag<QueryKey, TData, TError>
@@ -2916,21 +2861,21 @@ export function useOp550GetQuestcenterBusinessModelHighRiskSettingGetFactorDetai
   return { ...query, queryKey: queryOptions.queryKey }
 }
 
-export type op549GetQuestcenterBusinessModelHighRiskSettingGetFactorPageResponse200 = {
-  data: Op549GetQuestcenterBusinessModelHighRiskSettingGetFactorPage200
+export type getQuestcenterBusinessModelHighRiskSettingGetFactorPageResponse200 = {
+  data: GetQuestcenterBusinessModelHighRiskSettingGetFactorPage200
   status: 200
 }
 
-export type op549GetQuestcenterBusinessModelHighRiskSettingGetFactorPageResponseSuccess =
-  op549GetQuestcenterBusinessModelHighRiskSettingGetFactorPageResponse200 & {
+export type getQuestcenterBusinessModelHighRiskSettingGetFactorPageResponseSuccess =
+  getQuestcenterBusinessModelHighRiskSettingGetFactorPageResponse200 & {
     headers: Headers
   }
 
-export type op549GetQuestcenterBusinessModelHighRiskSettingGetFactorPageResponse =
-  op549GetQuestcenterBusinessModelHighRiskSettingGetFactorPageResponseSuccess
+export type getQuestcenterBusinessModelHighRiskSettingGetFactorPageResponse =
+  getQuestcenterBusinessModelHighRiskSettingGetFactorPageResponseSuccess
 
-export const getOp549GetQuestcenterBusinessModelHighRiskSettingGetFactorPageUrl = (
-  params?: Op549GetQuestcenterBusinessModelHighRiskSettingGetFactorPageParams
+export const getGetQuestcenterBusinessModelHighRiskSettingGetFactorPageUrl = (
+  params?: GetQuestcenterBusinessModelHighRiskSettingGetFactorPageParams
 ) => {
   const normalizedParams = new URLSearchParams()
 
@@ -2951,12 +2896,12 @@ export const getOp549GetQuestcenterBusinessModelHighRiskSettingGetFactorPageUrl 
  * 获取高危因素指标对象，翻页
  * @summary 获取高危因素指标对象，翻页
  */
-export const op549GetQuestcenterBusinessModelHighRiskSettingGetFactorPage = async (
-  params?: Op549GetQuestcenterBusinessModelHighRiskSettingGetFactorPageParams,
+export const getQuestcenterBusinessModelHighRiskSettingGetFactorPage = async (
+  params?: GetQuestcenterBusinessModelHighRiskSettingGetFactorPageParams,
   options?: RequestInit
-): Promise<op549GetQuestcenterBusinessModelHighRiskSettingGetFactorPageResponse> => {
-  return customFetch<op549GetQuestcenterBusinessModelHighRiskSettingGetFactorPageResponse>(
-    getOp549GetQuestcenterBusinessModelHighRiskSettingGetFactorPageUrl(params),
+): Promise<getQuestcenterBusinessModelHighRiskSettingGetFactorPageResponse> => {
+  return customFetch<getQuestcenterBusinessModelHighRiskSettingGetFactorPageResponse>(
+    getGetQuestcenterBusinessModelHighRiskSettingGetFactorPageUrl(params),
     {
       ...options,
       method: 'GET',
@@ -2964,8 +2909,8 @@ export const op549GetQuestcenterBusinessModelHighRiskSettingGetFactorPage = asyn
   )
 }
 
-export const getOp549GetQuestcenterBusinessModelHighRiskSettingGetFactorPageQueryKey = (
-  params?: Op549GetQuestcenterBusinessModelHighRiskSettingGetFactorPageParams
+export const getGetQuestcenterBusinessModelHighRiskSettingGetFactorPageQueryKey = (
+  params?: GetQuestcenterBusinessModelHighRiskSettingGetFactorPageParams
 ) => {
   return [
     `/questcenter/business_model/high_risk/setting/get_factor_page`,
@@ -2973,15 +2918,15 @@ export const getOp549GetQuestcenterBusinessModelHighRiskSettingGetFactorPageQuer
   ] as const
 }
 
-export const getOp549GetQuestcenterBusinessModelHighRiskSettingGetFactorPageQueryOptions = <
-  TData = Awaited<ReturnType<typeof op549GetQuestcenterBusinessModelHighRiskSettingGetFactorPage>>,
+export const getGetQuestcenterBusinessModelHighRiskSettingGetFactorPageQueryOptions = <
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetFactorPage>>,
   TError = ErrorType<unknown>,
 >(
-  params?: Op549GetQuestcenterBusinessModelHighRiskSettingGetFactorPageParams,
+  params?: GetQuestcenterBusinessModelHighRiskSettingGetFactorPageParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op549GetQuestcenterBusinessModelHighRiskSettingGetFactorPage>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetFactorPage>>,
         TError,
         TData
       >
@@ -2992,83 +2937,81 @@ export const getOp549GetQuestcenterBusinessModelHighRiskSettingGetFactorPageQuer
 
   const queryKey =
     queryOptions?.queryKey ??
-    getOp549GetQuestcenterBusinessModelHighRiskSettingGetFactorPageQueryKey(params)
+    getGetQuestcenterBusinessModelHighRiskSettingGetFactorPageQueryKey(params)
 
   const queryFn: QueryFunction<
-    Awaited<ReturnType<typeof op549GetQuestcenterBusinessModelHighRiskSettingGetFactorPage>>
-  > = ({ signal }) =>
-    op549GetQuestcenterBusinessModelHighRiskSettingGetFactorPage(params, { signal })
+    Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetFactorPage>>
+  > = ({ signal }) => getQuestcenterBusinessModelHighRiskSettingGetFactorPage(params, { signal })
 
   return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof op549GetQuestcenterBusinessModelHighRiskSettingGetFactorPage>>,
+    Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetFactorPage>>,
     TError,
     TData
   > & { queryKey: DataTag<QueryKey, TData, TError> }
 }
 
-export type Op549GetQuestcenterBusinessModelHighRiskSettingGetFactorPageQueryResult = NonNullable<
-  Awaited<ReturnType<typeof op549GetQuestcenterBusinessModelHighRiskSettingGetFactorPage>>
+export type GetQuestcenterBusinessModelHighRiskSettingGetFactorPageQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetFactorPage>>
 >
-export type Op549GetQuestcenterBusinessModelHighRiskSettingGetFactorPageQueryError =
-  ErrorType<unknown>
+export type GetQuestcenterBusinessModelHighRiskSettingGetFactorPageQueryError = ErrorType<unknown>
 
-export function useOp549GetQuestcenterBusinessModelHighRiskSettingGetFactorPage<
-  TData = Awaited<ReturnType<typeof op549GetQuestcenterBusinessModelHighRiskSettingGetFactorPage>>,
+export function useGetQuestcenterBusinessModelHighRiskSettingGetFactorPage<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetFactorPage>>,
   TError = ErrorType<unknown>,
 >(
-  params: undefined | Op549GetQuestcenterBusinessModelHighRiskSettingGetFactorPageParams,
+  params: undefined | GetQuestcenterBusinessModelHighRiskSettingGetFactorPageParams,
   options: {
     query: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op549GetQuestcenterBusinessModelHighRiskSettingGetFactorPage>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetFactorPage>>,
         TError,
         TData
       >
     > &
       Pick<
         DefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op549GetQuestcenterBusinessModelHighRiskSettingGetFactorPage>>,
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetFactorPage>>,
           TError,
-          Awaited<ReturnType<typeof op549GetQuestcenterBusinessModelHighRiskSettingGetFactorPage>>
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetFactorPage>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp549GetQuestcenterBusinessModelHighRiskSettingGetFactorPage<
-  TData = Awaited<ReturnType<typeof op549GetQuestcenterBusinessModelHighRiskSettingGetFactorPage>>,
+export function useGetQuestcenterBusinessModelHighRiskSettingGetFactorPage<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetFactorPage>>,
   TError = ErrorType<unknown>,
 >(
-  params?: Op549GetQuestcenterBusinessModelHighRiskSettingGetFactorPageParams,
+  params?: GetQuestcenterBusinessModelHighRiskSettingGetFactorPageParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op549GetQuestcenterBusinessModelHighRiskSettingGetFactorPage>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetFactorPage>>,
         TError,
         TData
       >
     > &
       Pick<
         UndefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op549GetQuestcenterBusinessModelHighRiskSettingGetFactorPage>>,
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetFactorPage>>,
           TError,
-          Awaited<ReturnType<typeof op549GetQuestcenterBusinessModelHighRiskSettingGetFactorPage>>
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetFactorPage>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp549GetQuestcenterBusinessModelHighRiskSettingGetFactorPage<
-  TData = Awaited<ReturnType<typeof op549GetQuestcenterBusinessModelHighRiskSettingGetFactorPage>>,
+export function useGetQuestcenterBusinessModelHighRiskSettingGetFactorPage<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetFactorPage>>,
   TError = ErrorType<unknown>,
 >(
-  params?: Op549GetQuestcenterBusinessModelHighRiskSettingGetFactorPageParams,
+  params?: GetQuestcenterBusinessModelHighRiskSettingGetFactorPageParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op549GetQuestcenterBusinessModelHighRiskSettingGetFactorPage>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetFactorPage>>,
         TError,
         TData
       >
@@ -3080,15 +3023,15 @@ export function useOp549GetQuestcenterBusinessModelHighRiskSettingGetFactorPage<
  * @summary 获取高危因素指标对象，翻页
  */
 
-export function useOp549GetQuestcenterBusinessModelHighRiskSettingGetFactorPage<
-  TData = Awaited<ReturnType<typeof op549GetQuestcenterBusinessModelHighRiskSettingGetFactorPage>>,
+export function useGetQuestcenterBusinessModelHighRiskSettingGetFactorPage<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetFactorPage>>,
   TError = ErrorType<unknown>,
 >(
-  params?: Op549GetQuestcenterBusinessModelHighRiskSettingGetFactorPageParams,
+  params?: GetQuestcenterBusinessModelHighRiskSettingGetFactorPageParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op549GetQuestcenterBusinessModelHighRiskSettingGetFactorPage>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetFactorPage>>,
         TError,
         TData
       >
@@ -3096,7 +3039,7 @@ export function useOp549GetQuestcenterBusinessModelHighRiskSettingGetFactorPage<
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
-  const queryOptions = getOp549GetQuestcenterBusinessModelHighRiskSettingGetFactorPageQueryOptions(
+  const queryOptions = getGetQuestcenterBusinessModelHighRiskSettingGetFactorPageQueryOptions(
     params,
     options
   )
@@ -3108,21 +3051,21 @@ export function useOp549GetQuestcenterBusinessModelHighRiskSettingGetFactorPage<
   return { ...query, queryKey: queryOptions.queryKey }
 }
 
-export type op545GetQuestcenterBusinessModelHighRiskSettingGetNodeListResponse200 = {
-  data: Op545GetQuestcenterBusinessModelHighRiskSettingGetNodeList200
+export type getQuestcenterBusinessModelHighRiskSettingGetNodeListResponse200 = {
+  data: GetQuestcenterBusinessModelHighRiskSettingGetNodeList200
   status: 200
 }
 
-export type op545GetQuestcenterBusinessModelHighRiskSettingGetNodeListResponseSuccess =
-  op545GetQuestcenterBusinessModelHighRiskSettingGetNodeListResponse200 & {
+export type getQuestcenterBusinessModelHighRiskSettingGetNodeListResponseSuccess =
+  getQuestcenterBusinessModelHighRiskSettingGetNodeListResponse200 & {
     headers: Headers
   }
 
-export type op545GetQuestcenterBusinessModelHighRiskSettingGetNodeListResponse =
-  op545GetQuestcenterBusinessModelHighRiskSettingGetNodeListResponseSuccess
+export type getQuestcenterBusinessModelHighRiskSettingGetNodeListResponse =
+  getQuestcenterBusinessModelHighRiskSettingGetNodeListResponseSuccess
 
-export const getOp545GetQuestcenterBusinessModelHighRiskSettingGetNodeListUrl = (
-  params?: Op545GetQuestcenterBusinessModelHighRiskSettingGetNodeListParams
+export const getGetQuestcenterBusinessModelHighRiskSettingGetNodeListUrl = (
+  params?: GetQuestcenterBusinessModelHighRiskSettingGetNodeListParams
 ) => {
   const normalizedParams = new URLSearchParams()
 
@@ -3143,12 +3086,12 @@ export const getOp545GetQuestcenterBusinessModelHighRiskSettingGetNodeListUrl = 
  * 获取指定数据组下的数据元，获取数据组列表
  * @summary 获取指定数据组下的数据元，获取数据组列表
  */
-export const op545GetQuestcenterBusinessModelHighRiskSettingGetNodeList = async (
-  params?: Op545GetQuestcenterBusinessModelHighRiskSettingGetNodeListParams,
+export const getQuestcenterBusinessModelHighRiskSettingGetNodeList = async (
+  params?: GetQuestcenterBusinessModelHighRiskSettingGetNodeListParams,
   options?: RequestInit
-): Promise<op545GetQuestcenterBusinessModelHighRiskSettingGetNodeListResponse> => {
-  return customFetch<op545GetQuestcenterBusinessModelHighRiskSettingGetNodeListResponse>(
-    getOp545GetQuestcenterBusinessModelHighRiskSettingGetNodeListUrl(params),
+): Promise<getQuestcenterBusinessModelHighRiskSettingGetNodeListResponse> => {
+  return customFetch<getQuestcenterBusinessModelHighRiskSettingGetNodeListResponse>(
+    getGetQuestcenterBusinessModelHighRiskSettingGetNodeListUrl(params),
     {
       ...options,
       method: 'GET',
@@ -3156,8 +3099,8 @@ export const op545GetQuestcenterBusinessModelHighRiskSettingGetNodeList = async 
   )
 }
 
-export const getOp545GetQuestcenterBusinessModelHighRiskSettingGetNodeListQueryKey = (
-  params?: Op545GetQuestcenterBusinessModelHighRiskSettingGetNodeListParams
+export const getGetQuestcenterBusinessModelHighRiskSettingGetNodeListQueryKey = (
+  params?: GetQuestcenterBusinessModelHighRiskSettingGetNodeListParams
 ) => {
   return [
     `/questcenter/business_model/high_risk/setting/get_node_list`,
@@ -3165,15 +3108,15 @@ export const getOp545GetQuestcenterBusinessModelHighRiskSettingGetNodeListQueryK
   ] as const
 }
 
-export const getOp545GetQuestcenterBusinessModelHighRiskSettingGetNodeListQueryOptions = <
-  TData = Awaited<ReturnType<typeof op545GetQuestcenterBusinessModelHighRiskSettingGetNodeList>>,
+export const getGetQuestcenterBusinessModelHighRiskSettingGetNodeListQueryOptions = <
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetNodeList>>,
   TError = ErrorType<unknown>,
 >(
-  params?: Op545GetQuestcenterBusinessModelHighRiskSettingGetNodeListParams,
+  params?: GetQuestcenterBusinessModelHighRiskSettingGetNodeListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op545GetQuestcenterBusinessModelHighRiskSettingGetNodeList>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetNodeList>>,
         TError,
         TData
       >
@@ -3184,82 +3127,81 @@ export const getOp545GetQuestcenterBusinessModelHighRiskSettingGetNodeListQueryO
 
   const queryKey =
     queryOptions?.queryKey ??
-    getOp545GetQuestcenterBusinessModelHighRiskSettingGetNodeListQueryKey(params)
+    getGetQuestcenterBusinessModelHighRiskSettingGetNodeListQueryKey(params)
 
   const queryFn: QueryFunction<
-    Awaited<ReturnType<typeof op545GetQuestcenterBusinessModelHighRiskSettingGetNodeList>>
-  > = ({ signal }) => op545GetQuestcenterBusinessModelHighRiskSettingGetNodeList(params, { signal })
+    Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetNodeList>>
+  > = ({ signal }) => getQuestcenterBusinessModelHighRiskSettingGetNodeList(params, { signal })
 
   return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof op545GetQuestcenterBusinessModelHighRiskSettingGetNodeList>>,
+    Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetNodeList>>,
     TError,
     TData
   > & { queryKey: DataTag<QueryKey, TData, TError> }
 }
 
-export type Op545GetQuestcenterBusinessModelHighRiskSettingGetNodeListQueryResult = NonNullable<
-  Awaited<ReturnType<typeof op545GetQuestcenterBusinessModelHighRiskSettingGetNodeList>>
+export type GetQuestcenterBusinessModelHighRiskSettingGetNodeListQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetNodeList>>
 >
-export type Op545GetQuestcenterBusinessModelHighRiskSettingGetNodeListQueryError =
-  ErrorType<unknown>
+export type GetQuestcenterBusinessModelHighRiskSettingGetNodeListQueryError = ErrorType<unknown>
 
-export function useOp545GetQuestcenterBusinessModelHighRiskSettingGetNodeList<
-  TData = Awaited<ReturnType<typeof op545GetQuestcenterBusinessModelHighRiskSettingGetNodeList>>,
+export function useGetQuestcenterBusinessModelHighRiskSettingGetNodeList<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetNodeList>>,
   TError = ErrorType<unknown>,
 >(
-  params: undefined | Op545GetQuestcenterBusinessModelHighRiskSettingGetNodeListParams,
+  params: undefined | GetQuestcenterBusinessModelHighRiskSettingGetNodeListParams,
   options: {
     query: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op545GetQuestcenterBusinessModelHighRiskSettingGetNodeList>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetNodeList>>,
         TError,
         TData
       >
     > &
       Pick<
         DefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op545GetQuestcenterBusinessModelHighRiskSettingGetNodeList>>,
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetNodeList>>,
           TError,
-          Awaited<ReturnType<typeof op545GetQuestcenterBusinessModelHighRiskSettingGetNodeList>>
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetNodeList>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp545GetQuestcenterBusinessModelHighRiskSettingGetNodeList<
-  TData = Awaited<ReturnType<typeof op545GetQuestcenterBusinessModelHighRiskSettingGetNodeList>>,
+export function useGetQuestcenterBusinessModelHighRiskSettingGetNodeList<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetNodeList>>,
   TError = ErrorType<unknown>,
 >(
-  params?: Op545GetQuestcenterBusinessModelHighRiskSettingGetNodeListParams,
+  params?: GetQuestcenterBusinessModelHighRiskSettingGetNodeListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op545GetQuestcenterBusinessModelHighRiskSettingGetNodeList>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetNodeList>>,
         TError,
         TData
       >
     > &
       Pick<
         UndefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op545GetQuestcenterBusinessModelHighRiskSettingGetNodeList>>,
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetNodeList>>,
           TError,
-          Awaited<ReturnType<typeof op545GetQuestcenterBusinessModelHighRiskSettingGetNodeList>>
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetNodeList>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp545GetQuestcenterBusinessModelHighRiskSettingGetNodeList<
-  TData = Awaited<ReturnType<typeof op545GetQuestcenterBusinessModelHighRiskSettingGetNodeList>>,
+export function useGetQuestcenterBusinessModelHighRiskSettingGetNodeList<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetNodeList>>,
   TError = ErrorType<unknown>,
 >(
-  params?: Op545GetQuestcenterBusinessModelHighRiskSettingGetNodeListParams,
+  params?: GetQuestcenterBusinessModelHighRiskSettingGetNodeListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op545GetQuestcenterBusinessModelHighRiskSettingGetNodeList>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetNodeList>>,
         TError,
         TData
       >
@@ -3271,15 +3213,15 @@ export function useOp545GetQuestcenterBusinessModelHighRiskSettingGetNodeList<
  * @summary 获取指定数据组下的数据元，获取数据组列表
  */
 
-export function useOp545GetQuestcenterBusinessModelHighRiskSettingGetNodeList<
-  TData = Awaited<ReturnType<typeof op545GetQuestcenterBusinessModelHighRiskSettingGetNodeList>>,
+export function useGetQuestcenterBusinessModelHighRiskSettingGetNodeList<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetNodeList>>,
   TError = ErrorType<unknown>,
 >(
-  params?: Op545GetQuestcenterBusinessModelHighRiskSettingGetNodeListParams,
+  params?: GetQuestcenterBusinessModelHighRiskSettingGetNodeListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op545GetQuestcenterBusinessModelHighRiskSettingGetNodeList>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetNodeList>>,
         TError,
         TData
       >
@@ -3287,7 +3229,7 @@ export function useOp545GetQuestcenterBusinessModelHighRiskSettingGetNodeList<
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
-  const queryOptions = getOp545GetQuestcenterBusinessModelHighRiskSettingGetNodeListQueryOptions(
+  const queryOptions = getGetQuestcenterBusinessModelHighRiskSettingGetNodeListQueryOptions(
     params,
     options
   )
@@ -3299,21 +3241,21 @@ export function useOp545GetQuestcenterBusinessModelHighRiskSettingGetNodeList<
   return { ...query, queryKey: queryOptions.queryKey }
 }
 
-export type op548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueListResponse200 = {
-  data: Op548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueList200
+export type getQuestcenterBusinessModelHighRiskSettingGetRangeValueListResponse200 = {
+  data: GetQuestcenterBusinessModelHighRiskSettingGetRangeValueList200
   status: 200
 }
 
-export type op548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueListResponseSuccess =
-  op548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueListResponse200 & {
+export type getQuestcenterBusinessModelHighRiskSettingGetRangeValueListResponseSuccess =
+  getQuestcenterBusinessModelHighRiskSettingGetRangeValueListResponse200 & {
     headers: Headers
   }
 
-export type op548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueListResponse =
-  op548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueListResponseSuccess
+export type getQuestcenterBusinessModelHighRiskSettingGetRangeValueListResponse =
+  getQuestcenterBusinessModelHighRiskSettingGetRangeValueListResponseSuccess
 
-export const getOp548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueListUrl = (
-  params: Op548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueListParams
+export const getGetQuestcenterBusinessModelHighRiskSettingGetRangeValueListUrl = (
+  params: GetQuestcenterBusinessModelHighRiskSettingGetRangeValueListParams
 ) => {
   const normalizedParams = new URLSearchParams()
 
@@ -3334,12 +3276,12 @@ export const getOp548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueList
  * 获取数据元枚举
  * @summary 获取数据元枚举
  */
-export const op548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueList = async (
-  params: Op548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueListParams,
+export const getQuestcenterBusinessModelHighRiskSettingGetRangeValueList = async (
+  params: GetQuestcenterBusinessModelHighRiskSettingGetRangeValueListParams,
   options?: RequestInit
-): Promise<op548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueListResponse> => {
-  return customFetch<op548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueListResponse>(
-    getOp548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueListUrl(params),
+): Promise<getQuestcenterBusinessModelHighRiskSettingGetRangeValueListResponse> => {
+  return customFetch<getQuestcenterBusinessModelHighRiskSettingGetRangeValueListResponse>(
+    getGetQuestcenterBusinessModelHighRiskSettingGetRangeValueListUrl(params),
     {
       ...options,
       method: 'GET',
@@ -3347,8 +3289,8 @@ export const op548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueList = 
   )
 }
 
-export const getOp548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueListQueryKey = (
-  params?: Op548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueListParams
+export const getGetQuestcenterBusinessModelHighRiskSettingGetRangeValueListQueryKey = (
+  params?: GetQuestcenterBusinessModelHighRiskSettingGetRangeValueListParams
 ) => {
   return [
     `/questcenter/business_model/high_risk/setting/get_range_value_list`,
@@ -3356,19 +3298,15 @@ export const getOp548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueList
   ] as const
 }
 
-export const getOp548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueListQueryOptions = <
-  TData = Awaited<
-    ReturnType<typeof op548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueList>
-  >,
+export const getGetQuestcenterBusinessModelHighRiskSettingGetRangeValueListQueryOptions = <
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRangeValueList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueListParams,
+  params: GetQuestcenterBusinessModelHighRiskSettingGetRangeValueListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<
-          ReturnType<typeof op548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueList>
-        >,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRangeValueList>>,
         TError,
         TData
       >
@@ -3379,104 +3317,83 @@ export const getOp548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueList
 
   const queryKey =
     queryOptions?.queryKey ??
-    getOp548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueListQueryKey(params)
+    getGetQuestcenterBusinessModelHighRiskSettingGetRangeValueListQueryKey(params)
 
   const queryFn: QueryFunction<
-    Awaited<ReturnType<typeof op548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueList>>
+    Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRangeValueList>>
   > = ({ signal }) =>
-    op548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueList(params, { signal })
+    getQuestcenterBusinessModelHighRiskSettingGetRangeValueList(params, { signal })
 
   return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof op548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueList>>,
+    Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRangeValueList>>,
     TError,
     TData
   > & { queryKey: DataTag<QueryKey, TData, TError> }
 }
 
-export type Op548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueListQueryResult =
-  NonNullable<
-    Awaited<ReturnType<typeof op548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueList>>
-  >
-export type Op548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueListQueryError =
+export type GetQuestcenterBusinessModelHighRiskSettingGetRangeValueListQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRangeValueList>>
+>
+export type GetQuestcenterBusinessModelHighRiskSettingGetRangeValueListQueryError =
   ErrorType<unknown>
 
-export function useOp548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueList<
-  TData = Awaited<
-    ReturnType<typeof op548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueList>
-  >,
+export function useGetQuestcenterBusinessModelHighRiskSettingGetRangeValueList<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRangeValueList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueListParams,
+  params: GetQuestcenterBusinessModelHighRiskSettingGetRangeValueListParams,
   options: {
     query: Partial<
       UseQueryOptions<
-        Awaited<
-          ReturnType<typeof op548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueList>
-        >,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRangeValueList>>,
         TError,
         TData
       >
     > &
       Pick<
         DefinedInitialDataOptions<
-          Awaited<
-            ReturnType<typeof op548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueList>
-          >,
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRangeValueList>>,
           TError,
-          Awaited<
-            ReturnType<typeof op548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueList>
-          >
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRangeValueList>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueList<
-  TData = Awaited<
-    ReturnType<typeof op548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueList>
-  >,
+export function useGetQuestcenterBusinessModelHighRiskSettingGetRangeValueList<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRangeValueList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueListParams,
+  params: GetQuestcenterBusinessModelHighRiskSettingGetRangeValueListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<
-          ReturnType<typeof op548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueList>
-        >,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRangeValueList>>,
         TError,
         TData
       >
     > &
       Pick<
         UndefinedInitialDataOptions<
-          Awaited<
-            ReturnType<typeof op548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueList>
-          >,
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRangeValueList>>,
           TError,
-          Awaited<
-            ReturnType<typeof op548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueList>
-          >
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRangeValueList>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueList<
-  TData = Awaited<
-    ReturnType<typeof op548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueList>
-  >,
+export function useGetQuestcenterBusinessModelHighRiskSettingGetRangeValueList<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRangeValueList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueListParams,
+  params: GetQuestcenterBusinessModelHighRiskSettingGetRangeValueListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<
-          ReturnType<typeof op548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueList>
-        >,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRangeValueList>>,
         TError,
         TData
       >
@@ -3488,19 +3405,15 @@ export function useOp548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueL
  * @summary 获取数据元枚举
  */
 
-export function useOp548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueList<
-  TData = Awaited<
-    ReturnType<typeof op548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueList>
-  >,
+export function useGetQuestcenterBusinessModelHighRiskSettingGetRangeValueList<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRangeValueList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueListParams,
+  params: GetQuestcenterBusinessModelHighRiskSettingGetRangeValueListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<
-          ReturnType<typeof op548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueList>
-        >,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRangeValueList>>,
         TError,
         TData
       >
@@ -3508,8 +3421,10 @@ export function useOp548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueL
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
-  const queryOptions =
-    getOp548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueListQueryOptions(params, options)
+  const queryOptions = getGetQuestcenterBusinessModelHighRiskSettingGetRangeValueListQueryOptions(
+    params,
+    options
+  )
 
   const query = useQuery(queryOptions, queryClient) as UseQueryResult<TData, TError> & {
     queryKey: DataTag<QueryKey, TData, TError>
@@ -3518,20 +3433,20 @@ export function useOp548GetQuestcenterBusinessModelHighRiskSettingGetRangeValueL
   return { ...query, queryKey: queryOptions.queryKey }
 }
 
-export type op546GetQuestcenterBusinessModelHighRiskSettingGetRankColorResponse200 = {
-  data: Op546GetQuestcenterBusinessModelHighRiskSettingGetRankColor200
+export type getQuestcenterBusinessModelHighRiskSettingGetRankColorResponse200 = {
+  data: GetQuestcenterBusinessModelHighRiskSettingGetRankColor200
   status: 200
 }
 
-export type op546GetQuestcenterBusinessModelHighRiskSettingGetRankColorResponseSuccess =
-  op546GetQuestcenterBusinessModelHighRiskSettingGetRankColorResponse200 & {
+export type getQuestcenterBusinessModelHighRiskSettingGetRankColorResponseSuccess =
+  getQuestcenterBusinessModelHighRiskSettingGetRankColorResponse200 & {
     headers: Headers
   }
 
-export type op546GetQuestcenterBusinessModelHighRiskSettingGetRankColorResponse =
-  op546GetQuestcenterBusinessModelHighRiskSettingGetRankColorResponseSuccess
+export type getQuestcenterBusinessModelHighRiskSettingGetRankColorResponse =
+  getQuestcenterBusinessModelHighRiskSettingGetRankColorResponseSuccess
 
-export const getOp546GetQuestcenterBusinessModelHighRiskSettingGetRankColorUrl = () => {
+export const getGetQuestcenterBusinessModelHighRiskSettingGetRankColorUrl = () => {
   return `/questcenter/business_model/high_risk/setting/get_rank_color`
 }
 
@@ -3539,11 +3454,11 @@ export const getOp546GetQuestcenterBusinessModelHighRiskSettingGetRankColorUrl =
  * 获取高危因素等级颜色
  * @summary 获取高危因素等级颜色
  */
-export const op546GetQuestcenterBusinessModelHighRiskSettingGetRankColor = async (
+export const getQuestcenterBusinessModelHighRiskSettingGetRankColor = async (
   options?: RequestInit
-): Promise<op546GetQuestcenterBusinessModelHighRiskSettingGetRankColorResponse> => {
-  return customFetch<op546GetQuestcenterBusinessModelHighRiskSettingGetRankColorResponse>(
-    getOp546GetQuestcenterBusinessModelHighRiskSettingGetRankColorUrl(),
+): Promise<getQuestcenterBusinessModelHighRiskSettingGetRankColorResponse> => {
+  return customFetch<getQuestcenterBusinessModelHighRiskSettingGetRankColorResponse>(
+    getGetQuestcenterBusinessModelHighRiskSettingGetRankColorUrl(),
     {
       ...options,
       method: 'GET',
@@ -3551,17 +3466,17 @@ export const op546GetQuestcenterBusinessModelHighRiskSettingGetRankColor = async
   )
 }
 
-export const getOp546GetQuestcenterBusinessModelHighRiskSettingGetRankColorQueryKey = () => {
+export const getGetQuestcenterBusinessModelHighRiskSettingGetRankColorQueryKey = () => {
   return [`/questcenter/business_model/high_risk/setting/get_rank_color`] as const
 }
 
-export const getOp546GetQuestcenterBusinessModelHighRiskSettingGetRankColorQueryOptions = <
-  TData = Awaited<ReturnType<typeof op546GetQuestcenterBusinessModelHighRiskSettingGetRankColor>>,
+export const getGetQuestcenterBusinessModelHighRiskSettingGetRankColorQueryOptions = <
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRankColor>>,
   TError = ErrorType<unknown>,
 >(options?: {
   query?: Partial<
     UseQueryOptions<
-      Awaited<ReturnType<typeof op546GetQuestcenterBusinessModelHighRiskSettingGetRankColor>>,
+      Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRankColor>>,
       TError,
       TData
     >
@@ -3570,80 +3485,78 @@ export const getOp546GetQuestcenterBusinessModelHighRiskSettingGetRankColorQuery
   const { query: queryOptions } = options ?? {}
 
   const queryKey =
-    queryOptions?.queryKey ??
-    getOp546GetQuestcenterBusinessModelHighRiskSettingGetRankColorQueryKey()
+    queryOptions?.queryKey ?? getGetQuestcenterBusinessModelHighRiskSettingGetRankColorQueryKey()
 
   const queryFn: QueryFunction<
-    Awaited<ReturnType<typeof op546GetQuestcenterBusinessModelHighRiskSettingGetRankColor>>
-  > = ({ signal }) => op546GetQuestcenterBusinessModelHighRiskSettingGetRankColor({ signal })
+    Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRankColor>>
+  > = ({ signal }) => getQuestcenterBusinessModelHighRiskSettingGetRankColor({ signal })
 
   return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof op546GetQuestcenterBusinessModelHighRiskSettingGetRankColor>>,
+    Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRankColor>>,
     TError,
     TData
   > & { queryKey: DataTag<QueryKey, TData, TError> }
 }
 
-export type Op546GetQuestcenterBusinessModelHighRiskSettingGetRankColorQueryResult = NonNullable<
-  Awaited<ReturnType<typeof op546GetQuestcenterBusinessModelHighRiskSettingGetRankColor>>
+export type GetQuestcenterBusinessModelHighRiskSettingGetRankColorQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRankColor>>
 >
-export type Op546GetQuestcenterBusinessModelHighRiskSettingGetRankColorQueryError =
-  ErrorType<unknown>
+export type GetQuestcenterBusinessModelHighRiskSettingGetRankColorQueryError = ErrorType<unknown>
 
-export function useOp546GetQuestcenterBusinessModelHighRiskSettingGetRankColor<
-  TData = Awaited<ReturnType<typeof op546GetQuestcenterBusinessModelHighRiskSettingGetRankColor>>,
+export function useGetQuestcenterBusinessModelHighRiskSettingGetRankColor<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRankColor>>,
   TError = ErrorType<unknown>,
 >(
   options: {
     query: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op546GetQuestcenterBusinessModelHighRiskSettingGetRankColor>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRankColor>>,
         TError,
         TData
       >
     > &
       Pick<
         DefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op546GetQuestcenterBusinessModelHighRiskSettingGetRankColor>>,
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRankColor>>,
           TError,
-          Awaited<ReturnType<typeof op546GetQuestcenterBusinessModelHighRiskSettingGetRankColor>>
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRankColor>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp546GetQuestcenterBusinessModelHighRiskSettingGetRankColor<
-  TData = Awaited<ReturnType<typeof op546GetQuestcenterBusinessModelHighRiskSettingGetRankColor>>,
+export function useGetQuestcenterBusinessModelHighRiskSettingGetRankColor<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRankColor>>,
   TError = ErrorType<unknown>,
 >(
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op546GetQuestcenterBusinessModelHighRiskSettingGetRankColor>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRankColor>>,
         TError,
         TData
       >
     > &
       Pick<
         UndefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op546GetQuestcenterBusinessModelHighRiskSettingGetRankColor>>,
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRankColor>>,
           TError,
-          Awaited<ReturnType<typeof op546GetQuestcenterBusinessModelHighRiskSettingGetRankColor>>
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRankColor>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp546GetQuestcenterBusinessModelHighRiskSettingGetRankColor<
-  TData = Awaited<ReturnType<typeof op546GetQuestcenterBusinessModelHighRiskSettingGetRankColor>>,
+export function useGetQuestcenterBusinessModelHighRiskSettingGetRankColor<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRankColor>>,
   TError = ErrorType<unknown>,
 >(
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op546GetQuestcenterBusinessModelHighRiskSettingGetRankColor>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRankColor>>,
         TError,
         TData
       >
@@ -3655,14 +3568,14 @@ export function useOp546GetQuestcenterBusinessModelHighRiskSettingGetRankColor<
  * @summary 获取高危因素等级颜色
  */
 
-export function useOp546GetQuestcenterBusinessModelHighRiskSettingGetRankColor<
-  TData = Awaited<ReturnType<typeof op546GetQuestcenterBusinessModelHighRiskSettingGetRankColor>>,
+export function useGetQuestcenterBusinessModelHighRiskSettingGetRankColor<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRankColor>>,
   TError = ErrorType<unknown>,
 >(
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op546GetQuestcenterBusinessModelHighRiskSettingGetRankColor>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRankColor>>,
         TError,
         TData
       >
@@ -3671,7 +3584,7 @@ export function useOp546GetQuestcenterBusinessModelHighRiskSettingGetRankColor<
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
   const queryOptions =
-    getOp546GetQuestcenterBusinessModelHighRiskSettingGetRankColorQueryOptions(options)
+    getGetQuestcenterBusinessModelHighRiskSettingGetRankColorQueryOptions(options)
 
   const query = useQuery(queryOptions, queryClient) as UseQueryResult<TData, TError> & {
     queryKey: DataTag<QueryKey, TData, TError>
@@ -3680,21 +3593,21 @@ export function useOp546GetQuestcenterBusinessModelHighRiskSettingGetRankColor<
   return { ...query, queryKey: queryOptions.queryKey }
 }
 
-export type op544GetQuestcenterBusinessModelHighRiskSettingGetRiskTypeResponse200 = {
-  data: Op544GetQuestcenterBusinessModelHighRiskSettingGetRiskType200
+export type getQuestcenterBusinessModelHighRiskSettingGetRiskTypeResponse200 = {
+  data: GetQuestcenterBusinessModelHighRiskSettingGetRiskType200
   status: 200
 }
 
-export type op544GetQuestcenterBusinessModelHighRiskSettingGetRiskTypeResponseSuccess =
-  op544GetQuestcenterBusinessModelHighRiskSettingGetRiskTypeResponse200 & {
+export type getQuestcenterBusinessModelHighRiskSettingGetRiskTypeResponseSuccess =
+  getQuestcenterBusinessModelHighRiskSettingGetRiskTypeResponse200 & {
     headers: Headers
   }
 
-export type op544GetQuestcenterBusinessModelHighRiskSettingGetRiskTypeResponse =
-  op544GetQuestcenterBusinessModelHighRiskSettingGetRiskTypeResponseSuccess
+export type getQuestcenterBusinessModelHighRiskSettingGetRiskTypeResponse =
+  getQuestcenterBusinessModelHighRiskSettingGetRiskTypeResponseSuccess
 
-export const getOp544GetQuestcenterBusinessModelHighRiskSettingGetRiskTypeUrl = (
-  params?: Op544GetQuestcenterBusinessModelHighRiskSettingGetRiskTypeParams
+export const getGetQuestcenterBusinessModelHighRiskSettingGetRiskTypeUrl = (
+  params?: GetQuestcenterBusinessModelHighRiskSettingGetRiskTypeParams
 ) => {
   const normalizedParams = new URLSearchParams()
 
@@ -3715,12 +3628,12 @@ export const getOp544GetQuestcenterBusinessModelHighRiskSettingGetRiskTypeUrl = 
  * 获取高危指标分类
  * @summary 获取高危指标分类
  */
-export const op544GetQuestcenterBusinessModelHighRiskSettingGetRiskType = async (
-  params?: Op544GetQuestcenterBusinessModelHighRiskSettingGetRiskTypeParams,
+export const getQuestcenterBusinessModelHighRiskSettingGetRiskType = async (
+  params?: GetQuestcenterBusinessModelHighRiskSettingGetRiskTypeParams,
   options?: RequestInit
-): Promise<op544GetQuestcenterBusinessModelHighRiskSettingGetRiskTypeResponse> => {
-  return customFetch<op544GetQuestcenterBusinessModelHighRiskSettingGetRiskTypeResponse>(
-    getOp544GetQuestcenterBusinessModelHighRiskSettingGetRiskTypeUrl(params),
+): Promise<getQuestcenterBusinessModelHighRiskSettingGetRiskTypeResponse> => {
+  return customFetch<getQuestcenterBusinessModelHighRiskSettingGetRiskTypeResponse>(
+    getGetQuestcenterBusinessModelHighRiskSettingGetRiskTypeUrl(params),
     {
       ...options,
       method: 'GET',
@@ -3728,8 +3641,8 @@ export const op544GetQuestcenterBusinessModelHighRiskSettingGetRiskType = async 
   )
 }
 
-export const getOp544GetQuestcenterBusinessModelHighRiskSettingGetRiskTypeQueryKey = (
-  params?: Op544GetQuestcenterBusinessModelHighRiskSettingGetRiskTypeParams
+export const getGetQuestcenterBusinessModelHighRiskSettingGetRiskTypeQueryKey = (
+  params?: GetQuestcenterBusinessModelHighRiskSettingGetRiskTypeParams
 ) => {
   return [
     `/questcenter/business_model/high_risk/setting/get_risk_type`,
@@ -3737,15 +3650,15 @@ export const getOp544GetQuestcenterBusinessModelHighRiskSettingGetRiskTypeQueryK
   ] as const
 }
 
-export const getOp544GetQuestcenterBusinessModelHighRiskSettingGetRiskTypeQueryOptions = <
-  TData = Awaited<ReturnType<typeof op544GetQuestcenterBusinessModelHighRiskSettingGetRiskType>>,
+export const getGetQuestcenterBusinessModelHighRiskSettingGetRiskTypeQueryOptions = <
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRiskType>>,
   TError = ErrorType<unknown>,
 >(
-  params?: Op544GetQuestcenterBusinessModelHighRiskSettingGetRiskTypeParams,
+  params?: GetQuestcenterBusinessModelHighRiskSettingGetRiskTypeParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op544GetQuestcenterBusinessModelHighRiskSettingGetRiskType>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRiskType>>,
         TError,
         TData
       >
@@ -3756,82 +3669,81 @@ export const getOp544GetQuestcenterBusinessModelHighRiskSettingGetRiskTypeQueryO
 
   const queryKey =
     queryOptions?.queryKey ??
-    getOp544GetQuestcenterBusinessModelHighRiskSettingGetRiskTypeQueryKey(params)
+    getGetQuestcenterBusinessModelHighRiskSettingGetRiskTypeQueryKey(params)
 
   const queryFn: QueryFunction<
-    Awaited<ReturnType<typeof op544GetQuestcenterBusinessModelHighRiskSettingGetRiskType>>
-  > = ({ signal }) => op544GetQuestcenterBusinessModelHighRiskSettingGetRiskType(params, { signal })
+    Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRiskType>>
+  > = ({ signal }) => getQuestcenterBusinessModelHighRiskSettingGetRiskType(params, { signal })
 
   return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof op544GetQuestcenterBusinessModelHighRiskSettingGetRiskType>>,
+    Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRiskType>>,
     TError,
     TData
   > & { queryKey: DataTag<QueryKey, TData, TError> }
 }
 
-export type Op544GetQuestcenterBusinessModelHighRiskSettingGetRiskTypeQueryResult = NonNullable<
-  Awaited<ReturnType<typeof op544GetQuestcenterBusinessModelHighRiskSettingGetRiskType>>
+export type GetQuestcenterBusinessModelHighRiskSettingGetRiskTypeQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRiskType>>
 >
-export type Op544GetQuestcenterBusinessModelHighRiskSettingGetRiskTypeQueryError =
-  ErrorType<unknown>
+export type GetQuestcenterBusinessModelHighRiskSettingGetRiskTypeQueryError = ErrorType<unknown>
 
-export function useOp544GetQuestcenterBusinessModelHighRiskSettingGetRiskType<
-  TData = Awaited<ReturnType<typeof op544GetQuestcenterBusinessModelHighRiskSettingGetRiskType>>,
+export function useGetQuestcenterBusinessModelHighRiskSettingGetRiskType<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRiskType>>,
   TError = ErrorType<unknown>,
 >(
-  params: undefined | Op544GetQuestcenterBusinessModelHighRiskSettingGetRiskTypeParams,
+  params: undefined | GetQuestcenterBusinessModelHighRiskSettingGetRiskTypeParams,
   options: {
     query: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op544GetQuestcenterBusinessModelHighRiskSettingGetRiskType>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRiskType>>,
         TError,
         TData
       >
     > &
       Pick<
         DefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op544GetQuestcenterBusinessModelHighRiskSettingGetRiskType>>,
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRiskType>>,
           TError,
-          Awaited<ReturnType<typeof op544GetQuestcenterBusinessModelHighRiskSettingGetRiskType>>
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRiskType>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp544GetQuestcenterBusinessModelHighRiskSettingGetRiskType<
-  TData = Awaited<ReturnType<typeof op544GetQuestcenterBusinessModelHighRiskSettingGetRiskType>>,
+export function useGetQuestcenterBusinessModelHighRiskSettingGetRiskType<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRiskType>>,
   TError = ErrorType<unknown>,
 >(
-  params?: Op544GetQuestcenterBusinessModelHighRiskSettingGetRiskTypeParams,
+  params?: GetQuestcenterBusinessModelHighRiskSettingGetRiskTypeParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op544GetQuestcenterBusinessModelHighRiskSettingGetRiskType>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRiskType>>,
         TError,
         TData
       >
     > &
       Pick<
         UndefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op544GetQuestcenterBusinessModelHighRiskSettingGetRiskType>>,
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRiskType>>,
           TError,
-          Awaited<ReturnType<typeof op544GetQuestcenterBusinessModelHighRiskSettingGetRiskType>>
+          Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRiskType>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp544GetQuestcenterBusinessModelHighRiskSettingGetRiskType<
-  TData = Awaited<ReturnType<typeof op544GetQuestcenterBusinessModelHighRiskSettingGetRiskType>>,
+export function useGetQuestcenterBusinessModelHighRiskSettingGetRiskType<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRiskType>>,
   TError = ErrorType<unknown>,
 >(
-  params?: Op544GetQuestcenterBusinessModelHighRiskSettingGetRiskTypeParams,
+  params?: GetQuestcenterBusinessModelHighRiskSettingGetRiskTypeParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op544GetQuestcenterBusinessModelHighRiskSettingGetRiskType>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRiskType>>,
         TError,
         TData
       >
@@ -3843,15 +3755,15 @@ export function useOp544GetQuestcenterBusinessModelHighRiskSettingGetRiskType<
  * @summary 获取高危指标分类
  */
 
-export function useOp544GetQuestcenterBusinessModelHighRiskSettingGetRiskType<
-  TData = Awaited<ReturnType<typeof op544GetQuestcenterBusinessModelHighRiskSettingGetRiskType>>,
+export function useGetQuestcenterBusinessModelHighRiskSettingGetRiskType<
+  TData = Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRiskType>>,
   TError = ErrorType<unknown>,
 >(
-  params?: Op544GetQuestcenterBusinessModelHighRiskSettingGetRiskTypeParams,
+  params?: GetQuestcenterBusinessModelHighRiskSettingGetRiskTypeParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op544GetQuestcenterBusinessModelHighRiskSettingGetRiskType>>,
+        Awaited<ReturnType<typeof getQuestcenterBusinessModelHighRiskSettingGetRiskType>>,
         TError,
         TData
       >
@@ -3859,7 +3771,7 @@ export function useOp544GetQuestcenterBusinessModelHighRiskSettingGetRiskType<
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
-  const queryOptions = getOp544GetQuestcenterBusinessModelHighRiskSettingGetRiskTypeQueryOptions(
+  const queryOptions = getGetQuestcenterBusinessModelHighRiskSettingGetRiskTypeQueryOptions(
     params,
     options
   )
@@ -3871,20 +3783,20 @@ export function useOp544GetQuestcenterBusinessModelHighRiskSettingGetRiskType<
   return { ...query, queryKey: queryOptions.queryKey }
 }
 
-export type op551PostQuestcenterBusinessModelHighRiskSettingUpdateFactorResponse200 = {
-  data: Op551PostQuestcenterBusinessModelHighRiskSettingUpdateFactor200
+export type postQuestcenterBusinessModelHighRiskSettingUpdateFactorResponse200 = {
+  data: PostQuestcenterBusinessModelHighRiskSettingUpdateFactor200
   status: 200
 }
 
-export type op551PostQuestcenterBusinessModelHighRiskSettingUpdateFactorResponseSuccess =
-  op551PostQuestcenterBusinessModelHighRiskSettingUpdateFactorResponse200 & {
+export type postQuestcenterBusinessModelHighRiskSettingUpdateFactorResponseSuccess =
+  postQuestcenterBusinessModelHighRiskSettingUpdateFactorResponse200 & {
     headers: Headers
   }
 
-export type op551PostQuestcenterBusinessModelHighRiskSettingUpdateFactorResponse =
-  op551PostQuestcenterBusinessModelHighRiskSettingUpdateFactorResponseSuccess
+export type postQuestcenterBusinessModelHighRiskSettingUpdateFactorResponse =
+  postQuestcenterBusinessModelHighRiskSettingUpdateFactorResponseSuccess
 
-export const getOp551PostQuestcenterBusinessModelHighRiskSettingUpdateFactorUrl = () => {
+export const getPostQuestcenterBusinessModelHighRiskSettingUpdateFactorUrl = () => {
   return `/questcenter/business_model/high_risk/setting/update_factor`
 }
 
@@ -3892,38 +3804,38 @@ export const getOp551PostQuestcenterBusinessModelHighRiskSettingUpdateFactorUrl 
  * 更新高危因素指标
  * @summary 更新高危因素指标
  */
-export const op551PostQuestcenterBusinessModelHighRiskSettingUpdateFactor = async (
-  op551PostQuestcenterBusinessModelHighRiskSettingUpdateFactorBody?: Op551PostQuestcenterBusinessModelHighRiskSettingUpdateFactorBody,
+export const postQuestcenterBusinessModelHighRiskSettingUpdateFactor = async (
+  postQuestcenterBusinessModelHighRiskSettingUpdateFactorBody?: PostQuestcenterBusinessModelHighRiskSettingUpdateFactorBody,
   options?: RequestInit
-): Promise<op551PostQuestcenterBusinessModelHighRiskSettingUpdateFactorResponse> => {
-  return customFetch<op551PostQuestcenterBusinessModelHighRiskSettingUpdateFactorResponse>(
-    getOp551PostQuestcenterBusinessModelHighRiskSettingUpdateFactorUrl(),
+): Promise<postQuestcenterBusinessModelHighRiskSettingUpdateFactorResponse> => {
+  return customFetch<postQuestcenterBusinessModelHighRiskSettingUpdateFactorResponse>(
+    getPostQuestcenterBusinessModelHighRiskSettingUpdateFactorUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op551PostQuestcenterBusinessModelHighRiskSettingUpdateFactorBody),
+      body: JSON.stringify(postQuestcenterBusinessModelHighRiskSettingUpdateFactorBody),
     }
   )
 }
 
-export const getOp551PostQuestcenterBusinessModelHighRiskSettingUpdateFactorMutationOptions = <
+export const getPostQuestcenterBusinessModelHighRiskSettingUpdateFactorMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op551PostQuestcenterBusinessModelHighRiskSettingUpdateFactor>>,
+    Awaited<ReturnType<typeof postQuestcenterBusinessModelHighRiskSettingUpdateFactor>>,
     TError,
-    { data?: Op551PostQuestcenterBusinessModelHighRiskSettingUpdateFactorBody },
+    { data?: PostQuestcenterBusinessModelHighRiskSettingUpdateFactorBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op551PostQuestcenterBusinessModelHighRiskSettingUpdateFactor>>,
+  Awaited<ReturnType<typeof postQuestcenterBusinessModelHighRiskSettingUpdateFactor>>,
   TError,
-  { data?: Op551PostQuestcenterBusinessModelHighRiskSettingUpdateFactorBody },
+  { data?: PostQuestcenterBusinessModelHighRiskSettingUpdateFactorBody },
   TContext
 > => {
-  const mutationKey = ['op551PostQuestcenterBusinessModelHighRiskSettingUpdateFactor']
+  const mutationKey = ['postQuestcenterBusinessModelHighRiskSettingUpdateFactor']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -3931,69 +3843,68 @@ export const getOp551PostQuestcenterBusinessModelHighRiskSettingUpdateFactorMuta
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op551PostQuestcenterBusinessModelHighRiskSettingUpdateFactor>>,
-    { data?: Op551PostQuestcenterBusinessModelHighRiskSettingUpdateFactorBody }
+    Awaited<ReturnType<typeof postQuestcenterBusinessModelHighRiskSettingUpdateFactor>>,
+    { data?: PostQuestcenterBusinessModelHighRiskSettingUpdateFactorBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op551PostQuestcenterBusinessModelHighRiskSettingUpdateFactor(data)
+    return postQuestcenterBusinessModelHighRiskSettingUpdateFactor(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op551PostQuestcenterBusinessModelHighRiskSettingUpdateFactorMutationResult =
-  NonNullable<
-    Awaited<ReturnType<typeof op551PostQuestcenterBusinessModelHighRiskSettingUpdateFactor>>
-  >
-export type Op551PostQuestcenterBusinessModelHighRiskSettingUpdateFactorMutationBody =
-  | Op551PostQuestcenterBusinessModelHighRiskSettingUpdateFactorBody
+export type PostQuestcenterBusinessModelHighRiskSettingUpdateFactorMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterBusinessModelHighRiskSettingUpdateFactor>>
+>
+export type PostQuestcenterBusinessModelHighRiskSettingUpdateFactorMutationBody =
+  | PostQuestcenterBusinessModelHighRiskSettingUpdateFactorBody
   | undefined
-export type Op551PostQuestcenterBusinessModelHighRiskSettingUpdateFactorMutationError =
+export type PostQuestcenterBusinessModelHighRiskSettingUpdateFactorMutationError =
   ErrorType<unknown>
 
 /**
  * @summary 更新高危因素指标
  */
-export const useOp551PostQuestcenterBusinessModelHighRiskSettingUpdateFactor = <
+export const usePostQuestcenterBusinessModelHighRiskSettingUpdateFactor = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op551PostQuestcenterBusinessModelHighRiskSettingUpdateFactor>>,
+      Awaited<ReturnType<typeof postQuestcenterBusinessModelHighRiskSettingUpdateFactor>>,
       TError,
-      { data?: Op551PostQuestcenterBusinessModelHighRiskSettingUpdateFactorBody },
+      { data?: PostQuestcenterBusinessModelHighRiskSettingUpdateFactorBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op551PostQuestcenterBusinessModelHighRiskSettingUpdateFactor>>,
+  Awaited<ReturnType<typeof postQuestcenterBusinessModelHighRiskSettingUpdateFactor>>,
   TError,
-  { data?: Op551PostQuestcenterBusinessModelHighRiskSettingUpdateFactorBody },
+  { data?: PostQuestcenterBusinessModelHighRiskSettingUpdateFactorBody },
   TContext
 > => {
   return useMutation(
-    getOp551PostQuestcenterBusinessModelHighRiskSettingUpdateFactorMutationOptions(options),
+    getPostQuestcenterBusinessModelHighRiskSettingUpdateFactorMutationOptions(options),
     queryClient
   )
 }
 
-export type op553PostQuestcenterBusinessModelHighRiskUsingCalculateHighRiskResponse200 = {
-  data: Op553PostQuestcenterBusinessModelHighRiskUsingCalculateHighRisk200
+export type postQuestcenterBusinessModelHighRiskUsingCalculateHighRiskResponse200 = {
+  data: PostQuestcenterBusinessModelHighRiskUsingCalculateHighRisk200
   status: 200
 }
 
-export type op553PostQuestcenterBusinessModelHighRiskUsingCalculateHighRiskResponseSuccess =
-  op553PostQuestcenterBusinessModelHighRiskUsingCalculateHighRiskResponse200 & {
+export type postQuestcenterBusinessModelHighRiskUsingCalculateHighRiskResponseSuccess =
+  postQuestcenterBusinessModelHighRiskUsingCalculateHighRiskResponse200 & {
     headers: Headers
   }
 
-export type op553PostQuestcenterBusinessModelHighRiskUsingCalculateHighRiskResponse =
-  op553PostQuestcenterBusinessModelHighRiskUsingCalculateHighRiskResponseSuccess
+export type postQuestcenterBusinessModelHighRiskUsingCalculateHighRiskResponse =
+  postQuestcenterBusinessModelHighRiskUsingCalculateHighRiskResponseSuccess
 
-export const getOp553PostQuestcenterBusinessModelHighRiskUsingCalculateHighRiskUrl = () => {
+export const getPostQuestcenterBusinessModelHighRiskUsingCalculateHighRiskUrl = () => {
   return `/questcenter/business_model/high_risk/using/calculate_high_risk`
 }
 
@@ -4001,38 +3912,38 @@ export const getOp553PostQuestcenterBusinessModelHighRiskUsingCalculateHighRiskU
  * 查询计算指定的数据元是否属于高危因素
  * @summary 查询计算指定的数据元是否属于高危因素
  */
-export const op553PostQuestcenterBusinessModelHighRiskUsingCalculateHighRisk = async (
-  op553PostQuestcenterBusinessModelHighRiskUsingCalculateHighRiskBody?: Op553PostQuestcenterBusinessModelHighRiskUsingCalculateHighRiskBody,
+export const postQuestcenterBusinessModelHighRiskUsingCalculateHighRisk = async (
+  postQuestcenterBusinessModelHighRiskUsingCalculateHighRiskBody?: PostQuestcenterBusinessModelHighRiskUsingCalculateHighRiskBody,
   options?: RequestInit
-): Promise<op553PostQuestcenterBusinessModelHighRiskUsingCalculateHighRiskResponse> => {
-  return customFetch<op553PostQuestcenterBusinessModelHighRiskUsingCalculateHighRiskResponse>(
-    getOp553PostQuestcenterBusinessModelHighRiskUsingCalculateHighRiskUrl(),
+): Promise<postQuestcenterBusinessModelHighRiskUsingCalculateHighRiskResponse> => {
+  return customFetch<postQuestcenterBusinessModelHighRiskUsingCalculateHighRiskResponse>(
+    getPostQuestcenterBusinessModelHighRiskUsingCalculateHighRiskUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op553PostQuestcenterBusinessModelHighRiskUsingCalculateHighRiskBody),
+      body: JSON.stringify(postQuestcenterBusinessModelHighRiskUsingCalculateHighRiskBody),
     }
   )
 }
 
-export const getOp553PostQuestcenterBusinessModelHighRiskUsingCalculateHighRiskMutationOptions = <
+export const getPostQuestcenterBusinessModelHighRiskUsingCalculateHighRiskMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op553PostQuestcenterBusinessModelHighRiskUsingCalculateHighRisk>>,
+    Awaited<ReturnType<typeof postQuestcenterBusinessModelHighRiskUsingCalculateHighRisk>>,
     TError,
-    { data?: Op553PostQuestcenterBusinessModelHighRiskUsingCalculateHighRiskBody },
+    { data?: PostQuestcenterBusinessModelHighRiskUsingCalculateHighRiskBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op553PostQuestcenterBusinessModelHighRiskUsingCalculateHighRisk>>,
+  Awaited<ReturnType<typeof postQuestcenterBusinessModelHighRiskUsingCalculateHighRisk>>,
   TError,
-  { data?: Op553PostQuestcenterBusinessModelHighRiskUsingCalculateHighRiskBody },
+  { data?: PostQuestcenterBusinessModelHighRiskUsingCalculateHighRiskBody },
   TContext
 > => {
-  const mutationKey = ['op553PostQuestcenterBusinessModelHighRiskUsingCalculateHighRisk']
+  const mutationKey = ['postQuestcenterBusinessModelHighRiskUsingCalculateHighRisk']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -4040,69 +3951,68 @@ export const getOp553PostQuestcenterBusinessModelHighRiskUsingCalculateHighRiskM
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op553PostQuestcenterBusinessModelHighRiskUsingCalculateHighRisk>>,
-    { data?: Op553PostQuestcenterBusinessModelHighRiskUsingCalculateHighRiskBody }
+    Awaited<ReturnType<typeof postQuestcenterBusinessModelHighRiskUsingCalculateHighRisk>>,
+    { data?: PostQuestcenterBusinessModelHighRiskUsingCalculateHighRiskBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op553PostQuestcenterBusinessModelHighRiskUsingCalculateHighRisk(data)
+    return postQuestcenterBusinessModelHighRiskUsingCalculateHighRisk(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op553PostQuestcenterBusinessModelHighRiskUsingCalculateHighRiskMutationResult =
-  NonNullable<
-    Awaited<ReturnType<typeof op553PostQuestcenterBusinessModelHighRiskUsingCalculateHighRisk>>
-  >
-export type Op553PostQuestcenterBusinessModelHighRiskUsingCalculateHighRiskMutationBody =
-  | Op553PostQuestcenterBusinessModelHighRiskUsingCalculateHighRiskBody
+export type PostQuestcenterBusinessModelHighRiskUsingCalculateHighRiskMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterBusinessModelHighRiskUsingCalculateHighRisk>>
+>
+export type PostQuestcenterBusinessModelHighRiskUsingCalculateHighRiskMutationBody =
+  | PostQuestcenterBusinessModelHighRiskUsingCalculateHighRiskBody
   | undefined
-export type Op553PostQuestcenterBusinessModelHighRiskUsingCalculateHighRiskMutationError =
+export type PostQuestcenterBusinessModelHighRiskUsingCalculateHighRiskMutationError =
   ErrorType<unknown>
 
 /**
  * @summary 查询计算指定的数据元是否属于高危因素
  */
-export const useOp553PostQuestcenterBusinessModelHighRiskUsingCalculateHighRisk = <
+export const usePostQuestcenterBusinessModelHighRiskUsingCalculateHighRisk = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op553PostQuestcenterBusinessModelHighRiskUsingCalculateHighRisk>>,
+      Awaited<ReturnType<typeof postQuestcenterBusinessModelHighRiskUsingCalculateHighRisk>>,
       TError,
-      { data?: Op553PostQuestcenterBusinessModelHighRiskUsingCalculateHighRiskBody },
+      { data?: PostQuestcenterBusinessModelHighRiskUsingCalculateHighRiskBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op553PostQuestcenterBusinessModelHighRiskUsingCalculateHighRisk>>,
+  Awaited<ReturnType<typeof postQuestcenterBusinessModelHighRiskUsingCalculateHighRisk>>,
   TError,
-  { data?: Op553PostQuestcenterBusinessModelHighRiskUsingCalculateHighRiskBody },
+  { data?: PostQuestcenterBusinessModelHighRiskUsingCalculateHighRiskBody },
   TContext
 > => {
   return useMutation(
-    getOp553PostQuestcenterBusinessModelHighRiskUsingCalculateHighRiskMutationOptions(options),
+    getPostQuestcenterBusinessModelHighRiskUsingCalculateHighRiskMutationOptions(options),
     queryClient
   )
 }
 
-export type op846GetQuestcenterDocumentTemplateTreeGetTreeDirListResponse200 = {
-  data: Op846GetQuestcenterDocumentTemplateTreeGetTreeDirList200
+export type getQuestcenterDocumentTemplateTreeGetTreeDirListResponse200 = {
+  data: GetQuestcenterDocumentTemplateTreeGetTreeDirList200
   status: 200
 }
 
-export type op846GetQuestcenterDocumentTemplateTreeGetTreeDirListResponseSuccess =
-  op846GetQuestcenterDocumentTemplateTreeGetTreeDirListResponse200 & {
+export type getQuestcenterDocumentTemplateTreeGetTreeDirListResponseSuccess =
+  getQuestcenterDocumentTemplateTreeGetTreeDirListResponse200 & {
     headers: Headers
   }
 
-export type op846GetQuestcenterDocumentTemplateTreeGetTreeDirListResponse =
-  op846GetQuestcenterDocumentTemplateTreeGetTreeDirListResponseSuccess
+export type getQuestcenterDocumentTemplateTreeGetTreeDirListResponse =
+  getQuestcenterDocumentTemplateTreeGetTreeDirListResponseSuccess
 
-export const getOp846GetQuestcenterDocumentTemplateTreeGetTreeDirListUrl = () => {
+export const getGetQuestcenterDocumentTemplateTreeGetTreeDirListUrl = () => {
   return `/questcenter/document_template_tree/get_tree_dir_list`
 }
 
@@ -4110,11 +4020,11 @@ export const getOp846GetQuestcenterDocumentTemplateTreeGetTreeDirListUrl = () =>
  * 获取文书模版分类树
  * @summary 获取文书模版分类树
  */
-export const op846GetQuestcenterDocumentTemplateTreeGetTreeDirList = async (
+export const getQuestcenterDocumentTemplateTreeGetTreeDirList = async (
   options?: RequestInit
-): Promise<op846GetQuestcenterDocumentTemplateTreeGetTreeDirListResponse> => {
-  return customFetch<op846GetQuestcenterDocumentTemplateTreeGetTreeDirListResponse>(
-    getOp846GetQuestcenterDocumentTemplateTreeGetTreeDirListUrl(),
+): Promise<getQuestcenterDocumentTemplateTreeGetTreeDirListResponse> => {
+  return customFetch<getQuestcenterDocumentTemplateTreeGetTreeDirListResponse>(
+    getGetQuestcenterDocumentTemplateTreeGetTreeDirListUrl(),
     {
       ...options,
       method: 'GET',
@@ -4122,17 +4032,17 @@ export const op846GetQuestcenterDocumentTemplateTreeGetTreeDirList = async (
   )
 }
 
-export const getOp846GetQuestcenterDocumentTemplateTreeGetTreeDirListQueryKey = () => {
+export const getGetQuestcenterDocumentTemplateTreeGetTreeDirListQueryKey = () => {
   return [`/questcenter/document_template_tree/get_tree_dir_list`] as const
 }
 
-export const getOp846GetQuestcenterDocumentTemplateTreeGetTreeDirListQueryOptions = <
-  TData = Awaited<ReturnType<typeof op846GetQuestcenterDocumentTemplateTreeGetTreeDirList>>,
+export const getGetQuestcenterDocumentTemplateTreeGetTreeDirListQueryOptions = <
+  TData = Awaited<ReturnType<typeof getQuestcenterDocumentTemplateTreeGetTreeDirList>>,
   TError = ErrorType<unknown>,
 >(options?: {
   query?: Partial<
     UseQueryOptions<
-      Awaited<ReturnType<typeof op846GetQuestcenterDocumentTemplateTreeGetTreeDirList>>,
+      Awaited<ReturnType<typeof getQuestcenterDocumentTemplateTreeGetTreeDirList>>,
       TError,
       TData
     >
@@ -4141,78 +4051,78 @@ export const getOp846GetQuestcenterDocumentTemplateTreeGetTreeDirListQueryOption
   const { query: queryOptions } = options ?? {}
 
   const queryKey =
-    queryOptions?.queryKey ?? getOp846GetQuestcenterDocumentTemplateTreeGetTreeDirListQueryKey()
+    queryOptions?.queryKey ?? getGetQuestcenterDocumentTemplateTreeGetTreeDirListQueryKey()
 
   const queryFn: QueryFunction<
-    Awaited<ReturnType<typeof op846GetQuestcenterDocumentTemplateTreeGetTreeDirList>>
-  > = ({ signal }) => op846GetQuestcenterDocumentTemplateTreeGetTreeDirList({ signal })
+    Awaited<ReturnType<typeof getQuestcenterDocumentTemplateTreeGetTreeDirList>>
+  > = ({ signal }) => getQuestcenterDocumentTemplateTreeGetTreeDirList({ signal })
 
   return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof op846GetQuestcenterDocumentTemplateTreeGetTreeDirList>>,
+    Awaited<ReturnType<typeof getQuestcenterDocumentTemplateTreeGetTreeDirList>>,
     TError,
     TData
   > & { queryKey: DataTag<QueryKey, TData, TError> }
 }
 
-export type Op846GetQuestcenterDocumentTemplateTreeGetTreeDirListQueryResult = NonNullable<
-  Awaited<ReturnType<typeof op846GetQuestcenterDocumentTemplateTreeGetTreeDirList>>
+export type GetQuestcenterDocumentTemplateTreeGetTreeDirListQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getQuestcenterDocumentTemplateTreeGetTreeDirList>>
 >
-export type Op846GetQuestcenterDocumentTemplateTreeGetTreeDirListQueryError = ErrorType<unknown>
+export type GetQuestcenterDocumentTemplateTreeGetTreeDirListQueryError = ErrorType<unknown>
 
-export function useOp846GetQuestcenterDocumentTemplateTreeGetTreeDirList<
-  TData = Awaited<ReturnType<typeof op846GetQuestcenterDocumentTemplateTreeGetTreeDirList>>,
+export function useGetQuestcenterDocumentTemplateTreeGetTreeDirList<
+  TData = Awaited<ReturnType<typeof getQuestcenterDocumentTemplateTreeGetTreeDirList>>,
   TError = ErrorType<unknown>,
 >(
   options: {
     query: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op846GetQuestcenterDocumentTemplateTreeGetTreeDirList>>,
+        Awaited<ReturnType<typeof getQuestcenterDocumentTemplateTreeGetTreeDirList>>,
         TError,
         TData
       >
     > &
       Pick<
         DefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op846GetQuestcenterDocumentTemplateTreeGetTreeDirList>>,
+          Awaited<ReturnType<typeof getQuestcenterDocumentTemplateTreeGetTreeDirList>>,
           TError,
-          Awaited<ReturnType<typeof op846GetQuestcenterDocumentTemplateTreeGetTreeDirList>>
+          Awaited<ReturnType<typeof getQuestcenterDocumentTemplateTreeGetTreeDirList>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp846GetQuestcenterDocumentTemplateTreeGetTreeDirList<
-  TData = Awaited<ReturnType<typeof op846GetQuestcenterDocumentTemplateTreeGetTreeDirList>>,
+export function useGetQuestcenterDocumentTemplateTreeGetTreeDirList<
+  TData = Awaited<ReturnType<typeof getQuestcenterDocumentTemplateTreeGetTreeDirList>>,
   TError = ErrorType<unknown>,
 >(
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op846GetQuestcenterDocumentTemplateTreeGetTreeDirList>>,
+        Awaited<ReturnType<typeof getQuestcenterDocumentTemplateTreeGetTreeDirList>>,
         TError,
         TData
       >
     > &
       Pick<
         UndefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op846GetQuestcenterDocumentTemplateTreeGetTreeDirList>>,
+          Awaited<ReturnType<typeof getQuestcenterDocumentTemplateTreeGetTreeDirList>>,
           TError,
-          Awaited<ReturnType<typeof op846GetQuestcenterDocumentTemplateTreeGetTreeDirList>>
+          Awaited<ReturnType<typeof getQuestcenterDocumentTemplateTreeGetTreeDirList>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp846GetQuestcenterDocumentTemplateTreeGetTreeDirList<
-  TData = Awaited<ReturnType<typeof op846GetQuestcenterDocumentTemplateTreeGetTreeDirList>>,
+export function useGetQuestcenterDocumentTemplateTreeGetTreeDirList<
+  TData = Awaited<ReturnType<typeof getQuestcenterDocumentTemplateTreeGetTreeDirList>>,
   TError = ErrorType<unknown>,
 >(
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op846GetQuestcenterDocumentTemplateTreeGetTreeDirList>>,
+        Awaited<ReturnType<typeof getQuestcenterDocumentTemplateTreeGetTreeDirList>>,
         TError,
         TData
       >
@@ -4224,14 +4134,14 @@ export function useOp846GetQuestcenterDocumentTemplateTreeGetTreeDirList<
  * @summary 获取文书模版分类树
  */
 
-export function useOp846GetQuestcenterDocumentTemplateTreeGetTreeDirList<
-  TData = Awaited<ReturnType<typeof op846GetQuestcenterDocumentTemplateTreeGetTreeDirList>>,
+export function useGetQuestcenterDocumentTemplateTreeGetTreeDirList<
+  TData = Awaited<ReturnType<typeof getQuestcenterDocumentTemplateTreeGetTreeDirList>>,
   TError = ErrorType<unknown>,
 >(
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op846GetQuestcenterDocumentTemplateTreeGetTreeDirList>>,
+        Awaited<ReturnType<typeof getQuestcenterDocumentTemplateTreeGetTreeDirList>>,
         TError,
         TData
       >
@@ -4239,7 +4149,7 @@ export function useOp846GetQuestcenterDocumentTemplateTreeGetTreeDirList<
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
-  const queryOptions = getOp846GetQuestcenterDocumentTemplateTreeGetTreeDirListQueryOptions(options)
+  const queryOptions = getGetQuestcenterDocumentTemplateTreeGetTreeDirListQueryOptions(options)
 
   const query = useQuery(queryOptions, queryClient) as UseQueryResult<TData, TError> & {
     queryKey: DataTag<QueryKey, TData, TError>
@@ -4248,20 +4158,20 @@ export function useOp846GetQuestcenterDocumentTemplateTreeGetTreeDirList<
   return { ...query, queryKey: queryOptions.queryKey }
 }
 
-export type op460PostQuestcenterInformedTemplateCloseTemplateResponse200 = {
-  data: Op460PostQuestcenterInformedTemplateCloseTemplate200
+export type postQuestcenterInformedTemplateCloseTemplateResponse200 = {
+  data: PostQuestcenterInformedTemplateCloseTemplate200
   status: 200
 }
 
-export type op460PostQuestcenterInformedTemplateCloseTemplateResponseSuccess =
-  op460PostQuestcenterInformedTemplateCloseTemplateResponse200 & {
+export type postQuestcenterInformedTemplateCloseTemplateResponseSuccess =
+  postQuestcenterInformedTemplateCloseTemplateResponse200 & {
     headers: Headers
   }
 
-export type op460PostQuestcenterInformedTemplateCloseTemplateResponse =
-  op460PostQuestcenterInformedTemplateCloseTemplateResponseSuccess
+export type postQuestcenterInformedTemplateCloseTemplateResponse =
+  postQuestcenterInformedTemplateCloseTemplateResponseSuccess
 
-export const getOp460PostQuestcenterInformedTemplateCloseTemplateUrl = () => {
+export const getPostQuestcenterInformedTemplateCloseTemplateUrl = () => {
   return `/questcenter/informed_template/close_template`
 }
 
@@ -4269,38 +4179,38 @@ export const getOp460PostQuestcenterInformedTemplateCloseTemplateUrl = () => {
  * 模版取消发布
  * @summary 模版取消发布
  */
-export const op460PostQuestcenterInformedTemplateCloseTemplate = async (
-  op460PostQuestcenterInformedTemplateCloseTemplateBody: Op460PostQuestcenterInformedTemplateCloseTemplateBody,
+export const postQuestcenterInformedTemplateCloseTemplate = async (
+  postQuestcenterInformedTemplateCloseTemplateBody: PostQuestcenterInformedTemplateCloseTemplateBody,
   options?: RequestInit
-): Promise<op460PostQuestcenterInformedTemplateCloseTemplateResponse> => {
-  return customFetch<op460PostQuestcenterInformedTemplateCloseTemplateResponse>(
-    getOp460PostQuestcenterInformedTemplateCloseTemplateUrl(),
+): Promise<postQuestcenterInformedTemplateCloseTemplateResponse> => {
+  return customFetch<postQuestcenterInformedTemplateCloseTemplateResponse>(
+    getPostQuestcenterInformedTemplateCloseTemplateUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op460PostQuestcenterInformedTemplateCloseTemplateBody),
+      body: JSON.stringify(postQuestcenterInformedTemplateCloseTemplateBody),
     }
   )
 }
 
-export const getOp460PostQuestcenterInformedTemplateCloseTemplateMutationOptions = <
+export const getPostQuestcenterInformedTemplateCloseTemplateMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op460PostQuestcenterInformedTemplateCloseTemplate>>,
+    Awaited<ReturnType<typeof postQuestcenterInformedTemplateCloseTemplate>>,
     TError,
-    { data: Op460PostQuestcenterInformedTemplateCloseTemplateBody },
+    { data: PostQuestcenterInformedTemplateCloseTemplateBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op460PostQuestcenterInformedTemplateCloseTemplate>>,
+  Awaited<ReturnType<typeof postQuestcenterInformedTemplateCloseTemplate>>,
   TError,
-  { data: Op460PostQuestcenterInformedTemplateCloseTemplateBody },
+  { data: PostQuestcenterInformedTemplateCloseTemplateBody },
   TContext
 > => {
-  const mutationKey = ['op460PostQuestcenterInformedTemplateCloseTemplate']
+  const mutationKey = ['postQuestcenterInformedTemplateCloseTemplate']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -4308,66 +4218,66 @@ export const getOp460PostQuestcenterInformedTemplateCloseTemplateMutationOptions
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op460PostQuestcenterInformedTemplateCloseTemplate>>,
-    { data: Op460PostQuestcenterInformedTemplateCloseTemplateBody }
+    Awaited<ReturnType<typeof postQuestcenterInformedTemplateCloseTemplate>>,
+    { data: PostQuestcenterInformedTemplateCloseTemplateBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op460PostQuestcenterInformedTemplateCloseTemplate(data)
+    return postQuestcenterInformedTemplateCloseTemplate(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op460PostQuestcenterInformedTemplateCloseTemplateMutationResult = NonNullable<
-  Awaited<ReturnType<typeof op460PostQuestcenterInformedTemplateCloseTemplate>>
+export type PostQuestcenterInformedTemplateCloseTemplateMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterInformedTemplateCloseTemplate>>
 >
-export type Op460PostQuestcenterInformedTemplateCloseTemplateMutationBody =
-  Op460PostQuestcenterInformedTemplateCloseTemplateBody
-export type Op460PostQuestcenterInformedTemplateCloseTemplateMutationError = ErrorType<unknown>
+export type PostQuestcenterInformedTemplateCloseTemplateMutationBody =
+  PostQuestcenterInformedTemplateCloseTemplateBody
+export type PostQuestcenterInformedTemplateCloseTemplateMutationError = ErrorType<unknown>
 
 /**
  * @summary 模版取消发布
  */
-export const useOp460PostQuestcenterInformedTemplateCloseTemplate = <
+export const usePostQuestcenterInformedTemplateCloseTemplate = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op460PostQuestcenterInformedTemplateCloseTemplate>>,
+      Awaited<ReturnType<typeof postQuestcenterInformedTemplateCloseTemplate>>,
       TError,
-      { data: Op460PostQuestcenterInformedTemplateCloseTemplateBody },
+      { data: PostQuestcenterInformedTemplateCloseTemplateBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op460PostQuestcenterInformedTemplateCloseTemplate>>,
+  Awaited<ReturnType<typeof postQuestcenterInformedTemplateCloseTemplate>>,
   TError,
-  { data: Op460PostQuestcenterInformedTemplateCloseTemplateBody },
+  { data: PostQuestcenterInformedTemplateCloseTemplateBody },
   TContext
 > => {
   return useMutation(
-    getOp460PostQuestcenterInformedTemplateCloseTemplateMutationOptions(options),
+    getPostQuestcenterInformedTemplateCloseTemplateMutationOptions(options),
     queryClient
   )
 }
 
-export type op456PostQuestcenterInformedTemplateCreateTemplateResponse200 = {
-  data: Op456PostQuestcenterInformedTemplateCreateTemplate200
+export type postQuestcenterInformedTemplateCreateTemplateResponse200 = {
+  data: PostQuestcenterInformedTemplateCreateTemplate200
   status: 200
 }
 
-export type op456PostQuestcenterInformedTemplateCreateTemplateResponseSuccess =
-  op456PostQuestcenterInformedTemplateCreateTemplateResponse200 & {
+export type postQuestcenterInformedTemplateCreateTemplateResponseSuccess =
+  postQuestcenterInformedTemplateCreateTemplateResponse200 & {
     headers: Headers
   }
 
-export type op456PostQuestcenterInformedTemplateCreateTemplateResponse =
-  op456PostQuestcenterInformedTemplateCreateTemplateResponseSuccess
+export type postQuestcenterInformedTemplateCreateTemplateResponse =
+  postQuestcenterInformedTemplateCreateTemplateResponseSuccess
 
-export const getOp456PostQuestcenterInformedTemplateCreateTemplateUrl = () => {
+export const getPostQuestcenterInformedTemplateCreateTemplateUrl = () => {
   return `/questcenter/informed_template/create_template`
 }
 
@@ -4375,38 +4285,38 @@ export const getOp456PostQuestcenterInformedTemplateCreateTemplateUrl = () => {
  * 添加模版
  * @summary 添加模版
  */
-export const op456PostQuestcenterInformedTemplateCreateTemplate = async (
-  op456PostQuestcenterInformedTemplateCreateTemplateBody?: Op456PostQuestcenterInformedTemplateCreateTemplateBody,
+export const postQuestcenterInformedTemplateCreateTemplate = async (
+  postQuestcenterInformedTemplateCreateTemplateBody?: PostQuestcenterInformedTemplateCreateTemplateBody,
   options?: RequestInit
-): Promise<op456PostQuestcenterInformedTemplateCreateTemplateResponse> => {
-  return customFetch<op456PostQuestcenterInformedTemplateCreateTemplateResponse>(
-    getOp456PostQuestcenterInformedTemplateCreateTemplateUrl(),
+): Promise<postQuestcenterInformedTemplateCreateTemplateResponse> => {
+  return customFetch<postQuestcenterInformedTemplateCreateTemplateResponse>(
+    getPostQuestcenterInformedTemplateCreateTemplateUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op456PostQuestcenterInformedTemplateCreateTemplateBody),
+      body: JSON.stringify(postQuestcenterInformedTemplateCreateTemplateBody),
     }
   )
 }
 
-export const getOp456PostQuestcenterInformedTemplateCreateTemplateMutationOptions = <
+export const getPostQuestcenterInformedTemplateCreateTemplateMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op456PostQuestcenterInformedTemplateCreateTemplate>>,
+    Awaited<ReturnType<typeof postQuestcenterInformedTemplateCreateTemplate>>,
     TError,
-    { data?: Op456PostQuestcenterInformedTemplateCreateTemplateBody },
+    { data?: PostQuestcenterInformedTemplateCreateTemplateBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op456PostQuestcenterInformedTemplateCreateTemplate>>,
+  Awaited<ReturnType<typeof postQuestcenterInformedTemplateCreateTemplate>>,
   TError,
-  { data?: Op456PostQuestcenterInformedTemplateCreateTemplateBody },
+  { data?: PostQuestcenterInformedTemplateCreateTemplateBody },
   TContext
 > => {
-  const mutationKey = ['op456PostQuestcenterInformedTemplateCreateTemplate']
+  const mutationKey = ['postQuestcenterInformedTemplateCreateTemplate']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -4414,67 +4324,67 @@ export const getOp456PostQuestcenterInformedTemplateCreateTemplateMutationOption
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op456PostQuestcenterInformedTemplateCreateTemplate>>,
-    { data?: Op456PostQuestcenterInformedTemplateCreateTemplateBody }
+    Awaited<ReturnType<typeof postQuestcenterInformedTemplateCreateTemplate>>,
+    { data?: PostQuestcenterInformedTemplateCreateTemplateBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op456PostQuestcenterInformedTemplateCreateTemplate(data)
+    return postQuestcenterInformedTemplateCreateTemplate(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op456PostQuestcenterInformedTemplateCreateTemplateMutationResult = NonNullable<
-  Awaited<ReturnType<typeof op456PostQuestcenterInformedTemplateCreateTemplate>>
+export type PostQuestcenterInformedTemplateCreateTemplateMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterInformedTemplateCreateTemplate>>
 >
-export type Op456PostQuestcenterInformedTemplateCreateTemplateMutationBody =
-  | Op456PostQuestcenterInformedTemplateCreateTemplateBody
+export type PostQuestcenterInformedTemplateCreateTemplateMutationBody =
+  | PostQuestcenterInformedTemplateCreateTemplateBody
   | undefined
-export type Op456PostQuestcenterInformedTemplateCreateTemplateMutationError = ErrorType<unknown>
+export type PostQuestcenterInformedTemplateCreateTemplateMutationError = ErrorType<unknown>
 
 /**
  * @summary 添加模版
  */
-export const useOp456PostQuestcenterInformedTemplateCreateTemplate = <
+export const usePostQuestcenterInformedTemplateCreateTemplate = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op456PostQuestcenterInformedTemplateCreateTemplate>>,
+      Awaited<ReturnType<typeof postQuestcenterInformedTemplateCreateTemplate>>,
       TError,
-      { data?: Op456PostQuestcenterInformedTemplateCreateTemplateBody },
+      { data?: PostQuestcenterInformedTemplateCreateTemplateBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op456PostQuestcenterInformedTemplateCreateTemplate>>,
+  Awaited<ReturnType<typeof postQuestcenterInformedTemplateCreateTemplate>>,
   TError,
-  { data?: Op456PostQuestcenterInformedTemplateCreateTemplateBody },
+  { data?: PostQuestcenterInformedTemplateCreateTemplateBody },
   TContext
 > => {
   return useMutation(
-    getOp456PostQuestcenterInformedTemplateCreateTemplateMutationOptions(options),
+    getPostQuestcenterInformedTemplateCreateTemplateMutationOptions(options),
     queryClient
   )
 }
 
-export type op458PostQuestcenterInformedTemplateDeleteTemplateResponse200 = {
-  data: Op458PostQuestcenterInformedTemplateDeleteTemplate200
+export type postQuestcenterInformedTemplateDeleteTemplateResponse200 = {
+  data: PostQuestcenterInformedTemplateDeleteTemplate200
   status: 200
 }
 
-export type op458PostQuestcenterInformedTemplateDeleteTemplateResponseSuccess =
-  op458PostQuestcenterInformedTemplateDeleteTemplateResponse200 & {
+export type postQuestcenterInformedTemplateDeleteTemplateResponseSuccess =
+  postQuestcenterInformedTemplateDeleteTemplateResponse200 & {
     headers: Headers
   }
 
-export type op458PostQuestcenterInformedTemplateDeleteTemplateResponse =
-  op458PostQuestcenterInformedTemplateDeleteTemplateResponseSuccess
+export type postQuestcenterInformedTemplateDeleteTemplateResponse =
+  postQuestcenterInformedTemplateDeleteTemplateResponseSuccess
 
-export const getOp458PostQuestcenterInformedTemplateDeleteTemplateUrl = () => {
+export const getPostQuestcenterInformedTemplateDeleteTemplateUrl = () => {
   return `/questcenter/informed_template/delete_template`
 }
 
@@ -4482,38 +4392,38 @@ export const getOp458PostQuestcenterInformedTemplateDeleteTemplateUrl = () => {
  * 删除模版，只针对，未发布可编辑模版
  * @summary 删除模版，只针对，未发布可编辑模版
  */
-export const op458PostQuestcenterInformedTemplateDeleteTemplate = async (
-  op458PostQuestcenterInformedTemplateDeleteTemplateBody: Op458PostQuestcenterInformedTemplateDeleteTemplateBody,
+export const postQuestcenterInformedTemplateDeleteTemplate = async (
+  postQuestcenterInformedTemplateDeleteTemplateBody: PostQuestcenterInformedTemplateDeleteTemplateBody,
   options?: RequestInit
-): Promise<op458PostQuestcenterInformedTemplateDeleteTemplateResponse> => {
-  return customFetch<op458PostQuestcenterInformedTemplateDeleteTemplateResponse>(
-    getOp458PostQuestcenterInformedTemplateDeleteTemplateUrl(),
+): Promise<postQuestcenterInformedTemplateDeleteTemplateResponse> => {
+  return customFetch<postQuestcenterInformedTemplateDeleteTemplateResponse>(
+    getPostQuestcenterInformedTemplateDeleteTemplateUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op458PostQuestcenterInformedTemplateDeleteTemplateBody),
+      body: JSON.stringify(postQuestcenterInformedTemplateDeleteTemplateBody),
     }
   )
 }
 
-export const getOp458PostQuestcenterInformedTemplateDeleteTemplateMutationOptions = <
+export const getPostQuestcenterInformedTemplateDeleteTemplateMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op458PostQuestcenterInformedTemplateDeleteTemplate>>,
+    Awaited<ReturnType<typeof postQuestcenterInformedTemplateDeleteTemplate>>,
     TError,
-    { data: Op458PostQuestcenterInformedTemplateDeleteTemplateBody },
+    { data: PostQuestcenterInformedTemplateDeleteTemplateBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op458PostQuestcenterInformedTemplateDeleteTemplate>>,
+  Awaited<ReturnType<typeof postQuestcenterInformedTemplateDeleteTemplate>>,
   TError,
-  { data: Op458PostQuestcenterInformedTemplateDeleteTemplateBody },
+  { data: PostQuestcenterInformedTemplateDeleteTemplateBody },
   TContext
 > => {
-  const mutationKey = ['op458PostQuestcenterInformedTemplateDeleteTemplate']
+  const mutationKey = ['postQuestcenterInformedTemplateDeleteTemplate']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -4521,67 +4431,67 @@ export const getOp458PostQuestcenterInformedTemplateDeleteTemplateMutationOption
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op458PostQuestcenterInformedTemplateDeleteTemplate>>,
-    { data: Op458PostQuestcenterInformedTemplateDeleteTemplateBody }
+    Awaited<ReturnType<typeof postQuestcenterInformedTemplateDeleteTemplate>>,
+    { data: PostQuestcenterInformedTemplateDeleteTemplateBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op458PostQuestcenterInformedTemplateDeleteTemplate(data)
+    return postQuestcenterInformedTemplateDeleteTemplate(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op458PostQuestcenterInformedTemplateDeleteTemplateMutationResult = NonNullable<
-  Awaited<ReturnType<typeof op458PostQuestcenterInformedTemplateDeleteTemplate>>
+export type PostQuestcenterInformedTemplateDeleteTemplateMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterInformedTemplateDeleteTemplate>>
 >
-export type Op458PostQuestcenterInformedTemplateDeleteTemplateMutationBody =
-  Op458PostQuestcenterInformedTemplateDeleteTemplateBody
-export type Op458PostQuestcenterInformedTemplateDeleteTemplateMutationError = ErrorType<unknown>
+export type PostQuestcenterInformedTemplateDeleteTemplateMutationBody =
+  PostQuestcenterInformedTemplateDeleteTemplateBody
+export type PostQuestcenterInformedTemplateDeleteTemplateMutationError = ErrorType<unknown>
 
 /**
  * @summary 删除模版，只针对，未发布可编辑模版
  */
-export const useOp458PostQuestcenterInformedTemplateDeleteTemplate = <
+export const usePostQuestcenterInformedTemplateDeleteTemplate = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op458PostQuestcenterInformedTemplateDeleteTemplate>>,
+      Awaited<ReturnType<typeof postQuestcenterInformedTemplateDeleteTemplate>>,
       TError,
-      { data: Op458PostQuestcenterInformedTemplateDeleteTemplateBody },
+      { data: PostQuestcenterInformedTemplateDeleteTemplateBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op458PostQuestcenterInformedTemplateDeleteTemplate>>,
+  Awaited<ReturnType<typeof postQuestcenterInformedTemplateDeleteTemplate>>,
   TError,
-  { data: Op458PostQuestcenterInformedTemplateDeleteTemplateBody },
+  { data: PostQuestcenterInformedTemplateDeleteTemplateBody },
   TContext
 > => {
   return useMutation(
-    getOp458PostQuestcenterInformedTemplateDeleteTemplateMutationOptions(options),
+    getPostQuestcenterInformedTemplateDeleteTemplateMutationOptions(options),
     queryClient
   )
 }
 
-export type op464GetQuestcenterInformedTemplateGetMedicalTemplateListResponse200 = {
-  data: Op464GetQuestcenterInformedTemplateGetMedicalTemplateList200
+export type getQuestcenterInformedTemplateGetMedicalTemplateListResponse200 = {
+  data: GetQuestcenterInformedTemplateGetMedicalTemplateList200
   status: 200
 }
 
-export type op464GetQuestcenterInformedTemplateGetMedicalTemplateListResponseSuccess =
-  op464GetQuestcenterInformedTemplateGetMedicalTemplateListResponse200 & {
+export type getQuestcenterInformedTemplateGetMedicalTemplateListResponseSuccess =
+  getQuestcenterInformedTemplateGetMedicalTemplateListResponse200 & {
     headers: Headers
   }
 
-export type op464GetQuestcenterInformedTemplateGetMedicalTemplateListResponse =
-  op464GetQuestcenterInformedTemplateGetMedicalTemplateListResponseSuccess
+export type getQuestcenterInformedTemplateGetMedicalTemplateListResponse =
+  getQuestcenterInformedTemplateGetMedicalTemplateListResponseSuccess
 
-export const getOp464GetQuestcenterInformedTemplateGetMedicalTemplateListUrl = (
-  params?: Op464GetQuestcenterInformedTemplateGetMedicalTemplateListParams
+export const getGetQuestcenterInformedTemplateGetMedicalTemplateListUrl = (
+  params?: GetQuestcenterInformedTemplateGetMedicalTemplateListParams
 ) => {
   const normalizedParams = new URLSearchParams()
 
@@ -4602,12 +4512,12 @@ export const getOp464GetQuestcenterInformedTemplateGetMedicalTemplateListUrl = (
  * 获取病历模版列表
  * @summary 获取病历模版列表
  */
-export const op464GetQuestcenterInformedTemplateGetMedicalTemplateList = async (
-  params?: Op464GetQuestcenterInformedTemplateGetMedicalTemplateListParams,
+export const getQuestcenterInformedTemplateGetMedicalTemplateList = async (
+  params?: GetQuestcenterInformedTemplateGetMedicalTemplateListParams,
   options?: RequestInit
-): Promise<op464GetQuestcenterInformedTemplateGetMedicalTemplateListResponse> => {
-  return customFetch<op464GetQuestcenterInformedTemplateGetMedicalTemplateListResponse>(
-    getOp464GetQuestcenterInformedTemplateGetMedicalTemplateListUrl(params),
+): Promise<getQuestcenterInformedTemplateGetMedicalTemplateListResponse> => {
+  return customFetch<getQuestcenterInformedTemplateGetMedicalTemplateListResponse>(
+    getGetQuestcenterInformedTemplateGetMedicalTemplateListUrl(params),
     {
       ...options,
       method: 'GET',
@@ -4615,8 +4525,8 @@ export const op464GetQuestcenterInformedTemplateGetMedicalTemplateList = async (
   )
 }
 
-export const getOp464GetQuestcenterInformedTemplateGetMedicalTemplateListQueryKey = (
-  params?: Op464GetQuestcenterInformedTemplateGetMedicalTemplateListParams
+export const getGetQuestcenterInformedTemplateGetMedicalTemplateListQueryKey = (
+  params?: GetQuestcenterInformedTemplateGetMedicalTemplateListParams
 ) => {
   return [
     `/questcenter/informed_template/get_medical_template_list`,
@@ -4624,15 +4534,15 @@ export const getOp464GetQuestcenterInformedTemplateGetMedicalTemplateListQueryKe
   ] as const
 }
 
-export const getOp464GetQuestcenterInformedTemplateGetMedicalTemplateListQueryOptions = <
-  TData = Awaited<ReturnType<typeof op464GetQuestcenterInformedTemplateGetMedicalTemplateList>>,
+export const getGetQuestcenterInformedTemplateGetMedicalTemplateListQueryOptions = <
+  TData = Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetMedicalTemplateList>>,
   TError = ErrorType<unknown>,
 >(
-  params?: Op464GetQuestcenterInformedTemplateGetMedicalTemplateListParams,
+  params?: GetQuestcenterInformedTemplateGetMedicalTemplateListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op464GetQuestcenterInformedTemplateGetMedicalTemplateList>>,
+        Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetMedicalTemplateList>>,
         TError,
         TData
       >
@@ -4643,81 +4553,81 @@ export const getOp464GetQuestcenterInformedTemplateGetMedicalTemplateListQueryOp
 
   const queryKey =
     queryOptions?.queryKey ??
-    getOp464GetQuestcenterInformedTemplateGetMedicalTemplateListQueryKey(params)
+    getGetQuestcenterInformedTemplateGetMedicalTemplateListQueryKey(params)
 
   const queryFn: QueryFunction<
-    Awaited<ReturnType<typeof op464GetQuestcenterInformedTemplateGetMedicalTemplateList>>
-  > = ({ signal }) => op464GetQuestcenterInformedTemplateGetMedicalTemplateList(params, { signal })
+    Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetMedicalTemplateList>>
+  > = ({ signal }) => getQuestcenterInformedTemplateGetMedicalTemplateList(params, { signal })
 
   return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof op464GetQuestcenterInformedTemplateGetMedicalTemplateList>>,
+    Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetMedicalTemplateList>>,
     TError,
     TData
   > & { queryKey: DataTag<QueryKey, TData, TError> }
 }
 
-export type Op464GetQuestcenterInformedTemplateGetMedicalTemplateListQueryResult = NonNullable<
-  Awaited<ReturnType<typeof op464GetQuestcenterInformedTemplateGetMedicalTemplateList>>
+export type GetQuestcenterInformedTemplateGetMedicalTemplateListQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetMedicalTemplateList>>
 >
-export type Op464GetQuestcenterInformedTemplateGetMedicalTemplateListQueryError = ErrorType<unknown>
+export type GetQuestcenterInformedTemplateGetMedicalTemplateListQueryError = ErrorType<unknown>
 
-export function useOp464GetQuestcenterInformedTemplateGetMedicalTemplateList<
-  TData = Awaited<ReturnType<typeof op464GetQuestcenterInformedTemplateGetMedicalTemplateList>>,
+export function useGetQuestcenterInformedTemplateGetMedicalTemplateList<
+  TData = Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetMedicalTemplateList>>,
   TError = ErrorType<unknown>,
 >(
-  params: undefined | Op464GetQuestcenterInformedTemplateGetMedicalTemplateListParams,
+  params: undefined | GetQuestcenterInformedTemplateGetMedicalTemplateListParams,
   options: {
     query: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op464GetQuestcenterInformedTemplateGetMedicalTemplateList>>,
+        Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetMedicalTemplateList>>,
         TError,
         TData
       >
     > &
       Pick<
         DefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op464GetQuestcenterInformedTemplateGetMedicalTemplateList>>,
+          Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetMedicalTemplateList>>,
           TError,
-          Awaited<ReturnType<typeof op464GetQuestcenterInformedTemplateGetMedicalTemplateList>>
+          Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetMedicalTemplateList>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp464GetQuestcenterInformedTemplateGetMedicalTemplateList<
-  TData = Awaited<ReturnType<typeof op464GetQuestcenterInformedTemplateGetMedicalTemplateList>>,
+export function useGetQuestcenterInformedTemplateGetMedicalTemplateList<
+  TData = Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetMedicalTemplateList>>,
   TError = ErrorType<unknown>,
 >(
-  params?: Op464GetQuestcenterInformedTemplateGetMedicalTemplateListParams,
+  params?: GetQuestcenterInformedTemplateGetMedicalTemplateListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op464GetQuestcenterInformedTemplateGetMedicalTemplateList>>,
+        Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetMedicalTemplateList>>,
         TError,
         TData
       >
     > &
       Pick<
         UndefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op464GetQuestcenterInformedTemplateGetMedicalTemplateList>>,
+          Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetMedicalTemplateList>>,
           TError,
-          Awaited<ReturnType<typeof op464GetQuestcenterInformedTemplateGetMedicalTemplateList>>
+          Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetMedicalTemplateList>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp464GetQuestcenterInformedTemplateGetMedicalTemplateList<
-  TData = Awaited<ReturnType<typeof op464GetQuestcenterInformedTemplateGetMedicalTemplateList>>,
+export function useGetQuestcenterInformedTemplateGetMedicalTemplateList<
+  TData = Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetMedicalTemplateList>>,
   TError = ErrorType<unknown>,
 >(
-  params?: Op464GetQuestcenterInformedTemplateGetMedicalTemplateListParams,
+  params?: GetQuestcenterInformedTemplateGetMedicalTemplateListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op464GetQuestcenterInformedTemplateGetMedicalTemplateList>>,
+        Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetMedicalTemplateList>>,
         TError,
         TData
       >
@@ -4729,15 +4639,15 @@ export function useOp464GetQuestcenterInformedTemplateGetMedicalTemplateList<
  * @summary 获取病历模版列表
  */
 
-export function useOp464GetQuestcenterInformedTemplateGetMedicalTemplateList<
-  TData = Awaited<ReturnType<typeof op464GetQuestcenterInformedTemplateGetMedicalTemplateList>>,
+export function useGetQuestcenterInformedTemplateGetMedicalTemplateList<
+  TData = Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetMedicalTemplateList>>,
   TError = ErrorType<unknown>,
 >(
-  params?: Op464GetQuestcenterInformedTemplateGetMedicalTemplateListParams,
+  params?: GetQuestcenterInformedTemplateGetMedicalTemplateListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op464GetQuestcenterInformedTemplateGetMedicalTemplateList>>,
+        Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetMedicalTemplateList>>,
         TError,
         TData
       >
@@ -4745,7 +4655,7 @@ export function useOp464GetQuestcenterInformedTemplateGetMedicalTemplateList<
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
-  const queryOptions = getOp464GetQuestcenterInformedTemplateGetMedicalTemplateListQueryOptions(
+  const queryOptions = getGetQuestcenterInformedTemplateGetMedicalTemplateListQueryOptions(
     params,
     options
   )
@@ -4757,21 +4667,21 @@ export function useOp464GetQuestcenterInformedTemplateGetMedicalTemplateList<
   return { ...query, queryKey: queryOptions.queryKey }
 }
 
-export type op466GetQuestcenterInformedTemplateGetNextStepResponse200 = {
-  data: Op466GetQuestcenterInformedTemplateGetNextStep200
+export type getQuestcenterInformedTemplateGetNextStepResponse200 = {
+  data: GetQuestcenterInformedTemplateGetNextStep200
   status: 200
 }
 
-export type op466GetQuestcenterInformedTemplateGetNextStepResponseSuccess =
-  op466GetQuestcenterInformedTemplateGetNextStepResponse200 & {
+export type getQuestcenterInformedTemplateGetNextStepResponseSuccess =
+  getQuestcenterInformedTemplateGetNextStepResponse200 & {
     headers: Headers
   }
 
-export type op466GetQuestcenterInformedTemplateGetNextStepResponse =
-  op466GetQuestcenterInformedTemplateGetNextStepResponseSuccess
+export type getQuestcenterInformedTemplateGetNextStepResponse =
+  getQuestcenterInformedTemplateGetNextStepResponseSuccess
 
-export const getOp466GetQuestcenterInformedTemplateGetNextStepUrl = (
-  params: Op466GetQuestcenterInformedTemplateGetNextStepParams
+export const getGetQuestcenterInformedTemplateGetNextStepUrl = (
+  params: GetQuestcenterInformedTemplateGetNextStepParams
 ) => {
   const normalizedParams = new URLSearchParams()
 
@@ -4792,12 +4702,12 @@ export const getOp466GetQuestcenterInformedTemplateGetNextStepUrl = (
  * 获取下一步步骤的按钮
  * @summary 获取下一步步骤的按钮
  */
-export const op466GetQuestcenterInformedTemplateGetNextStep = async (
-  params: Op466GetQuestcenterInformedTemplateGetNextStepParams,
+export const getQuestcenterInformedTemplateGetNextStep = async (
+  params: GetQuestcenterInformedTemplateGetNextStepParams,
   options?: RequestInit
-): Promise<op466GetQuestcenterInformedTemplateGetNextStepResponse> => {
-  return customFetch<op466GetQuestcenterInformedTemplateGetNextStepResponse>(
-    getOp466GetQuestcenterInformedTemplateGetNextStepUrl(params),
+): Promise<getQuestcenterInformedTemplateGetNextStepResponse> => {
+  return customFetch<getQuestcenterInformedTemplateGetNextStepResponse>(
+    getGetQuestcenterInformedTemplateGetNextStepUrl(params),
     {
       ...options,
       method: 'GET',
@@ -4805,21 +4715,21 @@ export const op466GetQuestcenterInformedTemplateGetNextStep = async (
   )
 }
 
-export const getOp466GetQuestcenterInformedTemplateGetNextStepQueryKey = (
-  params?: Op466GetQuestcenterInformedTemplateGetNextStepParams
+export const getGetQuestcenterInformedTemplateGetNextStepQueryKey = (
+  params?: GetQuestcenterInformedTemplateGetNextStepParams
 ) => {
   return [`/questcenter/informed_template/get_next_step`, ...(params ? [params] : [])] as const
 }
 
-export const getOp466GetQuestcenterInformedTemplateGetNextStepQueryOptions = <
-  TData = Awaited<ReturnType<typeof op466GetQuestcenterInformedTemplateGetNextStep>>,
+export const getGetQuestcenterInformedTemplateGetNextStepQueryOptions = <
+  TData = Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetNextStep>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op466GetQuestcenterInformedTemplateGetNextStepParams,
+  params: GetQuestcenterInformedTemplateGetNextStepParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op466GetQuestcenterInformedTemplateGetNextStep>>,
+        Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetNextStep>>,
         TError,
         TData
       >
@@ -4829,81 +4739,81 @@ export const getOp466GetQuestcenterInformedTemplateGetNextStepQueryOptions = <
   const { query: queryOptions } = options ?? {}
 
   const queryKey =
-    queryOptions?.queryKey ?? getOp466GetQuestcenterInformedTemplateGetNextStepQueryKey(params)
+    queryOptions?.queryKey ?? getGetQuestcenterInformedTemplateGetNextStepQueryKey(params)
 
   const queryFn: QueryFunction<
-    Awaited<ReturnType<typeof op466GetQuestcenterInformedTemplateGetNextStep>>
-  > = ({ signal }) => op466GetQuestcenterInformedTemplateGetNextStep(params, { signal })
+    Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetNextStep>>
+  > = ({ signal }) => getQuestcenterInformedTemplateGetNextStep(params, { signal })
 
   return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof op466GetQuestcenterInformedTemplateGetNextStep>>,
+    Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetNextStep>>,
     TError,
     TData
   > & { queryKey: DataTag<QueryKey, TData, TError> }
 }
 
-export type Op466GetQuestcenterInformedTemplateGetNextStepQueryResult = NonNullable<
-  Awaited<ReturnType<typeof op466GetQuestcenterInformedTemplateGetNextStep>>
+export type GetQuestcenterInformedTemplateGetNextStepQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetNextStep>>
 >
-export type Op466GetQuestcenterInformedTemplateGetNextStepQueryError = ErrorType<unknown>
+export type GetQuestcenterInformedTemplateGetNextStepQueryError = ErrorType<unknown>
 
-export function useOp466GetQuestcenterInformedTemplateGetNextStep<
-  TData = Awaited<ReturnType<typeof op466GetQuestcenterInformedTemplateGetNextStep>>,
+export function useGetQuestcenterInformedTemplateGetNextStep<
+  TData = Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetNextStep>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op466GetQuestcenterInformedTemplateGetNextStepParams,
+  params: GetQuestcenterInformedTemplateGetNextStepParams,
   options: {
     query: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op466GetQuestcenterInformedTemplateGetNextStep>>,
+        Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetNextStep>>,
         TError,
         TData
       >
     > &
       Pick<
         DefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op466GetQuestcenterInformedTemplateGetNextStep>>,
+          Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetNextStep>>,
           TError,
-          Awaited<ReturnType<typeof op466GetQuestcenterInformedTemplateGetNextStep>>
+          Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetNextStep>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp466GetQuestcenterInformedTemplateGetNextStep<
-  TData = Awaited<ReturnType<typeof op466GetQuestcenterInformedTemplateGetNextStep>>,
+export function useGetQuestcenterInformedTemplateGetNextStep<
+  TData = Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetNextStep>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op466GetQuestcenterInformedTemplateGetNextStepParams,
+  params: GetQuestcenterInformedTemplateGetNextStepParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op466GetQuestcenterInformedTemplateGetNextStep>>,
+        Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetNextStep>>,
         TError,
         TData
       >
     > &
       Pick<
         UndefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op466GetQuestcenterInformedTemplateGetNextStep>>,
+          Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetNextStep>>,
           TError,
-          Awaited<ReturnType<typeof op466GetQuestcenterInformedTemplateGetNextStep>>
+          Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetNextStep>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp466GetQuestcenterInformedTemplateGetNextStep<
-  TData = Awaited<ReturnType<typeof op466GetQuestcenterInformedTemplateGetNextStep>>,
+export function useGetQuestcenterInformedTemplateGetNextStep<
+  TData = Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetNextStep>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op466GetQuestcenterInformedTemplateGetNextStepParams,
+  params: GetQuestcenterInformedTemplateGetNextStepParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op466GetQuestcenterInformedTemplateGetNextStep>>,
+        Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetNextStep>>,
         TError,
         TData
       >
@@ -4915,15 +4825,15 @@ export function useOp466GetQuestcenterInformedTemplateGetNextStep<
  * @summary 获取下一步步骤的按钮
  */
 
-export function useOp466GetQuestcenterInformedTemplateGetNextStep<
-  TData = Awaited<ReturnType<typeof op466GetQuestcenterInformedTemplateGetNextStep>>,
+export function useGetQuestcenterInformedTemplateGetNextStep<
+  TData = Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetNextStep>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op466GetQuestcenterInformedTemplateGetNextStepParams,
+  params: GetQuestcenterInformedTemplateGetNextStepParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op466GetQuestcenterInformedTemplateGetNextStep>>,
+        Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetNextStep>>,
         TError,
         TData
       >
@@ -4931,10 +4841,7 @@ export function useOp466GetQuestcenterInformedTemplateGetNextStep<
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
-  const queryOptions = getOp466GetQuestcenterInformedTemplateGetNextStepQueryOptions(
-    params,
-    options
-  )
+  const queryOptions = getGetQuestcenterInformedTemplateGetNextStepQueryOptions(params, options)
 
   const query = useQuery(queryOptions, queryClient) as UseQueryResult<TData, TError> & {
     queryKey: DataTag<QueryKey, TData, TError>
@@ -4943,20 +4850,20 @@ export function useOp466GetQuestcenterInformedTemplateGetNextStep<
   return { ...query, queryKey: queryOptions.queryKey }
 }
 
-export type op711PostQuestcenterInformedTemplateGetSubjectDeptResponse200 = {
-  data: Op711PostQuestcenterInformedTemplateGetSubjectDept200
+export type postQuestcenterInformedTemplateGetSubjectDeptResponse200 = {
+  data: PostQuestcenterInformedTemplateGetSubjectDept200
   status: 200
 }
 
-export type op711PostQuestcenterInformedTemplateGetSubjectDeptResponseSuccess =
-  op711PostQuestcenterInformedTemplateGetSubjectDeptResponse200 & {
+export type postQuestcenterInformedTemplateGetSubjectDeptResponseSuccess =
+  postQuestcenterInformedTemplateGetSubjectDeptResponse200 & {
     headers: Headers
   }
 
-export type op711PostQuestcenterInformedTemplateGetSubjectDeptResponse =
-  op711PostQuestcenterInformedTemplateGetSubjectDeptResponseSuccess
+export type postQuestcenterInformedTemplateGetSubjectDeptResponse =
+  postQuestcenterInformedTemplateGetSubjectDeptResponseSuccess
 
-export const getOp711PostQuestcenterInformedTemplateGetSubjectDeptUrl = () => {
+export const getPostQuestcenterInformedTemplateGetSubjectDeptUrl = () => {
   return `/questcenter/informed_template/get_subject_dept`
 }
 
@@ -4964,38 +4871,38 @@ export const getOp711PostQuestcenterInformedTemplateGetSubjectDeptUrl = () => {
  * 接口说明：知情告知
  * @summary 获取全部学科列表(知情告知、记录单、专科申请单)
  */
-export const op711PostQuestcenterInformedTemplateGetSubjectDept = async (
-  op711PostQuestcenterInformedTemplateGetSubjectDeptBody?: Op711PostQuestcenterInformedTemplateGetSubjectDeptBody,
+export const postQuestcenterInformedTemplateGetSubjectDept = async (
+  postQuestcenterInformedTemplateGetSubjectDeptBody?: PostQuestcenterInformedTemplateGetSubjectDeptBody,
   options?: RequestInit
-): Promise<op711PostQuestcenterInformedTemplateGetSubjectDeptResponse> => {
-  return customFetch<op711PostQuestcenterInformedTemplateGetSubjectDeptResponse>(
-    getOp711PostQuestcenterInformedTemplateGetSubjectDeptUrl(),
+): Promise<postQuestcenterInformedTemplateGetSubjectDeptResponse> => {
+  return customFetch<postQuestcenterInformedTemplateGetSubjectDeptResponse>(
+    getPostQuestcenterInformedTemplateGetSubjectDeptUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op711PostQuestcenterInformedTemplateGetSubjectDeptBody),
+      body: JSON.stringify(postQuestcenterInformedTemplateGetSubjectDeptBody),
     }
   )
 }
 
-export const getOp711PostQuestcenterInformedTemplateGetSubjectDeptMutationOptions = <
+export const getPostQuestcenterInformedTemplateGetSubjectDeptMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op711PostQuestcenterInformedTemplateGetSubjectDept>>,
+    Awaited<ReturnType<typeof postQuestcenterInformedTemplateGetSubjectDept>>,
     TError,
-    { data?: Op711PostQuestcenterInformedTemplateGetSubjectDeptBody },
+    { data?: PostQuestcenterInformedTemplateGetSubjectDeptBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op711PostQuestcenterInformedTemplateGetSubjectDept>>,
+  Awaited<ReturnType<typeof postQuestcenterInformedTemplateGetSubjectDept>>,
   TError,
-  { data?: Op711PostQuestcenterInformedTemplateGetSubjectDeptBody },
+  { data?: PostQuestcenterInformedTemplateGetSubjectDeptBody },
   TContext
 > => {
-  const mutationKey = ['op711PostQuestcenterInformedTemplateGetSubjectDept']
+  const mutationKey = ['postQuestcenterInformedTemplateGetSubjectDept']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -5003,68 +4910,68 @@ export const getOp711PostQuestcenterInformedTemplateGetSubjectDeptMutationOption
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op711PostQuestcenterInformedTemplateGetSubjectDept>>,
-    { data?: Op711PostQuestcenterInformedTemplateGetSubjectDeptBody }
+    Awaited<ReturnType<typeof postQuestcenterInformedTemplateGetSubjectDept>>,
+    { data?: PostQuestcenterInformedTemplateGetSubjectDeptBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op711PostQuestcenterInformedTemplateGetSubjectDept(data)
+    return postQuestcenterInformedTemplateGetSubjectDept(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op711PostQuestcenterInformedTemplateGetSubjectDeptMutationResult = NonNullable<
-  Awaited<ReturnType<typeof op711PostQuestcenterInformedTemplateGetSubjectDept>>
+export type PostQuestcenterInformedTemplateGetSubjectDeptMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterInformedTemplateGetSubjectDept>>
 >
-export type Op711PostQuestcenterInformedTemplateGetSubjectDeptMutationBody =
-  | Op711PostQuestcenterInformedTemplateGetSubjectDeptBody
+export type PostQuestcenterInformedTemplateGetSubjectDeptMutationBody =
+  | PostQuestcenterInformedTemplateGetSubjectDeptBody
   | undefined
-export type Op711PostQuestcenterInformedTemplateGetSubjectDeptMutationError = ErrorType<unknown>
+export type PostQuestcenterInformedTemplateGetSubjectDeptMutationError = ErrorType<unknown>
 
 /**
  * @summary 获取全部学科列表(知情告知、记录单、专科申请单)
  */
-export const useOp711PostQuestcenterInformedTemplateGetSubjectDept = <
+export const usePostQuestcenterInformedTemplateGetSubjectDept = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op711PostQuestcenterInformedTemplateGetSubjectDept>>,
+      Awaited<ReturnType<typeof postQuestcenterInformedTemplateGetSubjectDept>>,
       TError,
-      { data?: Op711PostQuestcenterInformedTemplateGetSubjectDeptBody },
+      { data?: PostQuestcenterInformedTemplateGetSubjectDeptBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op711PostQuestcenterInformedTemplateGetSubjectDept>>,
+  Awaited<ReturnType<typeof postQuestcenterInformedTemplateGetSubjectDept>>,
   TError,
-  { data?: Op711PostQuestcenterInformedTemplateGetSubjectDeptBody },
+  { data?: PostQuestcenterInformedTemplateGetSubjectDeptBody },
   TContext
 > => {
   return useMutation(
-    getOp711PostQuestcenterInformedTemplateGetSubjectDeptMutationOptions(options),
+    getPostQuestcenterInformedTemplateGetSubjectDeptMutationOptions(options),
     queryClient
   )
 }
 
-export type op461GetQuestcenterInformedTemplateGetTemplateDetailResponse200 = {
-  data: Op461GetQuestcenterInformedTemplateGetTemplateDetail200
+export type getQuestcenterInformedTemplateGetTemplateDetailResponse200 = {
+  data: GetQuestcenterInformedTemplateGetTemplateDetail200
   status: 200
 }
 
-export type op461GetQuestcenterInformedTemplateGetTemplateDetailResponseSuccess =
-  op461GetQuestcenterInformedTemplateGetTemplateDetailResponse200 & {
+export type getQuestcenterInformedTemplateGetTemplateDetailResponseSuccess =
+  getQuestcenterInformedTemplateGetTemplateDetailResponse200 & {
     headers: Headers
   }
 
-export type op461GetQuestcenterInformedTemplateGetTemplateDetailResponse =
-  op461GetQuestcenterInformedTemplateGetTemplateDetailResponseSuccess
+export type getQuestcenterInformedTemplateGetTemplateDetailResponse =
+  getQuestcenterInformedTemplateGetTemplateDetailResponseSuccess
 
-export const getOp461GetQuestcenterInformedTemplateGetTemplateDetailUrl = (
-  params: Op461GetQuestcenterInformedTemplateGetTemplateDetailParams
+export const getGetQuestcenterInformedTemplateGetTemplateDetailUrl = (
+  params: GetQuestcenterInformedTemplateGetTemplateDetailParams
 ) => {
   const normalizedParams = new URLSearchParams()
 
@@ -5085,12 +4992,12 @@ export const getOp461GetQuestcenterInformedTemplateGetTemplateDetailUrl = (
  * 查询模版详情
  * @summary 查询模版详情
  */
-export const op461GetQuestcenterInformedTemplateGetTemplateDetail = async (
-  params: Op461GetQuestcenterInformedTemplateGetTemplateDetailParams,
+export const getQuestcenterInformedTemplateGetTemplateDetail = async (
+  params: GetQuestcenterInformedTemplateGetTemplateDetailParams,
   options?: RequestInit
-): Promise<op461GetQuestcenterInformedTemplateGetTemplateDetailResponse> => {
-  return customFetch<op461GetQuestcenterInformedTemplateGetTemplateDetailResponse>(
-    getOp461GetQuestcenterInformedTemplateGetTemplateDetailUrl(params),
+): Promise<getQuestcenterInformedTemplateGetTemplateDetailResponse> => {
+  return customFetch<getQuestcenterInformedTemplateGetTemplateDetailResponse>(
+    getGetQuestcenterInformedTemplateGetTemplateDetailUrl(params),
     {
       ...options,
       method: 'GET',
@@ -5098,8 +5005,8 @@ export const op461GetQuestcenterInformedTemplateGetTemplateDetail = async (
   )
 }
 
-export const getOp461GetQuestcenterInformedTemplateGetTemplateDetailQueryKey = (
-  params?: Op461GetQuestcenterInformedTemplateGetTemplateDetailParams
+export const getGetQuestcenterInformedTemplateGetTemplateDetailQueryKey = (
+  params?: GetQuestcenterInformedTemplateGetTemplateDetailParams
 ) => {
   return [
     `/questcenter/informed_template/get_template_detail`,
@@ -5107,15 +5014,15 @@ export const getOp461GetQuestcenterInformedTemplateGetTemplateDetailQueryKey = (
   ] as const
 }
 
-export const getOp461GetQuestcenterInformedTemplateGetTemplateDetailQueryOptions = <
-  TData = Awaited<ReturnType<typeof op461GetQuestcenterInformedTemplateGetTemplateDetail>>,
+export const getGetQuestcenterInformedTemplateGetTemplateDetailQueryOptions = <
+  TData = Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetail>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op461GetQuestcenterInformedTemplateGetTemplateDetailParams,
+  params: GetQuestcenterInformedTemplateGetTemplateDetailParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op461GetQuestcenterInformedTemplateGetTemplateDetail>>,
+        Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetail>>,
         TError,
         TData
       >
@@ -5125,82 +5032,81 @@ export const getOp461GetQuestcenterInformedTemplateGetTemplateDetailQueryOptions
   const { query: queryOptions } = options ?? {}
 
   const queryKey =
-    queryOptions?.queryKey ??
-    getOp461GetQuestcenterInformedTemplateGetTemplateDetailQueryKey(params)
+    queryOptions?.queryKey ?? getGetQuestcenterInformedTemplateGetTemplateDetailQueryKey(params)
 
   const queryFn: QueryFunction<
-    Awaited<ReturnType<typeof op461GetQuestcenterInformedTemplateGetTemplateDetail>>
-  > = ({ signal }) => op461GetQuestcenterInformedTemplateGetTemplateDetail(params, { signal })
+    Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetail>>
+  > = ({ signal }) => getQuestcenterInformedTemplateGetTemplateDetail(params, { signal })
 
   return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof op461GetQuestcenterInformedTemplateGetTemplateDetail>>,
+    Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetail>>,
     TError,
     TData
   > & { queryKey: DataTag<QueryKey, TData, TError> }
 }
 
-export type Op461GetQuestcenterInformedTemplateGetTemplateDetailQueryResult = NonNullable<
-  Awaited<ReturnType<typeof op461GetQuestcenterInformedTemplateGetTemplateDetail>>
+export type GetQuestcenterInformedTemplateGetTemplateDetailQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetail>>
 >
-export type Op461GetQuestcenterInformedTemplateGetTemplateDetailQueryError = ErrorType<unknown>
+export type GetQuestcenterInformedTemplateGetTemplateDetailQueryError = ErrorType<unknown>
 
-export function useOp461GetQuestcenterInformedTemplateGetTemplateDetail<
-  TData = Awaited<ReturnType<typeof op461GetQuestcenterInformedTemplateGetTemplateDetail>>,
+export function useGetQuestcenterInformedTemplateGetTemplateDetail<
+  TData = Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetail>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op461GetQuestcenterInformedTemplateGetTemplateDetailParams,
+  params: GetQuestcenterInformedTemplateGetTemplateDetailParams,
   options: {
     query: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op461GetQuestcenterInformedTemplateGetTemplateDetail>>,
+        Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetail>>,
         TError,
         TData
       >
     > &
       Pick<
         DefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op461GetQuestcenterInformedTemplateGetTemplateDetail>>,
+          Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetail>>,
           TError,
-          Awaited<ReturnType<typeof op461GetQuestcenterInformedTemplateGetTemplateDetail>>
+          Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetail>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp461GetQuestcenterInformedTemplateGetTemplateDetail<
-  TData = Awaited<ReturnType<typeof op461GetQuestcenterInformedTemplateGetTemplateDetail>>,
+export function useGetQuestcenterInformedTemplateGetTemplateDetail<
+  TData = Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetail>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op461GetQuestcenterInformedTemplateGetTemplateDetailParams,
+  params: GetQuestcenterInformedTemplateGetTemplateDetailParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op461GetQuestcenterInformedTemplateGetTemplateDetail>>,
+        Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetail>>,
         TError,
         TData
       >
     > &
       Pick<
         UndefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op461GetQuestcenterInformedTemplateGetTemplateDetail>>,
+          Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetail>>,
           TError,
-          Awaited<ReturnType<typeof op461GetQuestcenterInformedTemplateGetTemplateDetail>>
+          Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetail>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp461GetQuestcenterInformedTemplateGetTemplateDetail<
-  TData = Awaited<ReturnType<typeof op461GetQuestcenterInformedTemplateGetTemplateDetail>>,
+export function useGetQuestcenterInformedTemplateGetTemplateDetail<
+  TData = Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetail>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op461GetQuestcenterInformedTemplateGetTemplateDetailParams,
+  params: GetQuestcenterInformedTemplateGetTemplateDetailParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op461GetQuestcenterInformedTemplateGetTemplateDetail>>,
+        Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetail>>,
         TError,
         TData
       >
@@ -5212,15 +5118,15 @@ export function useOp461GetQuestcenterInformedTemplateGetTemplateDetail<
  * @summary 查询模版详情
  */
 
-export function useOp461GetQuestcenterInformedTemplateGetTemplateDetail<
-  TData = Awaited<ReturnType<typeof op461GetQuestcenterInformedTemplateGetTemplateDetail>>,
+export function useGetQuestcenterInformedTemplateGetTemplateDetail<
+  TData = Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetail>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op461GetQuestcenterInformedTemplateGetTemplateDetailParams,
+  params: GetQuestcenterInformedTemplateGetTemplateDetailParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op461GetQuestcenterInformedTemplateGetTemplateDetail>>,
+        Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetail>>,
         TError,
         TData
       >
@@ -5228,7 +5134,7 @@ export function useOp461GetQuestcenterInformedTemplateGetTemplateDetail<
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
-  const queryOptions = getOp461GetQuestcenterInformedTemplateGetTemplateDetailQueryOptions(
+  const queryOptions = getGetQuestcenterInformedTemplateGetTemplateDetailQueryOptions(
     params,
     options
   )
@@ -5240,21 +5146,21 @@ export function useOp461GetQuestcenterInformedTemplateGetTemplateDetail<
   return { ...query, queryKey: queryOptions.queryKey }
 }
 
-export type op465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalIdResponse200 = {
-  data: Op465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalId200
+export type getQuestcenterInformedTemplateGetTemplateDetailByMedicalIdResponse200 = {
+  data: GetQuestcenterInformedTemplateGetTemplateDetailByMedicalId200
   status: 200
 }
 
-export type op465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalIdResponseSuccess =
-  op465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalIdResponse200 & {
+export type getQuestcenterInformedTemplateGetTemplateDetailByMedicalIdResponseSuccess =
+  getQuestcenterInformedTemplateGetTemplateDetailByMedicalIdResponse200 & {
     headers: Headers
   }
 
-export type op465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalIdResponse =
-  op465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalIdResponseSuccess
+export type getQuestcenterInformedTemplateGetTemplateDetailByMedicalIdResponse =
+  getQuestcenterInformedTemplateGetTemplateDetailByMedicalIdResponseSuccess
 
-export const getOp465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalIdUrl = (
-  params: Op465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalIdParams
+export const getGetQuestcenterInformedTemplateGetTemplateDetailByMedicalIdUrl = (
+  params: GetQuestcenterInformedTemplateGetTemplateDetailByMedicalIdParams
 ) => {
   const normalizedParams = new URLSearchParams()
 
@@ -5275,12 +5181,12 @@ export const getOp465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalIdU
  * 获取病历模版详情，medical_id
  * @summary 获取病历模版详情，medical_id
  */
-export const op465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalId = async (
-  params: Op465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalIdParams,
+export const getQuestcenterInformedTemplateGetTemplateDetailByMedicalId = async (
+  params: GetQuestcenterInformedTemplateGetTemplateDetailByMedicalIdParams,
   options?: RequestInit
-): Promise<op465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalIdResponse> => {
-  return customFetch<op465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalIdResponse>(
-    getOp465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalIdUrl(params),
+): Promise<getQuestcenterInformedTemplateGetTemplateDetailByMedicalIdResponse> => {
+  return customFetch<getQuestcenterInformedTemplateGetTemplateDetailByMedicalIdResponse>(
+    getGetQuestcenterInformedTemplateGetTemplateDetailByMedicalIdUrl(params),
     {
       ...options,
       method: 'GET',
@@ -5288,8 +5194,8 @@ export const op465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalId = a
   )
 }
 
-export const getOp465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalIdQueryKey = (
-  params?: Op465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalIdParams
+export const getGetQuestcenterInformedTemplateGetTemplateDetailByMedicalIdQueryKey = (
+  params?: GetQuestcenterInformedTemplateGetTemplateDetailByMedicalIdParams
 ) => {
   return [
     `/questcenter/informed_template/get_template_detail_by_medical_id`,
@@ -5297,17 +5203,15 @@ export const getOp465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalIdQ
   ] as const
 }
 
-export const getOp465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalIdQueryOptions = <
-  TData = Awaited<
-    ReturnType<typeof op465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalId>
-  >,
+export const getGetQuestcenterInformedTemplateGetTemplateDetailByMedicalIdQueryOptions = <
+  TData = Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetailByMedicalId>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalIdParams,
+  params: GetQuestcenterInformedTemplateGetTemplateDetailByMedicalIdParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalId>>,
+        Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetailByMedicalId>>,
         TError,
         TData
       >
@@ -5318,98 +5222,82 @@ export const getOp465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalIdQ
 
   const queryKey =
     queryOptions?.queryKey ??
-    getOp465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalIdQueryKey(params)
+    getGetQuestcenterInformedTemplateGetTemplateDetailByMedicalIdQueryKey(params)
 
   const queryFn: QueryFunction<
-    Awaited<ReturnType<typeof op465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalId>>
-  > = ({ signal }) =>
-    op465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalId(params, { signal })
+    Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetailByMedicalId>>
+  > = ({ signal }) => getQuestcenterInformedTemplateGetTemplateDetailByMedicalId(params, { signal })
 
   return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof op465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalId>>,
+    Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetailByMedicalId>>,
     TError,
     TData
   > & { queryKey: DataTag<QueryKey, TData, TError> }
 }
 
-export type Op465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalIdQueryResult =
-  NonNullable<
-    Awaited<ReturnType<typeof op465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalId>>
-  >
-export type Op465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalIdQueryError =
+export type GetQuestcenterInformedTemplateGetTemplateDetailByMedicalIdQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetailByMedicalId>>
+>
+export type GetQuestcenterInformedTemplateGetTemplateDetailByMedicalIdQueryError =
   ErrorType<unknown>
 
-export function useOp465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalId<
-  TData = Awaited<
-    ReturnType<typeof op465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalId>
-  >,
+export function useGetQuestcenterInformedTemplateGetTemplateDetailByMedicalId<
+  TData = Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetailByMedicalId>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalIdParams,
+  params: GetQuestcenterInformedTemplateGetTemplateDetailByMedicalIdParams,
   options: {
     query: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalId>>,
+        Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetailByMedicalId>>,
         TError,
         TData
       >
     > &
       Pick<
         DefinedInitialDataOptions<
-          Awaited<
-            ReturnType<typeof op465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalId>
-          >,
+          Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetailByMedicalId>>,
           TError,
-          Awaited<
-            ReturnType<typeof op465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalId>
-          >
+          Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetailByMedicalId>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalId<
-  TData = Awaited<
-    ReturnType<typeof op465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalId>
-  >,
+export function useGetQuestcenterInformedTemplateGetTemplateDetailByMedicalId<
+  TData = Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetailByMedicalId>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalIdParams,
+  params: GetQuestcenterInformedTemplateGetTemplateDetailByMedicalIdParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalId>>,
+        Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetailByMedicalId>>,
         TError,
         TData
       >
     > &
       Pick<
         UndefinedInitialDataOptions<
-          Awaited<
-            ReturnType<typeof op465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalId>
-          >,
+          Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetailByMedicalId>>,
           TError,
-          Awaited<
-            ReturnType<typeof op465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalId>
-          >
+          Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetailByMedicalId>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalId<
-  TData = Awaited<
-    ReturnType<typeof op465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalId>
-  >,
+export function useGetQuestcenterInformedTemplateGetTemplateDetailByMedicalId<
+  TData = Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetailByMedicalId>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalIdParams,
+  params: GetQuestcenterInformedTemplateGetTemplateDetailByMedicalIdParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalId>>,
+        Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetailByMedicalId>>,
         TError,
         TData
       >
@@ -5421,17 +5309,15 @@ export function useOp465GetQuestcenterInformedTemplateGetTemplateDetailByMedical
  * @summary 获取病历模版详情，medical_id
  */
 
-export function useOp465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalId<
-  TData = Awaited<
-    ReturnType<typeof op465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalId>
-  >,
+export function useGetQuestcenterInformedTemplateGetTemplateDetailByMedicalId<
+  TData = Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetailByMedicalId>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalIdParams,
+  params: GetQuestcenterInformedTemplateGetTemplateDetailByMedicalIdParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalId>>,
+        Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetailByMedicalId>>,
         TError,
         TData
       >
@@ -5439,8 +5325,10 @@ export function useOp465GetQuestcenterInformedTemplateGetTemplateDetailByMedical
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
-  const queryOptions =
-    getOp465GetQuestcenterInformedTemplateGetTemplateDetailByMedicalIdQueryOptions(params, options)
+  const queryOptions = getGetQuestcenterInformedTemplateGetTemplateDetailByMedicalIdQueryOptions(
+    params,
+    options
+  )
 
   const query = useQuery(queryOptions, queryClient) as UseQueryResult<TData, TError> & {
     queryKey: DataTag<QueryKey, TData, TError>
@@ -5449,21 +5337,21 @@ export function useOp465GetQuestcenterInformedTemplateGetTemplateDetailByMedical
   return { ...query, queryKey: queryOptions.queryKey }
 }
 
-export type op463GetQuestcenterInformedTemplateGetTemplateDetailByPaperIdResponse200 = {
-  data: Op463GetQuestcenterInformedTemplateGetTemplateDetailByPaperId200
+export type getQuestcenterInformedTemplateGetTemplateDetailByPaperIdResponse200 = {
+  data: GetQuestcenterInformedTemplateGetTemplateDetailByPaperId200
   status: 200
 }
 
-export type op463GetQuestcenterInformedTemplateGetTemplateDetailByPaperIdResponseSuccess =
-  op463GetQuestcenterInformedTemplateGetTemplateDetailByPaperIdResponse200 & {
+export type getQuestcenterInformedTemplateGetTemplateDetailByPaperIdResponseSuccess =
+  getQuestcenterInformedTemplateGetTemplateDetailByPaperIdResponse200 & {
     headers: Headers
   }
 
-export type op463GetQuestcenterInformedTemplateGetTemplateDetailByPaperIdResponse =
-  op463GetQuestcenterInformedTemplateGetTemplateDetailByPaperIdResponseSuccess
+export type getQuestcenterInformedTemplateGetTemplateDetailByPaperIdResponse =
+  getQuestcenterInformedTemplateGetTemplateDetailByPaperIdResponseSuccess
 
-export const getOp463GetQuestcenterInformedTemplateGetTemplateDetailByPaperIdUrl = (
-  params: Op463GetQuestcenterInformedTemplateGetTemplateDetailByPaperIdParams
+export const getGetQuestcenterInformedTemplateGetTemplateDetailByPaperIdUrl = (
+  params: GetQuestcenterInformedTemplateGetTemplateDetailByPaperIdParams
 ) => {
   const normalizedParams = new URLSearchParams()
 
@@ -5484,12 +5372,12 @@ export const getOp463GetQuestcenterInformedTemplateGetTemplateDetailByPaperIdUrl
  * 查询模版详情根据paper_id
  * @summary 查询模版详情根据paper_id
  */
-export const op463GetQuestcenterInformedTemplateGetTemplateDetailByPaperId = async (
-  params: Op463GetQuestcenterInformedTemplateGetTemplateDetailByPaperIdParams,
+export const getQuestcenterInformedTemplateGetTemplateDetailByPaperId = async (
+  params: GetQuestcenterInformedTemplateGetTemplateDetailByPaperIdParams,
   options?: RequestInit
-): Promise<op463GetQuestcenterInformedTemplateGetTemplateDetailByPaperIdResponse> => {
-  return customFetch<op463GetQuestcenterInformedTemplateGetTemplateDetailByPaperIdResponse>(
-    getOp463GetQuestcenterInformedTemplateGetTemplateDetailByPaperIdUrl(params),
+): Promise<getQuestcenterInformedTemplateGetTemplateDetailByPaperIdResponse> => {
+  return customFetch<getQuestcenterInformedTemplateGetTemplateDetailByPaperIdResponse>(
+    getGetQuestcenterInformedTemplateGetTemplateDetailByPaperIdUrl(params),
     {
       ...options,
       method: 'GET',
@@ -5497,8 +5385,8 @@ export const op463GetQuestcenterInformedTemplateGetTemplateDetailByPaperId = asy
   )
 }
 
-export const getOp463GetQuestcenterInformedTemplateGetTemplateDetailByPaperIdQueryKey = (
-  params?: Op463GetQuestcenterInformedTemplateGetTemplateDetailByPaperIdParams
+export const getGetQuestcenterInformedTemplateGetTemplateDetailByPaperIdQueryKey = (
+  params?: GetQuestcenterInformedTemplateGetTemplateDetailByPaperIdParams
 ) => {
   return [
     `/questcenter/informed_template/get_template_detail_by_paper_id`,
@@ -5506,15 +5394,15 @@ export const getOp463GetQuestcenterInformedTemplateGetTemplateDetailByPaperIdQue
   ] as const
 }
 
-export const getOp463GetQuestcenterInformedTemplateGetTemplateDetailByPaperIdQueryOptions = <
-  TData = Awaited<ReturnType<typeof op463GetQuestcenterInformedTemplateGetTemplateDetailByPaperId>>,
+export const getGetQuestcenterInformedTemplateGetTemplateDetailByPaperIdQueryOptions = <
+  TData = Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetailByPaperId>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op463GetQuestcenterInformedTemplateGetTemplateDetailByPaperIdParams,
+  params: GetQuestcenterInformedTemplateGetTemplateDetailByPaperIdParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op463GetQuestcenterInformedTemplateGetTemplateDetailByPaperId>>,
+        Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetailByPaperId>>,
         TError,
         TData
       >
@@ -5525,83 +5413,81 @@ export const getOp463GetQuestcenterInformedTemplateGetTemplateDetailByPaperIdQue
 
   const queryKey =
     queryOptions?.queryKey ??
-    getOp463GetQuestcenterInformedTemplateGetTemplateDetailByPaperIdQueryKey(params)
+    getGetQuestcenterInformedTemplateGetTemplateDetailByPaperIdQueryKey(params)
 
   const queryFn: QueryFunction<
-    Awaited<ReturnType<typeof op463GetQuestcenterInformedTemplateGetTemplateDetailByPaperId>>
-  > = ({ signal }) =>
-    op463GetQuestcenterInformedTemplateGetTemplateDetailByPaperId(params, { signal })
+    Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetailByPaperId>>
+  > = ({ signal }) => getQuestcenterInformedTemplateGetTemplateDetailByPaperId(params, { signal })
 
   return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof op463GetQuestcenterInformedTemplateGetTemplateDetailByPaperId>>,
+    Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetailByPaperId>>,
     TError,
     TData
   > & { queryKey: DataTag<QueryKey, TData, TError> }
 }
 
-export type Op463GetQuestcenterInformedTemplateGetTemplateDetailByPaperIdQueryResult = NonNullable<
-  Awaited<ReturnType<typeof op463GetQuestcenterInformedTemplateGetTemplateDetailByPaperId>>
+export type GetQuestcenterInformedTemplateGetTemplateDetailByPaperIdQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetailByPaperId>>
 >
-export type Op463GetQuestcenterInformedTemplateGetTemplateDetailByPaperIdQueryError =
-  ErrorType<unknown>
+export type GetQuestcenterInformedTemplateGetTemplateDetailByPaperIdQueryError = ErrorType<unknown>
 
-export function useOp463GetQuestcenterInformedTemplateGetTemplateDetailByPaperId<
-  TData = Awaited<ReturnType<typeof op463GetQuestcenterInformedTemplateGetTemplateDetailByPaperId>>,
+export function useGetQuestcenterInformedTemplateGetTemplateDetailByPaperId<
+  TData = Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetailByPaperId>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op463GetQuestcenterInformedTemplateGetTemplateDetailByPaperIdParams,
+  params: GetQuestcenterInformedTemplateGetTemplateDetailByPaperIdParams,
   options: {
     query: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op463GetQuestcenterInformedTemplateGetTemplateDetailByPaperId>>,
+        Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetailByPaperId>>,
         TError,
         TData
       >
     > &
       Pick<
         DefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op463GetQuestcenterInformedTemplateGetTemplateDetailByPaperId>>,
+          Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetailByPaperId>>,
           TError,
-          Awaited<ReturnType<typeof op463GetQuestcenterInformedTemplateGetTemplateDetailByPaperId>>
+          Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetailByPaperId>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp463GetQuestcenterInformedTemplateGetTemplateDetailByPaperId<
-  TData = Awaited<ReturnType<typeof op463GetQuestcenterInformedTemplateGetTemplateDetailByPaperId>>,
+export function useGetQuestcenterInformedTemplateGetTemplateDetailByPaperId<
+  TData = Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetailByPaperId>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op463GetQuestcenterInformedTemplateGetTemplateDetailByPaperIdParams,
+  params: GetQuestcenterInformedTemplateGetTemplateDetailByPaperIdParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op463GetQuestcenterInformedTemplateGetTemplateDetailByPaperId>>,
+        Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetailByPaperId>>,
         TError,
         TData
       >
     > &
       Pick<
         UndefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op463GetQuestcenterInformedTemplateGetTemplateDetailByPaperId>>,
+          Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetailByPaperId>>,
           TError,
-          Awaited<ReturnType<typeof op463GetQuestcenterInformedTemplateGetTemplateDetailByPaperId>>
+          Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetailByPaperId>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp463GetQuestcenterInformedTemplateGetTemplateDetailByPaperId<
-  TData = Awaited<ReturnType<typeof op463GetQuestcenterInformedTemplateGetTemplateDetailByPaperId>>,
+export function useGetQuestcenterInformedTemplateGetTemplateDetailByPaperId<
+  TData = Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetailByPaperId>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op463GetQuestcenterInformedTemplateGetTemplateDetailByPaperIdParams,
+  params: GetQuestcenterInformedTemplateGetTemplateDetailByPaperIdParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op463GetQuestcenterInformedTemplateGetTemplateDetailByPaperId>>,
+        Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetailByPaperId>>,
         TError,
         TData
       >
@@ -5613,15 +5499,15 @@ export function useOp463GetQuestcenterInformedTemplateGetTemplateDetailByPaperId
  * @summary 查询模版详情根据paper_id
  */
 
-export function useOp463GetQuestcenterInformedTemplateGetTemplateDetailByPaperId<
-  TData = Awaited<ReturnType<typeof op463GetQuestcenterInformedTemplateGetTemplateDetailByPaperId>>,
+export function useGetQuestcenterInformedTemplateGetTemplateDetailByPaperId<
+  TData = Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetailByPaperId>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op463GetQuestcenterInformedTemplateGetTemplateDetailByPaperIdParams,
+  params: GetQuestcenterInformedTemplateGetTemplateDetailByPaperIdParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op463GetQuestcenterInformedTemplateGetTemplateDetailByPaperId>>,
+        Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateDetailByPaperId>>,
         TError,
         TData
       >
@@ -5629,7 +5515,7 @@ export function useOp463GetQuestcenterInformedTemplateGetTemplateDetailByPaperId
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
-  const queryOptions = getOp463GetQuestcenterInformedTemplateGetTemplateDetailByPaperIdQueryOptions(
+  const queryOptions = getGetQuestcenterInformedTemplateGetTemplateDetailByPaperIdQueryOptions(
     params,
     options
   )
@@ -5641,21 +5527,21 @@ export function useOp463GetQuestcenterInformedTemplateGetTemplateDetailByPaperId
   return { ...query, queryKey: queryOptions.queryKey }
 }
 
-export type op462GetQuestcenterInformedTemplateGetTemplateHistoryListResponse200 = {
-  data: Op462GetQuestcenterInformedTemplateGetTemplateHistoryList200
+export type getQuestcenterInformedTemplateGetTemplateHistoryListResponse200 = {
+  data: GetQuestcenterInformedTemplateGetTemplateHistoryList200
   status: 200
 }
 
-export type op462GetQuestcenterInformedTemplateGetTemplateHistoryListResponseSuccess =
-  op462GetQuestcenterInformedTemplateGetTemplateHistoryListResponse200 & {
+export type getQuestcenterInformedTemplateGetTemplateHistoryListResponseSuccess =
+  getQuestcenterInformedTemplateGetTemplateHistoryListResponse200 & {
     headers: Headers
   }
 
-export type op462GetQuestcenterInformedTemplateGetTemplateHistoryListResponse =
-  op462GetQuestcenterInformedTemplateGetTemplateHistoryListResponseSuccess
+export type getQuestcenterInformedTemplateGetTemplateHistoryListResponse =
+  getQuestcenterInformedTemplateGetTemplateHistoryListResponseSuccess
 
-export const getOp462GetQuestcenterInformedTemplateGetTemplateHistoryListUrl = (
-  params: Op462GetQuestcenterInformedTemplateGetTemplateHistoryListParams
+export const getGetQuestcenterInformedTemplateGetTemplateHistoryListUrl = (
+  params: GetQuestcenterInformedTemplateGetTemplateHistoryListParams
 ) => {
   const normalizedParams = new URLSearchParams()
 
@@ -5676,12 +5562,12 @@ export const getOp462GetQuestcenterInformedTemplateGetTemplateHistoryListUrl = (
  * 获取历史模版列
  * @summary 获取历史模版列
  */
-export const op462GetQuestcenterInformedTemplateGetTemplateHistoryList = async (
-  params: Op462GetQuestcenterInformedTemplateGetTemplateHistoryListParams,
+export const getQuestcenterInformedTemplateGetTemplateHistoryList = async (
+  params: GetQuestcenterInformedTemplateGetTemplateHistoryListParams,
   options?: RequestInit
-): Promise<op462GetQuestcenterInformedTemplateGetTemplateHistoryListResponse> => {
-  return customFetch<op462GetQuestcenterInformedTemplateGetTemplateHistoryListResponse>(
-    getOp462GetQuestcenterInformedTemplateGetTemplateHistoryListUrl(params),
+): Promise<getQuestcenterInformedTemplateGetTemplateHistoryListResponse> => {
+  return customFetch<getQuestcenterInformedTemplateGetTemplateHistoryListResponse>(
+    getGetQuestcenterInformedTemplateGetTemplateHistoryListUrl(params),
     {
       ...options,
       method: 'GET',
@@ -5689,8 +5575,8 @@ export const op462GetQuestcenterInformedTemplateGetTemplateHistoryList = async (
   )
 }
 
-export const getOp462GetQuestcenterInformedTemplateGetTemplateHistoryListQueryKey = (
-  params?: Op462GetQuestcenterInformedTemplateGetTemplateHistoryListParams
+export const getGetQuestcenterInformedTemplateGetTemplateHistoryListQueryKey = (
+  params?: GetQuestcenterInformedTemplateGetTemplateHistoryListParams
 ) => {
   return [
     `/questcenter/informed_template/get_template_history_list`,
@@ -5698,15 +5584,15 @@ export const getOp462GetQuestcenterInformedTemplateGetTemplateHistoryListQueryKe
   ] as const
 }
 
-export const getOp462GetQuestcenterInformedTemplateGetTemplateHistoryListQueryOptions = <
-  TData = Awaited<ReturnType<typeof op462GetQuestcenterInformedTemplateGetTemplateHistoryList>>,
+export const getGetQuestcenterInformedTemplateGetTemplateHistoryListQueryOptions = <
+  TData = Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateHistoryList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op462GetQuestcenterInformedTemplateGetTemplateHistoryListParams,
+  params: GetQuestcenterInformedTemplateGetTemplateHistoryListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op462GetQuestcenterInformedTemplateGetTemplateHistoryList>>,
+        Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateHistoryList>>,
         TError,
         TData
       >
@@ -5717,81 +5603,81 @@ export const getOp462GetQuestcenterInformedTemplateGetTemplateHistoryListQueryOp
 
   const queryKey =
     queryOptions?.queryKey ??
-    getOp462GetQuestcenterInformedTemplateGetTemplateHistoryListQueryKey(params)
+    getGetQuestcenterInformedTemplateGetTemplateHistoryListQueryKey(params)
 
   const queryFn: QueryFunction<
-    Awaited<ReturnType<typeof op462GetQuestcenterInformedTemplateGetTemplateHistoryList>>
-  > = ({ signal }) => op462GetQuestcenterInformedTemplateGetTemplateHistoryList(params, { signal })
+    Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateHistoryList>>
+  > = ({ signal }) => getQuestcenterInformedTemplateGetTemplateHistoryList(params, { signal })
 
   return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof op462GetQuestcenterInformedTemplateGetTemplateHistoryList>>,
+    Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateHistoryList>>,
     TError,
     TData
   > & { queryKey: DataTag<QueryKey, TData, TError> }
 }
 
-export type Op462GetQuestcenterInformedTemplateGetTemplateHistoryListQueryResult = NonNullable<
-  Awaited<ReturnType<typeof op462GetQuestcenterInformedTemplateGetTemplateHistoryList>>
+export type GetQuestcenterInformedTemplateGetTemplateHistoryListQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateHistoryList>>
 >
-export type Op462GetQuestcenterInformedTemplateGetTemplateHistoryListQueryError = ErrorType<unknown>
+export type GetQuestcenterInformedTemplateGetTemplateHistoryListQueryError = ErrorType<unknown>
 
-export function useOp462GetQuestcenterInformedTemplateGetTemplateHistoryList<
-  TData = Awaited<ReturnType<typeof op462GetQuestcenterInformedTemplateGetTemplateHistoryList>>,
+export function useGetQuestcenterInformedTemplateGetTemplateHistoryList<
+  TData = Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateHistoryList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op462GetQuestcenterInformedTemplateGetTemplateHistoryListParams,
+  params: GetQuestcenterInformedTemplateGetTemplateHistoryListParams,
   options: {
     query: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op462GetQuestcenterInformedTemplateGetTemplateHistoryList>>,
+        Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateHistoryList>>,
         TError,
         TData
       >
     > &
       Pick<
         DefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op462GetQuestcenterInformedTemplateGetTemplateHistoryList>>,
+          Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateHistoryList>>,
           TError,
-          Awaited<ReturnType<typeof op462GetQuestcenterInformedTemplateGetTemplateHistoryList>>
+          Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateHistoryList>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp462GetQuestcenterInformedTemplateGetTemplateHistoryList<
-  TData = Awaited<ReturnType<typeof op462GetQuestcenterInformedTemplateGetTemplateHistoryList>>,
+export function useGetQuestcenterInformedTemplateGetTemplateHistoryList<
+  TData = Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateHistoryList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op462GetQuestcenterInformedTemplateGetTemplateHistoryListParams,
+  params: GetQuestcenterInformedTemplateGetTemplateHistoryListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op462GetQuestcenterInformedTemplateGetTemplateHistoryList>>,
+        Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateHistoryList>>,
         TError,
         TData
       >
     > &
       Pick<
         UndefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op462GetQuestcenterInformedTemplateGetTemplateHistoryList>>,
+          Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateHistoryList>>,
           TError,
-          Awaited<ReturnType<typeof op462GetQuestcenterInformedTemplateGetTemplateHistoryList>>
+          Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateHistoryList>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp462GetQuestcenterInformedTemplateGetTemplateHistoryList<
-  TData = Awaited<ReturnType<typeof op462GetQuestcenterInformedTemplateGetTemplateHistoryList>>,
+export function useGetQuestcenterInformedTemplateGetTemplateHistoryList<
+  TData = Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateHistoryList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op462GetQuestcenterInformedTemplateGetTemplateHistoryListParams,
+  params: GetQuestcenterInformedTemplateGetTemplateHistoryListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op462GetQuestcenterInformedTemplateGetTemplateHistoryList>>,
+        Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateHistoryList>>,
         TError,
         TData
       >
@@ -5803,15 +5689,15 @@ export function useOp462GetQuestcenterInformedTemplateGetTemplateHistoryList<
  * @summary 获取历史模版列
  */
 
-export function useOp462GetQuestcenterInformedTemplateGetTemplateHistoryList<
-  TData = Awaited<ReturnType<typeof op462GetQuestcenterInformedTemplateGetTemplateHistoryList>>,
+export function useGetQuestcenterInformedTemplateGetTemplateHistoryList<
+  TData = Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateHistoryList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op462GetQuestcenterInformedTemplateGetTemplateHistoryListParams,
+  params: GetQuestcenterInformedTemplateGetTemplateHistoryListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op462GetQuestcenterInformedTemplateGetTemplateHistoryList>>,
+        Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateHistoryList>>,
         TError,
         TData
       >
@@ -5819,7 +5705,7 @@ export function useOp462GetQuestcenterInformedTemplateGetTemplateHistoryList<
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
-  const queryOptions = getOp462GetQuestcenterInformedTemplateGetTemplateHistoryListQueryOptions(
+  const queryOptions = getGetQuestcenterInformedTemplateGetTemplateHistoryListQueryOptions(
     params,
     options
   )
@@ -5831,21 +5717,21 @@ export function useOp462GetQuestcenterInformedTemplateGetTemplateHistoryList<
   return { ...query, queryKey: queryOptions.queryKey }
 }
 
-export type op455GetQuestcenterInformedTemplateGetTemplateListResponse200 = {
-  data: Op455GetQuestcenterInformedTemplateGetTemplateList200
+export type getQuestcenterInformedTemplateGetTemplateListResponse200 = {
+  data: GetQuestcenterInformedTemplateGetTemplateList200
   status: 200
 }
 
-export type op455GetQuestcenterInformedTemplateGetTemplateListResponseSuccess =
-  op455GetQuestcenterInformedTemplateGetTemplateListResponse200 & {
+export type getQuestcenterInformedTemplateGetTemplateListResponseSuccess =
+  getQuestcenterInformedTemplateGetTemplateListResponse200 & {
     headers: Headers
   }
 
-export type op455GetQuestcenterInformedTemplateGetTemplateListResponse =
-  op455GetQuestcenterInformedTemplateGetTemplateListResponseSuccess
+export type getQuestcenterInformedTemplateGetTemplateListResponse =
+  getQuestcenterInformedTemplateGetTemplateListResponseSuccess
 
-export const getOp455GetQuestcenterInformedTemplateGetTemplateListUrl = (
-  params: Op455GetQuestcenterInformedTemplateGetTemplateListParams
+export const getGetQuestcenterInformedTemplateGetTemplateListUrl = (
+  params: GetQuestcenterInformedTemplateGetTemplateListParams
 ) => {
   const normalizedParams = new URLSearchParams()
 
@@ -5866,12 +5752,12 @@ export const getOp455GetQuestcenterInformedTemplateGetTemplateListUrl = (
  * 获取最新模版列表
  * @summary 获取最新模版列表
  */
-export const op455GetQuestcenterInformedTemplateGetTemplateList = async (
-  params: Op455GetQuestcenterInformedTemplateGetTemplateListParams,
+export const getQuestcenterInformedTemplateGetTemplateList = async (
+  params: GetQuestcenterInformedTemplateGetTemplateListParams,
   options?: RequestInit
-): Promise<op455GetQuestcenterInformedTemplateGetTemplateListResponse> => {
-  return customFetch<op455GetQuestcenterInformedTemplateGetTemplateListResponse>(
-    getOp455GetQuestcenterInformedTemplateGetTemplateListUrl(params),
+): Promise<getQuestcenterInformedTemplateGetTemplateListResponse> => {
+  return customFetch<getQuestcenterInformedTemplateGetTemplateListResponse>(
+    getGetQuestcenterInformedTemplateGetTemplateListUrl(params),
     {
       ...options,
       method: 'GET',
@@ -5879,21 +5765,21 @@ export const op455GetQuestcenterInformedTemplateGetTemplateList = async (
   )
 }
 
-export const getOp455GetQuestcenterInformedTemplateGetTemplateListQueryKey = (
-  params?: Op455GetQuestcenterInformedTemplateGetTemplateListParams
+export const getGetQuestcenterInformedTemplateGetTemplateListQueryKey = (
+  params?: GetQuestcenterInformedTemplateGetTemplateListParams
 ) => {
   return [`/questcenter/informed_template/get_template_list`, ...(params ? [params] : [])] as const
 }
 
-export const getOp455GetQuestcenterInformedTemplateGetTemplateListQueryOptions = <
-  TData = Awaited<ReturnType<typeof op455GetQuestcenterInformedTemplateGetTemplateList>>,
+export const getGetQuestcenterInformedTemplateGetTemplateListQueryOptions = <
+  TData = Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op455GetQuestcenterInformedTemplateGetTemplateListParams,
+  params: GetQuestcenterInformedTemplateGetTemplateListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op455GetQuestcenterInformedTemplateGetTemplateList>>,
+        Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateList>>,
         TError,
         TData
       >
@@ -5903,81 +5789,81 @@ export const getOp455GetQuestcenterInformedTemplateGetTemplateListQueryOptions =
   const { query: queryOptions } = options ?? {}
 
   const queryKey =
-    queryOptions?.queryKey ?? getOp455GetQuestcenterInformedTemplateGetTemplateListQueryKey(params)
+    queryOptions?.queryKey ?? getGetQuestcenterInformedTemplateGetTemplateListQueryKey(params)
 
   const queryFn: QueryFunction<
-    Awaited<ReturnType<typeof op455GetQuestcenterInformedTemplateGetTemplateList>>
-  > = ({ signal }) => op455GetQuestcenterInformedTemplateGetTemplateList(params, { signal })
+    Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateList>>
+  > = ({ signal }) => getQuestcenterInformedTemplateGetTemplateList(params, { signal })
 
   return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof op455GetQuestcenterInformedTemplateGetTemplateList>>,
+    Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateList>>,
     TError,
     TData
   > & { queryKey: DataTag<QueryKey, TData, TError> }
 }
 
-export type Op455GetQuestcenterInformedTemplateGetTemplateListQueryResult = NonNullable<
-  Awaited<ReturnType<typeof op455GetQuestcenterInformedTemplateGetTemplateList>>
+export type GetQuestcenterInformedTemplateGetTemplateListQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateList>>
 >
-export type Op455GetQuestcenterInformedTemplateGetTemplateListQueryError = ErrorType<unknown>
+export type GetQuestcenterInformedTemplateGetTemplateListQueryError = ErrorType<unknown>
 
-export function useOp455GetQuestcenterInformedTemplateGetTemplateList<
-  TData = Awaited<ReturnType<typeof op455GetQuestcenterInformedTemplateGetTemplateList>>,
+export function useGetQuestcenterInformedTemplateGetTemplateList<
+  TData = Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op455GetQuestcenterInformedTemplateGetTemplateListParams,
+  params: GetQuestcenterInformedTemplateGetTemplateListParams,
   options: {
     query: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op455GetQuestcenterInformedTemplateGetTemplateList>>,
+        Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateList>>,
         TError,
         TData
       >
     > &
       Pick<
         DefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op455GetQuestcenterInformedTemplateGetTemplateList>>,
+          Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateList>>,
           TError,
-          Awaited<ReturnType<typeof op455GetQuestcenterInformedTemplateGetTemplateList>>
+          Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateList>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp455GetQuestcenterInformedTemplateGetTemplateList<
-  TData = Awaited<ReturnType<typeof op455GetQuestcenterInformedTemplateGetTemplateList>>,
+export function useGetQuestcenterInformedTemplateGetTemplateList<
+  TData = Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op455GetQuestcenterInformedTemplateGetTemplateListParams,
+  params: GetQuestcenterInformedTemplateGetTemplateListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op455GetQuestcenterInformedTemplateGetTemplateList>>,
+        Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateList>>,
         TError,
         TData
       >
     > &
       Pick<
         UndefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op455GetQuestcenterInformedTemplateGetTemplateList>>,
+          Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateList>>,
           TError,
-          Awaited<ReturnType<typeof op455GetQuestcenterInformedTemplateGetTemplateList>>
+          Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateList>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp455GetQuestcenterInformedTemplateGetTemplateList<
-  TData = Awaited<ReturnType<typeof op455GetQuestcenterInformedTemplateGetTemplateList>>,
+export function useGetQuestcenterInformedTemplateGetTemplateList<
+  TData = Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op455GetQuestcenterInformedTemplateGetTemplateListParams,
+  params: GetQuestcenterInformedTemplateGetTemplateListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op455GetQuestcenterInformedTemplateGetTemplateList>>,
+        Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateList>>,
         TError,
         TData
       >
@@ -5989,15 +5875,15 @@ export function useOp455GetQuestcenterInformedTemplateGetTemplateList<
  * @summary 获取最新模版列表
  */
 
-export function useOp455GetQuestcenterInformedTemplateGetTemplateList<
-  TData = Awaited<ReturnType<typeof op455GetQuestcenterInformedTemplateGetTemplateList>>,
+export function useGetQuestcenterInformedTemplateGetTemplateList<
+  TData = Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op455GetQuestcenterInformedTemplateGetTemplateListParams,
+  params: GetQuestcenterInformedTemplateGetTemplateListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op455GetQuestcenterInformedTemplateGetTemplateList>>,
+        Awaited<ReturnType<typeof getQuestcenterInformedTemplateGetTemplateList>>,
         TError,
         TData
       >
@@ -6005,10 +5891,7 @@ export function useOp455GetQuestcenterInformedTemplateGetTemplateList<
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
-  const queryOptions = getOp455GetQuestcenterInformedTemplateGetTemplateListQueryOptions(
-    params,
-    options
-  )
+  const queryOptions = getGetQuestcenterInformedTemplateGetTemplateListQueryOptions(params, options)
 
   const query = useQuery(queryOptions, queryClient) as UseQueryResult<TData, TError> & {
     queryKey: DataTag<QueryKey, TData, TError>
@@ -6017,20 +5900,20 @@ export function useOp455GetQuestcenterInformedTemplateGetTemplateList<
   return { ...query, queryKey: queryOptions.queryKey }
 }
 
-export type op459PostQuestcenterInformedTemplatePublishTemplateResponse200 = {
-  data: Op459PostQuestcenterInformedTemplatePublishTemplate200
+export type postQuestcenterInformedTemplatePublishTemplateResponse200 = {
+  data: PostQuestcenterInformedTemplatePublishTemplate200
   status: 200
 }
 
-export type op459PostQuestcenterInformedTemplatePublishTemplateResponseSuccess =
-  op459PostQuestcenterInformedTemplatePublishTemplateResponse200 & {
+export type postQuestcenterInformedTemplatePublishTemplateResponseSuccess =
+  postQuestcenterInformedTemplatePublishTemplateResponse200 & {
     headers: Headers
   }
 
-export type op459PostQuestcenterInformedTemplatePublishTemplateResponse =
-  op459PostQuestcenterInformedTemplatePublishTemplateResponseSuccess
+export type postQuestcenterInformedTemplatePublishTemplateResponse =
+  postQuestcenterInformedTemplatePublishTemplateResponseSuccess
 
-export const getOp459PostQuestcenterInformedTemplatePublishTemplateUrl = () => {
+export const getPostQuestcenterInformedTemplatePublishTemplateUrl = () => {
   return `/questcenter/informed_template/publish_template`
 }
 
@@ -6038,38 +5921,38 @@ export const getOp459PostQuestcenterInformedTemplatePublishTemplateUrl = () => {
  * 模版发布
  * @summary 模版发布
  */
-export const op459PostQuestcenterInformedTemplatePublishTemplate = async (
-  op459PostQuestcenterInformedTemplatePublishTemplateBody: Op459PostQuestcenterInformedTemplatePublishTemplateBody,
+export const postQuestcenterInformedTemplatePublishTemplate = async (
+  postQuestcenterInformedTemplatePublishTemplateBody: PostQuestcenterInformedTemplatePublishTemplateBody,
   options?: RequestInit
-): Promise<op459PostQuestcenterInformedTemplatePublishTemplateResponse> => {
-  return customFetch<op459PostQuestcenterInformedTemplatePublishTemplateResponse>(
-    getOp459PostQuestcenterInformedTemplatePublishTemplateUrl(),
+): Promise<postQuestcenterInformedTemplatePublishTemplateResponse> => {
+  return customFetch<postQuestcenterInformedTemplatePublishTemplateResponse>(
+    getPostQuestcenterInformedTemplatePublishTemplateUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op459PostQuestcenterInformedTemplatePublishTemplateBody),
+      body: JSON.stringify(postQuestcenterInformedTemplatePublishTemplateBody),
     }
   )
 }
 
-export const getOp459PostQuestcenterInformedTemplatePublishTemplateMutationOptions = <
+export const getPostQuestcenterInformedTemplatePublishTemplateMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op459PostQuestcenterInformedTemplatePublishTemplate>>,
+    Awaited<ReturnType<typeof postQuestcenterInformedTemplatePublishTemplate>>,
     TError,
-    { data: Op459PostQuestcenterInformedTemplatePublishTemplateBody },
+    { data: PostQuestcenterInformedTemplatePublishTemplateBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op459PostQuestcenterInformedTemplatePublishTemplate>>,
+  Awaited<ReturnType<typeof postQuestcenterInformedTemplatePublishTemplate>>,
   TError,
-  { data: Op459PostQuestcenterInformedTemplatePublishTemplateBody },
+  { data: PostQuestcenterInformedTemplatePublishTemplateBody },
   TContext
 > => {
-  const mutationKey = ['op459PostQuestcenterInformedTemplatePublishTemplate']
+  const mutationKey = ['postQuestcenterInformedTemplatePublishTemplate']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -6077,66 +5960,66 @@ export const getOp459PostQuestcenterInformedTemplatePublishTemplateMutationOptio
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op459PostQuestcenterInformedTemplatePublishTemplate>>,
-    { data: Op459PostQuestcenterInformedTemplatePublishTemplateBody }
+    Awaited<ReturnType<typeof postQuestcenterInformedTemplatePublishTemplate>>,
+    { data: PostQuestcenterInformedTemplatePublishTemplateBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op459PostQuestcenterInformedTemplatePublishTemplate(data)
+    return postQuestcenterInformedTemplatePublishTemplate(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op459PostQuestcenterInformedTemplatePublishTemplateMutationResult = NonNullable<
-  Awaited<ReturnType<typeof op459PostQuestcenterInformedTemplatePublishTemplate>>
+export type PostQuestcenterInformedTemplatePublishTemplateMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterInformedTemplatePublishTemplate>>
 >
-export type Op459PostQuestcenterInformedTemplatePublishTemplateMutationBody =
-  Op459PostQuestcenterInformedTemplatePublishTemplateBody
-export type Op459PostQuestcenterInformedTemplatePublishTemplateMutationError = ErrorType<unknown>
+export type PostQuestcenterInformedTemplatePublishTemplateMutationBody =
+  PostQuestcenterInformedTemplatePublishTemplateBody
+export type PostQuestcenterInformedTemplatePublishTemplateMutationError = ErrorType<unknown>
 
 /**
  * @summary 模版发布
  */
-export const useOp459PostQuestcenterInformedTemplatePublishTemplate = <
+export const usePostQuestcenterInformedTemplatePublishTemplate = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op459PostQuestcenterInformedTemplatePublishTemplate>>,
+      Awaited<ReturnType<typeof postQuestcenterInformedTemplatePublishTemplate>>,
       TError,
-      { data: Op459PostQuestcenterInformedTemplatePublishTemplateBody },
+      { data: PostQuestcenterInformedTemplatePublishTemplateBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op459PostQuestcenterInformedTemplatePublishTemplate>>,
+  Awaited<ReturnType<typeof postQuestcenterInformedTemplatePublishTemplate>>,
   TError,
-  { data: Op459PostQuestcenterInformedTemplatePublishTemplateBody },
+  { data: PostQuestcenterInformedTemplatePublishTemplateBody },
   TContext
 > => {
   return useMutation(
-    getOp459PostQuestcenterInformedTemplatePublishTemplateMutationOptions(options),
+    getPostQuestcenterInformedTemplatePublishTemplateMutationOptions(options),
     queryClient
   )
 }
 
-export type op457PostQuestcenterInformedTemplateUpdateTemplateResponse200 = {
-  data: Op457PostQuestcenterInformedTemplateUpdateTemplate200
+export type postQuestcenterInformedTemplateUpdateTemplateResponse200 = {
+  data: PostQuestcenterInformedTemplateUpdateTemplate200
   status: 200
 }
 
-export type op457PostQuestcenterInformedTemplateUpdateTemplateResponseSuccess =
-  op457PostQuestcenterInformedTemplateUpdateTemplateResponse200 & {
+export type postQuestcenterInformedTemplateUpdateTemplateResponseSuccess =
+  postQuestcenterInformedTemplateUpdateTemplateResponse200 & {
     headers: Headers
   }
 
-export type op457PostQuestcenterInformedTemplateUpdateTemplateResponse =
-  op457PostQuestcenterInformedTemplateUpdateTemplateResponseSuccess
+export type postQuestcenterInformedTemplateUpdateTemplateResponse =
+  postQuestcenterInformedTemplateUpdateTemplateResponseSuccess
 
-export const getOp457PostQuestcenterInformedTemplateUpdateTemplateUrl = () => {
+export const getPostQuestcenterInformedTemplateUpdateTemplateUrl = () => {
   return `/questcenter/informed_template/update_template`
 }
 
@@ -6144,38 +6027,38 @@ export const getOp457PostQuestcenterInformedTemplateUpdateTemplateUrl = () => {
  * 更新模版
  * @summary 更新模版
  */
-export const op457PostQuestcenterInformedTemplateUpdateTemplate = async (
-  op457PostQuestcenterInformedTemplateUpdateTemplateBody?: Op457PostQuestcenterInformedTemplateUpdateTemplateBody,
+export const postQuestcenterInformedTemplateUpdateTemplate = async (
+  postQuestcenterInformedTemplateUpdateTemplateBody?: PostQuestcenterInformedTemplateUpdateTemplateBody,
   options?: RequestInit
-): Promise<op457PostQuestcenterInformedTemplateUpdateTemplateResponse> => {
-  return customFetch<op457PostQuestcenterInformedTemplateUpdateTemplateResponse>(
-    getOp457PostQuestcenterInformedTemplateUpdateTemplateUrl(),
+): Promise<postQuestcenterInformedTemplateUpdateTemplateResponse> => {
+  return customFetch<postQuestcenterInformedTemplateUpdateTemplateResponse>(
+    getPostQuestcenterInformedTemplateUpdateTemplateUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op457PostQuestcenterInformedTemplateUpdateTemplateBody),
+      body: JSON.stringify(postQuestcenterInformedTemplateUpdateTemplateBody),
     }
   )
 }
 
-export const getOp457PostQuestcenterInformedTemplateUpdateTemplateMutationOptions = <
+export const getPostQuestcenterInformedTemplateUpdateTemplateMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op457PostQuestcenterInformedTemplateUpdateTemplate>>,
+    Awaited<ReturnType<typeof postQuestcenterInformedTemplateUpdateTemplate>>,
     TError,
-    { data?: Op457PostQuestcenterInformedTemplateUpdateTemplateBody },
+    { data?: PostQuestcenterInformedTemplateUpdateTemplateBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op457PostQuestcenterInformedTemplateUpdateTemplate>>,
+  Awaited<ReturnType<typeof postQuestcenterInformedTemplateUpdateTemplate>>,
   TError,
-  { data?: Op457PostQuestcenterInformedTemplateUpdateTemplateBody },
+  { data?: PostQuestcenterInformedTemplateUpdateTemplateBody },
   TContext
 > => {
-  const mutationKey = ['op457PostQuestcenterInformedTemplateUpdateTemplate']
+  const mutationKey = ['postQuestcenterInformedTemplateUpdateTemplate']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -6183,67 +6066,67 @@ export const getOp457PostQuestcenterInformedTemplateUpdateTemplateMutationOption
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op457PostQuestcenterInformedTemplateUpdateTemplate>>,
-    { data?: Op457PostQuestcenterInformedTemplateUpdateTemplateBody }
+    Awaited<ReturnType<typeof postQuestcenterInformedTemplateUpdateTemplate>>,
+    { data?: PostQuestcenterInformedTemplateUpdateTemplateBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op457PostQuestcenterInformedTemplateUpdateTemplate(data)
+    return postQuestcenterInformedTemplateUpdateTemplate(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op457PostQuestcenterInformedTemplateUpdateTemplateMutationResult = NonNullable<
-  Awaited<ReturnType<typeof op457PostQuestcenterInformedTemplateUpdateTemplate>>
+export type PostQuestcenterInformedTemplateUpdateTemplateMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterInformedTemplateUpdateTemplate>>
 >
-export type Op457PostQuestcenterInformedTemplateUpdateTemplateMutationBody =
-  | Op457PostQuestcenterInformedTemplateUpdateTemplateBody
+export type PostQuestcenterInformedTemplateUpdateTemplateMutationBody =
+  | PostQuestcenterInformedTemplateUpdateTemplateBody
   | undefined
-export type Op457PostQuestcenterInformedTemplateUpdateTemplateMutationError = ErrorType<unknown>
+export type PostQuestcenterInformedTemplateUpdateTemplateMutationError = ErrorType<unknown>
 
 /**
  * @summary 更新模版
  */
-export const useOp457PostQuestcenterInformedTemplateUpdateTemplate = <
+export const usePostQuestcenterInformedTemplateUpdateTemplate = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op457PostQuestcenterInformedTemplateUpdateTemplate>>,
+      Awaited<ReturnType<typeof postQuestcenterInformedTemplateUpdateTemplate>>,
       TError,
-      { data?: Op457PostQuestcenterInformedTemplateUpdateTemplateBody },
+      { data?: PostQuestcenterInformedTemplateUpdateTemplateBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op457PostQuestcenterInformedTemplateUpdateTemplate>>,
+  Awaited<ReturnType<typeof postQuestcenterInformedTemplateUpdateTemplate>>,
   TError,
-  { data?: Op457PostQuestcenterInformedTemplateUpdateTemplateBody },
+  { data?: PostQuestcenterInformedTemplateUpdateTemplateBody },
   TContext
 > => {
   return useMutation(
-    getOp457PostQuestcenterInformedTemplateUpdateTemplateMutationOptions(options),
+    getPostQuestcenterInformedTemplateUpdateTemplateMutationOptions(options),
     queryClient
   )
 }
 
-export type op487PostQuestcenterMedicalTemplageDepaManageAddDeptResponse200 = {
-  data: Op487PostQuestcenterMedicalTemplageDepaManageAddDept200
+export type postQuestcenterMedicalTemplageDepaManageAddDeptResponse200 = {
+  data: PostQuestcenterMedicalTemplageDepaManageAddDept200
   status: 200
 }
 
-export type op487PostQuestcenterMedicalTemplageDepaManageAddDeptResponseSuccess =
-  op487PostQuestcenterMedicalTemplageDepaManageAddDeptResponse200 & {
+export type postQuestcenterMedicalTemplageDepaManageAddDeptResponseSuccess =
+  postQuestcenterMedicalTemplageDepaManageAddDeptResponse200 & {
     headers: Headers
   }
 
-export type op487PostQuestcenterMedicalTemplageDepaManageAddDeptResponse =
-  op487PostQuestcenterMedicalTemplageDepaManageAddDeptResponseSuccess
+export type postQuestcenterMedicalTemplageDepaManageAddDeptResponse =
+  postQuestcenterMedicalTemplageDepaManageAddDeptResponseSuccess
 
-export const getOp487PostQuestcenterMedicalTemplageDepaManageAddDeptUrl = () => {
+export const getPostQuestcenterMedicalTemplageDepaManageAddDeptUrl = () => {
   return `/questcenter/medical_templage_depa_manage/add_dept`
 }
 
@@ -6251,38 +6134,38 @@ export const getOp487PostQuestcenterMedicalTemplageDepaManageAddDeptUrl = () => 
  * 科室添加
  * @summary 科室添加
  */
-export const op487PostQuestcenterMedicalTemplageDepaManageAddDept = async (
-  op487PostQuestcenterMedicalTemplageDepaManageAddDeptBody?: Op487PostQuestcenterMedicalTemplageDepaManageAddDeptBody,
+export const postQuestcenterMedicalTemplageDepaManageAddDept = async (
+  postQuestcenterMedicalTemplageDepaManageAddDeptBody?: PostQuestcenterMedicalTemplageDepaManageAddDeptBody,
   options?: RequestInit
-): Promise<op487PostQuestcenterMedicalTemplageDepaManageAddDeptResponse> => {
-  return customFetch<op487PostQuestcenterMedicalTemplageDepaManageAddDeptResponse>(
-    getOp487PostQuestcenterMedicalTemplageDepaManageAddDeptUrl(),
+): Promise<postQuestcenterMedicalTemplageDepaManageAddDeptResponse> => {
+  return customFetch<postQuestcenterMedicalTemplageDepaManageAddDeptResponse>(
+    getPostQuestcenterMedicalTemplageDepaManageAddDeptUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op487PostQuestcenterMedicalTemplageDepaManageAddDeptBody),
+      body: JSON.stringify(postQuestcenterMedicalTemplageDepaManageAddDeptBody),
     }
   )
 }
 
-export const getOp487PostQuestcenterMedicalTemplageDepaManageAddDeptMutationOptions = <
+export const getPostQuestcenterMedicalTemplageDepaManageAddDeptMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op487PostQuestcenterMedicalTemplageDepaManageAddDept>>,
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplageDepaManageAddDept>>,
     TError,
-    { data?: Op487PostQuestcenterMedicalTemplageDepaManageAddDeptBody },
+    { data?: PostQuestcenterMedicalTemplageDepaManageAddDeptBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op487PostQuestcenterMedicalTemplageDepaManageAddDept>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplageDepaManageAddDept>>,
   TError,
-  { data?: Op487PostQuestcenterMedicalTemplageDepaManageAddDeptBody },
+  { data?: PostQuestcenterMedicalTemplageDepaManageAddDeptBody },
   TContext
 > => {
-  const mutationKey = ['op487PostQuestcenterMedicalTemplageDepaManageAddDept']
+  const mutationKey = ['postQuestcenterMedicalTemplageDepaManageAddDept']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -6290,67 +6173,67 @@ export const getOp487PostQuestcenterMedicalTemplageDepaManageAddDeptMutationOpti
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op487PostQuestcenterMedicalTemplageDepaManageAddDept>>,
-    { data?: Op487PostQuestcenterMedicalTemplageDepaManageAddDeptBody }
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplageDepaManageAddDept>>,
+    { data?: PostQuestcenterMedicalTemplageDepaManageAddDeptBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op487PostQuestcenterMedicalTemplageDepaManageAddDept(data)
+    return postQuestcenterMedicalTemplageDepaManageAddDept(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op487PostQuestcenterMedicalTemplageDepaManageAddDeptMutationResult = NonNullable<
-  Awaited<ReturnType<typeof op487PostQuestcenterMedicalTemplageDepaManageAddDept>>
+export type PostQuestcenterMedicalTemplageDepaManageAddDeptMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplageDepaManageAddDept>>
 >
-export type Op487PostQuestcenterMedicalTemplageDepaManageAddDeptMutationBody =
-  | Op487PostQuestcenterMedicalTemplageDepaManageAddDeptBody
+export type PostQuestcenterMedicalTemplageDepaManageAddDeptMutationBody =
+  | PostQuestcenterMedicalTemplageDepaManageAddDeptBody
   | undefined
-export type Op487PostQuestcenterMedicalTemplageDepaManageAddDeptMutationError = ErrorType<unknown>
+export type PostQuestcenterMedicalTemplageDepaManageAddDeptMutationError = ErrorType<unknown>
 
 /**
  * @summary 科室添加
  */
-export const useOp487PostQuestcenterMedicalTemplageDepaManageAddDept = <
+export const usePostQuestcenterMedicalTemplageDepaManageAddDept = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op487PostQuestcenterMedicalTemplageDepaManageAddDept>>,
+      Awaited<ReturnType<typeof postQuestcenterMedicalTemplageDepaManageAddDept>>,
       TError,
-      { data?: Op487PostQuestcenterMedicalTemplageDepaManageAddDeptBody },
+      { data?: PostQuestcenterMedicalTemplageDepaManageAddDeptBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op487PostQuestcenterMedicalTemplageDepaManageAddDept>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplageDepaManageAddDept>>,
   TError,
-  { data?: Op487PostQuestcenterMedicalTemplageDepaManageAddDeptBody },
+  { data?: PostQuestcenterMedicalTemplageDepaManageAddDeptBody },
   TContext
 > => {
   return useMutation(
-    getOp487PostQuestcenterMedicalTemplageDepaManageAddDeptMutationOptions(options),
+    getPostQuestcenterMedicalTemplageDepaManageAddDeptMutationOptions(options),
     queryClient
   )
 }
 
-export type op489PostQuestcenterMedicalTemplageDepaManageDeleteDeptResponse200 = {
-  data: Op489PostQuestcenterMedicalTemplageDepaManageDeleteDept200
+export type postQuestcenterMedicalTemplageDepaManageDeleteDeptResponse200 = {
+  data: PostQuestcenterMedicalTemplageDepaManageDeleteDept200
   status: 200
 }
 
-export type op489PostQuestcenterMedicalTemplageDepaManageDeleteDeptResponseSuccess =
-  op489PostQuestcenterMedicalTemplageDepaManageDeleteDeptResponse200 & {
+export type postQuestcenterMedicalTemplageDepaManageDeleteDeptResponseSuccess =
+  postQuestcenterMedicalTemplageDepaManageDeleteDeptResponse200 & {
     headers: Headers
   }
 
-export type op489PostQuestcenterMedicalTemplageDepaManageDeleteDeptResponse =
-  op489PostQuestcenterMedicalTemplageDepaManageDeleteDeptResponseSuccess
+export type postQuestcenterMedicalTemplageDepaManageDeleteDeptResponse =
+  postQuestcenterMedicalTemplageDepaManageDeleteDeptResponseSuccess
 
-export const getOp489PostQuestcenterMedicalTemplageDepaManageDeleteDeptUrl = () => {
+export const getPostQuestcenterMedicalTemplageDepaManageDeleteDeptUrl = () => {
   return `/questcenter/medical_templage_depa_manage/delete_dept`
 }
 
@@ -6358,38 +6241,38 @@ export const getOp489PostQuestcenterMedicalTemplageDepaManageDeleteDeptUrl = () 
  * 科室编辑
  * @summary 科室编辑
  */
-export const op489PostQuestcenterMedicalTemplageDepaManageDeleteDept = async (
-  op489PostQuestcenterMedicalTemplageDepaManageDeleteDeptBody?: Op489PostQuestcenterMedicalTemplageDepaManageDeleteDeptBody,
+export const postQuestcenterMedicalTemplageDepaManageDeleteDept = async (
+  postQuestcenterMedicalTemplageDepaManageDeleteDeptBody?: PostQuestcenterMedicalTemplageDepaManageDeleteDeptBody,
   options?: RequestInit
-): Promise<op489PostQuestcenterMedicalTemplageDepaManageDeleteDeptResponse> => {
-  return customFetch<op489PostQuestcenterMedicalTemplageDepaManageDeleteDeptResponse>(
-    getOp489PostQuestcenterMedicalTemplageDepaManageDeleteDeptUrl(),
+): Promise<postQuestcenterMedicalTemplageDepaManageDeleteDeptResponse> => {
+  return customFetch<postQuestcenterMedicalTemplageDepaManageDeleteDeptResponse>(
+    getPostQuestcenterMedicalTemplageDepaManageDeleteDeptUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op489PostQuestcenterMedicalTemplageDepaManageDeleteDeptBody),
+      body: JSON.stringify(postQuestcenterMedicalTemplageDepaManageDeleteDeptBody),
     }
   )
 }
 
-export const getOp489PostQuestcenterMedicalTemplageDepaManageDeleteDeptMutationOptions = <
+export const getPostQuestcenterMedicalTemplageDepaManageDeleteDeptMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op489PostQuestcenterMedicalTemplageDepaManageDeleteDept>>,
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplageDepaManageDeleteDept>>,
     TError,
-    { data?: Op489PostQuestcenterMedicalTemplageDepaManageDeleteDeptBody },
+    { data?: PostQuestcenterMedicalTemplageDepaManageDeleteDeptBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op489PostQuestcenterMedicalTemplageDepaManageDeleteDept>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplageDepaManageDeleteDept>>,
   TError,
-  { data?: Op489PostQuestcenterMedicalTemplageDepaManageDeleteDeptBody },
+  { data?: PostQuestcenterMedicalTemplageDepaManageDeleteDeptBody },
   TContext
 > => {
-  const mutationKey = ['op489PostQuestcenterMedicalTemplageDepaManageDeleteDept']
+  const mutationKey = ['postQuestcenterMedicalTemplageDepaManageDeleteDept']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -6397,68 +6280,67 @@ export const getOp489PostQuestcenterMedicalTemplageDepaManageDeleteDeptMutationO
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op489PostQuestcenterMedicalTemplageDepaManageDeleteDept>>,
-    { data?: Op489PostQuestcenterMedicalTemplageDepaManageDeleteDeptBody }
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplageDepaManageDeleteDept>>,
+    { data?: PostQuestcenterMedicalTemplageDepaManageDeleteDeptBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op489PostQuestcenterMedicalTemplageDepaManageDeleteDept(data)
+    return postQuestcenterMedicalTemplageDepaManageDeleteDept(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op489PostQuestcenterMedicalTemplageDepaManageDeleteDeptMutationResult = NonNullable<
-  Awaited<ReturnType<typeof op489PostQuestcenterMedicalTemplageDepaManageDeleteDept>>
+export type PostQuestcenterMedicalTemplageDepaManageDeleteDeptMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplageDepaManageDeleteDept>>
 >
-export type Op489PostQuestcenterMedicalTemplageDepaManageDeleteDeptMutationBody =
-  | Op489PostQuestcenterMedicalTemplageDepaManageDeleteDeptBody
+export type PostQuestcenterMedicalTemplageDepaManageDeleteDeptMutationBody =
+  | PostQuestcenterMedicalTemplageDepaManageDeleteDeptBody
   | undefined
-export type Op489PostQuestcenterMedicalTemplageDepaManageDeleteDeptMutationError =
-  ErrorType<unknown>
+export type PostQuestcenterMedicalTemplageDepaManageDeleteDeptMutationError = ErrorType<unknown>
 
 /**
  * @summary 科室编辑
  */
-export const useOp489PostQuestcenterMedicalTemplageDepaManageDeleteDept = <
+export const usePostQuestcenterMedicalTemplageDepaManageDeleteDept = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op489PostQuestcenterMedicalTemplageDepaManageDeleteDept>>,
+      Awaited<ReturnType<typeof postQuestcenterMedicalTemplageDepaManageDeleteDept>>,
       TError,
-      { data?: Op489PostQuestcenterMedicalTemplageDepaManageDeleteDeptBody },
+      { data?: PostQuestcenterMedicalTemplageDepaManageDeleteDeptBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op489PostQuestcenterMedicalTemplageDepaManageDeleteDept>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplageDepaManageDeleteDept>>,
   TError,
-  { data?: Op489PostQuestcenterMedicalTemplageDepaManageDeleteDeptBody },
+  { data?: PostQuestcenterMedicalTemplageDepaManageDeleteDeptBody },
   TContext
 > => {
   return useMutation(
-    getOp489PostQuestcenterMedicalTemplageDepaManageDeleteDeptMutationOptions(options),
+    getPostQuestcenterMedicalTemplageDepaManageDeleteDeptMutationOptions(options),
     queryClient
   )
 }
 
-export type op485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecordsResponse200 = {
-  data: Op485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecords200
+export type getQuestcenterMedicalTemplageDepaManageFlushDepaRecordsResponse200 = {
+  data: GetQuestcenterMedicalTemplageDepaManageFlushDepaRecords200
   status: 200
 }
 
-export type op485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecordsResponseSuccess =
-  op485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecordsResponse200 & {
+export type getQuestcenterMedicalTemplageDepaManageFlushDepaRecordsResponseSuccess =
+  getQuestcenterMedicalTemplageDepaManageFlushDepaRecordsResponse200 & {
     headers: Headers
   }
 
-export type op485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecordsResponse =
-  op485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecordsResponseSuccess
+export type getQuestcenterMedicalTemplageDepaManageFlushDepaRecordsResponse =
+  getQuestcenterMedicalTemplageDepaManageFlushDepaRecordsResponseSuccess
 
-export const getOp485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecordsUrl = () => {
+export const getGetQuestcenterMedicalTemplageDepaManageFlushDepaRecordsUrl = () => {
   return `/questcenter/medical_templage_depa_manage/flush_depa_records`
 }
 
@@ -6466,11 +6348,11 @@ export const getOp485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecordsUrl 
  * 刷新API远端的科室列表
  * @summary 刷新API远端的科室列表
  */
-export const op485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecords = async (
+export const getQuestcenterMedicalTemplageDepaManageFlushDepaRecords = async (
   options?: RequestInit
-): Promise<op485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecordsResponse> => {
-  return customFetch<op485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecordsResponse>(
-    getOp485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecordsUrl(),
+): Promise<getQuestcenterMedicalTemplageDepaManageFlushDepaRecordsResponse> => {
+  return customFetch<getQuestcenterMedicalTemplageDepaManageFlushDepaRecordsResponse>(
+    getGetQuestcenterMedicalTemplageDepaManageFlushDepaRecordsUrl(),
     {
       ...options,
       method: 'GET',
@@ -6478,17 +6360,17 @@ export const op485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecords = asyn
   )
 }
 
-export const getOp485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecordsQueryKey = () => {
+export const getGetQuestcenterMedicalTemplageDepaManageFlushDepaRecordsQueryKey = () => {
   return [`/questcenter/medical_templage_depa_manage/flush_depa_records`] as const
 }
 
-export const getOp485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecordsQueryOptions = <
-  TData = Awaited<ReturnType<typeof op485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecords>>,
+export const getGetQuestcenterMedicalTemplageDepaManageFlushDepaRecordsQueryOptions = <
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageFlushDepaRecords>>,
   TError = ErrorType<unknown>,
 >(options?: {
   query?: Partial<
     UseQueryOptions<
-      Awaited<ReturnType<typeof op485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecords>>,
+      Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageFlushDepaRecords>>,
       TError,
       TData
     >
@@ -6497,80 +6379,78 @@ export const getOp485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecordsQuer
   const { query: queryOptions } = options ?? {}
 
   const queryKey =
-    queryOptions?.queryKey ??
-    getOp485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecordsQueryKey()
+    queryOptions?.queryKey ?? getGetQuestcenterMedicalTemplageDepaManageFlushDepaRecordsQueryKey()
 
   const queryFn: QueryFunction<
-    Awaited<ReturnType<typeof op485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecords>>
-  > = ({ signal }) => op485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecords({ signal })
+    Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageFlushDepaRecords>>
+  > = ({ signal }) => getQuestcenterMedicalTemplageDepaManageFlushDepaRecords({ signal })
 
   return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof op485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecords>>,
+    Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageFlushDepaRecords>>,
     TError,
     TData
   > & { queryKey: DataTag<QueryKey, TData, TError> }
 }
 
-export type Op485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecordsQueryResult = NonNullable<
-  Awaited<ReturnType<typeof op485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecords>>
+export type GetQuestcenterMedicalTemplageDepaManageFlushDepaRecordsQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageFlushDepaRecords>>
 >
-export type Op485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecordsQueryError =
-  ErrorType<unknown>
+export type GetQuestcenterMedicalTemplageDepaManageFlushDepaRecordsQueryError = ErrorType<unknown>
 
-export function useOp485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecords<
-  TData = Awaited<ReturnType<typeof op485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecords>>,
+export function useGetQuestcenterMedicalTemplageDepaManageFlushDepaRecords<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageFlushDepaRecords>>,
   TError = ErrorType<unknown>,
 >(
   options: {
     query: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecords>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageFlushDepaRecords>>,
         TError,
         TData
       >
     > &
       Pick<
         DefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecords>>,
+          Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageFlushDepaRecords>>,
           TError,
-          Awaited<ReturnType<typeof op485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecords>>
+          Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageFlushDepaRecords>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecords<
-  TData = Awaited<ReturnType<typeof op485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecords>>,
+export function useGetQuestcenterMedicalTemplageDepaManageFlushDepaRecords<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageFlushDepaRecords>>,
   TError = ErrorType<unknown>,
 >(
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecords>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageFlushDepaRecords>>,
         TError,
         TData
       >
     > &
       Pick<
         UndefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecords>>,
+          Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageFlushDepaRecords>>,
           TError,
-          Awaited<ReturnType<typeof op485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecords>>
+          Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageFlushDepaRecords>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecords<
-  TData = Awaited<ReturnType<typeof op485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecords>>,
+export function useGetQuestcenterMedicalTemplageDepaManageFlushDepaRecords<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageFlushDepaRecords>>,
   TError = ErrorType<unknown>,
 >(
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecords>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageFlushDepaRecords>>,
         TError,
         TData
       >
@@ -6582,14 +6462,14 @@ export function useOp485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecords<
  * @summary 刷新API远端的科室列表
  */
 
-export function useOp485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecords<
-  TData = Awaited<ReturnType<typeof op485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecords>>,
+export function useGetQuestcenterMedicalTemplageDepaManageFlushDepaRecords<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageFlushDepaRecords>>,
   TError = ErrorType<unknown>,
 >(
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecords>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageFlushDepaRecords>>,
         TError,
         TData
       >
@@ -6598,7 +6478,7 @@ export function useOp485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecords<
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
   const queryOptions =
-    getOp485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecordsQueryOptions(options)
+    getGetQuestcenterMedicalTemplageDepaManageFlushDepaRecordsQueryOptions(options)
 
   const query = useQuery(queryOptions, queryClient) as UseQueryResult<TData, TError> & {
     queryKey: DataTag<QueryKey, TData, TError>
@@ -6607,20 +6487,20 @@ export function useOp485GetQuestcenterMedicalTemplageDepaManageFlushDepaRecords<
   return { ...query, queryKey: queryOptions.queryKey }
 }
 
-export type op484GetQuestcenterMedicalTemplageDepaManageGetConfigResponse200 = {
-  data: Op484GetQuestcenterMedicalTemplageDepaManageGetConfig200
+export type getQuestcenterMedicalTemplageDepaManageGetConfigResponse200 = {
+  data: GetQuestcenterMedicalTemplageDepaManageGetConfig200
   status: 200
 }
 
-export type op484GetQuestcenterMedicalTemplageDepaManageGetConfigResponseSuccess =
-  op484GetQuestcenterMedicalTemplageDepaManageGetConfigResponse200 & {
+export type getQuestcenterMedicalTemplageDepaManageGetConfigResponseSuccess =
+  getQuestcenterMedicalTemplageDepaManageGetConfigResponse200 & {
     headers: Headers
   }
 
-export type op484GetQuestcenterMedicalTemplageDepaManageGetConfigResponse =
-  op484GetQuestcenterMedicalTemplageDepaManageGetConfigResponseSuccess
+export type getQuestcenterMedicalTemplageDepaManageGetConfigResponse =
+  getQuestcenterMedicalTemplageDepaManageGetConfigResponseSuccess
 
-export const getOp484GetQuestcenterMedicalTemplageDepaManageGetConfigUrl = () => {
+export const getGetQuestcenterMedicalTemplageDepaManageGetConfigUrl = () => {
   return `/questcenter/medical_templage_depa_manage/get_config`
 }
 
@@ -6628,11 +6508,11 @@ export const getOp484GetQuestcenterMedicalTemplageDepaManageGetConfigUrl = () =>
  * 获取模版科室配置
  * @summary 获取模版科室配置
  */
-export const op484GetQuestcenterMedicalTemplageDepaManageGetConfig = async (
+export const getQuestcenterMedicalTemplageDepaManageGetConfig = async (
   options?: RequestInit
-): Promise<op484GetQuestcenterMedicalTemplageDepaManageGetConfigResponse> => {
-  return customFetch<op484GetQuestcenterMedicalTemplageDepaManageGetConfigResponse>(
-    getOp484GetQuestcenterMedicalTemplageDepaManageGetConfigUrl(),
+): Promise<getQuestcenterMedicalTemplageDepaManageGetConfigResponse> => {
+  return customFetch<getQuestcenterMedicalTemplageDepaManageGetConfigResponse>(
+    getGetQuestcenterMedicalTemplageDepaManageGetConfigUrl(),
     {
       ...options,
       method: 'GET',
@@ -6640,17 +6520,17 @@ export const op484GetQuestcenterMedicalTemplageDepaManageGetConfig = async (
   )
 }
 
-export const getOp484GetQuestcenterMedicalTemplageDepaManageGetConfigQueryKey = () => {
+export const getGetQuestcenterMedicalTemplageDepaManageGetConfigQueryKey = () => {
   return [`/questcenter/medical_templage_depa_manage/get_config`] as const
 }
 
-export const getOp484GetQuestcenterMedicalTemplageDepaManageGetConfigQueryOptions = <
-  TData = Awaited<ReturnType<typeof op484GetQuestcenterMedicalTemplageDepaManageGetConfig>>,
+export const getGetQuestcenterMedicalTemplageDepaManageGetConfigQueryOptions = <
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageGetConfig>>,
   TError = ErrorType<unknown>,
 >(options?: {
   query?: Partial<
     UseQueryOptions<
-      Awaited<ReturnType<typeof op484GetQuestcenterMedicalTemplageDepaManageGetConfig>>,
+      Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageGetConfig>>,
       TError,
       TData
     >
@@ -6659,78 +6539,78 @@ export const getOp484GetQuestcenterMedicalTemplageDepaManageGetConfigQueryOption
   const { query: queryOptions } = options ?? {}
 
   const queryKey =
-    queryOptions?.queryKey ?? getOp484GetQuestcenterMedicalTemplageDepaManageGetConfigQueryKey()
+    queryOptions?.queryKey ?? getGetQuestcenterMedicalTemplageDepaManageGetConfigQueryKey()
 
   const queryFn: QueryFunction<
-    Awaited<ReturnType<typeof op484GetQuestcenterMedicalTemplageDepaManageGetConfig>>
-  > = ({ signal }) => op484GetQuestcenterMedicalTemplageDepaManageGetConfig({ signal })
+    Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageGetConfig>>
+  > = ({ signal }) => getQuestcenterMedicalTemplageDepaManageGetConfig({ signal })
 
   return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof op484GetQuestcenterMedicalTemplageDepaManageGetConfig>>,
+    Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageGetConfig>>,
     TError,
     TData
   > & { queryKey: DataTag<QueryKey, TData, TError> }
 }
 
-export type Op484GetQuestcenterMedicalTemplageDepaManageGetConfigQueryResult = NonNullable<
-  Awaited<ReturnType<typeof op484GetQuestcenterMedicalTemplageDepaManageGetConfig>>
+export type GetQuestcenterMedicalTemplageDepaManageGetConfigQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageGetConfig>>
 >
-export type Op484GetQuestcenterMedicalTemplageDepaManageGetConfigQueryError = ErrorType<unknown>
+export type GetQuestcenterMedicalTemplageDepaManageGetConfigQueryError = ErrorType<unknown>
 
-export function useOp484GetQuestcenterMedicalTemplageDepaManageGetConfig<
-  TData = Awaited<ReturnType<typeof op484GetQuestcenterMedicalTemplageDepaManageGetConfig>>,
+export function useGetQuestcenterMedicalTemplageDepaManageGetConfig<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageGetConfig>>,
   TError = ErrorType<unknown>,
 >(
   options: {
     query: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op484GetQuestcenterMedicalTemplageDepaManageGetConfig>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageGetConfig>>,
         TError,
         TData
       >
     > &
       Pick<
         DefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op484GetQuestcenterMedicalTemplageDepaManageGetConfig>>,
+          Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageGetConfig>>,
           TError,
-          Awaited<ReturnType<typeof op484GetQuestcenterMedicalTemplageDepaManageGetConfig>>
+          Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageGetConfig>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp484GetQuestcenterMedicalTemplageDepaManageGetConfig<
-  TData = Awaited<ReturnType<typeof op484GetQuestcenterMedicalTemplageDepaManageGetConfig>>,
+export function useGetQuestcenterMedicalTemplageDepaManageGetConfig<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageGetConfig>>,
   TError = ErrorType<unknown>,
 >(
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op484GetQuestcenterMedicalTemplageDepaManageGetConfig>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageGetConfig>>,
         TError,
         TData
       >
     > &
       Pick<
         UndefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op484GetQuestcenterMedicalTemplageDepaManageGetConfig>>,
+          Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageGetConfig>>,
           TError,
-          Awaited<ReturnType<typeof op484GetQuestcenterMedicalTemplageDepaManageGetConfig>>
+          Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageGetConfig>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp484GetQuestcenterMedicalTemplageDepaManageGetConfig<
-  TData = Awaited<ReturnType<typeof op484GetQuestcenterMedicalTemplageDepaManageGetConfig>>,
+export function useGetQuestcenterMedicalTemplageDepaManageGetConfig<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageGetConfig>>,
   TError = ErrorType<unknown>,
 >(
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op484GetQuestcenterMedicalTemplageDepaManageGetConfig>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageGetConfig>>,
         TError,
         TData
       >
@@ -6742,14 +6622,14 @@ export function useOp484GetQuestcenterMedicalTemplageDepaManageGetConfig<
  * @summary 获取模版科室配置
  */
 
-export function useOp484GetQuestcenterMedicalTemplageDepaManageGetConfig<
-  TData = Awaited<ReturnType<typeof op484GetQuestcenterMedicalTemplageDepaManageGetConfig>>,
+export function useGetQuestcenterMedicalTemplageDepaManageGetConfig<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageGetConfig>>,
   TError = ErrorType<unknown>,
 >(
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op484GetQuestcenterMedicalTemplageDepaManageGetConfig>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageGetConfig>>,
         TError,
         TData
       >
@@ -6757,7 +6637,7 @@ export function useOp484GetQuestcenterMedicalTemplageDepaManageGetConfig<
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
-  const queryOptions = getOp484GetQuestcenterMedicalTemplageDepaManageGetConfigQueryOptions(options)
+  const queryOptions = getGetQuestcenterMedicalTemplageDepaManageGetConfigQueryOptions(options)
 
   const query = useQuery(queryOptions, queryClient) as UseQueryResult<TData, TError> & {
     queryKey: DataTag<QueryKey, TData, TError>
@@ -6766,21 +6646,21 @@ export function useOp484GetQuestcenterMedicalTemplageDepaManageGetConfig<
   return { ...query, queryKey: queryOptions.queryKey }
 }
 
-export type op486GetQuestcenterMedicalTemplageDepaManageGetDepaListResponse200 = {
-  data: Op486GetQuestcenterMedicalTemplageDepaManageGetDepaList200
+export type getQuestcenterMedicalTemplageDepaManageGetDepaListResponse200 = {
+  data: GetQuestcenterMedicalTemplageDepaManageGetDepaList200
   status: 200
 }
 
-export type op486GetQuestcenterMedicalTemplageDepaManageGetDepaListResponseSuccess =
-  op486GetQuestcenterMedicalTemplageDepaManageGetDepaListResponse200 & {
+export type getQuestcenterMedicalTemplageDepaManageGetDepaListResponseSuccess =
+  getQuestcenterMedicalTemplageDepaManageGetDepaListResponse200 & {
     headers: Headers
   }
 
-export type op486GetQuestcenterMedicalTemplageDepaManageGetDepaListResponse =
-  op486GetQuestcenterMedicalTemplageDepaManageGetDepaListResponseSuccess
+export type getQuestcenterMedicalTemplageDepaManageGetDepaListResponse =
+  getQuestcenterMedicalTemplageDepaManageGetDepaListResponseSuccess
 
-export const getOp486GetQuestcenterMedicalTemplageDepaManageGetDepaListUrl = (
-  params?: Op486GetQuestcenterMedicalTemplageDepaManageGetDepaListParams
+export const getGetQuestcenterMedicalTemplageDepaManageGetDepaListUrl = (
+  params?: GetQuestcenterMedicalTemplageDepaManageGetDepaListParams
 ) => {
   const normalizedParams = new URLSearchParams()
 
@@ -6801,12 +6681,12 @@ export const getOp486GetQuestcenterMedicalTemplageDepaManageGetDepaListUrl = (
  * 科室管理列表
  * @summary 科室管理列表
  */
-export const op486GetQuestcenterMedicalTemplageDepaManageGetDepaList = async (
-  params?: Op486GetQuestcenterMedicalTemplageDepaManageGetDepaListParams,
+export const getQuestcenterMedicalTemplageDepaManageGetDepaList = async (
+  params?: GetQuestcenterMedicalTemplageDepaManageGetDepaListParams,
   options?: RequestInit
-): Promise<op486GetQuestcenterMedicalTemplageDepaManageGetDepaListResponse> => {
-  return customFetch<op486GetQuestcenterMedicalTemplageDepaManageGetDepaListResponse>(
-    getOp486GetQuestcenterMedicalTemplageDepaManageGetDepaListUrl(params),
+): Promise<getQuestcenterMedicalTemplageDepaManageGetDepaListResponse> => {
+  return customFetch<getQuestcenterMedicalTemplageDepaManageGetDepaListResponse>(
+    getGetQuestcenterMedicalTemplageDepaManageGetDepaListUrl(params),
     {
       ...options,
       method: 'GET',
@@ -6814,8 +6694,8 @@ export const op486GetQuestcenterMedicalTemplageDepaManageGetDepaList = async (
   )
 }
 
-export const getOp486GetQuestcenterMedicalTemplageDepaManageGetDepaListQueryKey = (
-  params?: Op486GetQuestcenterMedicalTemplageDepaManageGetDepaListParams
+export const getGetQuestcenterMedicalTemplageDepaManageGetDepaListQueryKey = (
+  params?: GetQuestcenterMedicalTemplageDepaManageGetDepaListParams
 ) => {
   return [
     `/questcenter/medical_templage_depa_manage/get_depa_list`,
@@ -6823,15 +6703,15 @@ export const getOp486GetQuestcenterMedicalTemplageDepaManageGetDepaListQueryKey 
   ] as const
 }
 
-export const getOp486GetQuestcenterMedicalTemplageDepaManageGetDepaListQueryOptions = <
-  TData = Awaited<ReturnType<typeof op486GetQuestcenterMedicalTemplageDepaManageGetDepaList>>,
+export const getGetQuestcenterMedicalTemplageDepaManageGetDepaListQueryOptions = <
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageGetDepaList>>,
   TError = ErrorType<unknown>,
 >(
-  params?: Op486GetQuestcenterMedicalTemplageDepaManageGetDepaListParams,
+  params?: GetQuestcenterMedicalTemplageDepaManageGetDepaListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op486GetQuestcenterMedicalTemplageDepaManageGetDepaList>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageGetDepaList>>,
         TError,
         TData
       >
@@ -6841,82 +6721,81 @@ export const getOp486GetQuestcenterMedicalTemplageDepaManageGetDepaListQueryOpti
   const { query: queryOptions } = options ?? {}
 
   const queryKey =
-    queryOptions?.queryKey ??
-    getOp486GetQuestcenterMedicalTemplageDepaManageGetDepaListQueryKey(params)
+    queryOptions?.queryKey ?? getGetQuestcenterMedicalTemplageDepaManageGetDepaListQueryKey(params)
 
   const queryFn: QueryFunction<
-    Awaited<ReturnType<typeof op486GetQuestcenterMedicalTemplageDepaManageGetDepaList>>
-  > = ({ signal }) => op486GetQuestcenterMedicalTemplageDepaManageGetDepaList(params, { signal })
+    Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageGetDepaList>>
+  > = ({ signal }) => getQuestcenterMedicalTemplageDepaManageGetDepaList(params, { signal })
 
   return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof op486GetQuestcenterMedicalTemplageDepaManageGetDepaList>>,
+    Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageGetDepaList>>,
     TError,
     TData
   > & { queryKey: DataTag<QueryKey, TData, TError> }
 }
 
-export type Op486GetQuestcenterMedicalTemplageDepaManageGetDepaListQueryResult = NonNullable<
-  Awaited<ReturnType<typeof op486GetQuestcenterMedicalTemplageDepaManageGetDepaList>>
+export type GetQuestcenterMedicalTemplageDepaManageGetDepaListQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageGetDepaList>>
 >
-export type Op486GetQuestcenterMedicalTemplageDepaManageGetDepaListQueryError = ErrorType<unknown>
+export type GetQuestcenterMedicalTemplageDepaManageGetDepaListQueryError = ErrorType<unknown>
 
-export function useOp486GetQuestcenterMedicalTemplageDepaManageGetDepaList<
-  TData = Awaited<ReturnType<typeof op486GetQuestcenterMedicalTemplageDepaManageGetDepaList>>,
+export function useGetQuestcenterMedicalTemplageDepaManageGetDepaList<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageGetDepaList>>,
   TError = ErrorType<unknown>,
 >(
-  params: undefined | Op486GetQuestcenterMedicalTemplageDepaManageGetDepaListParams,
+  params: undefined | GetQuestcenterMedicalTemplageDepaManageGetDepaListParams,
   options: {
     query: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op486GetQuestcenterMedicalTemplageDepaManageGetDepaList>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageGetDepaList>>,
         TError,
         TData
       >
     > &
       Pick<
         DefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op486GetQuestcenterMedicalTemplageDepaManageGetDepaList>>,
+          Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageGetDepaList>>,
           TError,
-          Awaited<ReturnType<typeof op486GetQuestcenterMedicalTemplageDepaManageGetDepaList>>
+          Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageGetDepaList>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp486GetQuestcenterMedicalTemplageDepaManageGetDepaList<
-  TData = Awaited<ReturnType<typeof op486GetQuestcenterMedicalTemplageDepaManageGetDepaList>>,
+export function useGetQuestcenterMedicalTemplageDepaManageGetDepaList<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageGetDepaList>>,
   TError = ErrorType<unknown>,
 >(
-  params?: Op486GetQuestcenterMedicalTemplageDepaManageGetDepaListParams,
+  params?: GetQuestcenterMedicalTemplageDepaManageGetDepaListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op486GetQuestcenterMedicalTemplageDepaManageGetDepaList>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageGetDepaList>>,
         TError,
         TData
       >
     > &
       Pick<
         UndefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op486GetQuestcenterMedicalTemplageDepaManageGetDepaList>>,
+          Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageGetDepaList>>,
           TError,
-          Awaited<ReturnType<typeof op486GetQuestcenterMedicalTemplageDepaManageGetDepaList>>
+          Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageGetDepaList>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp486GetQuestcenterMedicalTemplageDepaManageGetDepaList<
-  TData = Awaited<ReturnType<typeof op486GetQuestcenterMedicalTemplageDepaManageGetDepaList>>,
+export function useGetQuestcenterMedicalTemplageDepaManageGetDepaList<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageGetDepaList>>,
   TError = ErrorType<unknown>,
 >(
-  params?: Op486GetQuestcenterMedicalTemplageDepaManageGetDepaListParams,
+  params?: GetQuestcenterMedicalTemplageDepaManageGetDepaListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op486GetQuestcenterMedicalTemplageDepaManageGetDepaList>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageGetDepaList>>,
         TError,
         TData
       >
@@ -6928,15 +6807,15 @@ export function useOp486GetQuestcenterMedicalTemplageDepaManageGetDepaList<
  * @summary 科室管理列表
  */
 
-export function useOp486GetQuestcenterMedicalTemplageDepaManageGetDepaList<
-  TData = Awaited<ReturnType<typeof op486GetQuestcenterMedicalTemplageDepaManageGetDepaList>>,
+export function useGetQuestcenterMedicalTemplageDepaManageGetDepaList<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageGetDepaList>>,
   TError = ErrorType<unknown>,
 >(
-  params?: Op486GetQuestcenterMedicalTemplageDepaManageGetDepaListParams,
+  params?: GetQuestcenterMedicalTemplageDepaManageGetDepaListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op486GetQuestcenterMedicalTemplageDepaManageGetDepaList>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplageDepaManageGetDepaList>>,
         TError,
         TData
       >
@@ -6944,7 +6823,7 @@ export function useOp486GetQuestcenterMedicalTemplageDepaManageGetDepaList<
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
-  const queryOptions = getOp486GetQuestcenterMedicalTemplageDepaManageGetDepaListQueryOptions(
+  const queryOptions = getGetQuestcenterMedicalTemplageDepaManageGetDepaListQueryOptions(
     params,
     options
   )
@@ -6956,20 +6835,20 @@ export function useOp486GetQuestcenterMedicalTemplageDepaManageGetDepaList<
   return { ...query, queryKey: queryOptions.queryKey }
 }
 
-export type op488PostQuestcenterMedicalTemplageDepaManageUpdateDeptResponse200 = {
-  data: Op488PostQuestcenterMedicalTemplageDepaManageUpdateDept200
+export type postQuestcenterMedicalTemplageDepaManageUpdateDeptResponse200 = {
+  data: PostQuestcenterMedicalTemplageDepaManageUpdateDept200
   status: 200
 }
 
-export type op488PostQuestcenterMedicalTemplageDepaManageUpdateDeptResponseSuccess =
-  op488PostQuestcenterMedicalTemplageDepaManageUpdateDeptResponse200 & {
+export type postQuestcenterMedicalTemplageDepaManageUpdateDeptResponseSuccess =
+  postQuestcenterMedicalTemplageDepaManageUpdateDeptResponse200 & {
     headers: Headers
   }
 
-export type op488PostQuestcenterMedicalTemplageDepaManageUpdateDeptResponse =
-  op488PostQuestcenterMedicalTemplageDepaManageUpdateDeptResponseSuccess
+export type postQuestcenterMedicalTemplageDepaManageUpdateDeptResponse =
+  postQuestcenterMedicalTemplageDepaManageUpdateDeptResponseSuccess
 
-export const getOp488PostQuestcenterMedicalTemplageDepaManageUpdateDeptUrl = () => {
+export const getPostQuestcenterMedicalTemplageDepaManageUpdateDeptUrl = () => {
   return `/questcenter/medical_templage_depa_manage/update_dept`
 }
 
@@ -6977,38 +6856,38 @@ export const getOp488PostQuestcenterMedicalTemplageDepaManageUpdateDeptUrl = () 
  * 科室编辑
  * @summary 科室编辑
  */
-export const op488PostQuestcenterMedicalTemplageDepaManageUpdateDept = async (
-  op488PostQuestcenterMedicalTemplageDepaManageUpdateDeptBody?: Op488PostQuestcenterMedicalTemplageDepaManageUpdateDeptBody,
+export const postQuestcenterMedicalTemplageDepaManageUpdateDept = async (
+  postQuestcenterMedicalTemplageDepaManageUpdateDeptBody?: PostQuestcenterMedicalTemplageDepaManageUpdateDeptBody,
   options?: RequestInit
-): Promise<op488PostQuestcenterMedicalTemplageDepaManageUpdateDeptResponse> => {
-  return customFetch<op488PostQuestcenterMedicalTemplageDepaManageUpdateDeptResponse>(
-    getOp488PostQuestcenterMedicalTemplageDepaManageUpdateDeptUrl(),
+): Promise<postQuestcenterMedicalTemplageDepaManageUpdateDeptResponse> => {
+  return customFetch<postQuestcenterMedicalTemplageDepaManageUpdateDeptResponse>(
+    getPostQuestcenterMedicalTemplageDepaManageUpdateDeptUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op488PostQuestcenterMedicalTemplageDepaManageUpdateDeptBody),
+      body: JSON.stringify(postQuestcenterMedicalTemplageDepaManageUpdateDeptBody),
     }
   )
 }
 
-export const getOp488PostQuestcenterMedicalTemplageDepaManageUpdateDeptMutationOptions = <
+export const getPostQuestcenterMedicalTemplageDepaManageUpdateDeptMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op488PostQuestcenterMedicalTemplageDepaManageUpdateDept>>,
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplageDepaManageUpdateDept>>,
     TError,
-    { data?: Op488PostQuestcenterMedicalTemplageDepaManageUpdateDeptBody },
+    { data?: PostQuestcenterMedicalTemplageDepaManageUpdateDeptBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op488PostQuestcenterMedicalTemplageDepaManageUpdateDept>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplageDepaManageUpdateDept>>,
   TError,
-  { data?: Op488PostQuestcenterMedicalTemplageDepaManageUpdateDeptBody },
+  { data?: PostQuestcenterMedicalTemplageDepaManageUpdateDeptBody },
   TContext
 > => {
-  const mutationKey = ['op488PostQuestcenterMedicalTemplageDepaManageUpdateDept']
+  const mutationKey = ['postQuestcenterMedicalTemplageDepaManageUpdateDept']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -7016,68 +6895,67 @@ export const getOp488PostQuestcenterMedicalTemplageDepaManageUpdateDeptMutationO
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op488PostQuestcenterMedicalTemplageDepaManageUpdateDept>>,
-    { data?: Op488PostQuestcenterMedicalTemplageDepaManageUpdateDeptBody }
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplageDepaManageUpdateDept>>,
+    { data?: PostQuestcenterMedicalTemplageDepaManageUpdateDeptBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op488PostQuestcenterMedicalTemplageDepaManageUpdateDept(data)
+    return postQuestcenterMedicalTemplageDepaManageUpdateDept(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op488PostQuestcenterMedicalTemplageDepaManageUpdateDeptMutationResult = NonNullable<
-  Awaited<ReturnType<typeof op488PostQuestcenterMedicalTemplageDepaManageUpdateDept>>
+export type PostQuestcenterMedicalTemplageDepaManageUpdateDeptMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplageDepaManageUpdateDept>>
 >
-export type Op488PostQuestcenterMedicalTemplageDepaManageUpdateDeptMutationBody =
-  | Op488PostQuestcenterMedicalTemplageDepaManageUpdateDeptBody
+export type PostQuestcenterMedicalTemplageDepaManageUpdateDeptMutationBody =
+  | PostQuestcenterMedicalTemplageDepaManageUpdateDeptBody
   | undefined
-export type Op488PostQuestcenterMedicalTemplageDepaManageUpdateDeptMutationError =
-  ErrorType<unknown>
+export type PostQuestcenterMedicalTemplageDepaManageUpdateDeptMutationError = ErrorType<unknown>
 
 /**
  * @summary 科室编辑
  */
-export const useOp488PostQuestcenterMedicalTemplageDepaManageUpdateDept = <
+export const usePostQuestcenterMedicalTemplageDepaManageUpdateDept = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op488PostQuestcenterMedicalTemplageDepaManageUpdateDept>>,
+      Awaited<ReturnType<typeof postQuestcenterMedicalTemplageDepaManageUpdateDept>>,
       TError,
-      { data?: Op488PostQuestcenterMedicalTemplageDepaManageUpdateDeptBody },
+      { data?: PostQuestcenterMedicalTemplageDepaManageUpdateDeptBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op488PostQuestcenterMedicalTemplageDepaManageUpdateDept>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplageDepaManageUpdateDept>>,
   TError,
-  { data?: Op488PostQuestcenterMedicalTemplageDepaManageUpdateDeptBody },
+  { data?: PostQuestcenterMedicalTemplageDepaManageUpdateDeptBody },
   TContext
 > => {
   return useMutation(
-    getOp488PostQuestcenterMedicalTemplageDepaManageUpdateDeptMutationOptions(options),
+    getPostQuestcenterMedicalTemplageDepaManageUpdateDeptMutationOptions(options),
     queryClient
   )
 }
 
-export type op492PostQuestcenterMedicalTemplateAddTemplateDepaResponse200 = {
-  data: Op492PostQuestcenterMedicalTemplateAddTemplateDepa200
+export type postQuestcenterMedicalTemplateAddTemplateDepaResponse200 = {
+  data: PostQuestcenterMedicalTemplateAddTemplateDepa200
   status: 200
 }
 
-export type op492PostQuestcenterMedicalTemplateAddTemplateDepaResponseSuccess =
-  op492PostQuestcenterMedicalTemplateAddTemplateDepaResponse200 & {
+export type postQuestcenterMedicalTemplateAddTemplateDepaResponseSuccess =
+  postQuestcenterMedicalTemplateAddTemplateDepaResponse200 & {
     headers: Headers
   }
 
-export type op492PostQuestcenterMedicalTemplateAddTemplateDepaResponse =
-  op492PostQuestcenterMedicalTemplateAddTemplateDepaResponseSuccess
+export type postQuestcenterMedicalTemplateAddTemplateDepaResponse =
+  postQuestcenterMedicalTemplateAddTemplateDepaResponseSuccess
 
-export const getOp492PostQuestcenterMedicalTemplateAddTemplateDepaUrl = () => {
+export const getPostQuestcenterMedicalTemplateAddTemplateDepaUrl = () => {
   return `/questcenter/medical_template/add_template_depa`
 }
 
@@ -7085,38 +6963,38 @@ export const getOp492PostQuestcenterMedicalTemplateAddTemplateDepaUrl = () => {
  * 模版添加科室
  * @summary 模版添加科室
  */
-export const op492PostQuestcenterMedicalTemplateAddTemplateDepa = async (
-  op492PostQuestcenterMedicalTemplateAddTemplateDepaBody?: Op492PostQuestcenterMedicalTemplateAddTemplateDepaBody,
+export const postQuestcenterMedicalTemplateAddTemplateDepa = async (
+  postQuestcenterMedicalTemplateAddTemplateDepaBody?: PostQuestcenterMedicalTemplateAddTemplateDepaBody,
   options?: RequestInit
-): Promise<op492PostQuestcenterMedicalTemplateAddTemplateDepaResponse> => {
-  return customFetch<op492PostQuestcenterMedicalTemplateAddTemplateDepaResponse>(
-    getOp492PostQuestcenterMedicalTemplateAddTemplateDepaUrl(),
+): Promise<postQuestcenterMedicalTemplateAddTemplateDepaResponse> => {
+  return customFetch<postQuestcenterMedicalTemplateAddTemplateDepaResponse>(
+    getPostQuestcenterMedicalTemplateAddTemplateDepaUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op492PostQuestcenterMedicalTemplateAddTemplateDepaBody),
+      body: JSON.stringify(postQuestcenterMedicalTemplateAddTemplateDepaBody),
     }
   )
 }
 
-export const getOp492PostQuestcenterMedicalTemplateAddTemplateDepaMutationOptions = <
+export const getPostQuestcenterMedicalTemplateAddTemplateDepaMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op492PostQuestcenterMedicalTemplateAddTemplateDepa>>,
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplateAddTemplateDepa>>,
     TError,
-    { data?: Op492PostQuestcenterMedicalTemplateAddTemplateDepaBody },
+    { data?: PostQuestcenterMedicalTemplateAddTemplateDepaBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op492PostQuestcenterMedicalTemplateAddTemplateDepa>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateAddTemplateDepa>>,
   TError,
-  { data?: Op492PostQuestcenterMedicalTemplateAddTemplateDepaBody },
+  { data?: PostQuestcenterMedicalTemplateAddTemplateDepaBody },
   TContext
 > => {
-  const mutationKey = ['op492PostQuestcenterMedicalTemplateAddTemplateDepa']
+  const mutationKey = ['postQuestcenterMedicalTemplateAddTemplateDepa']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -7124,67 +7002,67 @@ export const getOp492PostQuestcenterMedicalTemplateAddTemplateDepaMutationOption
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op492PostQuestcenterMedicalTemplateAddTemplateDepa>>,
-    { data?: Op492PostQuestcenterMedicalTemplateAddTemplateDepaBody }
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplateAddTemplateDepa>>,
+    { data?: PostQuestcenterMedicalTemplateAddTemplateDepaBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op492PostQuestcenterMedicalTemplateAddTemplateDepa(data)
+    return postQuestcenterMedicalTemplateAddTemplateDepa(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op492PostQuestcenterMedicalTemplateAddTemplateDepaMutationResult = NonNullable<
-  Awaited<ReturnType<typeof op492PostQuestcenterMedicalTemplateAddTemplateDepa>>
+export type PostQuestcenterMedicalTemplateAddTemplateDepaMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateAddTemplateDepa>>
 >
-export type Op492PostQuestcenterMedicalTemplateAddTemplateDepaMutationBody =
-  | Op492PostQuestcenterMedicalTemplateAddTemplateDepaBody
+export type PostQuestcenterMedicalTemplateAddTemplateDepaMutationBody =
+  | PostQuestcenterMedicalTemplateAddTemplateDepaBody
   | undefined
-export type Op492PostQuestcenterMedicalTemplateAddTemplateDepaMutationError = ErrorType<unknown>
+export type PostQuestcenterMedicalTemplateAddTemplateDepaMutationError = ErrorType<unknown>
 
 /**
  * @summary 模版添加科室
  */
-export const useOp492PostQuestcenterMedicalTemplateAddTemplateDepa = <
+export const usePostQuestcenterMedicalTemplateAddTemplateDepa = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op492PostQuestcenterMedicalTemplateAddTemplateDepa>>,
+      Awaited<ReturnType<typeof postQuestcenterMedicalTemplateAddTemplateDepa>>,
       TError,
-      { data?: Op492PostQuestcenterMedicalTemplateAddTemplateDepaBody },
+      { data?: PostQuestcenterMedicalTemplateAddTemplateDepaBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op492PostQuestcenterMedicalTemplateAddTemplateDepa>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateAddTemplateDepa>>,
   TError,
-  { data?: Op492PostQuestcenterMedicalTemplateAddTemplateDepaBody },
+  { data?: PostQuestcenterMedicalTemplateAddTemplateDepaBody },
   TContext
 > => {
   return useMutation(
-    getOp492PostQuestcenterMedicalTemplateAddTemplateDepaMutationOptions(options),
+    getPostQuestcenterMedicalTemplateAddTemplateDepaMutationOptions(options),
     queryClient
   )
 }
 
-export type op444PostQuestcenterMedicalTemplateCloseTemplateResponse200 = {
-  data: Op444PostQuestcenterMedicalTemplateCloseTemplate200
+export type postQuestcenterMedicalTemplateCloseTemplateResponse200 = {
+  data: PostQuestcenterMedicalTemplateCloseTemplate200
   status: 200
 }
 
-export type op444PostQuestcenterMedicalTemplateCloseTemplateResponseSuccess =
-  op444PostQuestcenterMedicalTemplateCloseTemplateResponse200 & {
+export type postQuestcenterMedicalTemplateCloseTemplateResponseSuccess =
+  postQuestcenterMedicalTemplateCloseTemplateResponse200 & {
     headers: Headers
   }
 
-export type op444PostQuestcenterMedicalTemplateCloseTemplateResponse =
-  op444PostQuestcenterMedicalTemplateCloseTemplateResponseSuccess
+export type postQuestcenterMedicalTemplateCloseTemplateResponse =
+  postQuestcenterMedicalTemplateCloseTemplateResponseSuccess
 
-export const getOp444PostQuestcenterMedicalTemplateCloseTemplateUrl = () => {
+export const getPostQuestcenterMedicalTemplateCloseTemplateUrl = () => {
   return `/questcenter/medical_template/close_template`
 }
 
@@ -7192,38 +7070,38 @@ export const getOp444PostQuestcenterMedicalTemplateCloseTemplateUrl = () => {
  * 关闭病历模版
  * @summary 关闭病历模版
  */
-export const op444PostQuestcenterMedicalTemplateCloseTemplate = async (
-  op444PostQuestcenterMedicalTemplateCloseTemplateBody: Op444PostQuestcenterMedicalTemplateCloseTemplateBody,
+export const postQuestcenterMedicalTemplateCloseTemplate = async (
+  postQuestcenterMedicalTemplateCloseTemplateBody: PostQuestcenterMedicalTemplateCloseTemplateBody,
   options?: RequestInit
-): Promise<op444PostQuestcenterMedicalTemplateCloseTemplateResponse> => {
-  return customFetch<op444PostQuestcenterMedicalTemplateCloseTemplateResponse>(
-    getOp444PostQuestcenterMedicalTemplateCloseTemplateUrl(),
+): Promise<postQuestcenterMedicalTemplateCloseTemplateResponse> => {
+  return customFetch<postQuestcenterMedicalTemplateCloseTemplateResponse>(
+    getPostQuestcenterMedicalTemplateCloseTemplateUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op444PostQuestcenterMedicalTemplateCloseTemplateBody),
+      body: JSON.stringify(postQuestcenterMedicalTemplateCloseTemplateBody),
     }
   )
 }
 
-export const getOp444PostQuestcenterMedicalTemplateCloseTemplateMutationOptions = <
+export const getPostQuestcenterMedicalTemplateCloseTemplateMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op444PostQuestcenterMedicalTemplateCloseTemplate>>,
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCloseTemplate>>,
     TError,
-    { data: Op444PostQuestcenterMedicalTemplateCloseTemplateBody },
+    { data: PostQuestcenterMedicalTemplateCloseTemplateBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op444PostQuestcenterMedicalTemplateCloseTemplate>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCloseTemplate>>,
   TError,
-  { data: Op444PostQuestcenterMedicalTemplateCloseTemplateBody },
+  { data: PostQuestcenterMedicalTemplateCloseTemplateBody },
   TContext
 > => {
-  const mutationKey = ['op444PostQuestcenterMedicalTemplateCloseTemplate']
+  const mutationKey = ['postQuestcenterMedicalTemplateCloseTemplate']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -7231,66 +7109,66 @@ export const getOp444PostQuestcenterMedicalTemplateCloseTemplateMutationOptions 
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op444PostQuestcenterMedicalTemplateCloseTemplate>>,
-    { data: Op444PostQuestcenterMedicalTemplateCloseTemplateBody }
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCloseTemplate>>,
+    { data: PostQuestcenterMedicalTemplateCloseTemplateBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op444PostQuestcenterMedicalTemplateCloseTemplate(data)
+    return postQuestcenterMedicalTemplateCloseTemplate(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op444PostQuestcenterMedicalTemplateCloseTemplateMutationResult = NonNullable<
-  Awaited<ReturnType<typeof op444PostQuestcenterMedicalTemplateCloseTemplate>>
+export type PostQuestcenterMedicalTemplateCloseTemplateMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCloseTemplate>>
 >
-export type Op444PostQuestcenterMedicalTemplateCloseTemplateMutationBody =
-  Op444PostQuestcenterMedicalTemplateCloseTemplateBody
-export type Op444PostQuestcenterMedicalTemplateCloseTemplateMutationError = ErrorType<unknown>
+export type PostQuestcenterMedicalTemplateCloseTemplateMutationBody =
+  PostQuestcenterMedicalTemplateCloseTemplateBody
+export type PostQuestcenterMedicalTemplateCloseTemplateMutationError = ErrorType<unknown>
 
 /**
  * @summary 关闭病历模版
  */
-export const useOp444PostQuestcenterMedicalTemplateCloseTemplate = <
+export const usePostQuestcenterMedicalTemplateCloseTemplate = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op444PostQuestcenterMedicalTemplateCloseTemplate>>,
+      Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCloseTemplate>>,
       TError,
-      { data: Op444PostQuestcenterMedicalTemplateCloseTemplateBody },
+      { data: PostQuestcenterMedicalTemplateCloseTemplateBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op444PostQuestcenterMedicalTemplateCloseTemplate>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCloseTemplate>>,
   TError,
-  { data: Op444PostQuestcenterMedicalTemplateCloseTemplateBody },
+  { data: PostQuestcenterMedicalTemplateCloseTemplateBody },
   TContext
 > => {
   return useMutation(
-    getOp444PostQuestcenterMedicalTemplateCloseTemplateMutationOptions(options),
+    getPostQuestcenterMedicalTemplateCloseTemplateMutationOptions(options),
     queryClient
   )
 }
 
-export type op435PostQuestcenterMedicalTemplateCreateParagraphNodeResponse200 = {
-  data: Op435PostQuestcenterMedicalTemplateCreateParagraphNode200
+export type postQuestcenterMedicalTemplateCreateParagraphNodeResponse200 = {
+  data: PostQuestcenterMedicalTemplateCreateParagraphNode200
   status: 200
 }
 
-export type op435PostQuestcenterMedicalTemplateCreateParagraphNodeResponseSuccess =
-  op435PostQuestcenterMedicalTemplateCreateParagraphNodeResponse200 & {
+export type postQuestcenterMedicalTemplateCreateParagraphNodeResponseSuccess =
+  postQuestcenterMedicalTemplateCreateParagraphNodeResponse200 & {
     headers: Headers
   }
 
-export type op435PostQuestcenterMedicalTemplateCreateParagraphNodeResponse =
-  op435PostQuestcenterMedicalTemplateCreateParagraphNodeResponseSuccess
+export type postQuestcenterMedicalTemplateCreateParagraphNodeResponse =
+  postQuestcenterMedicalTemplateCreateParagraphNodeResponseSuccess
 
-export const getOp435PostQuestcenterMedicalTemplateCreateParagraphNodeUrl = () => {
+export const getPostQuestcenterMedicalTemplateCreateParagraphNodeUrl = () => {
   return `/questcenter/medical_template/create_paragraph_node`
 }
 
@@ -7298,38 +7176,38 @@ export const getOp435PostQuestcenterMedicalTemplateCreateParagraphNodeUrl = () =
  * 创建段落节点
  * @summary 创建段落节点
  */
-export const op435PostQuestcenterMedicalTemplateCreateParagraphNode = async (
-  op435PostQuestcenterMedicalTemplateCreateParagraphNodeBody: Op435PostQuestcenterMedicalTemplateCreateParagraphNodeBody,
+export const postQuestcenterMedicalTemplateCreateParagraphNode = async (
+  postQuestcenterMedicalTemplateCreateParagraphNodeBody: PostQuestcenterMedicalTemplateCreateParagraphNodeBody,
   options?: RequestInit
-): Promise<op435PostQuestcenterMedicalTemplateCreateParagraphNodeResponse> => {
-  return customFetch<op435PostQuestcenterMedicalTemplateCreateParagraphNodeResponse>(
-    getOp435PostQuestcenterMedicalTemplateCreateParagraphNodeUrl(),
+): Promise<postQuestcenterMedicalTemplateCreateParagraphNodeResponse> => {
+  return customFetch<postQuestcenterMedicalTemplateCreateParagraphNodeResponse>(
+    getPostQuestcenterMedicalTemplateCreateParagraphNodeUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op435PostQuestcenterMedicalTemplateCreateParagraphNodeBody),
+      body: JSON.stringify(postQuestcenterMedicalTemplateCreateParagraphNodeBody),
     }
   )
 }
 
-export const getOp435PostQuestcenterMedicalTemplateCreateParagraphNodeMutationOptions = <
+export const getPostQuestcenterMedicalTemplateCreateParagraphNodeMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op435PostQuestcenterMedicalTemplateCreateParagraphNode>>,
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCreateParagraphNode>>,
     TError,
-    { data: Op435PostQuestcenterMedicalTemplateCreateParagraphNodeBody },
+    { data: PostQuestcenterMedicalTemplateCreateParagraphNodeBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op435PostQuestcenterMedicalTemplateCreateParagraphNode>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCreateParagraphNode>>,
   TError,
-  { data: Op435PostQuestcenterMedicalTemplateCreateParagraphNodeBody },
+  { data: PostQuestcenterMedicalTemplateCreateParagraphNodeBody },
   TContext
 > => {
-  const mutationKey = ['op435PostQuestcenterMedicalTemplateCreateParagraphNode']
+  const mutationKey = ['postQuestcenterMedicalTemplateCreateParagraphNode']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -7337,66 +7215,66 @@ export const getOp435PostQuestcenterMedicalTemplateCreateParagraphNodeMutationOp
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op435PostQuestcenterMedicalTemplateCreateParagraphNode>>,
-    { data: Op435PostQuestcenterMedicalTemplateCreateParagraphNodeBody }
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCreateParagraphNode>>,
+    { data: PostQuestcenterMedicalTemplateCreateParagraphNodeBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op435PostQuestcenterMedicalTemplateCreateParagraphNode(data)
+    return postQuestcenterMedicalTemplateCreateParagraphNode(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op435PostQuestcenterMedicalTemplateCreateParagraphNodeMutationResult = NonNullable<
-  Awaited<ReturnType<typeof op435PostQuestcenterMedicalTemplateCreateParagraphNode>>
+export type PostQuestcenterMedicalTemplateCreateParagraphNodeMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCreateParagraphNode>>
 >
-export type Op435PostQuestcenterMedicalTemplateCreateParagraphNodeMutationBody =
-  Op435PostQuestcenterMedicalTemplateCreateParagraphNodeBody
-export type Op435PostQuestcenterMedicalTemplateCreateParagraphNodeMutationError = ErrorType<unknown>
+export type PostQuestcenterMedicalTemplateCreateParagraphNodeMutationBody =
+  PostQuestcenterMedicalTemplateCreateParagraphNodeBody
+export type PostQuestcenterMedicalTemplateCreateParagraphNodeMutationError = ErrorType<unknown>
 
 /**
  * @summary 创建段落节点
  */
-export const useOp435PostQuestcenterMedicalTemplateCreateParagraphNode = <
+export const usePostQuestcenterMedicalTemplateCreateParagraphNode = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op435PostQuestcenterMedicalTemplateCreateParagraphNode>>,
+      Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCreateParagraphNode>>,
       TError,
-      { data: Op435PostQuestcenterMedicalTemplateCreateParagraphNodeBody },
+      { data: PostQuestcenterMedicalTemplateCreateParagraphNodeBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op435PostQuestcenterMedicalTemplateCreateParagraphNode>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCreateParagraphNode>>,
   TError,
-  { data: Op435PostQuestcenterMedicalTemplateCreateParagraphNodeBody },
+  { data: PostQuestcenterMedicalTemplateCreateParagraphNodeBody },
   TContext
 > => {
   return useMutation(
-    getOp435PostQuestcenterMedicalTemplateCreateParagraphNodeMutationOptions(options),
+    getPostQuestcenterMedicalTemplateCreateParagraphNodeMutationOptions(options),
     queryClient
   )
 }
 
-export type op454PostQuestcenterMedicalTemplateCreateParagraphNodeBatchResponse200 = {
-  data: Op454PostQuestcenterMedicalTemplateCreateParagraphNodeBatch200
+export type postQuestcenterMedicalTemplateCreateParagraphNodeBatchResponse200 = {
+  data: PostQuestcenterMedicalTemplateCreateParagraphNodeBatch200
   status: 200
 }
 
-export type op454PostQuestcenterMedicalTemplateCreateParagraphNodeBatchResponseSuccess =
-  op454PostQuestcenterMedicalTemplateCreateParagraphNodeBatchResponse200 & {
+export type postQuestcenterMedicalTemplateCreateParagraphNodeBatchResponseSuccess =
+  postQuestcenterMedicalTemplateCreateParagraphNodeBatchResponse200 & {
     headers: Headers
   }
 
-export type op454PostQuestcenterMedicalTemplateCreateParagraphNodeBatchResponse =
-  op454PostQuestcenterMedicalTemplateCreateParagraphNodeBatchResponseSuccess
+export type postQuestcenterMedicalTemplateCreateParagraphNodeBatchResponse =
+  postQuestcenterMedicalTemplateCreateParagraphNodeBatchResponseSuccess
 
-export const getOp454PostQuestcenterMedicalTemplateCreateParagraphNodeBatchUrl = () => {
+export const getPostQuestcenterMedicalTemplateCreateParagraphNodeBatchUrl = () => {
   return `/questcenter/medical_template/create_paragraph_node_batch`
 }
 
@@ -7404,38 +7282,38 @@ export const getOp454PostQuestcenterMedicalTemplateCreateParagraphNodeBatchUrl =
  * 创建段落节点(批量)
  * @summary 创建段落节点(批量)
  */
-export const op454PostQuestcenterMedicalTemplateCreateParagraphNodeBatch = async (
-  op454PostQuestcenterMedicalTemplateCreateParagraphNodeBatchBody: Op454PostQuestcenterMedicalTemplateCreateParagraphNodeBatchBody,
+export const postQuestcenterMedicalTemplateCreateParagraphNodeBatch = async (
+  postQuestcenterMedicalTemplateCreateParagraphNodeBatchBody: PostQuestcenterMedicalTemplateCreateParagraphNodeBatchBody,
   options?: RequestInit
-): Promise<op454PostQuestcenterMedicalTemplateCreateParagraphNodeBatchResponse> => {
-  return customFetch<op454PostQuestcenterMedicalTemplateCreateParagraphNodeBatchResponse>(
-    getOp454PostQuestcenterMedicalTemplateCreateParagraphNodeBatchUrl(),
+): Promise<postQuestcenterMedicalTemplateCreateParagraphNodeBatchResponse> => {
+  return customFetch<postQuestcenterMedicalTemplateCreateParagraphNodeBatchResponse>(
+    getPostQuestcenterMedicalTemplateCreateParagraphNodeBatchUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op454PostQuestcenterMedicalTemplateCreateParagraphNodeBatchBody),
+      body: JSON.stringify(postQuestcenterMedicalTemplateCreateParagraphNodeBatchBody),
     }
   )
 }
 
-export const getOp454PostQuestcenterMedicalTemplateCreateParagraphNodeBatchMutationOptions = <
+export const getPostQuestcenterMedicalTemplateCreateParagraphNodeBatchMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op454PostQuestcenterMedicalTemplateCreateParagraphNodeBatch>>,
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCreateParagraphNodeBatch>>,
     TError,
-    { data: Op454PostQuestcenterMedicalTemplateCreateParagraphNodeBatchBody },
+    { data: PostQuestcenterMedicalTemplateCreateParagraphNodeBatchBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op454PostQuestcenterMedicalTemplateCreateParagraphNodeBatch>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCreateParagraphNodeBatch>>,
   TError,
-  { data: Op454PostQuestcenterMedicalTemplateCreateParagraphNodeBatchBody },
+  { data: PostQuestcenterMedicalTemplateCreateParagraphNodeBatchBody },
   TContext
 > => {
-  const mutationKey = ['op454PostQuestcenterMedicalTemplateCreateParagraphNodeBatch']
+  const mutationKey = ['postQuestcenterMedicalTemplateCreateParagraphNodeBatch']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -7443,67 +7321,66 @@ export const getOp454PostQuestcenterMedicalTemplateCreateParagraphNodeBatchMutat
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op454PostQuestcenterMedicalTemplateCreateParagraphNodeBatch>>,
-    { data: Op454PostQuestcenterMedicalTemplateCreateParagraphNodeBatchBody }
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCreateParagraphNodeBatch>>,
+    { data: PostQuestcenterMedicalTemplateCreateParagraphNodeBatchBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op454PostQuestcenterMedicalTemplateCreateParagraphNodeBatch(data)
+    return postQuestcenterMedicalTemplateCreateParagraphNodeBatch(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op454PostQuestcenterMedicalTemplateCreateParagraphNodeBatchMutationResult = NonNullable<
-  Awaited<ReturnType<typeof op454PostQuestcenterMedicalTemplateCreateParagraphNodeBatch>>
+export type PostQuestcenterMedicalTemplateCreateParagraphNodeBatchMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCreateParagraphNodeBatch>>
 >
-export type Op454PostQuestcenterMedicalTemplateCreateParagraphNodeBatchMutationBody =
-  Op454PostQuestcenterMedicalTemplateCreateParagraphNodeBatchBody
-export type Op454PostQuestcenterMedicalTemplateCreateParagraphNodeBatchMutationError =
-  ErrorType<unknown>
+export type PostQuestcenterMedicalTemplateCreateParagraphNodeBatchMutationBody =
+  PostQuestcenterMedicalTemplateCreateParagraphNodeBatchBody
+export type PostQuestcenterMedicalTemplateCreateParagraphNodeBatchMutationError = ErrorType<unknown>
 
 /**
  * @summary 创建段落节点(批量)
  */
-export const useOp454PostQuestcenterMedicalTemplateCreateParagraphNodeBatch = <
+export const usePostQuestcenterMedicalTemplateCreateParagraphNodeBatch = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op454PostQuestcenterMedicalTemplateCreateParagraphNodeBatch>>,
+      Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCreateParagraphNodeBatch>>,
       TError,
-      { data: Op454PostQuestcenterMedicalTemplateCreateParagraphNodeBatchBody },
+      { data: PostQuestcenterMedicalTemplateCreateParagraphNodeBatchBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op454PostQuestcenterMedicalTemplateCreateParagraphNodeBatch>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCreateParagraphNodeBatch>>,
   TError,
-  { data: Op454PostQuestcenterMedicalTemplateCreateParagraphNodeBatchBody },
+  { data: PostQuestcenterMedicalTemplateCreateParagraphNodeBatchBody },
   TContext
 > => {
   return useMutation(
-    getOp454PostQuestcenterMedicalTemplateCreateParagraphNodeBatchMutationOptions(options),
+    getPostQuestcenterMedicalTemplateCreateParagraphNodeBatchMutationOptions(options),
     queryClient
   )
 }
 
-export type op472PostQuestcenterMedicalTemplateCreateParagraphNodeTreeResponse200 = {
-  data: Op472PostQuestcenterMedicalTemplateCreateParagraphNodeTree200
+export type postQuestcenterMedicalTemplateCreateParagraphNodeTreeResponse200 = {
+  data: PostQuestcenterMedicalTemplateCreateParagraphNodeTree200
   status: 200
 }
 
-export type op472PostQuestcenterMedicalTemplateCreateParagraphNodeTreeResponseSuccess =
-  op472PostQuestcenterMedicalTemplateCreateParagraphNodeTreeResponse200 & {
+export type postQuestcenterMedicalTemplateCreateParagraphNodeTreeResponseSuccess =
+  postQuestcenterMedicalTemplateCreateParagraphNodeTreeResponse200 & {
     headers: Headers
   }
 
-export type op472PostQuestcenterMedicalTemplateCreateParagraphNodeTreeResponse =
-  op472PostQuestcenterMedicalTemplateCreateParagraphNodeTreeResponseSuccess
+export type postQuestcenterMedicalTemplateCreateParagraphNodeTreeResponse =
+  postQuestcenterMedicalTemplateCreateParagraphNodeTreeResponseSuccess
 
-export const getOp472PostQuestcenterMedicalTemplateCreateParagraphNodeTreeUrl = () => {
+export const getPostQuestcenterMedicalTemplateCreateParagraphNodeTreeUrl = () => {
   return `/questcenter/medical_template/create_paragraph_node_tree`
 }
 
@@ -7511,38 +7388,38 @@ export const getOp472PostQuestcenterMedicalTemplateCreateParagraphNodeTreeUrl = 
  * 节点 创建、删除段落树
  * @summary 节点 创建、删除段落树
  */
-export const op472PostQuestcenterMedicalTemplateCreateParagraphNodeTree = async (
-  op472PostQuestcenterMedicalTemplateCreateParagraphNodeTreeBody: Op472PostQuestcenterMedicalTemplateCreateParagraphNodeTreeBody,
+export const postQuestcenterMedicalTemplateCreateParagraphNodeTree = async (
+  postQuestcenterMedicalTemplateCreateParagraphNodeTreeBody: PostQuestcenterMedicalTemplateCreateParagraphNodeTreeBody,
   options?: RequestInit
-): Promise<op472PostQuestcenterMedicalTemplateCreateParagraphNodeTreeResponse> => {
-  return customFetch<op472PostQuestcenterMedicalTemplateCreateParagraphNodeTreeResponse>(
-    getOp472PostQuestcenterMedicalTemplateCreateParagraphNodeTreeUrl(),
+): Promise<postQuestcenterMedicalTemplateCreateParagraphNodeTreeResponse> => {
+  return customFetch<postQuestcenterMedicalTemplateCreateParagraphNodeTreeResponse>(
+    getPostQuestcenterMedicalTemplateCreateParagraphNodeTreeUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op472PostQuestcenterMedicalTemplateCreateParagraphNodeTreeBody),
+      body: JSON.stringify(postQuestcenterMedicalTemplateCreateParagraphNodeTreeBody),
     }
   )
 }
 
-export const getOp472PostQuestcenterMedicalTemplateCreateParagraphNodeTreeMutationOptions = <
+export const getPostQuestcenterMedicalTemplateCreateParagraphNodeTreeMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op472PostQuestcenterMedicalTemplateCreateParagraphNodeTree>>,
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCreateParagraphNodeTree>>,
     TError,
-    { data: Op472PostQuestcenterMedicalTemplateCreateParagraphNodeTreeBody },
+    { data: PostQuestcenterMedicalTemplateCreateParagraphNodeTreeBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op472PostQuestcenterMedicalTemplateCreateParagraphNodeTree>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCreateParagraphNodeTree>>,
   TError,
-  { data: Op472PostQuestcenterMedicalTemplateCreateParagraphNodeTreeBody },
+  { data: PostQuestcenterMedicalTemplateCreateParagraphNodeTreeBody },
   TContext
 > => {
-  const mutationKey = ['op472PostQuestcenterMedicalTemplateCreateParagraphNodeTree']
+  const mutationKey = ['postQuestcenterMedicalTemplateCreateParagraphNodeTree']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -7550,67 +7427,66 @@ export const getOp472PostQuestcenterMedicalTemplateCreateParagraphNodeTreeMutati
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op472PostQuestcenterMedicalTemplateCreateParagraphNodeTree>>,
-    { data: Op472PostQuestcenterMedicalTemplateCreateParagraphNodeTreeBody }
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCreateParagraphNodeTree>>,
+    { data: PostQuestcenterMedicalTemplateCreateParagraphNodeTreeBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op472PostQuestcenterMedicalTemplateCreateParagraphNodeTree(data)
+    return postQuestcenterMedicalTemplateCreateParagraphNodeTree(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op472PostQuestcenterMedicalTemplateCreateParagraphNodeTreeMutationResult = NonNullable<
-  Awaited<ReturnType<typeof op472PostQuestcenterMedicalTemplateCreateParagraphNodeTree>>
+export type PostQuestcenterMedicalTemplateCreateParagraphNodeTreeMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCreateParagraphNodeTree>>
 >
-export type Op472PostQuestcenterMedicalTemplateCreateParagraphNodeTreeMutationBody =
-  Op472PostQuestcenterMedicalTemplateCreateParagraphNodeTreeBody
-export type Op472PostQuestcenterMedicalTemplateCreateParagraphNodeTreeMutationError =
-  ErrorType<unknown>
+export type PostQuestcenterMedicalTemplateCreateParagraphNodeTreeMutationBody =
+  PostQuestcenterMedicalTemplateCreateParagraphNodeTreeBody
+export type PostQuestcenterMedicalTemplateCreateParagraphNodeTreeMutationError = ErrorType<unknown>
 
 /**
  * @summary 节点 创建、删除段落树
  */
-export const useOp472PostQuestcenterMedicalTemplateCreateParagraphNodeTree = <
+export const usePostQuestcenterMedicalTemplateCreateParagraphNodeTree = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op472PostQuestcenterMedicalTemplateCreateParagraphNodeTree>>,
+      Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCreateParagraphNodeTree>>,
       TError,
-      { data: Op472PostQuestcenterMedicalTemplateCreateParagraphNodeTreeBody },
+      { data: PostQuestcenterMedicalTemplateCreateParagraphNodeTreeBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op472PostQuestcenterMedicalTemplateCreateParagraphNodeTree>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCreateParagraphNodeTree>>,
   TError,
-  { data: Op472PostQuestcenterMedicalTemplateCreateParagraphNodeTreeBody },
+  { data: PostQuestcenterMedicalTemplateCreateParagraphNodeTreeBody },
   TContext
 > => {
   return useMutation(
-    getOp472PostQuestcenterMedicalTemplateCreateParagraphNodeTreeMutationOptions(options),
+    getPostQuestcenterMedicalTemplateCreateParagraphNodeTreeMutationOptions(options),
     queryClient
   )
 }
 
-export type op429PostQuestcenterMedicalTemplateCreateTemplateResponse200 = {
-  data: Op429PostQuestcenterMedicalTemplateCreateTemplate200
+export type postQuestcenterMedicalTemplateCreateTemplateResponse200 = {
+  data: PostQuestcenterMedicalTemplateCreateTemplate200
   status: 200
 }
 
-export type op429PostQuestcenterMedicalTemplateCreateTemplateResponseSuccess =
-  op429PostQuestcenterMedicalTemplateCreateTemplateResponse200 & {
+export type postQuestcenterMedicalTemplateCreateTemplateResponseSuccess =
+  postQuestcenterMedicalTemplateCreateTemplateResponse200 & {
     headers: Headers
   }
 
-export type op429PostQuestcenterMedicalTemplateCreateTemplateResponse =
-  op429PostQuestcenterMedicalTemplateCreateTemplateResponseSuccess
+export type postQuestcenterMedicalTemplateCreateTemplateResponse =
+  postQuestcenterMedicalTemplateCreateTemplateResponseSuccess
 
-export const getOp429PostQuestcenterMedicalTemplateCreateTemplateUrl = () => {
+export const getPostQuestcenterMedicalTemplateCreateTemplateUrl = () => {
   return `/questcenter/medical_template/create_template`
 }
 
@@ -7618,38 +7494,38 @@ export const getOp429PostQuestcenterMedicalTemplateCreateTemplateUrl = () => {
  * 创建病历模版
  * @summary 创建病历模版
  */
-export const op429PostQuestcenterMedicalTemplateCreateTemplate = async (
-  op429PostQuestcenterMedicalTemplateCreateTemplateBody: Op429PostQuestcenterMedicalTemplateCreateTemplateBody,
+export const postQuestcenterMedicalTemplateCreateTemplate = async (
+  postQuestcenterMedicalTemplateCreateTemplateBody: PostQuestcenterMedicalTemplateCreateTemplateBody,
   options?: RequestInit
-): Promise<op429PostQuestcenterMedicalTemplateCreateTemplateResponse> => {
-  return customFetch<op429PostQuestcenterMedicalTemplateCreateTemplateResponse>(
-    getOp429PostQuestcenterMedicalTemplateCreateTemplateUrl(),
+): Promise<postQuestcenterMedicalTemplateCreateTemplateResponse> => {
+  return customFetch<postQuestcenterMedicalTemplateCreateTemplateResponse>(
+    getPostQuestcenterMedicalTemplateCreateTemplateUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op429PostQuestcenterMedicalTemplateCreateTemplateBody),
+      body: JSON.stringify(postQuestcenterMedicalTemplateCreateTemplateBody),
     }
   )
 }
 
-export const getOp429PostQuestcenterMedicalTemplateCreateTemplateMutationOptions = <
+export const getPostQuestcenterMedicalTemplateCreateTemplateMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op429PostQuestcenterMedicalTemplateCreateTemplate>>,
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCreateTemplate>>,
     TError,
-    { data: Op429PostQuestcenterMedicalTemplateCreateTemplateBody },
+    { data: PostQuestcenterMedicalTemplateCreateTemplateBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op429PostQuestcenterMedicalTemplateCreateTemplate>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCreateTemplate>>,
   TError,
-  { data: Op429PostQuestcenterMedicalTemplateCreateTemplateBody },
+  { data: PostQuestcenterMedicalTemplateCreateTemplateBody },
   TContext
 > => {
-  const mutationKey = ['op429PostQuestcenterMedicalTemplateCreateTemplate']
+  const mutationKey = ['postQuestcenterMedicalTemplateCreateTemplate']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -7657,66 +7533,66 @@ export const getOp429PostQuestcenterMedicalTemplateCreateTemplateMutationOptions
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op429PostQuestcenterMedicalTemplateCreateTemplate>>,
-    { data: Op429PostQuestcenterMedicalTemplateCreateTemplateBody }
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCreateTemplate>>,
+    { data: PostQuestcenterMedicalTemplateCreateTemplateBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op429PostQuestcenterMedicalTemplateCreateTemplate(data)
+    return postQuestcenterMedicalTemplateCreateTemplate(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op429PostQuestcenterMedicalTemplateCreateTemplateMutationResult = NonNullable<
-  Awaited<ReturnType<typeof op429PostQuestcenterMedicalTemplateCreateTemplate>>
+export type PostQuestcenterMedicalTemplateCreateTemplateMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCreateTemplate>>
 >
-export type Op429PostQuestcenterMedicalTemplateCreateTemplateMutationBody =
-  Op429PostQuestcenterMedicalTemplateCreateTemplateBody
-export type Op429PostQuestcenterMedicalTemplateCreateTemplateMutationError = ErrorType<unknown>
+export type PostQuestcenterMedicalTemplateCreateTemplateMutationBody =
+  PostQuestcenterMedicalTemplateCreateTemplateBody
+export type PostQuestcenterMedicalTemplateCreateTemplateMutationError = ErrorType<unknown>
 
 /**
  * @summary 创建病历模版
  */
-export const useOp429PostQuestcenterMedicalTemplateCreateTemplate = <
+export const usePostQuestcenterMedicalTemplateCreateTemplate = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op429PostQuestcenterMedicalTemplateCreateTemplate>>,
+      Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCreateTemplate>>,
       TError,
-      { data: Op429PostQuestcenterMedicalTemplateCreateTemplateBody },
+      { data: PostQuestcenterMedicalTemplateCreateTemplateBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op429PostQuestcenterMedicalTemplateCreateTemplate>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCreateTemplate>>,
   TError,
-  { data: Op429PostQuestcenterMedicalTemplateCreateTemplateBody },
+  { data: PostQuestcenterMedicalTemplateCreateTemplateBody },
   TContext
 > => {
   return useMutation(
-    getOp429PostQuestcenterMedicalTemplateCreateTemplateMutationOptions(options),
+    getPostQuestcenterMedicalTemplateCreateTemplateMutationOptions(options),
     queryClient
   )
 }
 
-export type op449PostQuestcenterMedicalTemplateCreateTemplateDefaultResponse200 = {
-  data: Op449PostQuestcenterMedicalTemplateCreateTemplateDefault200
+export type postQuestcenterMedicalTemplateCreateTemplateDefaultResponse200 = {
+  data: PostQuestcenterMedicalTemplateCreateTemplateDefault200
   status: 200
 }
 
-export type op449PostQuestcenterMedicalTemplateCreateTemplateDefaultResponseSuccess =
-  op449PostQuestcenterMedicalTemplateCreateTemplateDefaultResponse200 & {
+export type postQuestcenterMedicalTemplateCreateTemplateDefaultResponseSuccess =
+  postQuestcenterMedicalTemplateCreateTemplateDefaultResponse200 & {
     headers: Headers
   }
 
-export type op449PostQuestcenterMedicalTemplateCreateTemplateDefaultResponse =
-  op449PostQuestcenterMedicalTemplateCreateTemplateDefaultResponseSuccess
+export type postQuestcenterMedicalTemplateCreateTemplateDefaultResponse =
+  postQuestcenterMedicalTemplateCreateTemplateDefaultResponseSuccess
 
-export const getOp449PostQuestcenterMedicalTemplateCreateTemplateDefaultUrl = () => {
+export const getPostQuestcenterMedicalTemplateCreateTemplateDefaultUrl = () => {
   return `/questcenter/medical_template/create_template_default`
 }
 
@@ -7724,38 +7600,38 @@ export const getOp449PostQuestcenterMedicalTemplateCreateTemplateDefaultUrl = ()
  * 创建病历默认模版
  * @summary 创建病历默认模版
  */
-export const op449PostQuestcenterMedicalTemplateCreateTemplateDefault = async (
-  op449PostQuestcenterMedicalTemplateCreateTemplateDefaultBody: Op449PostQuestcenterMedicalTemplateCreateTemplateDefaultBody,
+export const postQuestcenterMedicalTemplateCreateTemplateDefault = async (
+  postQuestcenterMedicalTemplateCreateTemplateDefaultBody: PostQuestcenterMedicalTemplateCreateTemplateDefaultBody,
   options?: RequestInit
-): Promise<op449PostQuestcenterMedicalTemplateCreateTemplateDefaultResponse> => {
-  return customFetch<op449PostQuestcenterMedicalTemplateCreateTemplateDefaultResponse>(
-    getOp449PostQuestcenterMedicalTemplateCreateTemplateDefaultUrl(),
+): Promise<postQuestcenterMedicalTemplateCreateTemplateDefaultResponse> => {
+  return customFetch<postQuestcenterMedicalTemplateCreateTemplateDefaultResponse>(
+    getPostQuestcenterMedicalTemplateCreateTemplateDefaultUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op449PostQuestcenterMedicalTemplateCreateTemplateDefaultBody),
+      body: JSON.stringify(postQuestcenterMedicalTemplateCreateTemplateDefaultBody),
     }
   )
 }
 
-export const getOp449PostQuestcenterMedicalTemplateCreateTemplateDefaultMutationOptions = <
+export const getPostQuestcenterMedicalTemplateCreateTemplateDefaultMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op449PostQuestcenterMedicalTemplateCreateTemplateDefault>>,
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCreateTemplateDefault>>,
     TError,
-    { data: Op449PostQuestcenterMedicalTemplateCreateTemplateDefaultBody },
+    { data: PostQuestcenterMedicalTemplateCreateTemplateDefaultBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op449PostQuestcenterMedicalTemplateCreateTemplateDefault>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCreateTemplateDefault>>,
   TError,
-  { data: Op449PostQuestcenterMedicalTemplateCreateTemplateDefaultBody },
+  { data: PostQuestcenterMedicalTemplateCreateTemplateDefaultBody },
   TContext
 > => {
-  const mutationKey = ['op449PostQuestcenterMedicalTemplateCreateTemplateDefault']
+  const mutationKey = ['postQuestcenterMedicalTemplateCreateTemplateDefault']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -7763,67 +7639,66 @@ export const getOp449PostQuestcenterMedicalTemplateCreateTemplateDefaultMutation
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op449PostQuestcenterMedicalTemplateCreateTemplateDefault>>,
-    { data: Op449PostQuestcenterMedicalTemplateCreateTemplateDefaultBody }
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCreateTemplateDefault>>,
+    { data: PostQuestcenterMedicalTemplateCreateTemplateDefaultBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op449PostQuestcenterMedicalTemplateCreateTemplateDefault(data)
+    return postQuestcenterMedicalTemplateCreateTemplateDefault(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op449PostQuestcenterMedicalTemplateCreateTemplateDefaultMutationResult = NonNullable<
-  Awaited<ReturnType<typeof op449PostQuestcenterMedicalTemplateCreateTemplateDefault>>
+export type PostQuestcenterMedicalTemplateCreateTemplateDefaultMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCreateTemplateDefault>>
 >
-export type Op449PostQuestcenterMedicalTemplateCreateTemplateDefaultMutationBody =
-  Op449PostQuestcenterMedicalTemplateCreateTemplateDefaultBody
-export type Op449PostQuestcenterMedicalTemplateCreateTemplateDefaultMutationError =
-  ErrorType<unknown>
+export type PostQuestcenterMedicalTemplateCreateTemplateDefaultMutationBody =
+  PostQuestcenterMedicalTemplateCreateTemplateDefaultBody
+export type PostQuestcenterMedicalTemplateCreateTemplateDefaultMutationError = ErrorType<unknown>
 
 /**
  * @summary 创建病历默认模版
  */
-export const useOp449PostQuestcenterMedicalTemplateCreateTemplateDefault = <
+export const usePostQuestcenterMedicalTemplateCreateTemplateDefault = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op449PostQuestcenterMedicalTemplateCreateTemplateDefault>>,
+      Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCreateTemplateDefault>>,
       TError,
-      { data: Op449PostQuestcenterMedicalTemplateCreateTemplateDefaultBody },
+      { data: PostQuestcenterMedicalTemplateCreateTemplateDefaultBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op449PostQuestcenterMedicalTemplateCreateTemplateDefault>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCreateTemplateDefault>>,
   TError,
-  { data: Op449PostQuestcenterMedicalTemplateCreateTemplateDefaultBody },
+  { data: PostQuestcenterMedicalTemplateCreateTemplateDefaultBody },
   TContext
 > => {
   return useMutation(
-    getOp449PostQuestcenterMedicalTemplateCreateTemplateDefaultMutationOptions(options),
+    getPostQuestcenterMedicalTemplateCreateTemplateDefaultMutationOptions(options),
     queryClient
   )
 }
 
-export type op432PostQuestcenterMedicalTemplateCreateTemplateParagraphResponse200 = {
-  data: Op432PostQuestcenterMedicalTemplateCreateTemplateParagraph200
+export type postQuestcenterMedicalTemplateCreateTemplateParagraphResponse200 = {
+  data: PostQuestcenterMedicalTemplateCreateTemplateParagraph200
   status: 200
 }
 
-export type op432PostQuestcenterMedicalTemplateCreateTemplateParagraphResponseSuccess =
-  op432PostQuestcenterMedicalTemplateCreateTemplateParagraphResponse200 & {
+export type postQuestcenterMedicalTemplateCreateTemplateParagraphResponseSuccess =
+  postQuestcenterMedicalTemplateCreateTemplateParagraphResponse200 & {
     headers: Headers
   }
 
-export type op432PostQuestcenterMedicalTemplateCreateTemplateParagraphResponse =
-  op432PostQuestcenterMedicalTemplateCreateTemplateParagraphResponseSuccess
+export type postQuestcenterMedicalTemplateCreateTemplateParagraphResponse =
+  postQuestcenterMedicalTemplateCreateTemplateParagraphResponseSuccess
 
-export const getOp432PostQuestcenterMedicalTemplateCreateTemplateParagraphUrl = () => {
+export const getPostQuestcenterMedicalTemplateCreateTemplateParagraphUrl = () => {
   return `/questcenter/medical_template/create_template_paragraph`
 }
 
@@ -7831,38 +7706,38 @@ export const getOp432PostQuestcenterMedicalTemplateCreateTemplateParagraphUrl = 
  * 创建病历段落
  * @summary 创建病历段落
  */
-export const op432PostQuestcenterMedicalTemplateCreateTemplateParagraph = async (
-  op432PostQuestcenterMedicalTemplateCreateTemplateParagraphBody: Op432PostQuestcenterMedicalTemplateCreateTemplateParagraphBody,
+export const postQuestcenterMedicalTemplateCreateTemplateParagraph = async (
+  postQuestcenterMedicalTemplateCreateTemplateParagraphBody: PostQuestcenterMedicalTemplateCreateTemplateParagraphBody,
   options?: RequestInit
-): Promise<op432PostQuestcenterMedicalTemplateCreateTemplateParagraphResponse> => {
-  return customFetch<op432PostQuestcenterMedicalTemplateCreateTemplateParagraphResponse>(
-    getOp432PostQuestcenterMedicalTemplateCreateTemplateParagraphUrl(),
+): Promise<postQuestcenterMedicalTemplateCreateTemplateParagraphResponse> => {
+  return customFetch<postQuestcenterMedicalTemplateCreateTemplateParagraphResponse>(
+    getPostQuestcenterMedicalTemplateCreateTemplateParagraphUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op432PostQuestcenterMedicalTemplateCreateTemplateParagraphBody),
+      body: JSON.stringify(postQuestcenterMedicalTemplateCreateTemplateParagraphBody),
     }
   )
 }
 
-export const getOp432PostQuestcenterMedicalTemplateCreateTemplateParagraphMutationOptions = <
+export const getPostQuestcenterMedicalTemplateCreateTemplateParagraphMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op432PostQuestcenterMedicalTemplateCreateTemplateParagraph>>,
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCreateTemplateParagraph>>,
     TError,
-    { data: Op432PostQuestcenterMedicalTemplateCreateTemplateParagraphBody },
+    { data: PostQuestcenterMedicalTemplateCreateTemplateParagraphBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op432PostQuestcenterMedicalTemplateCreateTemplateParagraph>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCreateTemplateParagraph>>,
   TError,
-  { data: Op432PostQuestcenterMedicalTemplateCreateTemplateParagraphBody },
+  { data: PostQuestcenterMedicalTemplateCreateTemplateParagraphBody },
   TContext
 > => {
-  const mutationKey = ['op432PostQuestcenterMedicalTemplateCreateTemplateParagraph']
+  const mutationKey = ['postQuestcenterMedicalTemplateCreateTemplateParagraph']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -7870,67 +7745,66 @@ export const getOp432PostQuestcenterMedicalTemplateCreateTemplateParagraphMutati
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op432PostQuestcenterMedicalTemplateCreateTemplateParagraph>>,
-    { data: Op432PostQuestcenterMedicalTemplateCreateTemplateParagraphBody }
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCreateTemplateParagraph>>,
+    { data: PostQuestcenterMedicalTemplateCreateTemplateParagraphBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op432PostQuestcenterMedicalTemplateCreateTemplateParagraph(data)
+    return postQuestcenterMedicalTemplateCreateTemplateParagraph(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op432PostQuestcenterMedicalTemplateCreateTemplateParagraphMutationResult = NonNullable<
-  Awaited<ReturnType<typeof op432PostQuestcenterMedicalTemplateCreateTemplateParagraph>>
+export type PostQuestcenterMedicalTemplateCreateTemplateParagraphMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCreateTemplateParagraph>>
 >
-export type Op432PostQuestcenterMedicalTemplateCreateTemplateParagraphMutationBody =
-  Op432PostQuestcenterMedicalTemplateCreateTemplateParagraphBody
-export type Op432PostQuestcenterMedicalTemplateCreateTemplateParagraphMutationError =
-  ErrorType<unknown>
+export type PostQuestcenterMedicalTemplateCreateTemplateParagraphMutationBody =
+  PostQuestcenterMedicalTemplateCreateTemplateParagraphBody
+export type PostQuestcenterMedicalTemplateCreateTemplateParagraphMutationError = ErrorType<unknown>
 
 /**
  * @summary 创建病历段落
  */
-export const useOp432PostQuestcenterMedicalTemplateCreateTemplateParagraph = <
+export const usePostQuestcenterMedicalTemplateCreateTemplateParagraph = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op432PostQuestcenterMedicalTemplateCreateTemplateParagraph>>,
+      Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCreateTemplateParagraph>>,
       TError,
-      { data: Op432PostQuestcenterMedicalTemplateCreateTemplateParagraphBody },
+      { data: PostQuestcenterMedicalTemplateCreateTemplateParagraphBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op432PostQuestcenterMedicalTemplateCreateTemplateParagraph>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCreateTemplateParagraph>>,
   TError,
-  { data: Op432PostQuestcenterMedicalTemplateCreateTemplateParagraphBody },
+  { data: PostQuestcenterMedicalTemplateCreateTemplateParagraphBody },
   TContext
 > => {
   return useMutation(
-    getOp432PostQuestcenterMedicalTemplateCreateTemplateParagraphMutationOptions(options),
+    getPostQuestcenterMedicalTemplateCreateTemplateParagraphMutationOptions(options),
     queryClient
   )
 }
 
-export type op450PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyResponse200 = {
-  data: Op450PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecify200
+export type postQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyResponse200 = {
+  data: PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecify200
   status: 200
 }
 
-export type op450PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyResponseSuccess =
-  op450PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyResponse200 & {
+export type postQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyResponseSuccess =
+  postQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyResponse200 & {
     headers: Headers
   }
 
-export type op450PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyResponse =
-  op450PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyResponseSuccess
+export type postQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyResponse =
+  postQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyResponseSuccess
 
-export const getOp450PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyUrl = () => {
+export const getPostQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyUrl = () => {
   return `/questcenter/medical_template/create_template_paragraph_specify`
 }
 
@@ -7938,38 +7812,38 @@ export const getOp450PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecif
  * 创建病历指定段落
  * @summary 创建病历指定段落
  */
-export const op450PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecify = async (
-  op450PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyBody: Op450PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyBody,
+export const postQuestcenterMedicalTemplateCreateTemplateParagraphSpecify = async (
+  postQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyBody: PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyBody,
   options?: RequestInit
-): Promise<op450PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyResponse> => {
-  return customFetch<op450PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyResponse>(
-    getOp450PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyUrl(),
+): Promise<postQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyResponse> => {
+  return customFetch<postQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyResponse>(
+    getPostQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op450PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyBody),
+      body: JSON.stringify(postQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyBody),
     }
   )
 }
 
-export const getOp450PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyMutationOptions = <
+export const getPostQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op450PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecify>>,
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCreateTemplateParagraphSpecify>>,
     TError,
-    { data: Op450PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyBody },
+    { data: PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op450PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecify>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCreateTemplateParagraphSpecify>>,
   TError,
-  { data: Op450PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyBody },
+  { data: PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyBody },
   TContext
 > => {
-  const mutationKey = ['op450PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecify']
+  const mutationKey = ['postQuestcenterMedicalTemplateCreateTemplateParagraphSpecify']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -7977,68 +7851,68 @@ export const getOp450PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecif
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op450PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecify>>,
-    { data: Op450PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyBody }
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCreateTemplateParagraphSpecify>>,
+    { data: PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op450PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecify(data)
+    return postQuestcenterMedicalTemplateCreateTemplateParagraphSpecify(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op450PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyMutationResult =
+export type PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyMutationResult =
   NonNullable<
-    Awaited<ReturnType<typeof op450PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecify>>
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCreateTemplateParagraphSpecify>>
   >
-export type Op450PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyMutationBody =
-  Op450PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyBody
-export type Op450PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyMutationError =
+export type PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyMutationBody =
+  PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyBody
+export type PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyMutationError =
   ErrorType<unknown>
 
 /**
  * @summary 创建病历指定段落
  */
-export const useOp450PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecify = <
+export const usePostQuestcenterMedicalTemplateCreateTemplateParagraphSpecify = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op450PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecify>>,
+      Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCreateTemplateParagraphSpecify>>,
       TError,
-      { data: Op450PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyBody },
+      { data: PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op450PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecify>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateCreateTemplateParagraphSpecify>>,
   TError,
-  { data: Op450PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyBody },
+  { data: PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyBody },
   TContext
 > => {
   return useMutation(
-    getOp450PostQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyMutationOptions(options),
+    getPostQuestcenterMedicalTemplateCreateTemplateParagraphSpecifyMutationOptions(options),
     queryClient
   )
 }
 
-export type op438PostQuestcenterMedicalTemplateDeleteParagraphNodeResponse200 = {
-  data: Op438PostQuestcenterMedicalTemplateDeleteParagraphNode200
+export type postQuestcenterMedicalTemplateDeleteParagraphNodeResponse200 = {
+  data: PostQuestcenterMedicalTemplateDeleteParagraphNode200
   status: 200
 }
 
-export type op438PostQuestcenterMedicalTemplateDeleteParagraphNodeResponseSuccess =
-  op438PostQuestcenterMedicalTemplateDeleteParagraphNodeResponse200 & {
+export type postQuestcenterMedicalTemplateDeleteParagraphNodeResponseSuccess =
+  postQuestcenterMedicalTemplateDeleteParagraphNodeResponse200 & {
     headers: Headers
   }
 
-export type op438PostQuestcenterMedicalTemplateDeleteParagraphNodeResponse =
-  op438PostQuestcenterMedicalTemplateDeleteParagraphNodeResponseSuccess
+export type postQuestcenterMedicalTemplateDeleteParagraphNodeResponse =
+  postQuestcenterMedicalTemplateDeleteParagraphNodeResponseSuccess
 
-export const getOp438PostQuestcenterMedicalTemplateDeleteParagraphNodeUrl = () => {
+export const getPostQuestcenterMedicalTemplateDeleteParagraphNodeUrl = () => {
   return `/questcenter/medical_template/delete_paragraph_node`
 }
 
@@ -8046,38 +7920,38 @@ export const getOp438PostQuestcenterMedicalTemplateDeleteParagraphNodeUrl = () =
  * 删除段落节点
  * @summary 删除段落节点
  */
-export const op438PostQuestcenterMedicalTemplateDeleteParagraphNode = async (
-  op438PostQuestcenterMedicalTemplateDeleteParagraphNodeBody: Op438PostQuestcenterMedicalTemplateDeleteParagraphNodeBody,
+export const postQuestcenterMedicalTemplateDeleteParagraphNode = async (
+  postQuestcenterMedicalTemplateDeleteParagraphNodeBody: PostQuestcenterMedicalTemplateDeleteParagraphNodeBody,
   options?: RequestInit
-): Promise<op438PostQuestcenterMedicalTemplateDeleteParagraphNodeResponse> => {
-  return customFetch<op438PostQuestcenterMedicalTemplateDeleteParagraphNodeResponse>(
-    getOp438PostQuestcenterMedicalTemplateDeleteParagraphNodeUrl(),
+): Promise<postQuestcenterMedicalTemplateDeleteParagraphNodeResponse> => {
+  return customFetch<postQuestcenterMedicalTemplateDeleteParagraphNodeResponse>(
+    getPostQuestcenterMedicalTemplateDeleteParagraphNodeUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op438PostQuestcenterMedicalTemplateDeleteParagraphNodeBody),
+      body: JSON.stringify(postQuestcenterMedicalTemplateDeleteParagraphNodeBody),
     }
   )
 }
 
-export const getOp438PostQuestcenterMedicalTemplateDeleteParagraphNodeMutationOptions = <
+export const getPostQuestcenterMedicalTemplateDeleteParagraphNodeMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op438PostQuestcenterMedicalTemplateDeleteParagraphNode>>,
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplateDeleteParagraphNode>>,
     TError,
-    { data: Op438PostQuestcenterMedicalTemplateDeleteParagraphNodeBody },
+    { data: PostQuestcenterMedicalTemplateDeleteParagraphNodeBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op438PostQuestcenterMedicalTemplateDeleteParagraphNode>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateDeleteParagraphNode>>,
   TError,
-  { data: Op438PostQuestcenterMedicalTemplateDeleteParagraphNodeBody },
+  { data: PostQuestcenterMedicalTemplateDeleteParagraphNodeBody },
   TContext
 > => {
-  const mutationKey = ['op438PostQuestcenterMedicalTemplateDeleteParagraphNode']
+  const mutationKey = ['postQuestcenterMedicalTemplateDeleteParagraphNode']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -8085,66 +7959,66 @@ export const getOp438PostQuestcenterMedicalTemplateDeleteParagraphNodeMutationOp
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op438PostQuestcenterMedicalTemplateDeleteParagraphNode>>,
-    { data: Op438PostQuestcenterMedicalTemplateDeleteParagraphNodeBody }
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplateDeleteParagraphNode>>,
+    { data: PostQuestcenterMedicalTemplateDeleteParagraphNodeBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op438PostQuestcenterMedicalTemplateDeleteParagraphNode(data)
+    return postQuestcenterMedicalTemplateDeleteParagraphNode(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op438PostQuestcenterMedicalTemplateDeleteParagraphNodeMutationResult = NonNullable<
-  Awaited<ReturnType<typeof op438PostQuestcenterMedicalTemplateDeleteParagraphNode>>
+export type PostQuestcenterMedicalTemplateDeleteParagraphNodeMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateDeleteParagraphNode>>
 >
-export type Op438PostQuestcenterMedicalTemplateDeleteParagraphNodeMutationBody =
-  Op438PostQuestcenterMedicalTemplateDeleteParagraphNodeBody
-export type Op438PostQuestcenterMedicalTemplateDeleteParagraphNodeMutationError = ErrorType<unknown>
+export type PostQuestcenterMedicalTemplateDeleteParagraphNodeMutationBody =
+  PostQuestcenterMedicalTemplateDeleteParagraphNodeBody
+export type PostQuestcenterMedicalTemplateDeleteParagraphNodeMutationError = ErrorType<unknown>
 
 /**
  * @summary 删除段落节点
  */
-export const useOp438PostQuestcenterMedicalTemplateDeleteParagraphNode = <
+export const usePostQuestcenterMedicalTemplateDeleteParagraphNode = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op438PostQuestcenterMedicalTemplateDeleteParagraphNode>>,
+      Awaited<ReturnType<typeof postQuestcenterMedicalTemplateDeleteParagraphNode>>,
       TError,
-      { data: Op438PostQuestcenterMedicalTemplateDeleteParagraphNodeBody },
+      { data: PostQuestcenterMedicalTemplateDeleteParagraphNodeBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op438PostQuestcenterMedicalTemplateDeleteParagraphNode>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateDeleteParagraphNode>>,
   TError,
-  { data: Op438PostQuestcenterMedicalTemplateDeleteParagraphNodeBody },
+  { data: PostQuestcenterMedicalTemplateDeleteParagraphNodeBody },
   TContext
 > => {
   return useMutation(
-    getOp438PostQuestcenterMedicalTemplateDeleteParagraphNodeMutationOptions(options),
+    getPostQuestcenterMedicalTemplateDeleteParagraphNodeMutationOptions(options),
     queryClient
   )
 }
 
-export type op431PostQuestcenterMedicalTemplateDeleteTemplateResponse200 = {
-  data: Op431PostQuestcenterMedicalTemplateDeleteTemplate200
+export type postQuestcenterMedicalTemplateDeleteTemplateResponse200 = {
+  data: PostQuestcenterMedicalTemplateDeleteTemplate200
   status: 200
 }
 
-export type op431PostQuestcenterMedicalTemplateDeleteTemplateResponseSuccess =
-  op431PostQuestcenterMedicalTemplateDeleteTemplateResponse200 & {
+export type postQuestcenterMedicalTemplateDeleteTemplateResponseSuccess =
+  postQuestcenterMedicalTemplateDeleteTemplateResponse200 & {
     headers: Headers
   }
 
-export type op431PostQuestcenterMedicalTemplateDeleteTemplateResponse =
-  op431PostQuestcenterMedicalTemplateDeleteTemplateResponseSuccess
+export type postQuestcenterMedicalTemplateDeleteTemplateResponse =
+  postQuestcenterMedicalTemplateDeleteTemplateResponseSuccess
 
-export const getOp431PostQuestcenterMedicalTemplateDeleteTemplateUrl = () => {
+export const getPostQuestcenterMedicalTemplateDeleteTemplateUrl = () => {
   return `/questcenter/medical_template/delete_template`
 }
 
@@ -8152,38 +8026,38 @@ export const getOp431PostQuestcenterMedicalTemplateDeleteTemplateUrl = () => {
  * 删除病历模版
  * @summary 删除病历模版
  */
-export const op431PostQuestcenterMedicalTemplateDeleteTemplate = async (
-  op431PostQuestcenterMedicalTemplateDeleteTemplateBody: Op431PostQuestcenterMedicalTemplateDeleteTemplateBody,
+export const postQuestcenterMedicalTemplateDeleteTemplate = async (
+  postQuestcenterMedicalTemplateDeleteTemplateBody: PostQuestcenterMedicalTemplateDeleteTemplateBody,
   options?: RequestInit
-): Promise<op431PostQuestcenterMedicalTemplateDeleteTemplateResponse> => {
-  return customFetch<op431PostQuestcenterMedicalTemplateDeleteTemplateResponse>(
-    getOp431PostQuestcenterMedicalTemplateDeleteTemplateUrl(),
+): Promise<postQuestcenterMedicalTemplateDeleteTemplateResponse> => {
+  return customFetch<postQuestcenterMedicalTemplateDeleteTemplateResponse>(
+    getPostQuestcenterMedicalTemplateDeleteTemplateUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op431PostQuestcenterMedicalTemplateDeleteTemplateBody),
+      body: JSON.stringify(postQuestcenterMedicalTemplateDeleteTemplateBody),
     }
   )
 }
 
-export const getOp431PostQuestcenterMedicalTemplateDeleteTemplateMutationOptions = <
+export const getPostQuestcenterMedicalTemplateDeleteTemplateMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op431PostQuestcenterMedicalTemplateDeleteTemplate>>,
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplateDeleteTemplate>>,
     TError,
-    { data: Op431PostQuestcenterMedicalTemplateDeleteTemplateBody },
+    { data: PostQuestcenterMedicalTemplateDeleteTemplateBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op431PostQuestcenterMedicalTemplateDeleteTemplate>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateDeleteTemplate>>,
   TError,
-  { data: Op431PostQuestcenterMedicalTemplateDeleteTemplateBody },
+  { data: PostQuestcenterMedicalTemplateDeleteTemplateBody },
   TContext
 > => {
-  const mutationKey = ['op431PostQuestcenterMedicalTemplateDeleteTemplate']
+  const mutationKey = ['postQuestcenterMedicalTemplateDeleteTemplate']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -8191,66 +8065,66 @@ export const getOp431PostQuestcenterMedicalTemplateDeleteTemplateMutationOptions
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op431PostQuestcenterMedicalTemplateDeleteTemplate>>,
-    { data: Op431PostQuestcenterMedicalTemplateDeleteTemplateBody }
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplateDeleteTemplate>>,
+    { data: PostQuestcenterMedicalTemplateDeleteTemplateBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op431PostQuestcenterMedicalTemplateDeleteTemplate(data)
+    return postQuestcenterMedicalTemplateDeleteTemplate(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op431PostQuestcenterMedicalTemplateDeleteTemplateMutationResult = NonNullable<
-  Awaited<ReturnType<typeof op431PostQuestcenterMedicalTemplateDeleteTemplate>>
+export type PostQuestcenterMedicalTemplateDeleteTemplateMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateDeleteTemplate>>
 >
-export type Op431PostQuestcenterMedicalTemplateDeleteTemplateMutationBody =
-  Op431PostQuestcenterMedicalTemplateDeleteTemplateBody
-export type Op431PostQuestcenterMedicalTemplateDeleteTemplateMutationError = ErrorType<unknown>
+export type PostQuestcenterMedicalTemplateDeleteTemplateMutationBody =
+  PostQuestcenterMedicalTemplateDeleteTemplateBody
+export type PostQuestcenterMedicalTemplateDeleteTemplateMutationError = ErrorType<unknown>
 
 /**
  * @summary 删除病历模版
  */
-export const useOp431PostQuestcenterMedicalTemplateDeleteTemplate = <
+export const usePostQuestcenterMedicalTemplateDeleteTemplate = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op431PostQuestcenterMedicalTemplateDeleteTemplate>>,
+      Awaited<ReturnType<typeof postQuestcenterMedicalTemplateDeleteTemplate>>,
       TError,
-      { data: Op431PostQuestcenterMedicalTemplateDeleteTemplateBody },
+      { data: PostQuestcenterMedicalTemplateDeleteTemplateBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op431PostQuestcenterMedicalTemplateDeleteTemplate>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateDeleteTemplate>>,
   TError,
-  { data: Op431PostQuestcenterMedicalTemplateDeleteTemplateBody },
+  { data: PostQuestcenterMedicalTemplateDeleteTemplateBody },
   TContext
 > => {
   return useMutation(
-    getOp431PostQuestcenterMedicalTemplateDeleteTemplateMutationOptions(options),
+    getPostQuestcenterMedicalTemplateDeleteTemplateMutationOptions(options),
     queryClient
   )
 }
 
-export type op493PostQuestcenterMedicalTemplateDeleteTemplateDepaResponse200 = {
-  data: Op493PostQuestcenterMedicalTemplateDeleteTemplateDepa200
+export type postQuestcenterMedicalTemplateDeleteTemplateDepaResponse200 = {
+  data: PostQuestcenterMedicalTemplateDeleteTemplateDepa200
   status: 200
 }
 
-export type op493PostQuestcenterMedicalTemplateDeleteTemplateDepaResponseSuccess =
-  op493PostQuestcenterMedicalTemplateDeleteTemplateDepaResponse200 & {
+export type postQuestcenterMedicalTemplateDeleteTemplateDepaResponseSuccess =
+  postQuestcenterMedicalTemplateDeleteTemplateDepaResponse200 & {
     headers: Headers
   }
 
-export type op493PostQuestcenterMedicalTemplateDeleteTemplateDepaResponse =
-  op493PostQuestcenterMedicalTemplateDeleteTemplateDepaResponseSuccess
+export type postQuestcenterMedicalTemplateDeleteTemplateDepaResponse =
+  postQuestcenterMedicalTemplateDeleteTemplateDepaResponseSuccess
 
-export const getOp493PostQuestcenterMedicalTemplateDeleteTemplateDepaUrl = () => {
+export const getPostQuestcenterMedicalTemplateDeleteTemplateDepaUrl = () => {
   return `/questcenter/medical_template/delete_template_depa`
 }
 
@@ -8258,38 +8132,38 @@ export const getOp493PostQuestcenterMedicalTemplateDeleteTemplateDepaUrl = () =>
  * 模版删除科室
  * @summary 模版删除科室
  */
-export const op493PostQuestcenterMedicalTemplateDeleteTemplateDepa = async (
-  op493PostQuestcenterMedicalTemplateDeleteTemplateDepaBody?: Op493PostQuestcenterMedicalTemplateDeleteTemplateDepaBody,
+export const postQuestcenterMedicalTemplateDeleteTemplateDepa = async (
+  postQuestcenterMedicalTemplateDeleteTemplateDepaBody?: PostQuestcenterMedicalTemplateDeleteTemplateDepaBody,
   options?: RequestInit
-): Promise<op493PostQuestcenterMedicalTemplateDeleteTemplateDepaResponse> => {
-  return customFetch<op493PostQuestcenterMedicalTemplateDeleteTemplateDepaResponse>(
-    getOp493PostQuestcenterMedicalTemplateDeleteTemplateDepaUrl(),
+): Promise<postQuestcenterMedicalTemplateDeleteTemplateDepaResponse> => {
+  return customFetch<postQuestcenterMedicalTemplateDeleteTemplateDepaResponse>(
+    getPostQuestcenterMedicalTemplateDeleteTemplateDepaUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op493PostQuestcenterMedicalTemplateDeleteTemplateDepaBody),
+      body: JSON.stringify(postQuestcenterMedicalTemplateDeleteTemplateDepaBody),
     }
   )
 }
 
-export const getOp493PostQuestcenterMedicalTemplateDeleteTemplateDepaMutationOptions = <
+export const getPostQuestcenterMedicalTemplateDeleteTemplateDepaMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op493PostQuestcenterMedicalTemplateDeleteTemplateDepa>>,
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplateDeleteTemplateDepa>>,
     TError,
-    { data?: Op493PostQuestcenterMedicalTemplateDeleteTemplateDepaBody },
+    { data?: PostQuestcenterMedicalTemplateDeleteTemplateDepaBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op493PostQuestcenterMedicalTemplateDeleteTemplateDepa>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateDeleteTemplateDepa>>,
   TError,
-  { data?: Op493PostQuestcenterMedicalTemplateDeleteTemplateDepaBody },
+  { data?: PostQuestcenterMedicalTemplateDeleteTemplateDepaBody },
   TContext
 > => {
-  const mutationKey = ['op493PostQuestcenterMedicalTemplateDeleteTemplateDepa']
+  const mutationKey = ['postQuestcenterMedicalTemplateDeleteTemplateDepa']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -8297,67 +8171,67 @@ export const getOp493PostQuestcenterMedicalTemplateDeleteTemplateDepaMutationOpt
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op493PostQuestcenterMedicalTemplateDeleteTemplateDepa>>,
-    { data?: Op493PostQuestcenterMedicalTemplateDeleteTemplateDepaBody }
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplateDeleteTemplateDepa>>,
+    { data?: PostQuestcenterMedicalTemplateDeleteTemplateDepaBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op493PostQuestcenterMedicalTemplateDeleteTemplateDepa(data)
+    return postQuestcenterMedicalTemplateDeleteTemplateDepa(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op493PostQuestcenterMedicalTemplateDeleteTemplateDepaMutationResult = NonNullable<
-  Awaited<ReturnType<typeof op493PostQuestcenterMedicalTemplateDeleteTemplateDepa>>
+export type PostQuestcenterMedicalTemplateDeleteTemplateDepaMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateDeleteTemplateDepa>>
 >
-export type Op493PostQuestcenterMedicalTemplateDeleteTemplateDepaMutationBody =
-  | Op493PostQuestcenterMedicalTemplateDeleteTemplateDepaBody
+export type PostQuestcenterMedicalTemplateDeleteTemplateDepaMutationBody =
+  | PostQuestcenterMedicalTemplateDeleteTemplateDepaBody
   | undefined
-export type Op493PostQuestcenterMedicalTemplateDeleteTemplateDepaMutationError = ErrorType<unknown>
+export type PostQuestcenterMedicalTemplateDeleteTemplateDepaMutationError = ErrorType<unknown>
 
 /**
  * @summary 模版删除科室
  */
-export const useOp493PostQuestcenterMedicalTemplateDeleteTemplateDepa = <
+export const usePostQuestcenterMedicalTemplateDeleteTemplateDepa = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op493PostQuestcenterMedicalTemplateDeleteTemplateDepa>>,
+      Awaited<ReturnType<typeof postQuestcenterMedicalTemplateDeleteTemplateDepa>>,
       TError,
-      { data?: Op493PostQuestcenterMedicalTemplateDeleteTemplateDepaBody },
+      { data?: PostQuestcenterMedicalTemplateDeleteTemplateDepaBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op493PostQuestcenterMedicalTemplateDeleteTemplateDepa>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateDeleteTemplateDepa>>,
   TError,
-  { data?: Op493PostQuestcenterMedicalTemplateDeleteTemplateDepaBody },
+  { data?: PostQuestcenterMedicalTemplateDeleteTemplateDepaBody },
   TContext
 > => {
   return useMutation(
-    getOp493PostQuestcenterMedicalTemplateDeleteTemplateDepaMutationOptions(options),
+    getPostQuestcenterMedicalTemplateDeleteTemplateDepaMutationOptions(options),
     queryClient
   )
 }
 
-export type op434PostQuestcenterMedicalTemplateDeleteTemplateParagraphResponse200 = {
-  data: Op434PostQuestcenterMedicalTemplateDeleteTemplateParagraph200
+export type postQuestcenterMedicalTemplateDeleteTemplateParagraphResponse200 = {
+  data: PostQuestcenterMedicalTemplateDeleteTemplateParagraph200
   status: 200
 }
 
-export type op434PostQuestcenterMedicalTemplateDeleteTemplateParagraphResponseSuccess =
-  op434PostQuestcenterMedicalTemplateDeleteTemplateParagraphResponse200 & {
+export type postQuestcenterMedicalTemplateDeleteTemplateParagraphResponseSuccess =
+  postQuestcenterMedicalTemplateDeleteTemplateParagraphResponse200 & {
     headers: Headers
   }
 
-export type op434PostQuestcenterMedicalTemplateDeleteTemplateParagraphResponse =
-  op434PostQuestcenterMedicalTemplateDeleteTemplateParagraphResponseSuccess
+export type postQuestcenterMedicalTemplateDeleteTemplateParagraphResponse =
+  postQuestcenterMedicalTemplateDeleteTemplateParagraphResponseSuccess
 
-export const getOp434PostQuestcenterMedicalTemplateDeleteTemplateParagraphUrl = () => {
+export const getPostQuestcenterMedicalTemplateDeleteTemplateParagraphUrl = () => {
   return `/questcenter/medical_template/delete_template_paragraph`
 }
 
@@ -8365,38 +8239,38 @@ export const getOp434PostQuestcenterMedicalTemplateDeleteTemplateParagraphUrl = 
  * 删除病历段落
  * @summary 删除病历段落
  */
-export const op434PostQuestcenterMedicalTemplateDeleteTemplateParagraph = async (
-  op434PostQuestcenterMedicalTemplateDeleteTemplateParagraphBody?: Op434PostQuestcenterMedicalTemplateDeleteTemplateParagraphBody,
+export const postQuestcenterMedicalTemplateDeleteTemplateParagraph = async (
+  postQuestcenterMedicalTemplateDeleteTemplateParagraphBody?: PostQuestcenterMedicalTemplateDeleteTemplateParagraphBody,
   options?: RequestInit
-): Promise<op434PostQuestcenterMedicalTemplateDeleteTemplateParagraphResponse> => {
-  return customFetch<op434PostQuestcenterMedicalTemplateDeleteTemplateParagraphResponse>(
-    getOp434PostQuestcenterMedicalTemplateDeleteTemplateParagraphUrl(),
+): Promise<postQuestcenterMedicalTemplateDeleteTemplateParagraphResponse> => {
+  return customFetch<postQuestcenterMedicalTemplateDeleteTemplateParagraphResponse>(
+    getPostQuestcenterMedicalTemplateDeleteTemplateParagraphUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op434PostQuestcenterMedicalTemplateDeleteTemplateParagraphBody),
+      body: JSON.stringify(postQuestcenterMedicalTemplateDeleteTemplateParagraphBody),
     }
   )
 }
 
-export const getOp434PostQuestcenterMedicalTemplateDeleteTemplateParagraphMutationOptions = <
+export const getPostQuestcenterMedicalTemplateDeleteTemplateParagraphMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op434PostQuestcenterMedicalTemplateDeleteTemplateParagraph>>,
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplateDeleteTemplateParagraph>>,
     TError,
-    { data?: Op434PostQuestcenterMedicalTemplateDeleteTemplateParagraphBody },
+    { data?: PostQuestcenterMedicalTemplateDeleteTemplateParagraphBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op434PostQuestcenterMedicalTemplateDeleteTemplateParagraph>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateDeleteTemplateParagraph>>,
   TError,
-  { data?: Op434PostQuestcenterMedicalTemplateDeleteTemplateParagraphBody },
+  { data?: PostQuestcenterMedicalTemplateDeleteTemplateParagraphBody },
   TContext
 > => {
-  const mutationKey = ['op434PostQuestcenterMedicalTemplateDeleteTemplateParagraph']
+  const mutationKey = ['postQuestcenterMedicalTemplateDeleteTemplateParagraph']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -8404,69 +8278,68 @@ export const getOp434PostQuestcenterMedicalTemplateDeleteTemplateParagraphMutati
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op434PostQuestcenterMedicalTemplateDeleteTemplateParagraph>>,
-    { data?: Op434PostQuestcenterMedicalTemplateDeleteTemplateParagraphBody }
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplateDeleteTemplateParagraph>>,
+    { data?: PostQuestcenterMedicalTemplateDeleteTemplateParagraphBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op434PostQuestcenterMedicalTemplateDeleteTemplateParagraph(data)
+    return postQuestcenterMedicalTemplateDeleteTemplateParagraph(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op434PostQuestcenterMedicalTemplateDeleteTemplateParagraphMutationResult = NonNullable<
-  Awaited<ReturnType<typeof op434PostQuestcenterMedicalTemplateDeleteTemplateParagraph>>
+export type PostQuestcenterMedicalTemplateDeleteTemplateParagraphMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateDeleteTemplateParagraph>>
 >
-export type Op434PostQuestcenterMedicalTemplateDeleteTemplateParagraphMutationBody =
-  | Op434PostQuestcenterMedicalTemplateDeleteTemplateParagraphBody
+export type PostQuestcenterMedicalTemplateDeleteTemplateParagraphMutationBody =
+  | PostQuestcenterMedicalTemplateDeleteTemplateParagraphBody
   | undefined
-export type Op434PostQuestcenterMedicalTemplateDeleteTemplateParagraphMutationError =
-  ErrorType<unknown>
+export type PostQuestcenterMedicalTemplateDeleteTemplateParagraphMutationError = ErrorType<unknown>
 
 /**
  * @summary 删除病历段落
  */
-export const useOp434PostQuestcenterMedicalTemplateDeleteTemplateParagraph = <
+export const usePostQuestcenterMedicalTemplateDeleteTemplateParagraph = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op434PostQuestcenterMedicalTemplateDeleteTemplateParagraph>>,
+      Awaited<ReturnType<typeof postQuestcenterMedicalTemplateDeleteTemplateParagraph>>,
       TError,
-      { data?: Op434PostQuestcenterMedicalTemplateDeleteTemplateParagraphBody },
+      { data?: PostQuestcenterMedicalTemplateDeleteTemplateParagraphBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op434PostQuestcenterMedicalTemplateDeleteTemplateParagraph>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateDeleteTemplateParagraph>>,
   TError,
-  { data?: Op434PostQuestcenterMedicalTemplateDeleteTemplateParagraphBody },
+  { data?: PostQuestcenterMedicalTemplateDeleteTemplateParagraphBody },
   TContext
 > => {
   return useMutation(
-    getOp434PostQuestcenterMedicalTemplateDeleteTemplateParagraphMutationOptions(options),
+    getPostQuestcenterMedicalTemplateDeleteTemplateParagraphMutationOptions(options),
     queryClient
   )
 }
 
-export type op451GetQuestcenterMedicalTemplateFindParagraphCodeListResponse200 = {
-  data: Op451GetQuestcenterMedicalTemplateFindParagraphCodeList200
+export type getQuestcenterMedicalTemplateFindParagraphCodeListResponse200 = {
+  data: GetQuestcenterMedicalTemplateFindParagraphCodeList200
   status: 200
 }
 
-export type op451GetQuestcenterMedicalTemplateFindParagraphCodeListResponseSuccess =
-  op451GetQuestcenterMedicalTemplateFindParagraphCodeListResponse200 & {
+export type getQuestcenterMedicalTemplateFindParagraphCodeListResponseSuccess =
+  getQuestcenterMedicalTemplateFindParagraphCodeListResponse200 & {
     headers: Headers
   }
 
-export type op451GetQuestcenterMedicalTemplateFindParagraphCodeListResponse =
-  op451GetQuestcenterMedicalTemplateFindParagraphCodeListResponseSuccess
+export type getQuestcenterMedicalTemplateFindParagraphCodeListResponse =
+  getQuestcenterMedicalTemplateFindParagraphCodeListResponseSuccess
 
-export const getOp451GetQuestcenterMedicalTemplateFindParagraphCodeListUrl = (
-  params: Op451GetQuestcenterMedicalTemplateFindParagraphCodeListParams
+export const getGetQuestcenterMedicalTemplateFindParagraphCodeListUrl = (
+  params: GetQuestcenterMedicalTemplateFindParagraphCodeListParams
 ) => {
   const normalizedParams = new URLSearchParams()
 
@@ -8487,12 +8360,12 @@ export const getOp451GetQuestcenterMedicalTemplateFindParagraphCodeListUrl = (
  * 查找病历指定段落
  * @summary 查找病历指定段落
  */
-export const op451GetQuestcenterMedicalTemplateFindParagraphCodeList = async (
-  params: Op451GetQuestcenterMedicalTemplateFindParagraphCodeListParams,
+export const getQuestcenterMedicalTemplateFindParagraphCodeList = async (
+  params: GetQuestcenterMedicalTemplateFindParagraphCodeListParams,
   options?: RequestInit
-): Promise<op451GetQuestcenterMedicalTemplateFindParagraphCodeListResponse> => {
-  return customFetch<op451GetQuestcenterMedicalTemplateFindParagraphCodeListResponse>(
-    getOp451GetQuestcenterMedicalTemplateFindParagraphCodeListUrl(params),
+): Promise<getQuestcenterMedicalTemplateFindParagraphCodeListResponse> => {
+  return customFetch<getQuestcenterMedicalTemplateFindParagraphCodeListResponse>(
+    getGetQuestcenterMedicalTemplateFindParagraphCodeListUrl(params),
     {
       ...options,
       method: 'GET',
@@ -8500,8 +8373,8 @@ export const op451GetQuestcenterMedicalTemplateFindParagraphCodeList = async (
   )
 }
 
-export const getOp451GetQuestcenterMedicalTemplateFindParagraphCodeListQueryKey = (
-  params?: Op451GetQuestcenterMedicalTemplateFindParagraphCodeListParams
+export const getGetQuestcenterMedicalTemplateFindParagraphCodeListQueryKey = (
+  params?: GetQuestcenterMedicalTemplateFindParagraphCodeListParams
 ) => {
   return [
     `/questcenter/medical_template/find_paragraph_code_list`,
@@ -8509,15 +8382,15 @@ export const getOp451GetQuestcenterMedicalTemplateFindParagraphCodeListQueryKey 
   ] as const
 }
 
-export const getOp451GetQuestcenterMedicalTemplateFindParagraphCodeListQueryOptions = <
-  TData = Awaited<ReturnType<typeof op451GetQuestcenterMedicalTemplateFindParagraphCodeList>>,
+export const getGetQuestcenterMedicalTemplateFindParagraphCodeListQueryOptions = <
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplateFindParagraphCodeList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op451GetQuestcenterMedicalTemplateFindParagraphCodeListParams,
+  params: GetQuestcenterMedicalTemplateFindParagraphCodeListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op451GetQuestcenterMedicalTemplateFindParagraphCodeList>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplateFindParagraphCodeList>>,
         TError,
         TData
       >
@@ -8527,82 +8400,81 @@ export const getOp451GetQuestcenterMedicalTemplateFindParagraphCodeListQueryOpti
   const { query: queryOptions } = options ?? {}
 
   const queryKey =
-    queryOptions?.queryKey ??
-    getOp451GetQuestcenterMedicalTemplateFindParagraphCodeListQueryKey(params)
+    queryOptions?.queryKey ?? getGetQuestcenterMedicalTemplateFindParagraphCodeListQueryKey(params)
 
   const queryFn: QueryFunction<
-    Awaited<ReturnType<typeof op451GetQuestcenterMedicalTemplateFindParagraphCodeList>>
-  > = ({ signal }) => op451GetQuestcenterMedicalTemplateFindParagraphCodeList(params, { signal })
+    Awaited<ReturnType<typeof getQuestcenterMedicalTemplateFindParagraphCodeList>>
+  > = ({ signal }) => getQuestcenterMedicalTemplateFindParagraphCodeList(params, { signal })
 
   return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof op451GetQuestcenterMedicalTemplateFindParagraphCodeList>>,
+    Awaited<ReturnType<typeof getQuestcenterMedicalTemplateFindParagraphCodeList>>,
     TError,
     TData
   > & { queryKey: DataTag<QueryKey, TData, TError> }
 }
 
-export type Op451GetQuestcenterMedicalTemplateFindParagraphCodeListQueryResult = NonNullable<
-  Awaited<ReturnType<typeof op451GetQuestcenterMedicalTemplateFindParagraphCodeList>>
+export type GetQuestcenterMedicalTemplateFindParagraphCodeListQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getQuestcenterMedicalTemplateFindParagraphCodeList>>
 >
-export type Op451GetQuestcenterMedicalTemplateFindParagraphCodeListQueryError = ErrorType<unknown>
+export type GetQuestcenterMedicalTemplateFindParagraphCodeListQueryError = ErrorType<unknown>
 
-export function useOp451GetQuestcenterMedicalTemplateFindParagraphCodeList<
-  TData = Awaited<ReturnType<typeof op451GetQuestcenterMedicalTemplateFindParagraphCodeList>>,
+export function useGetQuestcenterMedicalTemplateFindParagraphCodeList<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplateFindParagraphCodeList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op451GetQuestcenterMedicalTemplateFindParagraphCodeListParams,
+  params: GetQuestcenterMedicalTemplateFindParagraphCodeListParams,
   options: {
     query: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op451GetQuestcenterMedicalTemplateFindParagraphCodeList>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplateFindParagraphCodeList>>,
         TError,
         TData
       >
     > &
       Pick<
         DefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op451GetQuestcenterMedicalTemplateFindParagraphCodeList>>,
+          Awaited<ReturnType<typeof getQuestcenterMedicalTemplateFindParagraphCodeList>>,
           TError,
-          Awaited<ReturnType<typeof op451GetQuestcenterMedicalTemplateFindParagraphCodeList>>
+          Awaited<ReturnType<typeof getQuestcenterMedicalTemplateFindParagraphCodeList>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp451GetQuestcenterMedicalTemplateFindParagraphCodeList<
-  TData = Awaited<ReturnType<typeof op451GetQuestcenterMedicalTemplateFindParagraphCodeList>>,
+export function useGetQuestcenterMedicalTemplateFindParagraphCodeList<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplateFindParagraphCodeList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op451GetQuestcenterMedicalTemplateFindParagraphCodeListParams,
+  params: GetQuestcenterMedicalTemplateFindParagraphCodeListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op451GetQuestcenterMedicalTemplateFindParagraphCodeList>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplateFindParagraphCodeList>>,
         TError,
         TData
       >
     > &
       Pick<
         UndefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op451GetQuestcenterMedicalTemplateFindParagraphCodeList>>,
+          Awaited<ReturnType<typeof getQuestcenterMedicalTemplateFindParagraphCodeList>>,
           TError,
-          Awaited<ReturnType<typeof op451GetQuestcenterMedicalTemplateFindParagraphCodeList>>
+          Awaited<ReturnType<typeof getQuestcenterMedicalTemplateFindParagraphCodeList>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp451GetQuestcenterMedicalTemplateFindParagraphCodeList<
-  TData = Awaited<ReturnType<typeof op451GetQuestcenterMedicalTemplateFindParagraphCodeList>>,
+export function useGetQuestcenterMedicalTemplateFindParagraphCodeList<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplateFindParagraphCodeList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op451GetQuestcenterMedicalTemplateFindParagraphCodeListParams,
+  params: GetQuestcenterMedicalTemplateFindParagraphCodeListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op451GetQuestcenterMedicalTemplateFindParagraphCodeList>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplateFindParagraphCodeList>>,
         TError,
         TData
       >
@@ -8614,15 +8486,15 @@ export function useOp451GetQuestcenterMedicalTemplateFindParagraphCodeList<
  * @summary 查找病历指定段落
  */
 
-export function useOp451GetQuestcenterMedicalTemplateFindParagraphCodeList<
-  TData = Awaited<ReturnType<typeof op451GetQuestcenterMedicalTemplateFindParagraphCodeList>>,
+export function useGetQuestcenterMedicalTemplateFindParagraphCodeList<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplateFindParagraphCodeList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op451GetQuestcenterMedicalTemplateFindParagraphCodeListParams,
+  params: GetQuestcenterMedicalTemplateFindParagraphCodeListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op451GetQuestcenterMedicalTemplateFindParagraphCodeList>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplateFindParagraphCodeList>>,
         TError,
         TData
       >
@@ -8630,7 +8502,7 @@ export function useOp451GetQuestcenterMedicalTemplateFindParagraphCodeList<
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
-  const queryOptions = getOp451GetQuestcenterMedicalTemplateFindParagraphCodeListQueryOptions(
+  const queryOptions = getGetQuestcenterMedicalTemplateFindParagraphCodeListQueryOptions(
     params,
     options
   )
@@ -8642,21 +8514,21 @@ export function useOp451GetQuestcenterMedicalTemplateFindParagraphCodeList<
   return { ...query, queryKey: queryOptions.queryKey }
 }
 
-export type op471GetQuestcenterMedicalTemplateFindParagraphCodeTreeResponse200 = {
-  data: Op471GetQuestcenterMedicalTemplateFindParagraphCodeTree200
+export type getQuestcenterMedicalTemplateFindParagraphCodeTreeResponse200 = {
+  data: GetQuestcenterMedicalTemplateFindParagraphCodeTree200
   status: 200
 }
 
-export type op471GetQuestcenterMedicalTemplateFindParagraphCodeTreeResponseSuccess =
-  op471GetQuestcenterMedicalTemplateFindParagraphCodeTreeResponse200 & {
+export type getQuestcenterMedicalTemplateFindParagraphCodeTreeResponseSuccess =
+  getQuestcenterMedicalTemplateFindParagraphCodeTreeResponse200 & {
     headers: Headers
   }
 
-export type op471GetQuestcenterMedicalTemplateFindParagraphCodeTreeResponse =
-  op471GetQuestcenterMedicalTemplateFindParagraphCodeTreeResponseSuccess
+export type getQuestcenterMedicalTemplateFindParagraphCodeTreeResponse =
+  getQuestcenterMedicalTemplateFindParagraphCodeTreeResponseSuccess
 
-export const getOp471GetQuestcenterMedicalTemplateFindParagraphCodeTreeUrl = (
-  params: Op471GetQuestcenterMedicalTemplateFindParagraphCodeTreeParams
+export const getGetQuestcenterMedicalTemplateFindParagraphCodeTreeUrl = (
+  params: GetQuestcenterMedicalTemplateFindParagraphCodeTreeParams
 ) => {
   const normalizedParams = new URLSearchParams()
 
@@ -8677,12 +8549,12 @@ export const getOp471GetQuestcenterMedicalTemplateFindParagraphCodeTreeUrl = (
  * 获取病历段落编码树
  * @summary 获取病历段落编码树
  */
-export const op471GetQuestcenterMedicalTemplateFindParagraphCodeTree = async (
-  params: Op471GetQuestcenterMedicalTemplateFindParagraphCodeTreeParams,
+export const getQuestcenterMedicalTemplateFindParagraphCodeTree = async (
+  params: GetQuestcenterMedicalTemplateFindParagraphCodeTreeParams,
   options?: RequestInit
-): Promise<op471GetQuestcenterMedicalTemplateFindParagraphCodeTreeResponse> => {
-  return customFetch<op471GetQuestcenterMedicalTemplateFindParagraphCodeTreeResponse>(
-    getOp471GetQuestcenterMedicalTemplateFindParagraphCodeTreeUrl(params),
+): Promise<getQuestcenterMedicalTemplateFindParagraphCodeTreeResponse> => {
+  return customFetch<getQuestcenterMedicalTemplateFindParagraphCodeTreeResponse>(
+    getGetQuestcenterMedicalTemplateFindParagraphCodeTreeUrl(params),
     {
       ...options,
       method: 'GET',
@@ -8690,8 +8562,8 @@ export const op471GetQuestcenterMedicalTemplateFindParagraphCodeTree = async (
   )
 }
 
-export const getOp471GetQuestcenterMedicalTemplateFindParagraphCodeTreeQueryKey = (
-  params?: Op471GetQuestcenterMedicalTemplateFindParagraphCodeTreeParams
+export const getGetQuestcenterMedicalTemplateFindParagraphCodeTreeQueryKey = (
+  params?: GetQuestcenterMedicalTemplateFindParagraphCodeTreeParams
 ) => {
   return [
     `/questcenter/medical_template/find_paragraph_code_tree`,
@@ -8699,15 +8571,15 @@ export const getOp471GetQuestcenterMedicalTemplateFindParagraphCodeTreeQueryKey 
   ] as const
 }
 
-export const getOp471GetQuestcenterMedicalTemplateFindParagraphCodeTreeQueryOptions = <
-  TData = Awaited<ReturnType<typeof op471GetQuestcenterMedicalTemplateFindParagraphCodeTree>>,
+export const getGetQuestcenterMedicalTemplateFindParagraphCodeTreeQueryOptions = <
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplateFindParagraphCodeTree>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op471GetQuestcenterMedicalTemplateFindParagraphCodeTreeParams,
+  params: GetQuestcenterMedicalTemplateFindParagraphCodeTreeParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op471GetQuestcenterMedicalTemplateFindParagraphCodeTree>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplateFindParagraphCodeTree>>,
         TError,
         TData
       >
@@ -8717,82 +8589,81 @@ export const getOp471GetQuestcenterMedicalTemplateFindParagraphCodeTreeQueryOpti
   const { query: queryOptions } = options ?? {}
 
   const queryKey =
-    queryOptions?.queryKey ??
-    getOp471GetQuestcenterMedicalTemplateFindParagraphCodeTreeQueryKey(params)
+    queryOptions?.queryKey ?? getGetQuestcenterMedicalTemplateFindParagraphCodeTreeQueryKey(params)
 
   const queryFn: QueryFunction<
-    Awaited<ReturnType<typeof op471GetQuestcenterMedicalTemplateFindParagraphCodeTree>>
-  > = ({ signal }) => op471GetQuestcenterMedicalTemplateFindParagraphCodeTree(params, { signal })
+    Awaited<ReturnType<typeof getQuestcenterMedicalTemplateFindParagraphCodeTree>>
+  > = ({ signal }) => getQuestcenterMedicalTemplateFindParagraphCodeTree(params, { signal })
 
   return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof op471GetQuestcenterMedicalTemplateFindParagraphCodeTree>>,
+    Awaited<ReturnType<typeof getQuestcenterMedicalTemplateFindParagraphCodeTree>>,
     TError,
     TData
   > & { queryKey: DataTag<QueryKey, TData, TError> }
 }
 
-export type Op471GetQuestcenterMedicalTemplateFindParagraphCodeTreeQueryResult = NonNullable<
-  Awaited<ReturnType<typeof op471GetQuestcenterMedicalTemplateFindParagraphCodeTree>>
+export type GetQuestcenterMedicalTemplateFindParagraphCodeTreeQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getQuestcenterMedicalTemplateFindParagraphCodeTree>>
 >
-export type Op471GetQuestcenterMedicalTemplateFindParagraphCodeTreeQueryError = ErrorType<unknown>
+export type GetQuestcenterMedicalTemplateFindParagraphCodeTreeQueryError = ErrorType<unknown>
 
-export function useOp471GetQuestcenterMedicalTemplateFindParagraphCodeTree<
-  TData = Awaited<ReturnType<typeof op471GetQuestcenterMedicalTemplateFindParagraphCodeTree>>,
+export function useGetQuestcenterMedicalTemplateFindParagraphCodeTree<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplateFindParagraphCodeTree>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op471GetQuestcenterMedicalTemplateFindParagraphCodeTreeParams,
+  params: GetQuestcenterMedicalTemplateFindParagraphCodeTreeParams,
   options: {
     query: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op471GetQuestcenterMedicalTemplateFindParagraphCodeTree>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplateFindParagraphCodeTree>>,
         TError,
         TData
       >
     > &
       Pick<
         DefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op471GetQuestcenterMedicalTemplateFindParagraphCodeTree>>,
+          Awaited<ReturnType<typeof getQuestcenterMedicalTemplateFindParagraphCodeTree>>,
           TError,
-          Awaited<ReturnType<typeof op471GetQuestcenterMedicalTemplateFindParagraphCodeTree>>
+          Awaited<ReturnType<typeof getQuestcenterMedicalTemplateFindParagraphCodeTree>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp471GetQuestcenterMedicalTemplateFindParagraphCodeTree<
-  TData = Awaited<ReturnType<typeof op471GetQuestcenterMedicalTemplateFindParagraphCodeTree>>,
+export function useGetQuestcenterMedicalTemplateFindParagraphCodeTree<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplateFindParagraphCodeTree>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op471GetQuestcenterMedicalTemplateFindParagraphCodeTreeParams,
+  params: GetQuestcenterMedicalTemplateFindParagraphCodeTreeParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op471GetQuestcenterMedicalTemplateFindParagraphCodeTree>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplateFindParagraphCodeTree>>,
         TError,
         TData
       >
     > &
       Pick<
         UndefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op471GetQuestcenterMedicalTemplateFindParagraphCodeTree>>,
+          Awaited<ReturnType<typeof getQuestcenterMedicalTemplateFindParagraphCodeTree>>,
           TError,
-          Awaited<ReturnType<typeof op471GetQuestcenterMedicalTemplateFindParagraphCodeTree>>
+          Awaited<ReturnType<typeof getQuestcenterMedicalTemplateFindParagraphCodeTree>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp471GetQuestcenterMedicalTemplateFindParagraphCodeTree<
-  TData = Awaited<ReturnType<typeof op471GetQuestcenterMedicalTemplateFindParagraphCodeTree>>,
+export function useGetQuestcenterMedicalTemplateFindParagraphCodeTree<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplateFindParagraphCodeTree>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op471GetQuestcenterMedicalTemplateFindParagraphCodeTreeParams,
+  params: GetQuestcenterMedicalTemplateFindParagraphCodeTreeParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op471GetQuestcenterMedicalTemplateFindParagraphCodeTree>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplateFindParagraphCodeTree>>,
         TError,
         TData
       >
@@ -8804,15 +8675,15 @@ export function useOp471GetQuestcenterMedicalTemplateFindParagraphCodeTree<
  * @summary 获取病历段落编码树
  */
 
-export function useOp471GetQuestcenterMedicalTemplateFindParagraphCodeTree<
-  TData = Awaited<ReturnType<typeof op471GetQuestcenterMedicalTemplateFindParagraphCodeTree>>,
+export function useGetQuestcenterMedicalTemplateFindParagraphCodeTree<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplateFindParagraphCodeTree>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op471GetQuestcenterMedicalTemplateFindParagraphCodeTreeParams,
+  params: GetQuestcenterMedicalTemplateFindParagraphCodeTreeParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op471GetQuestcenterMedicalTemplateFindParagraphCodeTree>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplateFindParagraphCodeTree>>,
         TError,
         TData
       >
@@ -8820,7 +8691,7 @@ export function useOp471GetQuestcenterMedicalTemplateFindParagraphCodeTree<
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
-  const queryOptions = getOp471GetQuestcenterMedicalTemplateFindParagraphCodeTreeQueryOptions(
+  const queryOptions = getGetQuestcenterMedicalTemplateFindParagraphCodeTreeQueryOptions(
     params,
     options
   )
@@ -8832,21 +8703,21 @@ export function useOp471GetQuestcenterMedicalTemplateFindParagraphCodeTree<
   return { ...query, queryKey: queryOptions.queryKey }
 }
 
-export type op491GetQuestcenterMedicalTemplateGetSearchTemplateDeptResponse200 = {
-  data: Op491GetQuestcenterMedicalTemplateGetSearchTemplateDept200
+export type getQuestcenterMedicalTemplateGetSearchTemplateDeptResponse200 = {
+  data: GetQuestcenterMedicalTemplateGetSearchTemplateDept200
   status: 200
 }
 
-export type op491GetQuestcenterMedicalTemplateGetSearchTemplateDeptResponseSuccess =
-  op491GetQuestcenterMedicalTemplateGetSearchTemplateDeptResponse200 & {
+export type getQuestcenterMedicalTemplateGetSearchTemplateDeptResponseSuccess =
+  getQuestcenterMedicalTemplateGetSearchTemplateDeptResponse200 & {
     headers: Headers
   }
 
-export type op491GetQuestcenterMedicalTemplateGetSearchTemplateDeptResponse =
-  op491GetQuestcenterMedicalTemplateGetSearchTemplateDeptResponseSuccess
+export type getQuestcenterMedicalTemplateGetSearchTemplateDeptResponse =
+  getQuestcenterMedicalTemplateGetSearchTemplateDeptResponseSuccess
 
-export const getOp491GetQuestcenterMedicalTemplateGetSearchTemplateDeptUrl = (
-  params: Op491GetQuestcenterMedicalTemplateGetSearchTemplateDeptParams
+export const getGetQuestcenterMedicalTemplateGetSearchTemplateDeptUrl = (
+  params: GetQuestcenterMedicalTemplateGetSearchTemplateDeptParams
 ) => {
   const normalizedParams = new URLSearchParams()
 
@@ -8867,12 +8738,12 @@ export const getOp491GetQuestcenterMedicalTemplateGetSearchTemplateDeptUrl = (
  * 获取未添加的科室列表
  * @summary 获取未添加的科室列表
  */
-export const op491GetQuestcenterMedicalTemplateGetSearchTemplateDept = async (
-  params: Op491GetQuestcenterMedicalTemplateGetSearchTemplateDeptParams,
+export const getQuestcenterMedicalTemplateGetSearchTemplateDept = async (
+  params: GetQuestcenterMedicalTemplateGetSearchTemplateDeptParams,
   options?: RequestInit
-): Promise<op491GetQuestcenterMedicalTemplateGetSearchTemplateDeptResponse> => {
-  return customFetch<op491GetQuestcenterMedicalTemplateGetSearchTemplateDeptResponse>(
-    getOp491GetQuestcenterMedicalTemplateGetSearchTemplateDeptUrl(params),
+): Promise<getQuestcenterMedicalTemplateGetSearchTemplateDeptResponse> => {
+  return customFetch<getQuestcenterMedicalTemplateGetSearchTemplateDeptResponse>(
+    getGetQuestcenterMedicalTemplateGetSearchTemplateDeptUrl(params),
     {
       ...options,
       method: 'GET',
@@ -8880,8 +8751,8 @@ export const op491GetQuestcenterMedicalTemplateGetSearchTemplateDept = async (
   )
 }
 
-export const getOp491GetQuestcenterMedicalTemplateGetSearchTemplateDeptQueryKey = (
-  params?: Op491GetQuestcenterMedicalTemplateGetSearchTemplateDeptParams
+export const getGetQuestcenterMedicalTemplateGetSearchTemplateDeptQueryKey = (
+  params?: GetQuestcenterMedicalTemplateGetSearchTemplateDeptParams
 ) => {
   return [
     `/questcenter/medical_template/get_search_template_dept`,
@@ -8889,15 +8760,15 @@ export const getOp491GetQuestcenterMedicalTemplateGetSearchTemplateDeptQueryKey 
   ] as const
 }
 
-export const getOp491GetQuestcenterMedicalTemplateGetSearchTemplateDeptQueryOptions = <
-  TData = Awaited<ReturnType<typeof op491GetQuestcenterMedicalTemplateGetSearchTemplateDept>>,
+export const getGetQuestcenterMedicalTemplateGetSearchTemplateDeptQueryOptions = <
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetSearchTemplateDept>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op491GetQuestcenterMedicalTemplateGetSearchTemplateDeptParams,
+  params: GetQuestcenterMedicalTemplateGetSearchTemplateDeptParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op491GetQuestcenterMedicalTemplateGetSearchTemplateDept>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetSearchTemplateDept>>,
         TError,
         TData
       >
@@ -8907,82 +8778,81 @@ export const getOp491GetQuestcenterMedicalTemplateGetSearchTemplateDeptQueryOpti
   const { query: queryOptions } = options ?? {}
 
   const queryKey =
-    queryOptions?.queryKey ??
-    getOp491GetQuestcenterMedicalTemplateGetSearchTemplateDeptQueryKey(params)
+    queryOptions?.queryKey ?? getGetQuestcenterMedicalTemplateGetSearchTemplateDeptQueryKey(params)
 
   const queryFn: QueryFunction<
-    Awaited<ReturnType<typeof op491GetQuestcenterMedicalTemplateGetSearchTemplateDept>>
-  > = ({ signal }) => op491GetQuestcenterMedicalTemplateGetSearchTemplateDept(params, { signal })
+    Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetSearchTemplateDept>>
+  > = ({ signal }) => getQuestcenterMedicalTemplateGetSearchTemplateDept(params, { signal })
 
   return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof op491GetQuestcenterMedicalTemplateGetSearchTemplateDept>>,
+    Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetSearchTemplateDept>>,
     TError,
     TData
   > & { queryKey: DataTag<QueryKey, TData, TError> }
 }
 
-export type Op491GetQuestcenterMedicalTemplateGetSearchTemplateDeptQueryResult = NonNullable<
-  Awaited<ReturnType<typeof op491GetQuestcenterMedicalTemplateGetSearchTemplateDept>>
+export type GetQuestcenterMedicalTemplateGetSearchTemplateDeptQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetSearchTemplateDept>>
 >
-export type Op491GetQuestcenterMedicalTemplateGetSearchTemplateDeptQueryError = ErrorType<unknown>
+export type GetQuestcenterMedicalTemplateGetSearchTemplateDeptQueryError = ErrorType<unknown>
 
-export function useOp491GetQuestcenterMedicalTemplateGetSearchTemplateDept<
-  TData = Awaited<ReturnType<typeof op491GetQuestcenterMedicalTemplateGetSearchTemplateDept>>,
+export function useGetQuestcenterMedicalTemplateGetSearchTemplateDept<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetSearchTemplateDept>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op491GetQuestcenterMedicalTemplateGetSearchTemplateDeptParams,
+  params: GetQuestcenterMedicalTemplateGetSearchTemplateDeptParams,
   options: {
     query: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op491GetQuestcenterMedicalTemplateGetSearchTemplateDept>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetSearchTemplateDept>>,
         TError,
         TData
       >
     > &
       Pick<
         DefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op491GetQuestcenterMedicalTemplateGetSearchTemplateDept>>,
+          Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetSearchTemplateDept>>,
           TError,
-          Awaited<ReturnType<typeof op491GetQuestcenterMedicalTemplateGetSearchTemplateDept>>
+          Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetSearchTemplateDept>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp491GetQuestcenterMedicalTemplateGetSearchTemplateDept<
-  TData = Awaited<ReturnType<typeof op491GetQuestcenterMedicalTemplateGetSearchTemplateDept>>,
+export function useGetQuestcenterMedicalTemplateGetSearchTemplateDept<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetSearchTemplateDept>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op491GetQuestcenterMedicalTemplateGetSearchTemplateDeptParams,
+  params: GetQuestcenterMedicalTemplateGetSearchTemplateDeptParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op491GetQuestcenterMedicalTemplateGetSearchTemplateDept>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetSearchTemplateDept>>,
         TError,
         TData
       >
     > &
       Pick<
         UndefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op491GetQuestcenterMedicalTemplateGetSearchTemplateDept>>,
+          Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetSearchTemplateDept>>,
           TError,
-          Awaited<ReturnType<typeof op491GetQuestcenterMedicalTemplateGetSearchTemplateDept>>
+          Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetSearchTemplateDept>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp491GetQuestcenterMedicalTemplateGetSearchTemplateDept<
-  TData = Awaited<ReturnType<typeof op491GetQuestcenterMedicalTemplateGetSearchTemplateDept>>,
+export function useGetQuestcenterMedicalTemplateGetSearchTemplateDept<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetSearchTemplateDept>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op491GetQuestcenterMedicalTemplateGetSearchTemplateDeptParams,
+  params: GetQuestcenterMedicalTemplateGetSearchTemplateDeptParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op491GetQuestcenterMedicalTemplateGetSearchTemplateDept>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetSearchTemplateDept>>,
         TError,
         TData
       >
@@ -8994,15 +8864,15 @@ export function useOp491GetQuestcenterMedicalTemplateGetSearchTemplateDept<
  * @summary 获取未添加的科室列表
  */
 
-export function useOp491GetQuestcenterMedicalTemplateGetSearchTemplateDept<
-  TData = Awaited<ReturnType<typeof op491GetQuestcenterMedicalTemplateGetSearchTemplateDept>>,
+export function useGetQuestcenterMedicalTemplateGetSearchTemplateDept<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetSearchTemplateDept>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op491GetQuestcenterMedicalTemplateGetSearchTemplateDeptParams,
+  params: GetQuestcenterMedicalTemplateGetSearchTemplateDeptParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op491GetQuestcenterMedicalTemplateGetSearchTemplateDept>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetSearchTemplateDept>>,
         TError,
         TData
       >
@@ -9010,7 +8880,7 @@ export function useOp491GetQuestcenterMedicalTemplateGetSearchTemplateDept<
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
-  const queryOptions = getOp491GetQuestcenterMedicalTemplateGetSearchTemplateDeptQueryOptions(
+  const queryOptions = getGetQuestcenterMedicalTemplateGetSearchTemplateDeptQueryOptions(
     params,
     options
   )
@@ -9022,21 +8892,21 @@ export function useOp491GetQuestcenterMedicalTemplateGetSearchTemplateDept<
   return { ...query, queryKey: queryOptions.queryKey }
 }
 
-export type op490GetQuestcenterMedicalTemplateGetTemplateDepaListResponse200 = {
-  data: Op490GetQuestcenterMedicalTemplateGetTemplateDepaList200
+export type getQuestcenterMedicalTemplateGetTemplateDepaListResponse200 = {
+  data: GetQuestcenterMedicalTemplateGetTemplateDepaList200
   status: 200
 }
 
-export type op490GetQuestcenterMedicalTemplateGetTemplateDepaListResponseSuccess =
-  op490GetQuestcenterMedicalTemplateGetTemplateDepaListResponse200 & {
+export type getQuestcenterMedicalTemplateGetTemplateDepaListResponseSuccess =
+  getQuestcenterMedicalTemplateGetTemplateDepaListResponse200 & {
     headers: Headers
   }
 
-export type op490GetQuestcenterMedicalTemplateGetTemplateDepaListResponse =
-  op490GetQuestcenterMedicalTemplateGetTemplateDepaListResponseSuccess
+export type getQuestcenterMedicalTemplateGetTemplateDepaListResponse =
+  getQuestcenterMedicalTemplateGetTemplateDepaListResponseSuccess
 
-export const getOp490GetQuestcenterMedicalTemplateGetTemplateDepaListUrl = (
-  params: Op490GetQuestcenterMedicalTemplateGetTemplateDepaListParams
+export const getGetQuestcenterMedicalTemplateGetTemplateDepaListUrl = (
+  params: GetQuestcenterMedicalTemplateGetTemplateDepaListParams
 ) => {
   const normalizedParams = new URLSearchParams()
 
@@ -9057,12 +8927,12 @@ export const getOp490GetQuestcenterMedicalTemplateGetTemplateDepaListUrl = (
  * 获取模版科室列表
  * @summary 获取模版科室列表
  */
-export const op490GetQuestcenterMedicalTemplateGetTemplateDepaList = async (
-  params: Op490GetQuestcenterMedicalTemplateGetTemplateDepaListParams,
+export const getQuestcenterMedicalTemplateGetTemplateDepaList = async (
+  params: GetQuestcenterMedicalTemplateGetTemplateDepaListParams,
   options?: RequestInit
-): Promise<op490GetQuestcenterMedicalTemplateGetTemplateDepaListResponse> => {
-  return customFetch<op490GetQuestcenterMedicalTemplateGetTemplateDepaListResponse>(
-    getOp490GetQuestcenterMedicalTemplateGetTemplateDepaListUrl(params),
+): Promise<getQuestcenterMedicalTemplateGetTemplateDepaListResponse> => {
+  return customFetch<getQuestcenterMedicalTemplateGetTemplateDepaListResponse>(
+    getGetQuestcenterMedicalTemplateGetTemplateDepaListUrl(params),
     {
       ...options,
       method: 'GET',
@@ -9070,8 +8940,8 @@ export const op490GetQuestcenterMedicalTemplateGetTemplateDepaList = async (
   )
 }
 
-export const getOp490GetQuestcenterMedicalTemplateGetTemplateDepaListQueryKey = (
-  params?: Op490GetQuestcenterMedicalTemplateGetTemplateDepaListParams
+export const getGetQuestcenterMedicalTemplateGetTemplateDepaListQueryKey = (
+  params?: GetQuestcenterMedicalTemplateGetTemplateDepaListParams
 ) => {
   return [
     `/questcenter/medical_template/get_template_depa_list`,
@@ -9079,15 +8949,15 @@ export const getOp490GetQuestcenterMedicalTemplateGetTemplateDepaListQueryKey = 
   ] as const
 }
 
-export const getOp490GetQuestcenterMedicalTemplateGetTemplateDepaListQueryOptions = <
-  TData = Awaited<ReturnType<typeof op490GetQuestcenterMedicalTemplateGetTemplateDepaList>>,
+export const getGetQuestcenterMedicalTemplateGetTemplateDepaListQueryOptions = <
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDepaList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op490GetQuestcenterMedicalTemplateGetTemplateDepaListParams,
+  params: GetQuestcenterMedicalTemplateGetTemplateDepaListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op490GetQuestcenterMedicalTemplateGetTemplateDepaList>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDepaList>>,
         TError,
         TData
       >
@@ -9097,82 +8967,81 @@ export const getOp490GetQuestcenterMedicalTemplateGetTemplateDepaListQueryOption
   const { query: queryOptions } = options ?? {}
 
   const queryKey =
-    queryOptions?.queryKey ??
-    getOp490GetQuestcenterMedicalTemplateGetTemplateDepaListQueryKey(params)
+    queryOptions?.queryKey ?? getGetQuestcenterMedicalTemplateGetTemplateDepaListQueryKey(params)
 
   const queryFn: QueryFunction<
-    Awaited<ReturnType<typeof op490GetQuestcenterMedicalTemplateGetTemplateDepaList>>
-  > = ({ signal }) => op490GetQuestcenterMedicalTemplateGetTemplateDepaList(params, { signal })
+    Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDepaList>>
+  > = ({ signal }) => getQuestcenterMedicalTemplateGetTemplateDepaList(params, { signal })
 
   return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof op490GetQuestcenterMedicalTemplateGetTemplateDepaList>>,
+    Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDepaList>>,
     TError,
     TData
   > & { queryKey: DataTag<QueryKey, TData, TError> }
 }
 
-export type Op490GetQuestcenterMedicalTemplateGetTemplateDepaListQueryResult = NonNullable<
-  Awaited<ReturnType<typeof op490GetQuestcenterMedicalTemplateGetTemplateDepaList>>
+export type GetQuestcenterMedicalTemplateGetTemplateDepaListQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDepaList>>
 >
-export type Op490GetQuestcenterMedicalTemplateGetTemplateDepaListQueryError = ErrorType<unknown>
+export type GetQuestcenterMedicalTemplateGetTemplateDepaListQueryError = ErrorType<unknown>
 
-export function useOp490GetQuestcenterMedicalTemplateGetTemplateDepaList<
-  TData = Awaited<ReturnType<typeof op490GetQuestcenterMedicalTemplateGetTemplateDepaList>>,
+export function useGetQuestcenterMedicalTemplateGetTemplateDepaList<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDepaList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op490GetQuestcenterMedicalTemplateGetTemplateDepaListParams,
+  params: GetQuestcenterMedicalTemplateGetTemplateDepaListParams,
   options: {
     query: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op490GetQuestcenterMedicalTemplateGetTemplateDepaList>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDepaList>>,
         TError,
         TData
       >
     > &
       Pick<
         DefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op490GetQuestcenterMedicalTemplateGetTemplateDepaList>>,
+          Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDepaList>>,
           TError,
-          Awaited<ReturnType<typeof op490GetQuestcenterMedicalTemplateGetTemplateDepaList>>
+          Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDepaList>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp490GetQuestcenterMedicalTemplateGetTemplateDepaList<
-  TData = Awaited<ReturnType<typeof op490GetQuestcenterMedicalTemplateGetTemplateDepaList>>,
+export function useGetQuestcenterMedicalTemplateGetTemplateDepaList<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDepaList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op490GetQuestcenterMedicalTemplateGetTemplateDepaListParams,
+  params: GetQuestcenterMedicalTemplateGetTemplateDepaListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op490GetQuestcenterMedicalTemplateGetTemplateDepaList>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDepaList>>,
         TError,
         TData
       >
     > &
       Pick<
         UndefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op490GetQuestcenterMedicalTemplateGetTemplateDepaList>>,
+          Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDepaList>>,
           TError,
-          Awaited<ReturnType<typeof op490GetQuestcenterMedicalTemplateGetTemplateDepaList>>
+          Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDepaList>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp490GetQuestcenterMedicalTemplateGetTemplateDepaList<
-  TData = Awaited<ReturnType<typeof op490GetQuestcenterMedicalTemplateGetTemplateDepaList>>,
+export function useGetQuestcenterMedicalTemplateGetTemplateDepaList<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDepaList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op490GetQuestcenterMedicalTemplateGetTemplateDepaListParams,
+  params: GetQuestcenterMedicalTemplateGetTemplateDepaListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op490GetQuestcenterMedicalTemplateGetTemplateDepaList>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDepaList>>,
         TError,
         TData
       >
@@ -9184,15 +9053,15 @@ export function useOp490GetQuestcenterMedicalTemplateGetTemplateDepaList<
  * @summary 获取模版科室列表
  */
 
-export function useOp490GetQuestcenterMedicalTemplateGetTemplateDepaList<
-  TData = Awaited<ReturnType<typeof op490GetQuestcenterMedicalTemplateGetTemplateDepaList>>,
+export function useGetQuestcenterMedicalTemplateGetTemplateDepaList<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDepaList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op490GetQuestcenterMedicalTemplateGetTemplateDepaListParams,
+  params: GetQuestcenterMedicalTemplateGetTemplateDepaListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op490GetQuestcenterMedicalTemplateGetTemplateDepaList>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDepaList>>,
         TError,
         TData
       >
@@ -9200,7 +9069,7 @@ export function useOp490GetQuestcenterMedicalTemplateGetTemplateDepaList<
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
-  const queryOptions = getOp490GetQuestcenterMedicalTemplateGetTemplateDepaListQueryOptions(
+  const queryOptions = getGetQuestcenterMedicalTemplateGetTemplateDepaListQueryOptions(
     params,
     options
   )
@@ -9212,21 +9081,21 @@ export function useOp490GetQuestcenterMedicalTemplateGetTemplateDepaList<
   return { ...query, queryKey: queryOptions.queryKey }
 }
 
-export type op442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdResponse200 = {
-  data: Op442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalId200
+export type getQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdResponse200 = {
+  data: GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalId200
   status: 200
 }
 
-export type op442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdResponseSuccess =
-  op442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdResponse200 & {
+export type getQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdResponseSuccess =
+  getQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdResponse200 & {
     headers: Headers
   }
 
-export type op442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdResponse =
-  op442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdResponseSuccess
+export type getQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdResponse =
+  getQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdResponseSuccess
 
-export const getOp442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdUrl = (
-  params: Op442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdParams
+export const getGetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdUrl = (
+  params: GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdParams
 ) => {
   const normalizedParams = new URLSearchParams()
 
@@ -9247,12 +9116,12 @@ export const getOp442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdUr
  * 获取病历模版详情，medical_id
  * @summary 获取病历模版详情，medical_id
  */
-export const op442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalId = async (
-  params: Op442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdParams,
+export const getQuestcenterMedicalTemplateGetTemplateDetailByMedicalId = async (
+  params: GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdParams,
   options?: RequestInit
-): Promise<op442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdResponse> => {
-  return customFetch<op442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdResponse>(
-    getOp442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdUrl(params),
+): Promise<getQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdResponse> => {
+  return customFetch<getQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdResponse>(
+    getGetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdUrl(params),
     {
       ...options,
       method: 'GET',
@@ -9260,8 +9129,8 @@ export const op442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalId = as
   )
 }
 
-export const getOp442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdQueryKey = (
-  params?: Op442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdParams
+export const getGetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdQueryKey = (
+  params?: GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdParams
 ) => {
   return [
     `/questcenter/medical_template/get_template_detail_by_medical_id`,
@@ -9269,17 +9138,15 @@ export const getOp442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdQu
   ] as const
 }
 
-export const getOp442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdQueryOptions = <
-  TData = Awaited<
-    ReturnType<typeof op442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalId>
-  >,
+export const getGetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdQueryOptions = <
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDetailByMedicalId>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdParams,
+  params: GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalId>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDetailByMedicalId>>,
         TError,
         TData
       >
@@ -9290,93 +9157,81 @@ export const getOp442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdQu
 
   const queryKey =
     queryOptions?.queryKey ??
-    getOp442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdQueryKey(params)
+    getGetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdQueryKey(params)
 
   const queryFn: QueryFunction<
-    Awaited<ReturnType<typeof op442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalId>>
-  > = ({ signal }) =>
-    op442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalId(params, { signal })
+    Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDetailByMedicalId>>
+  > = ({ signal }) => getQuestcenterMedicalTemplateGetTemplateDetailByMedicalId(params, { signal })
 
   return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof op442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalId>>,
+    Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDetailByMedicalId>>,
     TError,
     TData
   > & { queryKey: DataTag<QueryKey, TData, TError> }
 }
 
-export type Op442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdQueryResult = NonNullable<
-  Awaited<ReturnType<typeof op442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalId>>
+export type GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDetailByMedicalId>>
 >
-export type Op442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdQueryError =
-  ErrorType<unknown>
+export type GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdQueryError = ErrorType<unknown>
 
-export function useOp442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalId<
-  TData = Awaited<
-    ReturnType<typeof op442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalId>
-  >,
+export function useGetQuestcenterMedicalTemplateGetTemplateDetailByMedicalId<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDetailByMedicalId>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdParams,
+  params: GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdParams,
   options: {
     query: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalId>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDetailByMedicalId>>,
         TError,
         TData
       >
     > &
       Pick<
         DefinedInitialDataOptions<
-          Awaited<
-            ReturnType<typeof op442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalId>
-          >,
+          Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDetailByMedicalId>>,
           TError,
-          Awaited<ReturnType<typeof op442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalId>>
+          Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDetailByMedicalId>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalId<
-  TData = Awaited<
-    ReturnType<typeof op442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalId>
-  >,
+export function useGetQuestcenterMedicalTemplateGetTemplateDetailByMedicalId<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDetailByMedicalId>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdParams,
+  params: GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalId>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDetailByMedicalId>>,
         TError,
         TData
       >
     > &
       Pick<
         UndefinedInitialDataOptions<
-          Awaited<
-            ReturnType<typeof op442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalId>
-          >,
+          Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDetailByMedicalId>>,
           TError,
-          Awaited<ReturnType<typeof op442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalId>>
+          Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDetailByMedicalId>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalId<
-  TData = Awaited<
-    ReturnType<typeof op442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalId>
-  >,
+export function useGetQuestcenterMedicalTemplateGetTemplateDetailByMedicalId<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDetailByMedicalId>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdParams,
+  params: GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalId>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDetailByMedicalId>>,
         TError,
         TData
       >
@@ -9388,17 +9243,15 @@ export function useOp442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalI
  * @summary 获取病历模版详情，medical_id
  */
 
-export function useOp442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalId<
-  TData = Awaited<
-    ReturnType<typeof op442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalId>
-  >,
+export function useGetQuestcenterMedicalTemplateGetTemplateDetailByMedicalId<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDetailByMedicalId>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdParams,
+  params: GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalId>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDetailByMedicalId>>,
         TError,
         TData
       >
@@ -9406,8 +9259,10 @@ export function useOp442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalI
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
-  const queryOptions =
-    getOp442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdQueryOptions(params, options)
+  const queryOptions = getGetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdQueryOptions(
+    params,
+    options
+  )
 
   const query = useQuery(queryOptions, queryClient) as UseQueryResult<TData, TError> & {
     queryKey: DataTag<QueryKey, TData, TError>
@@ -9416,21 +9271,21 @@ export function useOp442GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalI
   return { ...query, queryKey: queryOptions.queryKey }
 }
 
-export type op441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdResponse200 = {
-  data: Op441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateId200
+export type getQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdResponse200 = {
+  data: GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateId200
   status: 200
 }
 
-export type op441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdResponseSuccess =
-  op441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdResponse200 & {
+export type getQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdResponseSuccess =
+  getQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdResponse200 & {
     headers: Headers
   }
 
-export type op441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdResponse =
-  op441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdResponseSuccess
+export type getQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdResponse =
+  getQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdResponseSuccess
 
-export const getOp441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdUrl = (
-  params: Op441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdParams
+export const getGetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdUrl = (
+  params: GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdParams
 ) => {
   const normalizedParams = new URLSearchParams()
 
@@ -9451,12 +9306,12 @@ export const getOp441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdU
  * 获取病历模版详情template_id
  * @summary 获取病历模版详情template_id
  */
-export const op441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateId = async (
-  params: Op441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdParams,
+export const getQuestcenterMedicalTemplateGetTemplateDetailByTemplateId = async (
+  params: GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdParams,
   options?: RequestInit
-): Promise<op441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdResponse> => {
-  return customFetch<op441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdResponse>(
-    getOp441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdUrl(params),
+): Promise<getQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdResponse> => {
+  return customFetch<getQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdResponse>(
+    getGetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdUrl(params),
     {
       ...options,
       method: 'GET',
@@ -9464,8 +9319,8 @@ export const op441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateId = a
   )
 }
 
-export const getOp441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdQueryKey = (
-  params?: Op441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdParams
+export const getGetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdQueryKey = (
+  params?: GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdParams
 ) => {
   return [
     `/questcenter/medical_template/get_template_detail_by_template_id`,
@@ -9473,17 +9328,15 @@ export const getOp441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdQ
   ] as const
 }
 
-export const getOp441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdQueryOptions = <
-  TData = Awaited<
-    ReturnType<typeof op441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateId>
-  >,
+export const getGetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdQueryOptions = <
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDetailByTemplateId>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdParams,
+  params: GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateId>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDetailByTemplateId>>,
         TError,
         TData
       >
@@ -9494,98 +9347,82 @@ export const getOp441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdQ
 
   const queryKey =
     queryOptions?.queryKey ??
-    getOp441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdQueryKey(params)
+    getGetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdQueryKey(params)
 
   const queryFn: QueryFunction<
-    Awaited<ReturnType<typeof op441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateId>>
-  > = ({ signal }) =>
-    op441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateId(params, { signal })
+    Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDetailByTemplateId>>
+  > = ({ signal }) => getQuestcenterMedicalTemplateGetTemplateDetailByTemplateId(params, { signal })
 
   return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof op441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateId>>,
+    Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDetailByTemplateId>>,
     TError,
     TData
   > & { queryKey: DataTag<QueryKey, TData, TError> }
 }
 
-export type Op441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdQueryResult =
-  NonNullable<
-    Awaited<ReturnType<typeof op441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateId>>
-  >
-export type Op441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdQueryError =
+export type GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDetailByTemplateId>>
+>
+export type GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdQueryError =
   ErrorType<unknown>
 
-export function useOp441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateId<
-  TData = Awaited<
-    ReturnType<typeof op441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateId>
-  >,
+export function useGetQuestcenterMedicalTemplateGetTemplateDetailByTemplateId<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDetailByTemplateId>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdParams,
+  params: GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdParams,
   options: {
     query: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateId>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDetailByTemplateId>>,
         TError,
         TData
       >
     > &
       Pick<
         DefinedInitialDataOptions<
-          Awaited<
-            ReturnType<typeof op441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateId>
-          >,
+          Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDetailByTemplateId>>,
           TError,
-          Awaited<
-            ReturnType<typeof op441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateId>
-          >
+          Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDetailByTemplateId>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateId<
-  TData = Awaited<
-    ReturnType<typeof op441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateId>
-  >,
+export function useGetQuestcenterMedicalTemplateGetTemplateDetailByTemplateId<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDetailByTemplateId>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdParams,
+  params: GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateId>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDetailByTemplateId>>,
         TError,
         TData
       >
     > &
       Pick<
         UndefinedInitialDataOptions<
-          Awaited<
-            ReturnType<typeof op441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateId>
-          >,
+          Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDetailByTemplateId>>,
           TError,
-          Awaited<
-            ReturnType<typeof op441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateId>
-          >
+          Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDetailByTemplateId>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateId<
-  TData = Awaited<
-    ReturnType<typeof op441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateId>
-  >,
+export function useGetQuestcenterMedicalTemplateGetTemplateDetailByTemplateId<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDetailByTemplateId>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdParams,
+  params: GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateId>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDetailByTemplateId>>,
         TError,
         TData
       >
@@ -9597,17 +9434,15 @@ export function useOp441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplate
  * @summary 获取病历模版详情template_id
  */
 
-export function useOp441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateId<
-  TData = Awaited<
-    ReturnType<typeof op441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateId>
-  >,
+export function useGetQuestcenterMedicalTemplateGetTemplateDetailByTemplateId<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDetailByTemplateId>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdParams,
+  params: GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateId>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateDetailByTemplateId>>,
         TError,
         TData
       >
@@ -9615,8 +9450,10 @@ export function useOp441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplate
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
-  const queryOptions =
-    getOp441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdQueryOptions(params, options)
+  const queryOptions = getGetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdQueryOptions(
+    params,
+    options
+  )
 
   const query = useQuery(queryOptions, queryClient) as UseQueryResult<TData, TError> & {
     queryKey: DataTag<QueryKey, TData, TError>
@@ -9625,21 +9462,21 @@ export function useOp441GetQuestcenterMedicalTemplateGetTemplateDetailByTemplate
   return { ...query, queryKey: queryOptions.queryKey }
 }
 
-export type op440GetQuestcenterMedicalTemplateGetTemplateHistoryListResponse200 = {
-  data: Op440GetQuestcenterMedicalTemplateGetTemplateHistoryList200
+export type getQuestcenterMedicalTemplateGetTemplateHistoryListResponse200 = {
+  data: GetQuestcenterMedicalTemplateGetTemplateHistoryList200
   status: 200
 }
 
-export type op440GetQuestcenterMedicalTemplateGetTemplateHistoryListResponseSuccess =
-  op440GetQuestcenterMedicalTemplateGetTemplateHistoryListResponse200 & {
+export type getQuestcenterMedicalTemplateGetTemplateHistoryListResponseSuccess =
+  getQuestcenterMedicalTemplateGetTemplateHistoryListResponse200 & {
     headers: Headers
   }
 
-export type op440GetQuestcenterMedicalTemplateGetTemplateHistoryListResponse =
-  op440GetQuestcenterMedicalTemplateGetTemplateHistoryListResponseSuccess
+export type getQuestcenterMedicalTemplateGetTemplateHistoryListResponse =
+  getQuestcenterMedicalTemplateGetTemplateHistoryListResponseSuccess
 
-export const getOp440GetQuestcenterMedicalTemplateGetTemplateHistoryListUrl = (
-  params: Op440GetQuestcenterMedicalTemplateGetTemplateHistoryListParams
+export const getGetQuestcenterMedicalTemplateGetTemplateHistoryListUrl = (
+  params: GetQuestcenterMedicalTemplateGetTemplateHistoryListParams
 ) => {
   const normalizedParams = new URLSearchParams()
 
@@ -9660,12 +9497,12 @@ export const getOp440GetQuestcenterMedicalTemplateGetTemplateHistoryListUrl = (
  * 获取病历模版历史记录
  * @summary 获取病历模版历史记录
  */
-export const op440GetQuestcenterMedicalTemplateGetTemplateHistoryList = async (
-  params: Op440GetQuestcenterMedicalTemplateGetTemplateHistoryListParams,
+export const getQuestcenterMedicalTemplateGetTemplateHistoryList = async (
+  params: GetQuestcenterMedicalTemplateGetTemplateHistoryListParams,
   options?: RequestInit
-): Promise<op440GetQuestcenterMedicalTemplateGetTemplateHistoryListResponse> => {
-  return customFetch<op440GetQuestcenterMedicalTemplateGetTemplateHistoryListResponse>(
-    getOp440GetQuestcenterMedicalTemplateGetTemplateHistoryListUrl(params),
+): Promise<getQuestcenterMedicalTemplateGetTemplateHistoryListResponse> => {
+  return customFetch<getQuestcenterMedicalTemplateGetTemplateHistoryListResponse>(
+    getGetQuestcenterMedicalTemplateGetTemplateHistoryListUrl(params),
     {
       ...options,
       method: 'GET',
@@ -9673,8 +9510,8 @@ export const op440GetQuestcenterMedicalTemplateGetTemplateHistoryList = async (
   )
 }
 
-export const getOp440GetQuestcenterMedicalTemplateGetTemplateHistoryListQueryKey = (
-  params?: Op440GetQuestcenterMedicalTemplateGetTemplateHistoryListParams
+export const getGetQuestcenterMedicalTemplateGetTemplateHistoryListQueryKey = (
+  params?: GetQuestcenterMedicalTemplateGetTemplateHistoryListParams
 ) => {
   return [
     `/questcenter/medical_template/get_template_history_list`,
@@ -9682,15 +9519,15 @@ export const getOp440GetQuestcenterMedicalTemplateGetTemplateHistoryListQueryKey
   ] as const
 }
 
-export const getOp440GetQuestcenterMedicalTemplateGetTemplateHistoryListQueryOptions = <
-  TData = Awaited<ReturnType<typeof op440GetQuestcenterMedicalTemplateGetTemplateHistoryList>>,
+export const getGetQuestcenterMedicalTemplateGetTemplateHistoryListQueryOptions = <
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateHistoryList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op440GetQuestcenterMedicalTemplateGetTemplateHistoryListParams,
+  params: GetQuestcenterMedicalTemplateGetTemplateHistoryListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op440GetQuestcenterMedicalTemplateGetTemplateHistoryList>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateHistoryList>>,
         TError,
         TData
       >
@@ -9700,82 +9537,81 @@ export const getOp440GetQuestcenterMedicalTemplateGetTemplateHistoryListQueryOpt
   const { query: queryOptions } = options ?? {}
 
   const queryKey =
-    queryOptions?.queryKey ??
-    getOp440GetQuestcenterMedicalTemplateGetTemplateHistoryListQueryKey(params)
+    queryOptions?.queryKey ?? getGetQuestcenterMedicalTemplateGetTemplateHistoryListQueryKey(params)
 
   const queryFn: QueryFunction<
-    Awaited<ReturnType<typeof op440GetQuestcenterMedicalTemplateGetTemplateHistoryList>>
-  > = ({ signal }) => op440GetQuestcenterMedicalTemplateGetTemplateHistoryList(params, { signal })
+    Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateHistoryList>>
+  > = ({ signal }) => getQuestcenterMedicalTemplateGetTemplateHistoryList(params, { signal })
 
   return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof op440GetQuestcenterMedicalTemplateGetTemplateHistoryList>>,
+    Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateHistoryList>>,
     TError,
     TData
   > & { queryKey: DataTag<QueryKey, TData, TError> }
 }
 
-export type Op440GetQuestcenterMedicalTemplateGetTemplateHistoryListQueryResult = NonNullable<
-  Awaited<ReturnType<typeof op440GetQuestcenterMedicalTemplateGetTemplateHistoryList>>
+export type GetQuestcenterMedicalTemplateGetTemplateHistoryListQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateHistoryList>>
 >
-export type Op440GetQuestcenterMedicalTemplateGetTemplateHistoryListQueryError = ErrorType<unknown>
+export type GetQuestcenterMedicalTemplateGetTemplateHistoryListQueryError = ErrorType<unknown>
 
-export function useOp440GetQuestcenterMedicalTemplateGetTemplateHistoryList<
-  TData = Awaited<ReturnType<typeof op440GetQuestcenterMedicalTemplateGetTemplateHistoryList>>,
+export function useGetQuestcenterMedicalTemplateGetTemplateHistoryList<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateHistoryList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op440GetQuestcenterMedicalTemplateGetTemplateHistoryListParams,
+  params: GetQuestcenterMedicalTemplateGetTemplateHistoryListParams,
   options: {
     query: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op440GetQuestcenterMedicalTemplateGetTemplateHistoryList>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateHistoryList>>,
         TError,
         TData
       >
     > &
       Pick<
         DefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op440GetQuestcenterMedicalTemplateGetTemplateHistoryList>>,
+          Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateHistoryList>>,
           TError,
-          Awaited<ReturnType<typeof op440GetQuestcenterMedicalTemplateGetTemplateHistoryList>>
+          Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateHistoryList>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp440GetQuestcenterMedicalTemplateGetTemplateHistoryList<
-  TData = Awaited<ReturnType<typeof op440GetQuestcenterMedicalTemplateGetTemplateHistoryList>>,
+export function useGetQuestcenterMedicalTemplateGetTemplateHistoryList<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateHistoryList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op440GetQuestcenterMedicalTemplateGetTemplateHistoryListParams,
+  params: GetQuestcenterMedicalTemplateGetTemplateHistoryListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op440GetQuestcenterMedicalTemplateGetTemplateHistoryList>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateHistoryList>>,
         TError,
         TData
       >
     > &
       Pick<
         UndefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op440GetQuestcenterMedicalTemplateGetTemplateHistoryList>>,
+          Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateHistoryList>>,
           TError,
-          Awaited<ReturnType<typeof op440GetQuestcenterMedicalTemplateGetTemplateHistoryList>>
+          Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateHistoryList>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp440GetQuestcenterMedicalTemplateGetTemplateHistoryList<
-  TData = Awaited<ReturnType<typeof op440GetQuestcenterMedicalTemplateGetTemplateHistoryList>>,
+export function useGetQuestcenterMedicalTemplateGetTemplateHistoryList<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateHistoryList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op440GetQuestcenterMedicalTemplateGetTemplateHistoryListParams,
+  params: GetQuestcenterMedicalTemplateGetTemplateHistoryListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op440GetQuestcenterMedicalTemplateGetTemplateHistoryList>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateHistoryList>>,
         TError,
         TData
       >
@@ -9787,15 +9623,15 @@ export function useOp440GetQuestcenterMedicalTemplateGetTemplateHistoryList<
  * @summary 获取病历模版历史记录
  */
 
-export function useOp440GetQuestcenterMedicalTemplateGetTemplateHistoryList<
-  TData = Awaited<ReturnType<typeof op440GetQuestcenterMedicalTemplateGetTemplateHistoryList>>,
+export function useGetQuestcenterMedicalTemplateGetTemplateHistoryList<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateHistoryList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op440GetQuestcenterMedicalTemplateGetTemplateHistoryListParams,
+  params: GetQuestcenterMedicalTemplateGetTemplateHistoryListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op440GetQuestcenterMedicalTemplateGetTemplateHistoryList>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateHistoryList>>,
         TError,
         TData
       >
@@ -9803,7 +9639,7 @@ export function useOp440GetQuestcenterMedicalTemplateGetTemplateHistoryList<
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
-  const queryOptions = getOp440GetQuestcenterMedicalTemplateGetTemplateHistoryListQueryOptions(
+  const queryOptions = getGetQuestcenterMedicalTemplateGetTemplateHistoryListQueryOptions(
     params,
     options
   )
@@ -9815,21 +9651,21 @@ export function useOp440GetQuestcenterMedicalTemplateGetTemplateHistoryList<
   return { ...query, queryKey: queryOptions.queryKey }
 }
 
-export type op439GetQuestcenterMedicalTemplateGetTemplateListResponse200 = {
-  data: Op439GetQuestcenterMedicalTemplateGetTemplateList200
+export type getQuestcenterMedicalTemplateGetTemplateListResponse200 = {
+  data: GetQuestcenterMedicalTemplateGetTemplateList200
   status: 200
 }
 
-export type op439GetQuestcenterMedicalTemplateGetTemplateListResponseSuccess =
-  op439GetQuestcenterMedicalTemplateGetTemplateListResponse200 & {
+export type getQuestcenterMedicalTemplateGetTemplateListResponseSuccess =
+  getQuestcenterMedicalTemplateGetTemplateListResponse200 & {
     headers: Headers
   }
 
-export type op439GetQuestcenterMedicalTemplateGetTemplateListResponse =
-  op439GetQuestcenterMedicalTemplateGetTemplateListResponseSuccess
+export type getQuestcenterMedicalTemplateGetTemplateListResponse =
+  getQuestcenterMedicalTemplateGetTemplateListResponseSuccess
 
-export const getOp439GetQuestcenterMedicalTemplateGetTemplateListUrl = (
-  params?: Op439GetQuestcenterMedicalTemplateGetTemplateListParams
+export const getGetQuestcenterMedicalTemplateGetTemplateListUrl = (
+  params?: GetQuestcenterMedicalTemplateGetTemplateListParams
 ) => {
   const normalizedParams = new URLSearchParams()
 
@@ -9850,12 +9686,12 @@ export const getOp439GetQuestcenterMedicalTemplateGetTemplateListUrl = (
  * 获取病历模版列表
  * @summary 获取病历模版列表
  */
-export const op439GetQuestcenterMedicalTemplateGetTemplateList = async (
-  params?: Op439GetQuestcenterMedicalTemplateGetTemplateListParams,
+export const getQuestcenterMedicalTemplateGetTemplateList = async (
+  params?: GetQuestcenterMedicalTemplateGetTemplateListParams,
   options?: RequestInit
-): Promise<op439GetQuestcenterMedicalTemplateGetTemplateListResponse> => {
-  return customFetch<op439GetQuestcenterMedicalTemplateGetTemplateListResponse>(
-    getOp439GetQuestcenterMedicalTemplateGetTemplateListUrl(params),
+): Promise<getQuestcenterMedicalTemplateGetTemplateListResponse> => {
+  return customFetch<getQuestcenterMedicalTemplateGetTemplateListResponse>(
+    getGetQuestcenterMedicalTemplateGetTemplateListUrl(params),
     {
       ...options,
       method: 'GET',
@@ -9863,21 +9699,21 @@ export const op439GetQuestcenterMedicalTemplateGetTemplateList = async (
   )
 }
 
-export const getOp439GetQuestcenterMedicalTemplateGetTemplateListQueryKey = (
-  params?: Op439GetQuestcenterMedicalTemplateGetTemplateListParams
+export const getGetQuestcenterMedicalTemplateGetTemplateListQueryKey = (
+  params?: GetQuestcenterMedicalTemplateGetTemplateListParams
 ) => {
   return [`/questcenter/medical_template/get_template_list`, ...(params ? [params] : [])] as const
 }
 
-export const getOp439GetQuestcenterMedicalTemplateGetTemplateListQueryOptions = <
-  TData = Awaited<ReturnType<typeof op439GetQuestcenterMedicalTemplateGetTemplateList>>,
+export const getGetQuestcenterMedicalTemplateGetTemplateListQueryOptions = <
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateList>>,
   TError = ErrorType<unknown>,
 >(
-  params?: Op439GetQuestcenterMedicalTemplateGetTemplateListParams,
+  params?: GetQuestcenterMedicalTemplateGetTemplateListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op439GetQuestcenterMedicalTemplateGetTemplateList>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateList>>,
         TError,
         TData
       >
@@ -9887,81 +9723,81 @@ export const getOp439GetQuestcenterMedicalTemplateGetTemplateListQueryOptions = 
   const { query: queryOptions } = options ?? {}
 
   const queryKey =
-    queryOptions?.queryKey ?? getOp439GetQuestcenterMedicalTemplateGetTemplateListQueryKey(params)
+    queryOptions?.queryKey ?? getGetQuestcenterMedicalTemplateGetTemplateListQueryKey(params)
 
   const queryFn: QueryFunction<
-    Awaited<ReturnType<typeof op439GetQuestcenterMedicalTemplateGetTemplateList>>
-  > = ({ signal }) => op439GetQuestcenterMedicalTemplateGetTemplateList(params, { signal })
+    Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateList>>
+  > = ({ signal }) => getQuestcenterMedicalTemplateGetTemplateList(params, { signal })
 
   return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof op439GetQuestcenterMedicalTemplateGetTemplateList>>,
+    Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateList>>,
     TError,
     TData
   > & { queryKey: DataTag<QueryKey, TData, TError> }
 }
 
-export type Op439GetQuestcenterMedicalTemplateGetTemplateListQueryResult = NonNullable<
-  Awaited<ReturnType<typeof op439GetQuestcenterMedicalTemplateGetTemplateList>>
+export type GetQuestcenterMedicalTemplateGetTemplateListQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateList>>
 >
-export type Op439GetQuestcenterMedicalTemplateGetTemplateListQueryError = ErrorType<unknown>
+export type GetQuestcenterMedicalTemplateGetTemplateListQueryError = ErrorType<unknown>
 
-export function useOp439GetQuestcenterMedicalTemplateGetTemplateList<
-  TData = Awaited<ReturnType<typeof op439GetQuestcenterMedicalTemplateGetTemplateList>>,
+export function useGetQuestcenterMedicalTemplateGetTemplateList<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateList>>,
   TError = ErrorType<unknown>,
 >(
-  params: undefined | Op439GetQuestcenterMedicalTemplateGetTemplateListParams,
+  params: undefined | GetQuestcenterMedicalTemplateGetTemplateListParams,
   options: {
     query: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op439GetQuestcenterMedicalTemplateGetTemplateList>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateList>>,
         TError,
         TData
       >
     > &
       Pick<
         DefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op439GetQuestcenterMedicalTemplateGetTemplateList>>,
+          Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateList>>,
           TError,
-          Awaited<ReturnType<typeof op439GetQuestcenterMedicalTemplateGetTemplateList>>
+          Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateList>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp439GetQuestcenterMedicalTemplateGetTemplateList<
-  TData = Awaited<ReturnType<typeof op439GetQuestcenterMedicalTemplateGetTemplateList>>,
+export function useGetQuestcenterMedicalTemplateGetTemplateList<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateList>>,
   TError = ErrorType<unknown>,
 >(
-  params?: Op439GetQuestcenterMedicalTemplateGetTemplateListParams,
+  params?: GetQuestcenterMedicalTemplateGetTemplateListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op439GetQuestcenterMedicalTemplateGetTemplateList>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateList>>,
         TError,
         TData
       >
     > &
       Pick<
         UndefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op439GetQuestcenterMedicalTemplateGetTemplateList>>,
+          Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateList>>,
           TError,
-          Awaited<ReturnType<typeof op439GetQuestcenterMedicalTemplateGetTemplateList>>
+          Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateList>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp439GetQuestcenterMedicalTemplateGetTemplateList<
-  TData = Awaited<ReturnType<typeof op439GetQuestcenterMedicalTemplateGetTemplateList>>,
+export function useGetQuestcenterMedicalTemplateGetTemplateList<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateList>>,
   TError = ErrorType<unknown>,
 >(
-  params?: Op439GetQuestcenterMedicalTemplateGetTemplateListParams,
+  params?: GetQuestcenterMedicalTemplateGetTemplateListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op439GetQuestcenterMedicalTemplateGetTemplateList>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateList>>,
         TError,
         TData
       >
@@ -9973,15 +9809,15 @@ export function useOp439GetQuestcenterMedicalTemplateGetTemplateList<
  * @summary 获取病历模版列表
  */
 
-export function useOp439GetQuestcenterMedicalTemplateGetTemplateList<
-  TData = Awaited<ReturnType<typeof op439GetQuestcenterMedicalTemplateGetTemplateList>>,
+export function useGetQuestcenterMedicalTemplateGetTemplateList<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateList>>,
   TError = ErrorType<unknown>,
 >(
-  params?: Op439GetQuestcenterMedicalTemplateGetTemplateListParams,
+  params?: GetQuestcenterMedicalTemplateGetTemplateListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op439GetQuestcenterMedicalTemplateGetTemplateList>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTemplateGetTemplateList>>,
         TError,
         TData
       >
@@ -9989,10 +9825,7 @@ export function useOp439GetQuestcenterMedicalTemplateGetTemplateList<
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
-  const queryOptions = getOp439GetQuestcenterMedicalTemplateGetTemplateListQueryOptions(
-    params,
-    options
-  )
+  const queryOptions = getGetQuestcenterMedicalTemplateGetTemplateListQueryOptions(params, options)
 
   const query = useQuery(queryOptions, queryClient) as UseQueryResult<TData, TError> & {
     queryKey: DataTag<QueryKey, TData, TError>
@@ -10001,20 +9834,20 @@ export function useOp439GetQuestcenterMedicalTemplateGetTemplateList<
   return { ...query, queryKey: queryOptions.queryKey }
 }
 
-export type op443PostQuestcenterMedicalTemplatePublishTemplateResponse200 = {
-  data: Op443PostQuestcenterMedicalTemplatePublishTemplate200
+export type postQuestcenterMedicalTemplatePublishTemplateResponse200 = {
+  data: PostQuestcenterMedicalTemplatePublishTemplate200
   status: 200
 }
 
-export type op443PostQuestcenterMedicalTemplatePublishTemplateResponseSuccess =
-  op443PostQuestcenterMedicalTemplatePublishTemplateResponse200 & {
+export type postQuestcenterMedicalTemplatePublishTemplateResponseSuccess =
+  postQuestcenterMedicalTemplatePublishTemplateResponse200 & {
     headers: Headers
   }
 
-export type op443PostQuestcenterMedicalTemplatePublishTemplateResponse =
-  op443PostQuestcenterMedicalTemplatePublishTemplateResponseSuccess
+export type postQuestcenterMedicalTemplatePublishTemplateResponse =
+  postQuestcenterMedicalTemplatePublishTemplateResponseSuccess
 
-export const getOp443PostQuestcenterMedicalTemplatePublishTemplateUrl = () => {
+export const getPostQuestcenterMedicalTemplatePublishTemplateUrl = () => {
   return `/questcenter/medical_template/publish_template`
 }
 
@@ -10022,38 +9855,38 @@ export const getOp443PostQuestcenterMedicalTemplatePublishTemplateUrl = () => {
  * 发布病历模版
  * @summary 发布病历模版
  */
-export const op443PostQuestcenterMedicalTemplatePublishTemplate = async (
-  op443PostQuestcenterMedicalTemplatePublishTemplateBody: Op443PostQuestcenterMedicalTemplatePublishTemplateBody,
+export const postQuestcenterMedicalTemplatePublishTemplate = async (
+  postQuestcenterMedicalTemplatePublishTemplateBody: PostQuestcenterMedicalTemplatePublishTemplateBody,
   options?: RequestInit
-): Promise<op443PostQuestcenterMedicalTemplatePublishTemplateResponse> => {
-  return customFetch<op443PostQuestcenterMedicalTemplatePublishTemplateResponse>(
-    getOp443PostQuestcenterMedicalTemplatePublishTemplateUrl(),
+): Promise<postQuestcenterMedicalTemplatePublishTemplateResponse> => {
+  return customFetch<postQuestcenterMedicalTemplatePublishTemplateResponse>(
+    getPostQuestcenterMedicalTemplatePublishTemplateUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op443PostQuestcenterMedicalTemplatePublishTemplateBody),
+      body: JSON.stringify(postQuestcenterMedicalTemplatePublishTemplateBody),
     }
   )
 }
 
-export const getOp443PostQuestcenterMedicalTemplatePublishTemplateMutationOptions = <
+export const getPostQuestcenterMedicalTemplatePublishTemplateMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op443PostQuestcenterMedicalTemplatePublishTemplate>>,
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplatePublishTemplate>>,
     TError,
-    { data: Op443PostQuestcenterMedicalTemplatePublishTemplateBody },
+    { data: PostQuestcenterMedicalTemplatePublishTemplateBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op443PostQuestcenterMedicalTemplatePublishTemplate>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplatePublishTemplate>>,
   TError,
-  { data: Op443PostQuestcenterMedicalTemplatePublishTemplateBody },
+  { data: PostQuestcenterMedicalTemplatePublishTemplateBody },
   TContext
 > => {
-  const mutationKey = ['op443PostQuestcenterMedicalTemplatePublishTemplate']
+  const mutationKey = ['postQuestcenterMedicalTemplatePublishTemplate']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -10061,66 +9894,66 @@ export const getOp443PostQuestcenterMedicalTemplatePublishTemplateMutationOption
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op443PostQuestcenterMedicalTemplatePublishTemplate>>,
-    { data: Op443PostQuestcenterMedicalTemplatePublishTemplateBody }
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplatePublishTemplate>>,
+    { data: PostQuestcenterMedicalTemplatePublishTemplateBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op443PostQuestcenterMedicalTemplatePublishTemplate(data)
+    return postQuestcenterMedicalTemplatePublishTemplate(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op443PostQuestcenterMedicalTemplatePublishTemplateMutationResult = NonNullable<
-  Awaited<ReturnType<typeof op443PostQuestcenterMedicalTemplatePublishTemplate>>
+export type PostQuestcenterMedicalTemplatePublishTemplateMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplatePublishTemplate>>
 >
-export type Op443PostQuestcenterMedicalTemplatePublishTemplateMutationBody =
-  Op443PostQuestcenterMedicalTemplatePublishTemplateBody
-export type Op443PostQuestcenterMedicalTemplatePublishTemplateMutationError = ErrorType<unknown>
+export type PostQuestcenterMedicalTemplatePublishTemplateMutationBody =
+  PostQuestcenterMedicalTemplatePublishTemplateBody
+export type PostQuestcenterMedicalTemplatePublishTemplateMutationError = ErrorType<unknown>
 
 /**
  * @summary 发布病历模版
  */
-export const useOp443PostQuestcenterMedicalTemplatePublishTemplate = <
+export const usePostQuestcenterMedicalTemplatePublishTemplate = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op443PostQuestcenterMedicalTemplatePublishTemplate>>,
+      Awaited<ReturnType<typeof postQuestcenterMedicalTemplatePublishTemplate>>,
       TError,
-      { data: Op443PostQuestcenterMedicalTemplatePublishTemplateBody },
+      { data: PostQuestcenterMedicalTemplatePublishTemplateBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op443PostQuestcenterMedicalTemplatePublishTemplate>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplatePublishTemplate>>,
   TError,
-  { data: Op443PostQuestcenterMedicalTemplatePublishTemplateBody },
+  { data: PostQuestcenterMedicalTemplatePublishTemplateBody },
   TContext
 > => {
   return useMutation(
-    getOp443PostQuestcenterMedicalTemplatePublishTemplateMutationOptions(options),
+    getPostQuestcenterMedicalTemplatePublishTemplateMutationOptions(options),
     queryClient
   )
 }
 
-export type op437PostQuestcenterMedicalTemplateUpdateParagraphNodeParamsResponse200 = {
-  data: Op437PostQuestcenterMedicalTemplateUpdateParagraphNodeParams200
+export type postQuestcenterMedicalTemplateUpdateParagraphNodeParamsResponse200 = {
+  data: PostQuestcenterMedicalTemplateUpdateParagraphNodeParams200
   status: 200
 }
 
-export type op437PostQuestcenterMedicalTemplateUpdateParagraphNodeParamsResponseSuccess =
-  op437PostQuestcenterMedicalTemplateUpdateParagraphNodeParamsResponse200 & {
+export type postQuestcenterMedicalTemplateUpdateParagraphNodeParamsResponseSuccess =
+  postQuestcenterMedicalTemplateUpdateParagraphNodeParamsResponse200 & {
     headers: Headers
   }
 
-export type op437PostQuestcenterMedicalTemplateUpdateParagraphNodeParamsResponse =
-  op437PostQuestcenterMedicalTemplateUpdateParagraphNodeParamsResponseSuccess
+export type postQuestcenterMedicalTemplateUpdateParagraphNodeParamsResponse =
+  postQuestcenterMedicalTemplateUpdateParagraphNodeParamsResponseSuccess
 
-export const getOp437PostQuestcenterMedicalTemplateUpdateParagraphNodeParamsUrl = () => {
+export const getPostQuestcenterMedicalTemplateUpdateParagraphNodeParamsUrl = () => {
   return `/questcenter/medical_template/update_paragraph_node_params`
 }
 
@@ -10128,38 +9961,38 @@ export const getOp437PostQuestcenterMedicalTemplateUpdateParagraphNodeParamsUrl 
  * 更新段落节点参数
  * @summary 更新段落节点参数
  */
-export const op437PostQuestcenterMedicalTemplateUpdateParagraphNodeParams = async (
-  op437PostQuestcenterMedicalTemplateUpdateParagraphNodeParamsBody: Op437PostQuestcenterMedicalTemplateUpdateParagraphNodeParamsBody,
+export const postQuestcenterMedicalTemplateUpdateParagraphNodeParams = async (
+  postQuestcenterMedicalTemplateUpdateParagraphNodeParamsBody: PostQuestcenterMedicalTemplateUpdateParagraphNodeParamsBody,
   options?: RequestInit
-): Promise<op437PostQuestcenterMedicalTemplateUpdateParagraphNodeParamsResponse> => {
-  return customFetch<op437PostQuestcenterMedicalTemplateUpdateParagraphNodeParamsResponse>(
-    getOp437PostQuestcenterMedicalTemplateUpdateParagraphNodeParamsUrl(),
+): Promise<postQuestcenterMedicalTemplateUpdateParagraphNodeParamsResponse> => {
+  return customFetch<postQuestcenterMedicalTemplateUpdateParagraphNodeParamsResponse>(
+    getPostQuestcenterMedicalTemplateUpdateParagraphNodeParamsUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op437PostQuestcenterMedicalTemplateUpdateParagraphNodeParamsBody),
+      body: JSON.stringify(postQuestcenterMedicalTemplateUpdateParagraphNodeParamsBody),
     }
   )
 }
 
-export const getOp437PostQuestcenterMedicalTemplateUpdateParagraphNodeParamsMutationOptions = <
+export const getPostQuestcenterMedicalTemplateUpdateParagraphNodeParamsMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op437PostQuestcenterMedicalTemplateUpdateParagraphNodeParams>>,
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplateUpdateParagraphNodeParams>>,
     TError,
-    { data: Op437PostQuestcenterMedicalTemplateUpdateParagraphNodeParamsBody },
+    { data: PostQuestcenterMedicalTemplateUpdateParagraphNodeParamsBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op437PostQuestcenterMedicalTemplateUpdateParagraphNodeParams>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateUpdateParagraphNodeParams>>,
   TError,
-  { data: Op437PostQuestcenterMedicalTemplateUpdateParagraphNodeParamsBody },
+  { data: PostQuestcenterMedicalTemplateUpdateParagraphNodeParamsBody },
   TContext
 > => {
-  const mutationKey = ['op437PostQuestcenterMedicalTemplateUpdateParagraphNodeParams']
+  const mutationKey = ['postQuestcenterMedicalTemplateUpdateParagraphNodeParams']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -10167,68 +10000,67 @@ export const getOp437PostQuestcenterMedicalTemplateUpdateParagraphNodeParamsMuta
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op437PostQuestcenterMedicalTemplateUpdateParagraphNodeParams>>,
-    { data: Op437PostQuestcenterMedicalTemplateUpdateParagraphNodeParamsBody }
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplateUpdateParagraphNodeParams>>,
+    { data: PostQuestcenterMedicalTemplateUpdateParagraphNodeParamsBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op437PostQuestcenterMedicalTemplateUpdateParagraphNodeParams(data)
+    return postQuestcenterMedicalTemplateUpdateParagraphNodeParams(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op437PostQuestcenterMedicalTemplateUpdateParagraphNodeParamsMutationResult =
-  NonNullable<
-    Awaited<ReturnType<typeof op437PostQuestcenterMedicalTemplateUpdateParagraphNodeParams>>
-  >
-export type Op437PostQuestcenterMedicalTemplateUpdateParagraphNodeParamsMutationBody =
-  Op437PostQuestcenterMedicalTemplateUpdateParagraphNodeParamsBody
-export type Op437PostQuestcenterMedicalTemplateUpdateParagraphNodeParamsMutationError =
+export type PostQuestcenterMedicalTemplateUpdateParagraphNodeParamsMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateUpdateParagraphNodeParams>>
+>
+export type PostQuestcenterMedicalTemplateUpdateParagraphNodeParamsMutationBody =
+  PostQuestcenterMedicalTemplateUpdateParagraphNodeParamsBody
+export type PostQuestcenterMedicalTemplateUpdateParagraphNodeParamsMutationError =
   ErrorType<unknown>
 
 /**
  * @summary 更新段落节点参数
  */
-export const useOp437PostQuestcenterMedicalTemplateUpdateParagraphNodeParams = <
+export const usePostQuestcenterMedicalTemplateUpdateParagraphNodeParams = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op437PostQuestcenterMedicalTemplateUpdateParagraphNodeParams>>,
+      Awaited<ReturnType<typeof postQuestcenterMedicalTemplateUpdateParagraphNodeParams>>,
       TError,
-      { data: Op437PostQuestcenterMedicalTemplateUpdateParagraphNodeParamsBody },
+      { data: PostQuestcenterMedicalTemplateUpdateParagraphNodeParamsBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op437PostQuestcenterMedicalTemplateUpdateParagraphNodeParams>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateUpdateParagraphNodeParams>>,
   TError,
-  { data: Op437PostQuestcenterMedicalTemplateUpdateParagraphNodeParamsBody },
+  { data: PostQuestcenterMedicalTemplateUpdateParagraphNodeParamsBody },
   TContext
 > => {
   return useMutation(
-    getOp437PostQuestcenterMedicalTemplateUpdateParagraphNodeParamsMutationOptions(options),
+    getPostQuestcenterMedicalTemplateUpdateParagraphNodeParamsMutationOptions(options),
     queryClient
   )
 }
 
-export type op430PostQuestcenterMedicalTemplateUpdateTemplateResponse200 = {
-  data: Op430PostQuestcenterMedicalTemplateUpdateTemplate200
+export type postQuestcenterMedicalTemplateUpdateTemplateResponse200 = {
+  data: PostQuestcenterMedicalTemplateUpdateTemplate200
   status: 200
 }
 
-export type op430PostQuestcenterMedicalTemplateUpdateTemplateResponseSuccess =
-  op430PostQuestcenterMedicalTemplateUpdateTemplateResponse200 & {
+export type postQuestcenterMedicalTemplateUpdateTemplateResponseSuccess =
+  postQuestcenterMedicalTemplateUpdateTemplateResponse200 & {
     headers: Headers
   }
 
-export type op430PostQuestcenterMedicalTemplateUpdateTemplateResponse =
-  op430PostQuestcenterMedicalTemplateUpdateTemplateResponseSuccess
+export type postQuestcenterMedicalTemplateUpdateTemplateResponse =
+  postQuestcenterMedicalTemplateUpdateTemplateResponseSuccess
 
-export const getOp430PostQuestcenterMedicalTemplateUpdateTemplateUrl = () => {
+export const getPostQuestcenterMedicalTemplateUpdateTemplateUrl = () => {
   return `/questcenter/medical_template/update_template`
 }
 
@@ -10236,38 +10068,38 @@ export const getOp430PostQuestcenterMedicalTemplateUpdateTemplateUrl = () => {
  * 更新病历模版，模版名字、备注
  * @summary 更新病历模版，模版名字、备注
  */
-export const op430PostQuestcenterMedicalTemplateUpdateTemplate = async (
-  op430PostQuestcenterMedicalTemplateUpdateTemplateBody: Op430PostQuestcenterMedicalTemplateUpdateTemplateBody,
+export const postQuestcenterMedicalTemplateUpdateTemplate = async (
+  postQuestcenterMedicalTemplateUpdateTemplateBody: PostQuestcenterMedicalTemplateUpdateTemplateBody,
   options?: RequestInit
-): Promise<op430PostQuestcenterMedicalTemplateUpdateTemplateResponse> => {
-  return customFetch<op430PostQuestcenterMedicalTemplateUpdateTemplateResponse>(
-    getOp430PostQuestcenterMedicalTemplateUpdateTemplateUrl(),
+): Promise<postQuestcenterMedicalTemplateUpdateTemplateResponse> => {
+  return customFetch<postQuestcenterMedicalTemplateUpdateTemplateResponse>(
+    getPostQuestcenterMedicalTemplateUpdateTemplateUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op430PostQuestcenterMedicalTemplateUpdateTemplateBody),
+      body: JSON.stringify(postQuestcenterMedicalTemplateUpdateTemplateBody),
     }
   )
 }
 
-export const getOp430PostQuestcenterMedicalTemplateUpdateTemplateMutationOptions = <
+export const getPostQuestcenterMedicalTemplateUpdateTemplateMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op430PostQuestcenterMedicalTemplateUpdateTemplate>>,
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplateUpdateTemplate>>,
     TError,
-    { data: Op430PostQuestcenterMedicalTemplateUpdateTemplateBody },
+    { data: PostQuestcenterMedicalTemplateUpdateTemplateBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op430PostQuestcenterMedicalTemplateUpdateTemplate>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateUpdateTemplate>>,
   TError,
-  { data: Op430PostQuestcenterMedicalTemplateUpdateTemplateBody },
+  { data: PostQuestcenterMedicalTemplateUpdateTemplateBody },
   TContext
 > => {
-  const mutationKey = ['op430PostQuestcenterMedicalTemplateUpdateTemplate']
+  const mutationKey = ['postQuestcenterMedicalTemplateUpdateTemplate']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -10275,66 +10107,66 @@ export const getOp430PostQuestcenterMedicalTemplateUpdateTemplateMutationOptions
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op430PostQuestcenterMedicalTemplateUpdateTemplate>>,
-    { data: Op430PostQuestcenterMedicalTemplateUpdateTemplateBody }
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplateUpdateTemplate>>,
+    { data: PostQuestcenterMedicalTemplateUpdateTemplateBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op430PostQuestcenterMedicalTemplateUpdateTemplate(data)
+    return postQuestcenterMedicalTemplateUpdateTemplate(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op430PostQuestcenterMedicalTemplateUpdateTemplateMutationResult = NonNullable<
-  Awaited<ReturnType<typeof op430PostQuestcenterMedicalTemplateUpdateTemplate>>
+export type PostQuestcenterMedicalTemplateUpdateTemplateMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateUpdateTemplate>>
 >
-export type Op430PostQuestcenterMedicalTemplateUpdateTemplateMutationBody =
-  Op430PostQuestcenterMedicalTemplateUpdateTemplateBody
-export type Op430PostQuestcenterMedicalTemplateUpdateTemplateMutationError = ErrorType<unknown>
+export type PostQuestcenterMedicalTemplateUpdateTemplateMutationBody =
+  PostQuestcenterMedicalTemplateUpdateTemplateBody
+export type PostQuestcenterMedicalTemplateUpdateTemplateMutationError = ErrorType<unknown>
 
 /**
  * @summary 更新病历模版，模版名字、备注
  */
-export const useOp430PostQuestcenterMedicalTemplateUpdateTemplate = <
+export const usePostQuestcenterMedicalTemplateUpdateTemplate = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op430PostQuestcenterMedicalTemplateUpdateTemplate>>,
+      Awaited<ReturnType<typeof postQuestcenterMedicalTemplateUpdateTemplate>>,
       TError,
-      { data: Op430PostQuestcenterMedicalTemplateUpdateTemplateBody },
+      { data: PostQuestcenterMedicalTemplateUpdateTemplateBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op430PostQuestcenterMedicalTemplateUpdateTemplate>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateUpdateTemplate>>,
   TError,
-  { data: Op430PostQuestcenterMedicalTemplateUpdateTemplateBody },
+  { data: PostQuestcenterMedicalTemplateUpdateTemplateBody },
   TContext
 > => {
   return useMutation(
-    getOp430PostQuestcenterMedicalTemplateUpdateTemplateMutationOptions(options),
+    getPostQuestcenterMedicalTemplateUpdateTemplateMutationOptions(options),
     queryClient
   )
 }
 
-export type op525PostQuestcenterMedicalTemplateUpdateTemplateModernTextResponse200 = {
-  data: Op525PostQuestcenterMedicalTemplateUpdateTemplateModernText200
+export type postQuestcenterMedicalTemplateUpdateTemplateModernTextResponse200 = {
+  data: PostQuestcenterMedicalTemplateUpdateTemplateModernText200
   status: 200
 }
 
-export type op525PostQuestcenterMedicalTemplateUpdateTemplateModernTextResponseSuccess =
-  op525PostQuestcenterMedicalTemplateUpdateTemplateModernTextResponse200 & {
+export type postQuestcenterMedicalTemplateUpdateTemplateModernTextResponseSuccess =
+  postQuestcenterMedicalTemplateUpdateTemplateModernTextResponse200 & {
     headers: Headers
   }
 
-export type op525PostQuestcenterMedicalTemplateUpdateTemplateModernTextResponse =
-  op525PostQuestcenterMedicalTemplateUpdateTemplateModernTextResponseSuccess
+export type postQuestcenterMedicalTemplateUpdateTemplateModernTextResponse =
+  postQuestcenterMedicalTemplateUpdateTemplateModernTextResponseSuccess
 
-export const getOp525PostQuestcenterMedicalTemplateUpdateTemplateModernTextUrl = () => {
+export const getPostQuestcenterMedicalTemplateUpdateTemplateModernTextUrl = () => {
   return `/questcenter/medical_template/update_template_modern_text`
 }
 
@@ -10342,38 +10174,38 @@ export const getOp525PostQuestcenterMedicalTemplateUpdateTemplateModernTextUrl =
  * 编辑打印设计
  * @summary 编辑打印设计
  */
-export const op525PostQuestcenterMedicalTemplateUpdateTemplateModernText = async (
-  op525PostQuestcenterMedicalTemplateUpdateTemplateModernTextBody?: Op525PostQuestcenterMedicalTemplateUpdateTemplateModernTextBody,
+export const postQuestcenterMedicalTemplateUpdateTemplateModernText = async (
+  postQuestcenterMedicalTemplateUpdateTemplateModernTextBody?: PostQuestcenterMedicalTemplateUpdateTemplateModernTextBody,
   options?: RequestInit
-): Promise<op525PostQuestcenterMedicalTemplateUpdateTemplateModernTextResponse> => {
-  return customFetch<op525PostQuestcenterMedicalTemplateUpdateTemplateModernTextResponse>(
-    getOp525PostQuestcenterMedicalTemplateUpdateTemplateModernTextUrl(),
+): Promise<postQuestcenterMedicalTemplateUpdateTemplateModernTextResponse> => {
+  return customFetch<postQuestcenterMedicalTemplateUpdateTemplateModernTextResponse>(
+    getPostQuestcenterMedicalTemplateUpdateTemplateModernTextUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op525PostQuestcenterMedicalTemplateUpdateTemplateModernTextBody),
+      body: JSON.stringify(postQuestcenterMedicalTemplateUpdateTemplateModernTextBody),
     }
   )
 }
 
-export const getOp525PostQuestcenterMedicalTemplateUpdateTemplateModernTextMutationOptions = <
+export const getPostQuestcenterMedicalTemplateUpdateTemplateModernTextMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op525PostQuestcenterMedicalTemplateUpdateTemplateModernText>>,
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplateUpdateTemplateModernText>>,
     TError,
-    { data?: Op525PostQuestcenterMedicalTemplateUpdateTemplateModernTextBody },
+    { data?: PostQuestcenterMedicalTemplateUpdateTemplateModernTextBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op525PostQuestcenterMedicalTemplateUpdateTemplateModernText>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateUpdateTemplateModernText>>,
   TError,
-  { data?: Op525PostQuestcenterMedicalTemplateUpdateTemplateModernTextBody },
+  { data?: PostQuestcenterMedicalTemplateUpdateTemplateModernTextBody },
   TContext
 > => {
-  const mutationKey = ['op525PostQuestcenterMedicalTemplateUpdateTemplateModernText']
+  const mutationKey = ['postQuestcenterMedicalTemplateUpdateTemplateModernText']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -10381,68 +10213,67 @@ export const getOp525PostQuestcenterMedicalTemplateUpdateTemplateModernTextMutat
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op525PostQuestcenterMedicalTemplateUpdateTemplateModernText>>,
-    { data?: Op525PostQuestcenterMedicalTemplateUpdateTemplateModernTextBody }
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplateUpdateTemplateModernText>>,
+    { data?: PostQuestcenterMedicalTemplateUpdateTemplateModernTextBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op525PostQuestcenterMedicalTemplateUpdateTemplateModernText(data)
+    return postQuestcenterMedicalTemplateUpdateTemplateModernText(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op525PostQuestcenterMedicalTemplateUpdateTemplateModernTextMutationResult = NonNullable<
-  Awaited<ReturnType<typeof op525PostQuestcenterMedicalTemplateUpdateTemplateModernText>>
+export type PostQuestcenterMedicalTemplateUpdateTemplateModernTextMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateUpdateTemplateModernText>>
 >
-export type Op525PostQuestcenterMedicalTemplateUpdateTemplateModernTextMutationBody =
-  | Op525PostQuestcenterMedicalTemplateUpdateTemplateModernTextBody
+export type PostQuestcenterMedicalTemplateUpdateTemplateModernTextMutationBody =
+  | PostQuestcenterMedicalTemplateUpdateTemplateModernTextBody
   | undefined
-export type Op525PostQuestcenterMedicalTemplateUpdateTemplateModernTextMutationError =
-  ErrorType<unknown>
+export type PostQuestcenterMedicalTemplateUpdateTemplateModernTextMutationError = ErrorType<unknown>
 
 /**
  * @summary 编辑打印设计
  */
-export const useOp525PostQuestcenterMedicalTemplateUpdateTemplateModernText = <
+export const usePostQuestcenterMedicalTemplateUpdateTemplateModernText = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op525PostQuestcenterMedicalTemplateUpdateTemplateModernText>>,
+      Awaited<ReturnType<typeof postQuestcenterMedicalTemplateUpdateTemplateModernText>>,
       TError,
-      { data?: Op525PostQuestcenterMedicalTemplateUpdateTemplateModernTextBody },
+      { data?: PostQuestcenterMedicalTemplateUpdateTemplateModernTextBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op525PostQuestcenterMedicalTemplateUpdateTemplateModernText>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateUpdateTemplateModernText>>,
   TError,
-  { data?: Op525PostQuestcenterMedicalTemplateUpdateTemplateModernTextBody },
+  { data?: PostQuestcenterMedicalTemplateUpdateTemplateModernTextBody },
   TContext
 > => {
   return useMutation(
-    getOp525PostQuestcenterMedicalTemplateUpdateTemplateModernTextMutationOptions(options),
+    getPostQuestcenterMedicalTemplateUpdateTemplateModernTextMutationOptions(options),
     queryClient
   )
 }
 
-export type op433PostQuestcenterMedicalTemplateUpdateTemplateParagraphResponse200 = {
-  data: Op433PostQuestcenterMedicalTemplateUpdateTemplateParagraph200
+export type postQuestcenterMedicalTemplateUpdateTemplateParagraphResponse200 = {
+  data: PostQuestcenterMedicalTemplateUpdateTemplateParagraph200
   status: 200
 }
 
-export type op433PostQuestcenterMedicalTemplateUpdateTemplateParagraphResponseSuccess =
-  op433PostQuestcenterMedicalTemplateUpdateTemplateParagraphResponse200 & {
+export type postQuestcenterMedicalTemplateUpdateTemplateParagraphResponseSuccess =
+  postQuestcenterMedicalTemplateUpdateTemplateParagraphResponse200 & {
     headers: Headers
   }
 
-export type op433PostQuestcenterMedicalTemplateUpdateTemplateParagraphResponse =
-  op433PostQuestcenterMedicalTemplateUpdateTemplateParagraphResponseSuccess
+export type postQuestcenterMedicalTemplateUpdateTemplateParagraphResponse =
+  postQuestcenterMedicalTemplateUpdateTemplateParagraphResponseSuccess
 
-export const getOp433PostQuestcenterMedicalTemplateUpdateTemplateParagraphUrl = () => {
+export const getPostQuestcenterMedicalTemplateUpdateTemplateParagraphUrl = () => {
   return `/questcenter/medical_template/update_template_paragraph`
 }
 
@@ -10450,38 +10281,38 @@ export const getOp433PostQuestcenterMedicalTemplateUpdateTemplateParagraphUrl = 
  * 更新病历段落，
  * @summary 更新病历段落，
  */
-export const op433PostQuestcenterMedicalTemplateUpdateTemplateParagraph = async (
-  op433PostQuestcenterMedicalTemplateUpdateTemplateParagraphBody: Op433PostQuestcenterMedicalTemplateUpdateTemplateParagraphBody,
+export const postQuestcenterMedicalTemplateUpdateTemplateParagraph = async (
+  postQuestcenterMedicalTemplateUpdateTemplateParagraphBody: PostQuestcenterMedicalTemplateUpdateTemplateParagraphBody,
   options?: RequestInit
-): Promise<op433PostQuestcenterMedicalTemplateUpdateTemplateParagraphResponse> => {
-  return customFetch<op433PostQuestcenterMedicalTemplateUpdateTemplateParagraphResponse>(
-    getOp433PostQuestcenterMedicalTemplateUpdateTemplateParagraphUrl(),
+): Promise<postQuestcenterMedicalTemplateUpdateTemplateParagraphResponse> => {
+  return customFetch<postQuestcenterMedicalTemplateUpdateTemplateParagraphResponse>(
+    getPostQuestcenterMedicalTemplateUpdateTemplateParagraphUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op433PostQuestcenterMedicalTemplateUpdateTemplateParagraphBody),
+      body: JSON.stringify(postQuestcenterMedicalTemplateUpdateTemplateParagraphBody),
     }
   )
 }
 
-export const getOp433PostQuestcenterMedicalTemplateUpdateTemplateParagraphMutationOptions = <
+export const getPostQuestcenterMedicalTemplateUpdateTemplateParagraphMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op433PostQuestcenterMedicalTemplateUpdateTemplateParagraph>>,
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplateUpdateTemplateParagraph>>,
     TError,
-    { data: Op433PostQuestcenterMedicalTemplateUpdateTemplateParagraphBody },
+    { data: PostQuestcenterMedicalTemplateUpdateTemplateParagraphBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op433PostQuestcenterMedicalTemplateUpdateTemplateParagraph>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateUpdateTemplateParagraph>>,
   TError,
-  { data: Op433PostQuestcenterMedicalTemplateUpdateTemplateParagraphBody },
+  { data: PostQuestcenterMedicalTemplateUpdateTemplateParagraphBody },
   TContext
 > => {
-  const mutationKey = ['op433PostQuestcenterMedicalTemplateUpdateTemplateParagraph']
+  const mutationKey = ['postQuestcenterMedicalTemplateUpdateTemplateParagraph']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -10489,67 +10320,66 @@ export const getOp433PostQuestcenterMedicalTemplateUpdateTemplateParagraphMutati
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op433PostQuestcenterMedicalTemplateUpdateTemplateParagraph>>,
-    { data: Op433PostQuestcenterMedicalTemplateUpdateTemplateParagraphBody }
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplateUpdateTemplateParagraph>>,
+    { data: PostQuestcenterMedicalTemplateUpdateTemplateParagraphBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op433PostQuestcenterMedicalTemplateUpdateTemplateParagraph(data)
+    return postQuestcenterMedicalTemplateUpdateTemplateParagraph(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op433PostQuestcenterMedicalTemplateUpdateTemplateParagraphMutationResult = NonNullable<
-  Awaited<ReturnType<typeof op433PostQuestcenterMedicalTemplateUpdateTemplateParagraph>>
+export type PostQuestcenterMedicalTemplateUpdateTemplateParagraphMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateUpdateTemplateParagraph>>
 >
-export type Op433PostQuestcenterMedicalTemplateUpdateTemplateParagraphMutationBody =
-  Op433PostQuestcenterMedicalTemplateUpdateTemplateParagraphBody
-export type Op433PostQuestcenterMedicalTemplateUpdateTemplateParagraphMutationError =
-  ErrorType<unknown>
+export type PostQuestcenterMedicalTemplateUpdateTemplateParagraphMutationBody =
+  PostQuestcenterMedicalTemplateUpdateTemplateParagraphBody
+export type PostQuestcenterMedicalTemplateUpdateTemplateParagraphMutationError = ErrorType<unknown>
 
 /**
  * @summary 更新病历段落，
  */
-export const useOp433PostQuestcenterMedicalTemplateUpdateTemplateParagraph = <
+export const usePostQuestcenterMedicalTemplateUpdateTemplateParagraph = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op433PostQuestcenterMedicalTemplateUpdateTemplateParagraph>>,
+      Awaited<ReturnType<typeof postQuestcenterMedicalTemplateUpdateTemplateParagraph>>,
       TError,
-      { data: Op433PostQuestcenterMedicalTemplateUpdateTemplateParagraphBody },
+      { data: PostQuestcenterMedicalTemplateUpdateTemplateParagraphBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op433PostQuestcenterMedicalTemplateUpdateTemplateParagraph>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateUpdateTemplateParagraph>>,
   TError,
-  { data: Op433PostQuestcenterMedicalTemplateUpdateTemplateParagraphBody },
+  { data: PostQuestcenterMedicalTemplateUpdateTemplateParagraphBody },
   TContext
 > => {
   return useMutation(
-    getOp433PostQuestcenterMedicalTemplateUpdateTemplateParagraphMutationOptions(options),
+    getPostQuestcenterMedicalTemplateUpdateTemplateParagraphMutationOptions(options),
     queryClient
   )
 }
 
-export type op452PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextResponse200 = {
-  data: Op452PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernText200
+export type postQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextResponse200 = {
+  data: PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernText200
   status: 200
 }
 
-export type op452PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextResponseSuccess =
-  op452PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextResponse200 & {
+export type postQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextResponseSuccess =
+  postQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextResponse200 & {
     headers: Headers
   }
 
-export type op452PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextResponse =
-  op452PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextResponseSuccess
+export type postQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextResponse =
+  postQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextResponseSuccess
 
-export const getOp452PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextUrl = () => {
+export const getPostQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextUrl = () => {
   return `/questcenter/medical_template/update_template_paragraph_modern_text`
 }
 
@@ -10557,115 +10387,107 @@ export const getOp452PostQuestcenterMedicalTemplateUpdateTemplateParagraphModern
  * 更新病历段落，
  * @summary 更新病历段落，
  */
-export const op452PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernText = async (
-  op452PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextBody: Op452PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextBody,
+export const postQuestcenterMedicalTemplateUpdateTemplateParagraphModernText = async (
+  postQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextBody: PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextBody,
   options?: RequestInit
-): Promise<op452PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextResponse> => {
-  return customFetch<op452PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextResponse>(
-    getOp452PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextUrl(),
+): Promise<postQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextResponse> => {
+  return customFetch<postQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextResponse>(
+    getPostQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(
-        op452PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextBody
-      ),
+      body: JSON.stringify(postQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextBody),
     }
   )
 }
 
-export const getOp452PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextMutationOptions =
-  <TError = ErrorType<unknown>, TContext = unknown>(options?: {
-    mutation?: UseMutationOptions<
-      Awaited<
-        ReturnType<typeof op452PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernText>
-      >,
-      TError,
-      { data: Op452PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextBody },
-      TContext
-    >
-  }): UseMutationOptions<
-    Awaited<
-      ReturnType<typeof op452PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernText>
-    >,
+export const getPostQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextMutationOptions = <
+  TError = ErrorType<unknown>,
+  TContext = unknown,
+>(options?: {
+  mutation?: UseMutationOptions<
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplateUpdateTemplateParagraphModernText>>,
     TError,
-    { data: Op452PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextBody },
+    { data: PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextBody },
     TContext
-  > => {
-    const mutationKey = ['op452PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernText']
-    const { mutation: mutationOptions } = options
-      ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
-        ? options
-        : { ...options, mutation: { ...options.mutation, mutationKey } }
-      : { mutation: { mutationKey } }
+  >
+}): UseMutationOptions<
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateUpdateTemplateParagraphModernText>>,
+  TError,
+  { data: PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextBody },
+  TContext
+> => {
+  const mutationKey = ['postQuestcenterMedicalTemplateUpdateTemplateParagraphModernText']
+  const { mutation: mutationOptions } = options
+    ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
+      ? options
+      : { ...options, mutation: { ...options.mutation, mutationKey } }
+    : { mutation: { mutationKey } }
 
-    const mutationFn: MutationFunction<
-      Awaited<
-        ReturnType<typeof op452PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernText>
-      >,
-      { data: Op452PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextBody }
-    > = (props) => {
-      const { data } = props ?? {}
+  const mutationFn: MutationFunction<
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplateUpdateTemplateParagraphModernText>>,
+    { data: PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextBody }
+  > = (props) => {
+    const { data } = props ?? {}
 
-      return op452PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernText(data)
-    }
-
-    return { mutationFn, ...mutationOptions }
+    return postQuestcenterMedicalTemplateUpdateTemplateParagraphModernText(data)
   }
 
-export type Op452PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextMutationResult =
+  return { mutationFn, ...mutationOptions }
+}
+
+export type PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextMutationResult =
   NonNullable<
-    Awaited<ReturnType<typeof op452PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernText>>
+    Awaited<ReturnType<typeof postQuestcenterMedicalTemplateUpdateTemplateParagraphModernText>>
   >
-export type Op452PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextMutationBody =
-  Op452PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextBody
-export type Op452PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextMutationError =
+export type PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextMutationBody =
+  PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextBody
+export type PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextMutationError =
   ErrorType<unknown>
 
 /**
  * @summary 更新病历段落，
  */
-export const useOp452PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernText = <
+export const usePostQuestcenterMedicalTemplateUpdateTemplateParagraphModernText = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<
-        ReturnType<typeof op452PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernText>
-      >,
+      Awaited<ReturnType<typeof postQuestcenterMedicalTemplateUpdateTemplateParagraphModernText>>,
       TError,
-      { data: Op452PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextBody },
+      { data: PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op452PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernText>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTemplateUpdateTemplateParagraphModernText>>,
   TError,
-  { data: Op452PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextBody },
+  { data: PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextBody },
   TContext
 > => {
   return useMutation(
-    getOp452PostQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextMutationOptions(options),
+    getPostQuestcenterMedicalTemplateUpdateTemplateParagraphModernTextMutationOptions(options),
     queryClient
   )
 }
 
-export type op511PostQuestcenterMedicalTextTemplateCreateTemplateResponse200 = {
-  data: Op511PostQuestcenterMedicalTextTemplateCreateTemplate200
+export type postQuestcenterMedicalTextTemplateCreateTemplateResponse200 = {
+  data: PostQuestcenterMedicalTextTemplateCreateTemplate200
   status: 200
 }
 
-export type op511PostQuestcenterMedicalTextTemplateCreateTemplateResponseSuccess =
-  op511PostQuestcenterMedicalTextTemplateCreateTemplateResponse200 & {
+export type postQuestcenterMedicalTextTemplateCreateTemplateResponseSuccess =
+  postQuestcenterMedicalTextTemplateCreateTemplateResponse200 & {
     headers: Headers
   }
 
-export type op511PostQuestcenterMedicalTextTemplateCreateTemplateResponse =
-  op511PostQuestcenterMedicalTextTemplateCreateTemplateResponseSuccess
+export type postQuestcenterMedicalTextTemplateCreateTemplateResponse =
+  postQuestcenterMedicalTextTemplateCreateTemplateResponseSuccess
 
-export const getOp511PostQuestcenterMedicalTextTemplateCreateTemplateUrl = () => {
+export const getPostQuestcenterMedicalTextTemplateCreateTemplateUrl = () => {
   return `/questcenter/medical_text_template/create_template`
 }
 
@@ -10673,38 +10495,38 @@ export const getOp511PostQuestcenterMedicalTextTemplateCreateTemplateUrl = () =>
  * 创建文本模版
  * @summary 创建文本模版
  */
-export const op511PostQuestcenterMedicalTextTemplateCreateTemplate = async (
-  op511PostQuestcenterMedicalTextTemplateCreateTemplateBody?: Op511PostQuestcenterMedicalTextTemplateCreateTemplateBody,
+export const postQuestcenterMedicalTextTemplateCreateTemplate = async (
+  postQuestcenterMedicalTextTemplateCreateTemplateBody?: PostQuestcenterMedicalTextTemplateCreateTemplateBody,
   options?: RequestInit
-): Promise<op511PostQuestcenterMedicalTextTemplateCreateTemplateResponse> => {
-  return customFetch<op511PostQuestcenterMedicalTextTemplateCreateTemplateResponse>(
-    getOp511PostQuestcenterMedicalTextTemplateCreateTemplateUrl(),
+): Promise<postQuestcenterMedicalTextTemplateCreateTemplateResponse> => {
+  return customFetch<postQuestcenterMedicalTextTemplateCreateTemplateResponse>(
+    getPostQuestcenterMedicalTextTemplateCreateTemplateUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op511PostQuestcenterMedicalTextTemplateCreateTemplateBody),
+      body: JSON.stringify(postQuestcenterMedicalTextTemplateCreateTemplateBody),
     }
   )
 }
 
-export const getOp511PostQuestcenterMedicalTextTemplateCreateTemplateMutationOptions = <
+export const getPostQuestcenterMedicalTextTemplateCreateTemplateMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op511PostQuestcenterMedicalTextTemplateCreateTemplate>>,
+    Awaited<ReturnType<typeof postQuestcenterMedicalTextTemplateCreateTemplate>>,
     TError,
-    { data?: Op511PostQuestcenterMedicalTextTemplateCreateTemplateBody },
+    { data?: PostQuestcenterMedicalTextTemplateCreateTemplateBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op511PostQuestcenterMedicalTextTemplateCreateTemplate>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTextTemplateCreateTemplate>>,
   TError,
-  { data?: Op511PostQuestcenterMedicalTextTemplateCreateTemplateBody },
+  { data?: PostQuestcenterMedicalTextTemplateCreateTemplateBody },
   TContext
 > => {
-  const mutationKey = ['op511PostQuestcenterMedicalTextTemplateCreateTemplate']
+  const mutationKey = ['postQuestcenterMedicalTextTemplateCreateTemplate']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -10712,67 +10534,67 @@ export const getOp511PostQuestcenterMedicalTextTemplateCreateTemplateMutationOpt
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op511PostQuestcenterMedicalTextTemplateCreateTemplate>>,
-    { data?: Op511PostQuestcenterMedicalTextTemplateCreateTemplateBody }
+    Awaited<ReturnType<typeof postQuestcenterMedicalTextTemplateCreateTemplate>>,
+    { data?: PostQuestcenterMedicalTextTemplateCreateTemplateBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op511PostQuestcenterMedicalTextTemplateCreateTemplate(data)
+    return postQuestcenterMedicalTextTemplateCreateTemplate(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op511PostQuestcenterMedicalTextTemplateCreateTemplateMutationResult = NonNullable<
-  Awaited<ReturnType<typeof op511PostQuestcenterMedicalTextTemplateCreateTemplate>>
+export type PostQuestcenterMedicalTextTemplateCreateTemplateMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterMedicalTextTemplateCreateTemplate>>
 >
-export type Op511PostQuestcenterMedicalTextTemplateCreateTemplateMutationBody =
-  | Op511PostQuestcenterMedicalTextTemplateCreateTemplateBody
+export type PostQuestcenterMedicalTextTemplateCreateTemplateMutationBody =
+  | PostQuestcenterMedicalTextTemplateCreateTemplateBody
   | undefined
-export type Op511PostQuestcenterMedicalTextTemplateCreateTemplateMutationError = ErrorType<unknown>
+export type PostQuestcenterMedicalTextTemplateCreateTemplateMutationError = ErrorType<unknown>
 
 /**
  * @summary 创建文本模版
  */
-export const useOp511PostQuestcenterMedicalTextTemplateCreateTemplate = <
+export const usePostQuestcenterMedicalTextTemplateCreateTemplate = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op511PostQuestcenterMedicalTextTemplateCreateTemplate>>,
+      Awaited<ReturnType<typeof postQuestcenterMedicalTextTemplateCreateTemplate>>,
       TError,
-      { data?: Op511PostQuestcenterMedicalTextTemplateCreateTemplateBody },
+      { data?: PostQuestcenterMedicalTextTemplateCreateTemplateBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op511PostQuestcenterMedicalTextTemplateCreateTemplate>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTextTemplateCreateTemplate>>,
   TError,
-  { data?: Op511PostQuestcenterMedicalTextTemplateCreateTemplateBody },
+  { data?: PostQuestcenterMedicalTextTemplateCreateTemplateBody },
   TContext
 > => {
   return useMutation(
-    getOp511PostQuestcenterMedicalTextTemplateCreateTemplateMutationOptions(options),
+    getPostQuestcenterMedicalTextTemplateCreateTemplateMutationOptions(options),
     queryClient
   )
 }
 
-export type op513PostQuestcenterMedicalTextTemplateDeleteTemplateResponse200 = {
-  data: Op513PostQuestcenterMedicalTextTemplateDeleteTemplate200
+export type postQuestcenterMedicalTextTemplateDeleteTemplateResponse200 = {
+  data: PostQuestcenterMedicalTextTemplateDeleteTemplate200
   status: 200
 }
 
-export type op513PostQuestcenterMedicalTextTemplateDeleteTemplateResponseSuccess =
-  op513PostQuestcenterMedicalTextTemplateDeleteTemplateResponse200 & {
+export type postQuestcenterMedicalTextTemplateDeleteTemplateResponseSuccess =
+  postQuestcenterMedicalTextTemplateDeleteTemplateResponse200 & {
     headers: Headers
   }
 
-export type op513PostQuestcenterMedicalTextTemplateDeleteTemplateResponse =
-  op513PostQuestcenterMedicalTextTemplateDeleteTemplateResponseSuccess
+export type postQuestcenterMedicalTextTemplateDeleteTemplateResponse =
+  postQuestcenterMedicalTextTemplateDeleteTemplateResponseSuccess
 
-export const getOp513PostQuestcenterMedicalTextTemplateDeleteTemplateUrl = () => {
+export const getPostQuestcenterMedicalTextTemplateDeleteTemplateUrl = () => {
   return `/questcenter/medical_text_template/delete_template`
 }
 
@@ -10780,38 +10602,38 @@ export const getOp513PostQuestcenterMedicalTextTemplateDeleteTemplateUrl = () =>
  * 删除文本模版
  * @summary 删除文本模版
  */
-export const op513PostQuestcenterMedicalTextTemplateDeleteTemplate = async (
-  op513PostQuestcenterMedicalTextTemplateDeleteTemplateBody?: Op513PostQuestcenterMedicalTextTemplateDeleteTemplateBody,
+export const postQuestcenterMedicalTextTemplateDeleteTemplate = async (
+  postQuestcenterMedicalTextTemplateDeleteTemplateBody?: PostQuestcenterMedicalTextTemplateDeleteTemplateBody,
   options?: RequestInit
-): Promise<op513PostQuestcenterMedicalTextTemplateDeleteTemplateResponse> => {
-  return customFetch<op513PostQuestcenterMedicalTextTemplateDeleteTemplateResponse>(
-    getOp513PostQuestcenterMedicalTextTemplateDeleteTemplateUrl(),
+): Promise<postQuestcenterMedicalTextTemplateDeleteTemplateResponse> => {
+  return customFetch<postQuestcenterMedicalTextTemplateDeleteTemplateResponse>(
+    getPostQuestcenterMedicalTextTemplateDeleteTemplateUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op513PostQuestcenterMedicalTextTemplateDeleteTemplateBody),
+      body: JSON.stringify(postQuestcenterMedicalTextTemplateDeleteTemplateBody),
     }
   )
 }
 
-export const getOp513PostQuestcenterMedicalTextTemplateDeleteTemplateMutationOptions = <
+export const getPostQuestcenterMedicalTextTemplateDeleteTemplateMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op513PostQuestcenterMedicalTextTemplateDeleteTemplate>>,
+    Awaited<ReturnType<typeof postQuestcenterMedicalTextTemplateDeleteTemplate>>,
     TError,
-    { data?: Op513PostQuestcenterMedicalTextTemplateDeleteTemplateBody },
+    { data?: PostQuestcenterMedicalTextTemplateDeleteTemplateBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op513PostQuestcenterMedicalTextTemplateDeleteTemplate>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTextTemplateDeleteTemplate>>,
   TError,
-  { data?: Op513PostQuestcenterMedicalTextTemplateDeleteTemplateBody },
+  { data?: PostQuestcenterMedicalTextTemplateDeleteTemplateBody },
   TContext
 > => {
-  const mutationKey = ['op513PostQuestcenterMedicalTextTemplateDeleteTemplate']
+  const mutationKey = ['postQuestcenterMedicalTextTemplateDeleteTemplate']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -10819,68 +10641,68 @@ export const getOp513PostQuestcenterMedicalTextTemplateDeleteTemplateMutationOpt
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op513PostQuestcenterMedicalTextTemplateDeleteTemplate>>,
-    { data?: Op513PostQuestcenterMedicalTextTemplateDeleteTemplateBody }
+    Awaited<ReturnType<typeof postQuestcenterMedicalTextTemplateDeleteTemplate>>,
+    { data?: PostQuestcenterMedicalTextTemplateDeleteTemplateBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op513PostQuestcenterMedicalTextTemplateDeleteTemplate(data)
+    return postQuestcenterMedicalTextTemplateDeleteTemplate(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op513PostQuestcenterMedicalTextTemplateDeleteTemplateMutationResult = NonNullable<
-  Awaited<ReturnType<typeof op513PostQuestcenterMedicalTextTemplateDeleteTemplate>>
+export type PostQuestcenterMedicalTextTemplateDeleteTemplateMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterMedicalTextTemplateDeleteTemplate>>
 >
-export type Op513PostQuestcenterMedicalTextTemplateDeleteTemplateMutationBody =
-  | Op513PostQuestcenterMedicalTextTemplateDeleteTemplateBody
+export type PostQuestcenterMedicalTextTemplateDeleteTemplateMutationBody =
+  | PostQuestcenterMedicalTextTemplateDeleteTemplateBody
   | undefined
-export type Op513PostQuestcenterMedicalTextTemplateDeleteTemplateMutationError = ErrorType<unknown>
+export type PostQuestcenterMedicalTextTemplateDeleteTemplateMutationError = ErrorType<unknown>
 
 /**
  * @summary 删除文本模版
  */
-export const useOp513PostQuestcenterMedicalTextTemplateDeleteTemplate = <
+export const usePostQuestcenterMedicalTextTemplateDeleteTemplate = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op513PostQuestcenterMedicalTextTemplateDeleteTemplate>>,
+      Awaited<ReturnType<typeof postQuestcenterMedicalTextTemplateDeleteTemplate>>,
       TError,
-      { data?: Op513PostQuestcenterMedicalTextTemplateDeleteTemplateBody },
+      { data?: PostQuestcenterMedicalTextTemplateDeleteTemplateBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op513PostQuestcenterMedicalTextTemplateDeleteTemplate>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTextTemplateDeleteTemplate>>,
   TError,
-  { data?: Op513PostQuestcenterMedicalTextTemplateDeleteTemplateBody },
+  { data?: PostQuestcenterMedicalTextTemplateDeleteTemplateBody },
   TContext
 > => {
   return useMutation(
-    getOp513PostQuestcenterMedicalTextTemplateDeleteTemplateMutationOptions(options),
+    getPostQuestcenterMedicalTextTemplateDeleteTemplateMutationOptions(options),
     queryClient
   )
 }
 
-export type op509GetQuestcenterMedicalTextTemplateGetTemplateListResponse200 = {
-  data: Op509GetQuestcenterMedicalTextTemplateGetTemplateList200
+export type getQuestcenterMedicalTextTemplateGetTemplateListResponse200 = {
+  data: GetQuestcenterMedicalTextTemplateGetTemplateList200
   status: 200
 }
 
-export type op509GetQuestcenterMedicalTextTemplateGetTemplateListResponseSuccess =
-  op509GetQuestcenterMedicalTextTemplateGetTemplateListResponse200 & {
+export type getQuestcenterMedicalTextTemplateGetTemplateListResponseSuccess =
+  getQuestcenterMedicalTextTemplateGetTemplateListResponse200 & {
     headers: Headers
   }
 
-export type op509GetQuestcenterMedicalTextTemplateGetTemplateListResponse =
-  op509GetQuestcenterMedicalTextTemplateGetTemplateListResponseSuccess
+export type getQuestcenterMedicalTextTemplateGetTemplateListResponse =
+  getQuestcenterMedicalTextTemplateGetTemplateListResponseSuccess
 
-export const getOp509GetQuestcenterMedicalTextTemplateGetTemplateListUrl = (
-  params: Op509GetQuestcenterMedicalTextTemplateGetTemplateListParams
+export const getGetQuestcenterMedicalTextTemplateGetTemplateListUrl = (
+  params: GetQuestcenterMedicalTextTemplateGetTemplateListParams
 ) => {
   const normalizedParams = new URLSearchParams()
 
@@ -10901,12 +10723,12 @@ export const getOp509GetQuestcenterMedicalTextTemplateGetTemplateListUrl = (
  * 文本模版列表
  * @summary 文本模版列表
  */
-export const op509GetQuestcenterMedicalTextTemplateGetTemplateList = async (
-  params: Op509GetQuestcenterMedicalTextTemplateGetTemplateListParams,
+export const getQuestcenterMedicalTextTemplateGetTemplateList = async (
+  params: GetQuestcenterMedicalTextTemplateGetTemplateListParams,
   options?: RequestInit
-): Promise<op509GetQuestcenterMedicalTextTemplateGetTemplateListResponse> => {
-  return customFetch<op509GetQuestcenterMedicalTextTemplateGetTemplateListResponse>(
-    getOp509GetQuestcenterMedicalTextTemplateGetTemplateListUrl(params),
+): Promise<getQuestcenterMedicalTextTemplateGetTemplateListResponse> => {
+  return customFetch<getQuestcenterMedicalTextTemplateGetTemplateListResponse>(
+    getGetQuestcenterMedicalTextTemplateGetTemplateListUrl(params),
     {
       ...options,
       method: 'GET',
@@ -10914,8 +10736,8 @@ export const op509GetQuestcenterMedicalTextTemplateGetTemplateList = async (
   )
 }
 
-export const getOp509GetQuestcenterMedicalTextTemplateGetTemplateListQueryKey = (
-  params?: Op509GetQuestcenterMedicalTextTemplateGetTemplateListParams
+export const getGetQuestcenterMedicalTextTemplateGetTemplateListQueryKey = (
+  params?: GetQuestcenterMedicalTextTemplateGetTemplateListParams
 ) => {
   return [
     `/questcenter/medical_text_template/get_template_list`,
@@ -10923,15 +10745,15 @@ export const getOp509GetQuestcenterMedicalTextTemplateGetTemplateListQueryKey = 
   ] as const
 }
 
-export const getOp509GetQuestcenterMedicalTextTemplateGetTemplateListQueryOptions = <
-  TData = Awaited<ReturnType<typeof op509GetQuestcenterMedicalTextTemplateGetTemplateList>>,
+export const getGetQuestcenterMedicalTextTemplateGetTemplateListQueryOptions = <
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTextTemplateGetTemplateList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op509GetQuestcenterMedicalTextTemplateGetTemplateListParams,
+  params: GetQuestcenterMedicalTextTemplateGetTemplateListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op509GetQuestcenterMedicalTextTemplateGetTemplateList>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTextTemplateGetTemplateList>>,
         TError,
         TData
       >
@@ -10941,82 +10763,81 @@ export const getOp509GetQuestcenterMedicalTextTemplateGetTemplateListQueryOption
   const { query: queryOptions } = options ?? {}
 
   const queryKey =
-    queryOptions?.queryKey ??
-    getOp509GetQuestcenterMedicalTextTemplateGetTemplateListQueryKey(params)
+    queryOptions?.queryKey ?? getGetQuestcenterMedicalTextTemplateGetTemplateListQueryKey(params)
 
   const queryFn: QueryFunction<
-    Awaited<ReturnType<typeof op509GetQuestcenterMedicalTextTemplateGetTemplateList>>
-  > = ({ signal }) => op509GetQuestcenterMedicalTextTemplateGetTemplateList(params, { signal })
+    Awaited<ReturnType<typeof getQuestcenterMedicalTextTemplateGetTemplateList>>
+  > = ({ signal }) => getQuestcenterMedicalTextTemplateGetTemplateList(params, { signal })
 
   return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof op509GetQuestcenterMedicalTextTemplateGetTemplateList>>,
+    Awaited<ReturnType<typeof getQuestcenterMedicalTextTemplateGetTemplateList>>,
     TError,
     TData
   > & { queryKey: DataTag<QueryKey, TData, TError> }
 }
 
-export type Op509GetQuestcenterMedicalTextTemplateGetTemplateListQueryResult = NonNullable<
-  Awaited<ReturnType<typeof op509GetQuestcenterMedicalTextTemplateGetTemplateList>>
+export type GetQuestcenterMedicalTextTemplateGetTemplateListQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getQuestcenterMedicalTextTemplateGetTemplateList>>
 >
-export type Op509GetQuestcenterMedicalTextTemplateGetTemplateListQueryError = ErrorType<unknown>
+export type GetQuestcenterMedicalTextTemplateGetTemplateListQueryError = ErrorType<unknown>
 
-export function useOp509GetQuestcenterMedicalTextTemplateGetTemplateList<
-  TData = Awaited<ReturnType<typeof op509GetQuestcenterMedicalTextTemplateGetTemplateList>>,
+export function useGetQuestcenterMedicalTextTemplateGetTemplateList<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTextTemplateGetTemplateList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op509GetQuestcenterMedicalTextTemplateGetTemplateListParams,
+  params: GetQuestcenterMedicalTextTemplateGetTemplateListParams,
   options: {
     query: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op509GetQuestcenterMedicalTextTemplateGetTemplateList>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTextTemplateGetTemplateList>>,
         TError,
         TData
       >
     > &
       Pick<
         DefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op509GetQuestcenterMedicalTextTemplateGetTemplateList>>,
+          Awaited<ReturnType<typeof getQuestcenterMedicalTextTemplateGetTemplateList>>,
           TError,
-          Awaited<ReturnType<typeof op509GetQuestcenterMedicalTextTemplateGetTemplateList>>
+          Awaited<ReturnType<typeof getQuestcenterMedicalTextTemplateGetTemplateList>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp509GetQuestcenterMedicalTextTemplateGetTemplateList<
-  TData = Awaited<ReturnType<typeof op509GetQuestcenterMedicalTextTemplateGetTemplateList>>,
+export function useGetQuestcenterMedicalTextTemplateGetTemplateList<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTextTemplateGetTemplateList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op509GetQuestcenterMedicalTextTemplateGetTemplateListParams,
+  params: GetQuestcenterMedicalTextTemplateGetTemplateListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op509GetQuestcenterMedicalTextTemplateGetTemplateList>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTextTemplateGetTemplateList>>,
         TError,
         TData
       >
     > &
       Pick<
         UndefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op509GetQuestcenterMedicalTextTemplateGetTemplateList>>,
+          Awaited<ReturnType<typeof getQuestcenterMedicalTextTemplateGetTemplateList>>,
           TError,
-          Awaited<ReturnType<typeof op509GetQuestcenterMedicalTextTemplateGetTemplateList>>
+          Awaited<ReturnType<typeof getQuestcenterMedicalTextTemplateGetTemplateList>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp509GetQuestcenterMedicalTextTemplateGetTemplateList<
-  TData = Awaited<ReturnType<typeof op509GetQuestcenterMedicalTextTemplateGetTemplateList>>,
+export function useGetQuestcenterMedicalTextTemplateGetTemplateList<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTextTemplateGetTemplateList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op509GetQuestcenterMedicalTextTemplateGetTemplateListParams,
+  params: GetQuestcenterMedicalTextTemplateGetTemplateListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op509GetQuestcenterMedicalTextTemplateGetTemplateList>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTextTemplateGetTemplateList>>,
         TError,
         TData
       >
@@ -11028,15 +10849,15 @@ export function useOp509GetQuestcenterMedicalTextTemplateGetTemplateList<
  * @summary 文本模版列表
  */
 
-export function useOp509GetQuestcenterMedicalTextTemplateGetTemplateList<
-  TData = Awaited<ReturnType<typeof op509GetQuestcenterMedicalTextTemplateGetTemplateList>>,
+export function useGetQuestcenterMedicalTextTemplateGetTemplateList<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTextTemplateGetTemplateList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op509GetQuestcenterMedicalTextTemplateGetTemplateListParams,
+  params: GetQuestcenterMedicalTextTemplateGetTemplateListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op509GetQuestcenterMedicalTextTemplateGetTemplateList>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTextTemplateGetTemplateList>>,
         TError,
         TData
       >
@@ -11044,7 +10865,7 @@ export function useOp509GetQuestcenterMedicalTextTemplateGetTemplateList<
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
-  const queryOptions = getOp509GetQuestcenterMedicalTextTemplateGetTemplateListQueryOptions(
+  const queryOptions = getGetQuestcenterMedicalTextTemplateGetTemplateListQueryOptions(
     params,
     options
   )
@@ -11056,21 +10877,21 @@ export function useOp509GetQuestcenterMedicalTextTemplateGetTemplateList<
   return { ...query, queryKey: queryOptions.queryKey }
 }
 
-export type op510GetQuestcenterMedicalTextTemplateGetTemplatePageResponse200 = {
-  data: Op510GetQuestcenterMedicalTextTemplateGetTemplatePage200
+export type getQuestcenterMedicalTextTemplateGetTemplatePageResponse200 = {
+  data: GetQuestcenterMedicalTextTemplateGetTemplatePage200
   status: 200
 }
 
-export type op510GetQuestcenterMedicalTextTemplateGetTemplatePageResponseSuccess =
-  op510GetQuestcenterMedicalTextTemplateGetTemplatePageResponse200 & {
+export type getQuestcenterMedicalTextTemplateGetTemplatePageResponseSuccess =
+  getQuestcenterMedicalTextTemplateGetTemplatePageResponse200 & {
     headers: Headers
   }
 
-export type op510GetQuestcenterMedicalTextTemplateGetTemplatePageResponse =
-  op510GetQuestcenterMedicalTextTemplateGetTemplatePageResponseSuccess
+export type getQuestcenterMedicalTextTemplateGetTemplatePageResponse =
+  getQuestcenterMedicalTextTemplateGetTemplatePageResponseSuccess
 
-export const getOp510GetQuestcenterMedicalTextTemplateGetTemplatePageUrl = (
-  params: Op510GetQuestcenterMedicalTextTemplateGetTemplatePageParams
+export const getGetQuestcenterMedicalTextTemplateGetTemplatePageUrl = (
+  params: GetQuestcenterMedicalTextTemplateGetTemplatePageParams
 ) => {
   const normalizedParams = new URLSearchParams()
 
@@ -11091,12 +10912,12 @@ export const getOp510GetQuestcenterMedicalTextTemplateGetTemplatePageUrl = (
  * 文本模版翻页
  * @summary 文本模版翻页
  */
-export const op510GetQuestcenterMedicalTextTemplateGetTemplatePage = async (
-  params: Op510GetQuestcenterMedicalTextTemplateGetTemplatePageParams,
+export const getQuestcenterMedicalTextTemplateGetTemplatePage = async (
+  params: GetQuestcenterMedicalTextTemplateGetTemplatePageParams,
   options?: RequestInit
-): Promise<op510GetQuestcenterMedicalTextTemplateGetTemplatePageResponse> => {
-  return customFetch<op510GetQuestcenterMedicalTextTemplateGetTemplatePageResponse>(
-    getOp510GetQuestcenterMedicalTextTemplateGetTemplatePageUrl(params),
+): Promise<getQuestcenterMedicalTextTemplateGetTemplatePageResponse> => {
+  return customFetch<getQuestcenterMedicalTextTemplateGetTemplatePageResponse>(
+    getGetQuestcenterMedicalTextTemplateGetTemplatePageUrl(params),
     {
       ...options,
       method: 'GET',
@@ -11104,8 +10925,8 @@ export const op510GetQuestcenterMedicalTextTemplateGetTemplatePage = async (
   )
 }
 
-export const getOp510GetQuestcenterMedicalTextTemplateGetTemplatePageQueryKey = (
-  params?: Op510GetQuestcenterMedicalTextTemplateGetTemplatePageParams
+export const getGetQuestcenterMedicalTextTemplateGetTemplatePageQueryKey = (
+  params?: GetQuestcenterMedicalTextTemplateGetTemplatePageParams
 ) => {
   return [
     `/questcenter/medical_text_template/get_template_page`,
@@ -11113,15 +10934,15 @@ export const getOp510GetQuestcenterMedicalTextTemplateGetTemplatePageQueryKey = 
   ] as const
 }
 
-export const getOp510GetQuestcenterMedicalTextTemplateGetTemplatePageQueryOptions = <
-  TData = Awaited<ReturnType<typeof op510GetQuestcenterMedicalTextTemplateGetTemplatePage>>,
+export const getGetQuestcenterMedicalTextTemplateGetTemplatePageQueryOptions = <
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTextTemplateGetTemplatePage>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op510GetQuestcenterMedicalTextTemplateGetTemplatePageParams,
+  params: GetQuestcenterMedicalTextTemplateGetTemplatePageParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op510GetQuestcenterMedicalTextTemplateGetTemplatePage>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTextTemplateGetTemplatePage>>,
         TError,
         TData
       >
@@ -11131,82 +10952,81 @@ export const getOp510GetQuestcenterMedicalTextTemplateGetTemplatePageQueryOption
   const { query: queryOptions } = options ?? {}
 
   const queryKey =
-    queryOptions?.queryKey ??
-    getOp510GetQuestcenterMedicalTextTemplateGetTemplatePageQueryKey(params)
+    queryOptions?.queryKey ?? getGetQuestcenterMedicalTextTemplateGetTemplatePageQueryKey(params)
 
   const queryFn: QueryFunction<
-    Awaited<ReturnType<typeof op510GetQuestcenterMedicalTextTemplateGetTemplatePage>>
-  > = ({ signal }) => op510GetQuestcenterMedicalTextTemplateGetTemplatePage(params, { signal })
+    Awaited<ReturnType<typeof getQuestcenterMedicalTextTemplateGetTemplatePage>>
+  > = ({ signal }) => getQuestcenterMedicalTextTemplateGetTemplatePage(params, { signal })
 
   return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof op510GetQuestcenterMedicalTextTemplateGetTemplatePage>>,
+    Awaited<ReturnType<typeof getQuestcenterMedicalTextTemplateGetTemplatePage>>,
     TError,
     TData
   > & { queryKey: DataTag<QueryKey, TData, TError> }
 }
 
-export type Op510GetQuestcenterMedicalTextTemplateGetTemplatePageQueryResult = NonNullable<
-  Awaited<ReturnType<typeof op510GetQuestcenterMedicalTextTemplateGetTemplatePage>>
+export type GetQuestcenterMedicalTextTemplateGetTemplatePageQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getQuestcenterMedicalTextTemplateGetTemplatePage>>
 >
-export type Op510GetQuestcenterMedicalTextTemplateGetTemplatePageQueryError = ErrorType<unknown>
+export type GetQuestcenterMedicalTextTemplateGetTemplatePageQueryError = ErrorType<unknown>
 
-export function useOp510GetQuestcenterMedicalTextTemplateGetTemplatePage<
-  TData = Awaited<ReturnType<typeof op510GetQuestcenterMedicalTextTemplateGetTemplatePage>>,
+export function useGetQuestcenterMedicalTextTemplateGetTemplatePage<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTextTemplateGetTemplatePage>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op510GetQuestcenterMedicalTextTemplateGetTemplatePageParams,
+  params: GetQuestcenterMedicalTextTemplateGetTemplatePageParams,
   options: {
     query: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op510GetQuestcenterMedicalTextTemplateGetTemplatePage>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTextTemplateGetTemplatePage>>,
         TError,
         TData
       >
     > &
       Pick<
         DefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op510GetQuestcenterMedicalTextTemplateGetTemplatePage>>,
+          Awaited<ReturnType<typeof getQuestcenterMedicalTextTemplateGetTemplatePage>>,
           TError,
-          Awaited<ReturnType<typeof op510GetQuestcenterMedicalTextTemplateGetTemplatePage>>
+          Awaited<ReturnType<typeof getQuestcenterMedicalTextTemplateGetTemplatePage>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp510GetQuestcenterMedicalTextTemplateGetTemplatePage<
-  TData = Awaited<ReturnType<typeof op510GetQuestcenterMedicalTextTemplateGetTemplatePage>>,
+export function useGetQuestcenterMedicalTextTemplateGetTemplatePage<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTextTemplateGetTemplatePage>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op510GetQuestcenterMedicalTextTemplateGetTemplatePageParams,
+  params: GetQuestcenterMedicalTextTemplateGetTemplatePageParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op510GetQuestcenterMedicalTextTemplateGetTemplatePage>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTextTemplateGetTemplatePage>>,
         TError,
         TData
       >
     > &
       Pick<
         UndefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op510GetQuestcenterMedicalTextTemplateGetTemplatePage>>,
+          Awaited<ReturnType<typeof getQuestcenterMedicalTextTemplateGetTemplatePage>>,
           TError,
-          Awaited<ReturnType<typeof op510GetQuestcenterMedicalTextTemplateGetTemplatePage>>
+          Awaited<ReturnType<typeof getQuestcenterMedicalTextTemplateGetTemplatePage>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp510GetQuestcenterMedicalTextTemplateGetTemplatePage<
-  TData = Awaited<ReturnType<typeof op510GetQuestcenterMedicalTextTemplateGetTemplatePage>>,
+export function useGetQuestcenterMedicalTextTemplateGetTemplatePage<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTextTemplateGetTemplatePage>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op510GetQuestcenterMedicalTextTemplateGetTemplatePageParams,
+  params: GetQuestcenterMedicalTextTemplateGetTemplatePageParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op510GetQuestcenterMedicalTextTemplateGetTemplatePage>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTextTemplateGetTemplatePage>>,
         TError,
         TData
       >
@@ -11218,15 +11038,15 @@ export function useOp510GetQuestcenterMedicalTextTemplateGetTemplatePage<
  * @summary 文本模版翻页
  */
 
-export function useOp510GetQuestcenterMedicalTextTemplateGetTemplatePage<
-  TData = Awaited<ReturnType<typeof op510GetQuestcenterMedicalTextTemplateGetTemplatePage>>,
+export function useGetQuestcenterMedicalTextTemplateGetTemplatePage<
+  TData = Awaited<ReturnType<typeof getQuestcenterMedicalTextTemplateGetTemplatePage>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op510GetQuestcenterMedicalTextTemplateGetTemplatePageParams,
+  params: GetQuestcenterMedicalTextTemplateGetTemplatePageParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op510GetQuestcenterMedicalTextTemplateGetTemplatePage>>,
+        Awaited<ReturnType<typeof getQuestcenterMedicalTextTemplateGetTemplatePage>>,
         TError,
         TData
       >
@@ -11234,7 +11054,7 @@ export function useOp510GetQuestcenterMedicalTextTemplateGetTemplatePage<
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
-  const queryOptions = getOp510GetQuestcenterMedicalTextTemplateGetTemplatePageQueryOptions(
+  const queryOptions = getGetQuestcenterMedicalTextTemplateGetTemplatePageQueryOptions(
     params,
     options
   )
@@ -11246,20 +11066,20 @@ export function useOp510GetQuestcenterMedicalTextTemplateGetTemplatePage<
   return { ...query, queryKey: queryOptions.queryKey }
 }
 
-export type op512PostQuestcenterMedicalTextTemplateUpdateTemplateResponse200 = {
-  data: Op512PostQuestcenterMedicalTextTemplateUpdateTemplate200
+export type postQuestcenterMedicalTextTemplateUpdateTemplateResponse200 = {
+  data: PostQuestcenterMedicalTextTemplateUpdateTemplate200
   status: 200
 }
 
-export type op512PostQuestcenterMedicalTextTemplateUpdateTemplateResponseSuccess =
-  op512PostQuestcenterMedicalTextTemplateUpdateTemplateResponse200 & {
+export type postQuestcenterMedicalTextTemplateUpdateTemplateResponseSuccess =
+  postQuestcenterMedicalTextTemplateUpdateTemplateResponse200 & {
     headers: Headers
   }
 
-export type op512PostQuestcenterMedicalTextTemplateUpdateTemplateResponse =
-  op512PostQuestcenterMedicalTextTemplateUpdateTemplateResponseSuccess
+export type postQuestcenterMedicalTextTemplateUpdateTemplateResponse =
+  postQuestcenterMedicalTextTemplateUpdateTemplateResponseSuccess
 
-export const getOp512PostQuestcenterMedicalTextTemplateUpdateTemplateUrl = () => {
+export const getPostQuestcenterMedicalTextTemplateUpdateTemplateUrl = () => {
   return `/questcenter/medical_text_template/update_template`
 }
 
@@ -11267,38 +11087,38 @@ export const getOp512PostQuestcenterMedicalTextTemplateUpdateTemplateUrl = () =>
  * 编辑文本模版
  * @summary 编辑文本模版
  */
-export const op512PostQuestcenterMedicalTextTemplateUpdateTemplate = async (
-  op512PostQuestcenterMedicalTextTemplateUpdateTemplateBody?: Op512PostQuestcenterMedicalTextTemplateUpdateTemplateBody,
+export const postQuestcenterMedicalTextTemplateUpdateTemplate = async (
+  postQuestcenterMedicalTextTemplateUpdateTemplateBody?: PostQuestcenterMedicalTextTemplateUpdateTemplateBody,
   options?: RequestInit
-): Promise<op512PostQuestcenterMedicalTextTemplateUpdateTemplateResponse> => {
-  return customFetch<op512PostQuestcenterMedicalTextTemplateUpdateTemplateResponse>(
-    getOp512PostQuestcenterMedicalTextTemplateUpdateTemplateUrl(),
+): Promise<postQuestcenterMedicalTextTemplateUpdateTemplateResponse> => {
+  return customFetch<postQuestcenterMedicalTextTemplateUpdateTemplateResponse>(
+    getPostQuestcenterMedicalTextTemplateUpdateTemplateUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op512PostQuestcenterMedicalTextTemplateUpdateTemplateBody),
+      body: JSON.stringify(postQuestcenterMedicalTextTemplateUpdateTemplateBody),
     }
   )
 }
 
-export const getOp512PostQuestcenterMedicalTextTemplateUpdateTemplateMutationOptions = <
+export const getPostQuestcenterMedicalTextTemplateUpdateTemplateMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op512PostQuestcenterMedicalTextTemplateUpdateTemplate>>,
+    Awaited<ReturnType<typeof postQuestcenterMedicalTextTemplateUpdateTemplate>>,
     TError,
-    { data?: Op512PostQuestcenterMedicalTextTemplateUpdateTemplateBody },
+    { data?: PostQuestcenterMedicalTextTemplateUpdateTemplateBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op512PostQuestcenterMedicalTextTemplateUpdateTemplate>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTextTemplateUpdateTemplate>>,
   TError,
-  { data?: Op512PostQuestcenterMedicalTextTemplateUpdateTemplateBody },
+  { data?: PostQuestcenterMedicalTextTemplateUpdateTemplateBody },
   TContext
 > => {
-  const mutationKey = ['op512PostQuestcenterMedicalTextTemplateUpdateTemplate']
+  const mutationKey = ['postQuestcenterMedicalTextTemplateUpdateTemplate']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -11306,67 +11126,67 @@ export const getOp512PostQuestcenterMedicalTextTemplateUpdateTemplateMutationOpt
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op512PostQuestcenterMedicalTextTemplateUpdateTemplate>>,
-    { data?: Op512PostQuestcenterMedicalTextTemplateUpdateTemplateBody }
+    Awaited<ReturnType<typeof postQuestcenterMedicalTextTemplateUpdateTemplate>>,
+    { data?: PostQuestcenterMedicalTextTemplateUpdateTemplateBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op512PostQuestcenterMedicalTextTemplateUpdateTemplate(data)
+    return postQuestcenterMedicalTextTemplateUpdateTemplate(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op512PostQuestcenterMedicalTextTemplateUpdateTemplateMutationResult = NonNullable<
-  Awaited<ReturnType<typeof op512PostQuestcenterMedicalTextTemplateUpdateTemplate>>
+export type PostQuestcenterMedicalTextTemplateUpdateTemplateMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterMedicalTextTemplateUpdateTemplate>>
 >
-export type Op512PostQuestcenterMedicalTextTemplateUpdateTemplateMutationBody =
-  | Op512PostQuestcenterMedicalTextTemplateUpdateTemplateBody
+export type PostQuestcenterMedicalTextTemplateUpdateTemplateMutationBody =
+  | PostQuestcenterMedicalTextTemplateUpdateTemplateBody
   | undefined
-export type Op512PostQuestcenterMedicalTextTemplateUpdateTemplateMutationError = ErrorType<unknown>
+export type PostQuestcenterMedicalTextTemplateUpdateTemplateMutationError = ErrorType<unknown>
 
 /**
  * @summary 编辑文本模版
  */
-export const useOp512PostQuestcenterMedicalTextTemplateUpdateTemplate = <
+export const usePostQuestcenterMedicalTextTemplateUpdateTemplate = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op512PostQuestcenterMedicalTextTemplateUpdateTemplate>>,
+      Awaited<ReturnType<typeof postQuestcenterMedicalTextTemplateUpdateTemplate>>,
       TError,
-      { data?: Op512PostQuestcenterMedicalTextTemplateUpdateTemplateBody },
+      { data?: PostQuestcenterMedicalTextTemplateUpdateTemplateBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op512PostQuestcenterMedicalTextTemplateUpdateTemplate>>,
+  Awaited<ReturnType<typeof postQuestcenterMedicalTextTemplateUpdateTemplate>>,
   TError,
-  { data?: Op512PostQuestcenterMedicalTextTemplateUpdateTemplateBody },
+  { data?: PostQuestcenterMedicalTextTemplateUpdateTemplateBody },
   TContext
 > => {
   return useMutation(
-    getOp512PostQuestcenterMedicalTextTemplateUpdateTemplateMutationOptions(options),
+    getPostQuestcenterMedicalTextTemplateUpdateTemplateMutationOptions(options),
     queryClient
   )
 }
 
-export type op711PostQuestcenterRecordTemplateGetSubjectDeptResponse200 = {
-  data: Op711PostQuestcenterRecordTemplateGetSubjectDept200
+export type postQuestcenterRecordTemplateGetSubjectDeptResponse200 = {
+  data: PostQuestcenterRecordTemplateGetSubjectDept200
   status: 200
 }
 
-export type op711PostQuestcenterRecordTemplateGetSubjectDeptResponseSuccess =
-  op711PostQuestcenterRecordTemplateGetSubjectDeptResponse200 & {
+export type postQuestcenterRecordTemplateGetSubjectDeptResponseSuccess =
+  postQuestcenterRecordTemplateGetSubjectDeptResponse200 & {
     headers: Headers
   }
 
-export type op711PostQuestcenterRecordTemplateGetSubjectDeptResponse =
-  op711PostQuestcenterRecordTemplateGetSubjectDeptResponseSuccess
+export type postQuestcenterRecordTemplateGetSubjectDeptResponse =
+  postQuestcenterRecordTemplateGetSubjectDeptResponseSuccess
 
-export const getOp711PostQuestcenterRecordTemplateGetSubjectDeptUrl = () => {
+export const getPostQuestcenterRecordTemplateGetSubjectDeptUrl = () => {
   return `/questcenter/record_template/get_subject_dept`
 }
 
@@ -11374,38 +11194,38 @@ export const getOp711PostQuestcenterRecordTemplateGetSubjectDeptUrl = () => {
  * 接口说明：记录单
  * @summary 获取全部学科列表(知情告知、记录单、专科申请单)
  */
-export const op711PostQuestcenterRecordTemplateGetSubjectDept = async (
-  op711PostQuestcenterRecordTemplateGetSubjectDeptBody?: Op711PostQuestcenterRecordTemplateGetSubjectDeptBody,
+export const postQuestcenterRecordTemplateGetSubjectDept = async (
+  postQuestcenterRecordTemplateGetSubjectDeptBody?: PostQuestcenterRecordTemplateGetSubjectDeptBody,
   options?: RequestInit
-): Promise<op711PostQuestcenterRecordTemplateGetSubjectDeptResponse> => {
-  return customFetch<op711PostQuestcenterRecordTemplateGetSubjectDeptResponse>(
-    getOp711PostQuestcenterRecordTemplateGetSubjectDeptUrl(),
+): Promise<postQuestcenterRecordTemplateGetSubjectDeptResponse> => {
+  return customFetch<postQuestcenterRecordTemplateGetSubjectDeptResponse>(
+    getPostQuestcenterRecordTemplateGetSubjectDeptUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op711PostQuestcenterRecordTemplateGetSubjectDeptBody),
+      body: JSON.stringify(postQuestcenterRecordTemplateGetSubjectDeptBody),
     }
   )
 }
 
-export const getOp711PostQuestcenterRecordTemplateGetSubjectDeptMutationOptions = <
+export const getPostQuestcenterRecordTemplateGetSubjectDeptMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op711PostQuestcenterRecordTemplateGetSubjectDept>>,
+    Awaited<ReturnType<typeof postQuestcenterRecordTemplateGetSubjectDept>>,
     TError,
-    { data?: Op711PostQuestcenterRecordTemplateGetSubjectDeptBody },
+    { data?: PostQuestcenterRecordTemplateGetSubjectDeptBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op711PostQuestcenterRecordTemplateGetSubjectDept>>,
+  Awaited<ReturnType<typeof postQuestcenterRecordTemplateGetSubjectDept>>,
   TError,
-  { data?: Op711PostQuestcenterRecordTemplateGetSubjectDeptBody },
+  { data?: PostQuestcenterRecordTemplateGetSubjectDeptBody },
   TContext
 > => {
-  const mutationKey = ['op711PostQuestcenterRecordTemplateGetSubjectDept']
+  const mutationKey = ['postQuestcenterRecordTemplateGetSubjectDept']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -11413,67 +11233,67 @@ export const getOp711PostQuestcenterRecordTemplateGetSubjectDeptMutationOptions 
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op711PostQuestcenterRecordTemplateGetSubjectDept>>,
-    { data?: Op711PostQuestcenterRecordTemplateGetSubjectDeptBody }
+    Awaited<ReturnType<typeof postQuestcenterRecordTemplateGetSubjectDept>>,
+    { data?: PostQuestcenterRecordTemplateGetSubjectDeptBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op711PostQuestcenterRecordTemplateGetSubjectDept(data)
+    return postQuestcenterRecordTemplateGetSubjectDept(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op711PostQuestcenterRecordTemplateGetSubjectDeptMutationResult = NonNullable<
-  Awaited<ReturnType<typeof op711PostQuestcenterRecordTemplateGetSubjectDept>>
+export type PostQuestcenterRecordTemplateGetSubjectDeptMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterRecordTemplateGetSubjectDept>>
 >
-export type Op711PostQuestcenterRecordTemplateGetSubjectDeptMutationBody =
-  | Op711PostQuestcenterRecordTemplateGetSubjectDeptBody
+export type PostQuestcenterRecordTemplateGetSubjectDeptMutationBody =
+  | PostQuestcenterRecordTemplateGetSubjectDeptBody
   | undefined
-export type Op711PostQuestcenterRecordTemplateGetSubjectDeptMutationError = ErrorType<unknown>
+export type PostQuestcenterRecordTemplateGetSubjectDeptMutationError = ErrorType<unknown>
 
 /**
  * @summary 获取全部学科列表(知情告知、记录单、专科申请单)
  */
-export const useOp711PostQuestcenterRecordTemplateGetSubjectDept = <
+export const usePostQuestcenterRecordTemplateGetSubjectDept = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op711PostQuestcenterRecordTemplateGetSubjectDept>>,
+      Awaited<ReturnType<typeof postQuestcenterRecordTemplateGetSubjectDept>>,
       TError,
-      { data?: Op711PostQuestcenterRecordTemplateGetSubjectDeptBody },
+      { data?: PostQuestcenterRecordTemplateGetSubjectDeptBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op711PostQuestcenterRecordTemplateGetSubjectDept>>,
+  Awaited<ReturnType<typeof postQuestcenterRecordTemplateGetSubjectDept>>,
   TError,
-  { data?: Op711PostQuestcenterRecordTemplateGetSubjectDeptBody },
+  { data?: PostQuestcenterRecordTemplateGetSubjectDeptBody },
   TContext
 > => {
   return useMutation(
-    getOp711PostQuestcenterRecordTemplateGetSubjectDeptMutationOptions(options),
+    getPostQuestcenterRecordTemplateGetSubjectDeptMutationOptions(options),
     queryClient
   )
 }
 
-export type op382PostQuestcenterTemplateCheckAndCreateParamsResponse200 = {
-  data: Op382PostQuestcenterTemplateCheckAndCreateParams200
+export type postQuestcenterTemplateCheckAndCreateParamsResponse200 = {
+  data: PostQuestcenterTemplateCheckAndCreateParams200
   status: 200
 }
 
-export type op382PostQuestcenterTemplateCheckAndCreateParamsResponseSuccess =
-  op382PostQuestcenterTemplateCheckAndCreateParamsResponse200 & {
+export type postQuestcenterTemplateCheckAndCreateParamsResponseSuccess =
+  postQuestcenterTemplateCheckAndCreateParamsResponse200 & {
     headers: Headers
   }
 
-export type op382PostQuestcenterTemplateCheckAndCreateParamsResponse =
-  op382PostQuestcenterTemplateCheckAndCreateParamsResponseSuccess
+export type postQuestcenterTemplateCheckAndCreateParamsResponse =
+  postQuestcenterTemplateCheckAndCreateParamsResponseSuccess
 
-export const getOp382PostQuestcenterTemplateCheckAndCreateParamsUrl = () => {
+export const getPostQuestcenterTemplateCheckAndCreateParamsUrl = () => {
   return `/questcenter/template/check_and_create_params`
 }
 
@@ -11481,38 +11301,38 @@ export const getOp382PostQuestcenterTemplateCheckAndCreateParamsUrl = () => {
  * 模版问卷说明，检查动态参数
  * @summary 模版问卷说明，检查动态参数
  */
-export const op382PostQuestcenterTemplateCheckAndCreateParams = async (
-  op382PostQuestcenterTemplateCheckAndCreateParamsBody: Op382PostQuestcenterTemplateCheckAndCreateParamsBody,
+export const postQuestcenterTemplateCheckAndCreateParams = async (
+  postQuestcenterTemplateCheckAndCreateParamsBody: PostQuestcenterTemplateCheckAndCreateParamsBody,
   options?: RequestInit
-): Promise<op382PostQuestcenterTemplateCheckAndCreateParamsResponse> => {
-  return customFetch<op382PostQuestcenterTemplateCheckAndCreateParamsResponse>(
-    getOp382PostQuestcenterTemplateCheckAndCreateParamsUrl(),
+): Promise<postQuestcenterTemplateCheckAndCreateParamsResponse> => {
+  return customFetch<postQuestcenterTemplateCheckAndCreateParamsResponse>(
+    getPostQuestcenterTemplateCheckAndCreateParamsUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op382PostQuestcenterTemplateCheckAndCreateParamsBody),
+      body: JSON.stringify(postQuestcenterTemplateCheckAndCreateParamsBody),
     }
   )
 }
 
-export const getOp382PostQuestcenterTemplateCheckAndCreateParamsMutationOptions = <
+export const getPostQuestcenterTemplateCheckAndCreateParamsMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op382PostQuestcenterTemplateCheckAndCreateParams>>,
+    Awaited<ReturnType<typeof postQuestcenterTemplateCheckAndCreateParams>>,
     TError,
-    { data: Op382PostQuestcenterTemplateCheckAndCreateParamsBody },
+    { data: PostQuestcenterTemplateCheckAndCreateParamsBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op382PostQuestcenterTemplateCheckAndCreateParams>>,
+  Awaited<ReturnType<typeof postQuestcenterTemplateCheckAndCreateParams>>,
   TError,
-  { data: Op382PostQuestcenterTemplateCheckAndCreateParamsBody },
+  { data: PostQuestcenterTemplateCheckAndCreateParamsBody },
   TContext
 > => {
-  const mutationKey = ['op382PostQuestcenterTemplateCheckAndCreateParams']
+  const mutationKey = ['postQuestcenterTemplateCheckAndCreateParams']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -11520,66 +11340,66 @@ export const getOp382PostQuestcenterTemplateCheckAndCreateParamsMutationOptions 
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op382PostQuestcenterTemplateCheckAndCreateParams>>,
-    { data: Op382PostQuestcenterTemplateCheckAndCreateParamsBody }
+    Awaited<ReturnType<typeof postQuestcenterTemplateCheckAndCreateParams>>,
+    { data: PostQuestcenterTemplateCheckAndCreateParamsBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op382PostQuestcenterTemplateCheckAndCreateParams(data)
+    return postQuestcenterTemplateCheckAndCreateParams(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op382PostQuestcenterTemplateCheckAndCreateParamsMutationResult = NonNullable<
-  Awaited<ReturnType<typeof op382PostQuestcenterTemplateCheckAndCreateParams>>
+export type PostQuestcenterTemplateCheckAndCreateParamsMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterTemplateCheckAndCreateParams>>
 >
-export type Op382PostQuestcenterTemplateCheckAndCreateParamsMutationBody =
-  Op382PostQuestcenterTemplateCheckAndCreateParamsBody
-export type Op382PostQuestcenterTemplateCheckAndCreateParamsMutationError = ErrorType<unknown>
+export type PostQuestcenterTemplateCheckAndCreateParamsMutationBody =
+  PostQuestcenterTemplateCheckAndCreateParamsBody
+export type PostQuestcenterTemplateCheckAndCreateParamsMutationError = ErrorType<unknown>
 
 /**
  * @summary 模版问卷说明，检查动态参数
  */
-export const useOp382PostQuestcenterTemplateCheckAndCreateParams = <
+export const usePostQuestcenterTemplateCheckAndCreateParams = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op382PostQuestcenterTemplateCheckAndCreateParams>>,
+      Awaited<ReturnType<typeof postQuestcenterTemplateCheckAndCreateParams>>,
       TError,
-      { data: Op382PostQuestcenterTemplateCheckAndCreateParamsBody },
+      { data: PostQuestcenterTemplateCheckAndCreateParamsBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op382PostQuestcenterTemplateCheckAndCreateParams>>,
+  Awaited<ReturnType<typeof postQuestcenterTemplateCheckAndCreateParams>>,
   TError,
-  { data: Op382PostQuestcenterTemplateCheckAndCreateParamsBody },
+  { data: PostQuestcenterTemplateCheckAndCreateParamsBody },
   TContext
 > => {
   return useMutation(
-    getOp382PostQuestcenterTemplateCheckAndCreateParamsMutationOptions(options),
+    getPostQuestcenterTemplateCheckAndCreateParamsMutationOptions(options),
     queryClient
   )
 }
 
-export type op326PostQuestcenterTemplateCloseTemplateResponse200 = {
-  data: Op326PostQuestcenterTemplateCloseTemplate200
+export type postQuestcenterTemplateCloseTemplateResponse200 = {
+  data: PostQuestcenterTemplateCloseTemplate200
   status: 200
 }
 
-export type op326PostQuestcenterTemplateCloseTemplateResponseSuccess =
-  op326PostQuestcenterTemplateCloseTemplateResponse200 & {
+export type postQuestcenterTemplateCloseTemplateResponseSuccess =
+  postQuestcenterTemplateCloseTemplateResponse200 & {
     headers: Headers
   }
 
-export type op326PostQuestcenterTemplateCloseTemplateResponse =
-  op326PostQuestcenterTemplateCloseTemplateResponseSuccess
+export type postQuestcenterTemplateCloseTemplateResponse =
+  postQuestcenterTemplateCloseTemplateResponseSuccess
 
-export const getOp326PostQuestcenterTemplateCloseTemplateUrl = () => {
+export const getPostQuestcenterTemplateCloseTemplateUrl = () => {
   return `/questcenter/template/close_template`
 }
 
@@ -11587,38 +11407,38 @@ export const getOp326PostQuestcenterTemplateCloseTemplateUrl = () => {
  * 模版取消发布
  * @summary 模版取消发布
  */
-export const op326PostQuestcenterTemplateCloseTemplate = async (
-  op326PostQuestcenterTemplateCloseTemplateBody: Op326PostQuestcenterTemplateCloseTemplateBody,
+export const postQuestcenterTemplateCloseTemplate = async (
+  postQuestcenterTemplateCloseTemplateBody: PostQuestcenterTemplateCloseTemplateBody,
   options?: RequestInit
-): Promise<op326PostQuestcenterTemplateCloseTemplateResponse> => {
-  return customFetch<op326PostQuestcenterTemplateCloseTemplateResponse>(
-    getOp326PostQuestcenterTemplateCloseTemplateUrl(),
+): Promise<postQuestcenterTemplateCloseTemplateResponse> => {
+  return customFetch<postQuestcenterTemplateCloseTemplateResponse>(
+    getPostQuestcenterTemplateCloseTemplateUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op326PostQuestcenterTemplateCloseTemplateBody),
+      body: JSON.stringify(postQuestcenterTemplateCloseTemplateBody),
     }
   )
 }
 
-export const getOp326PostQuestcenterTemplateCloseTemplateMutationOptions = <
+export const getPostQuestcenterTemplateCloseTemplateMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op326PostQuestcenterTemplateCloseTemplate>>,
+    Awaited<ReturnType<typeof postQuestcenterTemplateCloseTemplate>>,
     TError,
-    { data: Op326PostQuestcenterTemplateCloseTemplateBody },
+    { data: PostQuestcenterTemplateCloseTemplateBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op326PostQuestcenterTemplateCloseTemplate>>,
+  Awaited<ReturnType<typeof postQuestcenterTemplateCloseTemplate>>,
   TError,
-  { data: Op326PostQuestcenterTemplateCloseTemplateBody },
+  { data: PostQuestcenterTemplateCloseTemplateBody },
   TContext
 > => {
-  const mutationKey = ['op326PostQuestcenterTemplateCloseTemplate']
+  const mutationKey = ['postQuestcenterTemplateCloseTemplate']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -11626,66 +11446,63 @@ export const getOp326PostQuestcenterTemplateCloseTemplateMutationOptions = <
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op326PostQuestcenterTemplateCloseTemplate>>,
-    { data: Op326PostQuestcenterTemplateCloseTemplateBody }
+    Awaited<ReturnType<typeof postQuestcenterTemplateCloseTemplate>>,
+    { data: PostQuestcenterTemplateCloseTemplateBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op326PostQuestcenterTemplateCloseTemplate(data)
+    return postQuestcenterTemplateCloseTemplate(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op326PostQuestcenterTemplateCloseTemplateMutationResult = NonNullable<
-  Awaited<ReturnType<typeof op326PostQuestcenterTemplateCloseTemplate>>
+export type PostQuestcenterTemplateCloseTemplateMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterTemplateCloseTemplate>>
 >
-export type Op326PostQuestcenterTemplateCloseTemplateMutationBody =
-  Op326PostQuestcenterTemplateCloseTemplateBody
-export type Op326PostQuestcenterTemplateCloseTemplateMutationError = ErrorType<unknown>
+export type PostQuestcenterTemplateCloseTemplateMutationBody =
+  PostQuestcenterTemplateCloseTemplateBody
+export type PostQuestcenterTemplateCloseTemplateMutationError = ErrorType<unknown>
 
 /**
  * @summary 模版取消发布
  */
-export const useOp326PostQuestcenterTemplateCloseTemplate = <
+export const usePostQuestcenterTemplateCloseTemplate = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op326PostQuestcenterTemplateCloseTemplate>>,
+      Awaited<ReturnType<typeof postQuestcenterTemplateCloseTemplate>>,
       TError,
-      { data: Op326PostQuestcenterTemplateCloseTemplateBody },
+      { data: PostQuestcenterTemplateCloseTemplateBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op326PostQuestcenterTemplateCloseTemplate>>,
+  Awaited<ReturnType<typeof postQuestcenterTemplateCloseTemplate>>,
   TError,
-  { data: Op326PostQuestcenterTemplateCloseTemplateBody },
+  { data: PostQuestcenterTemplateCloseTemplateBody },
   TContext
 > => {
-  return useMutation(
-    getOp326PostQuestcenterTemplateCloseTemplateMutationOptions(options),
-    queryClient
-  )
+  return useMutation(getPostQuestcenterTemplateCloseTemplateMutationOptions(options), queryClient)
 }
 
-export type op322PostQuestcenterTemplateCreateTemplateResponse200 = {
-  data: Op322PostQuestcenterTemplateCreateTemplate200
+export type postQuestcenterTemplateCreateTemplateResponse200 = {
+  data: PostQuestcenterTemplateCreateTemplate200
   status: 200
 }
 
-export type op322PostQuestcenterTemplateCreateTemplateResponseSuccess =
-  op322PostQuestcenterTemplateCreateTemplateResponse200 & {
+export type postQuestcenterTemplateCreateTemplateResponseSuccess =
+  postQuestcenterTemplateCreateTemplateResponse200 & {
     headers: Headers
   }
 
-export type op322PostQuestcenterTemplateCreateTemplateResponse =
-  op322PostQuestcenterTemplateCreateTemplateResponseSuccess
+export type postQuestcenterTemplateCreateTemplateResponse =
+  postQuestcenterTemplateCreateTemplateResponseSuccess
 
-export const getOp322PostQuestcenterTemplateCreateTemplateUrl = () => {
+export const getPostQuestcenterTemplateCreateTemplateUrl = () => {
   return `/questcenter/template/create_template`
 }
 
@@ -11693,38 +11510,38 @@ export const getOp322PostQuestcenterTemplateCreateTemplateUrl = () => {
  * 添加模版
  * @summary 添加模版
  */
-export const op322PostQuestcenterTemplateCreateTemplate = async (
-  op322PostQuestcenterTemplateCreateTemplateBody?: Op322PostQuestcenterTemplateCreateTemplateBody,
+export const postQuestcenterTemplateCreateTemplate = async (
+  postQuestcenterTemplateCreateTemplateBody?: PostQuestcenterTemplateCreateTemplateBody,
   options?: RequestInit
-): Promise<op322PostQuestcenterTemplateCreateTemplateResponse> => {
-  return customFetch<op322PostQuestcenterTemplateCreateTemplateResponse>(
-    getOp322PostQuestcenterTemplateCreateTemplateUrl(),
+): Promise<postQuestcenterTemplateCreateTemplateResponse> => {
+  return customFetch<postQuestcenterTemplateCreateTemplateResponse>(
+    getPostQuestcenterTemplateCreateTemplateUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op322PostQuestcenterTemplateCreateTemplateBody),
+      body: JSON.stringify(postQuestcenterTemplateCreateTemplateBody),
     }
   )
 }
 
-export const getOp322PostQuestcenterTemplateCreateTemplateMutationOptions = <
+export const getPostQuestcenterTemplateCreateTemplateMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op322PostQuestcenterTemplateCreateTemplate>>,
+    Awaited<ReturnType<typeof postQuestcenterTemplateCreateTemplate>>,
     TError,
-    { data?: Op322PostQuestcenterTemplateCreateTemplateBody },
+    { data?: PostQuestcenterTemplateCreateTemplateBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op322PostQuestcenterTemplateCreateTemplate>>,
+  Awaited<ReturnType<typeof postQuestcenterTemplateCreateTemplate>>,
   TError,
-  { data?: Op322PostQuestcenterTemplateCreateTemplateBody },
+  { data?: PostQuestcenterTemplateCreateTemplateBody },
   TContext
 > => {
-  const mutationKey = ['op322PostQuestcenterTemplateCreateTemplate']
+  const mutationKey = ['postQuestcenterTemplateCreateTemplate']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -11732,67 +11549,64 @@ export const getOp322PostQuestcenterTemplateCreateTemplateMutationOptions = <
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op322PostQuestcenterTemplateCreateTemplate>>,
-    { data?: Op322PostQuestcenterTemplateCreateTemplateBody }
+    Awaited<ReturnType<typeof postQuestcenterTemplateCreateTemplate>>,
+    { data?: PostQuestcenterTemplateCreateTemplateBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op322PostQuestcenterTemplateCreateTemplate(data)
+    return postQuestcenterTemplateCreateTemplate(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op322PostQuestcenterTemplateCreateTemplateMutationResult = NonNullable<
-  Awaited<ReturnType<typeof op322PostQuestcenterTemplateCreateTemplate>>
+export type PostQuestcenterTemplateCreateTemplateMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterTemplateCreateTemplate>>
 >
-export type Op322PostQuestcenterTemplateCreateTemplateMutationBody =
-  | Op322PostQuestcenterTemplateCreateTemplateBody
+export type PostQuestcenterTemplateCreateTemplateMutationBody =
+  | PostQuestcenterTemplateCreateTemplateBody
   | undefined
-export type Op322PostQuestcenterTemplateCreateTemplateMutationError = ErrorType<unknown>
+export type PostQuestcenterTemplateCreateTemplateMutationError = ErrorType<unknown>
 
 /**
  * @summary 添加模版
  */
-export const useOp322PostQuestcenterTemplateCreateTemplate = <
+export const usePostQuestcenterTemplateCreateTemplate = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op322PostQuestcenterTemplateCreateTemplate>>,
+      Awaited<ReturnType<typeof postQuestcenterTemplateCreateTemplate>>,
       TError,
-      { data?: Op322PostQuestcenterTemplateCreateTemplateBody },
+      { data?: PostQuestcenterTemplateCreateTemplateBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op322PostQuestcenterTemplateCreateTemplate>>,
+  Awaited<ReturnType<typeof postQuestcenterTemplateCreateTemplate>>,
   TError,
-  { data?: Op322PostQuestcenterTemplateCreateTemplateBody },
+  { data?: PostQuestcenterTemplateCreateTemplateBody },
   TContext
 > => {
-  return useMutation(
-    getOp322PostQuestcenterTemplateCreateTemplateMutationOptions(options),
-    queryClient
-  )
+  return useMutation(getPostQuestcenterTemplateCreateTemplateMutationOptions(options), queryClient)
 }
 
-export type op324PostQuestcenterTemplateDeleteTemplateResponse200 = {
-  data: Op324PostQuestcenterTemplateDeleteTemplate200
+export type postQuestcenterTemplateDeleteTemplateResponse200 = {
+  data: PostQuestcenterTemplateDeleteTemplate200
   status: 200
 }
 
-export type op324PostQuestcenterTemplateDeleteTemplateResponseSuccess =
-  op324PostQuestcenterTemplateDeleteTemplateResponse200 & {
+export type postQuestcenterTemplateDeleteTemplateResponseSuccess =
+  postQuestcenterTemplateDeleteTemplateResponse200 & {
     headers: Headers
   }
 
-export type op324PostQuestcenterTemplateDeleteTemplateResponse =
-  op324PostQuestcenterTemplateDeleteTemplateResponseSuccess
+export type postQuestcenterTemplateDeleteTemplateResponse =
+  postQuestcenterTemplateDeleteTemplateResponseSuccess
 
-export const getOp324PostQuestcenterTemplateDeleteTemplateUrl = () => {
+export const getPostQuestcenterTemplateDeleteTemplateUrl = () => {
   return `/questcenter/template/delete_template`
 }
 
@@ -11800,38 +11614,38 @@ export const getOp324PostQuestcenterTemplateDeleteTemplateUrl = () => {
  * 删除模版，只针对，未发布可编辑模版
  * @summary 删除模版，只针对，未发布可编辑模版
  */
-export const op324PostQuestcenterTemplateDeleteTemplate = async (
-  op324PostQuestcenterTemplateDeleteTemplateBody: Op324PostQuestcenterTemplateDeleteTemplateBody,
+export const postQuestcenterTemplateDeleteTemplate = async (
+  postQuestcenterTemplateDeleteTemplateBody: PostQuestcenterTemplateDeleteTemplateBody,
   options?: RequestInit
-): Promise<op324PostQuestcenterTemplateDeleteTemplateResponse> => {
-  return customFetch<op324PostQuestcenterTemplateDeleteTemplateResponse>(
-    getOp324PostQuestcenterTemplateDeleteTemplateUrl(),
+): Promise<postQuestcenterTemplateDeleteTemplateResponse> => {
+  return customFetch<postQuestcenterTemplateDeleteTemplateResponse>(
+    getPostQuestcenterTemplateDeleteTemplateUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op324PostQuestcenterTemplateDeleteTemplateBody),
+      body: JSON.stringify(postQuestcenterTemplateDeleteTemplateBody),
     }
   )
 }
 
-export const getOp324PostQuestcenterTemplateDeleteTemplateMutationOptions = <
+export const getPostQuestcenterTemplateDeleteTemplateMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op324PostQuestcenterTemplateDeleteTemplate>>,
+    Awaited<ReturnType<typeof postQuestcenterTemplateDeleteTemplate>>,
     TError,
-    { data: Op324PostQuestcenterTemplateDeleteTemplateBody },
+    { data: PostQuestcenterTemplateDeleteTemplateBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op324PostQuestcenterTemplateDeleteTemplate>>,
+  Awaited<ReturnType<typeof postQuestcenterTemplateDeleteTemplate>>,
   TError,
-  { data: Op324PostQuestcenterTemplateDeleteTemplateBody },
+  { data: PostQuestcenterTemplateDeleteTemplateBody },
   TContext
 > => {
-  const mutationKey = ['op324PostQuestcenterTemplateDeleteTemplate']
+  const mutationKey = ['postQuestcenterTemplateDeleteTemplate']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -11839,66 +11653,63 @@ export const getOp324PostQuestcenterTemplateDeleteTemplateMutationOptions = <
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op324PostQuestcenterTemplateDeleteTemplate>>,
-    { data: Op324PostQuestcenterTemplateDeleteTemplateBody }
+    Awaited<ReturnType<typeof postQuestcenterTemplateDeleteTemplate>>,
+    { data: PostQuestcenterTemplateDeleteTemplateBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op324PostQuestcenterTemplateDeleteTemplate(data)
+    return postQuestcenterTemplateDeleteTemplate(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op324PostQuestcenterTemplateDeleteTemplateMutationResult = NonNullable<
-  Awaited<ReturnType<typeof op324PostQuestcenterTemplateDeleteTemplate>>
+export type PostQuestcenterTemplateDeleteTemplateMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterTemplateDeleteTemplate>>
 >
-export type Op324PostQuestcenterTemplateDeleteTemplateMutationBody =
-  Op324PostQuestcenterTemplateDeleteTemplateBody
-export type Op324PostQuestcenterTemplateDeleteTemplateMutationError = ErrorType<unknown>
+export type PostQuestcenterTemplateDeleteTemplateMutationBody =
+  PostQuestcenterTemplateDeleteTemplateBody
+export type PostQuestcenterTemplateDeleteTemplateMutationError = ErrorType<unknown>
 
 /**
  * @summary 删除模版，只针对，未发布可编辑模版
  */
-export const useOp324PostQuestcenterTemplateDeleteTemplate = <
+export const usePostQuestcenterTemplateDeleteTemplate = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op324PostQuestcenterTemplateDeleteTemplate>>,
+      Awaited<ReturnType<typeof postQuestcenterTemplateDeleteTemplate>>,
       TError,
-      { data: Op324PostQuestcenterTemplateDeleteTemplateBody },
+      { data: PostQuestcenterTemplateDeleteTemplateBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op324PostQuestcenterTemplateDeleteTemplate>>,
+  Awaited<ReturnType<typeof postQuestcenterTemplateDeleteTemplate>>,
   TError,
-  { data: Op324PostQuestcenterTemplateDeleteTemplateBody },
+  { data: PostQuestcenterTemplateDeleteTemplateBody },
   TContext
 > => {
-  return useMutation(
-    getOp324PostQuestcenterTemplateDeleteTemplateMutationOptions(options),
-    queryClient
-  )
+  return useMutation(getPostQuestcenterTemplateDeleteTemplateMutationOptions(options), queryClient)
 }
 
-export type op1026PostQuestcenterTemplateGetSubjectDeptResponse200 = {
-  data: Op1026PostQuestcenterTemplateGetSubjectDept200
+export type postQuestcenterTemplateGetSubjectDeptResponse200 = {
+  data: PostQuestcenterTemplateGetSubjectDept200
   status: 200
 }
 
-export type op1026PostQuestcenterTemplateGetSubjectDeptResponseSuccess =
-  op1026PostQuestcenterTemplateGetSubjectDeptResponse200 & {
+export type postQuestcenterTemplateGetSubjectDeptResponseSuccess =
+  postQuestcenterTemplateGetSubjectDeptResponse200 & {
     headers: Headers
   }
 
-export type op1026PostQuestcenterTemplateGetSubjectDeptResponse =
-  op1026PostQuestcenterTemplateGetSubjectDeptResponseSuccess
+export type postQuestcenterTemplateGetSubjectDeptResponse =
+  postQuestcenterTemplateGetSubjectDeptResponseSuccess
 
-export const getOp1026PostQuestcenterTemplateGetSubjectDeptUrl = () => {
+export const getPostQuestcenterTemplateGetSubjectDeptUrl = () => {
   return `/questcenter/template/get_subject_dept`
 }
 
@@ -11906,38 +11717,38 @@ export const getOp1026PostQuestcenterTemplateGetSubjectDeptUrl = () => {
  * 获取全部学科列表
  * @summary 获取全部学科列表
  */
-export const op1026PostQuestcenterTemplateGetSubjectDept = async (
-  op1026PostQuestcenterTemplateGetSubjectDeptBody?: Op1026PostQuestcenterTemplateGetSubjectDeptBody,
+export const postQuestcenterTemplateGetSubjectDept = async (
+  postQuestcenterTemplateGetSubjectDeptBody?: PostQuestcenterTemplateGetSubjectDeptBody,
   options?: RequestInit
-): Promise<op1026PostQuestcenterTemplateGetSubjectDeptResponse> => {
-  return customFetch<op1026PostQuestcenterTemplateGetSubjectDeptResponse>(
-    getOp1026PostQuestcenterTemplateGetSubjectDeptUrl(),
+): Promise<postQuestcenterTemplateGetSubjectDeptResponse> => {
+  return customFetch<postQuestcenterTemplateGetSubjectDeptResponse>(
+    getPostQuestcenterTemplateGetSubjectDeptUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op1026PostQuestcenterTemplateGetSubjectDeptBody),
+      body: JSON.stringify(postQuestcenterTemplateGetSubjectDeptBody),
     }
   )
 }
 
-export const getOp1026PostQuestcenterTemplateGetSubjectDeptMutationOptions = <
+export const getPostQuestcenterTemplateGetSubjectDeptMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op1026PostQuestcenterTemplateGetSubjectDept>>,
+    Awaited<ReturnType<typeof postQuestcenterTemplateGetSubjectDept>>,
     TError,
-    { data?: Op1026PostQuestcenterTemplateGetSubjectDeptBody },
+    { data?: PostQuestcenterTemplateGetSubjectDeptBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op1026PostQuestcenterTemplateGetSubjectDept>>,
+  Awaited<ReturnType<typeof postQuestcenterTemplateGetSubjectDept>>,
   TError,
-  { data?: Op1026PostQuestcenterTemplateGetSubjectDeptBody },
+  { data?: PostQuestcenterTemplateGetSubjectDeptBody },
   TContext
 > => {
-  const mutationKey = ['op1026PostQuestcenterTemplateGetSubjectDept']
+  const mutationKey = ['postQuestcenterTemplateGetSubjectDept']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -11945,68 +11756,65 @@ export const getOp1026PostQuestcenterTemplateGetSubjectDeptMutationOptions = <
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op1026PostQuestcenterTemplateGetSubjectDept>>,
-    { data?: Op1026PostQuestcenterTemplateGetSubjectDeptBody }
+    Awaited<ReturnType<typeof postQuestcenterTemplateGetSubjectDept>>,
+    { data?: PostQuestcenterTemplateGetSubjectDeptBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op1026PostQuestcenterTemplateGetSubjectDept(data)
+    return postQuestcenterTemplateGetSubjectDept(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op1026PostQuestcenterTemplateGetSubjectDeptMutationResult = NonNullable<
-  Awaited<ReturnType<typeof op1026PostQuestcenterTemplateGetSubjectDept>>
+export type PostQuestcenterTemplateGetSubjectDeptMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterTemplateGetSubjectDept>>
 >
-export type Op1026PostQuestcenterTemplateGetSubjectDeptMutationBody =
-  | Op1026PostQuestcenterTemplateGetSubjectDeptBody
+export type PostQuestcenterTemplateGetSubjectDeptMutationBody =
+  | PostQuestcenterTemplateGetSubjectDeptBody
   | undefined
-export type Op1026PostQuestcenterTemplateGetSubjectDeptMutationError = ErrorType<unknown>
+export type PostQuestcenterTemplateGetSubjectDeptMutationError = ErrorType<unknown>
 
 /**
  * @summary 获取全部学科列表
  */
-export const useOp1026PostQuestcenterTemplateGetSubjectDept = <
+export const usePostQuestcenterTemplateGetSubjectDept = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op1026PostQuestcenterTemplateGetSubjectDept>>,
+      Awaited<ReturnType<typeof postQuestcenterTemplateGetSubjectDept>>,
       TError,
-      { data?: Op1026PostQuestcenterTemplateGetSubjectDeptBody },
+      { data?: PostQuestcenterTemplateGetSubjectDeptBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op1026PostQuestcenterTemplateGetSubjectDept>>,
+  Awaited<ReturnType<typeof postQuestcenterTemplateGetSubjectDept>>,
   TError,
-  { data?: Op1026PostQuestcenterTemplateGetSubjectDeptBody },
+  { data?: PostQuestcenterTemplateGetSubjectDeptBody },
   TContext
 > => {
-  return useMutation(
-    getOp1026PostQuestcenterTemplateGetSubjectDeptMutationOptions(options),
-    queryClient
-  )
+  return useMutation(getPostQuestcenterTemplateGetSubjectDeptMutationOptions(options), queryClient)
 }
 
-export type op321GetQuestcenterTemplateGetTemplateDetailResponse200 = {
-  data: Op321GetQuestcenterTemplateGetTemplateDetail200
+export type getQuestcenterTemplateGetTemplateDetailResponse200 = {
+  data: GetQuestcenterTemplateGetTemplateDetail200
   status: 200
 }
 
-export type op321GetQuestcenterTemplateGetTemplateDetailResponseSuccess =
-  op321GetQuestcenterTemplateGetTemplateDetailResponse200 & {
+export type getQuestcenterTemplateGetTemplateDetailResponseSuccess =
+  getQuestcenterTemplateGetTemplateDetailResponse200 & {
     headers: Headers
   }
 
-export type op321GetQuestcenterTemplateGetTemplateDetailResponse =
-  op321GetQuestcenterTemplateGetTemplateDetailResponseSuccess
+export type getQuestcenterTemplateGetTemplateDetailResponse =
+  getQuestcenterTemplateGetTemplateDetailResponseSuccess
 
-export const getOp321GetQuestcenterTemplateGetTemplateDetailUrl = (
-  params: Op321GetQuestcenterTemplateGetTemplateDetailParams
+export const getGetQuestcenterTemplateGetTemplateDetailUrl = (
+  params: GetQuestcenterTemplateGetTemplateDetailParams
 ) => {
   const normalizedParams = new URLSearchParams()
 
@@ -12027,12 +11835,12 @@ export const getOp321GetQuestcenterTemplateGetTemplateDetailUrl = (
  * 查询模版详情
  * @summary 查询模版详情
  */
-export const op321GetQuestcenterTemplateGetTemplateDetail = async (
-  params: Op321GetQuestcenterTemplateGetTemplateDetailParams,
+export const getQuestcenterTemplateGetTemplateDetail = async (
+  params: GetQuestcenterTemplateGetTemplateDetailParams,
   options?: RequestInit
-): Promise<op321GetQuestcenterTemplateGetTemplateDetailResponse> => {
-  return customFetch<op321GetQuestcenterTemplateGetTemplateDetailResponse>(
-    getOp321GetQuestcenterTemplateGetTemplateDetailUrl(params),
+): Promise<getQuestcenterTemplateGetTemplateDetailResponse> => {
+  return customFetch<getQuestcenterTemplateGetTemplateDetailResponse>(
+    getGetQuestcenterTemplateGetTemplateDetailUrl(params),
     {
       ...options,
       method: 'GET',
@@ -12040,21 +11848,21 @@ export const op321GetQuestcenterTemplateGetTemplateDetail = async (
   )
 }
 
-export const getOp321GetQuestcenterTemplateGetTemplateDetailQueryKey = (
-  params?: Op321GetQuestcenterTemplateGetTemplateDetailParams
+export const getGetQuestcenterTemplateGetTemplateDetailQueryKey = (
+  params?: GetQuestcenterTemplateGetTemplateDetailParams
 ) => {
   return [`/questcenter/template/get_template_detail`, ...(params ? [params] : [])] as const
 }
 
-export const getOp321GetQuestcenterTemplateGetTemplateDetailQueryOptions = <
-  TData = Awaited<ReturnType<typeof op321GetQuestcenterTemplateGetTemplateDetail>>,
+export const getGetQuestcenterTemplateGetTemplateDetailQueryOptions = <
+  TData = Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateDetail>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op321GetQuestcenterTemplateGetTemplateDetailParams,
+  params: GetQuestcenterTemplateGetTemplateDetailParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op321GetQuestcenterTemplateGetTemplateDetail>>,
+        Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateDetail>>,
         TError,
         TData
       >
@@ -12064,81 +11872,81 @@ export const getOp321GetQuestcenterTemplateGetTemplateDetailQueryOptions = <
   const { query: queryOptions } = options ?? {}
 
   const queryKey =
-    queryOptions?.queryKey ?? getOp321GetQuestcenterTemplateGetTemplateDetailQueryKey(params)
+    queryOptions?.queryKey ?? getGetQuestcenterTemplateGetTemplateDetailQueryKey(params)
 
   const queryFn: QueryFunction<
-    Awaited<ReturnType<typeof op321GetQuestcenterTemplateGetTemplateDetail>>
-  > = ({ signal }) => op321GetQuestcenterTemplateGetTemplateDetail(params, { signal })
+    Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateDetail>>
+  > = ({ signal }) => getQuestcenterTemplateGetTemplateDetail(params, { signal })
 
   return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof op321GetQuestcenterTemplateGetTemplateDetail>>,
+    Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateDetail>>,
     TError,
     TData
   > & { queryKey: DataTag<QueryKey, TData, TError> }
 }
 
-export type Op321GetQuestcenterTemplateGetTemplateDetailQueryResult = NonNullable<
-  Awaited<ReturnType<typeof op321GetQuestcenterTemplateGetTemplateDetail>>
+export type GetQuestcenterTemplateGetTemplateDetailQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateDetail>>
 >
-export type Op321GetQuestcenterTemplateGetTemplateDetailQueryError = ErrorType<unknown>
+export type GetQuestcenterTemplateGetTemplateDetailQueryError = ErrorType<unknown>
 
-export function useOp321GetQuestcenterTemplateGetTemplateDetail<
-  TData = Awaited<ReturnType<typeof op321GetQuestcenterTemplateGetTemplateDetail>>,
+export function useGetQuestcenterTemplateGetTemplateDetail<
+  TData = Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateDetail>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op321GetQuestcenterTemplateGetTemplateDetailParams,
+  params: GetQuestcenterTemplateGetTemplateDetailParams,
   options: {
     query: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op321GetQuestcenterTemplateGetTemplateDetail>>,
+        Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateDetail>>,
         TError,
         TData
       >
     > &
       Pick<
         DefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op321GetQuestcenterTemplateGetTemplateDetail>>,
+          Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateDetail>>,
           TError,
-          Awaited<ReturnType<typeof op321GetQuestcenterTemplateGetTemplateDetail>>
+          Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateDetail>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp321GetQuestcenterTemplateGetTemplateDetail<
-  TData = Awaited<ReturnType<typeof op321GetQuestcenterTemplateGetTemplateDetail>>,
+export function useGetQuestcenterTemplateGetTemplateDetail<
+  TData = Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateDetail>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op321GetQuestcenterTemplateGetTemplateDetailParams,
+  params: GetQuestcenterTemplateGetTemplateDetailParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op321GetQuestcenterTemplateGetTemplateDetail>>,
+        Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateDetail>>,
         TError,
         TData
       >
     > &
       Pick<
         UndefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op321GetQuestcenterTemplateGetTemplateDetail>>,
+          Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateDetail>>,
           TError,
-          Awaited<ReturnType<typeof op321GetQuestcenterTemplateGetTemplateDetail>>
+          Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateDetail>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp321GetQuestcenterTemplateGetTemplateDetail<
-  TData = Awaited<ReturnType<typeof op321GetQuestcenterTemplateGetTemplateDetail>>,
+export function useGetQuestcenterTemplateGetTemplateDetail<
+  TData = Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateDetail>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op321GetQuestcenterTemplateGetTemplateDetailParams,
+  params: GetQuestcenterTemplateGetTemplateDetailParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op321GetQuestcenterTemplateGetTemplateDetail>>,
+        Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateDetail>>,
         TError,
         TData
       >
@@ -12150,15 +11958,15 @@ export function useOp321GetQuestcenterTemplateGetTemplateDetail<
  * @summary 查询模版详情
  */
 
-export function useOp321GetQuestcenterTemplateGetTemplateDetail<
-  TData = Awaited<ReturnType<typeof op321GetQuestcenterTemplateGetTemplateDetail>>,
+export function useGetQuestcenterTemplateGetTemplateDetail<
+  TData = Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateDetail>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op321GetQuestcenterTemplateGetTemplateDetailParams,
+  params: GetQuestcenterTemplateGetTemplateDetailParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op321GetQuestcenterTemplateGetTemplateDetail>>,
+        Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateDetail>>,
         TError,
         TData
       >
@@ -12166,7 +11974,7 @@ export function useOp321GetQuestcenterTemplateGetTemplateDetail<
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
-  const queryOptions = getOp321GetQuestcenterTemplateGetTemplateDetailQueryOptions(params, options)
+  const queryOptions = getGetQuestcenterTemplateGetTemplateDetailQueryOptions(params, options)
 
   const query = useQuery(queryOptions, queryClient) as UseQueryResult<TData, TError> & {
     queryKey: DataTag<QueryKey, TData, TError>
@@ -12175,21 +11983,21 @@ export function useOp321GetQuestcenterTemplateGetTemplateDetail<
   return { ...query, queryKey: queryOptions.queryKey }
 }
 
-export type op327GetQuestcenterTemplateGetTemplateDetailByPaperIdResponse200 = {
-  data: Op327GetQuestcenterTemplateGetTemplateDetailByPaperId200
+export type getQuestcenterTemplateGetTemplateDetailByPaperIdResponse200 = {
+  data: GetQuestcenterTemplateGetTemplateDetailByPaperId200
   status: 200
 }
 
-export type op327GetQuestcenterTemplateGetTemplateDetailByPaperIdResponseSuccess =
-  op327GetQuestcenterTemplateGetTemplateDetailByPaperIdResponse200 & {
+export type getQuestcenterTemplateGetTemplateDetailByPaperIdResponseSuccess =
+  getQuestcenterTemplateGetTemplateDetailByPaperIdResponse200 & {
     headers: Headers
   }
 
-export type op327GetQuestcenterTemplateGetTemplateDetailByPaperIdResponse =
-  op327GetQuestcenterTemplateGetTemplateDetailByPaperIdResponseSuccess
+export type getQuestcenterTemplateGetTemplateDetailByPaperIdResponse =
+  getQuestcenterTemplateGetTemplateDetailByPaperIdResponseSuccess
 
-export const getOp327GetQuestcenterTemplateGetTemplateDetailByPaperIdUrl = (
-  params: Op327GetQuestcenterTemplateGetTemplateDetailByPaperIdParams
+export const getGetQuestcenterTemplateGetTemplateDetailByPaperIdUrl = (
+  params: GetQuestcenterTemplateGetTemplateDetailByPaperIdParams
 ) => {
   const normalizedParams = new URLSearchParams()
 
@@ -12210,12 +12018,12 @@ export const getOp327GetQuestcenterTemplateGetTemplateDetailByPaperIdUrl = (
  * 查询模版详情根据paper_id
  * @summary 查询模版详情根据paper_id
  */
-export const op327GetQuestcenterTemplateGetTemplateDetailByPaperId = async (
-  params: Op327GetQuestcenterTemplateGetTemplateDetailByPaperIdParams,
+export const getQuestcenterTemplateGetTemplateDetailByPaperId = async (
+  params: GetQuestcenterTemplateGetTemplateDetailByPaperIdParams,
   options?: RequestInit
-): Promise<op327GetQuestcenterTemplateGetTemplateDetailByPaperIdResponse> => {
-  return customFetch<op327GetQuestcenterTemplateGetTemplateDetailByPaperIdResponse>(
-    getOp327GetQuestcenterTemplateGetTemplateDetailByPaperIdUrl(params),
+): Promise<getQuestcenterTemplateGetTemplateDetailByPaperIdResponse> => {
+  return customFetch<getQuestcenterTemplateGetTemplateDetailByPaperIdResponse>(
+    getGetQuestcenterTemplateGetTemplateDetailByPaperIdUrl(params),
     {
       ...options,
       method: 'GET',
@@ -12223,8 +12031,8 @@ export const op327GetQuestcenterTemplateGetTemplateDetailByPaperId = async (
   )
 }
 
-export const getOp327GetQuestcenterTemplateGetTemplateDetailByPaperIdQueryKey = (
-  params?: Op327GetQuestcenterTemplateGetTemplateDetailByPaperIdParams
+export const getGetQuestcenterTemplateGetTemplateDetailByPaperIdQueryKey = (
+  params?: GetQuestcenterTemplateGetTemplateDetailByPaperIdParams
 ) => {
   return [
     `/questcenter/template/get_template_detail_by_paper_id`,
@@ -12232,15 +12040,15 @@ export const getOp327GetQuestcenterTemplateGetTemplateDetailByPaperIdQueryKey = 
   ] as const
 }
 
-export const getOp327GetQuestcenterTemplateGetTemplateDetailByPaperIdQueryOptions = <
-  TData = Awaited<ReturnType<typeof op327GetQuestcenterTemplateGetTemplateDetailByPaperId>>,
+export const getGetQuestcenterTemplateGetTemplateDetailByPaperIdQueryOptions = <
+  TData = Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateDetailByPaperId>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op327GetQuestcenterTemplateGetTemplateDetailByPaperIdParams,
+  params: GetQuestcenterTemplateGetTemplateDetailByPaperIdParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op327GetQuestcenterTemplateGetTemplateDetailByPaperId>>,
+        Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateDetailByPaperId>>,
         TError,
         TData
       >
@@ -12250,82 +12058,81 @@ export const getOp327GetQuestcenterTemplateGetTemplateDetailByPaperIdQueryOption
   const { query: queryOptions } = options ?? {}
 
   const queryKey =
-    queryOptions?.queryKey ??
-    getOp327GetQuestcenterTemplateGetTemplateDetailByPaperIdQueryKey(params)
+    queryOptions?.queryKey ?? getGetQuestcenterTemplateGetTemplateDetailByPaperIdQueryKey(params)
 
   const queryFn: QueryFunction<
-    Awaited<ReturnType<typeof op327GetQuestcenterTemplateGetTemplateDetailByPaperId>>
-  > = ({ signal }) => op327GetQuestcenterTemplateGetTemplateDetailByPaperId(params, { signal })
+    Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateDetailByPaperId>>
+  > = ({ signal }) => getQuestcenterTemplateGetTemplateDetailByPaperId(params, { signal })
 
   return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof op327GetQuestcenterTemplateGetTemplateDetailByPaperId>>,
+    Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateDetailByPaperId>>,
     TError,
     TData
   > & { queryKey: DataTag<QueryKey, TData, TError> }
 }
 
-export type Op327GetQuestcenterTemplateGetTemplateDetailByPaperIdQueryResult = NonNullable<
-  Awaited<ReturnType<typeof op327GetQuestcenterTemplateGetTemplateDetailByPaperId>>
+export type GetQuestcenterTemplateGetTemplateDetailByPaperIdQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateDetailByPaperId>>
 >
-export type Op327GetQuestcenterTemplateGetTemplateDetailByPaperIdQueryError = ErrorType<unknown>
+export type GetQuestcenterTemplateGetTemplateDetailByPaperIdQueryError = ErrorType<unknown>
 
-export function useOp327GetQuestcenterTemplateGetTemplateDetailByPaperId<
-  TData = Awaited<ReturnType<typeof op327GetQuestcenterTemplateGetTemplateDetailByPaperId>>,
+export function useGetQuestcenterTemplateGetTemplateDetailByPaperId<
+  TData = Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateDetailByPaperId>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op327GetQuestcenterTemplateGetTemplateDetailByPaperIdParams,
+  params: GetQuestcenterTemplateGetTemplateDetailByPaperIdParams,
   options: {
     query: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op327GetQuestcenterTemplateGetTemplateDetailByPaperId>>,
+        Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateDetailByPaperId>>,
         TError,
         TData
       >
     > &
       Pick<
         DefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op327GetQuestcenterTemplateGetTemplateDetailByPaperId>>,
+          Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateDetailByPaperId>>,
           TError,
-          Awaited<ReturnType<typeof op327GetQuestcenterTemplateGetTemplateDetailByPaperId>>
+          Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateDetailByPaperId>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp327GetQuestcenterTemplateGetTemplateDetailByPaperId<
-  TData = Awaited<ReturnType<typeof op327GetQuestcenterTemplateGetTemplateDetailByPaperId>>,
+export function useGetQuestcenterTemplateGetTemplateDetailByPaperId<
+  TData = Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateDetailByPaperId>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op327GetQuestcenterTemplateGetTemplateDetailByPaperIdParams,
+  params: GetQuestcenterTemplateGetTemplateDetailByPaperIdParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op327GetQuestcenterTemplateGetTemplateDetailByPaperId>>,
+        Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateDetailByPaperId>>,
         TError,
         TData
       >
     > &
       Pick<
         UndefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op327GetQuestcenterTemplateGetTemplateDetailByPaperId>>,
+          Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateDetailByPaperId>>,
           TError,
-          Awaited<ReturnType<typeof op327GetQuestcenterTemplateGetTemplateDetailByPaperId>>
+          Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateDetailByPaperId>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp327GetQuestcenterTemplateGetTemplateDetailByPaperId<
-  TData = Awaited<ReturnType<typeof op327GetQuestcenterTemplateGetTemplateDetailByPaperId>>,
+export function useGetQuestcenterTemplateGetTemplateDetailByPaperId<
+  TData = Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateDetailByPaperId>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op327GetQuestcenterTemplateGetTemplateDetailByPaperIdParams,
+  params: GetQuestcenterTemplateGetTemplateDetailByPaperIdParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op327GetQuestcenterTemplateGetTemplateDetailByPaperId>>,
+        Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateDetailByPaperId>>,
         TError,
         TData
       >
@@ -12337,15 +12144,15 @@ export function useOp327GetQuestcenterTemplateGetTemplateDetailByPaperId<
  * @summary 查询模版详情根据paper_id
  */
 
-export function useOp327GetQuestcenterTemplateGetTemplateDetailByPaperId<
-  TData = Awaited<ReturnType<typeof op327GetQuestcenterTemplateGetTemplateDetailByPaperId>>,
+export function useGetQuestcenterTemplateGetTemplateDetailByPaperId<
+  TData = Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateDetailByPaperId>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op327GetQuestcenterTemplateGetTemplateDetailByPaperIdParams,
+  params: GetQuestcenterTemplateGetTemplateDetailByPaperIdParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op327GetQuestcenterTemplateGetTemplateDetailByPaperId>>,
+        Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateDetailByPaperId>>,
         TError,
         TData
       >
@@ -12353,7 +12160,7 @@ export function useOp327GetQuestcenterTemplateGetTemplateDetailByPaperId<
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
-  const queryOptions = getOp327GetQuestcenterTemplateGetTemplateDetailByPaperIdQueryOptions(
+  const queryOptions = getGetQuestcenterTemplateGetTemplateDetailByPaperIdQueryOptions(
     params,
     options
   )
@@ -12365,21 +12172,21 @@ export function useOp327GetQuestcenterTemplateGetTemplateDetailByPaperId<
   return { ...query, queryKey: queryOptions.queryKey }
 }
 
-export type op320GetQuestcenterTemplateGetTemplateHistoryListResponse200 = {
-  data: Op320GetQuestcenterTemplateGetTemplateHistoryList200
+export type getQuestcenterTemplateGetTemplateHistoryListResponse200 = {
+  data: GetQuestcenterTemplateGetTemplateHistoryList200
   status: 200
 }
 
-export type op320GetQuestcenterTemplateGetTemplateHistoryListResponseSuccess =
-  op320GetQuestcenterTemplateGetTemplateHistoryListResponse200 & {
+export type getQuestcenterTemplateGetTemplateHistoryListResponseSuccess =
+  getQuestcenterTemplateGetTemplateHistoryListResponse200 & {
     headers: Headers
   }
 
-export type op320GetQuestcenterTemplateGetTemplateHistoryListResponse =
-  op320GetQuestcenterTemplateGetTemplateHistoryListResponseSuccess
+export type getQuestcenterTemplateGetTemplateHistoryListResponse =
+  getQuestcenterTemplateGetTemplateHistoryListResponseSuccess
 
-export const getOp320GetQuestcenterTemplateGetTemplateHistoryListUrl = (
-  params: Op320GetQuestcenterTemplateGetTemplateHistoryListParams
+export const getGetQuestcenterTemplateGetTemplateHistoryListUrl = (
+  params: GetQuestcenterTemplateGetTemplateHistoryListParams
 ) => {
   const normalizedParams = new URLSearchParams()
 
@@ -12400,12 +12207,12 @@ export const getOp320GetQuestcenterTemplateGetTemplateHistoryListUrl = (
  * 获取历史模版列
  * @summary 获取历史模版列
  */
-export const op320GetQuestcenterTemplateGetTemplateHistoryList = async (
-  params: Op320GetQuestcenterTemplateGetTemplateHistoryListParams,
+export const getQuestcenterTemplateGetTemplateHistoryList = async (
+  params: GetQuestcenterTemplateGetTemplateHistoryListParams,
   options?: RequestInit
-): Promise<op320GetQuestcenterTemplateGetTemplateHistoryListResponse> => {
-  return customFetch<op320GetQuestcenterTemplateGetTemplateHistoryListResponse>(
-    getOp320GetQuestcenterTemplateGetTemplateHistoryListUrl(params),
+): Promise<getQuestcenterTemplateGetTemplateHistoryListResponse> => {
+  return customFetch<getQuestcenterTemplateGetTemplateHistoryListResponse>(
+    getGetQuestcenterTemplateGetTemplateHistoryListUrl(params),
     {
       ...options,
       method: 'GET',
@@ -12413,21 +12220,21 @@ export const op320GetQuestcenterTemplateGetTemplateHistoryList = async (
   )
 }
 
-export const getOp320GetQuestcenterTemplateGetTemplateHistoryListQueryKey = (
-  params?: Op320GetQuestcenterTemplateGetTemplateHistoryListParams
+export const getGetQuestcenterTemplateGetTemplateHistoryListQueryKey = (
+  params?: GetQuestcenterTemplateGetTemplateHistoryListParams
 ) => {
   return [`/questcenter/template/get_template_history_list`, ...(params ? [params] : [])] as const
 }
 
-export const getOp320GetQuestcenterTemplateGetTemplateHistoryListQueryOptions = <
-  TData = Awaited<ReturnType<typeof op320GetQuestcenterTemplateGetTemplateHistoryList>>,
+export const getGetQuestcenterTemplateGetTemplateHistoryListQueryOptions = <
+  TData = Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateHistoryList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op320GetQuestcenterTemplateGetTemplateHistoryListParams,
+  params: GetQuestcenterTemplateGetTemplateHistoryListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op320GetQuestcenterTemplateGetTemplateHistoryList>>,
+        Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateHistoryList>>,
         TError,
         TData
       >
@@ -12437,81 +12244,81 @@ export const getOp320GetQuestcenterTemplateGetTemplateHistoryListQueryOptions = 
   const { query: queryOptions } = options ?? {}
 
   const queryKey =
-    queryOptions?.queryKey ?? getOp320GetQuestcenterTemplateGetTemplateHistoryListQueryKey(params)
+    queryOptions?.queryKey ?? getGetQuestcenterTemplateGetTemplateHistoryListQueryKey(params)
 
   const queryFn: QueryFunction<
-    Awaited<ReturnType<typeof op320GetQuestcenterTemplateGetTemplateHistoryList>>
-  > = ({ signal }) => op320GetQuestcenterTemplateGetTemplateHistoryList(params, { signal })
+    Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateHistoryList>>
+  > = ({ signal }) => getQuestcenterTemplateGetTemplateHistoryList(params, { signal })
 
   return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof op320GetQuestcenterTemplateGetTemplateHistoryList>>,
+    Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateHistoryList>>,
     TError,
     TData
   > & { queryKey: DataTag<QueryKey, TData, TError> }
 }
 
-export type Op320GetQuestcenterTemplateGetTemplateHistoryListQueryResult = NonNullable<
-  Awaited<ReturnType<typeof op320GetQuestcenterTemplateGetTemplateHistoryList>>
+export type GetQuestcenterTemplateGetTemplateHistoryListQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateHistoryList>>
 >
-export type Op320GetQuestcenterTemplateGetTemplateHistoryListQueryError = ErrorType<unknown>
+export type GetQuestcenterTemplateGetTemplateHistoryListQueryError = ErrorType<unknown>
 
-export function useOp320GetQuestcenterTemplateGetTemplateHistoryList<
-  TData = Awaited<ReturnType<typeof op320GetQuestcenterTemplateGetTemplateHistoryList>>,
+export function useGetQuestcenterTemplateGetTemplateHistoryList<
+  TData = Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateHistoryList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op320GetQuestcenterTemplateGetTemplateHistoryListParams,
+  params: GetQuestcenterTemplateGetTemplateHistoryListParams,
   options: {
     query: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op320GetQuestcenterTemplateGetTemplateHistoryList>>,
+        Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateHistoryList>>,
         TError,
         TData
       >
     > &
       Pick<
         DefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op320GetQuestcenterTemplateGetTemplateHistoryList>>,
+          Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateHistoryList>>,
           TError,
-          Awaited<ReturnType<typeof op320GetQuestcenterTemplateGetTemplateHistoryList>>
+          Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateHistoryList>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp320GetQuestcenterTemplateGetTemplateHistoryList<
-  TData = Awaited<ReturnType<typeof op320GetQuestcenterTemplateGetTemplateHistoryList>>,
+export function useGetQuestcenterTemplateGetTemplateHistoryList<
+  TData = Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateHistoryList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op320GetQuestcenterTemplateGetTemplateHistoryListParams,
+  params: GetQuestcenterTemplateGetTemplateHistoryListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op320GetQuestcenterTemplateGetTemplateHistoryList>>,
+        Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateHistoryList>>,
         TError,
         TData
       >
     > &
       Pick<
         UndefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op320GetQuestcenterTemplateGetTemplateHistoryList>>,
+          Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateHistoryList>>,
           TError,
-          Awaited<ReturnType<typeof op320GetQuestcenterTemplateGetTemplateHistoryList>>
+          Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateHistoryList>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp320GetQuestcenterTemplateGetTemplateHistoryList<
-  TData = Awaited<ReturnType<typeof op320GetQuestcenterTemplateGetTemplateHistoryList>>,
+export function useGetQuestcenterTemplateGetTemplateHistoryList<
+  TData = Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateHistoryList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op320GetQuestcenterTemplateGetTemplateHistoryListParams,
+  params: GetQuestcenterTemplateGetTemplateHistoryListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op320GetQuestcenterTemplateGetTemplateHistoryList>>,
+        Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateHistoryList>>,
         TError,
         TData
       >
@@ -12523,15 +12330,15 @@ export function useOp320GetQuestcenterTemplateGetTemplateHistoryList<
  * @summary 获取历史模版列
  */
 
-export function useOp320GetQuestcenterTemplateGetTemplateHistoryList<
-  TData = Awaited<ReturnType<typeof op320GetQuestcenterTemplateGetTemplateHistoryList>>,
+export function useGetQuestcenterTemplateGetTemplateHistoryList<
+  TData = Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateHistoryList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op320GetQuestcenterTemplateGetTemplateHistoryListParams,
+  params: GetQuestcenterTemplateGetTemplateHistoryListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op320GetQuestcenterTemplateGetTemplateHistoryList>>,
+        Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateHistoryList>>,
         TError,
         TData
       >
@@ -12539,10 +12346,7 @@ export function useOp320GetQuestcenterTemplateGetTemplateHistoryList<
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
-  const queryOptions = getOp320GetQuestcenterTemplateGetTemplateHistoryListQueryOptions(
-    params,
-    options
-  )
+  const queryOptions = getGetQuestcenterTemplateGetTemplateHistoryListQueryOptions(params, options)
 
   const query = useQuery(queryOptions, queryClient) as UseQueryResult<TData, TError> & {
     queryKey: DataTag<QueryKey, TData, TError>
@@ -12551,21 +12355,21 @@ export function useOp320GetQuestcenterTemplateGetTemplateHistoryList<
   return { ...query, queryKey: queryOptions.queryKey }
 }
 
-export type op319GetQuestcenterTemplateGetTemplateListResponse200 = {
-  data: Op319GetQuestcenterTemplateGetTemplateList200
+export type getQuestcenterTemplateGetTemplateListResponse200 = {
+  data: GetQuestcenterTemplateGetTemplateList200
   status: 200
 }
 
-export type op319GetQuestcenterTemplateGetTemplateListResponseSuccess =
-  op319GetQuestcenterTemplateGetTemplateListResponse200 & {
+export type getQuestcenterTemplateGetTemplateListResponseSuccess =
+  getQuestcenterTemplateGetTemplateListResponse200 & {
     headers: Headers
   }
 
-export type op319GetQuestcenterTemplateGetTemplateListResponse =
-  op319GetQuestcenterTemplateGetTemplateListResponseSuccess
+export type getQuestcenterTemplateGetTemplateListResponse =
+  getQuestcenterTemplateGetTemplateListResponseSuccess
 
-export const getOp319GetQuestcenterTemplateGetTemplateListUrl = (
-  params: Op319GetQuestcenterTemplateGetTemplateListParams
+export const getGetQuestcenterTemplateGetTemplateListUrl = (
+  params: GetQuestcenterTemplateGetTemplateListParams
 ) => {
   const normalizedParams = new URLSearchParams()
 
@@ -12586,12 +12390,12 @@ export const getOp319GetQuestcenterTemplateGetTemplateListUrl = (
  * 获取最新模版列表
  * @summary 获取最新模版列表
  */
-export const op319GetQuestcenterTemplateGetTemplateList = async (
-  params: Op319GetQuestcenterTemplateGetTemplateListParams,
+export const getQuestcenterTemplateGetTemplateList = async (
+  params: GetQuestcenterTemplateGetTemplateListParams,
   options?: RequestInit
-): Promise<op319GetQuestcenterTemplateGetTemplateListResponse> => {
-  return customFetch<op319GetQuestcenterTemplateGetTemplateListResponse>(
-    getOp319GetQuestcenterTemplateGetTemplateListUrl(params),
+): Promise<getQuestcenterTemplateGetTemplateListResponse> => {
+  return customFetch<getQuestcenterTemplateGetTemplateListResponse>(
+    getGetQuestcenterTemplateGetTemplateListUrl(params),
     {
       ...options,
       method: 'GET',
@@ -12599,21 +12403,21 @@ export const op319GetQuestcenterTemplateGetTemplateList = async (
   )
 }
 
-export const getOp319GetQuestcenterTemplateGetTemplateListQueryKey = (
-  params?: Op319GetQuestcenterTemplateGetTemplateListParams
+export const getGetQuestcenterTemplateGetTemplateListQueryKey = (
+  params?: GetQuestcenterTemplateGetTemplateListParams
 ) => {
   return [`/questcenter/template/get_template_list`, ...(params ? [params] : [])] as const
 }
 
-export const getOp319GetQuestcenterTemplateGetTemplateListQueryOptions = <
-  TData = Awaited<ReturnType<typeof op319GetQuestcenterTemplateGetTemplateList>>,
+export const getGetQuestcenterTemplateGetTemplateListQueryOptions = <
+  TData = Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op319GetQuestcenterTemplateGetTemplateListParams,
+  params: GetQuestcenterTemplateGetTemplateListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op319GetQuestcenterTemplateGetTemplateList>>,
+        Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateList>>,
         TError,
         TData
       >
@@ -12623,81 +12427,81 @@ export const getOp319GetQuestcenterTemplateGetTemplateListQueryOptions = <
   const { query: queryOptions } = options ?? {}
 
   const queryKey =
-    queryOptions?.queryKey ?? getOp319GetQuestcenterTemplateGetTemplateListQueryKey(params)
+    queryOptions?.queryKey ?? getGetQuestcenterTemplateGetTemplateListQueryKey(params)
 
   const queryFn: QueryFunction<
-    Awaited<ReturnType<typeof op319GetQuestcenterTemplateGetTemplateList>>
-  > = ({ signal }) => op319GetQuestcenterTemplateGetTemplateList(params, { signal })
+    Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateList>>
+  > = ({ signal }) => getQuestcenterTemplateGetTemplateList(params, { signal })
 
   return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof op319GetQuestcenterTemplateGetTemplateList>>,
+    Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateList>>,
     TError,
     TData
   > & { queryKey: DataTag<QueryKey, TData, TError> }
 }
 
-export type Op319GetQuestcenterTemplateGetTemplateListQueryResult = NonNullable<
-  Awaited<ReturnType<typeof op319GetQuestcenterTemplateGetTemplateList>>
+export type GetQuestcenterTemplateGetTemplateListQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateList>>
 >
-export type Op319GetQuestcenterTemplateGetTemplateListQueryError = ErrorType<unknown>
+export type GetQuestcenterTemplateGetTemplateListQueryError = ErrorType<unknown>
 
-export function useOp319GetQuestcenterTemplateGetTemplateList<
-  TData = Awaited<ReturnType<typeof op319GetQuestcenterTemplateGetTemplateList>>,
+export function useGetQuestcenterTemplateGetTemplateList<
+  TData = Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op319GetQuestcenterTemplateGetTemplateListParams,
+  params: GetQuestcenterTemplateGetTemplateListParams,
   options: {
     query: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op319GetQuestcenterTemplateGetTemplateList>>,
+        Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateList>>,
         TError,
         TData
       >
     > &
       Pick<
         DefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op319GetQuestcenterTemplateGetTemplateList>>,
+          Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateList>>,
           TError,
-          Awaited<ReturnType<typeof op319GetQuestcenterTemplateGetTemplateList>>
+          Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateList>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp319GetQuestcenterTemplateGetTemplateList<
-  TData = Awaited<ReturnType<typeof op319GetQuestcenterTemplateGetTemplateList>>,
+export function useGetQuestcenterTemplateGetTemplateList<
+  TData = Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op319GetQuestcenterTemplateGetTemplateListParams,
+  params: GetQuestcenterTemplateGetTemplateListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op319GetQuestcenterTemplateGetTemplateList>>,
+        Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateList>>,
         TError,
         TData
       >
     > &
       Pick<
         UndefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op319GetQuestcenterTemplateGetTemplateList>>,
+          Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateList>>,
           TError,
-          Awaited<ReturnType<typeof op319GetQuestcenterTemplateGetTemplateList>>
+          Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateList>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp319GetQuestcenterTemplateGetTemplateList<
-  TData = Awaited<ReturnType<typeof op319GetQuestcenterTemplateGetTemplateList>>,
+export function useGetQuestcenterTemplateGetTemplateList<
+  TData = Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op319GetQuestcenterTemplateGetTemplateListParams,
+  params: GetQuestcenterTemplateGetTemplateListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op319GetQuestcenterTemplateGetTemplateList>>,
+        Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateList>>,
         TError,
         TData
       >
@@ -12709,15 +12513,15 @@ export function useOp319GetQuestcenterTemplateGetTemplateList<
  * @summary 获取最新模版列表
  */
 
-export function useOp319GetQuestcenterTemplateGetTemplateList<
-  TData = Awaited<ReturnType<typeof op319GetQuestcenterTemplateGetTemplateList>>,
+export function useGetQuestcenterTemplateGetTemplateList<
+  TData = Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateList>>,
   TError = ErrorType<unknown>,
 >(
-  params: Op319GetQuestcenterTemplateGetTemplateListParams,
+  params: GetQuestcenterTemplateGetTemplateListParams,
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op319GetQuestcenterTemplateGetTemplateList>>,
+        Awaited<ReturnType<typeof getQuestcenterTemplateGetTemplateList>>,
         TError,
         TData
       >
@@ -12725,7 +12529,7 @@ export function useOp319GetQuestcenterTemplateGetTemplateList<
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
-  const queryOptions = getOp319GetQuestcenterTemplateGetTemplateListQueryOptions(params, options)
+  const queryOptions = getGetQuestcenterTemplateGetTemplateListQueryOptions(params, options)
 
   const query = useQuery(queryOptions, queryClient) as UseQueryResult<TData, TError> & {
     queryKey: DataTag<QueryKey, TData, TError>
@@ -12734,20 +12538,20 @@ export function useOp319GetQuestcenterTemplateGetTemplateList<
   return { ...query, queryKey: queryOptions.queryKey }
 }
 
-export type op1025GetQuestcenterTemplateGetTreeDirListResponse200 = {
-  data: Op1025GetQuestcenterTemplateGetTreeDirList200
+export type getQuestcenterTemplateGetTreeDirListResponse200 = {
+  data: GetQuestcenterTemplateGetTreeDirList200
   status: 200
 }
 
-export type op1025GetQuestcenterTemplateGetTreeDirListResponseSuccess =
-  op1025GetQuestcenterTemplateGetTreeDirListResponse200 & {
+export type getQuestcenterTemplateGetTreeDirListResponseSuccess =
+  getQuestcenterTemplateGetTreeDirListResponse200 & {
     headers: Headers
   }
 
-export type op1025GetQuestcenterTemplateGetTreeDirListResponse =
-  op1025GetQuestcenterTemplateGetTreeDirListResponseSuccess
+export type getQuestcenterTemplateGetTreeDirListResponse =
+  getQuestcenterTemplateGetTreeDirListResponseSuccess
 
-export const getOp1025GetQuestcenterTemplateGetTreeDirListUrl = () => {
+export const getGetQuestcenterTemplateGetTreeDirListUrl = () => {
   return `/questcenter/template/get_tree_dir_list`
 }
 
@@ -12755,11 +12559,11 @@ export const getOp1025GetQuestcenterTemplateGetTreeDirListUrl = () => {
  * 获取问卷模版分类树
  * @summary 获取问卷模版分类树
  */
-export const op1025GetQuestcenterTemplateGetTreeDirList = async (
+export const getQuestcenterTemplateGetTreeDirList = async (
   options?: RequestInit
-): Promise<op1025GetQuestcenterTemplateGetTreeDirListResponse> => {
-  return customFetch<op1025GetQuestcenterTemplateGetTreeDirListResponse>(
-    getOp1025GetQuestcenterTemplateGetTreeDirListUrl(),
+): Promise<getQuestcenterTemplateGetTreeDirListResponse> => {
+  return customFetch<getQuestcenterTemplateGetTreeDirListResponse>(
+    getGetQuestcenterTemplateGetTreeDirListUrl(),
     {
       ...options,
       method: 'GET',
@@ -12767,96 +12571,92 @@ export const op1025GetQuestcenterTemplateGetTreeDirList = async (
   )
 }
 
-export const getOp1025GetQuestcenterTemplateGetTreeDirListQueryKey = () => {
+export const getGetQuestcenterTemplateGetTreeDirListQueryKey = () => {
   return [`/questcenter/template/get_tree_dir_list`] as const
 }
 
-export const getOp1025GetQuestcenterTemplateGetTreeDirListQueryOptions = <
-  TData = Awaited<ReturnType<typeof op1025GetQuestcenterTemplateGetTreeDirList>>,
+export const getGetQuestcenterTemplateGetTreeDirListQueryOptions = <
+  TData = Awaited<ReturnType<typeof getQuestcenterTemplateGetTreeDirList>>,
   TError = ErrorType<unknown>,
 >(options?: {
   query?: Partial<
-    UseQueryOptions<
-      Awaited<ReturnType<typeof op1025GetQuestcenterTemplateGetTreeDirList>>,
-      TError,
-      TData
-    >
+    UseQueryOptions<Awaited<ReturnType<typeof getQuestcenterTemplateGetTreeDirList>>, TError, TData>
   >
 }) => {
   const { query: queryOptions } = options ?? {}
 
-  const queryKey = queryOptions?.queryKey ?? getOp1025GetQuestcenterTemplateGetTreeDirListQueryKey()
+  const queryKey = queryOptions?.queryKey ?? getGetQuestcenterTemplateGetTreeDirListQueryKey()
 
   const queryFn: QueryFunction<
-    Awaited<ReturnType<typeof op1025GetQuestcenterTemplateGetTreeDirList>>
-  > = ({ signal }) => op1025GetQuestcenterTemplateGetTreeDirList({ signal })
+    Awaited<ReturnType<typeof getQuestcenterTemplateGetTreeDirList>>
+  > = ({ signal }) => getQuestcenterTemplateGetTreeDirList({ signal })
 
   return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof op1025GetQuestcenterTemplateGetTreeDirList>>,
+    Awaited<ReturnType<typeof getQuestcenterTemplateGetTreeDirList>>,
     TError,
     TData
   > & { queryKey: DataTag<QueryKey, TData, TError> }
 }
 
-export type Op1025GetQuestcenterTemplateGetTreeDirListQueryResult = NonNullable<
-  Awaited<ReturnType<typeof op1025GetQuestcenterTemplateGetTreeDirList>>
+export type GetQuestcenterTemplateGetTreeDirListQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getQuestcenterTemplateGetTreeDirList>>
 >
-export type Op1025GetQuestcenterTemplateGetTreeDirListQueryError = ErrorType<unknown>
+export type GetQuestcenterTemplateGetTreeDirListQueryError = ErrorType<unknown>
 
-export function useOp1025GetQuestcenterTemplateGetTreeDirList<
-  TData = Awaited<ReturnType<typeof op1025GetQuestcenterTemplateGetTreeDirList>>,
+export function useGetQuestcenterTemplateGetTreeDirList<
+  TData = Awaited<ReturnType<typeof getQuestcenterTemplateGetTreeDirList>>,
   TError = ErrorType<unknown>,
 >(
   options: {
     query: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op1025GetQuestcenterTemplateGetTreeDirList>>,
+        Awaited<ReturnType<typeof getQuestcenterTemplateGetTreeDirList>>,
         TError,
         TData
       >
     > &
       Pick<
         DefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op1025GetQuestcenterTemplateGetTreeDirList>>,
+          Awaited<ReturnType<typeof getQuestcenterTemplateGetTreeDirList>>,
           TError,
-          Awaited<ReturnType<typeof op1025GetQuestcenterTemplateGetTreeDirList>>
+          Awaited<ReturnType<typeof getQuestcenterTemplateGetTreeDirList>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp1025GetQuestcenterTemplateGetTreeDirList<
-  TData = Awaited<ReturnType<typeof op1025GetQuestcenterTemplateGetTreeDirList>>,
+export function useGetQuestcenterTemplateGetTreeDirList<
+  TData = Awaited<ReturnType<typeof getQuestcenterTemplateGetTreeDirList>>,
   TError = ErrorType<unknown>,
 >(
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op1025GetQuestcenterTemplateGetTreeDirList>>,
+        Awaited<ReturnType<typeof getQuestcenterTemplateGetTreeDirList>>,
         TError,
         TData
       >
     > &
       Pick<
         UndefinedInitialDataOptions<
-          Awaited<ReturnType<typeof op1025GetQuestcenterTemplateGetTreeDirList>>,
+          Awaited<ReturnType<typeof getQuestcenterTemplateGetTreeDirList>>,
           TError,
-          Awaited<ReturnType<typeof op1025GetQuestcenterTemplateGetTreeDirList>>
+          Awaited<ReturnType<typeof getQuestcenterTemplateGetTreeDirList>>
         >,
         'initialData'
       >
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useOp1025GetQuestcenterTemplateGetTreeDirList<
-  TData = Awaited<ReturnType<typeof op1025GetQuestcenterTemplateGetTreeDirList>>,
+export function useGetQuestcenterTemplateGetTreeDirList<
+  TData = Awaited<ReturnType<typeof getQuestcenterTemplateGetTreeDirList>>,
   TError = ErrorType<unknown>,
 >(
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op1025GetQuestcenterTemplateGetTreeDirList>>,
+        Awaited<ReturnType<typeof getQuestcenterTemplateGetTreeDirList>>,
         TError,
         TData
       >
@@ -12868,14 +12668,14 @@ export function useOp1025GetQuestcenterTemplateGetTreeDirList<
  * @summary 获取问卷模版分类树
  */
 
-export function useOp1025GetQuestcenterTemplateGetTreeDirList<
-  TData = Awaited<ReturnType<typeof op1025GetQuestcenterTemplateGetTreeDirList>>,
+export function useGetQuestcenterTemplateGetTreeDirList<
+  TData = Awaited<ReturnType<typeof getQuestcenterTemplateGetTreeDirList>>,
   TError = ErrorType<unknown>,
 >(
   options?: {
     query?: Partial<
       UseQueryOptions<
-        Awaited<ReturnType<typeof op1025GetQuestcenterTemplateGetTreeDirList>>,
+        Awaited<ReturnType<typeof getQuestcenterTemplateGetTreeDirList>>,
         TError,
         TData
       >
@@ -12883,7 +12683,7 @@ export function useOp1025GetQuestcenterTemplateGetTreeDirList<
   },
   queryClient?: QueryClient
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
-  const queryOptions = getOp1025GetQuestcenterTemplateGetTreeDirListQueryOptions(options)
+  const queryOptions = getGetQuestcenterTemplateGetTreeDirListQueryOptions(options)
 
   const query = useQuery(queryOptions, queryClient) as UseQueryResult<TData, TError> & {
     queryKey: DataTag<QueryKey, TData, TError>
@@ -12892,20 +12692,20 @@ export function useOp1025GetQuestcenterTemplateGetTreeDirList<
   return { ...query, queryKey: queryOptions.queryKey }
 }
 
-export type op325PostQuestcenterTemplatePublishTemplateResponse200 = {
-  data: Op325PostQuestcenterTemplatePublishTemplate200
+export type postQuestcenterTemplatePublishTemplateResponse200 = {
+  data: PostQuestcenterTemplatePublishTemplate200
   status: 200
 }
 
-export type op325PostQuestcenterTemplatePublishTemplateResponseSuccess =
-  op325PostQuestcenterTemplatePublishTemplateResponse200 & {
+export type postQuestcenterTemplatePublishTemplateResponseSuccess =
+  postQuestcenterTemplatePublishTemplateResponse200 & {
     headers: Headers
   }
 
-export type op325PostQuestcenterTemplatePublishTemplateResponse =
-  op325PostQuestcenterTemplatePublishTemplateResponseSuccess
+export type postQuestcenterTemplatePublishTemplateResponse =
+  postQuestcenterTemplatePublishTemplateResponseSuccess
 
-export const getOp325PostQuestcenterTemplatePublishTemplateUrl = () => {
+export const getPostQuestcenterTemplatePublishTemplateUrl = () => {
   return `/questcenter/template/publish_template`
 }
 
@@ -12913,38 +12713,38 @@ export const getOp325PostQuestcenterTemplatePublishTemplateUrl = () => {
  * 模版发布
  * @summary 模版发布
  */
-export const op325PostQuestcenterTemplatePublishTemplate = async (
-  op325PostQuestcenterTemplatePublishTemplateBody: Op325PostQuestcenterTemplatePublishTemplateBody,
+export const postQuestcenterTemplatePublishTemplate = async (
+  postQuestcenterTemplatePublishTemplateBody: PostQuestcenterTemplatePublishTemplateBody,
   options?: RequestInit
-): Promise<op325PostQuestcenterTemplatePublishTemplateResponse> => {
-  return customFetch<op325PostQuestcenterTemplatePublishTemplateResponse>(
-    getOp325PostQuestcenterTemplatePublishTemplateUrl(),
+): Promise<postQuestcenterTemplatePublishTemplateResponse> => {
+  return customFetch<postQuestcenterTemplatePublishTemplateResponse>(
+    getPostQuestcenterTemplatePublishTemplateUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op325PostQuestcenterTemplatePublishTemplateBody),
+      body: JSON.stringify(postQuestcenterTemplatePublishTemplateBody),
     }
   )
 }
 
-export const getOp325PostQuestcenterTemplatePublishTemplateMutationOptions = <
+export const getPostQuestcenterTemplatePublishTemplateMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op325PostQuestcenterTemplatePublishTemplate>>,
+    Awaited<ReturnType<typeof postQuestcenterTemplatePublishTemplate>>,
     TError,
-    { data: Op325PostQuestcenterTemplatePublishTemplateBody },
+    { data: PostQuestcenterTemplatePublishTemplateBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op325PostQuestcenterTemplatePublishTemplate>>,
+  Awaited<ReturnType<typeof postQuestcenterTemplatePublishTemplate>>,
   TError,
-  { data: Op325PostQuestcenterTemplatePublishTemplateBody },
+  { data: PostQuestcenterTemplatePublishTemplateBody },
   TContext
 > => {
-  const mutationKey = ['op325PostQuestcenterTemplatePublishTemplate']
+  const mutationKey = ['postQuestcenterTemplatePublishTemplate']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -12952,66 +12752,63 @@ export const getOp325PostQuestcenterTemplatePublishTemplateMutationOptions = <
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op325PostQuestcenterTemplatePublishTemplate>>,
-    { data: Op325PostQuestcenterTemplatePublishTemplateBody }
+    Awaited<ReturnType<typeof postQuestcenterTemplatePublishTemplate>>,
+    { data: PostQuestcenterTemplatePublishTemplateBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op325PostQuestcenterTemplatePublishTemplate(data)
+    return postQuestcenterTemplatePublishTemplate(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op325PostQuestcenterTemplatePublishTemplateMutationResult = NonNullable<
-  Awaited<ReturnType<typeof op325PostQuestcenterTemplatePublishTemplate>>
+export type PostQuestcenterTemplatePublishTemplateMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterTemplatePublishTemplate>>
 >
-export type Op325PostQuestcenterTemplatePublishTemplateMutationBody =
-  Op325PostQuestcenterTemplatePublishTemplateBody
-export type Op325PostQuestcenterTemplatePublishTemplateMutationError = ErrorType<unknown>
+export type PostQuestcenterTemplatePublishTemplateMutationBody =
+  PostQuestcenterTemplatePublishTemplateBody
+export type PostQuestcenterTemplatePublishTemplateMutationError = ErrorType<unknown>
 
 /**
  * @summary 模版发布
  */
-export const useOp325PostQuestcenterTemplatePublishTemplate = <
+export const usePostQuestcenterTemplatePublishTemplate = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op325PostQuestcenterTemplatePublishTemplate>>,
+      Awaited<ReturnType<typeof postQuestcenterTemplatePublishTemplate>>,
       TError,
-      { data: Op325PostQuestcenterTemplatePublishTemplateBody },
+      { data: PostQuestcenterTemplatePublishTemplateBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op325PostQuestcenterTemplatePublishTemplate>>,
+  Awaited<ReturnType<typeof postQuestcenterTemplatePublishTemplate>>,
   TError,
-  { data: Op325PostQuestcenterTemplatePublishTemplateBody },
+  { data: PostQuestcenterTemplatePublishTemplateBody },
   TContext
 > => {
-  return useMutation(
-    getOp325PostQuestcenterTemplatePublishTemplateMutationOptions(options),
-    queryClient
-  )
+  return useMutation(getPostQuestcenterTemplatePublishTemplateMutationOptions(options), queryClient)
 }
 
-export type op323PostQuestcenterTemplateUpdateTemplateResponse200 = {
-  data: Op323PostQuestcenterTemplateUpdateTemplate200
+export type postQuestcenterTemplateUpdateTemplateResponse200 = {
+  data: PostQuestcenterTemplateUpdateTemplate200
   status: 200
 }
 
-export type op323PostQuestcenterTemplateUpdateTemplateResponseSuccess =
-  op323PostQuestcenterTemplateUpdateTemplateResponse200 & {
+export type postQuestcenterTemplateUpdateTemplateResponseSuccess =
+  postQuestcenterTemplateUpdateTemplateResponse200 & {
     headers: Headers
   }
 
-export type op323PostQuestcenterTemplateUpdateTemplateResponse =
-  op323PostQuestcenterTemplateUpdateTemplateResponseSuccess
+export type postQuestcenterTemplateUpdateTemplateResponse =
+  postQuestcenterTemplateUpdateTemplateResponseSuccess
 
-export const getOp323PostQuestcenterTemplateUpdateTemplateUrl = () => {
+export const getPostQuestcenterTemplateUpdateTemplateUrl = () => {
   return `/questcenter/template/update_template`
 }
 
@@ -13019,38 +12816,38 @@ export const getOp323PostQuestcenterTemplateUpdateTemplateUrl = () => {
  * 更新模版
  * @summary 更新模版
  */
-export const op323PostQuestcenterTemplateUpdateTemplate = async (
-  op323PostQuestcenterTemplateUpdateTemplateBody?: Op323PostQuestcenterTemplateUpdateTemplateBody,
+export const postQuestcenterTemplateUpdateTemplate = async (
+  postQuestcenterTemplateUpdateTemplateBody?: PostQuestcenterTemplateUpdateTemplateBody,
   options?: RequestInit
-): Promise<op323PostQuestcenterTemplateUpdateTemplateResponse> => {
-  return customFetch<op323PostQuestcenterTemplateUpdateTemplateResponse>(
-    getOp323PostQuestcenterTemplateUpdateTemplateUrl(),
+): Promise<postQuestcenterTemplateUpdateTemplateResponse> => {
+  return customFetch<postQuestcenterTemplateUpdateTemplateResponse>(
+    getPostQuestcenterTemplateUpdateTemplateUrl(),
     {
       ...options,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...options?.headers },
-      body: JSON.stringify(op323PostQuestcenterTemplateUpdateTemplateBody),
+      body: JSON.stringify(postQuestcenterTemplateUpdateTemplateBody),
     }
   )
 }
 
-export const getOp323PostQuestcenterTemplateUpdateTemplateMutationOptions = <
+export const getPostQuestcenterTemplateUpdateTemplateMutationOptions = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof op323PostQuestcenterTemplateUpdateTemplate>>,
+    Awaited<ReturnType<typeof postQuestcenterTemplateUpdateTemplate>>,
     TError,
-    { data?: Op323PostQuestcenterTemplateUpdateTemplateBody },
+    { data?: PostQuestcenterTemplateUpdateTemplateBody },
     TContext
   >
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof op323PostQuestcenterTemplateUpdateTemplate>>,
+  Awaited<ReturnType<typeof postQuestcenterTemplateUpdateTemplate>>,
   TError,
-  { data?: Op323PostQuestcenterTemplateUpdateTemplateBody },
+  { data?: PostQuestcenterTemplateUpdateTemplateBody },
   TContext
 > => {
-  const mutationKey = ['op323PostQuestcenterTemplateUpdateTemplate']
+  const mutationKey = ['postQuestcenterTemplateUpdateTemplate']
   const { mutation: mutationOptions } = options
     ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
       ? options
@@ -13058,49 +12855,46 @@ export const getOp323PostQuestcenterTemplateUpdateTemplateMutationOptions = <
     : { mutation: { mutationKey } }
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof op323PostQuestcenterTemplateUpdateTemplate>>,
-    { data?: Op323PostQuestcenterTemplateUpdateTemplateBody }
+    Awaited<ReturnType<typeof postQuestcenterTemplateUpdateTemplate>>,
+    { data?: PostQuestcenterTemplateUpdateTemplateBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return op323PostQuestcenterTemplateUpdateTemplate(data)
+    return postQuestcenterTemplateUpdateTemplate(data)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
-export type Op323PostQuestcenterTemplateUpdateTemplateMutationResult = NonNullable<
-  Awaited<ReturnType<typeof op323PostQuestcenterTemplateUpdateTemplate>>
+export type PostQuestcenterTemplateUpdateTemplateMutationResult = NonNullable<
+  Awaited<ReturnType<typeof postQuestcenterTemplateUpdateTemplate>>
 >
-export type Op323PostQuestcenterTemplateUpdateTemplateMutationBody =
-  | Op323PostQuestcenterTemplateUpdateTemplateBody
+export type PostQuestcenterTemplateUpdateTemplateMutationBody =
+  | PostQuestcenterTemplateUpdateTemplateBody
   | undefined
-export type Op323PostQuestcenterTemplateUpdateTemplateMutationError = ErrorType<unknown>
+export type PostQuestcenterTemplateUpdateTemplateMutationError = ErrorType<unknown>
 
 /**
  * @summary 更新模版
  */
-export const useOp323PostQuestcenterTemplateUpdateTemplate = <
+export const usePostQuestcenterTemplateUpdateTemplate = <
   TError = ErrorType<unknown>,
   TContext = unknown,
 >(
   options?: {
     mutation?: UseMutationOptions<
-      Awaited<ReturnType<typeof op323PostQuestcenterTemplateUpdateTemplate>>,
+      Awaited<ReturnType<typeof postQuestcenterTemplateUpdateTemplate>>,
       TError,
-      { data?: Op323PostQuestcenterTemplateUpdateTemplateBody },
+      { data?: PostQuestcenterTemplateUpdateTemplateBody },
       TContext
     >
   },
   queryClient?: QueryClient
 ): UseMutationResult<
-  Awaited<ReturnType<typeof op323PostQuestcenterTemplateUpdateTemplate>>,
+  Awaited<ReturnType<typeof postQuestcenterTemplateUpdateTemplate>>,
   TError,
-  { data?: Op323PostQuestcenterTemplateUpdateTemplateBody },
+  { data?: PostQuestcenterTemplateUpdateTemplateBody },
   TContext
 > => {
-  return useMutation(
-    getOp323PostQuestcenterTemplateUpdateTemplateMutationOptions(options),
-    queryClient
-  )
+  return useMutation(getPostQuestcenterTemplateUpdateTemplateMutationOptions(options), queryClient)
 }

@@ -1,10 +1,11 @@
 import { App, ConfigProvider } from 'antd'
 import locale from 'antd/locale/zh_CN'
-
 import 'dayjs/locale/zh-cn'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import type { ReactNode } from 'react'
+import { Provider } from 'react-redux'
 import themeConfig from './config/theme'
+import store from './store'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -21,10 +22,12 @@ dayjs.locale('zh-cn')
 
 export default function AppProvider({ children }: { children: ReactNode }) {
   return (
-    <QueryClientProvider client={queryClient}>
-      <ConfigProvider locale={locale} theme={themeConfig}>
-        <App>{children}</App>
-      </ConfigProvider>
-    </QueryClientProvider>
+    <Provider store={store}>
+      <QueryClientProvider client={queryClient}>
+        <ConfigProvider locale={locale} theme={themeConfig}>
+          <App>{children}</App>
+        </ConfigProvider>
+      </QueryClientProvider>
+    </Provider>
   )
 }

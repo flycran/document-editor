@@ -42,7 +42,7 @@
         "tags": ["模版设置 > 知情告知模版"],
         "summary": "获取全部学科列表(知情告知、记录单、专科申请单)",
         "description": "接口说明：专科申请单",
-        "operationId": "op_711_post_questcenter_applied_template_get_subject_dept",
+        "operationId": "post_questcenter_applied_template_get_subject_dept",
         "responses": {
           "200": {
             "description": "成功",
@@ -110,7 +110,7 @@
         "tags": ["业务模型 > 预警模型"],
         "summary": "预警模型-查询",
         "description": "预警模型-查询",
-        "operationId": "op_579_get_questcenter_business_model_ews_config_field_list",
+        "operationId": "get_questcenter_business_model_ews_config_field_list",
         "responses": {
           "200": {
             "description": "成功",
@@ -227,7 +227,7 @@
         "tags": ["业务模型 > 预警模型"],
         "summary": "运算符-列表查询",
         "description": "运算符-列表查询",
-        "operationId": "op_617_get_questcenter_business_model_ews_config_operator_list",
+        "operationId": "get_questcenter_business_model_ews_config_operator_list",
         "responses": {
           "200": {
             "description": "成功",
@@ -543,7 +543,7 @@
         "tags": ["业务模型 > 预警模型"],
         "summary": "运算符类型-列表查询",
         "description": "运算符类型-列表查询",
-        "operationId": "op_618_get_questcenter_business_model_ews_config_operator_type_list",
+        "operationId": "get_questcenter_business_model_ews_config_operator_type_list",
         "responses": {
           "200": {
             "description": "成功",
@@ -646,7 +646,7 @@
         "tags": ["业务模型 > 预警模型"],
         "summary": "预警模型-绑定数据组",
         "description": "预警模型-绑定数据组",
-        "operationId": "op_614_post_questcenter_business_model_ews_model_bind",
+        "operationId": "post_questcenter_business_model_ews_model_bind",
         "responses": {
           "200": {
             "description": "成功",
@@ -689,7 +689,7 @@
         "tags": ["业务模型 > 预警模型"],
         "summary": "【预警系统】数据组节点-详情",
         "description": "【预警系统】数据组节点-详情",
-        "operationId": "op_626_get_questcenter_business_model_ews_model_ews_node_detail",
+        "operationId": "get_questcenter_business_model_ews_model_ews_node_detail",
         "responses": {
           "200": {
             "description": "成功",
@@ -1085,12 +1085,12 @@
                         "has_warn": 1,
                         "warn_list": [
                           {
-                            "warn_id": 683848928831078854,
-                            "node_id": 681056138204152338,
+                            "warn_id": 683848928831078900,
+                            "node_id": 681056138204152300,
                             "element_id": 1000000950,
-                            "min_value": 10.0,
+                            "min_value": 10,
                             "min_contain": 0,
-                            "max_value": 10.0,
+                            "max_value": 10,
                             "max_contain": 0,
                             "warn_status": 1,
                             "warn_color": "#00FFCC"
@@ -1125,7 +1125,7 @@
         "tags": ["业务模型 > 预警模型"],
         "summary": "【预警系统】数据组节点-列表查询",
         "description": "【预警系统】数据组节点-列表查询",
-        "operationId": "op_562_get_questcenter_business_model_ews_model_ews_node_list",
+        "operationId": "get_questcenter_business_model_ews_model_ews_node_list",
         "responses": {
           "200": {
             "description": "成功",
@@ -1521,12 +1521,12 @@
                         "has_warn": 1,
                         "warn_list": [
                           {
-                            "warn_id": 683848928831078854,
-                            "node_id": 681056138204152338,
+                            "warn_id": 683848928831078900,
+                            "node_id": 681056138204152300,
                             "element_id": 1000000950,
-                            "min_value": 10.0,
+                            "min_value": 10,
                             "min_contain": 0,
-                            "max_value": 10.0,
+                            "max_value": 10,
                             "max_contain": 0,
                             "warn_status": 1,
                             "warn_color": "#00FFCC"
@@ -1561,7 +1561,7 @@
         "tags": ["业务模型 > 预警模型"],
         "summary": "预警模型-列表查询",
         "description": "预警模型-列表查询",
-        "operationId": "op_584_get_questcenter_business_model_ews_model_list",
+        "operationId": "get_questcenter_business_model_ews_model_list",
         "responses": {
           "200": {
             "description": "成功",
@@ -1710,7 +1710,7 @@
         "tags": ["业务模型 > 预警模型"],
         "summary": "预警模型-分页查询",
         "description": "预警模型-分页查询",
-        "operationId": "op_613_get_questcenter_business_model_ews_model_page",
+        "operationId": "get_questcenter_business_model_ews_model_page",
         "responses": {
           "200": {
             "description": "成功",
@@ -1781,7 +1781,7 @@
         "tags": ["业务模型 > 预警模型"],
         "summary": "预警模型-查询",
         "description": "枚举值请调枚举接口",
-        "operationId": "op_569_get_questcenter_business_model_ews_model_preview",
+        "operationId": "get_questcenter_business_model_ews_model_preview",
         "responses": {
           "200": {
             "description": "成功",
@@ -2406,7 +2406,7 @@
         "tags": ["业务模型 > 预警模型"],
         "summary": "预警模型-配置更新",
         "description": "预警模型-配置更新",
-        "operationId": "op_615_get_questcenter_business_model_ews_model_refresh",
+        "operationId": "get_questcenter_business_model_ews_model_refresh",
         "responses": {
           "200": {
             "description": "成功",
@@ -2439,7 +2439,7 @@
         "tags": ["业务模型 > 预警模型"],
         "summary": "预警模型-保存",
         "description": "枚举值请调枚举接口",
-        "operationId": "op_565_post_questcenter_business_model_ews_model_save",
+        "operationId": "post_questcenter_business_model_ews_model_save",
         "responses": {
           "200": {
             "description": "成功",
@@ -2675,7 +2675,7 @@
                 ]
               },
               "example": {
-                "id": 764654833897702016,
+                "id": 764654833897702000,
                 "data_group_node_id": "745199336366932058",
                 "is_force": false,
                 "indicators": [
@@ -2869,7 +2869,7 @@
                 "indicator_groups": [
                   {
                     "id": 1,
-                    "model_id": 764654833897702016,
+                    "model_id": 764654833897702000,
                     "level": 0,
                     "persistence_policy": 2,
                     "enabled_status": 1,
@@ -2879,7 +2879,7 @@
                   },
                   {
                     "id": 2,
-                    "model_id": 764654833897702016,
+                    "model_id": 764654833897702000,
                     "level": 1,
                     "persistence_policy": 2,
                     "enabled_status": 1,
@@ -2889,7 +2889,7 @@
                   },
                   {
                     "id": 3,
-                    "model_id": 764654833897702016,
+                    "model_id": 764654833897702000,
                     "level": 2,
                     "persistence_policy": 2,
                     "enabled_status": 1,
@@ -2909,7 +2909,7 @@
         "tags": ["业务模型 > 预警模型"],
         "summary": "预警模型-发布状态",
         "description": "预警模型-发布状态",
-        "operationId": "op_616_post_questcenter_business_model_ews_model_state",
+        "operationId": "post_questcenter_business_model_ews_model_state",
         "responses": {
           "200": {
             "description": "成功",
@@ -2952,7 +2952,7 @@
         "tags": ["业务模型 > 高危因素 > PC后台"],
         "summary": "绑定数据组到高危因素分组",
         "description": "绑定数据组到高危因素分组",
-        "operationId": "op_552_post_questcenter_business_model_high_risk_setting_bind_node_to_group",
+        "operationId": "post_questcenter_business_model_high_risk_setting_bind_node_to_group",
         "responses": {
           "200": {
             "description": "成功",
@@ -3010,7 +3010,7 @@
         "tags": ["业务模型 > 高危因素 > PC后台"],
         "summary": "搜索获取诊断编码",
         "description": "搜索获取诊断编码",
-        "operationId": "op_547_get_questcenter_business_model_high_risk_setting_find_diagnosis_code",
+        "operationId": "get_questcenter_business_model_high_risk_setting_find_diagnosis_code",
         "responses": {
           "200": {
             "description": "成功",
@@ -3077,7 +3077,7 @@
         "tags": ["业务模型 > 高危因素 > PC后台"],
         "summary": "获取绑定的数据组",
         "description": "获取绑定的数据组",
-        "operationId": "op_554_post_questcenter_business_model_high_risk_setting_get_bind_node",
+        "operationId": "post_questcenter_business_model_high_risk_setting_get_bind_node",
         "responses": {
           "200": {
             "description": "成功",
@@ -3532,7 +3532,7 @@
         "tags": ["业务模型 > 高危因素 > PC后台"],
         "summary": "获取高危因素指标详情",
         "description": "获取高危因素指标详情",
-        "operationId": "op_550_get_questcenter_business_model_high_risk_setting_get_factor_detail",
+        "operationId": "get_questcenter_business_model_high_risk_setting_get_factor_detail",
         "responses": {
           "200": {
             "description": "成功",
@@ -3566,7 +3566,7 @@
         "tags": ["业务模型 > 高危因素 > PC后台"],
         "summary": "获取高危因素指标对象，翻页",
         "description": "获取高危因素指标对象，翻页",
-        "operationId": "op_549_get_questcenter_business_model_high_risk_setting_get_factor_page",
+        "operationId": "get_questcenter_business_model_high_risk_setting_get_factor_page",
         "responses": {
           "200": {
             "description": "成功",
@@ -3617,7 +3617,7 @@
         "tags": ["业务模型 > 高危因素 > PC后台"],
         "summary": "获取指定数据组下的数据元，获取数据组列表",
         "description": "获取指定数据组下的数据元，获取数据组列表",
-        "operationId": "op_545_get_questcenter_business_model_high_risk_setting_get_node_list",
+        "operationId": "get_questcenter_business_model_high_risk_setting_get_node_list",
         "responses": {
           "200": {
             "description": "成功",
@@ -4005,7 +4005,7 @@
         "tags": ["业务模型 > 高危因素 > PC后台"],
         "summary": "获取数据元枚举",
         "description": "获取数据元枚举",
-        "operationId": "op_548_get_questcenter_business_model_high_risk_setting_get_range_value_list",
+        "operationId": "get_questcenter_business_model_high_risk_setting_get_range_value_list",
         "responses": {
           "200": {
             "description": "成功",
@@ -4077,7 +4077,7 @@
         "tags": ["业务模型 > 高危因素 > PC后台"],
         "summary": "获取高危因素等级颜色",
         "description": "获取高危因素等级颜色",
-        "operationId": "op_546_get_questcenter_business_model_high_risk_setting_get_rank_color",
+        "operationId": "get_questcenter_business_model_high_risk_setting_get_rank_color",
         "responses": {
           "200": {
             "description": "成功",
@@ -4149,7 +4149,7 @@
         "tags": ["业务模型 > 高危因素 > PC后台"],
         "summary": "获取高危指标分类",
         "description": "获取高危指标分类",
-        "operationId": "op_544_get_questcenter_business_model_high_risk_setting_get_risk_type",
+        "operationId": "get_questcenter_business_model_high_risk_setting_get_risk_type",
         "responses": {
           "200": {
             "description": "成功",
@@ -4240,7 +4240,7 @@
         "tags": ["业务模型 > 高危因素 > PC后台"],
         "summary": "更新高危因素指标",
         "description": "更新高危因素指标",
-        "operationId": "op_551_post_questcenter_business_model_high_risk_setting_update_factor",
+        "operationId": "post_questcenter_business_model_high_risk_setting_update_factor",
         "responses": {
           "200": {
             "description": "成功",
@@ -4418,7 +4418,7 @@
         "tags": ["业务模型 > 高危因素 > 远端调用"],
         "summary": "查询计算指定的数据元是否属于高危因素",
         "description": "查询计算指定的数据元是否属于高危因素",
-        "operationId": "op_553_post_questcenter_business_model_high_risk_using_calculate_high_risk",
+        "operationId": "post_questcenter_business_model_high_risk_using_calculate_high_risk",
         "responses": {
           "200": {
             "description": "成功",
@@ -4680,7 +4680,7 @@
         "tags": ["模版设置 > 知情告知模版"],
         "summary": "获取文书模版分类树",
         "description": "获取文书模版分类树",
-        "operationId": "op_846_get_questcenter_document_template_tree_get_tree_dir_list",
+        "operationId": "get_questcenter_document_template_tree_get_tree_dir_list",
         "responses": {
           "200": {
             "description": "成功",
@@ -4837,7 +4837,7 @@
         "tags": ["模版设置 > 知情告知模版"],
         "summary": "模版取消发布",
         "description": "模版取消发布",
-        "operationId": "op_460_post_questcenter_informed_template_close_template",
+        "operationId": "post_questcenter_informed_template_close_template",
         "responses": {
           "200": {
             "description": "成功",
@@ -4892,7 +4892,7 @@
         "tags": ["模版设置 > 知情告知模版"],
         "summary": "添加模版",
         "description": "添加模版",
-        "operationId": "op_456_post_questcenter_informed_template_create_template",
+        "operationId": "post_questcenter_informed_template_create_template",
         "responses": {
           "200": {
             "description": "成功",
@@ -5010,7 +5010,7 @@
         "tags": ["模版设置 > 知情告知模版"],
         "summary": "删除模版，只针对，未发布可编辑模版",
         "description": "删除模版，只针对，未发布可编辑模版",
-        "operationId": "op_458_post_questcenter_informed_template_delete_template",
+        "operationId": "post_questcenter_informed_template_delete_template",
         "responses": {
           "200": {
             "description": "成功",
@@ -5065,7 +5065,7 @@
         "tags": ["模版设置 > 知情告知模版"],
         "summary": "获取病历模版列表",
         "description": "获取病历模版列表",
-        "operationId": "op_464_get_questcenter_informed_template_get_medical_template_list",
+        "operationId": "get_questcenter_informed_template_get_medical_template_list",
         "responses": {
           "200": {
             "description": "成功",
@@ -5224,7 +5224,7 @@
         "tags": ["模版设置 > 知情告知模版"],
         "summary": "获取下一步步骤的按钮",
         "description": "获取下一步步骤的按钮",
-        "operationId": "op_466_get_questcenter_informed_template_get_next_step",
+        "operationId": "get_questcenter_informed_template_get_next_step",
         "responses": {
           "200": {
             "description": "成功",
@@ -5290,7 +5290,7 @@
         "tags": ["模版设置 > 知情告知模版"],
         "summary": "获取全部学科列表(知情告知、记录单、专科申请单)",
         "description": "接口说明：知情告知",
-        "operationId": "op_711_post_questcenter_informed_template_get_subject_dept",
+        "operationId": "post_questcenter_informed_template_get_subject_dept",
         "responses": {
           "200": {
             "description": "成功",
@@ -5358,7 +5358,7 @@
         "tags": ["模版设置 > 知情告知模版"],
         "summary": "查询模版详情",
         "description": "查询模版详情",
-        "operationId": "op_461_get_questcenter_informed_template_get_template_detail",
+        "operationId": "get_questcenter_informed_template_get_template_detail",
         "responses": {
           "200": {
             "description": "成功",
@@ -5482,13 +5482,13 @@
                 "example": {
                   "status": "000",
                   "data": {
-                    "paper_id": 700554606329070140,
+                    "paper_id": 700554606329070100,
                     "template_id": "20221123000001",
                     "type_status": 1,
                     "type_topic": 0,
                     "type_topic_name": "默认",
                     "status": 0,
-                    "medical_id": 697645611272503852,
+                    "medical_id": 697645611272503800,
                     "medical_template_id": "20221115000001",
                     "medical_template_version": "20221123115957",
                     "title": "知情告知标题",
@@ -5533,7 +5533,7 @@
         "tags": ["模版设置 > 知情告知模版"],
         "summary": "获取病历模版详情，medical_id",
         "description": "获取病历模版详情，medical_id",
-        "operationId": "op_465_get_questcenter_informed_template_get_template_detail_by_medical_id",
+        "operationId": "get_questcenter_informed_template_get_template_detail_by_medical_id",
         "responses": {
           "200": {
             "description": "成功",
@@ -6111,21 +6111,21 @@
                                         "has_warn": 1,
                                         "warn_list": [
                                           {
-                                            "warn_id": 692553251572286264,
-                                            "node_id": 692553251446456917,
+                                            "warn_id": 692553251572286200,
+                                            "node_id": 692553251446457000,
                                             "element_id": 1000000950,
-                                            "min_value": 10.0,
+                                            "min_value": 10,
                                             "min_contain": 1,
                                             "warn_status": 1,
                                             "warn_color": "#00FFCC"
                                           },
                                           {
-                                            "warn_id": 692553251572286265,
-                                            "node_id": 692553251446456917,
+                                            "warn_id": 692553251572286200,
+                                            "node_id": 692553251446457000,
                                             "element_id": 1000000950,
-                                            "min_value": 10.0,
+                                            "min_value": 10,
                                             "min_contain": 0,
-                                            "max_value": 10.0,
+                                            "max_value": 10,
                                             "max_contain": 0,
                                             "warn_status": 1,
                                             "warn_color": "#00FFCC"
@@ -6178,7 +6178,7 @@
         "tags": ["模版设置 > 知情告知模版"],
         "summary": "查询模版详情根据paper_id",
         "description": "查询模版详情根据paper_id",
-        "operationId": "op_463_get_questcenter_informed_template_get_template_detail_by_paper_id",
+        "operationId": "get_questcenter_informed_template_get_template_detail_by_paper_id",
         "responses": {
           "200": {
             "description": "成功",
@@ -6290,13 +6290,13 @@
                 "example": {
                   "status": "000",
                   "data": {
-                    "paper_id": 700554606329070140,
+                    "paper_id": 700554606329070100,
                     "template_id": "20221123000001",
                     "type_status": 1,
                     "type_topic": 0,
                     "type_topic_name": "默认",
                     "status": 0,
-                    "medical_id": 697645611272503852,
+                    "medical_id": 697645611272503800,
                     "medical_template_id": "20221115000001",
                     "medical_template_version": "20221123115957",
                     "title": "知情告知标题",
@@ -6338,7 +6338,7 @@
         "tags": ["模版设置 > 知情告知模版"],
         "summary": "获取历史模版列",
         "description": "获取历史模版列",
-        "operationId": "op_462_get_questcenter_informed_template_get_template_history_list",
+        "operationId": "get_questcenter_informed_template_get_template_history_list",
         "responses": {
           "200": {
             "description": "成功",
@@ -6463,7 +6463,7 @@
         "tags": ["模版设置 > 知情告知模版"],
         "summary": "获取最新模版列表",
         "description": "获取最新模版列表",
-        "operationId": "op_455_get_questcenter_informed_template_get_template_list",
+        "operationId": "get_questcenter_informed_template_get_template_list",
         "responses": {
           "200": {
             "description": "成功",
@@ -6609,7 +6609,7 @@
                         "type_topic": 0,
                         "type_topic_name": "默认",
                         "status": 0,
-                        "medical_id": 697645611272503852,
+                        "medical_id": 697645611272503800,
                         "medical_template_id": "20221115000001",
                         "medical_template_version": "20221123115957",
                         "title": "知情告知标题",
@@ -6735,7 +6735,7 @@
         "tags": ["模版设置 > 知情告知模版"],
         "summary": "模版发布",
         "description": "模版发布",
-        "operationId": "op_459_post_questcenter_informed_template_publish_template",
+        "operationId": "post_questcenter_informed_template_publish_template",
         "responses": {
           "200": {
             "description": "成功",
@@ -6790,7 +6790,7 @@
         "tags": ["模版设置 > 知情告知模版"],
         "summary": "更新模版",
         "description": "更新模版",
-        "operationId": "op_457_post_questcenter_informed_template_update_template",
+        "operationId": "post_questcenter_informed_template_update_template",
         "responses": {
           "200": {
             "description": "成功",
@@ -6913,7 +6913,7 @@
         "tags": ["模版设置 > 病历模版科室管理"],
         "summary": "科室添加",
         "description": "科室添加",
-        "operationId": "op_487_post_questcenter_medical_templage_depa_manage_add_dept",
+        "operationId": "post_questcenter_medical_templage_depa_manage_add_dept",
         "responses": {
           "200": {
             "description": "成功",
@@ -6983,7 +6983,7 @@
         "tags": ["模版设置 > 病历模版科室管理"],
         "summary": "科室编辑",
         "description": "科室编辑",
-        "operationId": "op_489_post_questcenter_medical_templage_depa_manage_delete_dept",
+        "operationId": "post_questcenter_medical_templage_depa_manage_delete_dept",
         "responses": {
           "200": {
             "description": "成功",
@@ -7037,7 +7037,7 @@
         "tags": ["模版设置 > 病历模版科室管理"],
         "summary": "刷新API远端的科室列表",
         "description": "刷新API远端的科室列表",
-        "operationId": "op_485_get_questcenter_medical_templage_depa_manage_flush_depa_records",
+        "operationId": "get_questcenter_medical_templage_depa_manage_flush_depa_records",
         "responses": {
           "200": {
             "description": "成功",
@@ -7072,7 +7072,7 @@
         "tags": ["模版设置 > 病历模版科室管理"],
         "summary": "获取模版科室配置",
         "description": "获取模版科室配置",
-        "operationId": "op_484_get_questcenter_medical_templage_depa_manage_get_config",
+        "operationId": "get_questcenter_medical_templage_depa_manage_get_config",
         "responses": {
           "200": {
             "description": "成功",
@@ -7123,7 +7123,7 @@
         "tags": ["模版设置 > 病历模版科室管理"],
         "summary": "科室管理列表",
         "description": "科室管理列表",
-        "operationId": "op_486_get_questcenter_medical_templage_depa_manage_get_depa_list",
+        "operationId": "get_questcenter_medical_templage_depa_manage_get_depa_list",
         "responses": {
           "200": {
             "description": "成功",
@@ -7244,7 +7244,7 @@
         "tags": ["模版设置 > 病历模版科室管理"],
         "summary": "科室编辑",
         "description": "科室编辑",
-        "operationId": "op_488_post_questcenter_medical_templage_depa_manage_update_dept",
+        "operationId": "post_questcenter_medical_templage_depa_manage_update_dept",
         "responses": {
           "200": {
             "description": "成功",
@@ -7318,7 +7318,7 @@
         "tags": ["模版设置 > 病历模版科室管理"],
         "summary": "模版添加科室",
         "description": "模版添加科室",
-        "operationId": "op_492_post_questcenter_medical_template_add_template_depa",
+        "operationId": "post_questcenter_medical_template_add_template_depa",
         "responses": {
           "200": {
             "description": "成功",
@@ -7376,7 +7376,7 @@
         "tags": ["模版设置 > 病历模版"],
         "summary": "关闭病历模版",
         "description": "关闭病历模版",
-        "operationId": "op_444_post_questcenter_medical_template_close_template",
+        "operationId": "post_questcenter_medical_template_close_template",
         "responses": {
           "200": {
             "description": "成功",
@@ -7431,7 +7431,7 @@
         "tags": ["模版设置 > 病历模版"],
         "summary": "创建段落节点",
         "description": "创建段落节点",
-        "operationId": "op_435_post_questcenter_medical_template_create_paragraph_node",
+        "operationId": "post_questcenter_medical_template_create_paragraph_node",
         "responses": {
           "200": {
             "description": "成功",
@@ -7503,7 +7503,7 @@
         "tags": ["模版设置 > 病历模版"],
         "summary": "创建段落节点(批量)",
         "description": "创建段落节点(批量)",
-        "operationId": "op_454_post_questcenter_medical_template_create_paragraph_node_batch",
+        "operationId": "post_questcenter_medical_template_create_paragraph_node_batch",
         "responses": {
           "200": {
             "description": "成功",
@@ -7591,7 +7591,7 @@
         "tags": ["模版设置 > 病历模版"],
         "summary": "节点 创建、删除段落树",
         "description": "节点 创建、删除段落树",
-        "operationId": "op_472_post_questcenter_medical_template_create_paragraph_node_tree",
+        "operationId": "post_questcenter_medical_template_create_paragraph_node_tree",
         "responses": {
           "200": {
             "description": "成功",
@@ -7876,7 +7876,7 @@
         "tags": ["模版设置 > 病历模版"],
         "summary": "创建病历模版",
         "description": "创建病历模版",
-        "operationId": "op_429_post_questcenter_medical_template_create_template",
+        "operationId": "post_questcenter_medical_template_create_template",
         "responses": {
           "200": {
             "description": "成功",
@@ -7948,7 +7948,7 @@
         "tags": ["模版设置 > 病历模版"],
         "summary": "创建病历默认模版",
         "description": "创建病历默认模版",
-        "operationId": "op_449_post_questcenter_medical_template_create_template_default",
+        "operationId": "post_questcenter_medical_template_create_template_default",
         "responses": {
           "200": {
             "description": "成功",
@@ -8020,7 +8020,7 @@
         "tags": ["模版设置 > 病历模版"],
         "summary": "创建病历段落",
         "description": "创建病历段落",
-        "operationId": "op_432_post_questcenter_medical_template_create_template_paragraph",
+        "operationId": "post_questcenter_medical_template_create_template_paragraph",
         "responses": {
           "200": {
             "description": "成功",
@@ -8107,7 +8107,7 @@
         "tags": ["模版设置 > 病历模版"],
         "summary": "创建病历指定段落",
         "description": "创建病历指定段落",
-        "operationId": "op_450_post_questcenter_medical_template_create_template_paragraph_specify",
+        "operationId": "post_questcenter_medical_template_create_template_paragraph_specify",
         "responses": {
           "200": {
             "description": "成功",
@@ -8189,7 +8189,7 @@
         "tags": ["模版设置 > 病历模版"],
         "summary": "删除段落节点",
         "description": "删除段落节点",
-        "operationId": "op_438_post_questcenter_medical_template_delete_paragraph_node",
+        "operationId": "post_questcenter_medical_template_delete_paragraph_node",
         "responses": {
           "200": {
             "description": "成功",
@@ -8261,7 +8261,7 @@
         "tags": ["模版设置 > 病历模版"],
         "summary": "删除病历模版",
         "description": "删除病历模版",
-        "operationId": "op_431_post_questcenter_medical_template_delete_template",
+        "operationId": "post_questcenter_medical_template_delete_template",
         "responses": {
           "200": {
             "description": "成功",
@@ -8316,7 +8316,7 @@
         "tags": ["模版设置 > 病历模版科室管理"],
         "summary": "模版删除科室",
         "description": "模版删除科室",
-        "operationId": "op_493_post_questcenter_medical_template_delete_template_depa",
+        "operationId": "post_questcenter_medical_template_delete_template_depa",
         "responses": {
           "200": {
             "description": "成功",
@@ -8374,7 +8374,7 @@
         "tags": ["模版设置 > 病历模版"],
         "summary": "删除病历段落",
         "description": "删除病历段落",
-        "operationId": "op_434_post_questcenter_medical_template_delete_template_paragraph",
+        "operationId": "post_questcenter_medical_template_delete_template_paragraph",
         "responses": {
           "200": {
             "description": "成功",
@@ -8429,7 +8429,7 @@
         "tags": ["模版设置 > 病历模版"],
         "summary": "查找病历指定段落",
         "description": "查找病历指定段落",
-        "operationId": "op_451_get_questcenter_medical_template_find_paragraph_code_list",
+        "operationId": "get_questcenter_medical_template_find_paragraph_code_list",
         "responses": {
           "200": {
             "description": "成功",
@@ -8553,7 +8553,7 @@
         "tags": ["模版设置 > 病历模版"],
         "summary": "获取病历段落编码树",
         "description": "获取病历段落编码树",
-        "operationId": "op_471_get_questcenter_medical_template_find_paragraph_code_tree",
+        "operationId": "get_questcenter_medical_template_find_paragraph_code_tree",
         "responses": {
           "200": {
             "description": "成功",
@@ -8712,7 +8712,7 @@
         "tags": ["模版设置 > 病历模版科室管理"],
         "summary": "获取未添加的科室列表",
         "description": "获取未添加的科室列表",
-        "operationId": "op_491_get_questcenter_medical_template_get_search_template_dept",
+        "operationId": "get_questcenter_medical_template_get_search_template_dept",
         "responses": {
           "200": {
             "description": "成功",
@@ -8807,7 +8807,7 @@
         "tags": ["模版设置 > 病历模版科室管理"],
         "summary": "获取模版科室列表",
         "description": "获取模版科室列表",
-        "operationId": "op_490_get_questcenter_medical_template_get_template_depa_list",
+        "operationId": "get_questcenter_medical_template_get_template_depa_list",
         "responses": {
           "200": {
             "description": "成功",
@@ -8893,7 +8893,7 @@
         "tags": ["模版设置 > 病历模版"],
         "summary": "获取病历模版详情，medical_id",
         "description": "获取病历模版详情，medical_id",
-        "operationId": "op_442_get_questcenter_medical_template_get_template_detail_by_medical_id",
+        "operationId": "get_questcenter_medical_template_get_template_detail_by_medical_id",
         "responses": {
           "200": {
             "description": "成功",
@@ -9471,21 +9471,21 @@
                                         "has_warn": 1,
                                         "warn_list": [
                                           {
-                                            "warn_id": 692553251572286264,
-                                            "node_id": 692553251446456917,
+                                            "warn_id": 692553251572286200,
+                                            "node_id": 692553251446457000,
                                             "element_id": 1000000950,
-                                            "min_value": 10.0,
+                                            "min_value": 10,
                                             "min_contain": 1,
                                             "warn_status": 1,
                                             "warn_color": "#00FFCC"
                                           },
                                           {
-                                            "warn_id": 692553251572286265,
-                                            "node_id": 692553251446456917,
+                                            "warn_id": 692553251572286200,
+                                            "node_id": 692553251446457000,
                                             "element_id": 1000000950,
-                                            "min_value": 10.0,
+                                            "min_value": 10,
                                             "min_contain": 0,
-                                            "max_value": 10.0,
+                                            "max_value": 10,
                                             "max_contain": 0,
                                             "warn_status": 1,
                                             "warn_color": "#00FFCC"
@@ -9538,7 +9538,7 @@
         "tags": ["模版设置 > 病历模版"],
         "summary": "获取病历模版详情template_id",
         "description": "获取病历模版详情template_id",
-        "operationId": "op_441_get_questcenter_medical_template_get_template_detail_by_template_id",
+        "operationId": "get_questcenter_medical_template_get_template_detail_by_template_id",
         "responses": {
           "200": {
             "description": "成功",
@@ -10116,21 +10116,21 @@
                                         "has_warn": 1,
                                         "warn_list": [
                                           {
-                                            "warn_id": 692553251572286264,
-                                            "node_id": 692553251446456917,
+                                            "warn_id": 692553251572286200,
+                                            "node_id": 692553251446457000,
                                             "element_id": 1000000950,
-                                            "min_value": 10.0,
+                                            "min_value": 10,
                                             "min_contain": 1,
                                             "warn_status": 1,
                                             "warn_color": "#00FFCC"
                                           },
                                           {
-                                            "warn_id": 692553251572286265,
-                                            "node_id": 692553251446456917,
+                                            "warn_id": 692553251572286200,
+                                            "node_id": 692553251446457000,
                                             "element_id": 1000000950,
-                                            "min_value": 10.0,
+                                            "min_value": 10,
                                             "min_contain": 0,
-                                            "max_value": 10.0,
+                                            "max_value": 10,
                                             "max_contain": 0,
                                             "warn_status": 1,
                                             "warn_color": "#00FFCC"
@@ -10183,7 +10183,7 @@
         "tags": ["模版设置 > 病历模版"],
         "summary": "获取病历模版历史记录",
         "description": "获取病历模版历史记录",
-        "operationId": "op_440_get_questcenter_medical_template_get_template_history_list",
+        "operationId": "get_questcenter_medical_template_get_template_history_list",
         "responses": {
           "200": {
             "description": "成功",
@@ -10298,7 +10298,7 @@
         "tags": ["模版设置 > 病历模版"],
         "summary": "获取病历模版列表",
         "description": "获取病历模版列表",
-        "operationId": "op_439_get_questcenter_medical_template_get_template_list",
+        "operationId": "get_questcenter_medical_template_get_template_list",
         "responses": {
           "200": {
             "description": "成功",
@@ -10466,7 +10466,7 @@
         "tags": ["模版设置 > 病历模版"],
         "summary": "发布病历模版",
         "description": "发布病历模版",
-        "operationId": "op_443_post_questcenter_medical_template_publish_template",
+        "operationId": "post_questcenter_medical_template_publish_template",
         "responses": {
           "200": {
             "description": "成功",
@@ -10521,7 +10521,7 @@
         "tags": ["模版设置 > 病历模版"],
         "summary": "更新段落节点参数",
         "description": "更新段落节点参数",
-        "operationId": "op_437_post_questcenter_medical_template_update_paragraph_node_params",
+        "operationId": "post_questcenter_medical_template_update_paragraph_node_params",
         "responses": {
           "200": {
             "description": "成功",
@@ -10870,7 +10870,7 @@
         "tags": ["模版设置 > 病历模版"],
         "summary": "更新病历模版，模版名字、备注",
         "description": "更新病历模版，模版名字、备注",
-        "operationId": "op_430_post_questcenter_medical_template_update_template",
+        "operationId": "post_questcenter_medical_template_update_template",
         "responses": {
           "200": {
             "description": "成功",
@@ -10947,7 +10947,7 @@
         "tags": ["模版设置 > 病历模版"],
         "summary": "编辑打印设计",
         "description": "编辑打印设计",
-        "operationId": "op_525_post_questcenter_medical_template_update_template_modern_text",
+        "operationId": "post_questcenter_medical_template_update_template_modern_text",
         "responses": {
           "200": {
             "description": "成功",
@@ -10996,7 +10996,7 @@
         "tags": ["模版设置 > 病历模版"],
         "summary": "更新病历段落，",
         "description": "更新病历段落，",
-        "operationId": "op_433_post_questcenter_medical_template_update_template_paragraph",
+        "operationId": "post_questcenter_medical_template_update_template_paragraph",
         "responses": {
           "200": {
             "description": "成功",
@@ -11083,7 +11083,7 @@
         "tags": ["模版设置 > 病历模版"],
         "summary": "更新病历段落，",
         "description": "更新病历段落，",
-        "operationId": "op_452_post_questcenter_medical_template_update_template_paragraph_modern_text",
+        "operationId": "post_questcenter_medical_template_update_template_paragraph_modern_text",
         "responses": {
           "200": {
             "description": "成功",
@@ -11160,7 +11160,7 @@
         "tags": ["模版设置 > 文本模版"],
         "summary": "创建文本模版",
         "description": "创建文本模版",
-        "operationId": "op_511_post_questcenter_medical_text_template_create_template",
+        "operationId": "post_questcenter_medical_text_template_create_template",
         "responses": {
           "200": {
             "description": "成功",
@@ -11234,7 +11234,7 @@
         "tags": ["模版设置 > 文本模版"],
         "summary": "删除文本模版",
         "description": "删除文本模版",
-        "operationId": "op_513_post_questcenter_medical_text_template_delete_template",
+        "operationId": "post_questcenter_medical_text_template_delete_template",
         "responses": {
           "200": {
             "description": "成功",
@@ -11288,7 +11288,7 @@
         "tags": ["模版设置 > 文本模版"],
         "summary": "文本模版列表",
         "description": "文本模版列表",
-        "operationId": "op_509_get_questcenter_medical_text_template_get_template_list",
+        "operationId": "get_questcenter_medical_text_template_get_template_list",
         "responses": {
           "200": {
             "description": "成功",
@@ -11392,7 +11392,7 @@
         "tags": ["模版设置 > 文本模版"],
         "summary": "文本模版翻页",
         "description": "文本模版翻页",
-        "operationId": "op_510_get_questcenter_medical_text_template_get_template_page",
+        "operationId": "get_questcenter_medical_text_template_get_template_page",
         "responses": {
           "200": {
             "description": "成功",
@@ -11514,7 +11514,7 @@
         "tags": ["模版设置 > 文本模版"],
         "summary": "编辑文本模版",
         "description": "编辑文本模版",
-        "operationId": "op_512_post_questcenter_medical_text_template_update_template",
+        "operationId": "post_questcenter_medical_text_template_update_template",
         "responses": {
           "200": {
             "description": "成功",
@@ -11592,7 +11592,7 @@
         "tags": ["模版设置 > 知情告知模版"],
         "summary": "获取全部学科列表(知情告知、记录单、专科申请单)",
         "description": "接口说明：记录单",
-        "operationId": "op_711_post_questcenter_record_template_get_subject_dept",
+        "operationId": "post_questcenter_record_template_get_subject_dept",
         "responses": {
           "200": {
             "description": "成功",
@@ -11660,7 +11660,7 @@
         "tags": ["模版设置 > 模板接口"],
         "summary": "模版问卷说明，检查动态参数",
         "description": "模版问卷说明，检查动态参数",
-        "operationId": "op_382_post_questcenter_template_check_and_create_params",
+        "operationId": "post_questcenter_template_check_and_create_params",
         "responses": {
           "200": {
             "description": "成功",
@@ -11702,7 +11702,7 @@
         "tags": ["模版设置 > 模板接口"],
         "summary": "模版取消发布",
         "description": "模版取消发布",
-        "operationId": "op_326_post_questcenter_template_close_template",
+        "operationId": "post_questcenter_template_close_template",
         "responses": {
           "200": {
             "description": "成功",
@@ -11757,7 +11757,7 @@
         "tags": ["模版设置 > 模板接口"],
         "summary": "添加模版",
         "description": "添加模版",
-        "operationId": "op_322_post_questcenter_template_create_template",
+        "operationId": "post_questcenter_template_create_template",
         "responses": {
           "200": {
             "description": "成功",
@@ -12153,9 +12153,9 @@
                       ],
                       "create_time": "2022-05-12 16:56:11"
                     },
-                    "judge_score": 0.0,
+                    "judge_score": 0,
                     "judge_condition": 1,
-                    "satisfy_score": 5.0,
+                    "satisfy_score": 5,
                     "not_satisfy_score": 0
                   },
                   {
@@ -12264,7 +12264,7 @@
         "tags": ["模版设置 > 模板接口"],
         "summary": "删除模版，只针对，未发布可编辑模版",
         "description": "删除模版，只针对，未发布可编辑模版",
-        "operationId": "op_324_post_questcenter_template_delete_template",
+        "operationId": "post_questcenter_template_delete_template",
         "responses": {
           "200": {
             "description": "成功",
@@ -12319,7 +12319,7 @@
         "tags": ["模版设置 > 模板接口"],
         "summary": "获取全部学科列表",
         "description": "获取全部学科列表",
-        "operationId": "op_1026_post_questcenter_template_get_subject_dept",
+        "operationId": "post_questcenter_template_get_subject_dept",
         "responses": {
           "200": {
             "description": "成功",
@@ -12386,7 +12386,7 @@
         "tags": ["模版设置 > 模板接口"],
         "summary": "查询模版详情",
         "description": "查询模版详情",
-        "operationId": "op_321_get_questcenter_template_get_template_detail",
+        "operationId": "get_questcenter_template_get_template_detail",
         "responses": {
           "200": {
             "description": "成功",
@@ -12770,9 +12770,9 @@
                           ],
                           "create_time": "2022-05-12 16:56:11"
                         },
-                        "judge_score": 0.0,
+                        "judge_score": 0,
                         "judge_condition": 1,
-                        "satisfy_score": 5.0
+                        "satisfy_score": 5
                       },
                       {
                         "subject_id": "629962997950972781",
@@ -12852,7 +12852,7 @@
         "tags": ["模版设置 > 模板接口"],
         "summary": "查询模版详情根据paper_id",
         "description": "查询模版详情根据paper_id",
-        "operationId": "op_327_get_questcenter_template_get_template_detail_by_paper_id",
+        "operationId": "get_questcenter_template_get_template_detail_by_paper_id",
         "responses": {
           "200": {
             "description": "成功",
@@ -13236,9 +13236,9 @@
                           ],
                           "create_time": "2022-05-12 16:56:11"
                         },
-                        "judge_score": 0.0,
+                        "judge_score": 0,
                         "judge_condition": 1,
-                        "satisfy_score": 5.0
+                        "satisfy_score": 5
                       },
                       {
                         "subject_id": "629962997950972781",
@@ -13318,7 +13318,7 @@
         "tags": ["模版设置 > 模板接口"],
         "summary": "获取历史模版列",
         "description": "获取历史模版列",
-        "operationId": "op_320_get_questcenter_template_get_template_history_list",
+        "operationId": "get_questcenter_template_get_template_history_list",
         "responses": {
           "200": {
             "description": "成功",
@@ -13462,7 +13462,7 @@
         "tags": ["模版设置 > 模板接口"],
         "summary": "获取最新模版列表",
         "description": "获取最新模版列表",
-        "operationId": "op_319_get_questcenter_template_get_template_list",
+        "operationId": "get_questcenter_template_get_template_list",
         "responses": {
           "200": {
             "description": "成功",
@@ -13654,7 +13654,7 @@
         "tags": ["模版设置 > 模板接口"],
         "summary": "获取问卷模版分类树",
         "description": "获取问卷模版分类树",
-        "operationId": "op_1025_get_questcenter_template_get_tree_dir_list",
+        "operationId": "get_questcenter_template_get_tree_dir_list",
         "responses": {
           "200": {
             "description": "成功",
@@ -13811,7 +13811,7 @@
         "tags": ["模版设置 > 模板接口"],
         "summary": "模版发布",
         "description": "模版发布",
-        "operationId": "op_325_post_questcenter_template_publish_template",
+        "operationId": "post_questcenter_template_publish_template",
         "responses": {
           "200": {
             "description": "成功",
@@ -13866,7 +13866,7 @@
         "tags": ["模版设置 > 模板接口"],
         "summary": "更新模版",
         "description": "更新模版",
-        "operationId": "op_323_post_questcenter_template_update_template",
+        "operationId": "post_questcenter_template_update_template",
         "responses": {
           "200": {
             "description": "成功",
@@ -14263,9 +14263,9 @@
                       ],
                       "create_time": "2022-05-12 16:56:11"
                     },
-                    "judge_score": 0.0,
+                    "judge_score": 0,
                     "judge_condition": 1,
-                    "satisfy_score": 5.0
+                    "satisfy_score": 5
                   },
                   {
                     "subject_id": "629962997950972781",

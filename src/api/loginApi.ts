@@ -4,7 +4,8 @@ import { createFetch } from '@/api/request'
 const authFetch = createFetch('/api/auth')
 
 export interface LoginReq {
-  userno: string
+  account: string
+  password: string
 }
 
 export interface LoginResp {
@@ -19,10 +20,11 @@ export interface LoginResp {
   is_admin: number
   emall_admin: number
   is_oo: number
+  err?: string
 }
 
 export const loginApi = async (data: LoginReq): Promise<ApiResponse<LoginResp>> => {
-  return authFetch<ApiResponse<LoginResp>>('/web/sso/login', {
+  return authFetch<ApiResponse<LoginResp>>('/web/login', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data),
