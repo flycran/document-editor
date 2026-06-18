@@ -1,6 +1,6 @@
 import { EditorContent, useEditor } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
-import { PageBreak } from '../Editor/extensions/PageBreak'
+import { sharedExtensions } from '../Editor/extensions'
 import { tiptapStyles } from '../Editor/styles'
 
 interface PreviewerProps {
@@ -9,7 +9,7 @@ interface PreviewerProps {
 
 export default function Previewer({ content = '' }: PreviewerProps) {
   const editor = useEditor({
-    extensions: [StarterKit, PageBreak],
+    extensions: [StarterKit, ...sharedExtensions],
     content,
     editable: false,
   })

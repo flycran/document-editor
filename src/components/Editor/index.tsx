@@ -7,8 +7,7 @@ import TextAlign from '@tiptap/extension-text-align'
 import { TextStyle } from '@tiptap/extension-text-style'
 import { EditorContent, useEditor } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
-import { PageBreak } from './extensions/PageBreak'
-import { TextIndent } from './extensions/TextIndent'
+import { sharedExtensions } from './extensions'
 import { editorOnlyStyles, tiptapStyles } from './styles'
 import Toolbar from './Toolbar'
 
@@ -34,8 +33,7 @@ export default function Editor({
       TextAlign.configure({ types: ['heading', 'paragraph'] }),
       Color,
       Highlight.configure({ multicolor: true }),
-      TextIndent,
-      PageBreak,
+      ...sharedExtensions,
     ],
     content,
     onUpdate: ({ editor }) => {

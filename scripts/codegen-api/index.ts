@@ -1,6 +1,13 @@
+import { readFile } from 'node:fs/promises'
 import { config } from 'dotenv'
 import type { OpenApiDocument } from 'orval'
 import codegenApiConfig from './codegen-api-config'
+
+export interface CodegenApiConfig {
+  generate: (content: OpenApiDocument) => Promise<void>
+  openapiUrl?: string | URL
+  orvalPollInterval?: 3000
+}
 
 config()
 /**
@@ -16,16 +23,48 @@ function getTime() {
   return new Date().toLocaleTimeString('zh-CN', { hour12: false })
 }
 
+export async function getContent(resource: string | URL, encoding: BufferEncoding = 'utf8') {
+  let url: URL
+
+  if (resource instanceof URL) {
+    url = resource
+  } else {
+    try {
+      url = new URL(resource)
+    } catch {
+      // 普通路径
+      return readFile(resource, encoding)
+    }
+  }
+
+  switch (url.protocol) {
+    case 'http:':
+    case 'https:': {
+      const res = await fetch(url)
+
+      if (!res.ok) {
+        throw new Error(`Failed to fetch ${url.href}: ${res.status} ${res.statusText}`)
+      }
+
+      return res.text()
+    }
+
+    case 'file:':
+      return readFile(url, encoding)
+
+    default:
+      throw new Error(`Unsupported protocol: ${url.protocol}`)
+  }
+}
+
 async function poll(): Promise<void> {
   try {
     if (!OPENAPI_URL) {
       throw new Error('OPENAPI_URL is required')
     }
-    const res = await fetch(OPENAPI_URL)
-    if (res.status !== 200) {
-      throw new Error(`HTTP error! status: ${res.status}`)
-    }
-    const content = await res.text()
+
+    const content = await getContent(OPENAPI_URL)
+
     if (content !== lastContent) {
       console.log(`[${getTime()}] 正在生成 API...`)
       codegenApiConfig.generate(JSON.parse(content) as OpenApiDocument)

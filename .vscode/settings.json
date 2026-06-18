@@ -10,5 +10,6 @@
   },
   "[xml]": {
     "editor.defaultFormatter": "redhat.vscode-xml"
-  }
+  },
+  "js/ts.experimental.useTsgo": true
 }

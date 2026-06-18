@@ -8,6 +8,9 @@ declare module '@tiptap/core' {
   }
 }
 
+/**
+ * 分页符
+ */
 export const PageBreak = Node.create({
   name: 'pageBreak',
 

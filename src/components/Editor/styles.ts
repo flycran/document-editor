@@ -33,6 +33,7 @@ export const tiptapStyles = css`
     ul,
     ol {
       padding-left: 1.5em;
+      list-style: revert;
     }
 
     blockquote {

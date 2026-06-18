@@ -12,7 +12,9 @@
     "check": "biome check --fix",
     "format": "biome format --fix",
     "lint": "biome lint --fix",
-    "prepare": "husky"
+    "prepare": "husky",
+    "codegen": "bun run scripts/codegen-api",
+    "codegen:watch": "bun run scripts/codegen-api --watch"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,json}": [
@@ -52,6 +54,7 @@
     "@typescript/native-preview": "^7.0.0-dev.20260608.1",
     "@vitejs/plugin-react-swc": "^4.2.2",
     "@xmldom/xmldom": "^0.9.10",
+    "change-case": "^5.4.4",
     "code-inspector-plugin": "^1.5.3",
     "dotenv": "^17.4.2",
     "husky": "^9.1.7",

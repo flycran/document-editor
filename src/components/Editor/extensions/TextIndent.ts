@@ -9,6 +9,9 @@ declare module '@tiptap/core' {
   }
 }
 
+/**
+ * 缩进
+ */
 export const TextIndent = Extension.create({
   name: 'textIndent',
 

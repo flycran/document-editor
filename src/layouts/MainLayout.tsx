@@ -16,13 +16,11 @@ export default function MainLayout() {
       <FloatButton.Group>
         <FloatButton
           icon={<EditOutlined />}
-          tooltip="编辑器"
           type={isEditor ? 'primary' : 'default'}
           onClick={() => navigate('/editor')}
         />
         <FloatButton
           icon={<EyeOutlined />}
-          tooltip="预览器"
           type={!isEditor ? 'primary' : 'default'}
           onClick={() => navigate('/preview')}
         />

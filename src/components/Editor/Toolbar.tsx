@@ -6,7 +6,6 @@ import {
   BoldOutlined,
   ClearOutlined,
   FontColorsOutlined,
-  FontSizeOutlined,
   ItalicOutlined,
   MenuFoldOutlined,
   MenuUnfoldOutlined,
@@ -21,18 +20,40 @@ import { css } from '@emotion/css'
 import type { Editor } from '@tiptap/react'
 import { useEditorState } from '@tiptap/react'
 import { BubbleMenu } from '@tiptap/react/menus'
-import type { MenuProps } from 'antd'
-import { Button, ColorPicker, Divider, Dropdown, Tooltip } from 'antd'
+import type { SelectProps } from 'antd'
+import { Button, ColorPicker, Divider, Select, Space, Tooltip } from 'antd'
 import { useCallback } from 'react'
 
-const FONT_SIZES = ['12px', '14px', '16px', '18px', '20px', '24px', '28px', '32px', '36px', '48px']
+const FONT_SIZES = [8, 10, 12, 14, 16, 18, 20, 24, 28, 32, 36, 48]
 
-const HEADING_ITEMS: MenuProps['items'] = [
-  { key: 'paragraph', label: '正文' },
-  { key: 'heading1', label: '标题 1' },
-  { key: 'heading2', label: '标题 2' },
-  { key: 'heading3', label: '标题 3' },
+const FONT_SIZE_OPTIONS: SelectProps['options'] = FONT_SIZES.map((size) => ({
+  label: `${size}px`,
+  value: `${size}px`,
+}))
+
+const HEADING_OPTIONS: SelectProps['options'] = [
+  { value: 'paragraph', label: '正文' },
+  { value: 'heading1', label: '标题 1' },
+  { value: 'heading2', label: '标题 2' },
+  { value: 'heading3', label: '标题 3' },
 ]
+
+const toolbarStyles = css`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 12px;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f9fafb;
+`
+
+const toolbarRowStyles = css`
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+`
 
 const bubbleStyles = css`
   background: #fff;
@@ -42,103 +63,61 @@ const bubbleStyles = css`
   padding: 4px;
 `
 
+const bubbleRowStyles = css`
+  display: flex;
+  align-items: center;
+  gap: 4px;
+`
+
 interface ToolbarProps {
   editor: Editor
 }
 
 export default function Toolbar({ editor }: ToolbarProps) {
   // 声明式订阅 editor 状态，仅在这些状态变化时重渲染
-  const storedMarks = useEditorState({
-    editor,
-    selector: (ctx) => ctx.editor.state.storedMarks,
-  })
-  const isBoldActive = useEditorState({
-    editor,
-    selector: (ctx) => ctx.editor.isActive('bold'),
-  })
-  const isItalicActive = useEditorState({
-    editor,
-    selector: (ctx) => ctx.editor.isActive('italic'),
-  })
-  const isUnderlineActive = useEditorState({
-    editor,
-    selector: (ctx) => ctx.editor.isActive('underline'),
-  })
-  const isStrikeActive = useEditorState({
-    editor,
-    selector: (ctx) => ctx.editor.isActive('strike'),
-  })
-  const isBulletListActive = useEditorState({
-    editor,
-    selector: (ctx) => ctx.editor.isActive('bulletList'),
-  })
-  const isOrderedListActive = useEditorState({
-    editor,
-    selector: (ctx) => ctx.editor.isActive('orderedList'),
-  })
-  const textAlign = useEditorState({
+  const editorState = useEditorState({
     editor,
     selector: (ctx) => {
-      if (ctx.editor.isActive({ textAlign: 'center' })) return 'center'
-      if (ctx.editor.isActive({ textAlign: 'right' })) return 'right'
-      return 'left'
-    },
-  })
-  const headingLevel = useEditorState({
-    editor,
-    selector: (ctx) => {
-      if (ctx.editor.isActive('heading', { level: 1 })) return 1
-      if (ctx.editor.isActive('heading', { level: 2 })) return 2
-      if (ctx.editor.isActive('heading', { level: 3 })) return 3
-      return 0
-    },
-  })
-  const fontSize = useEditorState({
-    editor,
-    selector: (ctx) => ctx.editor.getAttributes('textStyle').fontSize || '16px',
-  })
-  const textColor = useEditorState({
-    editor,
-    selector: (ctx) => ctx.editor.getAttributes('textStyle').color || '#000000',
-  })
-  const highlightColor = useEditorState({
-    editor,
-    selector: (ctx) => ctx.editor.getAttributes('highlight').color || '#ffff00',
-  })
+      const e = ctx.editor
+      let textAlign: 'left' | 'center' | 'right' = 'left'
+      if (e.isActive({ textAlign: 'center' })) textAlign = 'center'
+      else if (e.isActive({ textAlign: 'right' })) textAlign = 'right'
 
-  // 合并 storedMarks：有选区时看 isActive，无选区时看 storedMarks
-  const isMarkActive = (name: string) => {
-    const activeMap: Record<string, boolean> = {
-      bold: isBoldActive,
-      italic: isItalicActive,
-      underline: isUnderlineActive,
-      strike: isStrikeActive,
-    }
-    if (activeMap[name]) return true
-    if (!storedMarks) return false
-    return storedMarks.some((m) => m.type.name === name)
-  }
+      let headingLevel = 0
+      if (e.isActive('heading', { level: 1 })) headingLevel = 1
+      else if (e.isActive('heading', { level: 2 })) headingLevel = 2
+      else if (e.isActive('heading', { level: 3 })) headingLevel = 3
+
+      return {
+        canUndo: e.can().undo(),
+        canRedo: e.can().redo(),
+        isBoldActive: e.isActive('bold'),
+        isItalicActive: e.isActive('italic'),
+        isUnderlineActive: e.isActive('underline'),
+        isStrikeActive: e.isActive('strike'),
+        isBulletListActive: e.isActive('bulletList'),
+        isOrderedListActive: e.isActive('orderedList'),
+        textAlign,
+        headingLevel,
+        fontSize: (e.getAttributes('textStyle').fontSize || '16px') as string,
+        textColor: (e.getAttributes('textStyle').color || '#000000') as string,
+        highlightColor: (e.getAttributes('highlight').color || '#ffff00') as string,
+      }
+    },
+  })
 
   const currentHeading =
-    headingLevel === 1
+    editorState.headingLevel === 1
       ? '标题 1'
-      : headingLevel === 2
+      : editorState.headingLevel === 2
         ? '标题 2'
-        : headingLevel === 3
+        : editorState.headingLevel === 3
           ? '标题 3'
           : '正文'
 
-  const fontSizeItems: MenuProps['items'] = FONT_SIZES.map((size) => ({
-    key: size,
-    label: size,
-    onClick: () => {
-      editor.chain().focus().setFontSize(size).run()
-    },
-  }))
-
-  const handleHeadingClick: MenuProps['onClick'] = useCallback(
-    ({ key }) => {
-      switch (key) {
+  const handleHeadingClick = useCallback(
+    (value: string) => {
+      switch (value) {
         case 'paragraph':
           editor.chain().focus().setParagraph().run()
           break
@@ -159,22 +138,22 @@ export default function Toolbar({ editor }: ToolbarProps) {
   return (
     <>
       {/* 顶部工具栏 */}
-      <div className="flex flex-wrap items-center gap-1 px-3 py-2 border-b border-gray-200 bg-gray-50">
+      <div className={toolbarStyles}>
         {/* 第一行 */}
-        <div className="flex items-center gap-1 w-full">
+        <div className={toolbarRowStyles}>
           <Tooltip title="撤销">
             <Button
               type="text"
-              size="small"
               icon={<UndoOutlined />}
+              disabled={!editorState.canUndo}
               onClick={() => editor.chain().focus().undo().run()}
             />
           </Tooltip>
           <Tooltip title="重做">
             <Button
               type="text"
-              size="small"
               icon={<RedoOutlined />}
+              disabled={!editorState.canRedo}
               onClick={() => editor.chain().focus().redo().run()}
             />
           </Tooltip>
@@ -183,32 +162,28 @@ export default function Toolbar({ editor }: ToolbarProps) {
 
           <Tooltip title="加粗">
             <Button
-              type={isBoldActive ? 'primary' : 'text'}
-              size="small"
+              type={editorState.isBoldActive ? 'primary' : 'text'}
               icon={<BoldOutlined />}
               onClick={() => editor.chain().focus().toggleBold().run()}
             />
           </Tooltip>
           <Tooltip title="斜体">
             <Button
-              type={isMarkActive('italic') ? 'primary' : 'text'}
-              size="small"
+              type={editorState.isItalicActive ? 'primary' : 'text'}
               icon={<ItalicOutlined />}
               onClick={() => editor.chain().focus().toggleItalic().run()}
             />
           </Tooltip>
           <Tooltip title="下划线">
             <Button
-              type={isMarkActive('underline') ? 'primary' : 'text'}
-              size="small"
+              type={editorState.isUnderlineActive ? 'primary' : 'text'}
               icon={<UnderlineOutlined />}
               onClick={() => editor.chain().focus().toggleUnderline().run()}
             />
           </Tooltip>
           <Tooltip title="删除线">
             <Button
-              type={isMarkActive('strike') ? 'primary' : 'text'}
-              size="small"
+              type={editorState.isStrikeActive ? 'primary' : 'text'}
               icon={<StrikethroughOutlined />}
               onClick={() => editor.chain().focus().toggleStrike().run()}
             />
@@ -216,63 +191,56 @@ export default function Toolbar({ editor }: ToolbarProps) {
 
           <Divider orientation="vertical" />
 
-          <Dropdown
-            menu={{
-              items: fontSizeItems,
-              selectable: true,
-              selectedKeys: [fontSize],
+          <Select
+            variant="filled"
+            value={editorState.fontSize}
+            options={FONT_SIZE_OPTIONS}
+            style={{ width: 80 }}
+            onChange={(value) => {
+              editor.chain().focus().setFontSize(value).run()
             }}
-          >
-            <Button type="text" size="small" icon={<FontSizeOutlined />}>
-              {fontSize}
-            </Button>
-          </Dropdown>
+          />
 
-          <Dropdown
-            menu={{
-              items: HEADING_ITEMS,
-              onClick: handleHeadingClick,
-            }}
-          >
-            <Button type="text" size="small">
-              {currentHeading}
-            </Button>
-          </Dropdown>
+          <Select
+            variant="filled"
+            options={HEADING_OPTIONS}
+            value={currentHeading}
+            style={{ width: 80 }}
+            onChange={handleHeadingClick}
+          />
 
           <Divider orientation="vertical" />
 
-          <Tooltip title="左对齐">
-            <Button
-              type={textAlign === 'left' ? 'primary' : 'text'}
-              size="small"
-              icon={<AlignLeftOutlined />}
-              onClick={() => editor.chain().focus().setTextAlign('left').run()}
-            />
-          </Tooltip>
-          <Tooltip title="居中">
-            <Button
-              type={textAlign === 'center' ? 'primary' : 'text'}
-              size="small"
-              icon={<AlignCenterOutlined />}
-              onClick={() => editor.chain().focus().setTextAlign('center').run()}
-            />
-          </Tooltip>
-          <Tooltip title="右对齐">
-            <Button
-              type={textAlign === 'right' ? 'primary' : 'text'}
-              size="small"
-              icon={<AlignRightOutlined />}
-              onClick={() => editor.chain().focus().setTextAlign('right').run()}
-            />
-          </Tooltip>
+          <Space.Compact>
+            <Tooltip title="左对齐">
+              <Button
+                type={editorState.textAlign === 'left' ? 'primary' : 'text'}
+                icon={<AlignLeftOutlined />}
+                onClick={() => editor.chain().focus().setTextAlign('left').run()}
+              />
+            </Tooltip>
+            <Tooltip title="居中">
+              <Button
+                type={editorState.textAlign === 'center' ? 'primary' : 'text'}
+                icon={<AlignCenterOutlined />}
+                onClick={() => editor.chain().focus().setTextAlign('center').run()}
+              />
+            </Tooltip>
+            <Tooltip title="右对齐">
+              <Button
+                type={editorState.textAlign === 'right' ? 'primary' : 'text'}
+                icon={<AlignRightOutlined />}
+                onClick={() => editor.chain().focus().setTextAlign('right').run()}
+              />
+            </Tooltip>
+          </Space.Compact>
         </div>
 
         {/* 第二行 */}
-        <div className="flex items-center gap-1 w-full">
+        <div className={toolbarRowStyles}>
           <Tooltip title="减少缩进">
             <Button
               type="text"
-              size="small"
               icon={<MenuUnfoldOutlined />}
               onClick={() => editor.chain().focus().outdent().run()}
             />
@@ -280,7 +248,6 @@ export default function Toolbar({ editor }: ToolbarProps) {
           <Tooltip title="增加缩进">
             <Button
               type="text"
-              size="small"
               icon={<MenuFoldOutlined />}
               onClick={() => editor.chain().focus().indent().run()}
             />
@@ -290,16 +257,14 @@ export default function Toolbar({ editor }: ToolbarProps) {
 
           <Tooltip title="无序列表">
             <Button
-              type={isBulletListActive ? 'primary' : 'text'}
-              size="small"
+              type={editorState.isBulletListActive ? 'primary' : 'text'}
               icon={<UnorderedListOutlined />}
               onClick={() => editor.chain().focus().toggleBulletList().run()}
             />
           </Tooltip>
           <Tooltip title="有序列表">
             <Button
-              type={isOrderedListActive ? 'primary' : 'text'}
-              size="small"
+              type={editorState.isOrderedListActive ? 'primary' : 'text'}
               icon={<OrderedListOutlined />}
               onClick={() => editor.chain().focus().toggleOrderedList().run()}
             />
@@ -308,26 +273,24 @@ export default function Toolbar({ editor }: ToolbarProps) {
           <Divider orientation="vertical" />
 
           <ColorPicker
-            value={textColor}
+            value={editorState.textColor}
             onChange={(color) => {
               editor.chain().focus().setColor(color.toHexString()).run()
             }}
-            size="small"
           >
             <Tooltip title="字体颜色">
-              <Button type="text" size="small" icon={<FontColorsOutlined />} />
+              <Button type="text" icon={<FontColorsOutlined />} />
             </Tooltip>
           </ColorPicker>
 
           <ColorPicker
-            value={highlightColor}
+            value={editorState.highlightColor}
             onChange={(color) => {
               editor.chain().focus().toggleHighlight({ color: color.toHexString() }).run()
             }}
-            size="small"
           >
             <Tooltip title="背景颜色">
-              <Button type="text" size="small" icon={<BgColorsOutlined />} />
+              <Button type="text" icon={<BgColorsOutlined />} />
             </Tooltip>
           </ColorPicker>
 
@@ -336,82 +299,62 @@ export default function Toolbar({ editor }: ToolbarProps) {
           <Tooltip title="清除格式">
             <Button
               type="text"
-              size="small"
               icon={<ClearOutlined />}
               onClick={() => editor.chain().focus().unsetAllMarks().clearNodes().run()}
             />
           </Tooltip>
 
           <Tooltip title="插入分页符">
-            <Button
-              type="text"
-              size="small"
-              onClick={() => editor.chain().focus().insertPageBreak().run()}
-            >
+            <Button type="text" onClick={() => editor.chain().focus().insertPageBreak().run()}>
               ⏎
             </Button>
           </Tooltip>
 
           <Tooltip title="特殊字符">
-            <Button
-              type="text"
-              size="small"
-              onClick={() => editor.chain().focus().insertContent('§').run()}
-            >
+            <Button type="text" onClick={() => editor.chain().focus().insertContent('§').run()}>
               ¶
             </Button>
           </Tooltip>
 
           <Tooltip title="Emoji">
-            <Button
-              type="text"
-              size="small"
-              onClick={() => editor.chain().focus().insertContent('😀').run()}
-            >
+            <Button type="text" onClick={() => editor.chain().focus().insertContent('😀').run()}>
               😀
             </Button>
           </Tooltip>
         </div>
       </div>
-
       {/* Bubble Menu - 选中时弹出格式弹窗 */}
       <BubbleMenu editor={editor} className={bubbleStyles}>
-        <div className="flex items-center gap-1">
+        <div className={bubbleRowStyles}>
           <Button
-            type={isMarkActive('bold') ? 'primary' : 'text'}
-            size="small"
+            type={editorState.isBoldActive ? 'primary' : 'text'}
             icon={<BoldOutlined />}
             onClick={() => editor.chain().focus().toggleBold().run()}
           />
           <Button
-            type={isMarkActive('italic') ? 'primary' : 'text'}
-            size="small"
+            type={editorState.isItalicActive ? 'primary' : 'text'}
             icon={<ItalicOutlined />}
             onClick={() => editor.chain().focus().toggleItalic().run()}
           />
           <Button
-            type={isMarkActive('underline') ? 'primary' : 'text'}
-            size="small"
+            type={editorState.isUnderlineActive ? 'primary' : 'text'}
             icon={<UnderlineOutlined />}
             onClick={() => editor.chain().focus().toggleUnderline().run()}
           />
           <Button
-            type={isMarkActive('strike') ? 'primary' : 'text'}
-            size="small"
+            type={editorState.isStrikeActive ? 'primary' : 'text'}
             icon={<StrikethroughOutlined />}
             onClick={() => editor.chain().focus().toggleStrike().run()}
           />
           <Divider orientation="vertical" />
           <ColorPicker
-            value={textColor}
+            value={editorState.textColor}
             onChange={(color) => editor.chain().focus().setColor(color.toHexString()).run()}
-            size="small"
           >
-            <Button type="text" size="small" icon={<FontColorsOutlined />} />
+            <Button type="text" icon={<FontColorsOutlined />} />
           </ColorPicker>
           <Button
             type="text"
-            size="small"
             icon={<ClearOutlined />}
             onClick={() => editor.chain().focus().unsetAllMarks().run()}
           />

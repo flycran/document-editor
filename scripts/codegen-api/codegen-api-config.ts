@@ -1,11 +1,6 @@
-import { generate, type OpenApiDocument } from 'orval'
+import { generate } from 'orval'
+import type { CodegenApiConfig } from '.'
 import transformer from './transformer'
-
-interface CodegenApiConfig {
-  generate: (content: OpenApiDocument) => Promise<void>
-  openapiUrl?: string
-  orvalPollInterval?: 3000
-}
 
 const codegenApiConfig: CodegenApiConfig = {
   async generate(content) {
@@ -28,14 +23,10 @@ const codegenApiConfig: CodegenApiConfig = {
           transformer,
         },
         unsafeDisableValidation: true,
-        filters: {
-          mode: 'include',
-          tags: [/文书阶段/, /GCS评分/, /信息溯源/],
-        },
       },
     })
   },
-  openapiUrl: process.env.OPENAPI_URL,
+  openapiUrl: new URL('../../openapi/openapi.json', import.meta.url),
 }
 
 export default codegenApiConfig

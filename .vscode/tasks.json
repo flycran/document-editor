@@ -18,9 +18,6 @@
       "command": "bun run codegen:watch",
       "presentation": {
         "panel": "dedicated"
-      },
-      "runOptions": {
-        "runOn": "folderOpen"
       }
     }
   ]
