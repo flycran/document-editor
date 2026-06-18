@@ -5,10 +5,7 @@
  * 根据 ShowDoc 原始页面自动生成的 OpenAPI 3.0 规范。
  * OpenAPI spec version: 1.0.0
  */
-import type { PostQuestcenterMedicalTemplateDeleteParagraphNode200Data } from './postQuestcenterMedicalTemplateDeleteParagraphNode200Data'
 
 export type PostQuestcenterMedicalTemplateDeleteParagraphNode200 = {
-  status: string
-  data: PostQuestcenterMedicalTemplateDeleteParagraphNode200Data
-  request_id: string
+  node_id: string
 }

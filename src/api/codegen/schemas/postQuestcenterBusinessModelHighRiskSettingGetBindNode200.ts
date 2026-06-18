@@ -5,10 +5,18 @@
  * 根据 ShowDoc 原始页面自动生成的 OpenAPI 3.0 规范。
  * OpenAPI spec version: 1.0.0
  */
-import type { PostQuestcenterBusinessModelHighRiskSettingGetBindNode200Data } from './postQuestcenterBusinessModelHighRiskSettingGetBindNode200Data'
+import type { PostQuestcenterBusinessModelHighRiskSettingGetBindNode200ElementsItem } from './postQuestcenterBusinessModelHighRiskSettingGetBindNode200ElementsItem'
 
 export type PostQuestcenterBusinessModelHighRiskSettingGetBindNode200 = {
-  status: string
-  data: PostQuestcenterBusinessModelHighRiskSettingGetBindNode200Data
-  request_id: string
+  node_id: string
+  node_name: string
+  code: string
+  has_parent_node: boolean
+  has_child_node: boolean
+  has_element: boolean
+  elements: PostQuestcenterBusinessModelHighRiskSettingGetBindNode200ElementsItem[]
+  required: boolean
+  is_array: boolean
+  min_limit_str: string
+  max_limit_str: string
 }

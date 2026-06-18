@@ -1,6 +1,6 @@
-import { EditOutlined, EyeOutlined } from '@ant-design/icons'
 import { FloatButton, Spin } from 'antd'
 import { useState } from 'react'
+import { MdEdit, MdVisibility } from 'react-icons/md'
 import { Outlet, useLocation, useNavigate } from 'react-router'
 import { useExpire } from '@/hooks/auth'
 import { useAutoLogin } from '@/hooks/autoLogin'
@@ -25,12 +25,12 @@ export default function MainLayout() {
       </div>
       <FloatButton.Group>
         <FloatButton
-          icon={<EditOutlined />}
+          icon={<MdEdit />}
           type={isEditor ? 'primary' : 'default'}
           onClick={() => navigate('/editor')}
         />
         <FloatButton
-          icon={<EyeOutlined />}
+          icon={<MdVisibility />}
           type={!isEditor ? 'primary' : 'default'}
           onClick={() => navigate('/preview')}
         />

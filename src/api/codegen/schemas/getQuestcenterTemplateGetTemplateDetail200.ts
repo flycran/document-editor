@@ -5,10 +5,26 @@
  * 根据 ShowDoc 原始页面自动生成的 OpenAPI 3.0 规范。
  * OpenAPI spec version: 1.0.0
  */
-import type { GetQuestcenterTemplateGetTemplateDetail200Data } from './getQuestcenterTemplateGetTemplateDetail200Data'
+import type { GetQuestcenterTemplateGetTemplateDetail200ScoreOptionItem } from './getQuestcenterTemplateGetTemplateDetail200ScoreOptionItem'
+import type { GetQuestcenterTemplateGetTemplateDetail200SubjectListItem } from './getQuestcenterTemplateGetTemplateDetail200SubjectListItem'
 
 export type GetQuestcenterTemplateGetTemplateDetail200 = {
-  status: string
-  data: GetQuestcenterTemplateGetTemplateDetail200Data
-  request_id: string
+  paper_id: string
+  template_id: string
+  version: string
+  level_flag: number
+  status: number
+  type_status: number
+  title: string
+  title_abbr: string
+  illustrate: string
+  publish_user: string
+  publish_time: string
+  publish_name: string
+  rich_text: string
+  inform_status: number
+  inform_sign: number
+  subject_list: GetQuestcenterTemplateGetTemplateDetail200SubjectListItem[]
+  score_option: GetQuestcenterTemplateGetTemplateDetail200ScoreOptionItem[]
+  create_time: string
 }

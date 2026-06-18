@@ -5,10 +5,12 @@
  * 根据 ShowDoc 原始页面自动生成的 OpenAPI 3.0 规范。
  * OpenAPI spec version: 1.0.0
  */
-import type { GetQuestcenterMedicalTemplageDepaManageGetDepaList200Data } from './getQuestcenterMedicalTemplageDepaManageGetDepaList200Data'
+import type { GetQuestcenterMedicalTemplageDepaManageGetDepaList200ListItem } from './getQuestcenterMedicalTemplageDepaManageGetDepaList200ListItem'
 
 export type GetQuestcenterMedicalTemplageDepaManageGetDepaList200 = {
-  status: string
-  data: GetQuestcenterMedicalTemplageDepaManageGetDepaList200Data
-  request_id: string
+  pages: number
+  total: number
+  list: GetQuestcenterMedicalTemplageDepaManageGetDepaList200ListItem[]
+  page_size: number
+  page_num: number
 }

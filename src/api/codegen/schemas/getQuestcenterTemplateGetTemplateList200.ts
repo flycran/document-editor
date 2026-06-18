@@ -5,10 +5,12 @@
  * 根据 ShowDoc 原始页面自动生成的 OpenAPI 3.0 规范。
  * OpenAPI spec version: 1.0.0
  */
-import type { GetQuestcenterTemplateGetTemplateList200Data } from './getQuestcenterTemplateGetTemplateList200Data'
+import type { GetQuestcenterTemplateGetTemplateList200ListItem } from './getQuestcenterTemplateGetTemplateList200ListItem'
 
 export type GetQuestcenterTemplateGetTemplateList200 = {
-  status: string
-  data: GetQuestcenterTemplateGetTemplateList200Data
-  request_id: string
+  pages: number
+  total: number
+  list: GetQuestcenterTemplateGetTemplateList200ListItem[]
+  page_size: number
+  page_num: number
 }

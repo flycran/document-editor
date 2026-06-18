@@ -5,10 +5,7 @@
  * 根据 ShowDoc 原始页面自动生成的 OpenAPI 3.0 规范。
  * OpenAPI spec version: 1.0.0
  */
-import type { PostQuestcenterMedicalTemplateUpdateParagraphNodeParams200Data } from './postQuestcenterMedicalTemplateUpdateParagraphNodeParams200Data'
 
 export type PostQuestcenterMedicalTemplateUpdateParagraphNodeParams200 = {
-  status: string
-  data: PostQuestcenterMedicalTemplateUpdateParagraphNodeParams200Data
-  request_id: string
+  node_id: string
 }

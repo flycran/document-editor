@@ -37,12 +37,16 @@ interface EditorProps {
   content?: string
   onUpdate?: (html: string) => void
   ref?: React.Ref<Editor | null>
+  variableViewOpen?: boolean
+  onSetVariableViewOpen?: (open: boolean) => void
 }
 
 export default function DocumentEditor({
   placeholder = '开始输入...',
   content = '',
   onUpdate,
+  variableViewOpen,
+  onSetVariableViewOpen,
   ref,
 }: EditorProps) {
   const extensions = [
@@ -66,13 +70,16 @@ export default function DocumentEditor({
   const { data } = useGetQuestcenterInformedTemplateGetTemplateDetailByMedicalId({
     medical_id: '1172341073113121113',
   })
-  console.log(data?.data)
 
   useImperativeHandle(ref, () => editor)
 
   return (
     <div>
-      <Toolbar editor={editor} />
+      <Toolbar
+        editor={editor}
+        variableViewOpen={variableViewOpen}
+        onSetVariableViewOpen={onSetVariableViewOpen}
+      />
       <div className={editorStyles}>
         <EditorContent editor={editor} />
       </div>

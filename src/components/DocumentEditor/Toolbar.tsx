@@ -1,28 +1,29 @@
-import {
-  AlignCenterOutlined,
-  AlignLeftOutlined,
-  AlignRightOutlined,
-  BgColorsOutlined,
-  BoldOutlined,
-  ClearOutlined,
-  FontColorsOutlined,
-  ItalicOutlined,
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
-  OrderedListOutlined,
-  RedoOutlined,
-  StrikethroughOutlined,
-  UnderlineOutlined,
-  UndoOutlined,
-  UnorderedListOutlined,
-} from '@ant-design/icons'
 import { css } from '@emotion/css'
 import type { Editor } from '@tiptap/react'
 import { useEditorState } from '@tiptap/react'
 import { BubbleMenu } from '@tiptap/react/menus'
 import type { SelectProps } from 'antd'
-import { Button, ColorPicker, Divider, Select, Space, Tooltip } from 'antd'
+import { Button, ColorPicker, Divider, Select, Space } from 'antd'
 import { useCallback } from 'react'
+import {
+  MdFormatAlignCenter,
+  MdFormatAlignLeft,
+  MdFormatAlignRight,
+  MdFormatBold,
+  MdFormatClear,
+  MdFormatColorFill,
+  MdFormatColorText,
+  MdFormatIndentDecrease,
+  MdFormatIndentIncrease,
+  MdFormatItalic,
+  MdFormatListBulleted,
+  MdFormatListNumbered,
+  MdFormatStrikethrough,
+  MdFormatUnderlined,
+  MdRedo,
+  MdUndo,
+} from 'react-icons/md'
+import { TbVariablePlus } from 'react-icons/tb'
 
 const FONT_SIZES = [8, 10, 12, 14, 16, 18, 20, 24, 28, 32, 36, 48]
 
@@ -71,9 +72,11 @@ const bubbleRowStyles = css`
 
 interface ToolbarProps {
   editor: Editor
+  variableViewOpen?: boolean
+  onSetVariableViewOpen?: (open: boolean) => void
 }
 
-export default function Toolbar({ editor }: ToolbarProps) {
+export default function Toolbar({ editor, variableViewOpen, onSetVariableViewOpen }: ToolbarProps) {
   // 声明式订阅 editor 状态，仅在这些状态变化时重渲染
   const editorState = useEditorState({
     editor,
@@ -141,53 +144,47 @@ export default function Toolbar({ editor }: ToolbarProps) {
       <div className={toolbarStyles}>
         {/* 第一行 */}
         <div className={toolbarRowStyles}>
-          <Tooltip title="撤销">
-            <Button
-              type="text"
-              icon={<UndoOutlined />}
-              disabled={!editorState.canUndo}
-              onClick={() => editor.chain().focus().undo().run()}
-            />
-          </Tooltip>
-          <Tooltip title="重做">
-            <Button
-              type="text"
-              icon={<RedoOutlined />}
-              disabled={!editorState.canRedo}
-              onClick={() => editor.chain().focus().redo().run()}
-            />
-          </Tooltip>
+          <Button
+            type="text"
+            icon={<MdUndo />}
+            disabled={!editorState.canUndo}
+            title="撤销"
+            onClick={() => editor.chain().focus().undo().run()}
+          />
+          <Button
+            type="text"
+            icon={<MdRedo />}
+            disabled={!editorState.canRedo}
+            title="重做"
+            onClick={() => editor.chain().focus().redo().run()}
+          />
 
           <Divider orientation="vertical" />
 
-          <Tooltip title="加粗">
-            <Button
-              type={editorState.isBoldActive ? 'primary' : 'text'}
-              icon={<BoldOutlined />}
-              onClick={() => editor.chain().focus().toggleBold().run()}
-            />
-          </Tooltip>
-          <Tooltip title="斜体">
-            <Button
-              type={editorState.isItalicActive ? 'primary' : 'text'}
-              icon={<ItalicOutlined />}
-              onClick={() => editor.chain().focus().toggleItalic().run()}
-            />
-          </Tooltip>
-          <Tooltip title="下划线">
-            <Button
-              type={editorState.isUnderlineActive ? 'primary' : 'text'}
-              icon={<UnderlineOutlined />}
-              onClick={() => editor.chain().focus().toggleUnderline().run()}
-            />
-          </Tooltip>
-          <Tooltip title="删除线">
-            <Button
-              type={editorState.isStrikeActive ? 'primary' : 'text'}
-              icon={<StrikethroughOutlined />}
-              onClick={() => editor.chain().focus().toggleStrike().run()}
-            />
-          </Tooltip>
+          <Button
+            type={editorState.isBoldActive ? 'primary' : 'text'}
+            icon={<MdFormatBold />}
+            title="加粗"
+            onClick={() => editor.chain().focus().toggleBold().run()}
+          />
+          <Button
+            type={editorState.isItalicActive ? 'primary' : 'text'}
+            icon={<MdFormatItalic />}
+            title="斜体"
+            onClick={() => editor.chain().focus().toggleItalic().run()}
+          />
+          <Button
+            type={editorState.isUnderlineActive ? 'primary' : 'text'}
+            icon={<MdFormatUnderlined />}
+            title="下划线"
+            onClick={() => editor.chain().focus().toggleUnderline().run()}
+          />
+          <Button
+            type={editorState.isStrikeActive ? 'primary' : 'text'}
+            icon={<MdFormatStrikethrough />}
+            title="删除线"
+            onClick={() => editor.chain().focus().toggleStrike().run()}
+          />
 
           <Divider orientation="vertical" />
 
@@ -213,63 +210,56 @@ export default function Toolbar({ editor }: ToolbarProps) {
           <Divider orientation="vertical" />
 
           <Space.Compact>
-            <Tooltip title="左对齐">
-              <Button
-                type={editorState.textAlign === 'left' ? 'primary' : 'text'}
-                icon={<AlignLeftOutlined />}
-                onClick={() => editor.chain().focus().setTextAlign('left').run()}
-              />
-            </Tooltip>
-            <Tooltip title="居中">
-              <Button
-                type={editorState.textAlign === 'center' ? 'primary' : 'text'}
-                icon={<AlignCenterOutlined />}
-                onClick={() => editor.chain().focus().setTextAlign('center').run()}
-              />
-            </Tooltip>
-            <Tooltip title="右对齐">
-              <Button
-                type={editorState.textAlign === 'right' ? 'primary' : 'text'}
-                icon={<AlignRightOutlined />}
-                onClick={() => editor.chain().focus().setTextAlign('right').run()}
-              />
-            </Tooltip>
+            <Button
+              type={editorState.textAlign === 'left' ? 'primary' : 'text'}
+              icon={<MdFormatAlignLeft />}
+              title="左对齐"
+              onClick={() => editor.chain().focus().setTextAlign('left').run()}
+            />
+            <Button
+              type={editorState.textAlign === 'center' ? 'primary' : 'text'}
+              icon={<MdFormatAlignCenter />}
+              title="居中"
+              onClick={() => editor.chain().focus().setTextAlign('center').run()}
+            />
+            <Button
+              type={editorState.textAlign === 'right' ? 'primary' : 'text'}
+              icon={<MdFormatAlignRight />}
+              title="右对齐"
+              onClick={() => editor.chain().focus().setTextAlign('right').run()}
+            />
           </Space.Compact>
         </div>
 
         {/* 第二行 */}
         <div className={toolbarRowStyles}>
-          <Tooltip title="减少缩进">
-            <Button
-              type="text"
-              icon={<MenuUnfoldOutlined />}
-              onClick={() => editor.chain().focus().outdent().run()}
-            />
-          </Tooltip>
-          <Tooltip title="增加缩进">
-            <Button
-              type="text"
-              icon={<MenuFoldOutlined />}
-              onClick={() => editor.chain().focus().indent().run()}
-            />
-          </Tooltip>
+          <Button
+            type="text"
+            icon={<MdFormatIndentDecrease />}
+            title="减少缩进"
+            onClick={() => editor.chain().focus().outdent().run()}
+          />
+          <Button
+            type="text"
+            icon={<MdFormatIndentIncrease />}
+            title="增加缩进"
+            onClick={() => editor.chain().focus().indent().run()}
+          />
 
           <Divider orientation="vertical" />
 
-          <Tooltip title="无序列表">
-            <Button
-              type={editorState.isBulletListActive ? 'primary' : 'text'}
-              icon={<UnorderedListOutlined />}
-              onClick={() => editor.chain().focus().toggleBulletList().run()}
-            />
-          </Tooltip>
-          <Tooltip title="有序列表">
-            <Button
-              type={editorState.isOrderedListActive ? 'primary' : 'text'}
-              icon={<OrderedListOutlined />}
-              onClick={() => editor.chain().focus().toggleOrderedList().run()}
-            />
-          </Tooltip>
+          <Button
+            type={editorState.isBulletListActive ? 'primary' : 'text'}
+            icon={<MdFormatListBulleted />}
+            title="无序列表"
+            onClick={() => editor.chain().focus().toggleBulletList().run()}
+          />
+          <Button
+            type={editorState.isOrderedListActive ? 'primary' : 'text'}
+            icon={<MdFormatListNumbered />}
+            title="有序列表"
+            onClick={() => editor.chain().focus().toggleOrderedList().run()}
+          />
 
           <Divider orientation="vertical" />
 
@@ -279,9 +269,7 @@ export default function Toolbar({ editor }: ToolbarProps) {
               editor.chain().focus().setColor(color.toHexString()).run()
             }}
           >
-            <Tooltip title="字体颜色">
-              <Button type="text" icon={<FontColorsOutlined />} />
-            </Tooltip>
+            <Button type="text" icon={<MdFormatColorText />} title="字体颜色" />
           </ColorPicker>
 
           <ColorPicker
@@ -290,38 +278,50 @@ export default function Toolbar({ editor }: ToolbarProps) {
               editor.chain().focus().toggleHighlight({ color: color.toHexString() }).run()
             }}
           >
-            <Tooltip title="背景颜色">
-              <Button type="text" icon={<BgColorsOutlined />} />
-            </Tooltip>
+            <Button type="text" icon={<MdFormatColorFill />} title="背景颜色" />
           </ColorPicker>
 
           <Divider orientation="vertical" />
 
-          <Tooltip title="清除格式">
-            <Button
-              type="text"
-              icon={<ClearOutlined />}
-              onClick={() => editor.chain().focus().unsetAllMarks().clearNodes().run()}
-            />
-          </Tooltip>
+          <Button
+            type={variableViewOpen ? 'primary' : 'text'}
+            icon={<TbVariablePlus />}
+            title="插入变量"
+            onClick={() => onSetVariableViewOpen?.(!variableViewOpen)}
+          />
 
-          <Tooltip title="插入分页符">
-            <Button type="text" onClick={() => editor.chain().focus().insertPageBreak().run()}>
-              ⏎
-            </Button>
-          </Tooltip>
+          <Divider orientation="vertical" />
 
-          <Tooltip title="特殊字符">
-            <Button type="text" onClick={() => editor.chain().focus().insertContent('§').run()}>
-              ¶
-            </Button>
-          </Tooltip>
+          <Button
+            type="text"
+            icon={<MdFormatClear />}
+            title="清除格式"
+            onClick={() => editor.chain().focus().unsetAllMarks().clearNodes().run()}
+          />
 
-          <Tooltip title="Emoji">
-            <Button type="text" onClick={() => editor.chain().focus().insertContent('😀').run()}>
-              😀
-            </Button>
-          </Tooltip>
+          <Button
+            type="text"
+            title="插入分页符"
+            onClick={() => editor.chain().focus().insertPageBreak().run()}
+          >
+            ⏎
+          </Button>
+
+          <Button
+            type="text"
+            title="特殊字符"
+            onClick={() => editor.chain().focus().insertContent('§').run()}
+          >
+            ¶
+          </Button>
+
+          <Button
+            type="text"
+            title="Emoji"
+            onClick={() => editor.chain().focus().insertContent('😀').run()}
+          >
+            😀
+          </Button>
         </div>
       </div>
       {/* Bubble Menu - 选中时弹出格式弹窗 */}
@@ -329,22 +329,22 @@ export default function Toolbar({ editor }: ToolbarProps) {
         <div className={bubbleRowStyles}>
           <Button
             type={editorState.isBoldActive ? 'primary' : 'text'}
-            icon={<BoldOutlined />}
+            icon={<MdFormatBold />}
             onClick={() => editor.chain().focus().toggleBold().run()}
           />
           <Button
             type={editorState.isItalicActive ? 'primary' : 'text'}
-            icon={<ItalicOutlined />}
+            icon={<MdFormatItalic />}
             onClick={() => editor.chain().focus().toggleItalic().run()}
           />
           <Button
             type={editorState.isUnderlineActive ? 'primary' : 'text'}
-            icon={<UnderlineOutlined />}
+            icon={<MdFormatUnderlined />}
             onClick={() => editor.chain().focus().toggleUnderline().run()}
           />
           <Button
             type={editorState.isStrikeActive ? 'primary' : 'text'}
-            icon={<StrikethroughOutlined />}
+            icon={<MdFormatStrikethrough />}
             onClick={() => editor.chain().focus().toggleStrike().run()}
           />
           <Divider orientation="vertical" />
@@ -352,11 +352,11 @@ export default function Toolbar({ editor }: ToolbarProps) {
             value={editorState.textColor}
             onChange={(color) => editor.chain().focus().setColor(color.toHexString()).run()}
           >
-            <Button type="text" icon={<FontColorsOutlined />} />
+            <Button type="text" icon={<MdFormatColorText />} />
           </ColorPicker>
           <Button
             type="text"
-            icon={<ClearOutlined />}
+            icon={<MdFormatClear />}
             onClick={() => editor.chain().focus().unsetAllMarks().run()}
           />
         </div>

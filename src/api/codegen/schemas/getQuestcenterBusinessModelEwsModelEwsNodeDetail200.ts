@@ -5,10 +5,21 @@
  * 根据 ShowDoc 原始页面自动生成的 OpenAPI 3.0 规范。
  * OpenAPI spec version: 1.0.0
  */
-import type { GetQuestcenterBusinessModelEwsModelEwsNodeDetail200Data } from './getQuestcenterBusinessModelEwsModelEwsNodeDetail200Data'
+import type { GetQuestcenterBusinessModelEwsModelEwsNodeDetail200ChildNodesItem } from './getQuestcenterBusinessModelEwsModelEwsNodeDetail200ChildNodesItem'
+import type { GetQuestcenterBusinessModelEwsModelEwsNodeDetail200ElementsItem } from './getQuestcenterBusinessModelEwsModelEwsNodeDetail200ElementsItem'
+import type { GetQuestcenterBusinessModelEwsModelEwsNodeDetail200ParentNodesItem } from './getQuestcenterBusinessModelEwsModelEwsNodeDetail200ParentNodesItem'
 
 export type GetQuestcenterBusinessModelEwsModelEwsNodeDetail200 = {
-  status: string
-  data: GetQuestcenterBusinessModelEwsModelEwsNodeDetail200Data
-  request_id: string
+  node_id: string
+  node_name: string
+  code: string
+  remark: string
+  is_array: boolean
+  required: boolean
+  has_parent_node: boolean
+  parent_nodes: GetQuestcenterBusinessModelEwsModelEwsNodeDetail200ParentNodesItem[]
+  has_child_node: boolean
+  child_nodes: GetQuestcenterBusinessModelEwsModelEwsNodeDetail200ChildNodesItem[]
+  has_element: boolean
+  elements: GetQuestcenterBusinessModelEwsModelEwsNodeDetail200ElementsItem[]
 }

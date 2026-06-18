@@ -25,16 +25,16 @@ import type { ErrorType } from '../request'
 
 import { customFetch } from '../request'
 import type {
-  GetQuestcenterBusinessModelEwsConfigFieldList200,
+  GetQuestcenterBusinessModelEwsConfigFieldList200Item,
   GetQuestcenterBusinessModelEwsConfigFieldListParams,
-  GetQuestcenterBusinessModelEwsConfigOperatorList200,
+  GetQuestcenterBusinessModelEwsConfigOperatorList200Item,
   GetQuestcenterBusinessModelEwsConfigOperatorListParams,
-  GetQuestcenterBusinessModelEwsConfigOperatorTypeList200,
+  GetQuestcenterBusinessModelEwsConfigOperatorTypeList200Item,
   GetQuestcenterBusinessModelEwsModelEwsNodeDetail200,
   GetQuestcenterBusinessModelEwsModelEwsNodeDetailParams,
   GetQuestcenterBusinessModelEwsModelEwsNodeList200,
   GetQuestcenterBusinessModelEwsModelEwsNodeListParams,
-  GetQuestcenterBusinessModelEwsModelList200,
+  GetQuestcenterBusinessModelEwsModelList200Item,
   GetQuestcenterBusinessModelEwsModelListParams,
   GetQuestcenterBusinessModelEwsModelPage200,
   GetQuestcenterBusinessModelEwsModelPageParams,
@@ -42,23 +42,23 @@ import type {
   GetQuestcenterBusinessModelEwsModelPreviewParams,
   GetQuestcenterBusinessModelEwsModelRefresh200,
   GetQuestcenterBusinessModelEwsModelRefreshParams,
-  GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode200,
+  GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode200Item,
   GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeParams,
   GetQuestcenterBusinessModelHighRiskSettingGetFactorDetail200,
   GetQuestcenterBusinessModelHighRiskSettingGetFactorDetailParams,
   GetQuestcenterBusinessModelHighRiskSettingGetFactorPage200,
   GetQuestcenterBusinessModelHighRiskSettingGetFactorPageParams,
-  GetQuestcenterBusinessModelHighRiskSettingGetNodeList200,
+  GetQuestcenterBusinessModelHighRiskSettingGetNodeList200Item,
   GetQuestcenterBusinessModelHighRiskSettingGetNodeListParams,
-  GetQuestcenterBusinessModelHighRiskSettingGetRangeValueList200,
+  GetQuestcenterBusinessModelHighRiskSettingGetRangeValueList200Item,
   GetQuestcenterBusinessModelHighRiskSettingGetRangeValueListParams,
-  GetQuestcenterBusinessModelHighRiskSettingGetRankColor200,
-  GetQuestcenterBusinessModelHighRiskSettingGetRiskType200,
+  GetQuestcenterBusinessModelHighRiskSettingGetRankColor200Item,
+  GetQuestcenterBusinessModelHighRiskSettingGetRiskType200Item,
   GetQuestcenterBusinessModelHighRiskSettingGetRiskTypeParams,
-  GetQuestcenterDocumentTemplateTreeGetTreeDirList200,
+  GetQuestcenterDocumentTemplateTreeGetTreeDirList200Item,
   GetQuestcenterInformedTemplateGetMedicalTemplateList200,
   GetQuestcenterInformedTemplateGetMedicalTemplateListParams,
-  GetQuestcenterInformedTemplateGetNextStep200,
+  GetQuestcenterInformedTemplateGetNextStep200Item,
   GetQuestcenterInformedTemplateGetNextStepParams,
   GetQuestcenterInformedTemplateGetTemplateDetail200,
   GetQuestcenterInformedTemplateGetTemplateDetailByMedicalId200,
@@ -66,7 +66,7 @@ import type {
   GetQuestcenterInformedTemplateGetTemplateDetailByPaperId200,
   GetQuestcenterInformedTemplateGetTemplateDetailByPaperIdParams,
   GetQuestcenterInformedTemplateGetTemplateDetailParams,
-  GetQuestcenterInformedTemplateGetTemplateHistoryList200,
+  GetQuestcenterInformedTemplateGetTemplateHistoryList200Item,
   GetQuestcenterInformedTemplateGetTemplateHistoryListParams,
   GetQuestcenterInformedTemplateGetTemplateList200,
   GetQuestcenterInformedTemplateGetTemplateListParams,
@@ -74,36 +74,36 @@ import type {
   GetQuestcenterMedicalTemplageDepaManageGetConfig200,
   GetQuestcenterMedicalTemplageDepaManageGetDepaList200,
   GetQuestcenterMedicalTemplageDepaManageGetDepaListParams,
-  GetQuestcenterMedicalTemplateFindParagraphCodeList200,
+  GetQuestcenterMedicalTemplateFindParagraphCodeList200Item,
   GetQuestcenterMedicalTemplateFindParagraphCodeListParams,
-  GetQuestcenterMedicalTemplateFindParagraphCodeTree200,
+  GetQuestcenterMedicalTemplateFindParagraphCodeTree200Item,
   GetQuestcenterMedicalTemplateFindParagraphCodeTreeParams,
-  GetQuestcenterMedicalTemplateGetSearchTemplateDept200,
+  GetQuestcenterMedicalTemplateGetSearchTemplateDept200Item,
   GetQuestcenterMedicalTemplateGetSearchTemplateDeptParams,
-  GetQuestcenterMedicalTemplateGetTemplateDepaList200,
+  GetQuestcenterMedicalTemplateGetTemplateDepaList200Item,
   GetQuestcenterMedicalTemplateGetTemplateDepaListParams,
   GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalId200,
   GetQuestcenterMedicalTemplateGetTemplateDetailByMedicalIdParams,
   GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateId200,
   GetQuestcenterMedicalTemplateGetTemplateDetailByTemplateIdParams,
-  GetQuestcenterMedicalTemplateGetTemplateHistoryList200,
+  GetQuestcenterMedicalTemplateGetTemplateHistoryList200Item,
   GetQuestcenterMedicalTemplateGetTemplateHistoryListParams,
   GetQuestcenterMedicalTemplateGetTemplateList200,
   GetQuestcenterMedicalTemplateGetTemplateListParams,
-  GetQuestcenterMedicalTextTemplateGetTemplateList200,
+  GetQuestcenterMedicalTextTemplateGetTemplateList200Item,
   GetQuestcenterMedicalTextTemplateGetTemplateListParams,
-  GetQuestcenterMedicalTextTemplateGetTemplatePage200,
+  GetQuestcenterMedicalTextTemplateGetTemplatePage200Item,
   GetQuestcenterMedicalTextTemplateGetTemplatePageParams,
   GetQuestcenterTemplateGetTemplateDetail200,
   GetQuestcenterTemplateGetTemplateDetailByPaperId200,
   GetQuestcenterTemplateGetTemplateDetailByPaperIdParams,
   GetQuestcenterTemplateGetTemplateDetailParams,
-  GetQuestcenterTemplateGetTemplateHistoryList200,
+  GetQuestcenterTemplateGetTemplateHistoryList200Item,
   GetQuestcenterTemplateGetTemplateHistoryListParams,
   GetQuestcenterTemplateGetTemplateList200,
   GetQuestcenterTemplateGetTemplateListParams,
-  GetQuestcenterTemplateGetTreeDirList200,
-  PostQuestcenterAppliedTemplateGetSubjectDept200,
+  GetQuestcenterTemplateGetTreeDirList200Item,
+  PostQuestcenterAppliedTemplateGetSubjectDept200Item,
   PostQuestcenterAppliedTemplateGetSubjectDeptBody,
   PostQuestcenterBusinessModelEwsModelBind200,
   PostQuestcenterBusinessModelEwsModelBindBody,
@@ -117,7 +117,7 @@ import type {
   PostQuestcenterBusinessModelHighRiskSettingGetBindNodeBody,
   PostQuestcenterBusinessModelHighRiskSettingUpdateFactor200,
   PostQuestcenterBusinessModelHighRiskSettingUpdateFactorBody,
-  PostQuestcenterBusinessModelHighRiskUsingCalculateHighRisk200,
+  PostQuestcenterBusinessModelHighRiskUsingCalculateHighRisk200Item,
   PostQuestcenterBusinessModelHighRiskUsingCalculateHighRiskBody,
   PostQuestcenterInformedTemplateCloseTemplate200,
   PostQuestcenterInformedTemplateCloseTemplateBody,
@@ -125,7 +125,7 @@ import type {
   PostQuestcenterInformedTemplateCreateTemplateBody,
   PostQuestcenterInformedTemplateDeleteTemplate200,
   PostQuestcenterInformedTemplateDeleteTemplateBody,
-  PostQuestcenterInformedTemplateGetSubjectDept200,
+  PostQuestcenterInformedTemplateGetSubjectDept200Item,
   PostQuestcenterInformedTemplateGetSubjectDeptBody,
   PostQuestcenterInformedTemplatePublishTemplate200,
   PostQuestcenterInformedTemplatePublishTemplateBody,
@@ -181,7 +181,7 @@ import type {
   PostQuestcenterMedicalTextTemplateDeleteTemplateBody,
   PostQuestcenterMedicalTextTemplateUpdateTemplate200,
   PostQuestcenterMedicalTextTemplateUpdateTemplateBody,
-  PostQuestcenterRecordTemplateGetSubjectDept200,
+  PostQuestcenterRecordTemplateGetSubjectDept200Item,
   PostQuestcenterRecordTemplateGetSubjectDeptBody,
   PostQuestcenterTemplateCheckAndCreateParams200,
   PostQuestcenterTemplateCheckAndCreateParamsBody,
@@ -191,7 +191,7 @@ import type {
   PostQuestcenterTemplateCreateTemplateBody,
   PostQuestcenterTemplateDeleteTemplate200,
   PostQuestcenterTemplateDeleteTemplateBody,
-  PostQuestcenterTemplateGetSubjectDept200,
+  PostQuestcenterTemplateGetSubjectDept200Item,
   PostQuestcenterTemplateGetSubjectDeptBody,
   PostQuestcenterTemplatePublishTemplate200,
   PostQuestcenterTemplatePublishTemplateBody,
@@ -199,7 +199,7 @@ import type {
   PostQuestcenterTemplateUpdateTemplateBody,
 } from './schemas'
 export type postQuestcenterAppliedTemplateGetSubjectDeptResponse200 = {
-  data: PostQuestcenterAppliedTemplateGetSubjectDept200
+  data: PostQuestcenterAppliedTemplateGetSubjectDept200Item[]
   status: 200
 }
 
@@ -306,7 +306,7 @@ export const usePostQuestcenterAppliedTemplateGetSubjectDept = <
 }
 
 export type getQuestcenterBusinessModelEwsConfigFieldListResponse200 = {
-  data: GetQuestcenterBusinessModelEwsConfigFieldList200
+  data: GetQuestcenterBusinessModelEwsConfigFieldList200Item[]
   status: 200
 }
 
@@ -489,7 +489,7 @@ export function useGetQuestcenterBusinessModelEwsConfigFieldList<
 }
 
 export type getQuestcenterBusinessModelEwsConfigOperatorListResponse200 = {
-  data: GetQuestcenterBusinessModelEwsConfigOperatorList200
+  data: GetQuestcenterBusinessModelEwsConfigOperatorList200Item[]
   status: 200
 }
 
@@ -678,7 +678,7 @@ export function useGetQuestcenterBusinessModelEwsConfigOperatorList<
 }
 
 export type getQuestcenterBusinessModelEwsConfigOperatorTypeListResponse200 = {
-  data: GetQuestcenterBusinessModelEwsConfigOperatorTypeList200
+  data: GetQuestcenterBusinessModelEwsConfigOperatorTypeList200Item[]
   status: 200
 }
 
@@ -1321,7 +1321,7 @@ export function useGetQuestcenterBusinessModelEwsModelEwsNodeList<
 }
 
 export type getQuestcenterBusinessModelEwsModelListResponse200 = {
-  data: GetQuestcenterBusinessModelEwsModelList200
+  data: GetQuestcenterBusinessModelEwsModelList200Item[]
   status: 200
 }
 
@@ -2374,7 +2374,7 @@ export const usePostQuestcenterBusinessModelHighRiskSettingBindNodeToGroup = <
 }
 
 export type getQuestcenterBusinessModelHighRiskSettingFindDiagnosisCodeResponse200 = {
-  data: GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode200
+  data: GetQuestcenterBusinessModelHighRiskSettingFindDiagnosisCode200Item[]
   status: 200
 }
 
@@ -3052,7 +3052,7 @@ export function useGetQuestcenterBusinessModelHighRiskSettingGetFactorPage<
 }
 
 export type getQuestcenterBusinessModelHighRiskSettingGetNodeListResponse200 = {
-  data: GetQuestcenterBusinessModelHighRiskSettingGetNodeList200
+  data: GetQuestcenterBusinessModelHighRiskSettingGetNodeList200Item[]
   status: 200
 }
 
@@ -3242,7 +3242,7 @@ export function useGetQuestcenterBusinessModelHighRiskSettingGetNodeList<
 }
 
 export type getQuestcenterBusinessModelHighRiskSettingGetRangeValueListResponse200 = {
-  data: GetQuestcenterBusinessModelHighRiskSettingGetRangeValueList200
+  data: GetQuestcenterBusinessModelHighRiskSettingGetRangeValueList200Item[]
   status: 200
 }
 
@@ -3434,7 +3434,7 @@ export function useGetQuestcenterBusinessModelHighRiskSettingGetRangeValueList<
 }
 
 export type getQuestcenterBusinessModelHighRiskSettingGetRankColorResponse200 = {
-  data: GetQuestcenterBusinessModelHighRiskSettingGetRankColor200
+  data: GetQuestcenterBusinessModelHighRiskSettingGetRankColor200Item[]
   status: 200
 }
 
@@ -3594,7 +3594,7 @@ export function useGetQuestcenterBusinessModelHighRiskSettingGetRankColor<
 }
 
 export type getQuestcenterBusinessModelHighRiskSettingGetRiskTypeResponse200 = {
-  data: GetQuestcenterBusinessModelHighRiskSettingGetRiskType200
+  data: GetQuestcenterBusinessModelHighRiskSettingGetRiskType200Item[]
   status: 200
 }
 
@@ -3892,7 +3892,7 @@ export const usePostQuestcenterBusinessModelHighRiskSettingUpdateFactor = <
 }
 
 export type postQuestcenterBusinessModelHighRiskUsingCalculateHighRiskResponse200 = {
-  data: PostQuestcenterBusinessModelHighRiskUsingCalculateHighRisk200
+  data: PostQuestcenterBusinessModelHighRiskUsingCalculateHighRisk200Item[]
   status: 200
 }
 
@@ -4000,7 +4000,7 @@ export const usePostQuestcenterBusinessModelHighRiskUsingCalculateHighRisk = <
 }
 
 export type getQuestcenterDocumentTemplateTreeGetTreeDirListResponse200 = {
-  data: GetQuestcenterDocumentTemplateTreeGetTreeDirList200
+  data: GetQuestcenterDocumentTemplateTreeGetTreeDirList200Item[]
   status: 200
 }
 
@@ -4668,7 +4668,7 @@ export function useGetQuestcenterInformedTemplateGetMedicalTemplateList<
 }
 
 export type getQuestcenterInformedTemplateGetNextStepResponse200 = {
-  data: GetQuestcenterInformedTemplateGetNextStep200
+  data: GetQuestcenterInformedTemplateGetNextStep200Item[]
   status: 200
 }
 
@@ -4851,7 +4851,7 @@ export function useGetQuestcenterInformedTemplateGetNextStep<
 }
 
 export type postQuestcenterInformedTemplateGetSubjectDeptResponse200 = {
-  data: PostQuestcenterInformedTemplateGetSubjectDept200
+  data: PostQuestcenterInformedTemplateGetSubjectDept200Item[]
   status: 200
 }
 
@@ -5528,7 +5528,7 @@ export function useGetQuestcenterInformedTemplateGetTemplateDetailByPaperId<
 }
 
 export type getQuestcenterInformedTemplateGetTemplateHistoryListResponse200 = {
-  data: GetQuestcenterInformedTemplateGetTemplateHistoryList200
+  data: GetQuestcenterInformedTemplateGetTemplateHistoryList200Item[]
   status: 200
 }
 
@@ -8326,7 +8326,7 @@ export const usePostQuestcenterMedicalTemplateDeleteTemplateParagraph = <
 }
 
 export type getQuestcenterMedicalTemplateFindParagraphCodeListResponse200 = {
-  data: GetQuestcenterMedicalTemplateFindParagraphCodeList200
+  data: GetQuestcenterMedicalTemplateFindParagraphCodeList200Item[]
   status: 200
 }
 
@@ -8515,7 +8515,7 @@ export function useGetQuestcenterMedicalTemplateFindParagraphCodeList<
 }
 
 export type getQuestcenterMedicalTemplateFindParagraphCodeTreeResponse200 = {
-  data: GetQuestcenterMedicalTemplateFindParagraphCodeTree200
+  data: GetQuestcenterMedicalTemplateFindParagraphCodeTree200Item[]
   status: 200
 }
 
@@ -8704,7 +8704,7 @@ export function useGetQuestcenterMedicalTemplateFindParagraphCodeTree<
 }
 
 export type getQuestcenterMedicalTemplateGetSearchTemplateDeptResponse200 = {
-  data: GetQuestcenterMedicalTemplateGetSearchTemplateDept200
+  data: GetQuestcenterMedicalTemplateGetSearchTemplateDept200Item[]
   status: 200
 }
 
@@ -8893,7 +8893,7 @@ export function useGetQuestcenterMedicalTemplateGetSearchTemplateDept<
 }
 
 export type getQuestcenterMedicalTemplateGetTemplateDepaListResponse200 = {
-  data: GetQuestcenterMedicalTemplateGetTemplateDepaList200
+  data: GetQuestcenterMedicalTemplateGetTemplateDepaList200Item[]
   status: 200
 }
 
@@ -9463,7 +9463,7 @@ export function useGetQuestcenterMedicalTemplateGetTemplateDetailByTemplateId<
 }
 
 export type getQuestcenterMedicalTemplateGetTemplateHistoryListResponse200 = {
-  data: GetQuestcenterMedicalTemplateGetTemplateHistoryList200
+  data: GetQuestcenterMedicalTemplateGetTemplateHistoryList200Item[]
   status: 200
 }
 
@@ -10689,7 +10689,7 @@ export const usePostQuestcenterMedicalTextTemplateDeleteTemplate = <
 }
 
 export type getQuestcenterMedicalTextTemplateGetTemplateListResponse200 = {
-  data: GetQuestcenterMedicalTextTemplateGetTemplateList200
+  data: GetQuestcenterMedicalTextTemplateGetTemplateList200Item[]
   status: 200
 }
 
@@ -10878,7 +10878,7 @@ export function useGetQuestcenterMedicalTextTemplateGetTemplateList<
 }
 
 export type getQuestcenterMedicalTextTemplateGetTemplatePageResponse200 = {
-  data: GetQuestcenterMedicalTextTemplateGetTemplatePage200
+  data: GetQuestcenterMedicalTextTemplateGetTemplatePage200Item[]
   status: 200
 }
 
@@ -11174,7 +11174,7 @@ export const usePostQuestcenterMedicalTextTemplateUpdateTemplate = <
 }
 
 export type postQuestcenterRecordTemplateGetSubjectDeptResponse200 = {
-  data: PostQuestcenterRecordTemplateGetSubjectDept200
+  data: PostQuestcenterRecordTemplateGetSubjectDept200Item[]
   status: 200
 }
 
@@ -11697,7 +11697,7 @@ export const usePostQuestcenterTemplateDeleteTemplate = <
 }
 
 export type postQuestcenterTemplateGetSubjectDeptResponse200 = {
-  data: PostQuestcenterTemplateGetSubjectDept200
+  data: PostQuestcenterTemplateGetSubjectDept200Item[]
   status: 200
 }
 
@@ -12173,7 +12173,7 @@ export function useGetQuestcenterTemplateGetTemplateDetailByPaperId<
 }
 
 export type getQuestcenterTemplateGetTemplateHistoryListResponse200 = {
-  data: GetQuestcenterTemplateGetTemplateHistoryList200
+  data: GetQuestcenterTemplateGetTemplateHistoryList200Item[]
   status: 200
 }
 
@@ -12539,7 +12539,7 @@ export function useGetQuestcenterTemplateGetTemplateList<
 }
 
 export type getQuestcenterTemplateGetTreeDirListResponse200 = {
-  data: GetQuestcenterTemplateGetTreeDirList200
+  data: GetQuestcenterTemplateGetTreeDirList200Item[]
   status: 200
 }
 
