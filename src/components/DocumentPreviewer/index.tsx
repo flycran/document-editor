@@ -1,4 +1,4 @@
-import { EditorContent, useEditor } from '@tiptap/react'
+import { EditorContent, JSONContent, useEditor } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
 import {
   DocumentVariableContext,
@@ -8,11 +8,11 @@ import { sharedExtensions } from '../DocumentEditor/extensions'
 import { tiptapStyles } from '../DocumentEditor/styles'
 
 interface PreviewerProps {
-  content?: string
+  content?: JSONContent
   variable?: DocumentVariableContextType
 }
 
-export default function DocumentPreviewer({ content = '', variable }: PreviewerProps) {
+export default function DocumentPreviewer({ content, variable }: PreviewerProps) {
   const editor = useEditor({
     extensions: [StarterKit, ...sharedExtensions],
     content,

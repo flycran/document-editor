@@ -9,7 +9,6 @@ const style = {
     display: inline-block;
     padding: 0 2px;
     margin: 0 2px;
-    color: #1677ff;
     cursor: default;
     height: 1.375em;
     line-height: 1.375em;
@@ -22,12 +21,14 @@ const style = {
     ::before {
       content: "{{";
       font-weight: 500;
+      color: #1677ff;
       margin-right: 0.25em;
     }
 
     ::after {
       content: "}}";
       font-weight: 500;
+      color: #1677ff;
       margin-left: 0.25em;
     }
 
@@ -38,11 +39,9 @@ const style = {
       margin: 0 0.25em;
     }
     .variable-node-code {
-      color: rgb(0, 143, 145);
     }
   `,
   preview: css`
-
   `,
 }
 

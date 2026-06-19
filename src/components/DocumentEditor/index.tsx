@@ -5,7 +5,7 @@ import Highlight from '@tiptap/extension-highlight'
 import Placeholder from '@tiptap/extension-placeholder'
 import TextAlign from '@tiptap/extension-text-align'
 import { TextStyle } from '@tiptap/extension-text-style'
-import { Editor, EditorContent, EditorEvents, useEditor } from '@tiptap/react'
+import { Editor, EditorContent, EditorEvents, JSONContent, useEditor } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
 import { Drawer } from 'antd'
 import React from 'react'
@@ -74,8 +74,8 @@ const editorStyles = cx(tiptapStyles, editorOnlyStyles)
 
 interface EditorProps {
   placeholder?: string
-  content?: string
-  onUpdate?: (html: string) => void
+  content?: JSONContent
+  onUpdate?: (json: JSONContent) => void
   ref?: React.Ref<Editor | null>
   variable?: DocumentVariableContextType
   variableListProps: Omit<VariableListProps, 'mode'>
@@ -83,7 +83,7 @@ interface EditorProps {
 
 export default function DocumentEditor({
   placeholder = '开始输入...',
-  content = '',
+  content,
   variable,
   variableListProps,
   onUpdate,
@@ -103,7 +103,7 @@ export default function DocumentEditor({
     extensions,
     content,
     onUpdate: ({ editor }) => {
-      onUpdate?.(editor.getHTML())
+      onUpdate?.(editor.getJSON())
     },
   })
 

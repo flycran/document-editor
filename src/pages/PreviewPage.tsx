@@ -1,10 +1,6 @@
 import { useOutletContext } from 'react-router'
 import Previewer from '@/components/DocumentPreviewer'
-
-interface OutletContext {
-  content: string
-  setContent: (content: string) => void
-}
+import { OutletContext } from '@/types/router'
 
 export default function PreviewPage() {
   const { content } = useOutletContext<OutletContext>()

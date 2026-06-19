@@ -6,7 +6,7 @@ export interface PreviewModeContextType {
 }
 
 export const PreviewModeContext = createContext<PreviewModeContextType>({
-  isPreview: false,
+  isPreview: true,
   setPreview: () => {},
 })
 

@@ -7,11 +7,7 @@ import {
 } from '@/api/codegen/petstore'
 import DocumentEditor from '@/components/DocumentEditor'
 import { useRHM } from '@/hooks/useRHM'
-
-interface OutletContext {
-  content: string
-  setContent: (content: string) => void
-}
+import { OutletContext } from '@/types/router'
 
 export default function EditorPage() {
   const { content, setContent } = useOutletContext<OutletContext>()
@@ -19,18 +15,20 @@ export default function EditorPage() {
   const editorRef = useRef<Editor | null>(null)
   const [template, setTemplate] = useState<string>()
 
-  const { data: templateListData } = useGetQuestcenterInformedTemplateGetMedicalTemplateList()
+  const { data: templateListData, isFetching: templateListDataIsFetching } =
+    useGetQuestcenterInformedTemplateGetMedicalTemplateList()
 
-  const { data: templateData } = useGetQuestcenterInformedTemplateGetTemplateDetailByMedicalId(
-    {
-      medical_id: template!,
-    },
-    {
-      query: {
-        enabled: !!template,
+  const { data: templateData, isFetching: templateDataIsFetching } =
+    useGetQuestcenterInformedTemplateGetTemplateDetailByMedicalId(
+      {
+        medical_id: template!,
       },
-    }
-  )
+      {
+        query: {
+          enabled: !!template,
+        },
+      }
+    )
 
   useEffect(() => {
     if (templateListData?.data?.list.length && !template) {
@@ -52,8 +50,10 @@ export default function EditorPage() {
           onUpdate={setContent}
           variableListProps={{
             templateList: templateListData?.data?.list,
+            templateListLoading: templateListDataIsFetching,
             templateValue: template,
             variableList: templateData?.data?.paragraph_list,
+            variableListLoading: templateDataIsFetching,
             onTemplateSelect: setTemplate,
           }}
         />

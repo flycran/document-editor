@@ -1,5 +1,5 @@
 import { css } from '@emotion/css'
-import { Select, Tree, TreeDataNode } from 'antd'
+import { Select, Spin, Tree, TreeDataNode } from 'antd'
 import { useEffect, useMemo, useState } from 'react'
 import { MdAddCircleOutline } from 'react-icons/md'
 import {
@@ -79,15 +79,22 @@ const viewStyle = css`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  .spin {
+    min-height: 200px;
+  }
 `
 
 export interface VariableListProps {
-  /** 变量列表 */
-  variableList?: InformedTemplateParagraphListItem[]
   /** 模板列表 */
   templateList?: GetQuestcenterInformedTemplateGetMedicalTemplateList200ListItem[]
+  /** 模板列表加载中 */
+  templateListLoading?: boolean
   /** 选中的模板 */
   templateValue?: string
+  /** 变量列表 */
+  variableList?: InformedTemplateParagraphListItem[]
+  /** 变量列表加载中 */
+  variableListLoading?: boolean
   /** 模板选中回调 */
   onTemplateSelect?: (templateMedicalId: string) => void
   /** 变量选择模式 */
@@ -96,9 +103,11 @@ export interface VariableListProps {
 
 /** 变量选择视图 */
 export default function VariableList({
-  variableList,
   templateList,
+  templateListLoading = false,
   templateValue,
+  variableList,
+  variableListLoading = false,
   onTemplateSelect,
   mode = 'insert',
 }: VariableListProps) {
@@ -153,18 +162,21 @@ export default function VariableList({
   return (
     <div className={viewStyle}>
       <Select<string>
+        loading={templateListLoading}
         options={templateList}
         fieldNames={{ label: 'template_name', value: 'medical_id' }}
         value={$template}
         onChange={$setTemplate1}
         style={{ width: '100%' }}
       />
-      <Tree
-        treeData={options}
-        titleRender={(item) => <VariableListTitle {...item} mode={mode} />}
-        checkable={false}
-        selectable={false}
-      />
+      <Spin spinning={variableListLoading} className="spin">
+        <Tree
+          treeData={options}
+          titleRender={(item) => <VariableListTitle {...item} mode={mode} />}
+          checkable={false}
+          selectable={false}
+        />
+      </Spin>
     </div>
   )
 }

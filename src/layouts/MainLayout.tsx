@@ -1,3 +1,4 @@
+import { JSONContent } from '@tiptap/react'
 import { FloatButton, Spin } from 'antd'
 import { useState } from 'react'
 import { MdEdit, MdVisibility } from 'react-icons/md'
@@ -10,7 +11,7 @@ import { useAppSelector } from '@/store/hooks'
 export default function MainLayout() {
   const location = useLocation()
   const navigate = useNavigate()
-  const [content, setContent] = useState('')
+  const [content, setContent] = useState<JSONContent>()
   useGlobalKeepQuery()
   useAutoLogin()
   useExpire()

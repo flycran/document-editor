@@ -7,7 +7,6 @@ import { resetUserInfo, setExpire, setUserInfo } from '@/store/slice/userSlice'
 export const useLogin = () => {
   const dispatch = useAppDispatch()
   const { mutateAsync: loginMutation } = useMutation({ mutationFn: loginApi })
-  const searchParams = new URLSearchParams(window.location.search)
 
   return async (form: LoginReq) => {
     const res = await loginMutation(form).catch((error: ErrorResponse) => ({ error }))
@@ -19,8 +18,6 @@ export const useLogin = () => {
       message.error(res.data?.err)
     }
     dispatch(setUserInfo(res.data || {}))
-    const visit_no = searchParams.get('visit_no')
-    if (!visit_no) throw new Error('visit_no is required')
     return res
   }
 }

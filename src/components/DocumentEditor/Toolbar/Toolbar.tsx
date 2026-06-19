@@ -148,33 +148,39 @@ export default function Toolbar({}: ToolbarProps) {
       <Button
         type={editorState.isBoldActive ? 'primary' : 'text'}
         icon={<MdFormatBold />}
+        disabled={isPreview}
         onClick={() => editor.chain().focus().toggleBold().run()}
       />
       <Button
         type={editorState.isItalicActive ? 'primary' : 'text'}
         icon={<MdFormatItalic />}
+        disabled={isPreview}
         onClick={() => editor.chain().focus().toggleItalic().run()}
       />
       <Button
         type={editorState.isUnderlineActive ? 'primary' : 'text'}
         icon={<MdFormatUnderlined />}
+        disabled={isPreview}
         onClick={() => editor.chain().focus().toggleUnderline().run()}
       />
       <Button
         type={editorState.isStrikeActive ? 'primary' : 'text'}
         icon={<MdOutlineStrikethroughS />}
+        disabled={isPreview}
         onClick={() => editor.chain().focus().toggleStrike().run()}
       />
       <Divider className={dividerStyles} orientation="vertical" />
       <ColorPicker
         value={editorState.textColor}
+        disabled={isPreview}
         onChange={(color) => editor.chain().focus().setColor(color.toHexString()).run()}
       >
-        <Button type="text" icon={<MdFormatColorText />} />
+        <Button type="text" icon={<MdFormatColorText />} disabled={isPreview} />
       </ColorPicker>
       <Button
         type="text"
         icon={<MdFormatClear />}
+        disabled={isPreview}
         onClick={() => editor.chain().focus().unsetAllMarks().run()}
       />
     </>
@@ -207,24 +213,28 @@ export default function Toolbar({}: ToolbarProps) {
             type={editorState.isBoldActive ? 'primary' : 'text'}
             icon={<MdFormatBold />}
             title="加粗"
+            disabled={isPreview}
             onClick={() => editor.chain().focus().toggleBold().run()}
           />
           <Button
             type={editorState.isItalicActive ? 'primary' : 'text'}
             icon={<MdFormatItalic />}
             title="斜体"
+            disabled={isPreview}
             onClick={() => editor.chain().focus().toggleItalic().run()}
           />
           <Button
             type={editorState.isUnderlineActive ? 'primary' : 'text'}
             icon={<MdFormatUnderlined />}
             title="下划线"
+            disabled={isPreview}
             onClick={() => editor.chain().focus().toggleUnderline().run()}
           />
           <Button
             type={editorState.isStrikeActive ? 'primary' : 'text'}
             icon={<MdOutlineStrikethroughS />}
             title="删除线"
+            disabled={isPreview}
             onClick={() => editor.chain().focus().toggleStrike().run()}
           />
 
@@ -236,6 +246,7 @@ export default function Toolbar({}: ToolbarProps) {
             value={editorState.fontSize}
             options={FONT_SIZE_OPTIONS}
             style={{ width: 90 }}
+            disabled={isPreview}
             onChange={(value) => {
               editor.chain().focus().setFontSize(value).run()
             }}
@@ -246,6 +257,7 @@ export default function Toolbar({}: ToolbarProps) {
             options={HEADING_OPTIONS}
             value={currentHeading}
             style={{ width: 90 }}
+            disabled={isPreview}
             onChange={handleHeadingClick}
           />
 
@@ -256,18 +268,21 @@ export default function Toolbar({}: ToolbarProps) {
               type={editorState.textAlign === 'left' ? 'primary' : 'text'}
               icon={<MdFormatAlignLeft />}
               title="左对齐"
+              disabled={isPreview}
               onClick={() => editor.chain().focus().setTextAlign('left').run()}
             />
             <Button
               type={editorState.textAlign === 'center' ? 'primary' : 'text'}
               icon={<MdFormatAlignCenter />}
               title="居中"
+              disabled={isPreview}
               onClick={() => editor.chain().focus().setTextAlign('center').run()}
             />
             <Button
               type={editorState.textAlign === 'right' ? 'primary' : 'text'}
               icon={<MdFormatAlignRight />}
               title="右对齐"
+              disabled={isPreview}
               onClick={() => editor.chain().focus().setTextAlign('right').run()}
             />
           </Space.Compact>
@@ -279,12 +294,14 @@ export default function Toolbar({}: ToolbarProps) {
             type="text"
             icon={<MdFormatIndentDecrease />}
             title="减少缩进"
+            disabled={isPreview}
             onClick={() => editor.chain().focus().outdent().run()}
           />
           <Button
             type="text"
             icon={<MdFormatIndentIncrease />}
             title="增加缩进"
+            disabled={isPreview}
             onClick={() => editor.chain().focus().indent().run()}
           />
 
@@ -294,12 +311,14 @@ export default function Toolbar({}: ToolbarProps) {
             type={editorState.isBulletListActive ? 'primary' : 'text'}
             icon={<MdFormatListBulleted />}
             title="无序列表"
+            disabled={isPreview}
             onClick={() => editor.chain().focus().toggleBulletList().run()}
           />
           <Button
             type={editorState.isOrderedListActive ? 'primary' : 'text'}
             icon={<MdFormatListNumbered />}
             title="有序列表"
+            disabled={isPreview}
             onClick={() => editor.chain().focus().toggleOrderedList().run()}
           />
 
@@ -307,20 +326,32 @@ export default function Toolbar({}: ToolbarProps) {
 
           <ColorPicker
             value={editorState.textColor}
+            disabled={isPreview}
             onChange={(color) => {
               editor.chain().focus().setColor(color.toHexString()).run()
             }}
           >
-            <Button type="text" icon={<MdFormatColorText />} title="字体颜色" />
+            <Button
+              type="text"
+              icon={<MdFormatColorText />}
+              title="字体颜色"
+              disabled={isPreview}
+            />
           </ColorPicker>
 
           <ColorPicker
             value={editorState.highlightColor}
+            disabled={isPreview}
             onChange={(color) => {
               editor.chain().focus().toggleHighlight({ color: color.toHexString() }).run()
             }}
           >
-            <Button type="text" icon={<MdFormatColorFill />} title="背景颜色" />
+            <Button
+              type="text"
+              icon={<MdFormatColorFill />}
+              title="背景颜色"
+              disabled={isPreview}
+            />
           </ColorPicker>
 
           <Divider className={dividerStyles} orientation="vertical" />
@@ -329,6 +360,7 @@ export default function Toolbar({}: ToolbarProps) {
             type="text"
             icon={<TbVariablePlus />}
             title="插入变量"
+            disabled={isPreview}
             onClick={() => editor.chain().focus().toggleVariableDrawer('insert').run()}
           />
 
@@ -338,6 +370,7 @@ export default function Toolbar({}: ToolbarProps) {
             type="text"
             icon={<MdFormatClear />}
             title="清除格式"
+            disabled={isPreview}
             onClick={() => editor.chain().focus().unsetAllMarks().clearNodes().run()}
           />
 
@@ -345,6 +378,7 @@ export default function Toolbar({}: ToolbarProps) {
             type="text"
             title="插入分页符"
             icon={<ImPageBreak />}
+            disabled={isPreview}
             onClick={() => editor.chain().focus().insertPageBreak().run()}
           />
           <Divider className={dividerStyles} size="small" orientation="vertical" />
@@ -362,7 +396,7 @@ export default function Toolbar({}: ToolbarProps) {
         pluginKey="bubbleMenu-variable"
         className={bubbleStyles}
         shouldShow={({ editor: ed }) => {
-          return ed.isActive('variable')
+          return !isPreview && ed.isActive('variable')
         }}
       >
         <div className={bubbleRowStyles}>
@@ -372,6 +406,7 @@ export default function Toolbar({}: ToolbarProps) {
             type="text"
             icon={<MdModeEditOutline />}
             title="替换变量"
+            disabled={isPreview}
             onClick={() => {
               editor.chain().focus().toggleVariableDrawer('replace').run()
             }}
@@ -385,6 +420,7 @@ export default function Toolbar({}: ToolbarProps) {
         pluginKey="bubbleMenu-text"
         className={bubbleStyles}
         shouldShow={({ state, editor: ed }) => {
+          if (isPreview) return false
           const { selection } = state
           // 分页符和变量节点不显示默认菜单
           if (ed.isActive('pageBreak') || ed.isActive('variable')) return false
