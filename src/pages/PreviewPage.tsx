@@ -1,5 +1,5 @@
 import { useOutletContext } from 'react-router'
-import Previewer from '@/components/DocumentPreviewer'
+import Previewer from '@/components/DocumentPreviewer/DocumentPreviewer'
 import { OutletContext } from '@/types/router'
 
 export default function PreviewPage() {

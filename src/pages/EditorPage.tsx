@@ -5,7 +5,7 @@ import {
   useGetQuestcenterInformedTemplateGetMedicalTemplateList,
   useGetQuestcenterInformedTemplateGetTemplateDetailByMedicalId,
 } from '@/api/codegen/petstore'
-import DocumentEditor from '@/components/DocumentEditor'
+import DocumentEditor from '@/components/DocumentEditor/DocumentEditor'
 import { useRHM } from '@/hooks/useRHM'
 import { OutletContext } from '@/types/router'
 
