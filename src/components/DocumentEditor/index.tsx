@@ -15,6 +15,7 @@ import {
   DocumentVariableContext,
   DocumentVariableContextType,
 } from './contexts/DocumentVariableContext'
+import { PreviewModeContext } from './contexts/PreviewModeContext'
 import { sharedExtensions } from './extensions'
 import { VariableExtensionMode } from './extensions/VariableExtension'
 import { tiptapStyles } from './styles'
@@ -106,19 +107,27 @@ export default function DocumentEditor({
     },
   })
 
+  const [isPreview, setIsPreview] = useState(false)
+
+  useEffect(() => {
+    editor?.setEditable(!isPreview)
+  }, [isPreview, editor])
+
   useImperativeHandle(ref, () => editor)
 
   return (
     <DocumentEditorContext value={editor}>
-      <div>
-        <Toolbar />
-        <div className={editorStyles}>
-          <DocumentVariableContext value={variable ?? {}}>
-            <EditorContent editor={editor} />
-          </DocumentVariableContext>
+      <PreviewModeContext value={{ isPreview, setPreview: setIsPreview }}>
+        <div>
+          <Toolbar />
+          <div className={editorStyles}>
+            <DocumentVariableContext value={variable ?? {}}>
+              <EditorContent editor={editor} />
+            </DocumentVariableContext>
+          </div>
+          <VariableDrawer {...variableListProps} />
         </div>
-        <VariableDrawer {...variableListProps} />
-      </div>
+      </PreviewModeContext>
     </DocumentEditorContext>
   )
 }

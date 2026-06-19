@@ -2,8 +2,10 @@ import { css } from '@emotion/css'
 import { useEditorState } from '@tiptap/react'
 import { BubbleMenu } from '@tiptap/react/menus'
 import type { SelectProps } from 'antd'
-import { Button, ColorPicker, Divider, Select, Space } from 'antd'
+import { Button, ColorPicker, ConfigProvider, Divider, Select, Space } from 'antd'
 import { useCallback } from 'react'
+import { ImPageBreak } from 'react-icons/im'
+import { IoMdEye, IoMdEyeOff } from 'react-icons/io'
 import {
   MdFormatAlignCenter,
   MdFormatAlignLeft,
@@ -25,6 +27,7 @@ import {
 } from 'react-icons/md'
 import { TbVariablePlus } from 'react-icons/tb'
 import { useDocumentEditor } from '../contexts/DocumentEditorContext'
+import { usePreviewMode } from '../contexts/PreviewModeContext'
 
 const FONT_SIZES = [8, 10, 12, 14, 16, 18, 20, 24, 28, 32, 36, 48]
 
@@ -71,11 +74,15 @@ const bubbleRowStyles = css`
   gap: 4px;
 `
 
+const dividerStyles = css`
+  margin: 4px;
+`
+
 interface ToolbarProps {}
 
 export default function Toolbar({}: ToolbarProps) {
   const editor = useDocumentEditor()
-  // 声明式订阅 editor 状态，仅在这些状态变化时重渲染
+  const { isPreview, setPreview } = usePreviewMode()
   const editorState = useEditorState({
     editor,
     selector: (ctx) => {
@@ -158,7 +165,7 @@ export default function Toolbar({}: ToolbarProps) {
         icon={<MdOutlineStrikethroughS />}
         onClick={() => editor.chain().focus().toggleStrike().run()}
       />
-      <Divider orientation="vertical" />
+      <Divider className={dividerStyles} orientation="vertical" />
       <ColorPicker
         value={editorState.textColor}
         onChange={(color) => editor.chain().focus().setColor(color.toHexString()).run()}
@@ -174,7 +181,7 @@ export default function Toolbar({}: ToolbarProps) {
   )
 
   return (
-    <>
+    <ConfigProvider componentSize="small">
       {/* 顶部工具栏 */}
       <div className={toolbarStyles}>
         {/* 第一行 */}
@@ -194,7 +201,7 @@ export default function Toolbar({}: ToolbarProps) {
             onClick={() => editor.chain().focus().redo().run()}
           />
 
-          <Divider orientation="vertical" />
+          <Divider className={dividerStyles} orientation="vertical" />
 
           <Button
             type={editorState.isBoldActive ? 'primary' : 'text'}
@@ -221,7 +228,7 @@ export default function Toolbar({}: ToolbarProps) {
             onClick={() => editor.chain().focus().toggleStrike().run()}
           />
 
-          <Divider orientation="vertical" />
+          <Divider className={dividerStyles} orientation="vertical" />
 
           <Select
             showSearch={{ filterOption: true }}
@@ -242,7 +249,7 @@ export default function Toolbar({}: ToolbarProps) {
             onChange={handleHeadingClick}
           />
 
-          <Divider orientation="vertical" />
+          <Divider className={dividerStyles} orientation="vertical" />
 
           <Space.Compact>
             <Button
@@ -281,7 +288,7 @@ export default function Toolbar({}: ToolbarProps) {
             onClick={() => editor.chain().focus().indent().run()}
           />
 
-          <Divider orientation="vertical" />
+          <Divider className={dividerStyles} orientation="vertical" />
 
           <Button
             type={editorState.isBulletListActive ? 'primary' : 'text'}
@@ -296,7 +303,7 @@ export default function Toolbar({}: ToolbarProps) {
             onClick={() => editor.chain().focus().toggleOrderedList().run()}
           />
 
-          <Divider orientation="vertical" />
+          <Divider className={dividerStyles} orientation="vertical" />
 
           <ColorPicker
             value={editorState.textColor}
@@ -316,7 +323,7 @@ export default function Toolbar({}: ToolbarProps) {
             <Button type="text" icon={<MdFormatColorFill />} title="背景颜色" />
           </ColorPicker>
 
-          <Divider orientation="vertical" />
+          <Divider className={dividerStyles} orientation="vertical" />
 
           <Button
             type="text"
@@ -325,7 +332,7 @@ export default function Toolbar({}: ToolbarProps) {
             onClick={() => editor.chain().focus().toggleVariableDrawer('insert').run()}
           />
 
-          <Divider orientation="vertical" />
+          <Divider className={dividerStyles} orientation="vertical" />
 
           <Button
             type="text"
@@ -337,26 +344,16 @@ export default function Toolbar({}: ToolbarProps) {
           <Button
             type="text"
             title="插入分页符"
+            icon={<ImPageBreak />}
             onClick={() => editor.chain().focus().insertPageBreak().run()}
-          >
-            ⏎
-          </Button>
-
+          />
+          <Divider className={dividerStyles} size="small" orientation="vertical" />
           <Button
             type="text"
-            title="特殊字符"
-            onClick={() => editor.chain().focus().insertContent('§').run()}
-          >
-            ¶
-          </Button>
-
-          <Button
-            type="text"
-            title="Emoji"
-            onClick={() => editor.chain().focus().insertContent('😀').run()}
-          >
-            😀
-          </Button>
+            icon={isPreview ? <IoMdEyeOff /> : <IoMdEye />}
+            title={isPreview ? '编辑' : '预览'}
+            onClick={() => setPreview(!isPreview)}
+          />
         </div>
       </div>
       {/* 变量节点 */}
@@ -370,7 +367,7 @@ export default function Toolbar({}: ToolbarProps) {
       >
         <div className={bubbleRowStyles}>
           {formatButtons}
-          <Divider orientation="vertical" />
+          <Divider className={dividerStyles} orientation="vertical" />
           <Button
             type="text"
             icon={<MdModeEditOutline />}
@@ -397,6 +394,6 @@ export default function Toolbar({}: ToolbarProps) {
       >
         <div className={bubbleRowStyles}>{formatButtons}</div>
       </BubbleMenu>
-    </>
+    </ConfigProvider>
   )
 }

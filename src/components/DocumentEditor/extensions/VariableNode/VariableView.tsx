@@ -1,6 +1,7 @@
 import { css } from '@emotion/css'
 import { NodeViewWrapper, ReactNodeViewProps } from '@tiptap/react'
 import { useDocumentVariable } from '../../contexts/DocumentVariableContext'
+import { usePreviewMode } from '../../contexts/PreviewModeContext'
 import { VariableNodeAttrs } from './VariableNode'
 
 const style = {
@@ -45,12 +46,13 @@ const style = {
   `,
 }
 
-export default function VariableView({ node, editor }: ReactNodeViewProps) {
+export default function VariableView({ node }: ReactNodeViewProps) {
   const attrs = node.attrs as VariableNodeAttrs
 
   const variable = useDocumentVariable()
+  const { isPreview } = usePreviewMode()
 
-  if (editor.isEditable) {
+  if (!isPreview) {
     return (
       <NodeViewWrapper as="span" className={clsx('variable-node', style.editor)}>
         <span className="variable-node-label">{attrs.label}</span>
