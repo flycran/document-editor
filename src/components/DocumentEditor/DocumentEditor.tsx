@@ -10,10 +10,7 @@ import { Drawer } from 'antd'
 import React from 'react'
 import VariableList, { VariableListProps } from '../VariableList/VariableList'
 import { DocumentEditorContext, useDocumentEditor } from './contexts/DocumentEditorContext'
-import {
-  DocumentVariableContext,
-  DocumentVariableContextType,
-} from './contexts/DocumentVariableContext'
+import { DocumentVariableContext } from './contexts/DocumentVariableContext'
 import { PreviewModeContext } from './contexts/PreviewModeContext'
 import editorStyles from './DocumentEditor.module.scss'
 import { sharedExtensions } from './extensions'
@@ -51,6 +48,9 @@ function VariableDrawer({ ...rest }: VariableDrawerProps) {
       onClose={() => {
         editor.commands.closeVariableDrawer()
       }}
+      classNames={{
+        body: editorStyles['variable-drawer'],
+      }}
     >
       <VariableList {...rest} mode={mode} />
     </Drawer>
@@ -69,8 +69,6 @@ interface EditorProps {
   onUpdate?: (json: JSONContent) => void
   /** 编辑器 ref */
   ref?: React.Ref<Editor | null>
-  /** 变量上下文 */
-  variable?: DocumentVariableContextType
   /** 传递给变量列表组件的 props */
   variableListProps: Omit<VariableListProps, 'mode'>
 }
@@ -78,7 +76,6 @@ interface EditorProps {
 export default function DocumentEditor({
   placeholder = '开始输入...',
   content,
-  variable,
   variableListProps,
   onUpdate,
   ref,
@@ -101,6 +98,7 @@ export default function DocumentEditor({
   })
 
   const [isPreview, setIsPreview] = useState(false)
+  const [previewVariables, setPreviewVariables] = useState<Record<string, any>>({})
 
   useEffect(() => {
     editor?.setEditable(!isPreview)
@@ -111,15 +109,17 @@ export default function DocumentEditor({
   return (
     <DocumentEditorContext value={editor}>
       <PreviewModeContext value={{ isPreview, setPreview: setIsPreview }}>
-        <div>
-          <Toolbar />
-          <div className={clsx(tiptapStyles['document-editor'], editorStyles['editor-only'])}>
-            <DocumentVariableContext value={variable ?? {}}>
+        <DocumentVariableContext
+          value={{ variables: previewVariables, setVariables: setPreviewVariables }}
+        >
+          <div className={clsx({ 'document-editable': !isPreview })}>
+            <Toolbar />
+            <div className={clsx(tiptapStyles['document-editor'], editorStyles['editor-only'])}>
               <EditorContent editor={editor} />
-            </DocumentVariableContext>
+            </div>
+            <VariableDrawer {...variableListProps} />
           </div>
-          <VariableDrawer {...variableListProps} />
-        </div>
+        </DocumentVariableContext>
       </PreviewModeContext>
     </DocumentEditorContext>
   )

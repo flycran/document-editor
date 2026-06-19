@@ -2,7 +2,8 @@ import { useEditorState } from '@tiptap/react'
 import { BubbleMenu } from '@tiptap/react/menus'
 import type { SelectProps } from 'antd'
 import { Button, ColorPicker, ConfigProvider, Divider, Dropdown, Select, Space } from 'antd'
-import { useCallback } from 'react'
+import { useCallback, useState } from 'react'
+import { FaWpforms } from 'react-icons/fa'
 import { ImPageBreak } from 'react-icons/im'
 import { IoMdEye, IoMdEyeOff } from 'react-icons/io'
 import {
@@ -26,12 +27,12 @@ import {
   MdRedo,
   MdUndo,
 } from 'react-icons/md'
-import { SiGoogleforms } from 'react-icons/si'
 import { TbVariablePlus } from 'react-icons/tb'
 import { useDocumentEditor } from '../contexts/DocumentEditorContext'
 import { usePreviewMode } from '../contexts/PreviewModeContext'
 import { SginType, sginEnum } from '../extensions/SginNode/SginUtils'
 import styles from './Toolbar.module.scss'
+import VariableForm from './VariableForm'
 
 const FONT_SIZES = [8, 10, 12, 14, 16, 18, 20, 24, 28, 32, 36, 48]
 
@@ -77,6 +78,7 @@ interface ToolbarProps {}
 export default function Toolbar({}: ToolbarProps) {
   const editor = useDocumentEditor()
   const { isPreview, setPreview } = usePreviewMode()
+  const [formOpen, setFormOpen] = useState(false)
   const editorState = useEditorState({
     editor,
     selector: (ctx) => {
@@ -419,7 +421,12 @@ export default function Toolbar({}: ToolbarProps) {
               onClick={() => setPreview(!isPreview)}
             />
 
-            <Button type="text" icon={<SiGoogleforms />} title="预览变量" />
+            <Button
+              type="text"
+              icon={<FaWpforms />}
+              title="预览变量"
+              onClick={() => setFormOpen(true)}
+            />
           </div>
         </div>
       </ConfigProvider>
@@ -465,6 +472,7 @@ export default function Toolbar({}: ToolbarProps) {
           <div className={styles.bubbleRow}>{formatButtons}</div>
         </BubbleMenu>
       </ConfigProvider>
+      <VariableForm open={formOpen} onClose={() => setFormOpen(false)} />
     </>
   )
 }

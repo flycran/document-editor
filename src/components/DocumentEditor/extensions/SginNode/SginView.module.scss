@@ -1,9 +1,9 @@
 .sgin-view {
-  .variable-node-separator {
+  .sgin-node-separator {
     margin: 0 0.25rem 0 1px;
   }
 
-  .variable-node-code {
+  .sgin-node-code {
     vertical-align: bottom;
 
     svg {
@@ -14,8 +14,7 @@
 
   &.editor {
     display: inline-block;
-    padding: 0 2px;
-    margin: 0 2px;
+    margin: 0 4px;
     cursor: default;
     height: 1.375em;
     line-height: 1.375em;
@@ -34,7 +33,7 @@
       margin-left: 0.25em;
     }
 
-    .variable-node-label {
+    .sgin-node-label {
       color: rgb(228, 120, 44);
     }
   }
@@ -42,5 +41,11 @@
   &:global(.ProseMirror-selectednode).editor {
     outline: 2px solid #1677ff60;
     border-radius: 3px;
+  }
+}
+
+:global(.document-editable) {
+  .wrapper {
+    margin: 0 2px;
   }
 }

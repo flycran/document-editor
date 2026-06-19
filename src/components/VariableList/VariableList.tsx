@@ -4,28 +4,36 @@ import { MdAddCircleOutline } from 'react-icons/md'
 import {
   GetQuestcenterInformedTemplateGetMedicalTemplateList200ListItem,
   InformedTemplateNodeListItem,
+  InformedTemplateNodeListItemElementsItem,
   InformedTemplateParagraphListItem,
 } from '@/api/codegen/schemas'
 import { useDocumentEditor } from '../DocumentEditor/contexts/DocumentEditorContext'
 import type { VariableExtensionMode } from '../DocumentEditor/extensions/VariableExtension'
-import { VariableNodeAttrs } from '../DocumentEditor/extensions/VariableNode/VariableNode'
+import {
+  VariableNodeAttrs,
+  VariableType,
+} from '../DocumentEditor/extensions/VariableNode/VariableNode'
 import styles from './VariableList.module.scss'
 
-export interface InformedTemplateParagraphListItemTree extends TreeDataNode {
-  children?: InformedTemplateParagraphListItemTree[]
+export interface InformedTemplateItemTree extends TreeDataNode {
+  children?: InformedTemplateItemTree[]
   paragraph?: InformedTemplateParagraphListItem
   node?: InformedTemplateNodeListItem
+  element?: InformedTemplateNodeListItemElementsItem
 }
 
 function VariableListTitle({
   paragraph,
   node,
+  element,
   mode,
-}: InformedTemplateParagraphListItemTree & { mode: VariableExtensionMode }) {
+}: InformedTemplateItemTree & { mode: VariableExtensionMode }) {
   return paragraph ? (
     <VariableListParagraph {...paragraph} />
   ) : node ? (
     <VariableListNode node={node} mode={mode} />
+  ) : element ? (
+    <VariableListElement element={element} mode={mode} />
   ) : null
 }
 
@@ -46,6 +54,7 @@ function VariableListNode({
     const data: VariableNodeAttrs = {
       label: node.node_name,
       code: node.code,
+      type: 'text',
     }
     if (mode === 'replace' && editor.isActive('variable')) {
       // 替换模式：更新当前选中变量节点的属性
@@ -63,6 +72,54 @@ function VariableListNode({
     >
       <MdAddCircleOutline className="plus-icon" size={18} />
       <span>{node.node_name}</span>
+    </span>
+  )
+}
+
+function VariableListElement({
+  element,
+  mode,
+}: {
+  element: InformedTemplateNodeListItemElementsItem
+  mode: VariableExtensionMode
+}) {
+  const editor = useDocumentEditor()
+
+  const handleClick = () => {
+    const type: VariableType =
+      element.is_bool === 1
+        ? 'boolean'
+        : element.is_number === 1
+          ? 'number'
+          : element.is_date === 1
+            ? 'date'
+            : element.is_time === 1
+              ? 'time'
+              : element.is_date_time === 1
+                ? 'date-time'
+                : 'text'
+
+    const data: VariableNodeAttrs = {
+      label: element.name,
+      code: element.code,
+      type,
+    }
+    if (mode === 'replace' && editor.isActive('variable')) {
+      // 替换模式：更新当前选中变量节点的属性
+      editor.chain().focus().updateAttributes('variable', data).run()
+    } else {
+      // 插入模式（默认）：插入新变量节点
+      editor.chain().focus().insertVariable(data).run()
+    }
+  }
+  return (
+    <span
+      onClick={handleClick}
+      className={styles.node}
+      title={`点击${mode === 'replace' ? '替换' : '插入'}变量: ${element.code} ${element.name}`}
+    >
+      <MdAddCircleOutline className="plus-icon" size={18} />
+      <span>{element.name}</span>
     </span>
   )
 }
@@ -111,34 +168,54 @@ export default function VariableList({
   const options = useMemo(() => {
     const buildParagraphTree = (
       nodes: InformedTemplateParagraphListItem[]
-    ): InformedTemplateParagraphListItemTree[] => {
+    ): InformedTemplateItemTree[] => {
       return nodes.map((paragraph) => {
-        const children = paragraph.node_list
-          ? buildNodeTree(paragraph.node_list)
-          : paragraph.child_paragraph_list
-            ? buildParagraphTree(paragraph.child_paragraph_list)
-            : undefined
+        const children: InformedTemplateItemTree[] = []
+        if (paragraph.child_paragraph_list) {
+          children.push(...buildParagraphTree(paragraph.child_paragraph_list))
+        }
+        if (paragraph.node_list) {
+          children.push(...buildNodeTree(paragraph.node_list))
+        }
         return {
-          disabled: !children?.length,
           title: paragraph.name,
           children,
-          key: paragraph.paragraph_id,
+          key: `paragraph-${paragraph.paragraph_id}`,
           paragraph: paragraph,
         }
       })
     }
-    const buildNodeTree = (
-      nodes: InformedTemplateNodeListItem[]
-    ): InformedTemplateParagraphListItemTree[] => {
+    const buildNodeTree = (nodes: InformedTemplateNodeListItem[]): InformedTemplateItemTree[] => {
       return nodes.map((node) => {
+        const children: InformedTemplateItemTree[] = []
+        if (node.has_child_node) {
+          children.push(...buildNodeTree(node.child_nodes))
+        }
+        if (node.has_element) {
+          children.push(...buildElementTree(node.elements))
+        }
+
         return {
           title: node.node_name,
-          children: node.child_nodes && buildNodeTree(node.child_nodes),
-          key: node.node_id,
+          children,
+          key: `node-${node.node_id}`,
           node: node,
         }
       })
     }
+
+    const buildElementTree = (
+      elements: InformedTemplateNodeListItemElementsItem[]
+    ): InformedTemplateItemTree[] => {
+      return elements.map((element) => {
+        return {
+          title: element.name,
+          key: `element-${element.id}-${Math.random()}`,
+          element: element,
+        }
+      })
+    }
+
     return variableList && buildParagraphTree(variableList)
   }, [variableList])
 
@@ -156,7 +233,6 @@ export default function VariableList({
       </div>
       <Spin spinning={variableListLoading} className={styles.spin}>
         <Tree
-          defaultExpandAll
           treeData={options}
           titleRender={(item) => <VariableListTitle {...item} mode={mode} />}
           checkable={false}

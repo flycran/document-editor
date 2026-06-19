@@ -7,7 +7,7 @@ import styles from './VariableView.module.scss'
 export default function VariableView({ node }: ReactNodeViewProps) {
   const attrs = node.attrs as VariableNodeAttrs
 
-  const variable = useDocumentVariable()
+  const { variables } = useDocumentVariable()
   const { isPreview } = usePreviewMode()
 
   if (!isPreview) {
@@ -16,9 +16,11 @@ export default function VariableView({ node }: ReactNodeViewProps) {
         as="span"
         className={clsx('variable-node', styles['variable'], styles.editor)}
       >
-        <span className={styles['variable-node-label']}>{attrs.label}</span>
-        <span className={styles['variable-node-separator']}>:</span>
-        <span className={styles['variable-node-code']}>{attrs.code}</span>
+        <>
+          <span className={styles['variable-node-label']}>{attrs.label}</span>
+          <span className={styles['variable-node-separator']}>:</span>
+          <span className={styles['variable-node-code']}>{attrs.code}</span>
+        </>
       </NodeViewWrapper>
     )
   }
@@ -30,7 +32,7 @@ export default function VariableView({ node }: ReactNodeViewProps) {
     >
       <span className={styles['variable-node-label']}>{attrs.label}</span>
       <span className={styles['variable-node-separator']}>:</span>
-      <span className={styles['variable-node-code']}>{variable[attrs.code]}</span>
+      <span className={styles['variable-node-code']}>{variables[attrs.code]}</span>
     </NodeViewWrapper>
   )
 }

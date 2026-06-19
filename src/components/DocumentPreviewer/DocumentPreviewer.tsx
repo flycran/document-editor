@@ -21,7 +21,7 @@ export default function DocumentPreviewer({ content, variable }: PreviewerProps)
 
   return (
     <div className={tiptapStyles['document-editor']}>
-      <DocumentVariableContext value={variable ?? {}}>
+      <DocumentVariableContext value={{ variables: variable ?? {}, setVariables: () => {} }}>
         <EditorContent editor={editor} />
       </DocumentVariableContext>
     </div>

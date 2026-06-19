@@ -2,6 +2,7 @@ import { Attribute, Node } from '@tiptap/core'
 import { ReactNodeViewRenderer } from '@tiptap/react'
 import { SginType as SginType } from './SginUtils'
 import SginView from './SginView'
+import styles from './SginView.module.scss'
 
 export interface SginNodeAttrs {
   type: SginType
@@ -68,6 +69,8 @@ export const SginNode = Node.create({
   },
 
   addNodeView() {
-    return ReactNodeViewRenderer(SginView)
+    return ReactNodeViewRenderer(SginView, {
+      className: styles.wrapper,
+    })
   },
 })

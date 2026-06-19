@@ -14,11 +14,11 @@ export default function SginView({ node }: ReactNodeViewProps) {
     return (
       <NodeViewWrapper
         as="span"
-        className={clsx('variable-node', styles['sgin-view'], styles['editor'])}
+        className={clsx('sgin-node', styles['sgin-view'], styles['editor'])}
       >
-        <span className={styles['variable-node-label']}>{sginEnum[attrs.type]}</span>
-        <span className={styles['variable-node-separator']}>:</span>
-        <span className={styles['variable-node-code']}>
+        <span className={styles['sgin-node-label']}>{sginEnum[attrs.type]}</span>
+        <span className={styles['sgin-node-separator']}>:</span>
+        <span className={styles['sgin-node-code']}>
           <MdFingerprint />
         </span>
       </NodeViewWrapper>
@@ -26,13 +26,10 @@ export default function SginView({ node }: ReactNodeViewProps) {
   }
 
   return (
-    <NodeViewWrapper
-      as="span"
-      className={clsx('variable-node', styles['sgin-view'], styles.preview)}
-    >
-      <span className={styles['variable-node-label']}>{sginEnum[attrs.type]}</span>
-      <span className={styles['variable-node-separator']}>:</span>
-      <span className={styles['variable-node-code']}>
+    <NodeViewWrapper as="span" className={clsx('sgin-node', styles['sgin-view'], styles.preview)}>
+      <span className={styles['sgin-node-label']}>{sginEnum[attrs.type]}</span>
+      <span className={styles['sgin-node-separator']}>:</span>
+      <span className={styles['sgin-node-code']}>
         <MdFingerprint />
       </span>
     </NodeViewWrapper>

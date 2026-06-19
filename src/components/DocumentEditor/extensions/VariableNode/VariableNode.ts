@@ -1,10 +1,14 @@
 import { Attribute, Node } from '@tiptap/core'
 import { ReactNodeViewRenderer } from '@tiptap/react'
 import VariableView from './VariableView'
+import styles from './VariableView.module.scss'
+
+export type VariableType = 'boolean' | 'text' | 'number' | 'date' | 'time' | 'date-time'
 
 export interface VariableNodeAttrs {
   label: string
   code: string
+  type: VariableType
 }
 declare module '@tiptap/core' {
   interface Commands<ReturnType> {
@@ -34,6 +38,10 @@ export const VariableNode = Node.create({
         default: '',
         parseHTML: (element) => element.getAttribute('data-node-code') || '',
       },
+      type: {
+        default: 'text',
+        parseHTML: (element) => element.getAttribute('data-node-type') || 'text',
+      },
     }
   },
 
@@ -46,13 +54,14 @@ export const VariableNode = Node.create({
   },
 
   renderHTML({ node }) {
-    const { label, code } = node.attrs as VariableNodeAttrs
+    const { label, code, type } = node.attrs as VariableNodeAttrs
 
     return [
       'span',
       {
         'data-node-label': label,
         'data-node-code': code,
+        'data-node-type': type,
         class: 'variable-node',
       },
     ]
@@ -72,6 +81,8 @@ export const VariableNode = Node.create({
   },
 
   addNodeView() {
-    return ReactNodeViewRenderer(VariableView)
+    return ReactNodeViewRenderer(VariableView, {
+      className: styles.wrapper,
+    })
   },
 })
