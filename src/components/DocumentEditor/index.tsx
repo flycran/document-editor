@@ -8,7 +8,7 @@ import { TextStyle } from '@tiptap/extension-text-style'
 import { Editor, EditorContent, useEditor } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
 import React from 'react'
-import { useGetQuestcenterInformedTemplateGetTemplateDetailByMedicalId } from '@/api/codegen/petstore'
+import { DocumentEditorContext } from './contexts/DocumentEditorContext'
 import { sharedExtensions } from './extensions'
 import { tiptapStyles } from './styles'
 import Toolbar from './Toolbar'
@@ -35,18 +35,16 @@ const editorStyles = cx(tiptapStyles, editorOnlyStyles)
 interface EditorProps {
   placeholder?: string
   content?: string
+  children?: React.ReactNode
   onUpdate?: (html: string) => void
   ref?: React.Ref<Editor | null>
-  variableViewOpen?: boolean
-  onSetVariableViewOpen?: (open: boolean) => void
 }
 
 export default function DocumentEditor({
   placeholder = '开始输入...',
   content = '',
+  children,
   onUpdate,
-  variableViewOpen,
-  onSetVariableViewOpen,
   ref,
 }: EditorProps) {
   const extensions = [
@@ -67,22 +65,17 @@ export default function DocumentEditor({
     },
   })
 
-  const { data } = useGetQuestcenterInformedTemplateGetTemplateDetailByMedicalId({
-    medical_id: '1172341073113121113',
-  })
-
   useImperativeHandle(ref, () => editor)
 
   return (
-    <div>
-      <Toolbar
-        editor={editor}
-        variableViewOpen={variableViewOpen}
-        onSetVariableViewOpen={onSetVariableViewOpen}
-      />
-      <div className={editorStyles}>
-        <EditorContent editor={editor} />
+    <DocumentEditorContext value={editor}>
+      <div>
+        <Toolbar />
+        <div className={editorStyles}>
+          <EditorContent editor={editor} />
+        </div>
+        {children}
       </div>
-    </div>
+    </DocumentEditorContext>
   )
 }

@@ -85,6 +85,50 @@ export const tiptapStyles = css`
       }
     }
 
+    .variable-node {
+      display: inline-block;
+      padding: 0 6px;
+      margin: 0 2px;
+      color: #1677ff;
+      cursor: default;
+      height: 1.375em;
+      line-height: 1.375em;
+
+      &.ProseMirror-selectednode {
+        outline: 2px solid #1677ff60;
+        background: #1677ff60;
+        border-radius: 3px;
+      }
+
+      ::before {
+        content: "{{";
+        font-weight: 500;
+        margin-right: 0.25em;
+      }
+
+      ::after {
+        content: "}}";
+        font-weight: 500;
+        margin-left: 0.25em;
+      }
+
+      .variable-node-label {
+        outline: 1px solid rgb(228, 120, 44);
+        color: rgb(228, 120, 44);
+        padding: 0 4px;
+        border-radius: 2px;
+      }
+      .variable-node-separator {
+        margin: 0 0.25em;
+      }
+      .variable-node-code {
+        outline: 1px solid rgb(0, 143, 145);
+        color: rgb(0, 143, 145);
+        padding: 0 4px;
+        border-radius: 2px;
+      }
+    }
+
     @media print {
       .page-break {
         height: 0;

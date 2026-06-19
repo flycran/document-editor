@@ -19,6 +19,10 @@ const codegenApiConfig: CodegenApiConfig = {
       },
       input: {
         target: content,
+        filters: {
+          mode: 'include',
+          tags: ['模版设置 > 知情告知模版', '模版设置 > 知情告知模版'],
+        },
         override: {
           transformer,
         },

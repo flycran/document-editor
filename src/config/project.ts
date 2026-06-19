@@ -11,7 +11,7 @@ interface ProjectMeta {
 
 const project = {
   name: 'document-editor',
-  port: 4003,
+  port: 4004,
   keepQueryKey: ['password', 'tenant_id', 'password'],
   origin: {
     /** 测试 */

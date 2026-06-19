@@ -1,5 +1,4 @@
 import { css } from '@emotion/css'
-import type { Editor } from '@tiptap/react'
 import { useEditorState } from '@tiptap/react'
 import { BubbleMenu } from '@tiptap/react/menus'
 import type { SelectProps } from 'antd'
@@ -18,12 +17,14 @@ import {
   MdFormatItalic,
   MdFormatListBulleted,
   MdFormatListNumbered,
-  MdFormatStrikethrough,
   MdFormatUnderlined,
+  MdModeEditOutline,
+  MdOutlineStrikethroughS,
   MdRedo,
   MdUndo,
 } from 'react-icons/md'
 import { TbVariablePlus } from 'react-icons/tb'
+import { useDocumentEditor } from './contexts/DocumentEditorContext'
 
 const FONT_SIZES = [8, 10, 12, 14, 16, 18, 20, 24, 28, 32, 36, 48]
 
@@ -70,13 +71,10 @@ const bubbleRowStyles = css`
   gap: 4px;
 `
 
-interface ToolbarProps {
-  editor: Editor
-  variableViewOpen?: boolean
-  onSetVariableViewOpen?: (open: boolean) => void
-}
+interface ToolbarProps {}
 
-export default function Toolbar({ editor, variableViewOpen, onSetVariableViewOpen }: ToolbarProps) {
+export default function Toolbar({}: ToolbarProps) {
+  const editor = useDocumentEditor()
   // 声明式订阅 editor 状态，仅在这些状态变化时重渲染
   const editorState = useEditorState({
     editor,
@@ -138,6 +136,43 @@ export default function Toolbar({ editor, variableViewOpen, onSetVariableViewOpe
     [editor]
   )
 
+  const formatButtons = (
+    <>
+      <Button
+        type={editorState.isBoldActive ? 'primary' : 'text'}
+        icon={<MdFormatBold />}
+        onClick={() => editor.chain().focus().toggleBold().run()}
+      />
+      <Button
+        type={editorState.isItalicActive ? 'primary' : 'text'}
+        icon={<MdFormatItalic />}
+        onClick={() => editor.chain().focus().toggleItalic().run()}
+      />
+      <Button
+        type={editorState.isUnderlineActive ? 'primary' : 'text'}
+        icon={<MdFormatUnderlined />}
+        onClick={() => editor.chain().focus().toggleUnderline().run()}
+      />
+      <Button
+        type={editorState.isStrikeActive ? 'primary' : 'text'}
+        icon={<MdOutlineStrikethroughS />}
+        onClick={() => editor.chain().focus().toggleStrike().run()}
+      />
+      <Divider orientation="vertical" />
+      <ColorPicker
+        value={editorState.textColor}
+        onChange={(color) => editor.chain().focus().setColor(color.toHexString()).run()}
+      >
+        <Button type="text" icon={<MdFormatColorText />} />
+      </ColorPicker>
+      <Button
+        type="text"
+        icon={<MdFormatClear />}
+        onClick={() => editor.chain().focus().unsetAllMarks().run()}
+      />
+    </>
+  )
+
   return (
     <>
       {/* 顶部工具栏 */}
@@ -181,7 +216,7 @@ export default function Toolbar({ editor, variableViewOpen, onSetVariableViewOpe
           />
           <Button
             type={editorState.isStrikeActive ? 'primary' : 'text'}
-            icon={<MdFormatStrikethrough />}
+            icon={<MdOutlineStrikethroughS />}
             title="删除线"
             onClick={() => editor.chain().focus().toggleStrike().run()}
           />
@@ -284,10 +319,10 @@ export default function Toolbar({ editor, variableViewOpen, onSetVariableViewOpe
           <Divider orientation="vertical" />
 
           <Button
-            type={variableViewOpen ? 'primary' : 'text'}
+            type="text"
             icon={<TbVariablePlus />}
             title="插入变量"
-            onClick={() => onSetVariableViewOpen?.(!variableViewOpen)}
+            onClick={() => editor.chain().focus().toggleVariableView('insert').run()}
           />
 
           <Divider orientation="vertical" />
@@ -324,42 +359,43 @@ export default function Toolbar({ editor, variableViewOpen, onSetVariableViewOpe
           </Button>
         </div>
       </div>
-      {/* Bubble Menu - 选中时弹出格式弹窗 */}
-      <BubbleMenu editor={editor} className={bubbleStyles}>
+      {/* Bubble Menu - 变量节点：默认格式 + 编辑按钮 */}
+      <BubbleMenu
+        editor={editor}
+        pluginKey="bubbleMenu-variable"
+        className={bubbleStyles}
+        shouldShow={({ editor: ed }) => {
+          return ed.isActive('variable')
+        }}
+      >
         <div className={bubbleRowStyles}>
-          <Button
-            type={editorState.isBoldActive ? 'primary' : 'text'}
-            icon={<MdFormatBold />}
-            onClick={() => editor.chain().focus().toggleBold().run()}
-          />
-          <Button
-            type={editorState.isItalicActive ? 'primary' : 'text'}
-            icon={<MdFormatItalic />}
-            onClick={() => editor.chain().focus().toggleItalic().run()}
-          />
-          <Button
-            type={editorState.isUnderlineActive ? 'primary' : 'text'}
-            icon={<MdFormatUnderlined />}
-            onClick={() => editor.chain().focus().toggleUnderline().run()}
-          />
-          <Button
-            type={editorState.isStrikeActive ? 'primary' : 'text'}
-            icon={<MdFormatStrikethrough />}
-            onClick={() => editor.chain().focus().toggleStrike().run()}
-          />
+          {formatButtons}
           <Divider orientation="vertical" />
-          <ColorPicker
-            value={editorState.textColor}
-            onChange={(color) => editor.chain().focus().setColor(color.toHexString()).run()}
-          >
-            <Button type="text" icon={<MdFormatColorText />} />
-          </ColorPicker>
           <Button
             type="text"
-            icon={<MdFormatClear />}
-            onClick={() => editor.chain().focus().unsetAllMarks().run()}
+            icon={<MdModeEditOutline />}
+            title="替换变量"
+            onClick={() => {
+              editor.chain().focus().toggleVariableView('replace').run()
+            }}
           />
         </div>
+      </BubbleMenu>
+
+      {/* Bubble Menu - 默认文本格式菜单（排除分页符和变量节点） */}
+      <BubbleMenu
+        editor={editor}
+        pluginKey="bubbleMenu-text"
+        className={bubbleStyles}
+        shouldShow={({ state, editor: ed }) => {
+          const { selection } = state
+          // 分页符和变量节点不显示默认菜单
+          if (ed.isActive('pageBreak') || ed.isActive('variable')) return false
+          const { empty } = selection
+          return !empty
+        }}
+      >
+        <div className={bubbleRowStyles}>{formatButtons}</div>
       </BubbleMenu>
     </>
   )
