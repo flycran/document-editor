@@ -1,13 +1,18 @@
 import { EditorContent, useEditor } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
+import {
+  DocumentVariableContext,
+  DocumentVariableContextType,
+} from '../DocumentEditor/contexts/DocumentVariableContext'
 import { sharedExtensions } from '../DocumentEditor/extensions'
 import { tiptapStyles } from '../DocumentEditor/styles'
 
 interface PreviewerProps {
   content?: string
+  variable?: DocumentVariableContextType
 }
 
-export default function DocumentPreviewer({ content = '' }: PreviewerProps) {
+export default function DocumentPreviewer({ content = '', variable }: PreviewerProps) {
   const editor = useEditor({
     extensions: [StarterKit, ...sharedExtensions],
     content,
@@ -16,7 +21,9 @@ export default function DocumentPreviewer({ content = '' }: PreviewerProps) {
 
   return (
     <div className={tiptapStyles}>
-      <EditorContent editor={editor} />
+      <DocumentVariableContext value={variable ?? {}}>
+        <EditorContent editor={editor} />
+      </DocumentVariableContext>
     </div>
   )
 }

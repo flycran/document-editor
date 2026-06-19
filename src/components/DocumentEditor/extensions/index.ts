@@ -1,14 +1,8 @@
-export { PageBreakNode as PageBreak } from './PageBreakNode'
-export { TextIndentNode as TextIndent } from './TextIndentNode'
-export { VariableNode as Variable } from './VariableNode'
-export type { VariableViewMode, VariableViewState } from './VariableViewExtension'
-export { VariableViewExtension as VariableView } from './VariableViewExtension'
-
 import type { Extensions } from '@tiptap/core'
 import { PageBreakNode } from './PageBreakNode'
 import { TextIndentNode } from './TextIndentNode'
-import { VariableNode } from './VariableNode'
-import { VariableViewExtension } from './VariableViewExtension'
+import { VariableExtension } from './VariableExtension'
+import { VariableNode } from './VariableNode/VariableNode'
 
 /**
  * 编辑器和预览器共享的自定义扩展
@@ -18,5 +12,5 @@ export const sharedExtensions: Extensions = [
   TextIndentNode,
   PageBreakNode,
   VariableNode,
-  VariableViewExtension,
+  VariableExtension,
 ]

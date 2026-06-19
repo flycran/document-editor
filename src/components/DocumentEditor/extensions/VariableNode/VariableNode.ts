@@ -1,4 +1,6 @@
 import { Node } from '@tiptap/core'
+import { ReactNodeViewRenderer } from '@tiptap/react'
+import VariableView from './VariableView'
 
 export interface VariableNodeAttrs {
   key: string
@@ -31,11 +33,11 @@ export const VariableNode = Node.create({
       },
       label: {
         default: '',
-        parseHTML: (element) => element.querySelector('.variable-node-label')?.textContent || '',
+        parseHTML: (element) => element.getAttribute('data-node-label') || '',
       },
       code: {
         default: '',
-        parseHTML: (element) => element.querySelector('.variable-node-code')?.textContent || '',
+        parseHTML: (element) => element.getAttribute('data-node-code') || '',
       },
     }
   },
@@ -50,18 +52,16 @@ export const VariableNode = Node.create({
 
   renderHTML({ node }) {
     const { key, label, code } = node.attrs as VariableNodeAttrs
-    const display = label || key
 
     return [
       'span',
       {
         'data-variable-key': key,
+        'data-node-label': label,
+        'data-node-code': code,
         class: 'variable-node',
         contenteditable: 'false',
       },
-      ['span', { class: 'variable-node-label' }, display],
-      ['span', { class: 'variable-node-separator' }, ':'],
-      ['span', { class: 'variable-node-code' }, code],
     ]
   },
 
@@ -76,5 +76,9 @@ export const VariableNode = Node.create({
           })
         },
     }
+  },
+
+  addNodeView() {
+    return ReactNodeViewRenderer(VariableView)
   },
 })

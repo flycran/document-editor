@@ -39,17 +39,8 @@ export const PageBreakNode = Node.create({
       {
         class: 'page-break',
         contenteditable: 'false',
-        style:
-          'height: 2px; background: repeating-linear-gradient(90deg, #999 0px, #999 6px, transparent 6px, transparent 12px); margin: 24px 0; position: relative;',
       },
-      [
-        'span',
-        {
-          style:
-            'position: absolute; left: 50%; top: -10px; transform: translateX(-50%); background: #fff; padding: 0 8px; color: #999; font-size: 12px;',
-        },
-        '分页符',
-      ],
+      ['span', {}, '分页符'],
     ]
   },
 

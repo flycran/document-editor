@@ -1,108 +1,107 @@
 import { css } from '@emotion/css'
-import { Drawer, DrawerProps, Select, Tree } from 'antd'
-import clsx from 'clsx'
+import { Select, Tree, TreeDataNode } from 'antd'
 import { useEffect, useMemo, useState } from 'react'
+import { MdAddCircleOutline } from 'react-icons/md'
 import {
   GetQuestcenterInformedTemplateGetMedicalTemplateList200ListItem,
   InformedTemplateNodeListItem,
   InformedTemplateParagraphListItem,
 } from '@/api/codegen/schemas'
 import { useDocumentEditor } from '../DocumentEditor/contexts/DocumentEditorContext'
-import type { VariableViewMode } from '../DocumentEditor/extensions/VariableViewExtension'
+import type { VariableExtensionMode } from '../DocumentEditor/extensions/VariableExtension'
 
-interface InformedTemplateParagraphListItemTree {
+export interface InformedTemplateParagraphListItemTree extends TreeDataNode {
   children?: InformedTemplateParagraphListItemTree[]
-  title: string
   paragraph?: InformedTemplateParagraphListItem
   node?: InformedTemplateNodeListItem
-  key: string
 }
 
-function VariableViewTitle({
+function VariableListTitle({
   paragraph,
   node,
   mode,
-}: InformedTemplateParagraphListItemTree & { mode: VariableViewMode }) {
+}: InformedTemplateParagraphListItemTree & { mode: VariableExtensionMode }) {
   return paragraph ? (
-    <VariableViewParagraph {...paragraph} />
+    <VariableListParagraph {...paragraph} />
   ) : node ? (
-    <VariableViewNode node={node} mode={mode} />
+    <VariableListNode node={node} mode={mode} />
   ) : null
 }
 
-function VariableViewParagraph(props: InformedTemplateParagraphListItem) {
+function VariableListParagraph(props: InformedTemplateParagraphListItem) {
   return <span>{props.name}</span>
 }
-function VariableViewNode({
+
+const nodeStyle = css`
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  vertical-align: top;
+  color: var(--ant-color-primary);
+`
+
+function VariableListNode({
   node,
   mode,
 }: {
   node: InformedTemplateNodeListItem
-  mode: VariableViewMode
+  mode: VariableExtensionMode
 }) {
   const editor = useDocumentEditor()
 
   const handleClick = () => {
+    const data = {
+      key: node.code,
+      label: node.node_name,
+      code: node.code,
+    }
     if (mode === 'replace' && editor.isActive('variable')) {
       // 替换模式：更新当前选中变量节点的属性
-      editor
-        .chain()
-        .focus()
-        .updateAttributes('variable', {
-          key: node.code,
-          label: node.node_name,
-          code: node.code,
-        })
-        .run()
+      editor.chain().focus().updateAttributes('variable', data).run()
     } else {
       // 插入模式（默认）：插入新变量节点
-      editor
-        .chain()
-        .focus()
-        .insertVariable({
-          key: node.code,
-          label: node.node_name,
-          code: node.code,
-        })
-        .run()
+      editor.chain().focus().insertVariable(data).run()
     }
   }
   return (
     <span
       onClick={handleClick}
+      className={nodeStyle}
       title={`点击${mode === 'replace' ? '替换' : '插入'}变量: ${node.code} ${node.node_name}`}
     >
-      {node.node_name}
+      <MdAddCircleOutline className="plus-icon" size={18} />
+      <span>{node.node_name}</span>
     </span>
   )
 }
 
-const style = css`
-  .variable-view-body {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
+const viewStyle = css`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 `
 
-export interface VariableViewProps extends DrawerProps {
+export interface VariableListProps {
+  /** 变量列表 */
   variableList?: InformedTemplateParagraphListItem[]
+  /** 模板列表 */
   templateList?: GetQuestcenterInformedTemplateGetMedicalTemplateList200ListItem[]
+  /** 选中的模板 */
   templateValue?: string
+  /** 模板选中回调 */
   onTemplateSelect?: (templateMedicalId: string) => void
-  /** 变量操作模式：insert（插入新节点）| replace（替换当前选中节点） */
-  mode?: VariableViewMode
+  /** 变量选择模式 */
+  mode?: VariableExtensionMode
 }
 
-export default function VariableView({
+/** 变量选择视图 */
+export default function VariableList({
   variableList,
   templateList,
   templateValue,
   onTemplateSelect,
   mode = 'insert',
-  className,
-  ...rest
-}: VariableViewProps) {
+}: VariableListProps) {
   const [$template, $setTemplate1] = useState<string>()
 
   useEffect(() => {
@@ -118,16 +117,17 @@ export default function VariableView({
   }, [$template])
 
   const options = useMemo(() => {
-    const rp = (
+    const buildParagraphTree = (
       nodes: InformedTemplateParagraphListItem[]
     ): InformedTemplateParagraphListItemTree[] => {
       return nodes.map((paragraph) => {
         const children = paragraph.node_list
-          ? rn(paragraph.node_list)
+          ? buildNodeTree(paragraph.node_list)
           : paragraph.child_paragraph_list
-            ? rp(paragraph.child_paragraph_list)
+            ? buildParagraphTree(paragraph.child_paragraph_list)
             : undefined
         return {
+          disabled: !children?.length,
           title: paragraph.name,
           children,
           key: paragraph.paragraph_id,
@@ -135,36 +135,36 @@ export default function VariableView({
         }
       })
     }
-    const rn = (nodes: InformedTemplateNodeListItem[]): InformedTemplateParagraphListItemTree[] => {
+    const buildNodeTree = (
+      nodes: InformedTemplateNodeListItem[]
+    ): InformedTemplateParagraphListItemTree[] => {
       return nodes.map((node) => {
         return {
           title: node.node_name,
-          children: node.child_nodes && rn(node.child_nodes),
+          children: node.child_nodes && buildNodeTree(node.child_nodes),
           key: node.node_id,
           node: node,
         }
       })
     }
-    return variableList && rp(variableList)
+    return variableList && buildParagraphTree(variableList)
   }, [variableList])
 
   return (
-    <Drawer size={600} {...rest} className={clsx(style, className)}>
-      <div className="variable-view-body">
-        <Select<string>
-          options={templateList}
-          fieldNames={{ label: 'template_name', value: 'medical_id' }}
-          value={$template}
-          onChange={$setTemplate1}
-          style={{ width: '100%' }}
-        />
-        <Tree
-          treeData={options}
-          titleRender={(item) => <VariableViewTitle {...item} mode={mode} />}
-          checkable={false}
-          selectable={false}
-        />
-      </div>
-    </Drawer>
+    <div className={viewStyle}>
+      <Select<string>
+        options={templateList}
+        fieldNames={{ label: 'template_name', value: 'medical_id' }}
+        value={$template}
+        onChange={$setTemplate1}
+        style={{ width: '100%' }}
+      />
+      <Tree
+        treeData={options}
+        titleRender={(item) => <VariableListTitle {...item} mode={mode} />}
+        checkable={false}
+        selectable={false}
+      />
+    </div>
   )
 }

@@ -24,7 +24,7 @@ import {
   MdUndo,
 } from 'react-icons/md'
 import { TbVariablePlus } from 'react-icons/tb'
-import { useDocumentEditor } from './contexts/DocumentEditorContext'
+import { useDocumentEditor } from '../contexts/DocumentEditorContext'
 
 const FONT_SIZES = [8, 10, 12, 14, 16, 18, 20, 24, 28, 32, 36, 48]
 
@@ -322,7 +322,7 @@ export default function Toolbar({}: ToolbarProps) {
             type="text"
             icon={<TbVariablePlus />}
             title="插入变量"
-            onClick={() => editor.chain().focus().toggleVariableView('insert').run()}
+            onClick={() => editor.chain().focus().toggleVariableDrawer('insert').run()}
           />
 
           <Divider orientation="vertical" />
@@ -359,7 +359,7 @@ export default function Toolbar({}: ToolbarProps) {
           </Button>
         </div>
       </div>
-      {/* Bubble Menu - 变量节点：默认格式 + 编辑按钮 */}
+      {/* 变量节点 */}
       <BubbleMenu
         editor={editor}
         pluginKey="bubbleMenu-variable"
@@ -376,13 +376,13 @@ export default function Toolbar({}: ToolbarProps) {
             icon={<MdModeEditOutline />}
             title="替换变量"
             onClick={() => {
-              editor.chain().focus().toggleVariableView('replace').run()
+              editor.chain().focus().toggleVariableDrawer('replace').run()
             }}
           />
         </div>
       </BubbleMenu>
 
-      {/* Bubble Menu - 默认文本格式菜单（排除分页符和变量节点） */}
+      {/* 默认文本格式菜单 */}
       <BubbleMenu
         editor={editor}
         pluginKey="bubbleMenu-text"

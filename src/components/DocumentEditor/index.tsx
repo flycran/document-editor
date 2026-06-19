@@ -5,13 +5,20 @@ import Highlight from '@tiptap/extension-highlight'
 import Placeholder from '@tiptap/extension-placeholder'
 import TextAlign from '@tiptap/extension-text-align'
 import { TextStyle } from '@tiptap/extension-text-style'
-import { Editor, EditorContent, useEditor } from '@tiptap/react'
+import { Editor, EditorContent, EditorEvents, useEditor } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
+import { Drawer } from 'antd'
 import React from 'react'
-import { DocumentEditorContext } from './contexts/DocumentEditorContext'
+import VariableList, { VariableListProps } from '../VariableList/VariableList'
+import { DocumentEditorContext, useDocumentEditor } from './contexts/DocumentEditorContext'
+import {
+  DocumentVariableContext,
+  DocumentVariableContextType,
+} from './contexts/DocumentVariableContext'
 import { sharedExtensions } from './extensions'
+import { VariableExtensionMode } from './extensions/VariableExtension'
 import { tiptapStyles } from './styles'
-import Toolbar from './Toolbar'
+import Toolbar from './Toolbar/Toolbar'
 
 /**
  * 编辑器专用：placeholder 样式
@@ -30,20 +37,54 @@ export const editorOnlyStyles = css`
   }
 `
 
+interface VariableDrawerProps extends Omit<VariableListProps, 'mode'> {}
+
+function VariableDrawer({ ...rest }: VariableDrawerProps) {
+  const [open, setOpen] = useState(false)
+  const [mode, setMode] = useState<VariableExtensionMode>('insert')
+  const editor = useDocumentEditor()
+
+  useEffect(() => {
+    if (!editor) return
+    const handleChange = ({ open, mode }: EditorEvents['variableExtension:change']) => {
+      setOpen(open)
+      setMode(mode)
+    }
+    editor.on('variableExtension:change', handleChange)
+    return () => {
+      editor.off('variableExtension:change', handleChange)
+    }
+  }, [editor])
+
+  return (
+    <Drawer
+      size={600}
+      open={open}
+      onClose={() => {
+        editor.commands.closeVariableDrawer()
+      }}
+    >
+      <VariableList {...rest} mode={mode} />
+    </Drawer>
+  )
+}
+
 const editorStyles = cx(tiptapStyles, editorOnlyStyles)
 
 interface EditorProps {
   placeholder?: string
   content?: string
-  children?: React.ReactNode
   onUpdate?: (html: string) => void
   ref?: React.Ref<Editor | null>
+  variable?: DocumentVariableContextType
+  variableListProps: Omit<VariableListProps, 'mode'>
 }
 
 export default function DocumentEditor({
   placeholder = '开始输入...',
   content = '',
-  children,
+  variable,
+  variableListProps,
   onUpdate,
   ref,
 }: EditorProps) {
@@ -72,9 +113,11 @@ export default function DocumentEditor({
       <div>
         <Toolbar />
         <div className={editorStyles}>
-          <EditorContent editor={editor} />
+          <DocumentVariableContext value={variable ?? {}}>
+            <EditorContent editor={editor} />
+          </DocumentVariableContext>
         </div>
-        {children}
+        <VariableDrawer {...variableListProps} />
       </div>
     </DocumentEditorContext>
   )
