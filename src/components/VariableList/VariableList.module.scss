@@ -1,0 +1,22 @@
+.node {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  vertical-align: top;
+  color: var(--ant-color-primary);
+}
+
+.view {
+
+  .template {
+    padding-bottom: 16px;
+    background-color: white;
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+  }
+
+  .spin {
+    min-height: 200px;
+  }
+}

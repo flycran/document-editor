@@ -1,4 +1,5 @@
 import { Node } from '@tiptap/core'
+import tiptapStyles from '../styles.module.scss'
 
 declare module '@tiptap/core' {
   interface Commands<ReturnType> {
@@ -30,14 +31,14 @@ export const PageBreakNode = Node.create({
   },
 
   parseHTML() {
-    return [{ tag: 'div.page-break' }]
+    return [{ tag: `div.${tiptapStyles['page-break']}` }]
   },
 
   renderHTML() {
     return [
       'div',
       {
-        class: 'page-break',
+        class: tiptapStyles['page-break'],
         contenteditable: 'false',
       },
       ['span', {}, '分页符'],

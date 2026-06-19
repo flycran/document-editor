@@ -1,0 +1,46 @@
+.sgin-view {
+  .variable-node-separator {
+    margin: 0 0.25rem 0 1px;
+  }
+
+  .variable-node-code {
+    vertical-align: bottom;
+
+    svg {
+      display: inline-block;
+      font-size: 1.25em;
+    }
+  }
+
+  &.editor {
+    display: inline-block;
+    padding: 0 2px;
+    margin: 0 2px;
+    cursor: default;
+    height: 1.375em;
+    line-height: 1.375em;
+
+    &::before {
+      content: "{{";
+      font-weight: 500;
+      color: #1677ff;
+      margin-right: 0.25em;
+    }
+
+    &::after {
+      content: "}}";
+      font-weight: 500;
+      color: #1677ff;
+      margin-left: 0.25em;
+    }
+
+    .variable-node-label {
+      color: rgb(228, 120, 44);
+    }
+  }
+
+  &:global(.ProseMirror-selectednode).editor {
+    outline: 2px solid #1677ff60;
+    border-radius: 3px;
+  }
+}

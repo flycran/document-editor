@@ -1,4 +1,3 @@
-import { css } from '@emotion/css'
 import { Select, Spin, Tree, TreeDataNode } from 'antd'
 import { useEffect, useMemo, useState } from 'react'
 import { MdAddCircleOutline } from 'react-icons/md'
@@ -9,6 +8,8 @@ import {
 } from '@/api/codegen/schemas'
 import { useDocumentEditor } from '../DocumentEditor/contexts/DocumentEditorContext'
 import type { VariableExtensionMode } from '../DocumentEditor/extensions/VariableExtension'
+import { VariableNodeAttrs } from '../DocumentEditor/extensions/VariableNode/VariableNode'
+import styles from './VariableList.module.scss'
 
 export interface InformedTemplateParagraphListItemTree extends TreeDataNode {
   children?: InformedTemplateParagraphListItemTree[]
@@ -32,14 +33,6 @@ function VariableListParagraph(props: InformedTemplateParagraphListItem) {
   return <span>{props.name}</span>
 }
 
-const nodeStyle = css`
-  display: inline-flex;
-  align-items: center;
-  gap: 2px;
-  vertical-align: top;
-  color: var(--ant-color-primary);
-`
-
 function VariableListNode({
   node,
   mode,
@@ -50,8 +43,7 @@ function VariableListNode({
   const editor = useDocumentEditor()
 
   const handleClick = () => {
-    const data = {
-      key: node.code,
+    const data: VariableNodeAttrs = {
       label: node.node_name,
       code: node.code,
     }
@@ -66,7 +58,7 @@ function VariableListNode({
   return (
     <span
       onClick={handleClick}
-      className={nodeStyle}
+      className={styles.node}
       title={`点击${mode === 'replace' ? '替换' : '插入'}变量: ${node.code} ${node.node_name}`}
     >
       <MdAddCircleOutline className="plus-icon" size={18} />
@@ -74,15 +66,6 @@ function VariableListNode({
     </span>
   )
 }
-
-const viewStyle = css`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  .spin {
-    min-height: 200px;
-  }
-`
 
 export interface VariableListProps {
   /** 模板列表 */
@@ -160,17 +143,20 @@ export default function VariableList({
   }, [variableList])
 
   return (
-    <div className={viewStyle}>
-      <Select<string>
-        loading={templateListLoading}
-        options={templateList}
-        fieldNames={{ label: 'template_name', value: 'medical_id' }}
-        value={$template}
-        onChange={$setTemplate1}
-        style={{ width: '100%' }}
-      />
-      <Spin spinning={variableListLoading} className="spin">
+    <div className={styles.view}>
+      <div className={styles.template}>
+        <Select<string>
+          loading={templateListLoading}
+          options={templateList}
+          fieldNames={{ label: 'template_name', value: 'medical_id' }}
+          value={$template}
+          onChange={$setTemplate1}
+          style={{ width: '100%' }}
+        />
+      </div>
+      <Spin spinning={variableListLoading} className={styles.spin}>
         <Tree
+          defaultExpandAll
           treeData={options}
           titleRender={(item) => <VariableListTitle {...item} mode={mode} />}
           checkable={false}

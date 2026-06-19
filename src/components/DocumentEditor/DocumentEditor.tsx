@@ -1,4 +1,3 @@
-import { css, cx } from '@emotion/css'
 import Color from '@tiptap/extension-color'
 import FontSize from '@tiptap/extension-font-size'
 import Highlight from '@tiptap/extension-highlight'
@@ -16,27 +15,15 @@ import {
   DocumentVariableContextType,
 } from './contexts/DocumentVariableContext'
 import { PreviewModeContext } from './contexts/PreviewModeContext'
+import editorStyles from './DocumentEditor.module.scss'
 import { sharedExtensions } from './extensions'
 import { VariableExtensionMode } from './extensions/VariableExtension'
-import { tiptapStyles } from './styles'
+import tiptapStyles from './styles.module.scss'
 import Toolbar from './Toolbar/Toolbar'
 
 /**
  * 编辑器专用：placeholder 样式
  */
-export const editorOnlyStyles = css`
-  .tiptap {
-    min-height: 300px;
-
-    p.is-editor-empty:first-child::before {
-      color: #adb5bd;
-      content: attr(data-placeholder);
-      float: left;
-      height: 0;
-      pointer-events: none;
-    }
-  }
-`
 
 interface VariableDrawerProps extends Omit<VariableListProps, 'mode'> {}
 
@@ -70,14 +57,21 @@ function VariableDrawer({ ...rest }: VariableDrawerProps) {
   )
 }
 
-const editorStyles = cx(tiptapStyles, editorOnlyStyles)
-
 interface EditorProps {
+  /**
+   * 占位符
+   * @default '开始输入...'
+   */
   placeholder?: string
+  /** 编辑器内容 */
   content?: JSONContent
+  /** 更新编辑器内容 */
   onUpdate?: (json: JSONContent) => void
+  /** 编辑器 ref */
   ref?: React.Ref<Editor | null>
+  /** 变量上下文 */
   variable?: DocumentVariableContextType
+  /** 传递给变量列表组件的 props */
   variableListProps: Omit<VariableListProps, 'mode'>
 }
 
@@ -89,18 +83,17 @@ export default function DocumentEditor({
   onUpdate,
   ref,
 }: EditorProps) {
-  const extensions = [
-    StarterKit,
-    Placeholder.configure({ placeholder }),
-    TextStyle,
-    FontSize,
-    TextAlign.configure({ types: ['heading', 'paragraph'] }),
-    Color,
-    Highlight.configure({ multicolor: true }),
-    ...sharedExtensions,
-  ]
   const editor = useEditor({
-    extensions,
+    extensions: [
+      StarterKit,
+      Placeholder.configure({ placeholder }),
+      TextStyle,
+      FontSize,
+      TextAlign.configure({ types: ['heading', 'paragraph'] }),
+      Color,
+      Highlight.configure({ multicolor: true }),
+      ...sharedExtensions,
+    ],
     content,
     onUpdate: ({ editor }) => {
       onUpdate?.(editor.getJSON())
@@ -120,7 +113,7 @@ export default function DocumentEditor({
       <PreviewModeContext value={{ isPreview, setPreview: setIsPreview }}>
         <div>
           <Toolbar />
-          <div className={editorStyles}>
+          <div className={clsx(tiptapStyles['document-editor'], editorStyles['editor-only'])}>
             <DocumentVariableContext value={variable ?? {}}>
               <EditorContent editor={editor} />
             </DocumentVariableContext>

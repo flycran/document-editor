@@ -5,7 +5,7 @@ import {
   DocumentVariableContextType,
 } from '../DocumentEditor/contexts/DocumentVariableContext'
 import { sharedExtensions } from '../DocumentEditor/extensions'
-import { tiptapStyles } from '../DocumentEditor/styles'
+import tiptapStyles from '../DocumentEditor/styles.module.scss'
 
 interface PreviewerProps {
   content?: JSONContent
@@ -20,7 +20,7 @@ export default function DocumentPreviewer({ content, variable }: PreviewerProps)
   })
 
   return (
-    <div className={tiptapStyles}>
+    <div className={tiptapStyles['document-editor']}>
       <DocumentVariableContext value={variable ?? {}}>
         <EditorContent editor={editor} />
       </DocumentVariableContext>

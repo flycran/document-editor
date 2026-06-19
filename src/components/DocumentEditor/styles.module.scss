@@ -1,10 +1,5 @@
-import { css } from '@emotion/css'
-
-/**
- * Tiptap 编辑器与预览器共享的基础样式
- */
-export const tiptapStyles = css`
-  .tiptap {
+.document-editor {
+  :global(.tiptap) {
     outline: none;
     padding: 16px;
 
@@ -66,8 +61,16 @@ export const tiptapStyles = css`
 
     /* 分页符 */
     .page-break {
-      height: 1px;
-      background: repeating-linear-gradient(90deg, #999 0px, #999 6px, transparent 6px, transparent 12px);
+      height: 0;
+      border-top: 1px solid;
+      border-image: repeating-linear-gradient(
+          90deg,
+          #999 0,
+          #999 6px,
+          transparent 6px,
+          transparent 12px
+        )
+        1;
       margin: 24px 0;
       position: relative;
       cursor: default;
@@ -98,4 +101,4 @@ export const tiptapStyles = css`
       }
     }
   }
-`
+}

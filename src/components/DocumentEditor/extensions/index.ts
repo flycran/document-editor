@@ -1,5 +1,6 @@
 import type { Extensions } from '@tiptap/core'
 import { PageBreakNode } from './PageBreakNode'
+import { SginNode } from './SginNode/SginNode'
 import { TextIndentNode } from './TextIndentNode'
 import { VariableExtension } from './VariableExtension'
 import { VariableNode } from './VariableNode/VariableNode'
@@ -12,5 +13,6 @@ export const sharedExtensions: Extensions = [
   TextIndentNode,
   PageBreakNode,
   VariableNode,
+  SginNode,
   VariableExtension,
 ]
