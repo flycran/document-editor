@@ -1,4 +1,5 @@
 import { NodeViewWrapper, ReactNodeViewProps } from '@tiptap/react'
+import { GrCheckbox, GrCheckboxSelected } from 'react-icons/gr'
 import { useDocumentVariable } from '../../contexts/DocumentVariableContext'
 import { usePreviewMode } from '../../contexts/PreviewModeContext'
 import { VariableNodeAttrs } from './VariableNode'
@@ -10,29 +11,31 @@ export default function VariableView({ node }: ReactNodeViewProps) {
   const { variables } = useDocumentVariable()
   const { isPreview } = usePreviewMode()
 
-  if (!isPreview) {
-    return (
-      <NodeViewWrapper
-        as="span"
-        className={clsx('variable-node', styles['variable'], styles.editor)}
-      >
-        <>
-          <span className={styles['variable-node-label']}>{attrs.label}</span>
-          <span className={styles['variable-node-separator']}>:</span>
-          <span className={styles['variable-node-code']}>{attrs.code}</span>
-        </>
-      </NodeViewWrapper>
-    )
-  }
-
   return (
     <NodeViewWrapper
       as="span"
-      className={clsx('variable-node', styles['variable'], styles.preview)}
+      className={clsx(
+        'variable-node',
+        styles['variable'],
+        isPreview ? styles.preview : styles.editor
+      )}
     >
-      <span className={styles['variable-node-label']}>{attrs.label}</span>
-      <span className={styles['variable-node-separator']}>:</span>
-      <span className={styles['variable-node-code']}>{variables[attrs.code]}</span>
+      <>
+        {attrs.type === 'boolean' && (
+          <span className={styles['variable-node-checkbox']}>
+            {variables[attrs.code] ? <GrCheckboxSelected /> : <GrCheckbox />}
+          </span>
+        )}
+        <span className={styles['variable-node-label']}>{attrs.label}</span>
+        {attrs.type !== 'boolean' && (
+          <>
+            <span className={styles['variable-node-separator']}>:</span>
+            <span className={styles['variable-node-code']}>
+              {isPreview ? variables[attrs.code] : attrs.code}
+            </span>
+          </>
+        )}
+      </>
     </NodeViewWrapper>
   )
 }

@@ -1,13 +1,18 @@
 .variable {
+  display: inline-flex;
+  align-items: center;
+
   .variable-node-separator {
     margin: 0 0.25rem 0 1px;
   }
 
-  &.editor {
+  .variable-node-checkbox {
     display: inline-block;
+    margin-right: 4px;
+  }
+
+  &.editor {
     cursor: default;
-    height: 1.375em;
-    line-height: 1.375em;
 
     &::before {
       content: "{{";
@@ -36,6 +41,6 @@
 
 :global(.document-editable) {
   .wrapper {
-    margin: 0 2px;
+    margin: 0 3px;
   }
 }

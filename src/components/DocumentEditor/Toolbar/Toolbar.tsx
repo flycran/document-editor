@@ -140,6 +140,42 @@ export default function Toolbar({}: ToolbarProps) {
     [editor]
   )
 
+  const formatColor = (
+    <>
+      <ColorPicker
+        value={editorState.textColor}
+        disabled={isPreview}
+        presets={[
+          {
+            label: '预设',
+            colors: presetsColors,
+          },
+        ]}
+        onChange={(color) => {
+          editor.chain().focus().setColor(color.toHexString()).run()
+        }}
+      >
+        <Button type="text" icon={<MdFormatColorText />} title="字体颜色" disabled={isPreview} />
+      </ColorPicker>
+
+      <ColorPicker
+        value={editorState.highlightColor}
+        disabled={isPreview}
+        presets={[
+          {
+            label: '预设',
+            colors: presetsColors,
+          },
+        ]}
+        onChange={(color) => {
+          editor.chain().focus().toggleHighlight({ color: color.toHexString() }).run()
+        }}
+      >
+        <Button type="text" icon={<MdFormatColorFill />} title="背景颜色" disabled={isPreview} />
+      </ColorPicker>
+    </>
+  )
+
   const formatButtons = (
     <>
       <Button
@@ -167,13 +203,7 @@ export default function Toolbar({}: ToolbarProps) {
         onClick={() => editor.chain().focus().toggleStrike().run()}
       />
       <Divider className={styles.divider} orientation="vertical" />
-      <ColorPicker
-        value={editorState.textColor}
-        disabled={isPreview}
-        onChange={(color) => editor.chain().focus().setColor(color.toHexString()).run()}
-      >
-        <Button type="text" icon={<MdFormatColorText />} disabled={isPreview} />
-      </ColorPicker>
+      {formatColor}
       <Button
         type="text"
         icon={<MdFormatClear />}
@@ -329,41 +359,15 @@ export default function Toolbar({}: ToolbarProps) {
 
             <Divider className={styles.divider} orientation="vertical" />
 
-            <ColorPicker
-              value={editorState.textColor}
-              disabled={isPreview}
-              presets={[
-                {
-                  label: '预设',
-                  colors: presetsColors,
-                },
-              ]}
-              onChange={(color) => {
-                editor.chain().focus().setColor(color.toHexString()).run()
-              }}
-            >
-              <Button
-                type="text"
-                icon={<MdFormatColorText />}
-                title="字体颜色"
-                disabled={isPreview}
-              />
-            </ColorPicker>
+            {formatColor}
 
-            <ColorPicker
-              value={editorState.highlightColor}
+            <Button
+              type="text"
+              icon={<MdFormatClear />}
+              title="清除格式"
               disabled={isPreview}
-              onChange={(color) => {
-                editor.chain().focus().toggleHighlight({ color: color.toHexString() }).run()
-              }}
-            >
-              <Button
-                type="text"
-                icon={<MdFormatColorFill />}
-                title="背景颜色"
-                disabled={isPreview}
-              />
-            </ColorPicker>
+              onClick={() => editor.chain().focus().unsetAllMarks().clearNodes().run()}
+            />
 
             <Divider className={styles.divider} orientation="vertical" />
 
@@ -394,16 +398,6 @@ export default function Toolbar({}: ToolbarProps) {
               <Button type="text" icon={<MdFingerprint />} title="插入签名" disabled={isPreview} />
             </Dropdown>
 
-            <Divider className={styles.divider} orientation="vertical" />
-
-            <Button
-              type="text"
-              icon={<MdFormatClear />}
-              title="清除格式"
-              disabled={isPreview}
-              onClick={() => editor.chain().focus().unsetAllMarks().clearNodes().run()}
-            />
-
             <Button
               type="text"
               title="插入分页符"
@@ -424,7 +418,7 @@ export default function Toolbar({}: ToolbarProps) {
             <Button
               type="text"
               icon={<FaWpforms />}
-              title="预览变量"
+              title="编辑预览变量"
               onClick={() => setFormOpen(true)}
             />
           </div>

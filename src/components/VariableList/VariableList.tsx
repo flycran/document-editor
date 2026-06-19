@@ -1,6 +1,7 @@
-import { Select, Spin, Tree, TreeDataNode } from 'antd'
-import { useEffect, useMemo, useState } from 'react'
+import { Input, Select, Spin, Tree, TreeDataNode } from 'antd'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { MdAddCircleOutline } from 'react-icons/md'
+import { RiNodeTree } from 'react-icons/ri'
 import {
   GetQuestcenterInformedTemplateGetMedicalTemplateList200ListItem,
   InformedTemplateNodeListItem,
@@ -22,66 +23,79 @@ export interface InformedTemplateItemTree extends TreeDataNode {
   element?: InformedTemplateNodeListItemElementsItem
 }
 
+/** 高亮搜索关键词 */
+function HighlightText({ text, keyword }: { text: string; keyword: string }) {
+  if (!keyword) return <>{text}</>
+  const index = text.indexOf(keyword)
+  if (index === -1) return <>{text}</>
+  return (
+    <>
+      {text.substring(0, index)}
+      <span className={styles.highlight}>{keyword}</span>
+      {text.substring(index + keyword.length)}
+    </>
+  )
+}
+
+/** 变量列表标题 */
 function VariableListTitle({
   paragraph,
   node,
   element,
   mode,
-}: InformedTemplateItemTree & { mode: VariableExtensionMode }) {
+  searchValue,
+}: InformedTemplateItemTree & { mode: VariableExtensionMode; searchValue?: string }) {
   return paragraph ? (
-    <VariableListParagraph {...paragraph} />
+    <VariableListParagraph paragraph={paragraph} searchValue={searchValue} />
   ) : node ? (
-    <VariableListNode node={node} mode={mode} />
+    <VariableListNode node={node} searchValue={searchValue} />
   ) : element ? (
-    <VariableListElement element={element} mode={mode} />
+    <VariableListElement element={element} mode={mode} searchValue={searchValue} />
   ) : null
 }
 
-function VariableListParagraph(props: InformedTemplateParagraphListItem) {
-  return <span>{props.name}</span>
-}
-
-function VariableListNode({
-  node,
-  mode,
+/** 变量列表段落 */
+function VariableListParagraph({
+  paragraph,
+  searchValue,
 }: {
-  node: InformedTemplateNodeListItem
-  mode: VariableExtensionMode
+  paragraph: InformedTemplateParagraphListItem
+  searchValue?: string
 }) {
-  const editor = useDocumentEditor()
-
-  const handleClick = () => {
-    const data: VariableNodeAttrs = {
-      label: node.node_name,
-      code: node.code,
-      type: 'text',
-    }
-    if (mode === 'replace' && editor.isActive('variable')) {
-      // 替换模式：更新当前选中变量节点的属性
-      editor.chain().focus().updateAttributes('variable', data).run()
-    } else {
-      // 插入模式（默认）：插入新变量节点
-      editor.chain().focus().insertVariable(data).run()
-    }
-  }
   return (
-    <span
-      onClick={handleClick}
-      className={styles.node}
-      title={`点击${mode === 'replace' ? '替换' : '插入'}变量: ${node.code} ${node.node_name}`}
-    >
-      <MdAddCircleOutline className="plus-icon" size={18} />
-      <span>{node.node_name}</span>
+    <span>
+      <HighlightText text={paragraph.name} keyword={searchValue || ''} />
     </span>
   )
 }
 
+/** 变量列表节点 */
+function VariableListNode({
+  node,
+  searchValue,
+}: {
+  node: InformedTemplateNodeListItem
+  searchValue?: string
+}) {
+  return (
+    <span className={styles.node}>
+      <RiNodeTree />
+      <span>
+        <HighlightText text={node.node_name} keyword={searchValue || ''} />
+      </span>
+    </span>
+  )
+}
+
+/** 变量列表元素 */
 function VariableListElement({
   element,
   mode,
+  searchValue,
 }: {
   element: InformedTemplateNodeListItemElementsItem
   mode: VariableExtensionMode
+  searchValue?: string
 }) {
   const editor = useDocumentEditor()
 
@@ -111,15 +125,18 @@ function VariableListElement({
       // 插入模式（默认）：插入新变量节点
       editor.chain().focus().insertVariable(data).run()
     }
+    if (editor.storage.variableExtension.mode === 'replace') editor.commands.closeVariableDrawer()
   }
   return (
     <span
       onClick={handleClick}
-      className={styles.node}
+      className={styles.element}
       title={`点击${mode === 'replace' ? '替换' : '插入'}变量: ${element.code} ${element.name}`}
     >
-      <MdAddCircleOutline className="plus-icon" size={18} />
-      <span>{element.name}</span>
+      <MdAddCircleOutline className={styles['before-icon']} size={18} />
+      <span>
+        <HighlightText text={element.name} keyword={searchValue || ''} />
+      </span>
     </span>
   )
 }
@@ -152,6 +169,9 @@ export default function VariableList({
   mode = 'insert',
 }: VariableListProps) {
   const [$template, $setTemplate1] = useState<string>()
+  const [searchValue, setSearchValue] = useState('')
+  const [expandedKeys, setExpandedKeys] = useState<React.Key[]>([])
+  const [autoExpandParent, setAutoExpandParent] = useState(true)
 
   useEffect(() => {
     if (templateValue) {
@@ -165,7 +185,8 @@ export default function VariableList({
     }
   }, [$template])
 
-  const options = useMemo(() => {
+  // 构建原始树数据
+  const rawTreeData = useMemo(() => {
     const buildParagraphTree = (
       nodes: InformedTemplateParagraphListItem[]
     ): InformedTemplateItemTree[] => {
@@ -219,6 +240,67 @@ export default function VariableList({
     return variableList && buildParagraphTree(variableList)
   }, [variableList])
 
+  // 扁平化数据列表，用于搜索匹配
+  const dataList = useMemo(() => {
+    const list: { key: React.Key; title: string }[] = []
+    const generateList = (data: InformedTemplateItemTree[]) => {
+      for (const node of data) {
+        const { key, title } = node
+        list.push({ key, title: title as string })
+        if (node.children) {
+          generateList(node.children)
+        }
+      }
+    }
+    if (rawTreeData) {
+      generateList(rawTreeData)
+    }
+    return list
+  }, [rawTreeData])
+
+  // 获取父节点 key，用于搜索时自动展开
+  const getParentKey = useCallback(
+    (key: React.Key, tree: InformedTemplateItemTree[]): React.Key | undefined => {
+      for (const node of tree) {
+        if (node.children) {
+          if (node.children.some((item) => item.key === key)) {
+            return node.key
+          }
+          const parentKey = getParentKey(key, node.children)
+          if (parentKey) {
+            return parentKey
+          }
+        }
+      }
+      return undefined
+    },
+    []
+  )
+
+  // 搜索处理
+  const handleSearchChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const { value } = e.target
+      const newExpandedKeys = dataList
+        .map((item) => {
+          if (item.title.includes(value)) {
+            return getParentKey(item.key, rawTreeData || [])
+          }
+          return null
+        })
+        .filter((item, i, self): item is React.Key => !!(item && self.indexOf(item) === i))
+      setExpandedKeys(value ? newExpandedKeys : [])
+      setSearchValue(value)
+      setAutoExpandParent(true)
+    },
+    [dataList, rawTreeData, getParentKey]
+  )
+
+  const handleExpand = useCallback((newExpandedKeys: React.Key[]) => {
+    setExpandedKeys(newExpandedKeys)
+    setAutoExpandParent(false)
+  }, [])
+
   return (
     <div className={styles.view}>
       <div className={styles.template}>
@@ -230,11 +312,23 @@ export default function VariableList({
           onChange={$setTemplate1}
           style={{ width: '100%' }}
         />
+        <Input.Search
+          className={styles.search}
+          placeholder="搜索变量"
+          onChange={handleSearchChange}
+          value={searchValue}
+          allowClear
+        />
       </div>
       <Spin spinning={variableListLoading} className={styles.spin}>
         <Tree
-          treeData={options}
-          titleRender={(item) => <VariableListTitle {...item} mode={mode} />}
+          treeData={rawTreeData}
+          titleRender={(item) => (
+            <VariableListTitle {...item} mode={mode} searchValue={searchValue} />
+          )}
+          expandedKeys={expandedKeys}
+          autoExpandParent={autoExpandParent}
+          onExpand={handleExpand}
           checkable={false}
           selectable={false}
         />

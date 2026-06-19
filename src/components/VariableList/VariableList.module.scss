@@ -1,11 +1,3 @@
-.node {
-  display: inline-flex;
-  align-items: center;
-  gap: 2px;
-  vertical-align: top;
-  color: var(--ant-color-primary);
-}
-
 .view {
   padding: 0 12px 12px 12px;
 
@@ -17,7 +9,38 @@
     z-index: 10;
   }
 
+  .node {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    vertical-align: top;
+  }
+
+  .element {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    vertical-align: top;
+    color: var(--ant-color-primary);
+  }
+
+  .before-icon {
+    margin-right: 4px;
+  }
+
+  .search {
+    margin-top: 8px;
+  }
+
   .spin {
     min-height: 200px;
   }
+}
+
+.highlight {
+  color: #ff4d4f;
+  font-weight: 600;
+  background-color: rgba(255, 77, 79, 0.1);
+  border-radius: 2px;
+  padding: 0 2px;
 }
