@@ -33,6 +33,7 @@ import { TbVariablePlus } from 'react-icons/tb'
 import { useDocumentEditor } from '../contexts/DocumentEditorContext'
 import { usePreviewMode } from '../contexts/PreviewModeContext'
 import { SginType, sginEnum } from '../extensions/SginNode/SginUtils'
+import AliasModal from './AliasModal'
 import styles from './Toolbar.module.scss'
 import VariableForm from './VariableForm'
 
@@ -130,12 +131,11 @@ function BubbleToolbar({
   })
   const showLabelValue = useMemo(() => {
     const { from, to } = selected
-    const nodes: { showLabel: boolean; labelAlias: string }[] = []
+    const nodes: { showLabel: boolean }[] = []
     editor.state.doc.nodesBetween(from, to, (node) => {
       if (node.type.name === 'variable') {
         nodes.push({
           showLabel: node.attrs.showLabel ?? true,
-          labelAlias: node.attrs.labelAlias ?? '',
         })
       }
     })
@@ -145,6 +145,8 @@ function BubbleToolbar({
 
     return allSameShowLabel ? nodes[0].showLabel : undefined
   }, [selected])
+
+  const [aliasModalOpen, setAliasModalOpen] = useState(false)
 
   const formatButtons = (
     <>
@@ -211,7 +213,7 @@ function BubbleToolbar({
             icon={<RiInputField />}
             title="设置别名"
             disabled={isPreview}
-            onClick={() => {}}
+            onClick={() => setAliasModalOpen(true)}
           />
           <Button
             type={showLabelValue ? 'primary' : 'text'}
@@ -245,6 +247,14 @@ function BubbleToolbar({
       >
         <div className={styles.bubbleRow}>{formatButtons}</div>
       </BubbleMenu>
+
+      <AliasModal
+        open={aliasModalOpen}
+        editor={editor}
+        onClose={(alias) => {
+          setAliasModalOpen(false)
+        }}
+      />
     </ConfigProvider>
   )
 }

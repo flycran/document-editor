@@ -32,7 +32,7 @@ export default function VariableView({ node }: ReactNodeViewProps) {
               [styles['delete']]: !attrs.showLabel,
             })}
           >
-            {attrs.label}
+            {attrs.labelAlias || attrs.label}
           </span>
         )}
         {attrs.type !== 'boolean' && (attrs.showLabel || !isPreview) && (
