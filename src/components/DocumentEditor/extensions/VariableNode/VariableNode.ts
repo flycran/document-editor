@@ -9,6 +9,8 @@ export interface VariableNodeAttrs {
   label: string
   code: string
   type: VariableType
+  showLabel?: boolean
+  labelAlias?: string | null
 }
 declare module '@tiptap/core' {
   interface Commands<ReturnType> {
@@ -32,15 +34,23 @@ export const VariableNode = Node.create({
     return {
       label: {
         default: '',
-        parseHTML: (element) => element.getAttribute('data-node-label') || '',
+        parseHTML: (element) => element.getAttribute('data-node-label')!,
       },
       code: {
         default: '',
-        parseHTML: (element) => element.getAttribute('data-node-code') || '',
+        parseHTML: (element) => element.getAttribute('data-node-code')!,
       },
       type: {
         default: 'text',
         parseHTML: (element) => element.getAttribute('data-node-type') || 'text',
+      },
+      showLabel: {
+        default: true,
+        parseHTML: (element) => element.getAttribute('data-node-show-label') !== 'false',
+      },
+      labelAlias: {
+        default: null,
+        parseHTML: (element) => element.getAttribute('data-node-label-alias'),
       },
     }
   },
@@ -62,6 +72,8 @@ export const VariableNode = Node.create({
         'data-node-label': label,
         'data-node-code': code,
         'data-node-type': type,
+        'data-node-show-label': node.attrs.showLabel,
+        'data-node-label-alias': node.attrs.labelAlias,
         class: 'variable-node',
       },
     ]

@@ -26,14 +26,22 @@ export default function VariableView({ node }: ReactNodeViewProps) {
             {variables[attrs.code] ? <GrCheckboxSelected /> : <GrCheckbox />}
           </span>
         )}
-        <span className={styles['variable-node-label']}>{attrs.label}</span>
+        {(attrs.showLabel || !isPreview) && (
+          <span
+            className={clsx(styles['variable-node-label'], {
+              [styles['delete']]: !attrs.showLabel,
+            })}
+          >
+            {attrs.label}
+          </span>
+        )}
+        {attrs.type !== 'boolean' && (attrs.showLabel || !isPreview) && (
+          <span className={styles['variable-node-separator']}>:&nbsp;</span>
+        )}
         {attrs.type !== 'boolean' && (
-          <>
-            <span className={styles['variable-node-separator']}>:</span>
-            <span className={styles['variable-node-code']}>
-              {isPreview ? variables[attrs.code] : attrs.code}
-            </span>
-          </>
+          <span className={styles['variable-node-code']}>
+            {isPreview ? variables[attrs.code] : attrs.code}
+          </span>
         )}
       </>
     </NodeViewWrapper>

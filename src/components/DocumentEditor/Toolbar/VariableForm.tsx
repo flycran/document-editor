@@ -96,6 +96,7 @@ export default function VariableForm({ open, onClose }: VariableFormProps) {
       size={700}
       open={open}
       onClose={onClose}
+      data-tour-id="variable-form-drawer"
       footer={
         <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 8 }}>
           <Button onClick={onClose}>取消</Button>

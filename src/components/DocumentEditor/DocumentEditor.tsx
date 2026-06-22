@@ -13,6 +13,7 @@ import { DocumentEditorContext, useDocumentEditor } from './contexts/DocumentEdi
 import { DocumentVariableContext } from './contexts/DocumentVariableContext'
 import { PreviewModeContext } from './contexts/PreviewModeContext'
 import editorStyles from './DocumentEditor.module.scss'
+import EditorTour, { isTourCompleted } from './EditorTour/EditorTour'
 import { sharedExtensions } from './extensions'
 import { VariableExtensionMode } from './extensions/VariableExtension'
 import tiptapStyles from './styles.module.scss'
@@ -52,7 +53,7 @@ function VariableDrawer({ ...rest }: VariableDrawerProps) {
         body: editorStyles['variable-drawer'],
       }}
     >
-      <VariableList {...rest} mode={mode} />
+      <VariableList {...rest} mode={mode} dataTourId="variable-selector" />
     </Drawer>
   )
 }
@@ -99,6 +100,7 @@ export default function DocumentEditor({
 
   const [isPreview, setIsPreview] = useState(false)
   const [previewVariables, setPreviewVariables] = useState<Record<string, any>>({})
+  const [tourOpen, setTourOpen] = useState(() => !isTourCompleted())
 
   useEffect(() => {
     editor?.setEditable(!isPreview)
@@ -114,10 +116,14 @@ export default function DocumentEditor({
         >
           <div className={clsx({ 'document-editable': !isPreview })}>
             <Toolbar />
-            <div className={clsx(tiptapStyles['document-editor'], editorStyles['editor-only'])}>
+            <div
+              data-tour-id="editor-content"
+              className={clsx(tiptapStyles['document-editor'], editorStyles['editor-only'])}
+            >
               <EditorContent editor={editor} />
             </div>
             <VariableDrawer {...variableListProps} />
+            <EditorTour open={tourOpen} onClose={() => setTourOpen(false)} />
           </div>
         </DocumentVariableContext>
       </PreviewModeContext>

@@ -2,7 +2,7 @@ import { useEditorState } from '@tiptap/react'
 import { BubbleMenu } from '@tiptap/react/menus'
 import type { SelectProps } from 'antd'
 import { Button, ColorPicker, ConfigProvider, Divider, Dropdown, Select, Space } from 'antd'
-import { useCallback, useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import { FaWpforms } from 'react-icons/fa'
 import { ImPageBreak } from 'react-icons/im'
 import { IoMdEye, IoMdEyeOff } from 'react-icons/io'
@@ -22,11 +22,13 @@ import {
   MdFormatListBulleted,
   MdFormatListNumbered,
   MdFormatUnderlined,
-  MdModeEditOutline,
+  MdLabelOutline,
   MdOutlineStrikethroughS,
   MdRedo,
+  MdSwapHoriz,
   MdUndo,
 } from 'react-icons/md'
+import { RiInputField } from 'react-icons/ri'
 import { TbVariablePlus } from 'react-icons/tb'
 import { useDocumentEditor } from '../contexts/DocumentEditorContext'
 import { usePreviewMode } from '../contexts/PreviewModeContext'
@@ -73,13 +75,10 @@ const presetsColors = [
   '#FFFFFF',
 ]
 
-interface ToolbarProps {}
-
-export default function Toolbar({}: ToolbarProps) {
+const useToolbarState = () => {
   const editor = useDocumentEditor()
-  const { isPreview, setPreview } = usePreviewMode()
-  const [formOpen, setFormOpen] = useState(false)
-  const editorState = useEditorState({
+
+  return useEditorState({
     editor,
     selector: (ctx) => {
       const e = ctx.editor
@@ -110,6 +109,154 @@ export default function Toolbar({}: ToolbarProps) {
       }
     },
   })
+}
+
+type ToolbarState = ReturnType<typeof useToolbarState>
+
+function BubbleToolbar({
+  formatColor,
+  isPreview,
+  editorState,
+}: {
+  formatColor: React.ReactNode
+  isPreview: boolean
+  editorState: ToolbarState
+}) {
+  const editor = useDocumentEditor()
+
+  const selected = useEditorState({
+    editor,
+    selector: (state) => state.editor.state.selection,
+  })
+  const showLabelValue = useMemo(() => {
+    const { from, to } = selected
+    const nodes: { showLabel: boolean; labelAlias: string }[] = []
+    editor.state.doc.nodesBetween(from, to, (node) => {
+      if (node.type.name === 'variable') {
+        nodes.push({
+          showLabel: node.attrs.showLabel ?? true,
+          labelAlias: node.attrs.labelAlias ?? '',
+        })
+      }
+    })
+
+    const allSameShowLabel =
+      nodes.length > 0 && nodes.every((n) => n.showLabel === nodes[0].showLabel)
+
+    return allSameShowLabel ? nodes[0].showLabel : undefined
+  }, [selected])
+
+  const formatButtons = (
+    <>
+      <Button
+        type={editorState.isBoldActive ? 'primary' : 'text'}
+        icon={<MdFormatBold />}
+        disabled={isPreview}
+        onClick={() => editor.chain().focus().toggleBold().run()}
+      />
+      <Button
+        type={editorState.isItalicActive ? 'primary' : 'text'}
+        icon={<MdFormatItalic />}
+        disabled={isPreview}
+        onClick={() => editor.chain().focus().toggleItalic().run()}
+      />
+      <Button
+        type={editorState.isUnderlineActive ? 'primary' : 'text'}
+        icon={<MdFormatUnderlined />}
+        disabled={isPreview}
+        onClick={() => editor.chain().focus().toggleUnderline().run()}
+      />
+      <Button
+        type={editorState.isStrikeActive ? 'primary' : 'text'}
+        icon={<MdOutlineStrikethroughS />}
+        disabled={isPreview}
+        onClick={() => editor.chain().focus().toggleStrike().run()}
+      />
+      <Divider className={styles.divider} orientation="vertical" />
+      {formatColor}
+      <Button
+        type="text"
+        icon={<MdFormatClear />}
+        disabled={isPreview}
+        onClick={() => editor.chain().focus().unsetAllMarks().run()}
+      />
+    </>
+  )
+
+  return (
+    <ConfigProvider componentSize="small">
+      {/* 变量节点 */}
+      <BubbleMenu
+        editor={editor}
+        pluginKey="bubbleMenu-variable"
+        className={styles.bubble}
+        shouldShow={({ editor: ed }) => {
+          return !isPreview && ed.isActive('variable')
+        }}
+      >
+        <div className={styles.bubbleRow}>
+          {formatButtons}
+          <Divider className={styles.divider} orientation="vertical" />
+          <Button
+            type="text"
+            icon={<MdSwapHoriz />}
+            title="替换变量"
+            disabled={isPreview}
+            onClick={() => {
+              editor.chain().focus().toggleVariableDrawer('replace').run()
+            }}
+          />
+          <Button
+            type="text"
+            icon={<RiInputField />}
+            title="设置别名"
+            disabled={isPreview}
+            onClick={() => {}}
+          />
+          <Button
+            type={showLabelValue ? 'primary' : 'text'}
+            disabled={isPreview}
+            title="显示字段名"
+            icon={<MdLabelOutline />}
+            onClick={() => {
+              editor
+                .chain()
+                .focus()
+                .updateAttributes('variable', { showLabel: !showLabelValue })
+                .run()
+            }}
+          />
+        </div>
+      </BubbleMenu>
+
+      {/* 默认文本格式菜单 */}
+      <BubbleMenu
+        editor={editor}
+        pluginKey="bubbleMenu-text"
+        className={styles.bubble}
+        shouldShow={({ state, editor: ed }) => {
+          if (isPreview) return false
+          const { selection } = state
+          // 分页符和变量节点不显示默认菜单
+          if (ed.isActive('pageBreak') || ed.isActive('variable')) return false
+          const { empty } = selection
+          return !empty
+        }}
+      >
+        <div className={styles.bubbleRow}>{formatButtons}</div>
+      </BubbleMenu>
+    </ConfigProvider>
+  )
+}
+
+interface ToolbarProps {}
+
+export default function Toolbar({}: ToolbarProps) {
+  const editor = useDocumentEditor()
+  const { isPreview, setPreview } = usePreviewMode()
+  const [formOpen, setFormOpen] = useState(false)
+
+  const editorState = useToolbarState()
 
   const currentHeading =
     editorState.headingLevel === 1
@@ -173,43 +320,6 @@ export default function Toolbar({}: ToolbarProps) {
       >
         <Button type="text" icon={<MdFormatColorFill />} title="背景颜色" disabled={isPreview} />
       </ColorPicker>
-    </>
-  )
-
-  const formatButtons = (
-    <>
-      <Button
-        type={editorState.isBoldActive ? 'primary' : 'text'}
-        icon={<MdFormatBold />}
-        disabled={isPreview}
-        onClick={() => editor.chain().focus().toggleBold().run()}
-      />
-      <Button
-        type={editorState.isItalicActive ? 'primary' : 'text'}
-        icon={<MdFormatItalic />}
-        disabled={isPreview}
-        onClick={() => editor.chain().focus().toggleItalic().run()}
-      />
-      <Button
-        type={editorState.isUnderlineActive ? 'primary' : 'text'}
-        icon={<MdFormatUnderlined />}
-        disabled={isPreview}
-        onClick={() => editor.chain().focus().toggleUnderline().run()}
-      />
-      <Button
-        type={editorState.isStrikeActive ? 'primary' : 'text'}
-        icon={<MdOutlineStrikethroughS />}
-        disabled={isPreview}
-        onClick={() => editor.chain().focus().toggleStrike().run()}
-      />
-      <Divider className={styles.divider} orientation="vertical" />
-      {formatColor}
-      <Button
-        type="text"
-        icon={<MdFormatClear />}
-        disabled={isPreview}
-        onClick={() => editor.chain().focus().unsetAllMarks().run()}
-      />
     </>
   )
 
@@ -376,6 +486,7 @@ export default function Toolbar({}: ToolbarProps) {
               icon={<TbVariablePlus />}
               title="插入变量"
               disabled={isPreview}
+              data-tour-id="toolbar-variable"
               onClick={() => editor.chain().focus().toggleVariableDrawer('insert').run()}
             />
 
@@ -395,7 +506,13 @@ export default function Toolbar({}: ToolbarProps) {
               }}
               placement="bottomLeft"
             >
-              <Button type="text" icon={<MdFingerprint />} title="插入签名" disabled={isPreview} />
+              <Button
+                type="text"
+                icon={<MdFingerprint />}
+                title="插入签名"
+                disabled={isPreview}
+                data-tour-id="toolbar-signature"
+              />
             </Dropdown>
 
             <Button
@@ -412,6 +529,7 @@ export default function Toolbar({}: ToolbarProps) {
               type="text"
               icon={isPreview ? <IoMdEyeOff /> : <IoMdEye />}
               title={isPreview ? '编辑' : '预览'}
+              data-tour-id="toolbar-preview"
               onClick={() => setPreview(!isPreview)}
             />
 
@@ -419,53 +537,15 @@ export default function Toolbar({}: ToolbarProps) {
               type="text"
               icon={<FaWpforms />}
               title="编辑预览变量"
-              onClick={() => setFormOpen(true)}
+              data-tour-id="toolbar-variable-form"
+              onClick={() => setFormOpen(!formOpen)}
             />
           </div>
         </div>
       </ConfigProvider>
-      <ConfigProvider componentSize="small">
-        {/* 变量节点 */}
-        <BubbleMenu
-          editor={editor}
-          pluginKey="bubbleMenu-variable"
-          className={styles.bubble}
-          shouldShow={({ editor: ed }) => {
-            return !isPreview && ed.isActive('variable')
-          }}
-        >
-          <div className={styles.bubbleRow}>
-            {formatButtons}
-            <Divider className={styles.divider} orientation="vertical" />
-            <Button
-              type="text"
-              icon={<MdModeEditOutline />}
-              title="替换变量"
-              disabled={isPreview}
-              onClick={() => {
-                editor.chain().focus().toggleVariableDrawer('replace').run()
-              }}
-            />
-          </div>
-        </BubbleMenu>
 
-        {/* 默认文本格式菜单 */}
-        <BubbleMenu
-          editor={editor}
-          pluginKey="bubbleMenu-text"
-          className={styles.bubble}
-          shouldShow={({ state, editor: ed }) => {
-            if (isPreview) return false
-            const { selection } = state
-            // 分页符和变量节点不显示默认菜单
-            if (ed.isActive('pageBreak') || ed.isActive('variable')) return false
-            const { empty } = selection
-            return !empty
-          }}
-        >
-          <div className={styles.bubbleRow}>{formatButtons}</div>
-        </BubbleMenu>
-      </ConfigProvider>
+      <BubbleToolbar isPreview={isPreview} formatColor={formatColor} editorState={editorState} />
+
       <VariableForm open={formOpen} onClose={() => setFormOpen(false)} />
     </>
   )

@@ -156,6 +156,8 @@ export interface VariableListProps {
   onTemplateSelect?: (templateMedicalId: string) => void
   /** 变量选择模式 */
   mode?: VariableExtensionMode
+  /** Tour 引导锚点 ID */
+  dataTourId?: string
 }
 
 /** 变量选择视图 */
@@ -167,6 +169,7 @@ export default function VariableList({
   variableListLoading = false,
   onTemplateSelect,
   mode = 'insert',
+  dataTourId,
 }: VariableListProps) {
   const [$template, $setTemplate1] = useState<string>()
   const [searchValue, setSearchValue] = useState('')
@@ -302,7 +305,7 @@ export default function VariableList({
   }, [])
 
   return (
-    <div className={styles.view}>
+    <div className={styles.view} data-tour-id={dataTourId}>
       <div className={styles.template}>
         <Select<string>
           loading={templateListLoading}
