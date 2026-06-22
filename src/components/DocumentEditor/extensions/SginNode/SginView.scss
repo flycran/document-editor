@@ -1,0 +1,52 @@
+.document-editor {
+
+  .sgin-node {
+    cursor: text;
+
+    .sgin-node-content {
+      display: inline-flex;
+      align-items: center;
+
+      .sgin-node-separator {
+        margin: 0 1px;
+      }
+
+      .sgin-node-code {
+        vertical-align: bottom;
+
+        svg {
+          display: inline-block;
+          font-size: 1.25em;
+        }
+      }
+    }
+
+    &.editor {
+      .sgin-node-curly-braces {
+        content: "{{";
+        font-weight: 500;
+        color: #1677ff;
+      }
+
+      .sgin-node-content {
+        margin: 0 2px;
+        cursor: default;
+
+        .sgin-node-label {
+          color: rgb(228, 120, 44);
+        }
+      }
+    }
+  }
+
+  .ProseMirror-selectednode .sgin-view.editor {
+    outline: 2px solid #1677ff60;
+    border-radius: 3px;
+  }
+
+  .preview {
+    .sgin-node-curly-braces {
+      display: none;
+    }
+  }
+}

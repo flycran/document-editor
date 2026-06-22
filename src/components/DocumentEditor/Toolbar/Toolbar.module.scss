@@ -32,3 +32,12 @@
 .divider {
   margin: 4px;
 }
+
+.tooltip {
+  :global(.ant-tooltip-container) {
+    font-size: 12px;
+    padding: 2px 6px;
+    min-height: auto;
+    line-height: 1.4;
+  }
+}

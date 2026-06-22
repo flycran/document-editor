@@ -1,18 +1,17 @@
-import { Editor } from '@tiptap/react'
 import { useEffect, useRef, useState } from 'react'
 import { useOutletContext } from 'react-router'
 import {
   useGetQuestcenterInformedTemplateGetMedicalTemplateList,
   useGetQuestcenterInformedTemplateGetTemplateDetailByMedicalId,
 } from '@/api/codegen/petstore'
-import DocumentEditor from '@/components/DocumentEditor/DocumentEditor'
+import DocumentEditor, { EditorRef } from '@/components/DocumentEditor/DocumentEditor'
 import { useRHM } from '@/hooks/useRHM'
 import { OutletContext } from '@/types/router'
 
 export default function EditorPage() {
   const { content, setContent } = useOutletContext<OutletContext>()
   const { key } = useRHM()
-  const editorRef = useRef<Editor | null>(null)
+  const editorRef = useRef<EditorRef | null>(null)
   const [template, setTemplate] = useState<string>()
 
   const { data: templateListData, isFetching: templateListDataIsFetching } =
@@ -48,6 +47,7 @@ export default function EditorPage() {
           placeholder="请输入文书内容..."
           content={content}
           onUpdate={setContent}
+          className="h-full"
           variableListProps={{
             templateList: templateListData?.data?.list,
             templateListLoading: templateListDataIsFetching,

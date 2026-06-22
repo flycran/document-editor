@@ -8,6 +8,7 @@ import { Editor, EditorContent, EditorEvents, JSONContent, useEditor } from '@ti
 import StarterKit from '@tiptap/starter-kit'
 import { Drawer } from 'antd'
 import React from 'react'
+import { documentPrint, getPreviewHTML } from '@/utils'
 import VariableList, { VariableListProps } from '../VariableList/VariableList'
 import { DocumentEditorContext, useDocumentEditor } from './contexts/DocumentEditorContext'
 import { DocumentVariableContext } from './contexts/DocumentVariableContext'
@@ -16,7 +17,7 @@ import editorStyles from './DocumentEditor.module.scss'
 import EditorTour, { isTourCompleted } from './EditorTour/EditorTour'
 import { sharedExtensions } from './extensions'
 import { VariableExtensionMode } from './extensions/VariableExtension'
-import tiptapStyles from './styles.module.scss'
+import './styles.scss'
 import Toolbar from './Toolbar/Toolbar'
 
 /**
@@ -58,6 +59,12 @@ function VariableDrawer({ ...rest }: VariableDrawerProps) {
   )
 }
 
+export type EditorRef = {
+  editor: Editor
+  print: () => void
+  getPreviewHTML: () => string
+}
+
 interface EditorProps {
   /**
    * 占位符
@@ -68,10 +75,10 @@ interface EditorProps {
   content?: JSONContent
   /** 更新编辑器内容 */
   onUpdate?: (json: JSONContent) => void
-  /** 编辑器 ref */
-  ref?: React.Ref<Editor | null>
   /** 传递给变量列表组件的 props */
   variableListProps: Omit<VariableListProps, 'mode'>
+  ref?: React.Ref<EditorRef>
+  className?: string
 }
 
 export default function DocumentEditor({
@@ -79,8 +86,10 @@ export default function DocumentEditor({
   content,
   variableListProps,
   onUpdate,
+  className,
   ref,
 }: EditorProps) {
+  const editorContentRef = useRef<HTMLDivElement | null>(null)
   const editor = useEditor({
     extensions: [
       StarterKit,
@@ -106,7 +115,21 @@ export default function DocumentEditor({
     editor?.setEditable(!isPreview)
   }, [isPreview, editor])
 
-  useImperativeHandle(ref, () => editor)
+  const handlePrint = useCallback(() => {
+    documentPrint(editorContentRef.current!)
+  }, [])
+
+  useImperativeHandle(
+    ref,
+    () => ({
+      editor,
+      print: () => {
+        documentPrint(editorContentRef.current!)
+      },
+      getPreviewHTML: () => getPreviewHTML(editorContentRef.current!),
+    }),
+    [editor]
+  )
 
   return (
     <DocumentEditorContext value={editor}>
@@ -114,14 +137,24 @@ export default function DocumentEditor({
         <DocumentVariableContext
           value={{ variables: previewVariables, setVariables: setPreviewVariables }}
         >
-          <div className={clsx({ 'document-editable': !isPreview })}>
-            <Toolbar />
-            <div
+          <div
+            className={clsx(
+              editorStyles['editor-container'],
+              { 'document-editable': !isPreview },
+              className
+            )}
+          >
+            <Toolbar onPrint={handlePrint} />
+            <EditorContent
+              ref={editorContentRef}
+              editor={editor}
               data-tour-id="editor-content"
-              className={clsx(tiptapStyles['document-editor'], editorStyles['editor-only'])}
-            >
-              <EditorContent editor={editor} />
-            </div>
+              className={clsx(
+                'document-editor',
+                'document-print-area',
+                editorStyles['editor-only']
+              )}
+            />
             <VariableDrawer {...variableListProps} />
             <EditorTour open={tourOpen} onClose={() => setTourOpen(false)} />
           </div>

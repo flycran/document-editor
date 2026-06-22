@@ -1,7 +1,6 @@
 import { Attribute, Node } from '@tiptap/core'
 import { ReactNodeViewRenderer } from '@tiptap/react'
 import VariableView from './VariableView'
-import styles from './VariableView.module.scss'
 
 export type VariableType = 'boolean' | 'text' | 'number' | 'date' | 'time' | 'date-time'
 
@@ -28,7 +27,7 @@ export const VariableNode = Node.create({
   group: 'inline',
   inline: true,
   atom: true,
-  selectable: true,
+  selectable: false,
 
   addAttributes(): Record<keyof VariableNodeAttrs, Attribute> {
     return {
@@ -76,6 +75,7 @@ export const VariableNode = Node.create({
         'data-node-label-alias': node.attrs.labelAlias,
         class: 'variable-node',
       },
+      label,
     ]
   },
 
@@ -93,8 +93,6 @@ export const VariableNode = Node.create({
   },
 
   addNodeView() {
-    return ReactNodeViewRenderer(VariableView, {
-      className: styles.wrapper,
-    })
+    return ReactNodeViewRenderer(VariableView)
   },
 })

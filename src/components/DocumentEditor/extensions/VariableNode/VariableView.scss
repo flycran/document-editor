@@ -1,0 +1,54 @@
+.document-editor {
+
+  .variable-node {
+    cursor: text;
+
+    .variable-node-content {
+      display: inline-flex;
+      align-items: center;
+
+      .variable-node-separator {
+        margin: 0 1px;
+      }
+
+      .variable-node-checkbox {
+        display: inline-block;
+        margin-right: 4px;
+        vertical-align: baseline;
+      }
+    }
+
+
+    &.editor {
+      .variable-node-content {
+        cursor: default;
+        margin: 2px;
+      }
+
+      .variable-node-curly-braces {
+        content: "{{";
+        font-weight: 500;
+        color: #1677ff;
+      }
+
+      .variable-node-label {
+        color: rgb(228, 120, 44);
+
+        &.delete {
+          text-decoration: line-through;
+        }
+      }
+    }
+  }
+
+  .ProseMirror-selectednode .variable.editor {
+    outline: 2px solid #1677ff60;
+    border-radius: 3px;
+  }
+
+  .preview {
+    .variable-node-curly-braces {
+      display: none;
+    }
+  }
+}

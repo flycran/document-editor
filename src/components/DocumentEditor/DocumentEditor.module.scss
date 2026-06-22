@@ -1,12 +1,20 @@
-.editor-only {
-  min-height: 300px;
+.editor-container {
+  display: flex;
+  flex-direction: column;
 
-  :global(p.is-editor-empty:first-child)::before {
-    color: #adb5bd;
-    content: attr(data-placeholder);
-    float: left;
-    height: 0;
-    pointer-events: none;
+  .editor-only {
+    min-height: 300px;
+    flex: 1;
+    min-height: 0;
+    flex-shrink: 0;
+
+    :global(p.is-editor-empty:first-child)::before {
+      color: #adb5bd;
+      content: attr(data-placeholder);
+      float: left;
+      height: 0;
+      pointer-events: none;
+    }
   }
 }
 

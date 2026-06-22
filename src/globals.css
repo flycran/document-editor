@@ -12,7 +12,7 @@
     display: none;
   }
 
-  .print-area {
+  .document-print-area {
     display: block !important;
     width: 100vw;
     top: 0;

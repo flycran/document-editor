@@ -1,7 +1,8 @@
 .document-editor {
-  :global(.tiptap) {
+  &>.tiptap {
     outline: none;
     padding: 16px;
+    height: 100%;
 
     h1 {
       font-size: 2em;
@@ -63,18 +64,16 @@
     .page-break {
       height: 0;
       border-top: 1px solid;
-      border-image: repeating-linear-gradient(
-          90deg,
-          #999 0,
-          #999 6px,
+      border-image: repeating-linear-gradient(90deg,
+          currentColor 0,
+          currentColor 6px,
           transparent 6px,
-          transparent 12px
-        )
-        1;
+          transparent 12px) 1;
       margin: 24px 0;
       position: relative;
       cursor: default;
       user-select: none;
+      color: #999;
 
       span {
         position: absolute;
@@ -83,21 +82,28 @@
         transform: translateX(-50%);
         background: #fff;
         padding: 0 8px;
-        color: #999;
         font-size: 12px;
       }
+
+      &:global(.ProseMirror-selectednode) {
+        color: #1677ff;
+      }
+    }
+  }
+
+  @media print {
+    &>.tiptap {
+      padding: 0;
     }
 
-    @media print {
-      .page-break {
-        height: 0;
-        margin: 0;
-        page-break-after: always;
-        background: none;
+    .page-break {
+      height: 0;
+      margin: 0;
+      page-break-after: always;
+      background: none;
 
-        span {
-          display: none;
-        }
+      span {
+        display: none;
       }
     }
   }

@@ -3,47 +3,45 @@ import { GrCheckbox, GrCheckboxSelected } from 'react-icons/gr'
 import { useDocumentVariable } from '../../contexts/DocumentVariableContext'
 import { usePreviewMode } from '../../contexts/PreviewModeContext'
 import { VariableNodeAttrs } from './VariableNode'
-import styles from './VariableView.module.scss'
+import './VariableView.scss'
 
-export default function VariableView({ node }: ReactNodeViewProps) {
+export default function VariableView({ node, editor, getPos }: ReactNodeViewProps) {
   const attrs = node.attrs as VariableNodeAttrs
 
   const { variables } = useDocumentVariable()
   const { isPreview } = usePreviewMode()
 
   return (
-    <NodeViewWrapper
-      as="span"
-      className={clsx(
-        'variable-node',
-        styles['variable'],
-        isPreview ? styles.preview : styles.editor
-      )}
-    >
-      <>
+    <NodeViewWrapper as="span" className={clsx('variable-node', isPreview ? 'preview' : 'editor')}>
+      <span className="variable-node-curly-braces">{'{{'}</span>
+      <span
+        className="variable-node-content"
+        onClick={() => editor.commands.setNodeSelection(getPos()!)}
+      >
         {attrs.type === 'boolean' && (
-          <span className={styles['variable-node-checkbox']}>
+          <span className={'variable-node-checkbox'}>
             {variables[attrs.code] ? <GrCheckboxSelected /> : <GrCheckbox />}
           </span>
         )}
         {(attrs.showLabel || !isPreview) && (
           <span
-            className={clsx(styles['variable-node-label'], {
-              [styles['delete']]: !attrs.showLabel,
+            className={clsx('variable-node-label', {
+              ['delete']: !attrs.showLabel,
             })}
           >
             {attrs.labelAlias || attrs.label}
           </span>
         )}
         {attrs.type !== 'boolean' && (attrs.showLabel || !isPreview) && (
-          <span className={styles['variable-node-separator']}>:&nbsp;</span>
+          <span className={'variable-node-separator'}>:&nbsp;</span>
         )}
         {attrs.type !== 'boolean' && (
-          <span className={styles['variable-node-code']}>
+          <span className={'variable-node-code'}>
             {isPreview ? variables[attrs.code] : attrs.code}
           </span>
         )}
-      </>
+      </span>
+      <span className="variable-node-curly-braces">{'}}'}</span>
     </NodeViewWrapper>
   )
 }
