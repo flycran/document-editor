@@ -3,9 +3,19 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "main": "./dist/index.cjs",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "types": "./src/index.ts"
+    },
+    "./document-editor.css": "./dist/document-editor.css"
+  },
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build --mode lib",
+    "build:demo": "vite build",
     "deploy": "bun run ./scripts/deploy",
     "preview": "vite preview",
     "check:type": "tsgo --noEmit --project ./tsconfig.app.json",
