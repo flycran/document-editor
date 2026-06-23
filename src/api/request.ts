@@ -19,7 +19,7 @@ export const createFetch =
     if (state.user.user_id) headers.set('userId', state.user.user_id)
 
     const response = await fetch(
-      `${import.meta.env.DEV ? project.origin.chagineProxy : ''}${baseUrl + url}`,
+      `${import.meta.env.DEV ? '' : project.origin.chagineProxy}${baseUrl + url}`,
       {
         ...options,
         credentials: 'include',
