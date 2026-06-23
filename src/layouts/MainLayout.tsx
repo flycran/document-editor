@@ -13,9 +13,12 @@ export default function MainLayout() {
   const navigate = useNavigate()
   const [content, setContent] = useState<JSONContent>()
   useGlobalKeepQuery()
-  useAutoLogin()
-  useExpire()
-  const ready = useAppSelector((state) => !!state.user.token)
+  const isDemo = import.meta.env.MODE === 'production' && !import.meta.env.SSR
+  if (!isDemo) {
+    useAutoLogin()
+    useExpire()
+  }
+  const ready = isDemo || useAppSelector((state) => !!state.user.token)
 
   const isEditor = location.pathname.startsWith('/editor')
 

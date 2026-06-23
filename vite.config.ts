@@ -9,9 +9,10 @@ import project from './src/config/project'
 
 export default defineConfig(({ mode }) => {
   const isLib = mode === 'lib'
+  const isDev = mode === 'development'
 
   return {
-    base: isLib ? undefined : `/${project.name}/`,
+    base: isLib || isDev ? undefined : `/${project.name}/`,
     server: isLib
       ? undefined
       : {

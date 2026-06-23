@@ -1,0 +1,139 @@
+{
+  "status": "000",
+  "data": {
+    "page_size": 10,
+    "page_num": 1,
+    "pages": 2,
+    "total": 12,
+    "list": [
+      {
+        "medical_id": "1172823194013401344",
+        "template_id": "20260602000001",
+        "version": "20260618171059",
+        "template_name": "义乌病历模板",
+        "status": 1,
+        "publish_user": "900101",
+        "publish_time": "2026-06-18 17:10:59",
+        "publish_name": "管理员",
+        "used": 1,
+        "create_time": "2026-06-18 17:08:48"
+      },
+      {
+        "medical_id": "924574782983373799",
+        "template_id": "20240111000001",
+        "version": "20240802161831",
+        "template_name": "住院知情同意病历数据模板",
+        "status": 1,
+        "publish_user": "900101",
+        "publish_time": "2024-08-02 16:18:31",
+        "publish_name": "管理员",
+        "used": 1,
+        "create_time": "2024-08-02 16:18:14"
+      },
+      {
+        "medical_id": "769840082654987067",
+        "template_id": "20230602000002",
+        "version": "20230602163904",
+        "template_name": "后端测试病历文档-节点移动后",
+        "status": 1,
+        "publish_user": "900101",
+        "publish_time": "2023-06-02 16:39:04",
+        "publish_name": "管理员",
+        "used": 1,
+        "remark": "后端测试病历文档-节点移动后",
+        "create_time": "2023-06-02 16:37:47"
+      },
+      {
+        "medical_id": "769840186535314141",
+        "template_id": "20230602000001",
+        "version": "20230602163829",
+        "template_name": "后端测试病历文档-节点移动前",
+        "status": 1,
+        "publish_user": "900101",
+        "publish_time": "2023-06-02 16:38:29",
+        "publish_name": "管理员",
+        "used": 1,
+        "remark": "用于文档导入导出、结构调整的测试",
+        "create_time": "2023-06-02 16:38:12"
+      },
+      {
+        "medical_id": "739779185337303128",
+        "template_id": "20230311000001",
+        "version": "20230311174734",
+        "template_name": "通用门诊病历模板",
+        "status": 1,
+        "publish_user": "900101",
+        "publish_time": "2023-03-11 17:47:34",
+        "publish_name": "管理员",
+        "used": 1,
+        "create_time": "2023-03-11 17:46:31"
+      },
+      {
+        "medical_id": "769825878942286818",
+        "template_id": "20230206000001",
+        "version": "20230602154214",
+        "template_name": "产时病历模板",
+        "status": 1,
+        "publish_user": "900101",
+        "publish_time": "2023-06-02 15:42:14",
+        "publish_name": "管理员",
+        "used": 1,
+        "remark": "禁止改动",
+        "create_time": "2023-06-02 15:41:21"
+      },
+      {
+        "medical_id": "986832927419663293",
+        "template_id": "20230202000001",
+        "version": "20250121113022",
+        "template_name": "前端测试模板",
+        "status": 1,
+        "publish_user": "900101",
+        "publish_time": "2025-01-21 11:30:22",
+        "publish_name": "管理员",
+        "used": 1,
+        "remark": "前端测试模板",
+        "create_time": "2025-01-21 11:29:53"
+      },
+      {
+        "medical_id": "903469255213842773",
+        "template_id": "20230111000001",
+        "version": "20240605103853",
+        "template_name": "测试模板",
+        "status": 1,
+        "publish_user": "900101",
+        "publish_time": "2024-06-05 10:38:53",
+        "publish_name": "管理员",
+        "used": 1,
+        "modern_text": "<data-element data-type=\"data-element\" data-compose_code=\"p$XBS--g$YQXX--g$YQ.XY--e$DE04.10.091.00\" style=\"display: inline-flex; margin: 0px; align-items: center; justify-content: center; padding: 0px; box-sizing: border-box;\"></data-element>",
+        "modern_config": "{\"paragraph_map\":{\"p$XBS\":{\"p$XBS--g$YQXX--g$YQ.XY--e$DE04.10.091.00\":{\"id\":\"1000000472\",\"element_type_id\":\"10000\",\"code\":\"DE04.10.091.00\",\"name\":\"基础舒张压（mmHg）\",\"unit\":\"mmHg\",\"pinyin\":\"JCSZYMH\",\"definition\":\"受检者基础舒张压的测量值，计量单位为mmHg\",\"sort\":472,\"value_type_id\":\"30000\",\"value_type\":\"N\",\"value_format\":\"N2..3\",\"is_char\":2,\"is_number\":1,\"is_date\":2,\"is_time\":2,\"is_date_time\":2,\"is_bool\":2,\"is_data\":2,\"min_len\":2,\"max_len\":3,\"decimal_digit\":0,\"can_counted\":0,\"value_explain\":\"\",\"ban_change\":true,\"has_range\":false,\"required\":false,\"has_formula\":2,\"has_warn\":2,\"compose_code\":\"p$XBS--g$YQXX--g$YQ.XY--e$DE04.10.091.00\",\"ui\":{\"colon\":true,\"data_name\":{\"show\":true},\"data_value\":{\"show\":true},\"data_unit\":{\"show\":true}}}}},\"editor_options\":{\"transform_status\":{\"mode\":\"high_design\",\"text\":\"预览状态\"}}}",
+        "create_time": "2024-06-05 10:32:24"
+      },
+      {
+        "medical_id": "717735185776508996",
+        "template_id": "20221216000002",
+        "version": "20230109215159",
+        "template_name": "产后42天门诊病历模板",
+        "status": 1,
+        "publish_user": "900101",
+        "publish_time": "2023-01-09 21:51:59",
+        "publish_name": "管理员",
+        "used": 1,
+        "remark": "前端测试",
+        "create_time": "2023-01-09 21:51:32"
+      },
+      {
+        "medical_id": "853106602734125131",
+        "template_id": "20221205000001",
+        "version": "20240204173146",
+        "template_name": "别动模版数据测试",
+        "status": 1,
+        "publish_user": "900101",
+        "publish_time": "2024-02-04 17:31:46",
+        "publish_name": "管理员",
+        "used": 1,
+        "create_time": "2024-01-18 11:09:12"
+      }
+    ]
+  },
+  "request_id": "948558933830294984"
+}
