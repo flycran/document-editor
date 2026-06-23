@@ -107,7 +107,6 @@ export default function DocumentEditor({
   })
 
   const [isPreview, setIsPreview] = useState(false)
-  const [previewVariables, setPreviewVariables] = useState<Record<string, any>>({})
   const [tourOpen, setTourOpen] = useState(() => !isTourCompleted())
 
   useEffect(() => {

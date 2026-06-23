@@ -2,7 +2,6 @@ import { Editor, EditorContent, JSONContent, useEditor } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
 import { Ref } from 'react'
 import { documentPrint, getPreviewHTML } from '@/utils'
-import { DocumentVariableContextType } from '../DocumentEditor/contexts/DocumentVariableContext'
 import { sharedExtensions } from '../DocumentEditor/extensions'
 import '../DocumentEditor/styles.scss'
 import { Form } from 'antd'
@@ -17,7 +16,7 @@ interface PreviewerProps {
   /* 预览的文档内容 */
   content?: JSONContent
   /* 变量上下文 */
-  formData?: DocumentVariableContextType
+  formData?: any
   className?: string
   ref?: Ref<PreviewRef>
 }
