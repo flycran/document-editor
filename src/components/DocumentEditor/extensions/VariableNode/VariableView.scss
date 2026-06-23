@@ -11,6 +11,10 @@
         margin: 0 1px;
       }
 
+      .variable-node-code {
+        min-width: 60px;
+      }
+
       .variable-node-checkbox {
         display: inline-block;
         margin-right: 4px;
@@ -39,16 +43,16 @@
         }
       }
     }
+
+    &.preview {
+      .variable-node-curly-braces {
+        display: none;
+      }
+    }
   }
 
   .ProseMirror-selectednode .variable.editor {
     outline: 2px solid #1677ff60;
     border-radius: 3px;
-  }
-
-  .preview {
-    .variable-node-curly-braces {
-      display: none;
-    }
   }
 }

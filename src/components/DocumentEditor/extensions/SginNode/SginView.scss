@@ -13,6 +13,7 @@
 
       .sgin-node-code {
         vertical-align: bottom;
+        min-width: 60px;
 
         svg {
           display: inline-block;
@@ -37,16 +38,16 @@
         }
       }
     }
+
+    &.preview {
+      .sgin-node-curly-braces {
+        display: none;
+      }
+    }
   }
 
   .ProseMirror-selectednode .sgin-view.editor {
     outline: 2px solid #1677ff60;
     border-radius: 3px;
-  }
-
-  .preview {
-    .sgin-node-curly-braces {
-      display: none;
-    }
   }
 }
