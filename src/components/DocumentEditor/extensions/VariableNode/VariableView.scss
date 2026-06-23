@@ -14,8 +14,29 @@
       .variable-node-code {
         border-bottom: 1px currentColor solid;
 
-        input {
-          min-width: 50px;
+        .auto-width-input {
+          .measure {
+            position: absolute;
+            z-index: -10;
+            visibility: hidden;
+            pointer-events: none;
+            white-space: pre;
+
+            @media print {
+              visibility: initial;
+              position: initial;
+              z-index: initial;
+            }
+          }
+
+          .input {
+            outline: none;
+            min-width: 50px;
+
+            @media print {
+              display: none;
+            }
+          }
         }
       }
 
@@ -31,19 +52,19 @@
       .variable-node-content {
         cursor: default;
         margin: 2px;
-      }
 
-      .variable-node-curly-braces {
-        content: "{{";
-        font-weight: 500;
-        color: #1677ff;
-      }
+        .variable-node-curly-braces {
+          content: "{{";
+          font-weight: 500;
+          color: #1677ff;
+        }
 
-      .variable-node-label {
-        color: rgb(228, 120, 44);
+        .variable-node-label {
+          color: rgb(228, 120, 44);
 
-        &.delete {
-          text-decoration: line-through;
+          &.delete {
+            text-decoration: line-through;
+          }
         }
       }
     }

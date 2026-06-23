@@ -4,7 +4,48 @@ import { usePreviewMode } from '../../contexts/PreviewModeContext'
 import { VariableNodeAttrs } from './VariableNode'
 import './VariableView.scss'
 import { Form } from 'antd'
-import AutoWidthInput from '@/components/AutoWidthInput/AutoWidthInput'
+
+export interface AutoWidthInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  inputClassName?: string
+}
+
+function AutoWidthInput({
+  type = 'text',
+  className,
+  inputClassName,
+  defaultValue,
+  value,
+  onChange,
+  ...rest
+}: AutoWidthInputProps) {
+  const currentValue = value ?? defaultValue
+
+  const inputRef = useRef<HTMLInputElement>(null)
+  const measureRef = useRef<HTMLSpanElement>(null)
+
+  useLayoutEffect(() => {
+    if (inputRef.current && measureRef.current) {
+      inputRef.current.style.width = `${measureRef.current.offsetWidth}px`
+    }
+  }, [currentValue])
+
+  return (
+    <span className="auto-width-input">
+      <span ref={measureRef} className="measure">
+        {currentValue}
+      </span>
+      <input
+        {...rest}
+        ref={inputRef}
+        className="input"
+        defaultValue={defaultValue}
+        value={currentValue}
+        onChange={onChange}
+        type={type}
+      />
+    </span>
+  )
+}
 
 interface VariableCheckboxProps {
   value?: boolean

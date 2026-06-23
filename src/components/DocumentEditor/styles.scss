@@ -156,34 +156,35 @@
   @media print {
     &>.tiptap {
       padding: 0;
-    }
 
-    .page-break {
-      height: 0;
-      margin: 0;
-      page-break-after: always;
-      background: none;
+      .page-break {
+        height: 0;
+        margin: 0;
+        page-break-after: always;
+        border-image: none;
+        border-top: none;
 
-      span {
-        display: none;
+        span {
+          display: none;
+        }
       }
-    }
 
-    table {
-      border: 1px solid #000;
-
-      td,
-      th {
+      table {
         border: 1px solid #000;
-      }
 
-      th {
-        background: none;
-      }
+        td,
+        th {
+          border: 1px solid #000;
+        }
 
-      .selectedCell:after,
-      .column-resize-handle {
-        display: none;
+        th {
+          background: none;
+        }
+
+        .selectedCell:after,
+        .column-resize-handle {
+          display: none;
+        }
       }
     }
   }

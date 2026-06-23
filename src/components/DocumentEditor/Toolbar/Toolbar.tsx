@@ -13,6 +13,7 @@ import {
 } from 'antd'
 import { TooltipPlacement } from 'antd/es/tooltip'
 import { useCallback, useState } from 'react'
+import { flushSync } from 'react-dom'
 import { FaWpforms } from 'react-icons/fa'
 import { ImPageBreak } from 'react-icons/im'
 import { IoMdEye, IoMdEyeOff } from 'react-icons/io'
@@ -497,13 +498,14 @@ export default function Toolbar({ onPrint }: ToolbarProps) {
   )
 
   const handlePrint = () => {
-    const currentIsPreview = isPreview
-    if (!currentIsPreview) {
-      setPreview(true)
-      Promise.resolve().then(() => {
-        onPrint()
-        setPreview(false)
+    if (!isPreview) {
+      // flushSync 确保 setPreview(true) 同步完成渲染后再打印，
+      // 避免变量值（AutoWidthInput）尚未渲染就触发打印
+      flushSync(() => {
+        setPreview(true)
       })
+      onPrint()
+      setPreview(false)
     } else {
       onPrint()
     }
