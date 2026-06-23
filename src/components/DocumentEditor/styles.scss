@@ -1,7 +1,7 @@
 .document-editor {
   &>.tiptap {
     outline: none;
-    padding: 16px;
+    padding: 16px 32px;
     height: 100%;
 
     h1 {
@@ -89,6 +89,68 @@
         color: #1677ff;
       }
     }
+
+    /* 表格样式 */
+    table {
+      border-collapse: collapse;
+      table-layout: fixed;
+      width: 100%;
+      margin: 16px 0;
+      border: 1px solid #d9d9d9;
+
+      td,
+      th {
+        min-width: 1em;
+        border: 1px solid #d9d9d9;
+        padding: 8px;
+        vertical-align: top;
+        box-sizing: border-box;
+        position: relative;
+        background: #fff;
+
+        >* {
+          margin-bottom: 0;
+        }
+      }
+
+      th {
+        font-weight: 600;
+        text-align: left;
+        background: #fafafa;
+      }
+
+      .selectedCell:after {
+        z-index: 2;
+        position: absolute;
+        content: "";
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: rgba(59, 130, 246, 0.1);
+        pointer-events: none;
+      }
+
+      .column-resize-handle {
+        position: absolute;
+        right: -2px;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        z-index: 20;
+        background-color: #3b82f6;
+        pointer-events: none;
+        opacity: 0;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+      p {
+        margin: 0;
+      }
+    }
   }
 
   @media print {
@@ -103,6 +165,24 @@
       background: none;
 
       span {
+        display: none;
+      }
+    }
+
+    table {
+      border: 1px solid #000;
+
+      td,
+      th {
+        border: 1px solid #000;
+      }
+
+      th {
+        background: none;
+      }
+
+      .selectedCell:after,
+      .column-resize-handle {
         display: none;
       }
     }

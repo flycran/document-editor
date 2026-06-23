@@ -40,7 +40,17 @@ import {
   MdUndo,
 } from 'react-icons/md'
 import { RiInputField } from 'react-icons/ri'
-import { TbVariablePlus } from 'react-icons/tb'
+import {
+  TbColumnInsertLeft,
+  TbColumnInsertRight,
+  TbColumnRemove,
+  TbRowInsertBottom,
+  TbRowInsertTop,
+  TbRowRemove,
+  TbTableMinus,
+  TbTablePlus,
+  TbVariablePlus,
+} from 'react-icons/tb'
 import { useDocumentEditor } from '../contexts/DocumentEditorContext'
 import { usePreviewMode } from '../contexts/PreviewModeContext'
 import { SginType, sginEnum } from '../extensions/SginNode/SginUtils'
@@ -87,6 +97,12 @@ const presetsColors = [
   '#FFFFFF',
 ]
 
+// 表格行列数配置
+const TABLE_SIZE_CONFIG = {
+  min: 2,
+  max: 8,
+}
+
 const useToolbarState = () => {
   const editor = useDocumentEditor()
 
@@ -124,6 +140,39 @@ const useToolbarState = () => {
 }
 
 type ToolbarState = ReturnType<typeof useToolbarState>
+
+// 表格选择器组件
+function TableSelector({ onSelect }: { onSelect: (rows: number, cols: number) => void }) {
+  const [hoverSize, setHoverSize] = useState<[number, number]>([0, 0])
+  const { max } = TABLE_SIZE_CONFIG
+
+  const grid = Array.from({ length: max }, (_, rowIndex) =>
+    Array.from({ length: max }, (_, colIndex) => {
+      const isHovered = rowIndex < hoverSize[0] && colIndex < hoverSize[1]
+      return (
+        <div
+          key={`${rowIndex}-${colIndex}`}
+          className={styles.tableGridCellWrapper}
+          onMouseEnter={() => setHoverSize([rowIndex + 1, colIndex + 1])}
+          onClick={() => onSelect(hoverSize[0], hoverSize[1])}
+        >
+          <div className={clsx(styles.tableGridCell, { [styles.tableGridCellHover]: isHovered })} />
+        </div>
+      )
+    })
+  )
+
+  return (
+    <div className={styles.tableSelector} onMouseLeave={() => setHoverSize([0, 0])}>
+      <div className={styles.tableGrid}>{grid}</div>
+      <div className={styles.tableSizeHint}>
+        {hoverSize[0] > 0 && hoverSize[1] > 0
+          ? `${hoverSize[0]} 行 × ${hoverSize[1]} 列`
+          : '选择表格大小'}
+      </div>
+    </div>
+  )
+}
 
 function BubbleToolbar({
   isPreview,
@@ -275,6 +324,85 @@ function BubbleToolbar({
   )
 }
 
+function TableBubbleMenu({ isPreview }: { isPreview: boolean }) {
+  const editor = useDocumentEditor()
+
+  return (
+    <ConfigProvider componentSize="small" tooltip={{ classNames: { root: styles.tooltip } }}>
+      <BubbleMenu
+        editor={editor}
+        pluginKey="bubbleMenu-table"
+        className={styles.bubble}
+        shouldShow={({ editor: ed }) => {
+          return !isPreview && ed.isActive('table')
+        }}
+      >
+        <div className={styles.bubbleRow}>
+          <Tooltip title="在上方添加行">
+            <Button
+              type="text"
+              icon={<TbRowInsertTop />}
+              disabled={isPreview}
+              onClick={() => editor.chain().focus().addRowBefore().run()}
+            />
+          </Tooltip>
+          <Tooltip title="在下方添加行">
+            <Button
+              type="text"
+              icon={<TbRowInsertBottom />}
+              disabled={isPreview}
+              onClick={() => editor.chain().focus().addRowAfter().run()}
+            />
+          </Tooltip>
+          <Divider className={styles.divider} orientation="vertical" />
+          <Tooltip title="在左侧添加列">
+            <Button
+              type="text"
+              icon={<TbColumnInsertLeft />}
+              disabled={isPreview}
+              onClick={() => editor.chain().focus().addColumnBefore().run()}
+            />
+          </Tooltip>
+          <Tooltip title="在右侧添加列">
+            <Button
+              type="text"
+              icon={<TbColumnInsertRight />}
+              disabled={isPreview}
+              onClick={() => editor.chain().focus().addColumnAfter().run()}
+            />
+          </Tooltip>
+          <Divider className={styles.divider} orientation="vertical" />
+          <Tooltip title="删除行">
+            <Button
+              type="text"
+              icon={<TbRowRemove />}
+              disabled={isPreview}
+              onClick={() => editor.chain().focus().deleteRow().run()}
+            />
+          </Tooltip>
+          <Tooltip title="删除列">
+            <Button
+              type="text"
+              icon={<TbColumnRemove />}
+              disabled={isPreview}
+              onClick={() => editor.chain().focus().deleteColumn().run()}
+            />
+          </Tooltip>
+          <Divider className={styles.divider} orientation="vertical" />
+          <Tooltip title="删除表格">
+            <Button
+              type="text"
+              icon={<TbTableMinus />}
+              disabled={isPreview}
+              onClick={() => editor.chain().focus().deleteTable().run()}
+            />
+          </Tooltip>
+        </div>
+      </BubbleMenu>
+    </ConfigProvider>
+  )
+}
+
 function FormatColorButtons({
   isPreview,
   editorState,
@@ -335,6 +463,7 @@ export default function Toolbar({ onPrint }: ToolbarProps) {
   const editor = useDocumentEditor()
   const { isPreview, setPreview } = usePreviewMode()
   const [formOpen, setFormOpen] = useState(false)
+  const [tableDropdownOpen, setTableDropdownOpen] = useState(false)
 
   const editorState = useToolbarState()
 
@@ -557,6 +686,35 @@ export default function Toolbar({ onPrint }: ToolbarProps) {
 
             <Divider className={styles.divider} orientation="vertical" />
 
+            <Dropdown
+              open={tableDropdownOpen}
+              onOpenChange={setTableDropdownOpen}
+              popupRender={() => (
+                <div className={styles.tableDropdown}>
+                  <TableSelector
+                    onSelect={(rows, cols) => {
+                      editor.chain().focus().insertTable({ rows, cols, withHeaderRow: true }).run()
+                      setTableDropdownOpen(false)
+                    }}
+                  />
+                </div>
+              )}
+              placement="bottomLeft"
+            >
+              <Tooltip title="插入表格" placement="top">
+                <Button type="text" icon={<TbTablePlus />} disabled={isPreview} />
+              </Tooltip>
+            </Dropdown>
+
+            <Tooltip title="插入分页符" placement="bottom">
+              <Button
+                type="text"
+                icon={<ImPageBreak />}
+                disabled={isPreview}
+                onClick={() => editor.chain().focus().insertPageBreak().run()}
+              />
+            </Tooltip>
+
             <Tooltip title="插入变量" placement="bottom">
               <Button
                 type="text"
@@ -593,15 +751,6 @@ export default function Toolbar({ onPrint }: ToolbarProps) {
               </Tooltip>
             </Dropdown>
 
-            <Tooltip title="插入分页符" placement="bottom">
-              <Button
-                type="text"
-                icon={<ImPageBreak />}
-                disabled={isPreview}
-                onClick={() => editor.chain().focus().insertPageBreak().run()}
-              />
-            </Tooltip>
-
             <Divider className={styles.divider} size="small" orientation="vertical" />
 
             <Tooltip title={isPreview ? '编辑' : '预览'} placement="bottom">
@@ -630,6 +779,7 @@ export default function Toolbar({ onPrint }: ToolbarProps) {
       </ConfigProvider>
 
       <BubbleToolbar isPreview={isPreview} editorState={editorState} />
+      <TableBubbleMenu isPreview={isPreview} />
 
       <VariableForm open={formOpen} onClose={() => setFormOpen(false)} />
     </>

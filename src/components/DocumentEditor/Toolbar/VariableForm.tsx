@@ -3,7 +3,6 @@ import { Button, DatePicker, Drawer, Form, Input, InputNumber, Switch, TimePicke
 import dayjs from 'dayjs'
 import { useMemo } from 'react'
 import { useDocumentEditor } from '../contexts/DocumentEditorContext'
-import { useDocumentVariable } from '../contexts/DocumentVariableContext'
 import { VariableNodeAttrs } from '../extensions/VariableNode/VariableNode'
 
 interface VariableFormProps {
@@ -55,7 +54,7 @@ function renderControl(attr: VariableNodeAttrs) {
 
 export default function VariableForm({ open, onClose }: VariableFormProps) {
   const editor = useDocumentEditor()
-  const { variables, setVariables } = useDocumentVariable()
+  const globalForm = Form.useFormInstance()
   const [form] = Form.useForm()
 
   const variableNodeAttrs = useMemo(() => {
@@ -64,7 +63,7 @@ export default function VariableForm({ open, onClose }: VariableFormProps) {
   }, [editor, open])
 
   const handleFinish = (values: Record<string, any>) => {
-    setVariables({ ...variables, ...values })
+    globalForm.setFieldsValue(values)
     onClose()
   }
 
@@ -90,6 +89,12 @@ export default function VariableForm({ open, onClose }: VariableFormProps) {
     return d.isValid() ? d : value
   }
 
+  useEffect(() => {
+    if (open) {
+      form.setFieldsValue(globalForm.getFieldsValue())
+    }
+  }, [open])
+
   return (
     <Drawer
       title="预览变量"
@@ -111,7 +116,7 @@ export default function VariableForm({ open, onClose }: VariableFormProps) {
           文档中暂无变量，请先在编辑器中插入变量
         </div>
       ) : (
-        <Form form={form} initialValues={variables} onFinish={handleFinish}>
+        <Form form={form} initialValues={globalForm.getFieldsValue()} onFinish={handleFinish}>
           {variableNodeAttrs.map((attr) => {
             const isDateType =
               attr.type === 'date' || attr.type === 'time' || attr.type === 'date-time'

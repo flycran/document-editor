@@ -12,13 +12,18 @@
       }
 
       .variable-node-code {
-        min-width: 60px;
+        border-bottom: 1px currentColor solid;
+
+        input {
+          min-width: 50px;
+        }
       }
 
       .variable-node-checkbox {
         display: inline-block;
         margin-right: 4px;
         vertical-align: baseline;
+        cursor: pointer;
       }
     }
 

@@ -6,12 +6,11 @@ import TextAlign from '@tiptap/extension-text-align'
 import { TextStyle } from '@tiptap/extension-text-style'
 import { Editor, EditorContent, EditorEvents, JSONContent, useEditor } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
-import { Drawer } from 'antd'
+import { Drawer, Form } from 'antd'
 import React from 'react'
 import { documentPrint, getPreviewHTML } from '@/utils'
 import VariableList, { VariableListProps } from '../VariableList/VariableList'
 import { DocumentEditorContext, useDocumentEditor } from './contexts/DocumentEditorContext'
-import { DocumentVariableContext } from './contexts/DocumentVariableContext'
 import { PreviewModeContext } from './contexts/PreviewModeContext'
 import editorStyles from './DocumentEditor.module.scss'
 import EditorTour, { isTourCompleted } from './EditorTour/EditorTour'
@@ -131,12 +130,12 @@ export default function DocumentEditor({
     [editor]
   )
 
+  const [form] = Form.useForm()
+
   return (
     <DocumentEditorContext value={editor}>
       <PreviewModeContext value={{ isPreview, setPreview: setIsPreview }}>
-        <DocumentVariableContext
-          value={{ variables: previewVariables, setVariables: setPreviewVariables }}
-        >
+        <Form form={form}>
           <div
             className={clsx(
               editorStyles['editor-container'],
@@ -158,7 +157,7 @@ export default function DocumentEditor({
             <VariableDrawer {...variableListProps} />
             <EditorTour open={tourOpen} onClose={() => setTourOpen(false)} />
           </div>
-        </DocumentVariableContext>
+        </Form>
       </PreviewModeContext>
     </DocumentEditorContext>
   )

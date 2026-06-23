@@ -2,12 +2,10 @@ import { Editor, EditorContent, JSONContent, useEditor } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
 import { Ref } from 'react'
 import { documentPrint, getPreviewHTML } from '@/utils'
-import {
-  DocumentVariableContext,
-  DocumentVariableContextType,
-} from '../DocumentEditor/contexts/DocumentVariableContext'
+import { DocumentVariableContextType } from '../DocumentEditor/contexts/DocumentVariableContext'
 import { sharedExtensions } from '../DocumentEditor/extensions'
 import '../DocumentEditor/styles.scss'
+import { Form } from 'antd'
 
 export type PreviewRef = {
   editor: Editor
@@ -19,12 +17,12 @@ interface PreviewerProps {
   /* 预览的文档内容 */
   content?: JSONContent
   /* 变量上下文 */
-  variable?: DocumentVariableContextType
+  formData?: DocumentVariableContextType
   className?: string
   ref?: Ref<PreviewRef>
 }
 
-export default function DocumentPreviewer({ content, variable, className, ref }: PreviewerProps) {
+export default function DocumentPreviewer({ content, formData, className, ref }: PreviewerProps) {
   const editorContentRef = useRef<HTMLDivElement | null>(null)
   const editor = useEditor({
     extensions: [StarterKit, ...sharedExtensions],
@@ -44,15 +42,21 @@ export default function DocumentPreviewer({ content, variable, className, ref }:
     [editor]
   )
 
+  const [form] = Form.useForm()
+
+  useEffect(() => {
+    form.setFieldsValue(formData)
+  }, [formData])
+
   return (
     <div>
-      <DocumentVariableContext value={{ variables: variable ?? {}, setVariables: () => {} }}>
+      <Form form={form}>
         <EditorContent
           ref={editorContentRef}
           editor={editor}
           className={clsx('document-editor', 'document-print-area', className)}
         />
-      </DocumentVariableContext>
+      </Form>
     </div>
   )
 }

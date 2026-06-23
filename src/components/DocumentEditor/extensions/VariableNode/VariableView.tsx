@@ -1,15 +1,33 @@
 import { NodeViewWrapper, ReactNodeViewProps } from '@tiptap/react'
 import { GrCheckbox, GrCheckboxSelected } from 'react-icons/gr'
-import { useDocumentVariable } from '../../contexts/DocumentVariableContext'
 import { usePreviewMode } from '../../contexts/PreviewModeContext'
 import { VariableNodeAttrs } from './VariableNode'
 import './VariableView.scss'
+import { Form } from 'antd'
+import AutoWidthInput from '@/components/AutoWidthInput/AutoWidthInput'
+
+interface VariableCheckboxProps {
+  value?: boolean
+  onChange?: (value: boolean) => void
+}
+function VariableCheckbox({ value, onChange }: VariableCheckboxProps) {
+  return (
+    <span
+      className="variable-node-checkbox"
+      onClick={() => {
+        onChange?.(!value)
+      }}
+    >
+      {value ? <GrCheckboxSelected /> : <GrCheckbox />}
+    </span>
+  )
+}
 
 export default function VariableView({ node, editor, getPos }: ReactNodeViewProps) {
   const attrs = node.attrs as VariableNodeAttrs
 
-  const { variables } = useDocumentVariable()
   const { isPreview } = usePreviewMode()
+  const form = Form.useFormInstance()
 
   return (
     <NodeViewWrapper as="span" className={clsx('variable-node', isPreview ? 'preview' : 'editor')}>
@@ -19,12 +37,19 @@ export default function VariableView({ node, editor, getPos }: ReactNodeViewProp
         onClick={() => editor.commands.setNodeSelection(getPos()!)}
       >
         {attrs.type === 'boolean' && (
-          <span className={'variable-node-checkbox'}>
-            {variables[attrs.code] ? <GrCheckboxSelected /> : <GrCheckbox />}
-          </span>
+          <Form.Item noStyle name={attrs.code}>
+            <VariableCheckbox />
+          </Form.Item>
         )}
         {(attrs.showLabel || !isPreview) && (
           <span
+            onClick={
+              isPreview && attrs.type === 'boolean'
+                ? () => {
+                    form.setFieldValue(attrs.code, !form.getFieldValue(attrs.code))
+                  }
+                : undefined
+            }
             className={clsx('variable-node-label', {
               ['delete']: !attrs.showLabel,
             })}
@@ -37,7 +62,13 @@ export default function VariableView({ node, editor, getPos }: ReactNodeViewProp
         )}
         {attrs.type !== 'boolean' && (
           <span className={'variable-node-code'}>
-            {isPreview ? variables[attrs.code] : attrs.code}
+            {isPreview ? (
+              <Form.Item key={attrs.code} name={attrs.code} noStyle>
+                <AutoWidthInput />
+              </Form.Item>
+            ) : (
+              attrs.code
+            )}
           </span>
         )}
       </span>

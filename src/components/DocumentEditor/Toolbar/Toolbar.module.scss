@@ -41,3 +41,47 @@
     line-height: 1.4;
   }
 }
+
+// 表格选择器样式
+.tableSelector {
+  background: #fff;
+}
+
+.tableGrid {
+  display: grid;
+  grid-template-columns: repeat(8, 24px);
+  grid-template-rows: repeat(8, 24px);
+  margin-bottom: 4px;
+}
+
+.tableGridCellWrapper {
+  padding: 2px;
+  cursor: pointer;
+}
+
+.tableGridCell {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  transition: all 0.1s;
+}
+
+.tableGridCellHover {
+  background: var(--ant-color-primary);
+  border-color: var(--ant-color-primary);
+}
+
+.tableSizeHint {
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+  padding: 4px 0;
+}
+
+.tableDropdown {
+  padding: 8px;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
