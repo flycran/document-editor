@@ -16,7 +16,7 @@ bun dev
 ```
 
 #### 访问地址
-http://localhost:4003/admission-record?visit_no=20260610000530&tenant_id=100003&account=2018235
+http://localhost:4004/editor?account=900101&tenant_id=900101&password=240408
 
 ## API文件自动生成
 
