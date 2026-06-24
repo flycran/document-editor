@@ -134,7 +134,7 @@ export default function DocumentEditor({
   return (
     <DocumentEditorContext value={editor}>
       <PreviewModeContext value={{ isPreview, setPreview: setIsPreview }}>
-        <Form form={form}>
+        <Form form={form} component={false}>
           <div
             className={clsx(
               editorStyles['editor-container'],

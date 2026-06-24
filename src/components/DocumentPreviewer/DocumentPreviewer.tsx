@@ -49,7 +49,7 @@ export default function DocumentPreviewer({ content, formData, className, ref }:
 
   return (
     <div>
-      <Form form={form}>
+      <Form form={form} component={false}>
         <EditorContent
           ref={editorContentRef}
           editor={editor}

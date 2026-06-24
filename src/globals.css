@@ -6,19 +6,6 @@
   color: rgba(0, 0, 0, 0.65);
 }
 
-/** 打印区域 */
-@media print {
-  body > * {
-    display: none;
-  }
-
-  .document-print-area {
-    display: block !important;
-    width: 100vw;
-    top: 0;
-    left: 0;
-  }
-}
 /* 让整个 Table 组件参与 flex 伸缩 */
 .table-fill-wrapper {
   display: flex;

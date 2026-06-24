@@ -1,8 +1,18 @@
 .document-editor {
+  background: #d9d9d9;
+  @apply py-4 overflow-auto;
+  --page-padding-left: 16mm;
+  --page-padding-right: 16mm;
+
   &>.tiptap {
     outline: none;
-    padding: 16px 32px;
-    height: 100%;
+    padding: 0 var(--page-padding-left) 0 var(--page-padding-right);
+    position: relative;
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    background: #ffffff;
+    overflow: hidden;
 
     h1 {
       font-size: 2em;
@@ -149,6 +159,38 @@
 
       p {
         margin: 0;
+      }
+    }
+
+    .tiptap-header-banner {
+      @apply h-0;
+      margin: 0 calc(-1 * var(--page-padding-right)) 0 calc(-1 * var(--page-padding-left));
+      width: calc(100% + var(--page-padding-left) + var(--page-padding-right));
+
+      .tiptap-page-break {
+        @apply w-full;
+
+        .page {
+          @apply w-0 float-left clear-both;
+        }
+
+        .breaker {
+          @apply w-full float-left clear-both;
+          overflow: hidden;
+
+          .tiptap-page-footer {
+            @apply w-full float-left clear-both;
+          }
+
+          .tiptap-pagination-gap {
+            @apply w-full float-left clear-both;
+            background: #d9d9d9;
+          }
+
+          .tiptap-page-header {
+            @apply w-full float-left clear-both;
+          }
+        }
       }
     }
   }
