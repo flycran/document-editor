@@ -18,13 +18,15 @@ import React from 'react'
 import { documentPrint, getPreviewHTML } from '@/utils'
 import VariableList, { VariableListProps } from '../VariableList/VariableList'
 import { DocumentEditorContext, useDocumentEditor } from './contexts/DocumentEditorContext'
-import { PreviewModeContext } from './contexts/PreviewModeContext'
-import EditorTour, { isTourCompleted } from './EditorTour/EditorTour'
+import EditorTour from './EditorTour/EditorTour'
 import { sharedExtensions } from './extensions'
 import { VariableExtensionMode } from './extensions/VariableExtension'
 import './styles.scss'
 import Toolbar from './Toolbar/Toolbar'
 import './DocumentEditor.scss'
+import { createStore, Provider, useAtomValue } from 'jotai'
+import { Store } from 'jotai/vanilla/store'
+import { editableAtom } from './DocumentEditorStore'
 
 /**
  * 编辑器专用：placeholder 样式
@@ -71,13 +73,18 @@ export type EditorRef = {
   getPreviewHTML: () => string
 }
 
-type EditorListeners = Pick<EditorOptions, 'onUpdate' | 'onFocus' | 'onBlur'>
+type EditorListeners = Pick<
+  EditorOptions,
+  'onUpdate' | 'onFocus' | 'onBlur' | 'onMount' | 'onUnmount'
+>
 interface EditorProps extends Partial<EditorListeners> {
   /**
    * 占位符
    * @default '开始输入...'
    */
   placeholder?: string
+  /** 保存 */
+  onSave?: (parmas: { editor: Editor }) => void
   /** 编辑器内容 */
   content?: JSONContent
   /** 传递给变量列表组件的 props */
@@ -90,12 +97,17 @@ export default function DocumentEditor({
   placeholder = '开始输入...',
   content,
   variableListProps,
-  onUpdate,
-  onFocus,
-  onBlur,
   className,
   ref,
+  onSave,
+  ...listeners
 }: EditorProps) {
+  const storeRef = useRef<Store | null>(null)
+
+  if (!storeRef.current) {
+    storeRef.current = createStore()
+    storeRef.current!.set(editableAtom, true)
+  }
   const editorContentRef = useRef<HTMLDivElement | null>(null)
   const editor = useEditor(
     {
@@ -110,19 +122,24 @@ export default function DocumentEditor({
         ...sharedExtensions,
       ],
       content,
-      onUpdate,
-      onFocus,
-      onBlur,
+      ...listeners,
     },
     []
   )
 
-  const [isPreview, setIsPreview] = useState(false)
-  const [tourOpen, setTourOpen] = useState(() => !isTourCompleted())
+  useEffect(() => {
+    return () => {
+      editor?.setOptions({
+        content,
+      })
+    }
+  }, [content])
+
+  const editable = useAtomValue(editableAtom, { store: storeRef.current! })
 
   useEffect(() => {
-    editor?.setEditable(!isPreview)
-  }, [isPreview, editor])
+    editor?.setEditable(editable)
+  }, [editable, editor])
 
   const handlePrint = useCallback(() => {
     documentPrint(editorContentRef.current!)
@@ -143,8 +160,8 @@ export default function DocumentEditor({
   const [form] = Form.useForm()
 
   const toolbar = useMemo(
-    () => <Toolbar onPrint={handlePrint} onHelp={() => setTourOpen(true)} />,
-    []
+    () => <Toolbar onPrint={handlePrint} onSave={() => form.submit()} />,
+    [onSave]
   )
 
   const editorContent = useMemo(
@@ -161,16 +178,16 @@ export default function DocumentEditor({
 
   return (
     <DocumentEditorContext value={editor}>
-      <PreviewModeContext value={{ isPreview, setPreview: setIsPreview }}>
+      <Provider store={storeRef.current}>
         <Form form={form} component={false}>
-          <div className={clsx('editor-container', { 'document-editable': !isPreview }, className)}>
+          <div className={clsx('editor-container', { 'document-editable': editable }, className)}>
             {toolbar}
             {editorContent}
             <VariableDrawer {...variableListProps} />
-            <EditorTour open={tourOpen} onClose={() => setTourOpen(false)} />
+            <EditorTour />
           </div>
         </Form>
-      </PreviewModeContext>
+      </Provider>
     </DocumentEditorContext>
   )
 }

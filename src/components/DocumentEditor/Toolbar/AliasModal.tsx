@@ -7,16 +7,17 @@ interface AliasModalProps {
   open: boolean
   editor: Editor
   onClose: () => void
+  nodeType: 'variable' | 'sgin'
 }
 
-export default function AliasModal({ open, editor, onClose }: AliasModalProps) {
+export default function AliasModal({ open, editor, onClose, nodeType }: AliasModalProps) {
   const { currentAlias, currentLabel } = useMemo(() => {
     if (!open) return { currentAlias: '', currentLabel: '' }
     const { from, to } = editor.state.selection
     const aliases: string[] = []
     const labels: string[] = []
     editor.state.doc.nodesBetween(from, to, (node) => {
-      if (node.type.name === 'variable') {
+      if (node.type.name === nodeType) {
         aliases.push(node.attrs.labelAlias ?? '')
         labels.push(node.attrs.label ?? '')
       }
@@ -46,7 +47,7 @@ export default function AliasModal({ open, editor, onClose }: AliasModalProps) {
         editor
           .chain()
           .focus()
-          .updateAttributes('variable', { labelAlias: value || null } as VariableNodeAttrs)
+          .updateAttributes(nodeType, { labelAlias: value || null } as VariableNodeAttrs)
           .run()
         onClose()
       }}

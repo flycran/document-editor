@@ -1,5 +1,8 @@
 .document-content {
   position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 210mm;
 
   &>.tiptap {
     outline: none;
@@ -8,6 +11,12 @@
     margin: 0 auto;
     background: white;
     overflow: hidden;
+    -webkit-print-color-adjust: exact;
+
+    ::selection {
+      background-color: var(--ant-color-primary, #008f9180);
+      color: white;
+    }
 
     h1 {
       font-size: 2em;

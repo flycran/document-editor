@@ -1,9 +1,10 @@
 import { NodeViewWrapper, ReactNodeViewProps } from '@tiptap/react'
 import { GrCheckbox, GrCheckboxSelected } from 'react-icons/gr'
-import { usePreviewMode } from '../../contexts/PreviewModeContext'
 import { VariableNodeAttrs } from './VariableNode'
 import './VariableView.scss'
 import { Form } from 'antd'
+import { useAtomValue } from 'jotai'
+import { editableAtom } from '../../DocumentEditorStore'
 
 export interface AutoWidthInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   inputClassName?: string
@@ -85,11 +86,11 @@ function VariableCheckbox({ value, onChange }: VariableCheckboxProps) {
 export default function VariableView({ node, editor, getPos }: ReactNodeViewProps) {
   const attrs = node.attrs as VariableNodeAttrs
 
-  const { isPreview } = usePreviewMode()
+  const editable = useAtomValue(editableAtom)
   const form = Form.useFormInstance()
 
   return (
-    <NodeViewWrapper as="span" className={clsx('variable-node', isPreview ? 'preview' : 'editor')}>
+    <NodeViewWrapper as="span" className={clsx('variable-node', editable ? 'editor' : 'preview')}>
       <span className="variable-node-curly-braces">{'{{'}</span>
       <span
         className="variable-node-content"
@@ -100,33 +101,33 @@ export default function VariableView({ node, editor, getPos }: ReactNodeViewProp
             <VariableCheckbox />
           </Form.Item>
         )}
-        {(attrs.showLabel || !isPreview) && (
+        {(attrs.showLabel || editable) && (
           <span
             onClick={
-              isPreview && attrs.type === 'boolean'
+              !editable && attrs.type === 'boolean'
                 ? () => {
                     form.setFieldValue(attrs.code, !form.getFieldValue(attrs.code))
                   }
                 : undefined
             }
             className={clsx('variable-node-label', {
-              ['delete']: !attrs.showLabel,
+              delete: !attrs.showLabel,
             })}
           >
             {attrs.labelAlias || attrs.label}
           </span>
         )}
-        {attrs.type !== 'boolean' && (attrs.showLabel || !isPreview) && (
+        {attrs.type !== 'boolean' && (attrs.showLabel || editable) && (
           <span className={'variable-node-separator'}>:&nbsp;</span>
         )}
         {attrs.type !== 'boolean' && (
           <span className="variable-node-code">
-            {isPreview ? (
+            {editable ? (
+              attrs.code
+            ) : (
               <Form.Item key={attrs.code} name={attrs.code} noStyle>
                 {attrs.type === 'text' ? <AutoWidthInput /> : <Text />}
               </Form.Item>
-            ) : (
-              attrs.code
             )}
           </span>
         )}

@@ -63,19 +63,18 @@ export const VariableNode = Node.create({
   },
 
   renderHTML({ node }) {
-    const { label, code, type } = node.attrs as VariableNodeAttrs
+    const attrs = node.attrs as VariableNodeAttrs
 
     return [
       'span',
       {
-        'data-node-label': label,
-        'data-node-code': code,
-        'data-node-type': type,
-        'data-node-show-label': node.attrs.showLabel,
-        'data-node-label-alias': node.attrs.labelAlias,
+        'data-node-label': attrs.label,
+        'data-node-code': attrs.code,
+        'data-node-type': attrs.type,
+        'data-node-show-label': attrs.showLabel,
+        'data-node-label-alias': attrs.labelAlias,
         class: 'variable-node',
       },
-      label,
     ]
   },
 

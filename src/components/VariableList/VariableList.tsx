@@ -1,5 +1,5 @@
 import { Input, Select, Spin, Tree, TreeDataNode } from 'antd'
-import { createContext, memo, useCallback, useContext, useEffect, useMemo, useState } from 'react'
+import { createContext, memo, useCallback, useEffect, useMemo, useState } from 'react'
 import { MdAddCircleOutline } from 'react-icons/md'
 import { RiNodeTree } from 'react-icons/ri'
 import {
@@ -23,17 +23,17 @@ export interface InformedTemplateItemTree extends TreeDataNode {
   element?: InformedTemplateNodeListItemElementsItem
 }
 
-/** 搜索值 Context：避免通过 props 逐层透传，searchValue 变化时只有真正用到它的组件重渲染 */
-const SearchValueContext = createContext('')
-const useSearchValue = () => useContext(SearchValueContext)
-
-/** 变量操作模式 Context */
-const VariableModeContext = createContext<VariableExtensionMode>('insert')
-const useVariableMode = () => useContext(VariableModeContext)
+const VariableListContext = createContext<{
+  mode: VariableExtensionMode
+  keyword: string
+}>({
+  mode: 'insert',
+  keyword: '',
+})
 
 /** 高亮搜索关键词 */
 const HighlightText = memo(function HighlightText({ text }: { text: string }) {
-  const keyword = useSearchValue()
+  const { keyword } = useContext(VariableListContext)
   if (!keyword) return <>{text}</>
   const index = text.indexOf(keyword)
   if (index === -1) return <>{text}</>
@@ -97,7 +97,7 @@ const VariableListElement = memo(function VariableListElement({
   element: InformedTemplateNodeListItemElementsItem
 }) {
   const editor = useDocumentEditor()
-  const mode = useVariableMode()
+  const { mode } = useContext(VariableListContext)
 
   const handleClick = () => {
     const type: VariableType =
@@ -322,6 +322,7 @@ export default function VariableList({
           style={{ width: '100%' }}
         />
         <Input.Search
+          autoFocus
           className={styles.search}
           placeholder="搜索变量"
           onChange={handleSearchChange}
@@ -329,21 +330,19 @@ export default function VariableList({
           allowClear
         />
       </div>
-      <VariableModeContext.Provider value={mode}>
-        <SearchValueContext.Provider value={searchValue}>
-          <Spin spinning={variableListLoading} className={styles.spin}>
-            <Tree
-              treeData={rawTreeData}
-              titleRender={titleRender}
-              expandedKeys={expandedKeys}
-              autoExpandParent={autoExpandParent}
-              onExpand={handleExpand}
-              checkable={false}
-              selectable={false}
-            />
-          </Spin>
-        </SearchValueContext.Provider>
-      </VariableModeContext.Provider>
+      <VariableListContext.Provider value={{ mode, keyword: searchValue }}>
+        <Spin spinning={variableListLoading} className={styles.spin}>
+          <Tree
+            treeData={rawTreeData}
+            titleRender={titleRender}
+            expandedKeys={expandedKeys}
+            autoExpandParent={autoExpandParent}
+            onExpand={handleExpand}
+            checkable={false}
+            selectable={false}
+          />
+        </Spin>
+      </VariableListContext.Provider>
     </div>
   )
 }

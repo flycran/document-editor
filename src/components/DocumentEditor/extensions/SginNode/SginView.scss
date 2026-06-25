@@ -35,6 +35,10 @@
 
         .sgin-node-label {
           color: rgb(228, 120, 44);
+
+          &.delete {
+            text-decoration: line-through;
+          }
         }
       }
     }

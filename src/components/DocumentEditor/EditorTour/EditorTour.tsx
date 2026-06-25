@@ -1,8 +1,8 @@
 import type { TourProps } from 'antd'
 import { Tour } from 'antd'
+import { useAtom } from 'jotai'
 import { useEffect, useState } from 'react'
-
-const STORAGE_KEY = 'editor-tour-completed'
+import { STORAGE_KEY, tourOpenAtom } from '../DocumentEditorStore'
 
 export interface EditorTourProps {
   open: boolean
@@ -29,10 +29,11 @@ function isFormOpen(): boolean {
  * 完全通过 DOM 选择器（data-tour-id）定位目标元素，不与编辑器内部状态耦合。
  * 引导完成状态存储在 localStorage，首次自动弹出，完成后不再弹出。
  */
-export default function EditorTour({ open, onClose }: EditorTourProps) {
+export default function EditorTour() {
+  const [open, setOpen] = useAtom(tourOpenAtom)
   const handleClose = () => {
     localStorage.setItem(STORAGE_KEY, '1')
-    onClose()
+    setOpen(false)
   }
 
   const [step, setStep] = useState(0)

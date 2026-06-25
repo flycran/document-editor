@@ -5,6 +5,8 @@ import SginView from './SginView'
 
 export interface SginNodeAttrs {
   type: SginType
+  showLabel?: boolean
+  labelAlias?: string | null
 }
 declare module '@tiptap/core' {
   interface Commands<ReturnType> {
@@ -30,6 +32,14 @@ export const SginNode = Node.create({
         default: '',
         parseHTML: (element) => element.getAttribute('data-node-type') || '',
       },
+      showLabel: {
+        default: true,
+        parseHTML: (element) => element.getAttribute('data-node-show-label') !== 'false',
+      },
+      labelAlias: {
+        default: null,
+        parseHTML: (element) => element.getAttribute('data-node-label-alias'),
+      },
     }
   },
 
@@ -42,12 +52,14 @@ export const SginNode = Node.create({
   },
 
   renderHTML({ node }) {
-    const { type } = node.attrs as SginNodeAttrs
+    const attrs = node.attrs as SginNodeAttrs
 
     return [
       'span',
       {
-        'data-node-type': type,
+        'data-node-type': attrs.type,
+        'data-node-show-label': attrs.showLabel,
+        'data-node-label-alias': attrs.labelAlias,
         class: 'sgin-node',
         contenteditable: 'false',
       },
