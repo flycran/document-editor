@@ -1,5 +1,5 @@
 import { Input, Select, Spin, Tree, TreeDataNode } from 'antd'
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { createContext, memo, useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import { MdAddCircleOutline } from 'react-icons/md'
 import { RiNodeTree } from 'react-icons/ri'
 import {
@@ -23,8 +23,17 @@ export interface InformedTemplateItemTree extends TreeDataNode {
   element?: InformedTemplateNodeListItemElementsItem
 }
 
+/** 搜索值 Context：避免通过 props 逐层透传，searchValue 变化时只有真正用到它的组件重渲染 */
+const SearchValueContext = createContext('')
+const useSearchValue = () => useContext(SearchValueContext)
+
+/** 变量操作模式 Context */
+const VariableModeContext = createContext<VariableExtensionMode>('insert')
+const useVariableMode = () => useContext(VariableModeContext)
+
 /** 高亮搜索关键词 */
-function HighlightText({ text, keyword }: { text: string; keyword: string }) {
+const HighlightText = memo(function HighlightText({ text }: { text: string }) {
+  const keyword = useSearchValue()
   if (!keyword) return <>{text}</>
   const index = text.indexOf(keyword)
   if (index === -1) return <>{text}</>
@@ -35,69 +44,60 @@ function HighlightText({ text, keyword }: { text: string; keyword: string }) {
       {text.substring(index + keyword.length)}
     </>
   )
-}
+})
 
 /** 变量列表标题 */
-function VariableListTitle({
+const VariableListTitle = memo(function VariableListTitle({
   paragraph,
   node,
   element,
-  mode,
-  searchValue,
-}: InformedTemplateItemTree & { mode: VariableExtensionMode; searchValue?: string }) {
+}: InformedTemplateItemTree) {
   return paragraph ? (
-    <VariableListParagraph paragraph={paragraph} searchValue={searchValue} />
+    <VariableListParagraph paragraph={paragraph} />
   ) : node ? (
-    <VariableListNode node={node} searchValue={searchValue} />
+    <VariableListNode node={node} />
   ) : element ? (
-    <VariableListElement element={element} mode={mode} searchValue={searchValue} />
+    <VariableListElement element={element} />
   ) : null
-}
+})
 
 /** 变量列表段落 */
-function VariableListParagraph({
+const VariableListParagraph = memo(function VariableListParagraph({
   paragraph,
-  searchValue,
 }: {
   paragraph: InformedTemplateParagraphListItem
-  searchValue?: string
 }) {
   return (
     <span>
-      <HighlightText text={paragraph.name} keyword={searchValue || ''} />
+      <HighlightText text={paragraph.name} />
     </span>
   )
-}
+})
 
 /** 变量列表节点 */
-function VariableListNode({
+const VariableListNode = memo(function VariableListNode({
   node,
-  searchValue,
 }: {
   node: InformedTemplateNodeListItem
-  searchValue?: string
 }) {
   return (
     <span className={styles.node}>
       <RiNodeTree />
       <span>
-        <HighlightText text={node.node_name} keyword={searchValue || ''} />
+        <HighlightText text={node.node_name} />
       </span>
     </span>
   )
-}
+})
 
 /** 变量列表元素 */
-function VariableListElement({
+const VariableListElement = memo(function VariableListElement({
   element,
-  mode,
-  searchValue,
 }: {
   element: InformedTemplateNodeListItemElementsItem
-  mode: VariableExtensionMode
-  searchValue?: string
 }) {
   const editor = useDocumentEditor()
+  const mode = useVariableMode()
 
   const handleClick = () => {
     const type: VariableType =
@@ -135,11 +135,11 @@ function VariableListElement({
     >
       <MdAddCircleOutline className={styles['before-icon']} size={18} />
       <span>
-        <HighlightText text={element.name} keyword={searchValue || ''} />
+        <HighlightText text={element.name} />
       </span>
     </span>
   )
-}
+})
 
 export interface VariableListProps {
   /** 模板列表 */
@@ -175,6 +175,12 @@ export default function VariableList({
   const [searchValue, setSearchValue] = useState('')
   const [expandedKeys, setExpandedKeys] = useState<React.Key[]>([])
   const [autoExpandParent, setAutoExpandParent] = useState(true)
+
+  // 稳定 titleRender 引用：mode/searchValue 通过 Context 传递，回调本身不依赖它们
+  const titleRender = useCallback(
+    (item: InformedTemplateItemTree) => <VariableListTitle {...item} />,
+    []
+  )
 
   useEffect(() => {
     if (templateValue) {
@@ -323,19 +329,21 @@ export default function VariableList({
           allowClear
         />
       </div>
-      <Spin spinning={variableListLoading} className={styles.spin}>
-        <Tree
-          treeData={rawTreeData}
-          titleRender={(item) => (
-            <VariableListTitle {...item} mode={mode} searchValue={searchValue} />
-          )}
-          expandedKeys={expandedKeys}
-          autoExpandParent={autoExpandParent}
-          onExpand={handleExpand}
-          checkable={false}
-          selectable={false}
-        />
-      </Spin>
+      <VariableModeContext.Provider value={mode}>
+        <SearchValueContext.Provider value={searchValue}>
+          <Spin spinning={variableListLoading} className={styles.spin}>
+            <Tree
+              treeData={rawTreeData}
+              titleRender={titleRender}
+              expandedKeys={expandedKeys}
+              autoExpandParent={autoExpandParent}
+              onExpand={handleExpand}
+              checkable={false}
+              selectable={false}
+            />
+          </Spin>
+        </SearchValueContext.Provider>
+      </VariableModeContext.Provider>
     </div>
   )
 }
