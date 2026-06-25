@@ -18,7 +18,7 @@ export default function SginView({ node, editor, getPos }: ReactNodeViewProps) {
         className="sgin-node-content"
         onClick={() => editor.commands.setNodeSelection(getPos()!)}
       >
-        {attrs.showLabel && (
+        {(attrs.showLabel || editable) && (
           <span
             className={clsx('sgin-node-label', {
               delete: !attrs.showLabel,
