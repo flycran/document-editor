@@ -53,7 +53,7 @@ export default function DocumentPreviewer({ content, formData, className, ref }:
         <EditorContent
           ref={editorContentRef}
           editor={editor}
-          className={clsx('document-editor', 'document-print-area', className)}
+          className={clsx('document-content', className)}
         />
       </Form>
     </div>

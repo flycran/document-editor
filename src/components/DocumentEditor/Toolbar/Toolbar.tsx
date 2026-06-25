@@ -45,6 +45,7 @@ import {
   TbColumnInsertLeft,
   TbColumnInsertRight,
   TbColumnRemove,
+  TbHelp,
   TbRowInsertBottom,
   TbRowInsertTop,
   TbRowRemove,
@@ -337,6 +338,9 @@ function TableBubbleMenu({ isPreview }: { isPreview: boolean }) {
         shouldShow={({ editor: ed }) => {
           return !isPreview && ed.isActive('table')
         }}
+        options={{
+          autoPlacement: true,
+        }}
       >
         <div className={styles.bubbleRow}>
           <Tooltip title="在上方添加行">
@@ -458,9 +462,10 @@ function FormatColorButtons({
 
 interface ToolbarProps {
   onPrint: () => void
+  onHelp: () => void
 }
 
-export default function Toolbar({ onPrint }: ToolbarProps) {
+export default function Toolbar({ onPrint, onHelp }: ToolbarProps) {
   const editor = useDocumentEditor()
   const { isPreview, setPreview } = usePreviewMode()
   const [formOpen, setFormOpen] = useState(false)
@@ -775,6 +780,12 @@ export default function Toolbar({ onPrint }: ToolbarProps) {
 
             <Tooltip title="打印" placement="bottom">
               <Button type="text" icon={<MdOutlineLocalPrintshop />} onClick={handlePrint} />
+            </Tooltip>
+
+            <Divider className={styles.divider} size="small" orientation="vertical" />
+
+            <Tooltip title="使用帮助" placement="bottom">
+              <Button type="text" icon={<TbHelp />} onClick={onHelp} />
             </Tooltip>
           </div>
         </div>

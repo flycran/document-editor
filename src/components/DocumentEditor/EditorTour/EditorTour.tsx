@@ -1,6 +1,6 @@
 import type { TourProps } from 'antd'
 import { Tour } from 'antd'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const STORAGE_KEY = 'editor-tour-completed'
 
@@ -36,6 +36,11 @@ export default function EditorTour({ open, onClose }: EditorTourProps) {
   }
 
   const [step, setStep] = useState(0)
+
+  // 重新打开引导时从头开始（手动触发帮助按钮时尤为必要）
+  useEffect(() => {
+    if (open) setStep(0)
+  }, [open])
 
   /** 打开 Drawer 后延迟切步骤（等动画） */
   const openDrawerThen = (target: number) => {

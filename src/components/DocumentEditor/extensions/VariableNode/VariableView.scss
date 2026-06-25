@@ -1,4 +1,4 @@
-.document-editor {
+.editor-container {
 
   .variable-node {
     cursor: text;
@@ -12,7 +12,16 @@
       }
 
       .variable-node-code {
-        border-bottom: 1px currentColor solid;
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 1px;
+          width: 100%;
+          border-bottom: 1px currentColor solid;
+        }
 
         .auto-width-input {
           .measure {
@@ -49,15 +58,16 @@
     }
 
     &.editor {
+
+      .variable-node-curly-braces {
+        content: "{{";
+        font-weight: 500;
+        color: #1677ff;
+      }
+
       .variable-node-content {
         cursor: default;
-        margin: 2px;
-
-        .variable-node-curly-braces {
-          content: "{{";
-          font-weight: 500;
-          color: #1677ff;
-        }
+        margin: 0 2px;
 
         .variable-node-label {
           color: rgb(228, 120, 44);

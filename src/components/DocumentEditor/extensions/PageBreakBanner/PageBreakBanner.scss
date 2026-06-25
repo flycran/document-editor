@@ -1,0 +1,61 @@
+.document-editor {
+  background: #d9d9d9;
+  padding: 1rem 0;
+  --page-padding-left: 16mm;
+  --page-padding-right: 16mm;
+
+  &>.tiptap {
+    --page-height: 297mm;
+    --page-top-margin: 20mm;
+    --page-bottom-margin: 20mm;
+    --page-gap: 10mm;
+    padding: 0 var(--page-padding-left) 0 var(--page-padding-right);
+    position: relative;
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    background: #ffffff;
+    overflow: hidden;
+
+    .tiptap-header-banner {
+      @apply h-0;
+      margin: 0 calc(-1 * var(--page-padding-right)) 0 calc(-1 * var(--page-padding-left));
+      width: calc(100% + var(--page-padding-left) + var(--page-padding-right));
+
+      .tiptap-page-break {
+        @apply w-full;
+
+        .page {
+          @apply w-0 float-left clear-both;
+          margin-top: calc(var(--page-index, 0) * var(--page-height) - var(--page-bottom-margin));
+        }
+
+        .breaker {
+          @apply w-full float-left clear-both;
+          overflow: hidden;
+
+          .tiptap-page-footer {
+            @apply w-full;
+            height: var(--page-bottom-margin);
+          }
+
+          .tiptap-pagination-gap {
+            @apply w-full;
+            height: var(--page-gap);
+            background: #d9d9d9;
+          }
+
+          .tiptap-page-header {
+            @apply w-full;
+            height: var(--page-top-margin);
+          }
+        }
+      }
+
+      // 第一页的 page 定位到顶部，margin-top 归零
+      >.tiptap-page-break:first-child .page {
+        margin-top: 0;
+      }
+    }
+  }
+}

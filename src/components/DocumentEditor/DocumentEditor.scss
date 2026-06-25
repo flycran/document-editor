@@ -1,0 +1,33 @@
+.editor-container {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  flex-direction: column;
+  background: #d9d9d9;
+
+  .document-content.editor-only {
+    overflow: auto;
+
+    &>.tiptap {
+      min-height: 100%;
+    }
+
+    p.is-empty,
+    p.is-editor-empty {
+      display: flow-root;
+    }
+
+    p.is-editor-empty {
+      &::before {
+        color: #adb5bd;
+        content: attr(data-placeholder);
+        float: left;
+        height: 0;
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+.variable-drawer {
+  padding: 0 !important;
+}

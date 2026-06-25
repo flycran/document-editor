@@ -29,22 +29,40 @@ function AutoWidthInput({
     }
   }, [currentValue])
 
+  // measure 用于测算宽度，统一转字符串避免渲染 dayjs 等对象崩溃
+  const displayValue =
+    currentValue == null
+      ? ''
+      : typeof currentValue === 'string'
+        ? currentValue
+        : String(currentValue)
+
   return (
     <span className="auto-width-input">
       <span ref={measureRef} className="measure">
-        {currentValue}
+        {displayValue}
       </span>
       <input
         {...rest}
         ref={inputRef}
         className="input"
         defaultValue={defaultValue}
-        value={currentValue}
+        value={displayValue}
         onChange={onChange}
         type={type}
       />
     </span>
   )
+}
+
+interface TextProps {
+  value?: unknown
+}
+
+function Text({ value }: TextProps) {
+  if (value == null || value === '') return null
+  // 防御：表单值可能是 dayjs 等非字符串对象，统一转字符串，避免 React 渲染对象崩溃
+  return typeof value === 'string' ? value : String(value)
 }
 
 interface VariableCheckboxProps {
@@ -102,10 +120,10 @@ export default function VariableView({ node, editor, getPos }: ReactNodeViewProp
           <span className={'variable-node-separator'}>:&nbsp;</span>
         )}
         {attrs.type !== 'boolean' && (
-          <span className={'variable-node-code'}>
+          <span className="variable-node-code">
             {isPreview ? (
               <Form.Item key={attrs.code} name={attrs.code} noStyle>
-                <AutoWidthInput />
+                {attrs.type === 'text' ? <AutoWidthInput /> : <Text />}
               </Form.Item>
             ) : (
               attrs.code
