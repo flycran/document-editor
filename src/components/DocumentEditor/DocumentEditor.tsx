@@ -13,7 +13,7 @@ import {
   useEditor,
 } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
-import { Drawer, Form } from 'antd'
+import { Drawer, Form, FormInstance } from 'antd'
 import React from 'react'
 import { documentPrint, getPreviewHTML } from '@/utils'
 import VariableList, { VariableListProps } from '../VariableList/VariableList'
@@ -26,6 +26,7 @@ import Toolbar from './Toolbar/Toolbar'
 import './DocumentEditor.scss'
 import { createStore, Provider, useAtomValue } from 'jotai'
 import { Store } from 'jotai/vanilla/store'
+import { DocumentEditorEnumsContext } from './contexts/DocumentEditorEnumsContext'
 import { DocumentSginContext } from './contexts/DocumentEditorEventContext'
 import { editableAtom, inputableAtom } from './DocumentEditorStore'
 
@@ -56,6 +57,7 @@ function VariableDrawer({ ...rest }: VariableDrawerProps) {
     <Drawer
       size={600}
       open={open}
+      destroyOnHidden
       onClose={() => {
         editor.commands.closeVariableDrawer()
       }}
@@ -71,10 +73,12 @@ function VariableDrawer({ ...rest }: VariableDrawerProps) {
 export type EditorRef = {
   editor: Editor
   print: () => void
+  form: FormInstance
   getPreviewHTML: () => string
 }
 
 type EditorListeners = Pick<EditorOptions, 'onUpdate' | 'onFocus' | 'onBlur'>
+
 interface EditorProps extends Partial<EditorListeners>, DocumentSginContext {
   /**
    * 占位符
@@ -87,6 +91,8 @@ interface EditorProps extends Partial<EditorListeners>, DocumentSginContext {
   content?: JSONContent
   /** 传递给变量列表组件的 props */
   variableListProps: Omit<VariableListProps, 'mode'>
+  /* 获取枚举列表接口 */
+  getEnumsQuery?: DocumentEditorEnumsContext
   /** 是否允许在预览模式下输入变量 */
   inputable?: boolean
   ref?: React.Ref<EditorRef>
@@ -110,6 +116,7 @@ export default function DocumentEditor({
   onDoctorSgin,
   onPatientSgin,
   onFamilySgin,
+  getEnumsQuery,
 }: EditorProps) {
   const storeRef = useRef<Store | null>(null)
 
@@ -167,6 +174,7 @@ export default function DocumentEditor({
       print: () => {
         documentPrint(editorContentRef.current!)
       },
+      form: form,
       getPreviewHTML: () => getPreviewHTML(editorContentRef.current!),
     }),
     [editor]
@@ -203,16 +211,20 @@ export default function DocumentEditor({
           familySginImage,
         }}
       >
-        <Provider store={storeRef.current}>
-          <Form form={form} component={false}>
-            <div className={clsx('editor-container', { 'document-editable': editable }, className)}>
-              {toolbar}
-              {editorContent}
-              <VariableDrawer {...variableListProps} />
-              <EditorTour />
-            </div>
-          </Form>
-        </Provider>
+        <DocumentEditorEnumsContext value={getEnumsQuery}>
+          <Provider store={storeRef.current}>
+            <Form form={form} component={false}>
+              <div
+                className={clsx('editor-container', { 'document-editable': editable }, className)}
+              >
+                {toolbar}
+                {editorContent}
+                <VariableDrawer {...variableListProps} />
+                <EditorTour />
+              </div>
+            </Form>
+          </Provider>
+        </DocumentEditorEnumsContext>
       </DocumentSginContext>
     </DocumentEditorContext>
   )

@@ -1,0 +1,49 @@
+.document-content {
+  .preview-field-base {
+    .measure {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: -10;
+      visibility: hidden;
+      pointer-events: none;
+      white-space: pre;
+
+      @media print {
+        visibility: initial;
+        position: initial;
+        z-index: initial;
+      }
+    }
+
+    .input-wrapper,
+    .input {
+      outline: none;
+      min-width: 4em;
+      padding: 0;
+      border: none;
+      border-radius: 0;
+      box-shadow: none !important;
+      font-family: inherit;
+      font-size: inherit;
+      transition: none;
+      line-height: inherit;
+
+      @media print {
+        display: none !important;
+      }
+    }
+
+    .input.data-picker {
+      min-width: 5.5em;
+    }
+  }
+
+  .variable-node-checkbox {
+    display: inline-block;
+    font-size: 1em;
+    margin-right: 4px;
+    vertical-align: -0.125em;
+    cursor: pointer;
+  }
+}

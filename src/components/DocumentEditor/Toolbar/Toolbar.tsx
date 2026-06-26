@@ -62,11 +62,11 @@ import AliasModal from './AliasModal'
 import styles from './Toolbar.module.scss'
 import VariableForm from './VariableForm'
 
-const FONT_SIZES = [8, 10, 12, 14, 16, 18, 20, 24, 28, 32, 36, 48]
+const FONT_SIZES = [8, 10, 12, 14, 16, 18, 20, 24, 28, 32, 36]
 
 const FONT_SIZE_OPTIONS: SelectProps['options'] = FONT_SIZES.map((size) => ({
-  label: `${size}px`,
-  value: `${size}px`,
+  label: `${size}pt`,
+  value: `${size}pt`,
 }))
 
 const HEADING_OPTIONS: SelectProps['options'] = [
@@ -135,7 +135,7 @@ const useToolbarState = () => {
         isOrderedListActive: e.isActive('orderedList'),
         textAlign,
         headingLevel,
-        fontSize: (e.getAttributes('textStyle').fontSize || '16px') as string,
+        fontSize: (e.getAttributes('textStyle').fontSize || '12pt') as string,
         textColor: (e.getAttributes('textStyle').color || '#000000') as string,
         highlightColor: (e.getAttributes('highlight').color || '#ffff00') as string,
       }
@@ -283,29 +283,14 @@ const FormatControls = () => {
 function VariableBubbleMenu() {
   const editor = useDocumentEditor()
   const editable = useAtomValue(editableAtom)
-
   const [aliasModalOpen, setAliasModalOpen] = useState(false)
 
-  const selected = useEditorState({
+  const { showLabelValue } = useEditorState({
     editor,
-    selector: (state) => state.editor.state.selection,
+    selector: ({ editor }) => ({
+      showLabelValue: editor.isActive('variable', { showLabel: true }),
+    }),
   })
-  const showLabelValue = useMemo(() => {
-    const { from, to } = selected
-    const nodes: { showLabel: boolean }[] = []
-    editor.state.doc.nodesBetween(from, to, (node) => {
-      if (node.type.name === 'variable') {
-        nodes.push({
-          showLabel: node.attrs.showLabel ?? true,
-        })
-      }
-    })
-
-    const allSameShowLabel =
-      nodes.length > 0 && nodes.every((n) => n.showLabel === nodes[0].showLabel)
-
-    return allSameShowLabel ? nodes[0].showLabel : undefined
-  }, [selected])
 
   return (
     <>
@@ -343,13 +328,14 @@ function VariableBubbleMenu() {
           }}
         />
       </Tooltip>
-
-      <AliasModal
-        nodeType="variable"
-        open={aliasModalOpen}
-        editor={editor}
-        onClose={() => setAliasModalOpen(false)}
-      />
+      <ConfigProvider componentSize="medium">
+        <AliasModal
+          nodeType="variable"
+          open={aliasModalOpen}
+          editor={editor}
+          onClose={() => setAliasModalOpen(false)}
+        />
+      </ConfigProvider>
     </>
   )
 }
@@ -357,29 +343,14 @@ function VariableBubbleMenu() {
 function SginBubbleMenu() {
   const editor = useDocumentEditor()
   const editable = useAtomValue(editableAtom)
-
   const [aliasModalOpen, setAliasModalOpen] = useState(false)
 
-  const selected = useEditorState({
+  const { showLabelValue } = useEditorState({
     editor,
-    selector: (state) => state.editor.state.selection,
+    selector: ({ editor }) => ({
+      showLabelValue: editor.isActive('sgin', { showLabel: true }),
+    }),
   })
-  const showLabelValue = useMemo(() => {
-    const { from, to } = selected
-    const nodes: { showLabel: boolean }[] = []
-    editor.state.doc.nodesBetween(from, to, (node) => {
-      if (node.type.name === 'sgin') {
-        nodes.push({
-          showLabel: node.attrs.showLabel ?? true,
-        })
-      }
-    })
-
-    const allSameShowLabel =
-      nodes.length > 0 && nodes.every((n) => n.showLabel === nodes[0].showLabel)
-
-    return allSameShowLabel ? nodes[0].showLabel : undefined
-  }, [selected])
 
   return (
     <>
@@ -403,12 +374,14 @@ function SginBubbleMenu() {
           }}
         />
       </Tooltip>
-      <AliasModal
-        nodeType="sgin"
-        open={aliasModalOpen}
-        editor={editor}
-        onClose={() => setAliasModalOpen(false)}
-      />
+      <ConfigProvider componentSize="medium">
+        <AliasModal
+          nodeType="sgin"
+          open={aliasModalOpen}
+          editor={editor}
+          onClose={() => setAliasModalOpen(false)}
+        />
+      </ConfigProvider>
     </>
   )
 }
@@ -680,7 +653,7 @@ function HeaderToolber({ onPrint, onSave }: ToolbarProps) {
             variant="filled"
             value={editorState.fontSize}
             options={FONT_SIZE_OPTIONS}
-            style={{ width: 90 }}
+            style={{ width: 100 }}
             disabled={!editable}
             onChange={(value) => {
               editor.chain().focus().setFontSize(value).run()
@@ -691,7 +664,7 @@ function HeaderToolber({ onPrint, onSave }: ToolbarProps) {
             variant="filled"
             options={HEADING_OPTIONS}
             value={currentHeading}
-            style={{ width: 90 }}
+            style={{ width: 100 }}
             disabled={!editable}
             onChange={handleHeadingClick}
           />

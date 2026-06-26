@@ -1,5 +1,5 @@
 import type { Editor } from '@tiptap/react'
-import { Input, Modal } from 'antd'
+import { Form, Input, Modal } from 'antd'
 import { useEffect, useMemo, useState } from 'react'
 import { VariableNodeAttrs } from '../extensions/VariableNode/VariableNode'
 
@@ -41,7 +41,6 @@ export default function AliasModal({ open, editor, onClose, nodeType }: AliasMod
   return (
     <Modal
       width={360}
-      title="设置别名"
       open={open}
       onOk={() => {
         editor
@@ -52,14 +51,18 @@ export default function AliasModal({ open, editor, onClose, nodeType }: AliasMod
         onClose()
       }}
       onCancel={() => onClose()}
+      closable={false}
       destroyOnHidden
     >
-      <Input
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-        placeholder={currentLabel || '请输入别名'}
-        allowClear
-      />
+      <Form.Item label="设置别名" style={{ marginBottom: 0 }}>
+        <Input
+          autoFocus
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+          placeholder={currentLabel || '请输入别名'}
+          allowClear
+        />
+      </Form.Item>
     </Modal>
   )
 }

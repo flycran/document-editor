@@ -4,14 +4,16 @@ import { Ref } from 'react'
 import { documentPrint, getPreviewHTML } from '@/utils'
 import { sharedExtensions } from '../DocumentEditor/extensions'
 import '../DocumentEditor/styles.scss'
-import { Form } from 'antd'
+import { Form, FormInstance } from 'antd'
 import { createStore, Provider } from 'jotai'
 import { Store } from 'jotai/vanilla/store'
+import { DocumentEditorEnumsContext } from '../DocumentEditor/contexts/DocumentEditorEnumsContext'
 import { inputableAtom } from '../DocumentEditor/DocumentEditorStore'
 
 export type PreviewRef = {
   editor: Editor
   print: () => void
+  form: FormInstance
   getPreviewHTML: () => string
 }
 
@@ -22,6 +24,8 @@ interface PreviewerProps {
   formData?: any
   /** 是否允许在预览模式下输入变量 */
   inputable?: boolean
+  /* 获取枚举列表接口 */
+  getEnumsQuery?: DocumentEditorEnumsContext
   className?: string
   ref?: Ref<PreviewRef>
 }
@@ -30,6 +34,7 @@ export default function DocumentPreviewer({
   content,
   formData,
   inputable,
+  getEnumsQuery,
   className,
   ref,
 }: PreviewerProps) {
@@ -57,6 +62,7 @@ export default function DocumentPreviewer({
       print: () => {
         documentPrint(editorContentRef.current!)
       },
+      form: form,
       getPreviewHTML: () => getPreviewHTML(editorContentRef.current!),
     }),
     [editor]
@@ -70,15 +76,17 @@ export default function DocumentPreviewer({
 
   return (
     <Provider store={storeRef.current}>
-      <div>
-        <Form form={form} component={false}>
-          <EditorContent
-            ref={editorContentRef}
-            editor={editor}
-            className={clsx('document-content', className)}
-          />
-        </Form>
-      </div>
+      <DocumentEditorEnumsContext value={getEnumsQuery}>
+        <div>
+          <Form form={form} component={false}>
+            <EditorContent
+              ref={editorContentRef}
+              editor={editor}
+              className={clsx('document-content', className)}
+            />
+          </Form>
+        </div>
+      </DocumentEditorEnumsContext>
     </Provider>
   )
 }

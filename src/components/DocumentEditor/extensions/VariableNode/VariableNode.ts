@@ -1,8 +1,9 @@
 import { Attribute, Node } from '@tiptap/core'
+import { NodeSelection } from '@tiptap/pm/state'
 import { ReactNodeViewRenderer } from '@tiptap/react'
 import VariableView from './VariableView'
 
-export type VariableType = 'boolean' | 'text' | 'number' | 'date' | 'time' | 'date-time'
+export type VariableType = 'boolean' | 'text' | 'number' | 'date' | 'time' | 'date-time' | 'select'
 
 export interface VariableNodeAttrs {
   label: string
@@ -15,6 +16,7 @@ declare module '@tiptap/core' {
   interface Commands<ReturnType> {
     variable: {
       insertVariable: (attrs: VariableNodeAttrs) => ReturnType
+      updateVariable: (attrs: Partial<VariableNodeAttrs>) => ReturnType
     }
   }
 }
@@ -78,16 +80,18 @@ export const VariableNode = Node.create({
     ]
   },
 
+  renderText({ node }) {
+    const attrs = node.attrs as VariableNodeAttrs
+
+    return `{{${attrs.label}:${attrs.code}}`
+  },
+
   addKeyboardShortcuts() {
     return {
       'Mod-l': () =>
-        this.editor
-          .chain()
-          .focus()
-          .updateAttributes(this.name, {
-            showLabel: this.editor.isActive(this.name, { showLabel: false }),
-          })
-          .run(),
+        this.editor.commands.updateVariable({
+          showLabel: this.editor.isActive(this.name, { showLabel: false }),
+        }),
     }
   },
 
@@ -100,6 +104,32 @@ export const VariableNode = Node.create({
             type: this.name,
             attrs,
           })
+        },
+      updateVariable:
+        (attrs) =>
+        ({ editor }) => {
+          const { state, view } = editor
+          const selection = state.selection
+
+          if (selection instanceof NodeSelection) {
+            const pos = selection.from
+
+            const newAttrs = {
+              ...selection.node.attrs,
+              attrs,
+            }
+
+            const tr = state.tr
+
+            tr.setNodeMarkup(pos, undefined, newAttrs)
+
+            // 强制恢复 NodeSelection
+            tr.setSelection(NodeSelection.create(tr.doc, pos))
+
+            view.dispatch(tr)
+            return true
+          }
+          return false
         },
     }
   },

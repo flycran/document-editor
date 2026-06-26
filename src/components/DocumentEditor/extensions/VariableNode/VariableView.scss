@@ -6,10 +6,6 @@
     .variable-node-content {
       align-items: center;
 
-      .variable-node-separator {
-        margin: 0 1px;
-      }
-
       .variable-node-code {
         position: relative;
 
@@ -21,38 +17,6 @@
           width: 100%;
           border-bottom: 1px currentColor solid;
         }
-
-        .auto-width-input {
-          .measure {
-            position: absolute;
-            z-index: -10;
-            visibility: hidden;
-            pointer-events: none;
-            white-space: pre;
-
-            @media print {
-              visibility: initial;
-              position: initial;
-              z-index: initial;
-            }
-          }
-
-          .input {
-            outline: none;
-            min-width: 50px;
-
-            @media print {
-              display: none;
-            }
-          }
-        }
-      }
-
-      .variable-node-checkbox {
-        display: inline-block;
-        margin-right: 4px;
-        vertical-align: baseline;
-        cursor: pointer;
       }
     }
 

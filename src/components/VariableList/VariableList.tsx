@@ -100,8 +100,9 @@ const VariableListElement = memo(function VariableListElement({
   const { mode } = useContext(VariableListContext)
 
   const handleClick = () => {
-    const type: VariableType =
-      element.is_bool === 1
+    const type: VariableType = element.has_range
+      ? 'select'
+      : element.is_bool === 1
         ? 'boolean'
         : element.is_number === 1
           ? 'number'
