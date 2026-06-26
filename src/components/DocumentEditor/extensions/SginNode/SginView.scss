@@ -4,8 +4,6 @@
     cursor: text;
 
     .sgin-node-content {
-      display: inline-flex;
-      align-items: center;
 
       .sgin-node-separator {
         margin: 0 1px;
@@ -13,11 +11,17 @@
 
       .sgin-node-code {
         vertical-align: bottom;
-        min-width: 60px;
 
-        svg {
+        .sgin-icon {
           display: inline-block;
-          font-size: 1.25em;
+          width: 1.25em;
+          text-align: center;
+
+          svg {
+            display: inline-block;
+            transform: scale(1.75);
+            cursor: pointer;
+          }
         }
       }
     }
@@ -46,6 +50,12 @@
     &.preview {
       .sgin-node-curly-braces {
         display: none;
+      }
+
+      .sgin-node-image {
+        display: inline-block;
+        height: 1.5em;
+        vertical-align: bottom;
       }
     }
   }

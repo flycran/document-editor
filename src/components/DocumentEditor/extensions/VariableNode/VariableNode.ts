@@ -78,6 +78,19 @@ export const VariableNode = Node.create({
     ]
   },
 
+  addKeyboardShortcuts() {
+    return {
+      'Mod-l': () =>
+        this.editor
+          .chain()
+          .focus()
+          .updateAttributes(this.name, {
+            showLabel: this.editor.isActive(this.name, { showLabel: false }),
+          })
+          .run(),
+    }
+  },
+
   addCommands() {
     return {
       insertVariable:

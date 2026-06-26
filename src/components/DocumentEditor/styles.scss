@@ -5,12 +5,13 @@
 
   &>.tiptap {
     outline: none;
-    padding: 16px 32px;
+    padding: 10mm 10mm;
     position: relative;
     margin: 0 auto;
     background: white;
     overflow: hidden;
     -webkit-print-color-adjust: exact;
+    line-height: 1.5;
 
     ::selection {
       background-color: var(--ant-color-primary, #008f9180);

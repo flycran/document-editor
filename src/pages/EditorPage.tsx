@@ -4,10 +4,10 @@ import {
   useGetQuestcenterInformedTemplateGetMedicalTemplateList,
   useGetQuestcenterInformedTemplateGetTemplateDetailByMedicalId,
 } from '@/api/codegen/petstore'
+import doctorSginImage from '@/assets/sgin.png'
 import DocumentEditor, { EditorRef } from '@/components/DocumentEditor/DocumentEditor'
 import { useRHM } from '@/hooks/useRHM'
 import { OutletContext } from '@/types/router'
-
 export default function EditorPage() {
   const { content, setContent } = useOutletContext<OutletContext>()
   const { key } = useRHM()
@@ -64,7 +64,9 @@ export default function EditorPage() {
           placeholder="请输入文书内容..."
           content={content}
           className="h-full"
+          inputable
           onUpdate={handleUpdate}
+          doctorSginImage={doctorSginImage}
           variableListProps={{
             templateList: templateListData?.data?.list,
             templateListLoading: templateListDataIsFetching,

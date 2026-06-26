@@ -87,7 +87,7 @@ interface EditorProps extends Partial<EditorListeners>, DocumentSginContext {
   content?: JSONContent
   /** 传递给变量列表组件的 props */
   variableListProps: Omit<VariableListProps, 'mode'>
-  /** 是否允许输入变量 */
+  /** 是否允许在预览模式下输入变量 */
   inputable?: boolean
   ref?: React.Ref<EditorRef>
   className?: string
@@ -97,13 +97,16 @@ export default function DocumentEditor({
   placeholder = '开始输入...',
   content,
   variableListProps,
-  className,
   inputable,
+  className,
   ref,
   onSave,
   onUpdate,
   onBlur,
   onFocus,
+  doctorSginImage,
+  patientSginImage,
+  familySginImage,
   onDoctorSgin,
   onPatientSgin,
   onFamilySgin,
@@ -190,7 +193,16 @@ export default function DocumentEditor({
 
   return (
     <DocumentEditorContext value={editor}>
-      <DocumentSginContext value={{ onDoctorSgin, onPatientSgin, onFamilySgin }}>
+      <DocumentSginContext
+        value={{
+          onDoctorSgin,
+          onPatientSgin,
+          onFamilySgin,
+          doctorSginImage,
+          patientSginImage,
+          familySginImage,
+        }}
+      >
         <Provider store={storeRef.current}>
           <Form form={form} component={false}>
             <div className={clsx('editor-container', { 'document-editable': editable }, className)}>

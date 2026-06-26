@@ -12,21 +12,32 @@ export default function SginView({ node, editor, getPos }: ReactNodeViewProps) {
 
   const editable = useAtomValue(editableAtom)
 
-  const events = useDocumentSgin()
+  const sginContext = useDocumentSgin()
 
   const handleClick = () => {
     switch (attrs.type) {
       case 'doctor':
-        events.onDoctorSgin?.()
+        sginContext.onDoctorSgin?.()
         break
       case 'patient':
-        events.onPatientSgin?.()
+        sginContext.onPatientSgin?.()
         break
       case 'family':
-        events.onFamilySgin?.()
+        sginContext.onFamilySgin?.()
         break
     }
   }
+
+  const sginImage = useMemo(() => {
+    switch (attrs.type) {
+      case 'doctor':
+        return sginContext.doctorSginImage
+      case 'patient':
+        return sginContext.patientSginImage
+      case 'family':
+        return sginContext.familySginImage
+    }
+  }, [attrs.type, sginContext])
 
   return (
     <NodeViewWrapper as="span" className={clsx('sgin-node', editable ? 'editor' : 'preview')}>
@@ -46,7 +57,13 @@ export default function SginView({ node, editor, getPos }: ReactNodeViewProps) {
         )}
         <span className="sgin-node-separator">:&nbsp;</span>
         <span className="sgin-node-code" onClick={handleClick}>
-          <MdFingerprint />
+          {editable || !sginImage ? (
+            <span className="sgin-icon">
+              <MdFingerprint />
+            </span>
+          ) : (
+            <img className="sgin-node-image" src={sginImage} />
+          )}
         </span>
       </span>
       <span className="sgin-node-curly-braces">{'}}'}</span>

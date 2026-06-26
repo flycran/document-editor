@@ -4,7 +4,7 @@ import { VariableNodeAttrs } from './VariableNode'
 import './VariableView.scss'
 import { Form } from 'antd'
 import { useAtomValue } from 'jotai'
-import { editableAtom } from '../../DocumentEditorStore'
+import { editableAtom, inputableAtom } from '../../DocumentEditorStore'
 
 export interface AutoWidthInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   inputClassName?: string
@@ -88,6 +88,15 @@ export default function VariableView({ node, editor, getPos }: ReactNodeViewProp
 
   const editable = useAtomValue(editableAtom)
   const form = Form.useFormInstance()
+  const inputable = useAtomValue(inputableAtom)
+
+  useEffect(() => {
+    console.log('mount')
+
+    return () => {
+      console.log('unmount')
+    }
+  }, [])
 
   return (
     <NodeViewWrapper as="span" className={clsx('variable-node', editable ? 'editor' : 'preview')}>
@@ -122,7 +131,7 @@ export default function VariableView({ node, editor, getPos }: ReactNodeViewProp
         )}
         {attrs.type !== 'boolean' && (
           <span className="variable-node-code">
-            {editable ? (
+            {editable || !inputable ? (
               attrs.code
             ) : (
               <Form.Item key={attrs.code} name={attrs.code} noStyle>
