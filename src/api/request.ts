@@ -1,5 +1,4 @@
 import { message } from 'antd'
-import project from '@/config/project'
 import store from '@/store'
 import { setExpire } from '@/store/slice/userSlice'
 
@@ -39,14 +38,11 @@ export const createFetch =
     if (state.user.token) headers.set('token', state.user.token)
     if (state.user.user_id) headers.set('userId', state.user.user_id)
 
-    const response = await fetch(
-      `${import.meta.env.MODE === 'demo' ? project.origin.chagineProxy : ''}${baseUrl}${url}`,
-      {
-        ...options,
-        credentials: 'include',
-        headers,
-      }
-    )
+    const response = await fetch(`${baseUrl}${url}`, {
+      ...options,
+      credentials: 'include',
+      headers,
+    })
 
     if (response.status === 401) {
       store.dispatch(setExpire(true))
