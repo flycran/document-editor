@@ -22,10 +22,11 @@ export default function PreviewPage() {
           open={formModalOpen}
           onCancel={() => setFormModalOpen(false)}
           footer={null}
+          destroyOnHidden
           width={800}
         >
           <pre className="whitespace-pre-wrap break-all bg-gray-50 p-4 rounded max-h-[60vh] overflow-auto text-sm">
-            {JSON.stringify(content, null, 2)}
+            {JSON.stringify(previewerRef.current?.form.getFieldsValue(), null, 2)}
           </pre>
         </Modal>
       </div>
