@@ -15,7 +15,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build --mode lib",
-    "build:demo": "vite build",
+    "build:demo": "vite build --mode demo",
     "deploy": "bun run ./scripts/deploy",
     "preview": "vite preview",
     "check:type": "tsgo --noEmit --project ./tsconfig.app.json",
