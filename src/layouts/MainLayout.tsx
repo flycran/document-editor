@@ -13,7 +13,7 @@ export default function MainLayout() {
   const navigate = useNavigate()
   const [content, setContent] = useState<JSONContent>()
   useGlobalKeepQuery()
-  const isDemo = import.meta.env.MODE === 'production' && !import.meta.env.SSR
+  const isDemo = import.meta.env.MODE === 'demo' && !import.meta.env.SSR
   if (!isDemo) {
     useAutoLogin()
     useExpire()

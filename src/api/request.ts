@@ -11,7 +11,7 @@ const demoApiMap: Record<string, () => Promise<unknown>> = {
     import('./demo/get_template_detail_by_medical_id.json'),
 }
 
-const isDemo = import.meta.env.MODE === 'production' && !import.meta.env.SSR
+const isDemo = import.meta.env.MODE === 'demo' && !import.meta.env.SSR
 
 export const createFetch =
   (baseUrl: string) =>
