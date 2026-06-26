@@ -26,7 +26,8 @@ import Toolbar from './Toolbar/Toolbar'
 import './DocumentEditor.scss'
 import { createStore, Provider, useAtomValue } from 'jotai'
 import { Store } from 'jotai/vanilla/store'
-import { editableAtom } from './DocumentEditorStore'
+import { DocumentSginContext } from './contexts/DocumentEditorEventContext'
+import { editableAtom, inputableAtom } from './DocumentEditorStore'
 
 /**
  * 编辑器专用：placeholder 样式
@@ -73,11 +74,8 @@ export type EditorRef = {
   getPreviewHTML: () => string
 }
 
-type EditorListeners = Pick<
-  EditorOptions,
-  'onUpdate' | 'onFocus' | 'onBlur' | 'onMount' | 'onUnmount'
->
-interface EditorProps extends Partial<EditorListeners> {
+type EditorListeners = Pick<EditorOptions, 'onUpdate' | 'onFocus' | 'onBlur'>
+interface EditorProps extends Partial<EditorListeners>, DocumentSginContext {
   /**
    * 占位符
    * @default '开始输入...'
@@ -89,6 +87,8 @@ interface EditorProps extends Partial<EditorListeners> {
   content?: JSONContent
   /** 传递给变量列表组件的 props */
   variableListProps: Omit<VariableListProps, 'mode'>
+  /** 是否允许输入变量 */
+  inputable?: boolean
   ref?: React.Ref<EditorRef>
   className?: string
 }
@@ -98,9 +98,15 @@ export default function DocumentEditor({
   content,
   variableListProps,
   className,
+  inputable,
   ref,
   onSave,
-  ...listeners
+  onUpdate,
+  onBlur,
+  onFocus,
+  onDoctorSgin,
+  onPatientSgin,
+  onFamilySgin,
 }: EditorProps) {
   const storeRef = useRef<Store | null>(null)
 
@@ -108,6 +114,10 @@ export default function DocumentEditor({
     storeRef.current = createStore()
     storeRef.current!.set(editableAtom, true)
   }
+  useEffect(() => {
+    storeRef.current!.set(inputableAtom, !!inputable)
+  }, [inputable])
+
   const editorContentRef = useRef<HTMLDivElement | null>(null)
   const editor = useEditor(
     {
@@ -122,7 +132,9 @@ export default function DocumentEditor({
         ...sharedExtensions,
       ],
       content,
-      ...listeners,
+      onUpdate,
+      onBlur,
+      onFocus,
     },
     []
   )
@@ -178,16 +190,18 @@ export default function DocumentEditor({
 
   return (
     <DocumentEditorContext value={editor}>
-      <Provider store={storeRef.current}>
-        <Form form={form} component={false}>
-          <div className={clsx('editor-container', { 'document-editable': editable }, className)}>
-            {toolbar}
-            {editorContent}
-            <VariableDrawer {...variableListProps} />
-            <EditorTour />
-          </div>
-        </Form>
-      </Provider>
+      <DocumentSginContext value={{ onDoctorSgin, onPatientSgin, onFamilySgin }}>
+        <Provider store={storeRef.current}>
+          <Form form={form} component={false}>
+            <div className={clsx('editor-container', { 'document-editable': editable }, className)}>
+              {toolbar}
+              {editorContent}
+              <VariableDrawer {...variableListProps} />
+              <EditorTour />
+            </div>
+          </Form>
+        </Provider>
+      </DocumentSginContext>
     </DocumentEditorContext>
   )
 }

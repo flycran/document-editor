@@ -4,12 +4,29 @@ import { SginNodeAttrs } from './SginNode'
 import { sginEnum } from './SginUtils'
 import './SginView.scss'
 import { useAtomValue } from 'jotai'
+import { useDocumentSgin } from '../../contexts/DocumentEditorEventContext'
 import { editableAtom } from '../../DocumentEditorStore'
 
 export default function SginView({ node, editor, getPos }: ReactNodeViewProps) {
   const attrs = node.attrs as SginNodeAttrs
 
   const editable = useAtomValue(editableAtom)
+
+  const events = useDocumentSgin()
+
+  const handleClick = () => {
+    switch (attrs.type) {
+      case 'doctor':
+        events.onDoctorSgin?.()
+        break
+      case 'patient':
+        events.onPatientSgin?.()
+        break
+      case 'family':
+        events.onFamilySgin?.()
+        break
+    }
+  }
 
   return (
     <NodeViewWrapper as="span" className={clsx('sgin-node', editable ? 'editor' : 'preview')}>
@@ -28,7 +45,7 @@ export default function SginView({ node, editor, getPos }: ReactNodeViewProps) {
           </span>
         )}
         <span className="sgin-node-separator">:&nbsp;</span>
-        <span className="sgin-node-code">
+        <span className="sgin-node-code" onClick={handleClick}>
           <MdFingerprint />
         </span>
       </span>

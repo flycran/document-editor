@@ -6,6 +6,7 @@
 
   .document-content.editor-only {
     overflow: auto;
+    max-width: 210mm;
 
     &>.tiptap {
       min-height: 100%;
