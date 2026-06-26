@@ -1,4 +1,4 @@
-import { Attribute, Node } from '@tiptap/core'
+import { Attribute, Node, nodePasteRule } from '@tiptap/core'
 import { NodeSelection } from '@tiptap/pm/state'
 import { ReactNodeViewRenderer } from '@tiptap/react'
 import VariableView from './VariableView'
@@ -10,7 +10,7 @@ export interface VariableNodeAttrs {
   code: string
   type: VariableType
   showLabel?: boolean
-  labelAlias?: string | null
+  labelAlias?: string
 }
 declare module '@tiptap/core' {
   interface Commands<ReturnType> {
@@ -50,7 +50,7 @@ export const VariableNode = Node.create({
         parseHTML: (element) => element.getAttribute('data-node-show-label') !== 'false',
       },
       labelAlias: {
-        default: null,
+        default: '',
         parseHTML: (element) => element.getAttribute('data-node-label-alias'),
       },
     }
@@ -83,7 +83,29 @@ export const VariableNode = Node.create({
   renderText({ node }) {
     const attrs = node.attrs as VariableNodeAttrs
 
-    return `{{${attrs.label}:${attrs.code}}`
+    return `{{${attrs.label}:${attrs.code}?type=${attrs.type}&showLabel=${attrs.showLabel}&labelAlias=${attrs.labelAlias}}}`
+  },
+
+  addPasteRules() {
+    return [
+      nodePasteRule({
+        find: /\{\{([^:]+):([^?]+)\?type=([^&]*)&showLabel=([^&]*)&labelAlias=([^}]*)\}\}/g,
+        type: this.type,
+        getAttributes: (match) => {
+          const [, label, code, type, showLabel, labelAlias] = match
+
+          console.log(label)
+
+          return {
+            label,
+            code,
+            type,
+            showLabel: showLabel === 'true',
+            labelAlias,
+          }
+        },
+      }),
+    ]
   },
 
   addKeyboardShortcuts() {

@@ -2,6 +2,7 @@ import { useEditorState } from '@tiptap/react'
 import { BubbleMenu } from '@tiptap/react/menus'
 import type { SelectProps } from 'antd'
 import {
+  App,
   Button,
   ColorPicker,
   ConfigProvider,
@@ -47,6 +48,8 @@ import {
   TbColumnInsertLeft,
   TbColumnInsertRight,
   TbColumnRemove,
+  TbFileExport,
+  TbFileImport,
   TbHelp,
   TbRowInsertBottom,
   TbRowInsertTop,
@@ -59,8 +62,38 @@ import { useDocumentEditor } from '../contexts/DocumentEditorContext'
 import { editableAtom, tourOpenAtom } from '../DocumentEditorStore'
 import { SginType, sginEnum } from '../extensions/SginNode/SginUtils'
 import AliasModal from './AliasModal'
+import ImportExportModal from './ImportExportModal'
 import styles from './Toolbar.module.scss'
 import VariableForm from './VariableForm'
+
+/**
+ * 将文本复制到剪贴板
+ * 优先使用 Clipboard API，不支持时降级到 execCommand('copy')
+ */
+async function copyToClipboard(text: string): Promise<boolean> {
+  if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+    try {
+      await navigator.clipboard.writeText(text)
+      return true
+    } catch {}
+  }
+  try {
+    const textarea = document.createElement('textarea')
+    textarea.value = text
+    textarea.style.position = 'fixed'
+    textarea.style.top = '-9999px'
+    textarea.style.left = '-9999px'
+    textarea.style.opacity = '0'
+    document.body.appendChild(textarea)
+    textarea.focus()
+    textarea.select()
+    const ok = document.execCommand('copy')
+    document.body.removeChild(textarea)
+    return ok
+  } catch {
+    return false
+  }
+}
 
 const FONT_SIZES = [8, 10, 12, 14, 16, 18, 20, 24, 28, 32, 36]
 
@@ -527,6 +560,46 @@ function TableBubbleMenu() {
   )
 }
 
+function ImportExportToolbar() {
+  const editor = useDocumentEditor()
+  const { message } = App.useApp()
+  const [importOpen, setImportOpen] = useState(false)
+  const [exporting, setExporting] = useState(false)
+
+  const handleImport = () => {
+    setImportOpen(true)
+  }
+
+  const handleExport = async () => {
+    const html = editor.getHTML()
+    setExporting(true)
+    try {
+      const ok = await copyToClipboard(html)
+      if (ok) {
+        message.success('已复制 HTML 到剪贴板')
+      } else {
+        message.error('复制失败，请检查浏览器权限')
+      }
+    } finally {
+      setExporting(false)
+    }
+  }
+
+  return (
+    <>
+      <Tooltip title="导入" placement="bottom">
+        <Button type="text" icon={<TbFileImport />} onClick={handleImport} />
+      </Tooltip>
+
+      <Tooltip title="导出" placement="bottom">
+        <Button type="text" icon={<TbFileExport />} loading={exporting} onClick={handleExport} />
+      </Tooltip>
+
+      <ImportExportModal open={importOpen} editor={editor} onClose={() => setImportOpen(false)} />
+    </>
+  )
+}
+
 function HeaderToolber({ onPrint, onSave }: ToolbarProps) {
   const [formOpen, setFormOpen] = useState(false)
   const [tableDropdownOpen, setTableDropdownOpen] = useState(false)
@@ -646,6 +719,15 @@ function HeaderToolber({ onPrint, onSave }: ToolbarProps) {
             />
           </Tooltip>
 
+          <Tooltip title="清除格式" placement="bottom">
+            <Button
+              type="text"
+              icon={<MdFormatClear />}
+              disabled={!editable}
+              onClick={() => editor.chain().focus().unsetAllMarks().clearNodes().run()}
+            />
+          </Tooltip>
+
           <Divider className={styles.divider} orientation="vertical" />
 
           <Select
@@ -749,15 +831,6 @@ function HeaderToolber({ onPrint, onSave }: ToolbarProps) {
 
           <FormatColorControls tooltipPlacement="bottom" />
 
-          <Tooltip title="清除格式" placement="bottom">
-            <Button
-              type="text"
-              icon={<MdFormatClear />}
-              disabled={!editable}
-              onClick={() => editor.chain().focus().unsetAllMarks().clearNodes().run()}
-            />
-          </Tooltip>
-
           <Divider className={styles.divider} orientation="vertical" />
 
           <Dropdown
@@ -848,6 +921,10 @@ function HeaderToolber({ onPrint, onSave }: ToolbarProps) {
           <Tooltip title="打印" placement="bottom">
             <Button type="text" icon={<MdOutlineLocalPrintshop />} onClick={handlePrint} />
           </Tooltip>
+
+          <Divider className={styles.divider} size="small" orientation="vertical" />
+
+          <ImportExportToolbar />
 
           <Divider className={styles.divider} size="small" orientation="vertical" />
 

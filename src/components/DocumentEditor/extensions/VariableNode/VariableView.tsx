@@ -11,6 +11,7 @@ export default function VariableView({ node, editor, getPos }: ReactNodeViewProp
 
   const editable = useAtomValue(editableAtom)
   const form = Form.useFormInstance()
+  console.log(attrs.labelAlias, attrs.label)
 
   return (
     <NodeViewWrapper as="span" className={clsx('variable-node', editable ? 'editor' : 'preview')}>
