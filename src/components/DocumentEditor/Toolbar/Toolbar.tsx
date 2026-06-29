@@ -600,6 +600,38 @@ function ImportExportToolbar() {
   )
 }
 
+function PrintToolbar({ onPrint }: ToolbarProps) {
+  const [editable, setEditable] = useAtom(editableAtom)
+  const [printing, setPrinting] = useState(false)
+  const handlePrint = async () => {
+    setPrinting(true)
+    try {
+      if (editable) {
+        flushSync(() => {
+          setEditable(false)
+        })
+        await onPrint()
+        setEditable(true)
+      } else {
+        await onPrint()
+      }
+    } finally {
+      setPrinting(false)
+    }
+  }
+
+  return (
+    <Tooltip title="打印" placement="bottom">
+      <Button
+        loading={printing}
+        type="text"
+        icon={<MdOutlineLocalPrintshop />}
+        onClick={handlePrint}
+      />
+    </Tooltip>
+  )
+}
+
 function HeaderToolber({ onPrint, onSave }: ToolbarProps) {
   const [formOpen, setFormOpen] = useState(false)
   const [tableDropdownOpen, setTableDropdownOpen] = useState(false)
@@ -636,18 +668,6 @@ function HeaderToolber({ onPrint, onSave }: ToolbarProps) {
     },
     [editor]
   )
-
-  const handlePrint = () => {
-    if (editable) {
-      flushSync(() => {
-        setEditable(false)
-      })
-      onPrint()
-      setEditable(true)
-    } else {
-      onPrint()
-    }
-  }
 
   const [saveing, setSaveing] = useState(false)
 
@@ -909,6 +929,8 @@ function HeaderToolber({ onPrint, onSave }: ToolbarProps) {
             />
           </Tooltip>
 
+          <PrintToolbar onPrint={onPrint} />
+
           <Tooltip title="编辑预览变量" placement="bottom">
             <Button
               type="text"
@@ -916,10 +938,6 @@ function HeaderToolber({ onPrint, onSave }: ToolbarProps) {
               data-tour-id="toolbar-variable-form"
               onClick={() => setFormOpen(!formOpen)}
             />
-          </Tooltip>
-
-          <Tooltip title="打印" placement="bottom">
-            <Button type="text" icon={<MdOutlineLocalPrintshop />} onClick={handlePrint} />
           </Tooltip>
 
           <Divider className={styles.divider} size="small" orientation="vertical" />

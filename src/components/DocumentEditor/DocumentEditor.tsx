@@ -72,7 +72,7 @@ function VariableDrawer({ ...rest }: VariableDrawerProps) {
 
 export type EditorRef = {
   editor: Editor
-  print: () => void
+  print: () => Promise<void>
   form: FormInstance
   getPreviewHTML: () => string
 }
@@ -163,8 +163,8 @@ export default function DocumentEditor({
     editor?.setEditable(editable)
   }, [editable, editor])
 
-  const handlePrint = useCallback(() => {
-    documentPrint(editorContentRef.current!)
+  const handlePrint = useCallback(async () => {
+    await documentPrint(editorContentRef.current!)
   }, [])
 
   useImperativeHandle(
@@ -172,7 +172,7 @@ export default function DocumentEditor({
     () => ({
       editor,
       print: () => {
-        documentPrint(editorContentRef.current!)
+        return handlePrint()
       },
       form: form,
       getPreviewHTML: () => getPreviewHTML(editorContentRef.current!),

@@ -1,3 +1,4 @@
+export * from './components/DocumentEditor/contexts/DocumentEditorContext'
 export * from './components/DocumentEditor/DocumentEditor'
 export type * from './components/DocumentEditor/extensions/VariableExtension'
 export type * from './components/DocumentEditor/extensions/VariableNode/VariableNode'

@@ -331,7 +331,7 @@ export default function VariableList({
           allowClear
         />
       </div>
-      <VariableListContext.Provider value={{ mode, keyword: searchValue }}>
+      <VariableListContext value={{ mode, keyword: searchValue }}>
         <Spin spinning={variableListLoading} className={styles.spin}>
           <Tree
             treeData={rawTreeData}
@@ -343,7 +343,7 @@ export default function VariableList({
             selectable={false}
           />
         </Spin>
-      </VariableListContext.Provider>
+      </VariableListContext>
     </div>
   )
 }
