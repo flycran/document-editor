@@ -54,10 +54,13 @@
         display: none;
       }
 
-      .sgin-node-image {
-        display: inline-block;
-        height: 1.5em;
-        vertical-align: bottom;
+      .sgin-node-code {
+
+        .sgin-node-image {
+          display: inline-block;
+          height: 1.5em;
+          vertical-align: bottom;
+        }
       }
     }
   }

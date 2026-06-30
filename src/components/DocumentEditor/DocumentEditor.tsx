@@ -168,17 +168,20 @@ export default function DocumentEditor({
 
   const handlePrint = useCallback(async () => {
     await documentPrint(editorContentRef.current!)
+    console.log(handleGetPreviewHTML())
+  }, [])
+
+  const handleGetPreviewHTML = useCallback(() => {
+    return getPreviewHTML(editorContentRef.current!)
   }, [])
 
   useImperativeHandle(
     ref,
     () => ({
       editor,
-      print: () => {
-        return handlePrint()
-      },
+      print: handlePrint,
       form: form,
-      getPreviewHTML: () => getPreviewHTML(editorContentRef.current!),
+      getPreviewHTML: handleGetPreviewHTML,
     }),
     [editor]
   )

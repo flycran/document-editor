@@ -1,7 +1,7 @@
 import { NodeViewWrapper, ReactNodeViewProps } from '@tiptap/react'
 import { MdFingerprint } from 'react-icons/md'
 import { SginNodeAttrs } from './SginNode'
-import { sginEnum } from './SginUtils'
+import { SGIN_ENUMS } from './SginUtils'
 import './SginView.scss'
 import { useAtomValue } from 'jotai'
 import { useDocumentSgin } from '../../contexts/DocumentEditorEventContext'
@@ -52,7 +52,7 @@ export default function SginView({ node, editor, getPos }: ReactNodeViewProps) {
               delete: !attrs.showLabel,
             })}
           >
-            {attrs.labelAlias || sginEnum[attrs.type]}
+            {attrs.labelAlias || SGIN_ENUMS[attrs.type]}
           </span>
         )}
         <span className="sgin-node-separator">:&nbsp;</span>

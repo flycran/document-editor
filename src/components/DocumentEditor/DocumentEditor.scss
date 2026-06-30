@@ -13,11 +13,6 @@
       padding: 10mm;
     }
 
-    p.is-empty,
-    p.is-editor-empty {
-      display: flow-root;
-    }
-
     p.is-editor-empty {
       &::before {
         color: #adb5bd;

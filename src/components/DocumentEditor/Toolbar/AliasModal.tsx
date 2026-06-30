@@ -1,6 +1,7 @@
 import type { Editor } from '@tiptap/react'
 import { Form, Input, Modal } from 'antd'
 import { useEffect, useMemo, useState } from 'react'
+import { SGIN_ENUMS, SginType } from '../extensions/SginNode/SginUtils'
 import { VariableNodeAttrs } from '../extensions/VariableNode/VariableNode'
 
 interface AliasModalProps {
@@ -19,11 +20,24 @@ export default function AliasModal({ open, editor, onClose, nodeType }: AliasMod
     editor.state.doc.nodesBetween(from, to, (node) => {
       if (node.type.name === nodeType) {
         aliases.push(node.attrs.labelAlias ?? '')
-        labels.push(node.attrs.label ?? '')
+        labels.push(
+          nodeType === 'sgin' ? SGIN_ENUMS[node.attrs.type as SginType] : (node.attrs.label ?? '')
+        )
       }
     })
+
     const allSameAlias = aliases.length > 0 && aliases.every((a) => a === aliases[0])
     const allSameLabel = labels.length > 0 && labels.every((l) => l === labels[0])
+    console.log({
+      aliases,
+      labels,
+      allSameAlias,
+      allSameLabel,
+      ...{
+        currentAlias: allSameAlias ? aliases[0] : '',
+        currentLabel: allSameLabel ? labels[0] : '',
+      },
+    })
     return {
       currentAlias: allSameAlias ? aliases[0] : '',
       currentLabel: allSameLabel ? labels[0] : '',

@@ -1,6 +1,6 @@
 import { Attribute, Node, nodePasteRule } from '@tiptap/core'
 import { ReactNodeViewRenderer } from '@tiptap/react'
-import { SginType as SginType, sginEnum } from './SginUtils'
+import { SGIN_ENUMS, SginType as SginType } from './SginUtils'
 import SginView from './SginView'
 
 export interface SginNodeAttrs {
@@ -69,7 +69,7 @@ export const SginNode = Node.create({
   renderText({ node }) {
     const attrs = node.attrs as SginNodeAttrs
 
-    return `{{${sginEnum[attrs.type]}?showLabel=${attrs.showLabel}&labelAlias=${attrs.labelAlias}}}`
+    return `{{${SGIN_ENUMS[attrs.type]}?showLabel=${attrs.showLabel}&labelAlias=${attrs.labelAlias}}}`
   },
 
   addPasteRules() {

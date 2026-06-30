@@ -60,7 +60,7 @@ import {
 } from 'react-icons/tb'
 import { useDocumentEditor } from '../contexts/DocumentEditorContext'
 import { editableAtom, tourOpenAtom } from '../DocumentEditorStore'
-import { SginType, sginEnum } from '../extensions/SginNode/SginUtils'
+import { SGIN_ENUMS, SginType } from '../extensions/SginNode/SginUtils'
 import AliasModal from './AliasModal'
 import ImportExportModal from './ImportExportModal'
 import styles from './Toolbar.module.scss'
@@ -147,7 +147,6 @@ const useToolbarState = () => {
     editor,
     selector: (ctx) => {
       const e = ctx.editor
-      console.log(e)
 
       let textAlign: 'left' | 'center' | 'right' | 'justify' = 'left'
       if (e.isActive({ textAlign: 'center' })) textAlign = 'center'
@@ -916,7 +915,7 @@ function HeaderToolber({ onPrint, saveing, onSave }: ToolbarProps) {
                   .insertFingerprint({ type: key as SginType })
                   .run()
               },
-              items: Object.entries(sginEnum).map(([key, value]) => ({
+              items: Object.entries(SGIN_ENUMS).map(([key, value]) => ({
                 key,
                 label: value,
               })),
