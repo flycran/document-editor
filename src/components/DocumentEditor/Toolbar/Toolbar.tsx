@@ -460,6 +460,8 @@ function BubbleToolbar() {
         shouldShow={({ state, editor: ed }) => {
           if (!editable) return false
           const { selection } = state
+          if (selection.anchor === 0 && selection.head === 2) return false
+
           // 分页符和变量节点不显示默认菜单
           if (ed.isActive('pageBreak') || ed.isActive('variable') || ed.isActive('sgin'))
             return false
@@ -655,7 +657,7 @@ function PrintToolbar({ onPrint }: ToolbarProps) {
   )
 }
 
-function HeaderToolber({ onPrint, onSave }: ToolbarProps) {
+function HeaderToolber({ onPrint, saveing, onSave }: ToolbarProps) {
   const [formOpen, setFormOpen] = useState(false)
   const [tableDropdownOpen, setTableDropdownOpen] = useState(false)
   const setTourOpen = useSetAtom(tourOpenAtom)
@@ -691,18 +693,6 @@ function HeaderToolber({ onPrint, onSave }: ToolbarProps) {
     },
     [editor]
   )
-
-  const [saveing, setSaveing] = useState(false)
-
-  const handleSave = async () => {
-    if (!onSave) return
-    try {
-      setSaveing(true)
-      await onSave()
-    } finally {
-      setSaveing(false)
-    }
-  }
 
   return (
     <ConfigProvider componentSize="middle" tooltip={{ classNames: { root: styles.tooltip } }}>
@@ -970,7 +960,7 @@ function HeaderToolber({ onPrint, onSave }: ToolbarProps) {
           <Divider className={styles.divider} size="small" orientation="vertical" />
 
           <Tooltip title="保存" placement="bottom">
-            <Button type="text" icon={<LuSave />} loading={saveing} onClick={handleSave} />
+            <Button type="text" icon={<LuSave />} loading={saveing} onClick={onSave} />
           </Tooltip>
 
           <Tooltip title="使用帮助" placement="bottom">
@@ -986,15 +976,16 @@ function HeaderToolber({ onPrint, onSave }: ToolbarProps) {
 interface ToolbarProps {
   onPrint: () => void
   onSave?: () => void
+  saveing?: boolean
 }
 
-export default function Toolbar({ onPrint }: ToolbarProps) {
+export default function Toolbar({ onPrint, saveing, onSave }: ToolbarProps) {
   const editorState = useToolbarState()
 
   return (
     <>
       <ToolbarStateContext value={editorState}>
-        <HeaderToolber onPrint={onPrint} />
+        <HeaderToolber onPrint={onPrint} saveing={saveing} onSave={onSave} />
         <BubbleToolbar />
       </ToolbarStateContext>
     </>

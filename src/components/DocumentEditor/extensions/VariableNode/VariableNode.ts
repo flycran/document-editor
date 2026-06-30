@@ -11,6 +11,9 @@ export interface VariableNodeAttrs {
   type: VariableType
   showLabel?: boolean
   labelAlias?: string
+  required?: boolean
+  minLen?: number
+  maxLen?: number
 }
 declare module '@tiptap/core' {
   interface Commands<ReturnType> {
@@ -53,6 +56,24 @@ export const VariableNode = Node.create({
         default: '',
         parseHTML: (element) => element.getAttribute('data-node-label-alias'),
       },
+      required: {
+        default: false,
+        parseHTML: (element) => element.getAttribute('data-node-required') !== 'false',
+      },
+      minLen: {
+        default: 0,
+        parseHTML: (element) => {
+          const v = element.getAttribute('data-node-min-len')
+          return v ? Number.parseInt(v) : undefined
+        },
+      },
+      maxLen: {
+        default: 0,
+        parseHTML: (element) => {
+          const v = element.getAttribute('data-node-max-len')
+          return v ? Number.parseInt(v) : undefined
+        },
+      },
     }
   },
 
@@ -75,6 +96,9 @@ export const VariableNode = Node.create({
         'data-node-type': attrs.type,
         'data-node-show-label': attrs.showLabel,
         'data-node-label-alias': attrs.labelAlias,
+        'data-node-required': attrs.required,
+        'data-node-min-len': attrs.minLen,
+        'data-node-max-len': attrs.maxLen,
         class: 'variable-node',
       },
     ]
@@ -83,23 +107,45 @@ export const VariableNode = Node.create({
   renderText({ node }) {
     const attrs = node.attrs as VariableNodeAttrs
 
-    return `{{${attrs.label}:${attrs.code}?type=${attrs.type}&showLabel=${attrs.showLabel}&labelAlias=${attrs.labelAlias}}}`
+    const searchParams = new URLSearchParams()
+    searchParams.set('variable', attrs.code)
+    searchParams.set('type', attrs.type)
+    searchParams.set('showLabel', attrs.showLabel ? 'true' : 'false')
+    searchParams.set('labelAlias', attrs.labelAlias || '')
+    searchParams.set('required', attrs.required ? 'true' : 'false')
+    if (attrs.minLen) searchParams.set('minLen', attrs.minLen.toString())
+    if (attrs.maxLen) searchParams.set('maxLen', attrs.maxLen.toString())
+
+    return `{{${attrs.label}:${attrs.code}?${searchParams.toString()}}}`
   },
 
   addPasteRules() {
     return [
       nodePasteRule({
-        find: /\{\{([^:]+):([^?]+)\?type=([^&]*)&showLabel=([^&]*)&labelAlias=([^}]*)\}\}/g,
+        find: /\{\{([^:]+):([^?]+)\?([^}]*)\}\}/g,
         type: this.type,
         getAttributes: (match) => {
-          const [, label, code, type, showLabel, labelAlias] = match
+          const [, label, code, search] = match
+
+          const searchParams = new URLSearchParams(search)
+          const type = searchParams.get('type') || 'text'
+          const showLabel = searchParams.get('showLabel') === 'true'
+          const labelAlias = searchParams.get('labelAlias') || ''
+          const required = searchParams.get('required') === 'true'
+          const minLenStr = searchParams.get('minLen')
+          const minLen = minLenStr ? Number.parseInt(minLenStr) : undefined
+          const maxLenStr = searchParams.get('maxLen')
+          const maxLen = maxLenStr ? Number.parseInt(maxLenStr) : undefined
 
           return {
             label,
             code,
             type,
-            showLabel: showLabel === 'true',
+            showLabel,
             labelAlias,
+            required,
+            minLen,
+            maxLen,
           }
         },
       }),

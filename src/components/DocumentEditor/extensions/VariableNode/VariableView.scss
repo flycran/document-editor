@@ -6,6 +6,66 @@
     .variable-node-content {
       align-items: center;
 
+      .variable-node-item {
+        display: inline;
+        margin-bottom: 0;
+        --ant-form-label-color: currentColor;
+        --ant-control-height: 0;
+        --ant-form-label-height: 1.5em;
+        color: inherit;
+        font-size: inherit;
+
+        .ant-form-item-row {
+          display: inline;
+          font-size: inherit;
+
+          .ant-form-item-label {
+            --ant-control-height: 0;
+            display: inline;
+            font-size: inherit;
+
+            &>label {
+              display: inline;
+              font-size: inherit;
+
+              &::after {
+                content: ":";
+                margin-block: 0;
+                margin-inline-start: 0.125em;
+                margin-inline-end: 0.5em;
+              }
+            }
+          }
+
+          .ant-form-item-control {
+            font-size: inherit;
+            display: inline-flex;
+            flex-direction: column;
+            min-height: 1.5em;
+            --ant-control-height: 0;
+
+            .ant-form-item-control-input,
+            .ant-form-item-control-input-content {
+              display: inline;
+            }
+
+            .ant-form-item-additional {
+              display: inline;
+              font-size: 12px;
+
+              .ant-form-item-explain {
+                display: inline;
+                font-size: inherit;
+
+                &>div {
+                  display: inline;
+                }
+              }
+            }
+          }
+        }
+      }
+
       .variable-node-code {
         position: relative;
 
@@ -20,6 +80,13 @@
     }
 
     &.editor {
+      .variable-node-item .ant-form-item-row .ant-form-item-control {
+        display: inline;
+
+        .ant-form-item-additional {
+          display: none;
+        }
+      }
 
       .variable-node-curly-braces {
         content: "{{";

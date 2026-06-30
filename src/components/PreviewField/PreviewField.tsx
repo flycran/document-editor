@@ -1,4 +1,4 @@
-import { DatePicker, Form, Input, InputRef, Select } from 'antd'
+import { DatePicker, Form, Input, InputNumber, InputRef, Select } from 'antd'
 import './PreviewField.scss'
 import { useAtomValue } from 'jotai'
 import { GrCheckbox, GrCheckboxSelected } from 'react-icons/gr'
@@ -57,7 +57,30 @@ function PreviewFieldInput({ value, ...rest }: PreviewFieldInputProps) {
 
   return (
     <PreviewFieldBase value={value} onSetSize={handleSetSize}>
-      <Input value={value} {...rest} className="input" ref={inputRef} />
+      <Input variant="underlined" value={value} {...rest} className="input" ref={inputRef} />
+    </PreviewFieldBase>
+  )
+}
+
+type InputNumberRef = React.ComponentRef<typeof InputNumber>
+
+interface PreviewFieldNumebrInputProps {
+  value: any
+  onChange?: (value: any) => void
+}
+
+function PreviewFieldNumebrInput({ value, ...rest }: PreviewFieldNumebrInputProps) {
+  const inputRef = useRef<InputNumberRef>(null)
+
+  const handleSetSize = useCallback((size: number) => {
+    if (inputRef.current) {
+      inputRef.current!.style.width = `${size}px`
+    }
+  }, [])
+
+  return (
+    <PreviewFieldBase value={value} onSetSize={handleSetSize}>
+      <InputNumber variant="underlined" value={value} {...rest} className="input" ref={inputRef} />
     </PreviewFieldBase>
   )
 }
@@ -85,6 +108,7 @@ function PreviewFieldDatePicker({ value, onChange, type, ...rest }: PreviewField
   return (
     <PreviewFieldBase value={value} onSetSize={handleSetSize}>
       <DatePicker
+        variant="underlined"
         ref={datePickerRef}
         className="input-wrapper"
         classNames={{
@@ -155,6 +179,7 @@ function PreviewFieldSelect({ value, onChange, code }: PreviewFieldSelectProps) 
   return (
     <PreviewFieldBase value={label} onSetSize={handleSetSize}>
       <Select
+        variant="underlined"
         popupMatchSelectWidth={false}
         showSearch={{ filterOption: true }}
         options={options}
@@ -200,6 +225,9 @@ export interface PreviewFieldProps {
   code: string
 }
 
+/**
+ * 预览字段控件
+ */
 export default function PreviewField({ value, onChange, code, type }: PreviewFieldProps) {
   const inputable = useAtomValue(inputableAtom)
 
@@ -207,6 +235,8 @@ export default function PreviewField({ value, onChange, code, type }: PreviewFie
 
   switch (type) {
     case 'number':
+      return <PreviewFieldNumebrInput value={value} onChange={onChange} />
+
     case 'text':
       return <PreviewFieldInput value={value} onChange={onChange} />
 

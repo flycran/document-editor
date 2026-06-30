@@ -95,6 +95,8 @@ interface EditorProps extends Partial<EditorListeners>, DocumentSginContext {
   getEnumsQuery?: DocumentEditorEnumsContext
   /** 是否允许在预览模式下输入变量 */
   inputable?: boolean
+  /** 保存中 */
+  saveing?: boolean
   ref?: React.Ref<EditorRef>
   className?: string
 }
@@ -106,6 +108,7 @@ export default function DocumentEditor({
   inputable,
   className,
   ref,
+  saveing,
   onSave,
   onUpdate,
   onBlur,
@@ -183,8 +186,8 @@ export default function DocumentEditor({
   const [form] = Form.useForm()
 
   const toolbar = useMemo(
-    () => <Toolbar onPrint={handlePrint} onSave={() => form.submit()} />,
-    [onSave]
+    () => <Toolbar onPrint={handlePrint} saveing={saveing} onSave={() => form.submit()} />,
+    [saveing]
   )
 
   const editorContent = useMemo(
@@ -213,7 +216,7 @@ export default function DocumentEditor({
       >
         <DocumentEditorEnumsContext value={getEnumsQuery}>
           <Provider store={storeRef.current}>
-            <Form form={form} component={false}>
+            <Form form={form} component={false} onFinish={onSave}>
               <div
                 className={clsx('editor-container', { 'document-editable': editable }, className)}
               >

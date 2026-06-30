@@ -33,6 +33,7 @@
       transition: none;
       line-height: inherit;
       max-width: 100%;
+      color: inherit;
 
       @media print {
         display: none !important;
@@ -50,5 +51,9 @@
     margin-right: 4px;
     vertical-align: -0.125em;
     cursor: pointer;
+  }
+
+  .ant-select.ant-select-in-form-item {
+    width: auto;
   }
 }
