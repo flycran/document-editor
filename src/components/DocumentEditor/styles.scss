@@ -170,6 +170,7 @@
   @media print {
     &>.tiptap {
       padding: 0;
+      white-space: pre-wrap;
 
       .page-break {
         height: 0;

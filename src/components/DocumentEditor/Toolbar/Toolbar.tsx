@@ -147,6 +147,8 @@ const useToolbarState = () => {
     editor,
     selector: (ctx) => {
       const e = ctx.editor
+      console.log(e)
+
       let textAlign: 'left' | 'center' | 'right' | 'justify' = 'left'
       if (e.isActive({ textAlign: 'center' })) textAlign = 'center'
       else if (e.isActive({ textAlign: 'right' })) textAlign = 'right'
@@ -158,8 +160,8 @@ const useToolbarState = () => {
       else if (e.isActive('heading', { level: 3 })) headingLevel = 3
 
       return {
-        canUndo: e.can().undo(),
-        canRedo: e.can().redo(),
+        canUndo: e?.isInitialized ? e.can().undo() : false,
+        canRedo: e?.isInitialized ? e.can().redo() : false,
         isBoldActive: e.isActive('bold'),
         isItalicActive: e.isActive('italic'),
         isUnderlineActive: e.isActive('underline'),

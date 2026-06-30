@@ -17,5 +17,4 @@ export const sharedExtensions: Extensions = [
   SginNode,
   VariableExtension,
   TableExtension,
-  // PageBreakBanner,
 ]

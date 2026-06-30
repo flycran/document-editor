@@ -10,7 +10,9 @@
       }
 
       .sgin-node-code {
-        vertical-align: bottom;
+        vertical-align: baseline;
+        display: inline-block;
+        min-width: 36pt;
 
         .sgin-icon {
           display: inline-block;
