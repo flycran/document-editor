@@ -4,20 +4,20 @@ import { Ref } from 'react'
 import { documentPrint, getPreviewHTML } from '@/utils'
 import { sharedExtensions } from '../DocumentEditor/extensions'
 import '../DocumentEditor/styles.scss'
-import { Form, FormInstance } from 'antd'
+import { ConfigProvider, Form, FormInstance } from 'antd'
 import { createStore, Provider } from 'jotai'
 import { Store } from 'jotai/vanilla/store'
 import { DocumentEditorEnumsContext } from '../DocumentEditor/contexts/DocumentEditorEnumsContext'
 import { inputableAtom } from '../DocumentEditor/DocumentEditorStore'
 
-export type PreviewRef = {
+export type PreviewerRef = {
   editor: Editor
   print: () => void
   form: FormInstance
   getPreviewHTML: () => string
 }
 
-interface PreviewerProps {
+export interface PreviewerProps {
   /* 预览的文档内容 */
   content?: JSONContent
   /* 变量上下文 */
@@ -27,7 +27,7 @@ interface PreviewerProps {
   /* 获取枚举列表接口 */
   getEnumsQuery?: DocumentEditorEnumsContext
   className?: string
-  ref?: Ref<PreviewRef>
+  ref?: Ref<PreviewerRef>
 }
 
 export default function DocumentPreviewer({
@@ -39,6 +39,8 @@ export default function DocumentPreviewer({
   ref,
 }: PreviewerProps) {
   const storeRef = useRef<Store | null>(null)
+
+  const _getEnumsQuery = useContext(DocumentEditorEnumsContext)
 
   if (!storeRef.current) {
     storeRef.current = createStore()
@@ -75,18 +77,20 @@ export default function DocumentPreviewer({
   }, [formData])
 
   return (
-    <Provider store={storeRef.current}>
-      <DocumentEditorEnumsContext value={getEnumsQuery}>
-        <div>
-          <Form form={form} component={false}>
-            <EditorContent
-              ref={editorContentRef}
-              editor={editor}
-              className={clsx('document-content', className)}
-            />
-          </Form>
-        </div>
-      </DocumentEditorEnumsContext>
-    </Provider>
+    <ConfigProvider>
+      <Provider store={storeRef.current}>
+        <DocumentEditorEnumsContext value={getEnumsQuery || _getEnumsQuery}>
+          <div>
+            <Form form={form} component={false} initialValues={formData}>
+              <EditorContent
+                ref={editorContentRef}
+                editor={editor}
+                className={clsx('document-content', className)}
+              />
+            </Form>
+          </div>
+        </DocumentEditorEnumsContext>
+      </Provider>
+    </ConfigProvider>
   )
 }

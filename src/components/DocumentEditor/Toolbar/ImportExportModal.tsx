@@ -21,10 +21,17 @@ export default function ImportExportModal({ open, editor, onClose }: ImportExpor
   }, [open])
 
   const handleOk = () => {
+    const getContent = () => {
+      try {
+        return JSON.parse(value)
+      } catch (e) {
+        return value
+      }
+    }
     editor
       .chain()
       .focus()
-      .setContent(value || '<p></p>')
+      .setContent(getContent() || '<p></p>')
       .run()
     onClose()
   }
@@ -40,13 +47,13 @@ export default function ImportExportModal({ open, editor, onClose }: ImportExpor
       okText="确定"
       cancelText="取消"
     >
-      <Form.Item help="粘贴 HTML 文本，导入后将替换当前文档内容" style={{ marginBottom: 0 }}>
+      <Form.Item help="粘贴 HTML/JSON 文本，导入后将替换当前文档内容" style={{ marginBottom: 0 }}>
         <Input.TextArea
           autoFocus
           autoSize={{ minRows: 8, maxRows: 16 }}
           value={value}
           onChange={(e) => setValue(e.target.value)}
-          placeholder="请输入 HTML 文本"
+          placeholder="请输入 HTML/JSON 文本"
         />
       </Form.Item>
     </Modal>

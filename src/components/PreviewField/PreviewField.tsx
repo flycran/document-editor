@@ -75,10 +75,6 @@ function PreviewFieldDatePicker({ value, onChange, type, ...rest }: PreviewField
 
   const datePickerRef = useRef<DatePickerRef>(null)
 
-  useEffect(() => {
-    console.log(datePickerRef)
-  }, [])
-
   const handleSetSize = useCallback((size: number) => {
     if (datePickerRef.current) {
       datePickerRef.current.nativeElement.querySelector<HTMLInputElement>('.input')!.style.width =

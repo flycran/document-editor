@@ -1,4 +1,6 @@
 export * from './components/DocumentEditor/contexts/DocumentEditorContext'
+export type * from './components/DocumentEditor/contexts/DocumentEditorEnumsContext'
+export type * from './components/DocumentEditor/contexts/DocumentEditorEventContext'
 export * from './components/DocumentEditor/DocumentEditor'
 export type * from './components/DocumentEditor/extensions/VariableExtension'
 export type * from './components/DocumentEditor/extensions/VariableNode/VariableNode'

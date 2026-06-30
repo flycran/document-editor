@@ -7,14 +7,22 @@
   "types": "./src/index.ts",
   "exports": {
     ".": {
-      "require": "./dist/index.cjs",
-      "types": "./src/index.ts"
+      "types": "./src/index.ts",
+      "import": "./dist/component/document-editor.js",
+      "require": "./dist/component/document-editor.cjs"
     },
-    "./document-editor.css": "./dist/document-editor.css"
+    "./wc": {
+      "types": "./src/wc.ts",
+      "import": "./dist/web-component/document-editor.js",
+      "require": "./dist/web-component/document-editor.cjs"
+    },
+    "./document-editor.css": "./dist/component/document-editor.css",
+    "./wc/document-editor.css": "./dist/web-component/document-editor.css"
   },
   "scripts": {
     "dev": "vite",
     "build": "vite build --mode lib",
+    "build:wc": "vite build --mode wc",
     "build:demo": "vite build --mode demo",
     "deploy": "bun run ./scripts/deploy",
     "preview": "vite preview",
@@ -32,9 +40,7 @@
     ]
   },
   "dependencies": {
-    "@reduxjs/toolkit": "^2.12.0",
-    "@tanstack/react-query": "^5.101.0",
-    "@tanstack/react-virtual": "^3.14.2",
+    "@r2wc/react-to-web-component": "^2.1.1",
     "@tiptap/extension-color": "^3.27.0",
     "@tiptap/extension-font-size": "^3.0.0-next.3",
     "@tiptap/extension-highlight": "^3.27.0",
@@ -49,18 +55,27 @@
     "@tiptap/pm": "^3.27.0",
     "@tiptap/react": "^3.27.0",
     "@tiptap/starter-kit": "^3.27.0",
-    "ahooks": "^3.9.7",
     "antd": "^6.4.3",
     "dayjs": "^1.11.21",
     "jotai": "^2.20.1",
+    "react-icons": "^5.6.0"
+  },
+  "peerDependencies": {
     "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "react-icons": "^5.6.0",
-    "react-redux": "^9.3.0",
-    "react-router": "^7.17.0"
+    "react-dom": "^19.2.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.16",
+    "@reduxjs/toolkit": "^2.12.0",
+    "@tanstack/react-query": "^5.101.0",
     "@types/bun": "^1.3.14",
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.7",
@@ -68,6 +83,7 @@
     "@typescript/native-preview": "^7.0.0-dev.20260608.1",
     "@vitejs/plugin-react-swc": "^4.2.2",
     "@xmldom/xmldom": "^0.9.10",
+    "ahooks": "^3.9.7",
     "change-case": "^5.4.4",
     "code-inspector-plugin": "^1.5.3",
     "dotenv": "^17.4.2",
@@ -75,6 +91,8 @@
     "lint-staged": "^17.0.7",
     "orval": "^8.17.0",
     "postcss": "^8.5.15",
+    "react-redux": "^9.3.0",
+    "react-router": "^7.17.0",
     "sass": "^1.101.0",
     "tailwindcss": "3",
     "typescript": "~5.9.3",

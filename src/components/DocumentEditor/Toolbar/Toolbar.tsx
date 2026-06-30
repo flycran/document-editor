@@ -300,7 +300,6 @@ const FormatControls = () => {
         />
       </Tooltip>
       <Divider className={styles.divider} orientation="vertical" />
-      <FormatColorControls tooltipPlacement="top" />
       <Tooltip title="清除格式" placement="top">
         <Button
           type="text"
@@ -511,6 +510,15 @@ function TableBubbleMenu() {
               onClick={() => editor.chain().focus().addRowAfter().run()}
             />
           </Tooltip>
+          <Tooltip title="删除行">
+            <Button
+              type="text"
+              danger
+              icon={<TbRowRemove />}
+              disabled={!editable}
+              onClick={() => editor.chain().focus().deleteRow().run()}
+            />
+          </Tooltip>
           <Divider className={styles.divider} orientation="vertical" />
           <Tooltip title="在左侧添加列">
             <Button
@@ -528,18 +536,10 @@ function TableBubbleMenu() {
               onClick={() => editor.chain().focus().addColumnAfter().run()}
             />
           </Tooltip>
-          <Divider className={styles.divider} orientation="vertical" />
-          <Tooltip title="删除行">
-            <Button
-              type="text"
-              icon={<TbRowRemove />}
-              disabled={!editable}
-              onClick={() => editor.chain().focus().deleteRow().run()}
-            />
-          </Tooltip>
           <Tooltip title="删除列">
             <Button
               type="text"
+              danger
               icon={<TbColumnRemove />}
               disabled={!editable}
               onClick={() => editor.chain().focus().deleteColumn().run()}
@@ -549,6 +549,7 @@ function TableBubbleMenu() {
           <Tooltip title="删除表格">
             <Button
               type="text"
+              danger
               icon={<TbTableMinus />}
               disabled={!editable}
               onClick={() => editor.chain().focus().deleteTable().run()}
@@ -570,13 +571,13 @@ function ImportExportToolbar() {
     setImportOpen(true)
   }
 
-  const handleExport = async () => {
-    const html = editor.getHTML()
+  const handleExport = async (type: 'html' | 'json' = 'html') => {
+    const text = type === 'html' ? editor.getHTML() : JSON.stringify(editor.getJSON())
     setExporting(true)
     try {
-      const ok = await copyToClipboard(html)
+      const ok = await copyToClipboard(text)
       if (ok) {
-        message.success('已复制 HTML 到剪贴板')
+        message.success('已复制内容到剪贴板')
       } else {
         message.error('复制失败，请检查浏览器权限')
       }
@@ -590,10 +591,32 @@ function ImportExportToolbar() {
       <Tooltip title="导入" placement="bottom">
         <Button type="text" icon={<TbFileImport />} onClick={handleImport} />
       </Tooltip>
-
-      <Tooltip title="导出" placement="bottom">
-        <Button type="text" icon={<TbFileExport />} loading={exporting} onClick={handleExport} />
-      </Tooltip>
+      <Dropdown
+        menu={{
+          items: [
+            {
+              key: 'html',
+              label: 'HTML',
+              onClick: () => handleExport('html'),
+            },
+            {
+              key: 'json',
+              label: 'JSON',
+              onClick: () => handleExport('json'),
+            },
+          ],
+        }}
+        placement="bottomLeft"
+      >
+        <Tooltip title="导出" placement="top">
+          <Button
+            type="text"
+            icon={<TbFileExport />}
+            loading={exporting}
+            onClick={() => handleExport()}
+          />
+        </Tooltip>
+      </Dropdown>
 
       <ImportExportModal open={importOpen} editor={editor} onClose={() => setImportOpen(false)} />
     </>

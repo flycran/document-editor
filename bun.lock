@@ -5,9 +5,7 @@
     "": {
       "name": "emergency",
       "dependencies": {
-        "@reduxjs/toolkit": "^2.12.0",
-        "@tanstack/react-query": "^5.101.0",
-        "@tanstack/react-virtual": "^3.14.2",
+        "@r2wc/react-to-web-component": "^2.1.1",
         "@tiptap/extension-color": "^3.27.0",
         "@tiptap/extension-font-size": "^3.0.0-next.3",
         "@tiptap/extension-highlight": "^3.27.0",
@@ -22,18 +20,15 @@
         "@tiptap/pm": "^3.27.0",
         "@tiptap/react": "^3.27.0",
         "@tiptap/starter-kit": "^3.27.0",
-        "ahooks": "^3.9.7",
         "antd": "^6.4.3",
         "dayjs": "^1.11.21",
         "jotai": "^2.20.1",
-        "react": "^19.2.0",
-        "react-dom": "^19.2.0",
         "react-icons": "^5.6.0",
-        "react-redux": "^9.3.0",
-        "react-router": "^7.17.0",
       },
       "devDependencies": {
         "@biomejs/biome": "^2.4.16",
+        "@reduxjs/toolkit": "^2.12.0",
+        "@tanstack/react-query": "^5.101.0",
         "@types/bun": "^1.3.14",
         "@types/node": "^24.10.1",
         "@types/react": "^19.2.7",
@@ -41,6 +36,7 @@
         "@typescript/native-preview": "^7.0.0-dev.20260608.1",
         "@vitejs/plugin-react-swc": "^4.2.2",
         "@xmldom/xmldom": "^0.9.10",
+        "ahooks": "^3.9.7",
         "change-case": "^5.4.4",
         "code-inspector-plugin": "^1.5.3",
         "dotenv": "^17.4.2",
@@ -48,6 +44,8 @@
         "lint-staged": "^17.0.7",
         "orval": "^8.17.0",
         "postcss": "^8.5.15",
+        "react-redux": "^9.3.0",
+        "react-router": "^7.17.0",
         "sass": "^1.101.0",
         "tailwindcss": "3",
         "typescript": "~5.9.3",
@@ -56,6 +54,14 @@
         "vite-plugin-devtools-json": "^1.0.0",
         "vite-tsconfig-paths": "^6.1.1",
       },
+      "peerDependencies": {
+        "react": "^19.2.0",
+        "react-dom": "^19.2.0",
+      },
+      "optionalPeers": [
+        "react",
+        "react-dom",
+      ],
     },
   },
   "packages": {
@@ -248,6 +254,10 @@
     "@parcel/watcher-win32-ia32": ["@parcel/watcher-win32-ia32@2.5.6", "https://registry.npmmirror.com/@parcel/watcher-win32-ia32/-/watcher-win32-ia32-2.5.6.tgz", { "os": "win32", "cpu": "ia32" }, "sha512-k35yLp1ZMwwee3Ez/pxBi5cf4AoBKYXj00CZ80jUz5h8prpiaQsiRPKQMxoLstNuqe2vR4RNPEAEcjEFzhEz/g=="],
 
     "@parcel/watcher-win32-x64": ["@parcel/watcher-win32-x64@2.5.6", "https://registry.npmmirror.com/@parcel/watcher-win32-x64/-/watcher-win32-x64-2.5.6.tgz", { "os": "win32", "cpu": "x64" }, "sha512-hbQlYcCq5dlAX9Qx+kFb0FHue6vbjlf0FrNzSKdYK2APUf7tGfGxQCk2ihEREmbR6ZMc0MVAD5RIX/41gpUzTw=="],
+
+    "@r2wc/core": ["@r2wc/core@1.3.1", "https://registry.npmmirror.com/@r2wc/core/-/core-1.3.1.tgz", {}, "sha512-x9nMthXsTjqr1alE+boX1Zuzqb6/oFi4wAOdWaWcWKcrwq9M/PATK74c3DFJfRnUOkYWPlsz0e4CsFBXJGStSA=="],
+
+    "@r2wc/react-to-web-component": ["@r2wc/react-to-web-component@2.1.1", "https://registry.npmmirror.com/@r2wc/react-to-web-component/-/react-to-web-component-2.1.1.tgz", { "dependencies": { "@r2wc/core": "^1.3.1" }, "peerDependencies": { "react": "^18.0.0 || ^19.0.0", "react-dom": "^18.0.0 || ^19.0.0" } }, "sha512-AXsIdjxK9ALv0ySWjVadUg3uJ5nS8L4H8eZMYaaWuM+9LNj9DP/r4+sMjI+6jZwb7/FqwxRPHQUq8yimQwBfOA=="],
 
     "@rc-component/async-validator": ["@rc-component/async-validator@5.1.1", "https://registry.npmmirror.com/@rc-component/async-validator/-/async-validator-5.1.1.tgz", { "dependencies": { "@babel/runtime": "^7.24.4" } }, "sha512-T03+Wk31Kz/28OC+rLlHtSNwD5Io3OWw6rPFPAp898sqALB/XnTrr3trB3mPoj379v0aRaW6t09HUG6dUyHR3g=="],
 
@@ -448,10 +458,6 @@
     "@tanstack/query-core": ["@tanstack/query-core@5.101.0", "https://registry.npmmirror.com/@tanstack/query-core/-/query-core-5.101.0.tgz", {}, "sha512-cQetA74EB+seWySv1TTKr828TnP0u39m6LykwDXIo84SNortpDkp30TMEjkqtYCNP9c40uT/iwl6MLiufEt0Ow=="],
 
     "@tanstack/react-query": ["@tanstack/react-query@5.101.0", "https://registry.npmmirror.com/@tanstack/react-query/-/react-query-5.101.0.tgz", { "dependencies": { "@tanstack/query-core": "5.101.0" }, "peerDependencies": { "react": "^18 || ^19" } }, "sha512-rLlJXSpkqfizLWgkR5+eLeIk0MvTx/meEIR7LRjxic+qxiQP8zVjq7BqQkiCMNLQBlLfuOLqqr6KO5GtrDlmSg=="],
-
-    "@tanstack/react-virtual": ["@tanstack/react-virtual@3.14.2", "https://registry.npmmirror.com/@tanstack/react-virtual/-/react-virtual-3.14.2.tgz", { "dependencies": { "@tanstack/virtual-core": "3.17.0" }, "peerDependencies": { "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0", "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0" } }, "sha512-IpWnmCLvuymRfeeLNVXIzNEYBFLpd3drVIS91sqV78VTZFyldlChkOocZRCPp1B+Wnk09bcLNme8WaMU/9/9bQ=="],
-
-    "@tanstack/virtual-core": ["@tanstack/virtual-core@3.17.0", "https://registry.npmmirror.com/@tanstack/virtual-core/-/virtual-core-3.17.0.tgz", {}, "sha512-gOxY/hFkPh/XQYhnThBHzkbkX3Ed+z/iushyz+R+JAr213aXxUDgQoTgTdrDpBSRsjFM73P/KfUyWmaF9WHMkQ=="],
 
     "@tiptap/core": ["@tiptap/core@3.27.0", "https://registry.npmmirror.com/@tiptap/core/-/core-3.27.0.tgz", { "peerDependencies": { "@tiptap/pm": "3.27.0" } }, "sha512-X53TQUq2xYn21FOC526GlVIycnDkiN9XPYO/NEsg3hXS/SUs1Q6ZLtaM8y3Ox7d+bnTW6CpWKlfyvUWp3scKEw=="],
 

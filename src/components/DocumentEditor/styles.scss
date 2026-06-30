@@ -5,7 +5,6 @@
 
   &>.tiptap {
     outline: none;
-    padding: 10mm 10mm;
     position: relative;
     margin: 0 auto;
     background: white;
@@ -185,6 +184,8 @@
       }
 
       table {
+        border-collapse: separate;
+        border-spacing: 0;
         border: 1px solid #000;
 
         td,

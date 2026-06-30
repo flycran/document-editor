@@ -94,8 +94,6 @@ export const VariableNode = Node.create({
         getAttributes: (match) => {
           const [, label, code, type, showLabel, labelAlias] = match
 
-          console.log(label)
-
           return {
             label,
             code,

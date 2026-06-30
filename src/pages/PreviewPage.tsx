@@ -1,13 +1,13 @@
 import { Button, Modal } from 'antd'
 import { useRef, useState } from 'react'
 import { useOutletContext } from 'react-router'
-import Previewer, { PreviewRef } from '@/components/DocumentPreviewer/DocumentPreviewer'
-import { useGetEnumsQueryHook } from '@/hooks/useGetEnumsQueryHook'
+import { DocumentEditorEnumsProvider } from '@/components/DocumentEditor/contexts/DocumentEditorEnumsContext'
+import Previewer, { PreviewerRef } from '@/components/DocumentPreviewer/DocumentPreviewer'
 import { OutletContext } from '@/types/router'
 
 export default function PreviewPage() {
   const { content } = useOutletContext<OutletContext>()
-  const previewerRef = useRef<PreviewRef | null>(null)
+  const previewerRef = useRef<PreviewerRef | null>(null)
   const [formModalOpen, setFormModalOpen] = useState(false)
 
   return (
@@ -30,13 +30,10 @@ export default function PreviewPage() {
           </pre>
         </Modal>
       </div>
-      <div className="flex-1 overflow-auto bg-white">
-        <Previewer
-          ref={previewerRef}
-          content={content}
-          inputable
-          getEnumsQuery={useGetEnumsQueryHook}
-        />
+      <div className="flex-1 overflow-auto bg-white p-8">
+        <DocumentEditorEnumsProvider>
+          <Previewer ref={previewerRef} content={content} inputable />
+        </DocumentEditorEnumsProvider>
       </div>
     </div>
   )

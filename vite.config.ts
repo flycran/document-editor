@@ -9,25 +9,27 @@ import project from './src/config/project'
 
 export default defineConfig(({ mode }) => {
   const isLib = mode === 'lib'
-  const isDev = mode === 'development'
+  const isWc = mode === 'wc'
+  const isAdapter = mode === 'adapter'
+  const isDemo = mode === 'demo'
 
   return {
-    base: isLib || isDev ? undefined : `/${project.name}/`,
-    server: isLib
-      ? undefined
-      : {
-          port: project.port,
-          proxy: {
-            '/api': {
-              target: project.origin.chagineProxy,
-              changeOrigin: true,
-            },
-          },
+    base: isDemo ? `/${project.name}/` : undefined,
+    publicDir: isWc || isAdapter ? false : undefined,
+    server: {
+      port: project.port,
+      proxy: {
+        '/api': {
+          target: project.origin.chagineProxy,
+          changeOrigin: true,
         },
+      },
+    },
     plugins: [
-      ...(isLib
+      ...(isLib || isWc || isAdapter
         ? []
         : [codeInspectorPlugin({ bundler: 'vite' }), svgIconsPlugin(), devtoolsJson()]),
+
       tsconfigPaths(),
       react(),
       AutoImport({
@@ -39,10 +41,9 @@ export default defineConfig(({ mode }) => {
       ? {
           lib: {
             entry: 'src/index.ts',
-            name: 'DocumentEditor',
             formats: ['es', 'cjs'],
-            fileName: (format) => `index.${format === 'es' ? 'js' : 'cjs'}`,
           },
+          outDir: 'dist/component',
           rollupOptions: {
             external: [
               'react',
@@ -50,34 +51,50 @@ export default defineConfig(({ mode }) => {
               'react/jsx-runtime',
               'antd',
               '@ant-design/icons',
-              '@reduxjs/toolkit',
-              'react-redux',
-              'react-router',
-              '@tanstack/react-query',
+              '@tiptap/core',
+              '@tiptap/pm',
               '@tiptap/react',
               '@tiptap/starter-kit',
               '@tiptap/extension-color',
               '@tiptap/extension-font-size',
               '@tiptap/extension-highlight',
               '@tiptap/extension-placeholder',
+              '@tiptap/extension-table',
+              '@tiptap/extension-table-cell',
+              '@tiptap/extension-table-header',
+              '@tiptap/extension-table-row',
               '@tiptap/extension-text-align',
               '@tiptap/extension-text-style',
               '@tiptap/extension-underline',
-              '@tiptap/pm',
               'dayjs',
-              'ahooks',
               'clsx',
+              'jotai',
               'react-icons',
             ],
-            output: {
-              globals: {
-                react: 'React',
-                'react-dom': 'ReactDOM',
-                antd: 'antd',
-              },
-            },
           },
         }
-      : undefined,
+      : isWc
+        ? {
+            lib: {
+              entry: 'src/wc.ts',
+              formats: ['es', 'cjs'],
+            },
+            outDir: 'dist/web-component',
+            rollupOptions: {
+              external: [],
+            },
+          }
+        : isAdapter
+          ? {
+              lib: {
+                entry: 'src/adapter.ts',
+                formats: ['es', 'cjs'],
+              },
+              outDir: 'dist/adapter',
+              rollupOptions: {
+                external: ['react', 'react-dom', 'react/jsx-runtime'],
+              },
+            }
+          : undefined,
   }
 })

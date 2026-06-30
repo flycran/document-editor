@@ -6,7 +6,7 @@ import {
 } from '@/api/codegen/petstore'
 import doctorSginImage from '@/assets/sgin.png'
 import DocumentEditor, { EditorRef } from '@/components/DocumentEditor/DocumentEditor'
-import { useGetEnumsQueryHook } from '@/hooks/useGetEnumsQueryHook'
+import { useGetPublicEnumsQueryHook } from '@/hooks/useGetPublicEnumsQueryHook'
 import { useRHM } from '@/hooks/useRHM'
 import { OutletContext } from '@/types/router'
 
@@ -69,7 +69,7 @@ export default function EditorPage() {
           inputable
           onUpdate={handleUpdate}
           doctorSginImage={doctorSginImage}
-          getEnumsQuery={useGetEnumsQueryHook}
+          getEnumsQuery={useGetPublicEnumsQueryHook}
           variableListProps={{
             templateList: templateListData?.data?.list,
             templateListLoading: templateListDataIsFetching,

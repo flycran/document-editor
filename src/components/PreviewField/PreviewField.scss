@@ -10,6 +10,8 @@
       white-space: pre;
 
       @media print {
+        white-space: pre-wrap;
+        position: static;
         visibility: initial;
         position: initial;
         z-index: initial;
@@ -19,15 +21,18 @@
     .input-wrapper,
     .input {
       outline: none;
-      min-width: 4em;
+      min-width: 5em;
       padding: 0;
-      border: none;
+      border-top: none;
+      border-left: none;
+      border-right: none;
       border-radius: 0;
       box-shadow: none !important;
       font-family: inherit;
       font-size: inherit;
       transition: none;
       line-height: inherit;
+      max-width: 100%;
 
       @media print {
         display: none !important;
