@@ -1,12 +1,14 @@
+import { JSONContent } from '@tiptap/react'
 import { Button, Modal } from 'antd'
 import { useRef, useState } from 'react'
-import { useOutletContext } from 'react-router'
 import { DocumentEditorEnumsProvider } from '@/components/DocumentEditor/contexts/DocumentEditorEnumsContext'
 import Previewer, { PreviewerRef } from '@/components/DocumentPreviewer/DocumentPreviewer'
-import { OutletContext } from '@/types/router'
 
-export default function PreviewPage() {
-  const { content } = useOutletContext<OutletContext>()
+interface PreviewPageProps {
+  content?: JSONContent
+}
+
+export default function PreviewPage({ content }: PreviewPageProps) {
   const previewerRef = useRef<PreviewerRef | null>(null)
   const [formModalOpen, setFormModalOpen] = useState(false)
 

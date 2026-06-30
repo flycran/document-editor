@@ -1,5 +1,6 @@
+import { JSONContent } from '@tiptap/react'
+import { App } from 'antd'
 import { useEffect, useRef, useState } from 'react'
-import { useOutletContext } from 'react-router'
 import {
   useGetQuestcenterInformedTemplateGetMedicalTemplateList,
   useGetQuestcenterInformedTemplateGetTemplateDetailByMedicalId,
@@ -8,29 +9,22 @@ import doctorSginImage from '@/assets/sgin.png'
 import DocumentEditor, { EditorRef } from '@/components/DocumentEditor/DocumentEditor'
 import { useGetPublicEnumsQueryHook } from '@/hooks/useGetPublicEnumsQueryHook'
 import { useRHM } from '@/hooks/useRHM'
-import { OutletContext } from '@/types/router'
 
-export default function EditorPage() {
-  const { content, setContent } = useOutletContext<OutletContext>()
+interface EditorPageProps {
+  content?: JSONContent
+  setContent: (content: JSONContent) => void
+}
+
+export default function EditorPage({ content, setContent }: EditorPageProps) {
   const { key } = useRHM()
   const editorRef = useRef<EditorRef | null>(null)
   const [template, setTemplate] = useState<string>()
-
-  // 防抖保存：编辑时不去每次都算 JSON，停顿 500ms 后才算一次写入 content。
-  // content 只用于预览页，不再回灌编辑器（useEditor 的 deps=[]，content 变化不会重置编辑器）。
-  const debounceRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined)
-  const handleUpdate = () => {
-    clearTimeout(debounceRef.current)
-    debounceRef.current = setTimeout(() => {
-      const editor = editorRef.current?.editor
-      if (editor && !editor.isDestroyed) {
-        setContent(editor.getJSON())
-      }
-    }, 500)
-  }
+  const { message } = App.useApp()
 
   useEffect(() => {
-    return () => clearTimeout(debounceRef.current)
+    return () => {
+      console.log(editorRef.current)
+    }
   }, [])
 
   const { data: templateListData, isFetching: templateListDataIsFetching } =
@@ -67,9 +61,12 @@ export default function EditorPage() {
           content={content}
           className="h-full"
           inputable
-          onUpdate={handleUpdate}
           doctorSginImage={doctorSginImage}
           getEnumsQuery={useGetPublicEnumsQueryHook}
+          onSave={({ editor }) => {
+            setContent(editor.getJSON())
+            message.success('已保存到本地，可切换到预览页面查看')
+          }}
           variableListProps={{
             templateList: templateListData?.data?.list,
             templateListLoading: templateListDataIsFetching,

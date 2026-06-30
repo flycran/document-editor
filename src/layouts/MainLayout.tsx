@@ -1,16 +1,19 @@
 import { JSONContent } from '@tiptap/react'
 import { FloatButton, Spin } from 'antd'
-import { useState } from 'react'
+import { lazy, Suspense, useState } from 'react'
 import { MdEdit, MdVisibility } from 'react-icons/md'
-import { Outlet, useLocation, useNavigate } from 'react-router'
 import { useExpire } from '@/hooks/auth'
 import { useAutoLogin } from '@/hooks/autoLogin'
 import useGlobalKeepQuery from '@/hooks/globalKeepQuery'
 import { useAppSelector } from '@/store/hooks'
 
+const EditorPage = lazy(() => import('@/pages/EditorPage'))
+const PreviewPage = lazy(() => import('@/pages/PreviewPage'))
+
+type ViewMode = 'editor' | 'preview'
+
 export default function MainLayout() {
-  const location = useLocation()
-  const navigate = useNavigate()
+  const [viewMode, setViewMode] = useState<ViewMode>('editor')
   const [content, setContent] = useState<JSONContent>()
   useGlobalKeepQuery()
   const isDemo = import.meta.env.MODE === 'demo' && !import.meta.env.SSR
@@ -20,23 +23,29 @@ export default function MainLayout() {
   }
   const ready = isDemo || useAppSelector((state) => !!state.user.token)
 
-  const isEditor = location.pathname.startsWith('/editor')
+  const isEditor = viewMode === 'editor'
 
   return ready ? (
     <div className="h-screen flex flex-col bg-gray-50">
       <div className="flex-1 overflow-hidden">
-        <Outlet context={{ content, setContent }} />
+        <Suspense fallback={null}>
+          {isEditor ? (
+            <EditorPage content={content} setContent={setContent} />
+          ) : (
+            <PreviewPage content={content} />
+          )}
+        </Suspense>
       </div>
       <FloatButton.Group>
         <FloatButton
           icon={<MdEdit />}
           type={isEditor ? 'primary' : 'default'}
-          onClick={() => navigate('/editor')}
+          onClick={() => setViewMode('editor')}
         />
         <FloatButton
           icon={<MdVisibility />}
           type={!isEditor ? 'primary' : 'default'}
-          onClick={() => navigate('/preview')}
+          onClick={() => setViewMode('preview')}
         />
       </FloatButton.Group>
     </div>

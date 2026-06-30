@@ -216,7 +216,7 @@ export default function DocumentEditor({
       >
         <DocumentEditorEnumsContext value={getEnumsQuery}>
           <Provider store={storeRef.current}>
-            <Form form={form} component={false} onFinish={onSave}>
+            <Form form={form} component={false} onFinish={() => onSave?.({ editor })}>
               <div
                 className={clsx('editor-container', { 'document-editable': editable }, className)}
               >
