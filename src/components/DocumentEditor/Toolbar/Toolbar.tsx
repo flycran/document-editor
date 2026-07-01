@@ -493,7 +493,7 @@ function TableBubbleMenu() {
           return editable && ed.isActive('table')
         }}
         options={{
-          autoPlacement: true,
+          placement: 'top',
         }}
       >
         <div className={styles.bubbleRow}>
@@ -516,7 +516,6 @@ function TableBubbleMenu() {
           <Tooltip title="删除行">
             <Button
               type="text"
-              danger
               icon={<TbRowRemove />}
               disabled={!editable}
               onClick={() => editor.chain().focus().deleteRow().run()}
@@ -542,7 +541,6 @@ function TableBubbleMenu() {
           <Tooltip title="删除列">
             <Button
               type="text"
-              danger
               icon={<TbColumnRemove />}
               disabled={!editable}
               onClick={() => editor.chain().focus().deleteColumn().run()}
@@ -552,7 +550,6 @@ function TableBubbleMenu() {
           <Tooltip title="删除表格">
             <Button
               type="text"
-              danger
               icon={<TbTableMinus />}
               disabled={!editable}
               onClick={() => editor.chain().focus().deleteTable().run()}

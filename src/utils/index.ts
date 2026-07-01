@@ -21,7 +21,9 @@ const getPreviewIframe = (element: HTMLElement) => {
   addStyle(SginViewStyleInline)
   addStyle(PreviewFieldInline)
 
-  iframeWindow?.document.body.appendChild(element.cloneNode(true))
+  const cloneElement = element.cloneNode(true) as HTMLElement
+
+  iframeWindow?.document.body.appendChild(cloneElement)
   return iframe
 }
 

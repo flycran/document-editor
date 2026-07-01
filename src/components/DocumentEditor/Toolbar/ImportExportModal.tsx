@@ -1,7 +1,7 @@
 import { Editor } from '@tiptap/react'
-import { Form, Input, Modal } from 'antd'
+import { Form, Input, Modal, message } from 'antd'
 import { useEffect, useState } from 'react'
-import { convertOldFormat, isOldFormat } from '@/utils/importCompat'
+import { convertContent } from '@/utils/importCompat/utils'
 
 interface ImportExportModalProps {
   open: boolean
@@ -14,6 +14,7 @@ interface ImportExportModalProps {
  */
 export default function ImportExportModal({ open, editor, onClose }: ImportExportModalProps) {
   const [value, setValue] = useState('')
+  const [importing, setImporting] = useState(false)
 
   useEffect(() => {
     if (open) {
@@ -21,23 +22,29 @@ export default function ImportExportModal({ open, editor, onClose }: ImportExpor
     }
   }, [open])
 
-  const handleOk = () => {
-    const getContent = () => {
-      try {
-        return JSON.parse(value)
-      } catch (e) {
-        return value
-      }
+  const handleOk = async () => {
+    setImporting(true)
+    const content = await convertContent(value)
+    try {
+      editor
+        .chain()
+        .focus()
+        .setContent(content || '')
+        .run()
+      onClose()
+    } finally {
+      setImporting(false)
     }
-    const content = getContent()
-    // 兼容旧格式：检测 { rich_text, rich_config } 并转换
-    const finalContent = isOldFormat(content) ? convertOldFormat(content) : content
-    editor
-      .chain()
-      .focus()
-      .setContent(finalContent || '<p></p>')
-      .run()
-    onClose()
+  }
+
+  const handlePaste = async (e: React.ClipboardEvent<HTMLTextAreaElement>) => {
+    const clipboardData = e.clipboardData || (window as any).clipboardData
+    const html = clipboardData.getData('text/html')
+    if (html) {
+      message.info('检测到 HTML 内容，已优先粘贴')
+      setValue(html)
+      e.preventDefault()
+    }
   }
 
   return (
@@ -46,16 +53,21 @@ export default function ImportExportModal({ open, editor, onClose }: ImportExpor
       width={700}
       open={open}
       onOk={handleOk}
-      onCancel={onClose}
+      onCancel={importing ? undefined : onClose}
       destroyOnHidden
+      confirmLoading={importing}
+      cancelButtonProps={{
+        disabled: importing,
+      }}
       okText="确定"
       cancelText="取消"
     >
       <Form.Item
-        help="粘贴 HTML/JSON 文本，导入后将替换当前文档内容。支持直接粘贴旧文书响应，自动转换为新格式"
+        help="粘贴 HTML/JSON 文本，导入后将替换当前文档内容。支持直接粘贴旧文书内容，自动转换为新格式"
         style={{ marginBottom: 0 }}
       >
         <Input.TextArea
+          onPaste={handlePaste}
           autoFocus
           autoSize={{ minRows: 8, maxRows: 16 }}
           value={value}

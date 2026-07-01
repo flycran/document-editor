@@ -2,9 +2,9 @@ import { DatePicker, Form, Input, InputNumber, InputRef, Select } from 'antd'
 import './PreviewField.scss'
 import { useAtomValue } from 'jotai'
 import { GrCheckbox, GrCheckboxSelected } from 'react-icons/gr'
+import { VariableNodeAttrs } from '@/wc'
 import { DocumentEditorEnumsContext } from '../DocumentEditor/contexts/DocumentEditorEnumsContext'
 import { inputableAtom } from '../DocumentEditor/DocumentEditorStore'
-import { VariableType } from '../DocumentEditor/extensions/VariableNode/VariableNode'
 
 interface TextProps {
   value?: unknown
@@ -44,9 +44,10 @@ function PreviewFieldBase({ value = '', onSetSize, children }: PreviewFieldBaseP
 interface PreviewFieldInputProps {
   value: any
   onChange?: (value: any) => void
+  placeholder?: string
 }
 
-function PreviewFieldInput({ value, ...rest }: PreviewFieldInputProps) {
+function PreviewFieldInput({ value, placeholder, ...rest }: PreviewFieldInputProps) {
   const inputRef = useRef<InputRef>(null)
 
   const handleSetSize = useCallback((size: number) => {
@@ -57,7 +58,14 @@ function PreviewFieldInput({ value, ...rest }: PreviewFieldInputProps) {
 
   return (
     <PreviewFieldBase value={value} onSetSize={handleSetSize}>
-      <Input variant="underlined" value={value} {...rest} className="input" ref={inputRef} />
+      <Input
+        placeholder={placeholder}
+        variant="underlined"
+        value={value}
+        {...rest}
+        className="input"
+        ref={inputRef}
+      />
     </PreviewFieldBase>
   )
 }
@@ -67,9 +75,10 @@ type InputNumberRef = React.ComponentRef<typeof InputNumber>
 interface PreviewFieldNumebrInputProps {
   value: any
   onChange?: (value: any) => void
+  placeholder?: string
 }
 
-function PreviewFieldNumebrInput({ value, ...rest }: PreviewFieldNumebrInputProps) {
+function PreviewFieldNumebrInput({ value, placeholder, ...rest }: PreviewFieldNumebrInputProps) {
   const inputRef = useRef<InputNumberRef>(null)
 
   const handleSetSize = useCallback((size: number) => {
@@ -80,7 +89,14 @@ function PreviewFieldNumebrInput({ value, ...rest }: PreviewFieldNumebrInputProp
 
   return (
     <PreviewFieldBase value={value} onSetSize={handleSetSize}>
-      <InputNumber variant="underlined" value={value} {...rest} className="input" ref={inputRef} />
+      <InputNumber
+        placeholder={placeholder}
+        variant="underlined"
+        value={value}
+        {...rest}
+        className="input"
+        ref={inputRef}
+      />
     </PreviewFieldBase>
   )
 }
@@ -91,9 +107,16 @@ interface PreviewFieldDatePickerProps {
   value: any
   onChange?: (value: any) => void
   type: 'date' | 'date-time' | 'time'
+  placeholder?: string
 }
 
-function PreviewFieldDatePicker({ value, onChange, type, ...rest }: PreviewFieldDatePickerProps) {
+function PreviewFieldDatePicker({
+  value,
+  onChange,
+  type,
+  placeholder,
+  ...rest
+}: PreviewFieldDatePickerProps) {
   const date = useMemo(() => (value ? dayjs(value) : undefined), [value])
 
   const datePickerRef = useRef<DatePickerRef>(null)
@@ -141,9 +164,10 @@ interface PreviewFieldSelectProps {
   value: any
   onChange?: (value: any) => void
   code: string
+  placeholder?: string
 }
 
-function PreviewFieldSelect({ value, onChange, code }: PreviewFieldSelectProps) {
+function PreviewFieldSelect({ value, onChange, code, placeholder }: PreviewFieldSelectProps) {
   const selectRef = useRef<SelectRef>(null)
   const getEnumsQuery = useContext(DocumentEditorEnumsContext)
   const getEnumsQueryRef = useRef(getEnumsQuery || (() => undefined))
@@ -179,6 +203,8 @@ function PreviewFieldSelect({ value, onChange, code }: PreviewFieldSelectProps) 
   return (
     <PreviewFieldBase value={label} onSetSize={handleSetSize}>
       <Select
+        allowClear
+        placeholder={placeholder}
         variant="underlined"
         popupMatchSelectWidth={false}
         showSearch={{ filterOption: true }}
@@ -221,32 +247,47 @@ function VariableCheckbox({ value, onChange }: VariableCheckboxProps) {
 export interface PreviewFieldProps {
   value?: any
   onChange?: (value: any) => void
-  type: VariableType
-  code: string
+  attrs: VariableNodeAttrs
 }
 
 /**
  * 预览字段控件
  */
-export default function PreviewField({ value, onChange, code, type }: PreviewFieldProps) {
+export default function PreviewField({ value, onChange, attrs }: PreviewFieldProps) {
   const inputable = useAtomValue(inputableAtom)
 
   if (!inputable) return <Text value={value} />
 
-  switch (type) {
+  const placeholder = attrs.showLabel ? undefined : attrs.labelAlias || attrs.label
+
+  switch (attrs.type) {
     case 'number':
-      return <PreviewFieldNumebrInput value={value} onChange={onChange} />
+      return <PreviewFieldNumebrInput value={value} onChange={onChange} placeholder={placeholder} />
 
     case 'text':
-      return <PreviewFieldInput value={value} onChange={onChange} />
+      return <PreviewFieldInput value={value} onChange={onChange} placeholder={placeholder} />
 
     case 'select':
-      return <PreviewFieldSelect value={value} onChange={onChange} code={code} />
+      return (
+        <PreviewFieldSelect
+          value={value}
+          onChange={onChange}
+          code={attrs.code}
+          placeholder={placeholder}
+        />
+      )
 
     case 'date':
     case 'time':
     case 'date-time':
-      return <PreviewFieldDatePicker value={value} onChange={onChange} type={type} />
+      return (
+        <PreviewFieldDatePicker
+          value={value}
+          onChange={onChange}
+          type={attrs.type}
+          placeholder={placeholder}
+        />
+      )
 
     case 'boolean':
       return <VariableCheckbox value={value} onChange={onChange} />

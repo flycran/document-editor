@@ -39,5 +39,15 @@ export function getConfig(
   configMap: Map<string, ElementConfig>,
   composeCode: string
 ): ElementConfig | undefined {
-  return configMap.get(composeCode)
+  const config = configMap.get(composeCode)
+  if (config) {
+    return config
+  }
+
+  // 直接查找原code
+  const strippedCode = composeCode.match(/e\$([\da-zA-Z\.]+)$/)?.[1]
+
+  if (strippedCode) {
+    return configMap.get(strippedCode)
+  }
 }

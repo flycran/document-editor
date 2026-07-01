@@ -21,12 +21,6 @@ export default function EditorPage({ content, setContent }: EditorPageProps) {
   const [template, setTemplate] = useState<string>()
   const { message } = App.useApp()
 
-  useEffect(() => {
-    return () => {
-      console.log(editorRef.current)
-    }
-  }, [])
-
   const { data: templateListData, isFetching: templateListDataIsFetching } =
     useGetQuestcenterInformedTemplateGetMedicalTemplateList()
 

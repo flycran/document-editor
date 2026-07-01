@@ -28,16 +28,7 @@ export default function AliasModal({ open, editor, onClose, nodeType }: AliasMod
 
     const allSameAlias = aliases.length > 0 && aliases.every((a) => a === aliases[0])
     const allSameLabel = labels.length > 0 && labels.every((l) => l === labels[0])
-    console.log({
-      aliases,
-      labels,
-      allSameAlias,
-      allSameLabel,
-      ...{
-        currentAlias: allSameAlias ? aliases[0] : '',
-        currentLabel: allSameLabel ? labels[0] : '',
-      },
-    })
+
     return {
       currentAlias: allSameAlias ? aliases[0] : '',
       currentLabel: allSameLabel ? labels[0] : '',

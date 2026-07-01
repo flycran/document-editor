@@ -23,6 +23,7 @@
             --ant-control-height: 0;
             display: inline;
             font-size: inherit;
+            vertical-align: baseline;
 
             &>label {
               display: inline;
@@ -43,6 +44,11 @@
             flex-direction: column;
             min-height: 1.5em;
             --ant-control-height: 0;
+            width: auto;
+
+            @media print {
+              display: inline;
+            }
 
             .ant-form-item-control-input,
             .ant-form-item-control-input-content {

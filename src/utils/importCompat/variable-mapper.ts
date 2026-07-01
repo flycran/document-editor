@@ -1,5 +1,11 @@
 import { SGIN_ENUMS } from '@/components/DocumentEditor/extensions/SginNode/SginUtils'
-import type { ElementConfig, TiptapNode } from './types'
+import type { ElementConfig } from './types'
+
+/** 转换结果：type + attrs 的简单对象 */
+export interface NodeResult {
+  type: string
+  attrs: Record<string, unknown>
+}
 
 /**
  * 根据 ElementConfig 的 is_* 字段判断 variable 节点的 type 属性
@@ -26,6 +32,7 @@ export function resolveVariableType(config: ElementConfig): string {
  * 计算 labelAlias：alias_name 与 label 一致时留空，不一致时写入 alias_name
  */
 function resolveLabelAlias(aliasName: string, label: string): string {
+  if (!aliasName.trim()) return ''
   return aliasName && aliasName !== label ? aliasName : ''
 }
 
@@ -33,16 +40,20 @@ function resolveLabelAlias(aliasName: string, label: string): string {
  * 从 ElementConfig 构建 variable 节点的 attrs
  * label 始终来自 config.name，alias_name 不一致时写入 labelAlias
  */
-export function buildVariableAttrs(config: ElementConfig): Record<string, unknown> {
+export function buildVariableAttrs(
+  config: ElementConfig,
+  textContent?: string
+): Record<string, unknown> {
   const name = config.name || ''
-  const aliasName = config.alias_name || config.ui?.data_name?.alias_name || ''
+  const aliasName = textContent?.trim() || ''
 
   return {
     label: name,
     code: config.code || '',
     type: resolveVariableType(config),
-    showLabel: true,
+    showLabel: aliasName.trim() ? true : false,
     labelAlias: resolveLabelAlias(aliasName, name),
+    required: config.required || false,
   }
 }
 
@@ -57,9 +68,13 @@ const SGIN_CODE_MAP: Record<string, string> = {
  * 构建 sgin 签名节点的 attrs
  * sgin 节点只存 type/showLabel/labelAlias，label 由前端实时计算
  */
-function buildSginAttrs(config: ElementConfig, sginType: string): Record<string, unknown> {
+function buildSginAttrs(
+  config: ElementConfig,
+  sginType: string,
+  textContent?: string
+): Record<string, unknown> {
   const label = SGIN_ENUMS[sginType as keyof typeof SGIN_ENUMS] || config.name || ''
-  const aliasName = config.alias_name || config.ui?.data_name?.alias_name || ''
+  const aliasName = textContent?.trim() || ''
   return {
     type: sginType,
     showLabel: true,
@@ -68,22 +83,22 @@ function buildSginAttrs(config: ElementConfig, sginType: string): Record<string,
 }
 
 /**
- * 创建 variable 或 sgin Tiptap 节点
+ * 创建 variable 或 sgin 节点结果
  * 签名节点（code 以 QM.YS/QM.HZ/QM.JS 开头）→ sgin 节点
  * 其余 → variable 节点
  */
-export function createVariableNode(config: ElementConfig): TiptapNode {
+export function createVariableNode(config: ElementConfig, textContent?: string): NodeResult {
   const code = config.code || ''
   for (const [prefix, sginType] of Object.entries(SGIN_CODE_MAP)) {
     if (code.startsWith(prefix)) {
       return {
         type: 'sgin',
-        attrs: buildSginAttrs(config, sginType),
+        attrs: buildSginAttrs(config, sginType, textContent),
       }
     }
   }
   return {
     type: 'variable',
-    attrs: buildVariableAttrs(config),
+    attrs: buildVariableAttrs(config, textContent),
   }
 }

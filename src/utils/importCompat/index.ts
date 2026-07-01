@@ -1,24 +1,28 @@
+import { InformedTemplateNodeListItemElementsItem } from '@/api/codegen/schemas'
 import { parseRichConfig } from './config-resolver'
-import { htmlToTiptap } from './dom-to-tiptap'
+import { htmlToTiptapHtml } from './html-to-tiptap-html'
 import type { OldFormatInput } from './types'
 
 /**
- * 检测输入是否为旧格式
+ * 将旧格式转换为 Tiptap HTML 字符串
+ *
+ * @param input - { rich_text: string, rich_config: string }
+ * @returns Tiptap 可解析的 HTML 字符串
  */
-export function isOldFormat(input: unknown): input is OldFormatInput {
-  if (!input || typeof input !== 'object') return false
-  const obj = input as Record<string, unknown>
-  return typeof obj.rich_text === 'string' && typeof obj.rich_config === 'string'
+export function convertOldResponseFormat(input: OldFormatInput): string {
+  const configMap = parseRichConfig(input.rich_config)
+  return htmlToTiptapHtml(input.rich_text, configMap)
 }
 
 /**
- * 将旧格式转换为 Tiptap content JSON
- * @param input - { rich_text: string, rich_config: string }
- * @returns Tiptap doc JSON
+ * 将旧格式转换为 Tiptap HTML 字符串
+ *
+ * @param input - string
+ * @returns Tiptap 可解析的 HTML 字符串
  */
-export function convertOldFormat(input: OldFormatInput): Record<string, unknown> {
-  const configMap = parseRichConfig(input.rich_config)
-  return htmlToTiptap(input.rich_text, configMap) as unknown as Record<string, unknown>
+export function convertOldHTMLFormat(
+  input: string,
+  nodes: Map<string, InformedTemplateNodeListItemElementsItem>
+): string {
+  return htmlToTiptapHtml(input, nodes)
 }
-
-export type { OldFormatInput } from './types'

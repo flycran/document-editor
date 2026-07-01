@@ -28,7 +28,7 @@ export default function VariableView({ node, editor, getPos }: ReactNodeViewProp
       >
         {attrs.type === 'boolean' && (
           <Form.Item noStyle name={attrs.code}>
-            <PreviewField code={attrs.code} type={attrs.type} />
+            <PreviewField attrs={attrs} />
           </Form.Item>
         )}
         <Form.Item
@@ -57,8 +57,7 @@ export default function VariableView({ node, editor, getPos }: ReactNodeViewProp
             )
           }
         >
-          {attrs.type !== 'boolean' &&
-            (editable ? attrs.code : <PreviewField code={attrs.code} type={attrs.type} />)}
+          {attrs.type !== 'boolean' && (editable ? attrs.code : <PreviewField attrs={attrs} />)}
         </Form.Item>
       </span>
       <span className="variable-node-curly-braces">{'}}'}</span>
